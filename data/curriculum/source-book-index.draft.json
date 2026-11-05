@@ -17,37 +17,79 @@
     {
       "id": "egypt-primary-general",
       "label": "Egyptian MOE Primary — General",
-      "grades": ["Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6"],
+      "grades": [
+        "Primary 1",
+        "Primary 2",
+        "Primary 3",
+        "Primary 4",
+        "Primary 5",
+        "Primary 6"
+      ],
       "officialSeries": "Connect",
       "status": "classification_rule"
     },
     {
       "id": "egypt-primary-advanced",
       "label": "Egyptian MOE Primary — Advanced",
-      "grades": ["Primary 1", "Primary 2", "Primary 3", "Primary 4", "Primary 5", "Primary 6"],
+      "grades": [
+        "Primary 1",
+        "Primary 2",
+        "Primary 3",
+        "Primary 4",
+        "Primary 5",
+        "Primary 6"
+      ],
       "officialSeries": "Connect Plus",
       "status": "classification_rule"
     },
     {
       "id": "egypt-preparatory-general",
       "label": "Egyptian MOE Preparatory — General",
-      "grades": ["Preparatory 1", "Preparatory 2", "Preparatory 3"],
+      "grades": [
+        "Preparatory 1",
+        "Preparatory 2",
+        "Preparatory 3"
+      ],
       "officialSeries": "New Hello",
       "status": "classification_rule"
     },
     {
       "id": "egypt-secondary-general",
       "label": "Egyptian MOE Secondary — General",
-      "grades": ["Secondary 1", "Secondary 2", "Secondary 3"],
+      "grades": [
+        "Secondary 1",
+        "Secondary 2",
+        "Secondary 3"
+      ],
       "officialSeries": "General Secondary",
       "status": "classification_rule"
     },
     {
       "id": "egypt-baccalaureate",
       "label": "Egyptian Baccalaureate",
-      "grades": ["Baccalaureate Year 1", "Baccalaureate Year 2"],
+      "grades": [
+        "Baccalaureate Year 1",
+        "Baccalaureate Year 2"
+      ],
       "officialSeries": "Separate Baccalaureate pathway",
       "status": "classification_rule"
+    },
+    {
+      "id": "commercial-reference-guides",
+      "label": "Commercial supplementary reference guides — separate from official MOE pathways",
+      "grades": [
+        "Primary 1",
+        "Primary 2",
+        "Primary 3",
+        "Primary 4",
+        "Primary 5",
+        "Primary 6",
+        "Preparatory 1",
+        "Preparatory 2",
+        "Preparatory 3"
+      ],
+      "officialSeries": "Commercial guides (including El-Moasser Connect Plus and Hello Plus)",
+      "status": "supplementary_classification"
     }
   ],
   "books": [
@@ -61,16 +103,46 @@
       "publisherClass": "official_moe",
       "contentsPdfPage": 4,
       "units": [
-        {"number": 1, "title": "Life in a Digital World", "startPdfPage": 13},
-        {"number": 2, "title": "Learning to Learn", "startPdfPage": 27},
-        {"number": 3, "title": "Role Models", "startPdfPage": 41},
-        {"number": 4, "title": "Smart Choices", "startPdfPage": 59},
-        {"number": 5, "title": "Future Dreams", "startPdfPage": 73},
-        {"number": 6, "title": "Global Citizens", "startPdfPage": 87}
+        {
+          "number": 1,
+          "title": "Life in a Digital World",
+          "startPdfPage": 13
+        },
+        {
+          "number": 2,
+          "title": "Learning to Learn",
+          "startPdfPage": 27
+        },
+        {
+          "number": 3,
+          "title": "Role Models",
+          "startPdfPage": 41
+        },
+        {
+          "number": 4,
+          "title": "Smart Choices",
+          "startPdfPage": 59
+        },
+        {
+          "number": 5,
+          "title": "Future Dreams",
+          "startPdfPage": 73
+        },
+        {
+          "number": 6,
+          "title": "Global Citizens",
+          "startPdfPage": 87
+        }
       ],
       "reviews": [
-        {"number": 1, "startPdfPage": 55},
-        {"number": 2, "startPdfPage": 101}
+        {
+          "number": 1,
+          "startPdfPage": 55
+        },
+        {
+          "number": 2,
+          "startPdfPage": 101
+        }
       ],
       "status": "needs_review"
     },
@@ -84,19 +156,51 @@
       "publisherClass": "official_moe",
       "contentsPdfPage": 4,
       "units": [
-        {"number": 1, "title": "Gen Alpha", "startPdfPage": 13},
-        {"number": 2, "title": "My Digital Footprint", "startPdfPage": 27},
-        {"number": 3, "title": "Facing Challenges", "startPdfPage": 41},
-        {"number": 4, "title": "Expression", "startPdfPage": 58},
-        {"number": 5, "title": "Around the World", "startPdfPage": 72},
-        {"number": 6, "title": "Young Innovators", "startPdfPage": 87}
+        {
+          "number": 1,
+          "title": "Gen Alpha",
+          "startPdfPage": 13
+        },
+        {
+          "number": 2,
+          "title": "My Digital Footprint",
+          "startPdfPage": 27
+        },
+        {
+          "number": 3,
+          "title": "Facing Challenges",
+          "startPdfPage": 41
+        },
+        {
+          "number": 4,
+          "title": "Expression",
+          "startPdfPage": 58
+        },
+        {
+          "number": 5,
+          "title": "Around the World",
+          "startPdfPage": 72
+        },
+        {
+          "number": 6,
+          "title": "Young Innovators",
+          "startPdfPage": 87
+        }
       ],
       "reviews": [
-        {"number": 1, "startPdfPage": 55},
-        {"number": 2, "startPdfPage": 100}
+        {
+          "number": 1,
+          "startPdfPage": 55
+        },
+        {
+          "number": 2,
+          "startPdfPage": 100
+        }
       ],
       "status": "needs_review",
-      "notes": ["Unit 4 title recovered from text extraction; visually confirm before academic release."]
+      "notes": [
+        "Unit 4 title recovered from text extraction; visually confirm before academic release."
+      ]
     },
     {
       "id": "prep3-student-term1",
@@ -108,16 +212,46 @@
       "publisherClass": "official_moe",
       "contentsPdfPage": 4,
       "units": [
-        {"number": 1, "title": "Personal Identity", "startPdfPage": 13},
-        {"number": 2, "title": "Communication with Family and Friends", "startPdfPage": 27},
-        {"number": 3, "title": "Artificial Intelligence", "startPdfPage": 41},
-        {"number": 4, "title": "Screen Time", "startPdfPage": 59},
-        {"number": 5, "title": "Design Thinking", "startPdfPage": 72},
-        {"number": 6, "title": "Why Do We Like Stories?", "startPdfPage": 85}
+        {
+          "number": 1,
+          "title": "Personal Identity",
+          "startPdfPage": 13
+        },
+        {
+          "number": 2,
+          "title": "Communication with Family and Friends",
+          "startPdfPage": 27
+        },
+        {
+          "number": 3,
+          "title": "Artificial Intelligence",
+          "startPdfPage": 41
+        },
+        {
+          "number": 4,
+          "title": "Screen Time",
+          "startPdfPage": 59
+        },
+        {
+          "number": 5,
+          "title": "Design Thinking",
+          "startPdfPage": 72
+        },
+        {
+          "number": 6,
+          "title": "Why Do We Like Stories?",
+          "startPdfPage": 85
+        }
       ],
       "reviews": [
-        {"number": 1, "startPdfPage": 55},
-        {"number": 2, "startPdfPage": 100}
+        {
+          "number": 1,
+          "startPdfPage": 55
+        },
+        {
+          "number": 2,
+          "startPdfPage": 100
+        }
       ],
       "status": "needs_review"
     },
@@ -131,16 +265,46 @@
       "publisherClass": "official_moe",
       "contentsPdfPage": 3,
       "units": [
-        {"number": 1, "title": "Egypt’s Heritage", "startPdfPage": 11},
-        {"number": 2, "title": "Hands Help, Hearts Care", "startPdfPage": 24},
-        {"number": 3, "title": "Truth Vs. Lies", "startPdfPage": 36},
-        {"number": 4, "title": "Save and Shine", "startPdfPage": 57},
-        {"number": 5, "title": "Using Technology at Schools", "startPdfPage": 69},
-        {"number": 6, "title": "Job Hunting", "startPdfPage": 80}
+        {
+          "number": 1,
+          "title": "Egypt’s Heritage",
+          "startPdfPage": 11
+        },
+        {
+          "number": 2,
+          "title": "Hands Help, Hearts Care",
+          "startPdfPage": 24
+        },
+        {
+          "number": 3,
+          "title": "Truth Vs. Lies",
+          "startPdfPage": 36
+        },
+        {
+          "number": 4,
+          "title": "Save and Shine",
+          "startPdfPage": 57
+        },
+        {
+          "number": 5,
+          "title": "Using Technology at Schools",
+          "startPdfPage": 69
+        },
+        {
+          "number": 6,
+          "title": "Job Hunting",
+          "startPdfPage": 80
+        }
       ],
       "reviews": [
-        {"number": 1, "startPdfPage": 48},
-        {"number": 2, "startPdfPage": 92}
+        {
+          "number": 1,
+          "startPdfPage": 48
+        },
+        {
+          "number": 2,
+          "startPdfPage": 92
+        }
       ],
       "status": "needs_review"
     },
@@ -152,17 +316,46 @@
       "term": 1,
       "documentType": "student_book",
       "publisherClass": "official_moe",
-      "contentsPdfPages": [2, 3],
+      "contentsPdfPages": [
+        2,
+        3
+      ],
       "units": [
-        {"number": 1, "title": "Egypt–Africa Cooperation", "startPdfPage": null},
-        {"number": 2, "title": "Startups & Young Entrepreneurs", "startPdfPage": null},
-        {"number": 3, "title": "Sustainable Development Goals (SDG)", "startPdfPage": null},
-        {"number": 4, "title": "Natural Disasters", "startPdfPage": null},
-        {"number": 5, "title": "Media Manipulation", "startPdfPage": null},
-        {"number": 6, "title": "Soft Skills Vs. Hard Skills", "startPdfPage": null}
+        {
+          "number": 1,
+          "title": "Egypt–Africa Cooperation",
+          "startPdfPage": null
+        },
+        {
+          "number": 2,
+          "title": "Startups & Young Entrepreneurs",
+          "startPdfPage": null
+        },
+        {
+          "number": 3,
+          "title": "Sustainable Development Goals (SDG)",
+          "startPdfPage": null
+        },
+        {
+          "number": 4,
+          "title": "Natural Disasters",
+          "startPdfPage": null
+        },
+        {
+          "number": 5,
+          "title": "Media Manipulation",
+          "startPdfPage": null
+        },
+        {
+          "number": 6,
+          "title": "Soft Skills Vs. Hard Skills",
+          "startPdfPage": null
+        }
       ],
       "status": "needs_review",
-      "notes": ["Unit titles are visible in contents; exact start pages were not established in the extracted notes."]
+      "notes": [
+        "Unit titles are visible in contents; exact start pages were not established in the extracted notes."
+      ]
     },
     {
       "id": "secondary3-student-term1",
@@ -174,15 +367,42 @@
       "publisherClass": "official_moe",
       "contentsPdfPage": 4,
       "units": [
-        {"number": 1, "title": "Inside the World of Care", "startPdfPage": 12},
-        {"number": 2, "title": "The Power of Machines", "startPdfPage": 24},
-        {"number": 3, "title": "Protect Nature, Protect Future", "startPdfPage": 36},
-        {"number": 4, "title": "Marine Life", "startPdfPage": 55},
-        {"number": 5, "title": "From Muscles to Mindset", "startPdfPage": 68},
-        {"number": 6, "title": "Let’s Hang Out!", "startPdfPage": 82}
+        {
+          "number": 1,
+          "title": "Inside the World of Care",
+          "startPdfPage": 12
+        },
+        {
+          "number": 2,
+          "title": "The Power of Machines",
+          "startPdfPage": 24
+        },
+        {
+          "number": 3,
+          "title": "Protect Nature, Protect Future",
+          "startPdfPage": 36
+        },
+        {
+          "number": 4,
+          "title": "Marine Life",
+          "startPdfPage": 55
+        },
+        {
+          "number": 5,
+          "title": "From Muscles to Mindset",
+          "startPdfPage": 68
+        },
+        {
+          "number": 6,
+          "title": "Let’s Hang Out!",
+          "startPdfPage": 82
+        }
       ],
       "reviews": [
-        {"number": 1, "startPdfPage": 47}
+        {
+          "number": 1,
+          "startPdfPage": 47
+        }
       ],
       "status": "needs_review"
     },
@@ -194,13 +414,41 @@
       "term": null,
       "documentType": "student_book",
       "publisherClass": "official_moe",
-      "contentsPdfPages": [10, 11],
+      "contentsPdfPages": [
+        10,
+        11
+      ],
       "units": [
-        {"number": 1, "title": "Living Well in a Complex World", "concept": "Well-being", "startPdfPage": 12},
-        {"number": 2, "title": "Leisure Time", "concept": "Experiences", "startPdfPage": null},
-        {"number": 3, "title": "Echoes of the Past", "concept": "Identity", "startPdfPage": null},
-        {"number": 4, "title": "The Power of Choice", "concept": "Consumption and Choice", "startPdfPage": 102},
-        {"number": 5, "title": "The Greenhouse Effect", "concept": "Sharing the Planet", "startPdfPage": 140}
+        {
+          "number": 1,
+          "title": "Living Well in a Complex World",
+          "concept": "Well-being",
+          "startPdfPage": 12
+        },
+        {
+          "number": 2,
+          "title": "Leisure Time",
+          "concept": "Experiences",
+          "startPdfPage": null
+        },
+        {
+          "number": 3,
+          "title": "Echoes of the Past",
+          "concept": "Identity",
+          "startPdfPage": null
+        },
+        {
+          "number": 4,
+          "title": "The Power of Choice",
+          "concept": "Consumption and Choice",
+          "startPdfPage": 102
+        },
+        {
+          "number": 5,
+          "title": "The Greenhouse Effect",
+          "concept": "Sharing the Planet",
+          "startPdfPage": 140
+        }
       ],
       "status": "needs_review"
     },
@@ -212,87 +460,174 @@
       "term": null,
       "documentType": "student_book",
       "publisherClass": "official_moe",
-      "contentsPdfPages": [4, 5],
+      "contentsPdfPages": [
+        4,
+        5
+      ],
       "units": [
-        {"number": 6, "title": "A World for All", "concept": "Sharing the Planet", "startPdfPage": 6},
-        {"number": 7, "title": "Discovering Your Passion", "concept": null, "startPdfPage": null},
-        {"number": 8, "title": "Pathways to Progress", "concept": null, "startPdfPage": null},
-        {"number": 9, "title": "Circles of Belonging", "concept": null, "startPdfPage": 101},
-        {"number": 10, "title": "Behind the Buy", "concept": null, "startPdfPage": 126}
+        {
+          "number": 6,
+          "title": "A World for All",
+          "concept": "Sharing the Planet",
+          "startPdfPage": 6
+        },
+        {
+          "number": 7,
+          "title": "Discovering Your Passion",
+          "concept": null,
+          "startPdfPage": null
+        },
+        {
+          "number": 8,
+          "title": "Pathways to Progress",
+          "concept": null,
+          "startPdfPage": null
+        },
+        {
+          "number": 9,
+          "title": "Circles of Belonging",
+          "concept": null,
+          "startPdfPage": 101
+        },
+        {
+          "number": 10,
+          "title": "Behind the Buy",
+          "concept": null,
+          "startPdfPage": 126
+        }
       ],
       "status": "needs_review"
     },
     {
       "id": "connectplus-primary1-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_1_ابتدائي_ترم_1_ذاكرولي1.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 1",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 3,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; not an official MOE Student’s Book."]
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book."
+      ]
     },
     {
       "id": "connectplus-primary2-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 2",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 3,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; not an official MOE Student’s Book."]
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book."
+      ]
     },
     {
       "id": "connectplus-primary3-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_3_ابتدائي_ترم_1_ذاكرولي.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 3",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 6,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; OCR row ordering needs visual confirmation."]
+      "notes": [
+        "Commercial El-Moasser guide; OCR row ordering needs visual confirmation."
+      ]
     },
     {
       "id": "connectplus-primary4-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 4",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 7,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; not an official MOE Student’s Book."]
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book."
+      ]
     },
     {
       "id": "connectplus-primary5-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_5_ابتدائي_ترم_1_ذاكرولي.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 5",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 6,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; exact unit names and numbering unresolved."]
+      "notes": [
+        "Commercial El-Moasser guide; exact unit names and numbering unresolved."
+      ]
     },
     {
       "id": "connectplus-primary6-supplement",
       "sourceFile": "المعاصر_كونكت_بلس_6_ابتدائي_ترم_1_ذاكرولي.pdf",
-      "pathwayId": "egypt-primary-advanced",
+      "pathwayId": "commercial-reference-guides",
       "grade": "Primary 6",
       "term": 1,
       "documentType": "commercial_supplement",
       "publisherClass": "commercial",
       "contentsPdfPage": 11,
       "status": "needs_review",
-      "notes": ["Commercial El-Moasser guide; not an official MOE Student’s Book."]
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book."
+      ]
+    },
+    {
+      "id": "helloplus-prep1-supplement",
+      "sourceFile": "المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Preparatory 1",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 4,
+      "units": [
+        {
+          "number": 1,
+          "title": "Friends matter",
+          "startPdfPage": 8
+        },
+        {
+          "number": 2,
+          "title": "The world of work",
+          "startPdfPage": 48
+        },
+        {
+          "number": 3,
+          "title": "Activities",
+          "startPdfPage": 91
+        },
+        {
+          "number": 4,
+          "title": "Shopping well",
+          "startPdfPage": 160
+        },
+        {
+          "number": 5,
+          "title": "Feeling well",
+          "startPdfPage": 196
+        },
+        {
+          "number": 6,
+          "title": "Literature: The Prince and the Pauper — Part A",
+          "startPdfPage": 251
+        }
+      ],
+      "status": "needs_review",
+      "notes": [
+        "Commercial supplementary guide; not the official MOE Student’s Book.",
+        "Project 1 is listed at PDF p157; exact unit/project boundary needs visual confirmation."
+      ]
     }
   ]
 }
