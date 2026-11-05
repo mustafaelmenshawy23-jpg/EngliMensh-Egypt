@@ -50,3 +50,4 @@ The source PDF set is present in the repository. The extraction pipeline is read
 - [Pass 15 visual review](docs/visual-ocr-review-pass15.md) — 20 rendered pages from 14 books.
 - [Pass 16 visual review](docs/visual-ocr-review-pass16.md) — 20 rendered pages from 9 books; recovery candidates are preserved separately and remain academically unverified.
 - [Pass 17 OCR visual review](docs/visual-ocr-review-pass17.md) — 20 pages from 10 books visually inspected at 240 DPI; four blank renders retained as blank observations. Candidates remain academically unverified.
+- [Pass 18 OCR review preparation](docs/ocr-quality-audit-pass18.md) — 20 new candidate pages from 5 books; awaiting 240-DPI visual inspection.
