@@ -1,0 +1,49 @@
+name: Render blank-page candidates at high resolution
+
+on:
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: Rendering resolution for visual confirmation
+        required: true
+        type: choice
+        options:
+          - "240"
+          - "300"
+        default: "240"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: englimensh-blank-page-review
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out repository and hydrate Git LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull original PDFs
+        run: git lfs pull
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PyMuPDF
+        run: python -m pip install --upgrade pymupdf
+      - name: Render empty-OCR candidates
+        env:
+          REVIEW_DPI: ${{ inputs.dpi }}
+        run: python scripts/render-blank-candidates.py
+      - name: Upload high-resolution review pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-blank-candidates-${{ inputs.dpi }}dpi
+          path: blank-candidate-pages/
+          if-no-files-found: error
+          retention-days: 14
