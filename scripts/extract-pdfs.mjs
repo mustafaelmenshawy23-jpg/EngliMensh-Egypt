@@ -1,12 +1,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { createRequire } from 'node:module';
-import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
 const BOOKS_DIR = path.join(ROOT, 'public', 'books');
 const OUTPUT_DIR = path.join(ROOT, 'src', 'data', 'extracted');
-const require = createRequire(import.meta.url);
 
 async function walk(dir) {
   let entries;
@@ -80,7 +77,7 @@ async function main() {
           .filter((item) => typeof item.str === 'string')
           .map((item) => item.str)
           .join(' ')
-          .replace(/[\\t ]+/g, ' ')
+          .replace(/[\t ]+/g, ' ')
           .trim();
 
         if (text.length >= 20) extractedPages += 1;
@@ -112,7 +109,7 @@ async function main() {
     }
   }
 
-  await fs.writeFile(pagesFile, pageLines.length ? pageLines.join('\\n') + '\\n' : '', 'utf8');
+  await fs.writeFile(pagesFile, pageLines.length ? pageLines.join('\n') + '\n' : '', 'utf8');
   const manifest = {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
@@ -129,8 +126,8 @@ async function main() {
       pagesNeedingOcrOrReview: books.reduce((sum, book) => sum + (book.emptyOrScannedPages || 0), 0)
     }
   };
-  await fs.writeFile(manifestFile, JSON.stringify(manifest, null, 2) + '\\n', 'utf8');
-  console.log('\\nExtraction finished. Review manifest.json before using any extracted content.');
+  await fs.writeFile(manifestFile, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+  console.log('\nExtraction finished. Review manifest.json before using any extracted content.');
   console.log(JSON.stringify(manifest.totals, null, 2));
 }
 
