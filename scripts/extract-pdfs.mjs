@@ -77,7 +77,7 @@ async function main() {
           .filter((item) => typeof item.str === 'string')
           .map((item) => item.str)
           .join(' ')
-          .replace(/[\t ]+/g, ' ')
+          .replace(/\s+/g, ' ')
           .trim();
 
         if (text.length >= 20) extractedPages += 1;
