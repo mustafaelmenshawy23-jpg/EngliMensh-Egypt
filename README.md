@@ -45,3 +45,7 @@ See [the extraction workflow](docs/BOOK_EXTRACTION_WORKFLOW.md) for Git LFS hydr
 
 ## Current status
 The source PDF set is present in the repository. The extraction pipeline is ready to run locally; extracted content is not yet generated or academically approved.
+
+## Visual OCR review passes
+- [Pass 15 visual review](docs/visual-ocr-review-pass15.md) — 20 rendered pages from 14 books.
+- [Pass 16 visual review](docs/visual-ocr-review-pass16.md) — 20 rendered pages from 9 books; recovery candidates are preserved separately and remain academically unverified.
