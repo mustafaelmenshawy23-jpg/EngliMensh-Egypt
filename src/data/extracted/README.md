@@ -21,3 +21,6 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-assets-pass9.jsonl` contains 13 additional visual/structural review records from the 240-DPI empty-OCR candidate render (workflow run 42119862008).
 - `docs/visual-ocr-review-pass9.md` records the visual triage, source filenames, 1-based PDF pages, and limitations.
 - These records remain `needs_review`; they do not constitute academic approval or a fresh OCR transcription.
+
+
+- `visual-assets-pass10.jsonl`: additional visually verified unit/theme opener titles, official Primary 1 cover metadata, and Hello Plus section-cover metadata from the 73-page visual review set. All records remain `needs_review`; see `docs/visual-ocr-review-pass10.md`.
