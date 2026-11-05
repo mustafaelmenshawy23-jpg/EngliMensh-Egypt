@@ -66,3 +66,25 @@ A first visual sample of 15 flagged pages across six locally available Primary P
 - Student-writing templates should remain available as page assets, even when they contain little extractable text.
 - Illustrated vocabulary, listening, dialogue, and assessment pages are priority candidates for targeted OCR/manual capture.
 - No page was promoted to academically verified content during this visual spot-check.
+
+
+## Second visual inspection pass — nine additional page renderings
+
+The original PDFs were rendered locally and inspected at page level. This pass confirms the following:
+
+| Source PDF | PDF page | Finding | Recommended disposition |
+|---|---:|---|---|
+| `English_language_prim3_t1 (1).pdf` | 45 | Unit exercise: picture-based listening/matching (transport/buildings) | Recover the exercise prompt and labels; retain image references |
+| same | 69 | Vocabulary for feelings plus pair dialogue | Recover vocabulary and dialogue; high priority |
+| `English_language_prim2_t1 (1).pdf` | 32 | “Classroom Actions” vocabulary with photo prompts | Recover labels/instructions; high priority |
+| `English_prim1_t1_Assmt (1).pdf` | 42 | Weekly assessment: unscramble and reorder tasks with picture cues | Recover assessment text and preserve picture-to-item mapping |
+| `English_prim5_t1_Assmt (1).pdf` | 1 | Primary 5 English Language Performance Tasks and Assessment cover, First Term | Extract metadata from cover; do not treat as lesson body |
+| same | 3 | Rendered page appears blank | Mark as probable blank only after full-resolution/original check |
+| `English_language_prim4_t1 (1).pdf` | 117 | “Notes” ruled writing page | Structural writing template; no OCR retry needed |
+| same | 118–119 | Ruled writing pages | Structural writing templates; retain page sequence and provenance |
+
+### Corrected triage conclusion
+
+The initial 73-page queue remains intact. This pass visually confirmed that several low-text pages are intentional document structure, while at least four sampled pages contain real instructional or assessment material that OCR failed to capture adequately. The machine output is not overwritten in this pass. These pages remain `needs_review` until a verified manual transcription or improved OCR record is added with the same source filename and PDF page number.
+
+**Next targeted work:** inspect the remaining flagged pages in the secondary/preparatory PDFs and remaining commercial guides; prioritize content-bearing pages over covers, blank writing templates, and decorative end pages.
