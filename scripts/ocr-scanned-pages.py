@@ -18,7 +18,7 @@ DPI = int(os.environ.get("OCR_DPI", "150"))
 LANG = os.environ.get("OCR_LANG", "eng+ara")
 WORKERS = max(1, min(int(os.environ.get("OCR_WORKERS", "6")), 8))
 CHECKPOINT_EVERY = max(1, int(os.environ.get("OCR_CHECKPOINT_EVERY", "25")))
-TIMEOUT = max(10, int(os.environ.get("OCR_PAGE_TIMEOUT", "20")))
+TIMEOUT = max(10, int(os.environ.get("OCR_PAGE_TIMEOUT", "30")) )
 
 def save_pages(records):
     temp = PAGES.with_suffix(".jsonl.tmp")
