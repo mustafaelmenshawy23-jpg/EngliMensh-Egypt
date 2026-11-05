@@ -14,7 +14,26 @@ DPI = int(os.environ.get("OCR_DPI", "180"))
 LANG = os.environ.get("OCR_LANG", "eng+ara")
 WORKERS = int(os.environ.get("OCR_WORKERS", "3"))
 
-records = [json.loads(line) for line in PAGES.read_text(encoding="utf-8").splitlines() if line.strip()]
+raw_pages = PAGES.read_text(encoding="utf-8")
+decoder = json.JSONDecoder()
+records = []
+cursor = 0
+while cursor < len(raw_pages):
+    while cursor < len(raw_pages) and raw_pages[cursor].isspace():
+        cursor += 1
+    if cursor >= len(raw_pages):
+        break
+    try:
+        record, cursor = decoder.raw_decode(raw_pages, cursor)
+    except json.JSONDecodeError as exc:
+        preview = raw_pages[max(0, exc.pos - 80):min(len(raw_pages), exc.pos + 120)]
+        raise RuntimeError(f"Cannot parse pages.jsonl near character {exc.pos}: {exc.msg}; preview={preview!r}") from exc
+    if not isinstance(record, dict):
+        raise RuntimeError("pages.jsonl contains a non-object record")
+    records.append(record)
+if not records:
+    raise RuntimeError("pages.jsonl contains no page records")
+print(f"Loaded {len(records)} valid page records from {PAGES.name}", flush=True)
 todo = [i for i, r in enumerate(records) if r.get("extractionStatus") == "empty_or_scanned_needs_ocr"]
 print(f"OCR queue: {len(todo)} pages; languages={LANG}; dpi={DPI}; workers={WORKERS}", flush=True)
 
