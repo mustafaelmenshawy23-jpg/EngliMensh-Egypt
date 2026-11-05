@@ -75,14 +75,15 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
-          python3 -m pip install --upgrade pymupdf
+          python3 -m venv .venv
+          .venv/bin/pip install --upgrade pymupdf
 
       - name: OCR pages without extractable text
         env:
           OCR_LANG: eng+ara
           OCR_DPI: "180"
           OCR_WORKERS: "3"
-        run: python3 scripts/ocr-scanned-pages.py
+        run: .venv/bin/python scripts/ocr-scanned-pages.py
 
       - name: Validate provenance and review status
         run: npm run validate:extraction
