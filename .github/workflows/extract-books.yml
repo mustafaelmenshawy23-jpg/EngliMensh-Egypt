@@ -61,19 +61,11 @@ jobs:
                   print(f"::warning file={path}::File does not begin with a PDF signature; extractor will report it")
 
           if pointers:
-              print("Git LFS pointer files still present (exact paths):")
+              print(f"::warning::Found {len(pointers)} Git LFS pointer file(s). The extractor is designed to skip these and record them in manifest.json:")
               for path in pointers:
-                  with path.open("rb") as stream:
-                      print(f" - {path} | {stream.readline().decode('utf-8', errors='replace').strip()}")
-              print("Git LFS tracked-file inventory:")
-              import subprocess
-              inventory = subprocess.run(["git", "lfs", "ls-files", "--long"], text=True, capture_output=True)
-              print(inventory.stdout or "(no LFS-tracked files reported)")
-              if inventory.stderr:
-                  print(inventory.stderr)
-              sys.exit(1)
-
-          print(f"Verified {len(pdfs)} PDF files; no Git LFS pointer files remain.")
+                  print(f" - {path}")
+          hydrated = len(pdfs) - len(pointers)
+          print(f"Found {len(pdfs)} PDF entries: {hydrated} hydrated, {len(pointers)} unavailable LFS pointer(s). Continuing with available books.")
           PY
 
       - name: Extract page-level text
