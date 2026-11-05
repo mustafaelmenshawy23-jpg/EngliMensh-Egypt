@@ -88,3 +88,13 @@ The original PDFs were rendered locally and inspected at page level. This pass c
 The initial 73-page queue remains intact. This pass visually confirmed that several low-text pages are intentional document structure, while at least four sampled pages contain real instructional or assessment material that OCR failed to capture adequately. The machine output is not overwritten in this pass. These pages remain `needs_review` until a verified manual transcription or improved OCR record is added with the same source filename and PDF page number.
 
 **Next targeted work:** inspect the remaining flagged pages in the secondary/preparatory PDFs and remaining commercial guides; prioritize content-bearing pages over covers, blank writing templates, and decorative end pages.
+
+## Render the review pages without re-uploading books
+
+The repository now includes a dedicated GitHub Actions workflow:
+`.github/workflows/render-ocr-review-pages.yml`.
+
+Run **Actions → Render OCR review pages → Run workflow**. It uses the original PDFs already stored in `public/books/`, renders only the 73 queued pages, and uploads an `englimensh-ocr-review-pages` artifact containing page images plus a manifest. This does not rerun OCR and does not require uploading the books again.
+
+The rendered images are evidence for visual triage only. They do not automatically change any page's `needs_review` status or approve curriculum content.
+
