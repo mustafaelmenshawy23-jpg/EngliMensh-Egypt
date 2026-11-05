@@ -1,0 +1,49 @@
+name: Render Pass 11 short OCR candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: Render resolution
+        required: true
+        type: choice
+        options:
+          - "240"
+          - "300"
+        default: "240"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-pass11-short-ocr
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository and hydrate source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull Git LFS objects
+        run: git lfs pull
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PDF renderer
+        run: python -m pip install --no-cache-dir pymupdf
+      - name: Render targeted Pass 11 pages
+        env:
+          RENDER_DPI: ${{ inputs.dpi }}
+        run: python scripts/render-pass11-short-ocr.py
+      - name: Upload page images and manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-pass11-short-ocr-${{ inputs.dpi }}dpi
+          path: review-pages-pass11/
+          if-no-files-found: error
+          retention-days: 14
