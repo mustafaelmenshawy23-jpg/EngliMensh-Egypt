@@ -1,37 +1,32 @@
 # Source Book Index — Structural Validation Report
 
-- Index: `data/curriculum/source-book-index.draft.json`
-- Schema: `data/curriculum/source-book-index.schema.json`
-- Validation date: 2026-11-06
-- Pathways: 6
-- Book records: 15
-- Unique book IDs: 15
-- Unique pathway IDs: 6
-- Records with status other than `needs_review`: 0
-- Structural validation errors: 0
+**Validation date:** 2026-11-06  
+**Index:** `data/curriculum/source-book-index.draft.json`  
+**Schema:** `data/curriculum/source-book-index.schema.json`
 
-## Checks performed
+## Latest structural check
 
-- JSON parsed successfully.
-- Required top-level collections are present.
-- Book IDs are unique.
-- Pathway IDs are unique.
-- Every book points to an existing pathway.
-- Every book has a source filename.
-- Every unit has an integer unit number and a title.
-- Known PDF page references are positive 1-based integers.
-- All book records remain `needs_review`.
+- JSON parsing: passed.
+- Book records: 21.
+- Pathway records: 6.
+- Unique book IDs: passed.
+- Every book references an existing pathway: passed.
+- Every book has a source filename: passed.
+- Unit record shape and positive/null PDF page references: passed.
+- All book records remain `needs_review`: passed.
+- Structural errors: 0.
 
-## Outcome
+## Scope added in this pass
 
-No structural errors were found by the checks listed above.
+Added official Egyptian MOE Primary 1–6 Term 1 Student’s Book records. The index now includes Primary 1–6, Preparatory 1–3, Secondary 1–3, Baccalaureate Year 2 first-language parts 1–2, and commercial reference guides.
 
-This is a structural validation pass, not a claim that an external JSON Schema validator was run, nor that curriculum content was academically verified.
+Primary 6 remains intentionally sparse: its available contents excerpt did not establish reliable unit numbering and exact titles. Primary 1–5 entries preserve only titles and details captured in the reviewed contents excerpts; unverified start pages remain null.
 
-## Classification correction
+## Important limitations
 
-Commercial El-Moasser Connect Plus and Hello Plus books are now assigned to the separate `commercial-reference-guides` category. They are not automatically classified as the official MOE Advanced pathway merely because the commercial guide title contains “Plus”.
-
-## Release restriction
-
-Do not connect this draft index to production curriculum navigation or generate questions from it until source-page review is complete. Keep official MOE books, Baccalaureate materials, commercial guides, assessment books, and readers as distinct document types.
+- This is structural validation, not academic approval.
+- OCR output and extracted contents are not treated as verified curriculum approval.
+- No external JSON Schema validator was run in this check.
+- No question bank content was imported into the application.
+- The index remains a draft and is not connected to runtime curriculum navigation.
+- The missing Prep 2 Performance Tasks PDF remains deferred until the 33 available books are completed.
