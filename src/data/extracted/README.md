@@ -13,3 +13,4 @@ Generated output is source text, not approved curriculum content. All records mu
 - Each record preserves `source`, `sourceFilename`, and the 1-based physical `pdfPage`.
 - These records are supplemental to `pages.jsonl`; they do not overwrite machine extraction output or automatically enter lesson/question-bank data.
 - Every record remains `transcriptionStatus: candidate` and `reviewStatus: needs_review`. No answer keys are inferred; unresolved source ambiguities are explicitly noted.
+- `visual-assets-pass8.jsonl`: page-level index of story illustrations, project posters, and illustrated reader title pages that must remain linked to adjacent source text; these are visual assets, not reconstructed lesson text.
