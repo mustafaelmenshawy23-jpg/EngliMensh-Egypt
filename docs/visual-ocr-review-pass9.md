@@ -24,7 +24,6 @@
 | `English_language_prim3_t1 (1).pdf` | 1 | Official Primary 3 cover |
 | `English_language_prim4_t1 (1).pdf` | 1 | Official Primary 4 cover |
 | `English_language_prim5_t1 (1).pdf` | 1 | Official Primary 5 cover |
-| `English_language_prep3_t1 (1).pdf` | 3 | Official Preparatory 3 cover |
 | `المعاصر_كونكت_بلس_1_ابتدائي_ترم_1_ذاكرولي1.pdf` | 4 | Theme 1 opener: “Who am I?” |
 | Same Connect Plus Primary 1 source | 216 | El-Moasser Homework Interactive illustrated cover |
 | Same Connect Plus Primary 1 source | 270 | Illustrated Units 1–6 phonics reference chart |
@@ -60,3 +59,58 @@ Useful observations:
 - Covers, theme openers, and reader title pages produce fragmented OCR. Keep the image and metadata; do not treat fragments as verified curriculum text.
 
 No OCR output from this spot-check has been promoted as academically approved lesson text. The OCR pass is diagnostic only.
+
+
+## 240-DPI page-by-page disposition — follow-up visual pass
+
+All 41 rendered candidates were checked against the manifest in their original 1-based physical PDF page order. This is a visual disposition only; it does not establish that a page is intentionally blank in the source edition.
+
+### Probable blank / unprinted at 240 DPI
+
+The following pages appear uniformly white in the supplied 240-DPI render, with no readable printed content:
+- `Eng-L1-EB-Part1 (1).pdf`: p.2
+- `Eng-L1-EB-Part2 (1).pdf`: p.2
+- `Eng-L2-EB-Part1 (1).pdf`: p.37
+- `English_1sec_t1 (1).pdf`: pp.101, 104
+- `English_Prep1_T1 (1).pdf`: p.3
+- `English_Primary6_T1 (1).pdf`: p.2
+- `English_language_2sec_t1 (1).pdf`: p.92
+- `English_language_Sec3_tr1 (1).pdf`: pp.108, 153, 254, 285
+- `English_language_prep2_t1 (1).pdf`: p.3
+- `English_language_prep3_t1 (1).pdf`: p.3
+- `English_prim1_t1_Assmt (1).pdf`: p.74
+- `English_prim5_t1_Assmt (1).pdf`: p.3
+
+These are recorded as probable blank/unprinted candidates only. Do not silently delete them or call them confirmed blank without checking the original PDF page and surrounding pagination.
+
+### Branded separator / low-text pages
+
+- `Eng-L2-EB-Part1 (1).pdf`, p.96: solid yellow field with institutional seals near the bottom; no lesson text visible.
+- `English_prim1_t1_Assmt (1).pdf`, p.74: the image is a solid yellow branded page with seals, not a plain white page. **Correction:** this candidate is a branded separator, not a blank white page.
+- `English_prim4_t1_Assmt (1).pdf`, p.66: solid dark-blue branded page with seals; no lesson text visible.
+- `English_prim5_t1_Assmt (1).pdf`, p.74: solid teal branded page with seals; no lesson text visible.
+
+Retain these as structural/front-or-back-matter pages, not curriculum lesson text.
+
+### Confirmed visual structures in this pass
+
+- `English_language_prim4_t1 (1).pdf`, pp.117–119: Notes pages.
+- Official Primary 2, 3, 4, and 5 covers: respective source PDFs, p.1.
+- Connect Plus Primary 1, p.4 and Connect Plus Primary 2, p.4: illustrated Theme 1 openers (“Who am I?”).
+- Connect Plus Primary 1, p.216: Homework Interactive cover.
+- Connect Plus Primary 1, p.270: phonics chart; use the separately recorded manual transcription for its graphemes, phonemes, and examples.
+- Connect Plus Primary 4, p.222 and Primary 6, p.175: reader title pages.
+- El-Moasser Hello Plus Prep 1, p.1: commercial coursebook cover.
+- El-Moasser Hello Plus Prep 1, pp.292 and 370: two different workbook/section covers (“A Week is Enough” and “Master Your Skills”).
+
+### Correction to an earlier pass-9 label
+
+The earlier pass-9 report and JSONL incorrectly described `English_language_prep3_t1 (1).pdf`, p.3 as an official cover. The 240-DPI image is uniformly white with no visible cover or readable text. That label has been withdrawn; the page is now classified only as a probable blank/unprinted candidate pending source-PDF verification.
+
+### Scope and quality guardrails
+
+- The 41-page list is the workflow's high-resolution empty-text candidate set, not all pages from the 33 available books.
+- White render ≠ proven blank page; solid-color seal pages ≠ lesson content.
+- No OCR fragments from these pages are promoted to curriculum text.
+- All new/updated records retain `needs_review`; none is academically approved.
+- `Performance Tasks Prep 2-OnlineMaterials.PDF` remains postponed and excluded.
