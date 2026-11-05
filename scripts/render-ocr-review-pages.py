@@ -32,16 +32,11 @@ def parse_queue():
         filename = cells[0].strip("`")
         if not filename.lower().endswith(".pdf"):
             continue
-        flagged = parse_pages(cells[1])
         empty = set(parse_pages(cells[2]))
         nonempty = set(parse_pages(cells[3]))
+        flagged = sorted(empty | nonempty)
         for page in flagged:
-            if page in empty:
-                kind = "empty_ocr"
-            elif page in nonempty:
-                kind = "nonempty_but_flagged"
-            else:
-                kind = "flagged_unclassified"
+            kind = "empty_ocr" if page in empty else "nonempty_but_flagged"
             rows.append({"sourceFilename": filename, "pdfPage": page, "queueClass": kind})
     unique = {(r["sourceFilename"], r["pdfPage"]): r for r in rows}
     return sorted(unique.values(), key=lambda r: (r["sourceFilename"].casefold(), r["pdfPage"]))
