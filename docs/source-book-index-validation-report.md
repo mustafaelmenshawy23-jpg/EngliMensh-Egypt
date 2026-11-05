@@ -10,24 +10,36 @@
 - Book/document records: 33.
 - Pathway records: 7.
 - Unique record IDs: passed.
-- Every record references an existing pathway: passed.
-- Every record remains `needs_review`: passed.
+- Pathway references: passed.
+- Review-state policy: passed.
 - Unit record shape and PDF page values: passed.
 - Structural errors: 0.
 
-## Latest contents expansion
+## Latest source-content refinement
 
-Expanded the commercial supplementary contents metadata for El-Moasser Connect Plus Primary 1, 2, 3, 4 and 6, plus Hello Plus Preparatory 3. Unit titles and page references are included only where present in the extracted contents notes. The Primary 3 mapping carries an explicit OCR-order warning; Hello Plus Prep 3 unit page references remain null because the contents layout was not reliable.
+Primary 5 official Student’s Book:
+- Transcribed all six scope-and-sequence unit titles from physical PDF pages 3–5.
+- Added language focus and integrated activity labels where visible.
+- Kept unit start pages null because those pages do not establish exact starts.
 
-Primary 5 commercial guide remains intentionally without structured unit records because the available contents excerpt did not establish dependable unit numbering and exact titles. The El-Moasser Hello Plus Prep 2 contents also remain unresolved due to watermark-dominated OCR.
+Primary 6 official Student’s Book:
+- Expanded to six unit records using the scope-and-sequence on physical PDF page 4 and learning outcomes on page 5.
+- Added available language-focus labels.
+- Unit 2 heading is OCR-damaged ("Out Natare"); it is explicitly flagged for visual verification and has not been silently corrected.
+- Unit start pages remain null.
 
-## Important limitations
+## Remaining data-quality work
 
-- This is structural validation, not academic approval.
-- Commercial guides remain classified as supplementary and separate from official MOE books.
-- OCR output is not academic approval; all records remain `needs_review`.
-- No question-bank content was imported into the application.
-- The index remains a draft and is not connected to runtime curriculum navigation.
+- Confirm OCR-damaged headings and spellings against rendered PDF page images.
+- Confirm exact unit start pages for Primary 1–6.
+- Primary 6 Unit 1 exact title is recorded as Time Management; remaining details should be visually checked.
+- Commercial Primary 5 unit structure and Hello Plus Prep 2 contents remain unresolved.
 - The missing Prep 2 Performance Tasks PDF remains deferred until the 33 available source books are completed.
-- No external JSON Schema validator was run in this check.
 
+## Limitations
+
+- Structural validation is not academic approval.
+- All records remain `needs_review`; OCR is not approval.
+- No question-bank content was imported into the app.
+- The index remains a draft and is not connected to runtime curriculum navigation.
+- No external JSON Schema validator was run in this check.
