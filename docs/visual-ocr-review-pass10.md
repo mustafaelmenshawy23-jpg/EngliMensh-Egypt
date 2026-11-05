@@ -41,3 +41,18 @@ The exact source filenames for the commercial supplements are preserved in the J
 ## Remaining verification
 
 The blank/low-content pages identified in prior passes remain candidates until checked against source PDFs and adjacent pagination. The 73-page visual queue remains a triage set, not a claim that all 73 pages are missing lesson text. The postponed `Performance Tasks Prep 2-OnlineMaterials.PDF` remains excluded.
+
+
+## Additional structural-page records
+
+A further visual pass adds the Secondary 3 ruled Notes pages and branded separator/closing pages that should remain in document structure but should not be treated as lesson text:
+
+| Source filename | PDF page | Visual disposition |
+|---|---:|---|
+| `English_language_Sec3_tr1 (1).pdf` | 281–283 | Ruled pages headed “Notes” |
+| `Eng-L2-EB-Part1 (1).pdf` | 96 | Yellow branded separator with institutional emblem |
+| `English_prim1_t1_Assmt (1).pdf` | 74 | Yellow branded closing page with emblems; not plain white |
+| `English_prim4_t1_Assmt (1).pdf` | 66 | Dark-blue branded closing page with emblems |
+| `English_prim5_t1_Assmt (1).pdf` | 74 | Teal branded closing page with emblems |
+
+These are structural page records, not evidence of missing lesson text. Their statuses remain `needs_review`.
