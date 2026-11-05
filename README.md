@@ -33,7 +33,7 @@ npm run extract:books
 npm run validate:extraction
 ```
 
-See [the extraction workflow](docs/BOOK_EXTRACTION_WORKFLOW.md) for Git LFS hydration, output fields, OCR flags, and academic review rules.
+See [the extraction workflow](docs/BOOK_EXTRACTION_WORKFLOW.md) for Git LFS hydration, output fields, OCR flags, and academic review rules. You can also run the GitHub Actions workflow **Extract source books** manually from the Actions tab; it hydrates Git LFS PDFs, extracts page text, validates source references, and publishes a 14-day artifact. It does not modify the repository or approve extracted content.
 
 ## Repository layout
 - `public/books/` — source PDF books
