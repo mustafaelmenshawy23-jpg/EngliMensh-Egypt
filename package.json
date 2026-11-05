@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "extract:books": "node scripts/extract-pdfs.mjs",
-    "validate:extraction": "node scripts/validate-extraction.mjs"
+    "validate:extraction": "node scripts/validate-extraction.mjs",
+    "validate:manual-recoveries": "node scripts/validate-manual-recoveries.mjs"
   },
   "devDependencies": {
     "vite": "^6.4.1",
