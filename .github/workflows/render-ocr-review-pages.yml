@@ -1,0 +1,43 @@
+name: Render OCR review pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-ocr-review-pages
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository and hydrate source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Pull Git LFS objects
+        run: git lfs pull
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PDF renderer
+        run: python -m pip install --no-cache-dir pymupdf
+
+      - name: Render flagged pages from the review queue
+        run: python scripts/render-ocr-review-pages.py
+
+      - name: Upload visual review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-ocr-review-pages
+          path: review-pages/
+          if-no-files-found: error
+          retention-days: 14
