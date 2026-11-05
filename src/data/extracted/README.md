@@ -26,3 +26,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-assets-pass10.jsonl`: additional visually verified unit/theme opener titles, official Primary 1 cover metadata, and Hello Plus section-cover metadata from the 73-page visual review set. All records remain `needs_review`; see `docs/visual-ocr-review-pass10.md`.
 
 - `ocr-quality-audit-pass11.jsonl`: 8 direct machine-OCR vs. visual-candidate comparisons and 20 short/fragmentary OCR pages for targeted review; all remain `needs_review`. See `docs/ocr-quality-audit-pass11.md`.
+
+- `visual-recoveries-pass12.jsonl`: 20 visually reviewed short/fragmentary OCR candidate pages rendered at 240 DPI in workflow run 42122614604; text and visual cues are recorded without overwriting machine OCR. Every record remains `needs_review`. See `docs/visual-ocr-review-pass12.md`.
