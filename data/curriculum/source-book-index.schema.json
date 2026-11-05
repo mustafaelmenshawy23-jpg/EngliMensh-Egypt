@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/blob/main/data/curriculum/source-book-index.schema.json",
+  "title": "EngliMensh Egypt Source Book Index",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "datasetStatus",
+    "sourceOfTruth",
+    "pageNumbering",
+    "approvalPolicy",
+    "pathways",
+    "books"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "datasetStatus": {
+      "type": "string",
+      "enum": [
+        "index_draft"
+      ]
+    },
+    "sourceOfTruth": {
+      "const": "original_uploaded_pdf_files"
+    },
+    "pageNumbering": {
+      "type": "object",
+      "required": [
+        "pdfPage",
+        "printedPage"
+      ],
+      "properties": {
+        "pdfPage": {
+          "type": "string"
+        },
+        "printedPage": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "approvalPolicy": {
+      "type": "object",
+      "required": [
+        "defaultStatus",
+        "ocrIsAcademicApproval",
+        "allowQuestionImportWhenNeedsReview",
+        "requireSourceFilename",
+        "requirePdfPage"
+      ],
+      "properties": {
+        "defaultStatus": {
+          "const": "needs_review"
+        },
+        "ocrIsAcademicApproval": {
+          "const": false
+        },
+        "allowQuestionImportWhenNeedsReview": {
+          "const": false
+        },
+        "requireSourceFilename": {
+          "const": true
+        },
+        "requirePdfPage": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "pathways": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "grades",
+          "officialSeries",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "grades": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "officialSeries": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "sourceFile",
+          "pathwayId",
+          "grade",
+          "documentType",
+          "publisherClass",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceFile": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pathwayId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "grade": {
+            "type": "string"
+          },
+          "term": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "documentType": {
+            "type": "string",
+            "enum": [
+              "student_book",
+              "commercial_supplement",
+              "assessment",
+              "reader"
+            ]
+          },
+          "publisherClass": {
+            "type": "string",
+            "enum": [
+              "official_moe",
+              "commercial"
+            ]
+          },
+          "contentsPdfPage": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "contentsPdfPages": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "number",
+                "title",
+                "startPdfPage"
+              ],
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "startPdfPage": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "concept": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "status": {
+            "const": "needs_review"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
