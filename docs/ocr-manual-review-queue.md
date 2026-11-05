@@ -97,4 +97,6 @@ The repository now includes a dedicated GitHub Actions workflow:
 Run **Actions → Render OCR review pages → Run workflow**. It uses the original PDFs already stored in `public/books/`, renders only the 73 queued pages, and uploads an `englimensh-ocr-review-pages` artifact containing page images plus a manifest. This does not rerun OCR and does not require uploading the books again.
 
 The rendered images are evidence for visual triage only. They do not automatically change any page's `needs_review` status or approve curriculum content.
+## Visual review pass 7
 
+The 73 queued pages were rendered successfully by workflow run #1 and visually triaged. See [visual-ocr-review-pass7.md](visual-ocr-review-pass7.md) for the page-by-page findings and dispositions. This is triage only: no page was academically approved, and all source records remain `needs_review`.
