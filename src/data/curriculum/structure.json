@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "appName": "EngliMensh",
+  "country": "Egypt",
+  "language": "en",
+  "stages": [
+    {
+      "id": "primary",
+      "name": "Primary",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "paths": [
+        {
+          "id": "general",
+          "name": "General",
+          "series": "Connect",
+          "status": "awaiting_books"
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "series": "Connect Plus",
+          "status": "awaiting_books"
+        }
+      ]
+    },
+    {
+      "id": "preparatory",
+      "name": "Preparatory",
+      "grades": [
+        1,
+        2,
+        3
+      ],
+      "paths": [
+        {
+          "id": "general",
+          "name": "General",
+          "series": "New Hello",
+          "status": "awaiting_books"
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "series": null,
+          "status": "reserved_empty"
+        }
+      ]
+    },
+    {
+      "id": "secondary",
+      "name": "Secondary",
+      "grades": [
+        1,
+        2,
+        3
+      ],
+      "paths": [
+        {
+          "id": "general",
+          "name": "General Secondary",
+          "series": "General Secondary",
+          "status": "awaiting_books"
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "series": null,
+          "status": "reserved_empty"
+        }
+      ]
+    },
+    {
+      "id": "egyptian-baccalaureate",
+      "name": "Egyptian Baccalaureate",
+      "grades": [],
+      "paths": [
+        {
+          "id": "standalone",
+          "name": "Egyptian Baccalaureate",
+          "series": null,
+          "status": "reserved_empty"
+        }
+      ]
+    }
+  ],
+  "contentRules": {
+    "sourceOfTruth": "uploaded_pdf_books_only",
+    "requireSourceFilename": true,
+    "requirePageReference": true,
+    "inventedCurriculumContentAllowed": false,
+    "defaultReviewStatus": "needs_review"
+  }
+}
