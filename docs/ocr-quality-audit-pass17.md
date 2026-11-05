@@ -1,6 +1,6 @@
 # Pass 17 — OCR quality review preparation
 
-- Candidate set: 20 pages across 9 source books.
+- Candidate set: 20 pages across 10 source books.
 - Source: the existing page-level extraction output; no source PDF or extracted page text is modified.
 - All candidates remain `needs_review`; this pass prepares high-resolution visual inspection and does not approve extracted text.
 - The postponed `Performance Tasks Prep 2-OnlineMaterials.PDF` remains excluded for the final dedicated step.
