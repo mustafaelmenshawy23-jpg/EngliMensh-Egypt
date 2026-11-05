@@ -1,0 +1,67 @@
+name: Extract source books
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_artifact:
+        description: Upload extracted page text and manifest as a workflow artifact
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extract-source-books
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out repository and hydrate Git LFS files
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Confirm source PDFs are hydrated
+        shell: bash
+        run: |
+          set -euo pipefail
+          find public/books -type f -iname '*.pdf' -print0 | while IFS= read -r -d '' file; do
+            if head -c 80 "$file" | grep -q 'git-lfs.github.com/spec'; then
+              echo "::error file=$file::Git LFS pointer was not hydrated"
+              exit 1
+            fi
+            if ! head -c 5 "$file" | grep -q '%PDF-'; then
+              echo "::warning file=$file::File does not begin with a PDF signature; extractor will report it"
+            fi
+          done
+
+      - name: Extract page-level text
+        run: npm run extract:books
+
+      - name: Validate provenance and review status
+        run: npm run validate:extraction
+
+      - name: Upload extraction results
+        if: ${{ inputs.publish_artifact }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-extracted-books
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          if-no-files-found: error
+          retention-days: 14
