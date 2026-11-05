@@ -81,10 +81,10 @@ jobs:
       - name: OCR pages without extractable text
         env:
           OCR_LANG: eng+ara
-          OCR_DPI: "130"
+          OCR_DPI: "150"
           OCR_WORKERS: "6"
           OCR_CHECKPOINT_EVERY: "25"
-          OCR_PAGE_TIMEOUT: "60"
+          OCR_PAGE_TIMEOUT: "20"
         run: .venv/bin/python scripts/ocr-scanned-pages.py
 
       - name: Validate provenance and review status
