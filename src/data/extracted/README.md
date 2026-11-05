@@ -14,3 +14,10 @@ Generated output is source text, not approved curriculum content. All records mu
 - These records are supplemental to `pages.jsonl`; they do not overwrite machine extraction output or automatically enter lesson/question-bank data.
 - Every record remains `transcriptionStatus: candidate` and `reviewStatus: needs_review`. No answer keys are inferred; unresolved source ambiguities are explicitly noted.
 - `visual-assets-pass8.jsonl`: page-level index of story illustrations, project posters, and illustrated reader title pages that must remain linked to adjacent source text; these are visual assets, not reconstructed lesson text.
+
+
+### High-resolution visual review
+
+- `visual-assets-pass9.jsonl` contains 13 additional visual/structural review records from the 240-DPI empty-OCR candidate render (workflow run 42119862008).
+- `docs/visual-ocr-review-pass9.md` records the visual triage, source filenames, 1-based PDF pages, and limitations.
+- These records remain `needs_review`; they do not constitute academic approval or a fresh OCR transcription.
