@@ -37,3 +37,32 @@ Generated from workflow run #9 artifact `englimensh-extracted-books`. This is te
 ## Processing rule
 
 Do not delete flagged records or fabricate replacement text. If a page is blank, retain its provenance and mark it blank only after visual confirmation. If it contains readable content, retry OCR with a suitable language, DPI, and segmentation profile while retaining the original PDF filename and 1-based page number.
+
+
+## Visual spot-check — locally available Primary PDFs
+
+A first visual sample of 15 flagged pages across six locally available Primary PDFs was inspected. This is a spot-check only; it does not clear the remaining flagged pages.
+
+| Source PDF | PDF page | Visual finding | Handling |
+|---|---:|---|---|
+| `English_language_prim3_t1 (1).pdf` | 1 | Primary 3, Term 1 cover | Preserve cover metadata; OCR not required for body text |
+| same | 45 | Illustrated listening/matching exercise | Content-bearing page; OCR retry or manual transcription required |
+| same | 69 | Vocabulary/emotions exercise and pair dialogue | Content-bearing page; OCR retry or manual transcription required |
+| `English_language_prim4_t1 (1).pdf` | 1 | Primary 4, Term 1 cover | Preserve cover metadata |
+| same | 117–119 | Ruled writing/practice pages, including a “My Story” prompt | Do not classify as missing book content; retain page references and identify as student-writing templates |
+| `English_language_prim2_t1 (1).pdf` | 1 | Primary 2, Term 1 cover | Preserve cover metadata |
+| same | 32 | Lesson 1 classroom-actions vocabulary with pictures | Content-bearing page; OCR retry or manual transcription required |
+| `English_language_prim1_t1.pdf` | 1 | Primary 1, Term 1 cover | Preserve cover metadata |
+| `English_prim1_t1_Assmt (1).pdf` | 42 | Weekly assessment worksheet with picture-based prompts | Content-bearing assessment page; OCR retry or manual transcription required |
+| same | 74 | Decorative closing/back page | No lesson text expected; retain provenance |
+| `English_prim5_t1_Assmt (1).pdf` | 1 | Primary 5 English Language Performance Tasks and Assessment cover | Preserve title/grade/term metadata |
+| same | 3 | Appears visually blank in the inspected rendering | Confirm against original before marking blank |
+| same | 74 | Decorative closing/back page | No lesson text expected; retain provenance |
+
+### What this changes
+
+- A flagged page is not automatically a missing-content defect.
+- Covers and decorative end pages should be represented as document metadata/structural pages, not forced into lesson text.
+- Student-writing templates should remain available as page assets, even when they contain little extractable text.
+- Illustrated vocabulary, listening, dialogue, and assessment pages are priority candidates for targeted OCR/manual capture.
+- No page was promoted to academically verified content during this visual spot-check.
