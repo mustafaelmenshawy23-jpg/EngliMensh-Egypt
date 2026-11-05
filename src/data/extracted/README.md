@@ -34,3 +34,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-recoveries-pass13.jsonl`: 20 visually inspected candidate pages rendered at 240 DPI in workflow run 42123958214. Includes visible contents metadata, reading/comprehension pages, grammar pages, and picture-supported assessment pages. All remain `needs_review`; see `docs/visual-ocr-review-pass13.md`.
 
 - `ocr-quality-audit-pass14.jsonl`: 20 additional OCR-quality candidates across 8 books, focusing on fragmented dictation grids, skill-assessment layouts, phonics/vocabulary pages, and unit headings. All remain `needs_review`; render with `.github/workflows/render-pass14-quality-audit.yml`. See `docs/ocr-quality-audit-pass14.md`.
+
+- `visual-recoveries-pass14.jsonl`: 20 visually inspected pages rendered at 240 DPI in workflow run 42125253453. Includes dictation grids, vocabulary/phonics pages, unit openers, structural pages, and illustrated reader title pages. All records remain `needs_review`; see `docs/visual-ocr-review-pass14.md`.
