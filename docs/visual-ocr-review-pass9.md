@@ -78,7 +78,6 @@ The following pages appear uniformly white in the supplied 240-DPI render, with 
 - `English_language_Sec3_tr1 (1).pdf`: pp.108, 153, 254, 285
 - `English_language_prep2_t1 (1).pdf`: p.3
 - `English_language_prep3_t1 (1).pdf`: p.3
-- `English_prim1_t1_Assmt (1).pdf`: p.74
 - `English_prim5_t1_Assmt (1).pdf`: p.3
 
 These are recorded as probable blank/unprinted candidates only. Do not silently delete them or call them confirmed blank without checking the original PDF page and surrounding pagination.
