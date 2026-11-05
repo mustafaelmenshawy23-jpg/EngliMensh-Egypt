@@ -8,7 +8,7 @@ catch {
   console.error('Missing pages.jsonl. Run npm run extract:books first.');
   process.exit(1);
 }
-const lines = content.split(/\\r?\\n/).filter(Boolean);
+const lines = content.split(/\r?\n/).filter(Boolean);
 let errors = 0;
 for (let i = 0; i < lines.length; i += 1) {
   let page;
