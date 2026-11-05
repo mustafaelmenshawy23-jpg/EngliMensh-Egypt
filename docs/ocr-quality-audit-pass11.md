@@ -25,7 +25,7 @@ Eight pages already manually inspected in Pass 7 were cross-checked against thei
 
 ## Additional short/fragmentary OCR candidates
 
-The JSONL sidecar records 19 further pages where OCR is short or visibly fragmented despite capturing an activity instruction, vocabulary prompt, or assessment task. These are prioritized for original-page rendering and comparison, not automatically declared failures:
+The JSONL sidecar records 20 further pages where OCR is short or visibly fragmented despite capturing an activity instruction, vocabulary prompt, or assessment task. These are prioritized for original-page rendering and comparison, not automatically declared failures:
 
 - Official Primary 1: `English_language_prim1_t1.pdf`, pp.13, 30, 69, 78, 82, 99, 102, 108.
 - Official Primary 2: `English_language_prim2_t1 (1).pdf`, pp.9, 15, 90.
