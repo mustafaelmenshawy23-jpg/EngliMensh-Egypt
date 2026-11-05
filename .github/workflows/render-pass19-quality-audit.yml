@@ -1,0 +1,43 @@
+name: Render Pass 19 OCR quality candidates
+on:
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: Render resolution
+        required: true
+        type: choice
+        options: ["240","300"]
+        default: "240"
+permissions:
+  contents: read
+concurrency:
+  group: render-pass19-quality
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout and hydrate source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull Git LFS objects
+        run: git lfs pull
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install renderer
+        run: python -m pip install --no-cache-dir pymupdf
+      - name: Render quality candidates
+        env:
+          RENDER_DPI: ${{ inputs.dpi }}
+        run: python scripts/render-pass19-quality-audit.py
+      - name: Upload review images
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-pass19-quality-${{ inputs.dpi }}dpi
+          path: review-pages-pass19/
+          if-no-files-found: error
+          retention-days: 14
