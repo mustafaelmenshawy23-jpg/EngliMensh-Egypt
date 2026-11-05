@@ -105,3 +105,6 @@ This is a first visual triage pass over the rendered page images. It identifies 
 - Recover text and picture-to-item associations from the priority instructional pages.
 - Inspect neighboring pages for context around full-page story illustrations and reader title pages.
 - Update page-level extraction records with exact source filename and PDF page number; do not overwrite source evidence or invent missing text.
+## Recovered text candidates
+
+A separate file records full-resolution visual transcriptions for the highest-priority instructional pages: [manual-ocr-transcriptions-pass7.md](manual-ocr-transcriptions-pass7.md). These are transcription candidates only; academic approval remains pending.
