@@ -30,3 +30,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-recoveries-pass12.jsonl`: 20 visually reviewed short/fragmentary OCR candidate pages rendered at 240 DPI in workflow run 42122614604; text and visual cues are recorded without overwriting machine OCR. Every record remains `needs_review`. See `docs/visual-ocr-review-pass12.md`.
 
 - `ocr-quality-audit-pass13.jsonl`: 20 heuristic OCR-quality candidates from the 5,626-page extraction artifact (3 replacement-character pages and 17 mixed-script/fragmented OCR pages); all remain `needs_review`. See `docs/ocr-quality-audit-pass13.md`.
+
+- `visual-recoveries-pass13.jsonl`: 20 visually inspected candidate pages rendered at 240 DPI in workflow run 42123958214. Includes visible contents metadata, reading/comprehension pages, grammar pages, and picture-supported assessment pages. All remain `needs_review`; see `docs/visual-ocr-review-pass13.md`.
