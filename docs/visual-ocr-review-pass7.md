@@ -108,3 +108,24 @@ This is a first visual triage pass over the rendered page images. It identifies 
 ## Recovered text candidates
 
 A separate file records full-resolution visual transcriptions for the highest-priority instructional pages: [manual-ocr-transcriptions-pass7.md](manual-ocr-transcriptions-pass7.md). These are transcription candidates only; academic approval remains pending.
+
+## Visual review pass 8 — full contact-sheet audit
+
+All seven contact sheets (73 rendered pages) were reviewed again as a complete set. This pass adds a visual-asset disposition layer; it does not treat illustrations or theme openers as failed text extraction.
+
+### Corrections and additional observations
+
+- `English_language_prim4_t1 (1).pdf` p.117 is a **Notes** page, not a “My Story” prompt. The prior queue note that mentioned “My Story” was overbroad; no such prompt is visible on the rendered p.117 image.
+- `English_language_Sec3_tr1 (1).pdf` pp.114, 122, 136, and 153 are full-page chapter illustrations (Chapter 1, Chapter 2, Chapter 4, and Chapter 5 respectively). Keep them as image assets associated with the neighboring chapter text; do not synthesize missing story text from the pictures.
+- `English_1sec_t1 (1).pdf` pp.128 and 134 are chapter illustrations showing a fisherman and a large marlin. Preserve the page images and neighboring story context.
+- `English_language_2sec_t1 (1).pdf` pp.59 and 92 are helicopter/firefighting illustrations. Their image content is meaningful even where page OCR is empty.
+- `English_Primary6_T1 (1).pdf` p.83 is a museum/interior photograph; p.84 is the illustrated “The Water Savers” project poster. These are content assets, not blank pages.
+- `المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf` p.229 is the illustrated reader title page “The Gingerbread Man” (Arabic subtitle visible: “رجل كعكة الزنجبيل”).
+- `المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf` p.222 is the fiction-reader title page “Khayameya Summer” (Arabic subtitle visible: “صيف الخيامية”).
+- `المعاصر_كونكت_بلس_6_ابتدائي_ترم_1_ذاكرولي.pdf` p.175 is the fiction-reader title page “A Wonderful Surprise” (Arabic subtitle visible: “مفاجأة رائعة”).
+- Connect Plus theme openers at Primary 1 pp.4 and 103, Primary 2 pp.4 and 121, Primary 4 pp.8 and 117, Primary 5 p.7, and Primary 6 p.92 visibly carry theme titles and illustrations. Retain them as theme metadata/image assets, not ordinary lesson paragraphs.
+- Connect Plus homework notebook/interactive covers at Primary 1 p.216, Primary 2 p.290, and Primary 6 p.227 are document/section covers. Adjacent exercise pages, not these covers, should supply question-bank content.
+
+### Page-state rule
+
+A page that looks white or solid-color at 120 DPI remains **probable blank/structural**, not confirmed blank. A separate high-resolution render of the empty-OCR subset is the next verification step. The 73-page queue remains unchanged and every page remains `needs_review`.
