@@ -5,7 +5,6 @@ import os
 import queue
 import subprocess
 import tempfile
-import threading
 from concurrent.futures import ThreadPoolExecutor
 from collections import defaultdict
 from pathlib import Path
@@ -15,11 +14,11 @@ ROOT = Path.cwd()
 DATA = ROOT / "src/data/extracted"
 PAGES = DATA / "pages.jsonl"
 MANIFEST = DATA / "manifest.json"
-DPI = int(os.environ.get("OCR_DPI", "130"))
+DPI = int(os.environ.get("OCR_DPI", "150"))
 LANG = os.environ.get("OCR_LANG", "eng+ara")
 WORKERS = max(1, min(int(os.environ.get("OCR_WORKERS", "6")), 8))
 CHECKPOINT_EVERY = max(1, int(os.environ.get("OCR_CHECKPOINT_EVERY", "25")))
-TIMEOUT = max(30, int(os.environ.get("OCR_PAGE_TIMEOUT", "60")))
+TIMEOUT = max(10, int(os.environ.get("OCR_PAGE_TIMEOUT", "20")))
 
 def save_pages(records):
     temp = PAGES.with_suffix(".jsonl.tmp")
@@ -107,8 +106,9 @@ def process_pdf(source, indices):
                     with tempfile.NamedTemporaryFile(suffix=".png") as img:
                         pix.save(img.name)
                         proc = subprocess.run(
-                            ["tesseract", img.name, "stdout", "-l", LANG, "--psm", "6"],
-                            capture_output=True, text=True, timeout=TIMEOUT
+                            ["tesseract", img.name, "stdout", "-l", LANG, "--psm", "3"],
+                            capture_output=True, text=True, timeout=TIMEOUT,
+                            env={**os.environ, "OMP_THREAD_LIMIT": "1"}
                         )
                     extracted = " ".join(proc.stdout.split())
                     if proc.returncode != 0 and not extracted:
