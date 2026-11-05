@@ -57,7 +57,7 @@ with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         if done % 50 == 0 or done == len(todo):
             print(f"OCR progress: {done}/{len(todo)}", flush=True)
 
-PAGES.write_text("".join(json.dumps(r, ensure_ascii=False) + "\\n" for r in records), encoding="utf-8")
+PAGES.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in records), encoding="utf-8")
 manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
 by_source = {}
 for r in records:
@@ -73,5 +73,5 @@ manifest["totals"]["ocrProcessedPages"] = len(todo)
 manifest["totals"]["ocrExtractedPages"] = sum(1 for p in records if p.get("extractionStatus") == "ocr_extracted_needs_review")
 manifest["totals"]["pagesNeedingOcrOrReviewAfterOcr"] = sum(1 for p in records if len(p.get("text","")) < 20)
 manifest["ocr"] = {"engine":"Tesseract","languages":LANG,"dpi":DPI,"note":"OCR output is machine-recognized and remains needs_review; verify against original PDF."}
-MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(manifest["totals"], ensure_ascii=False, indent=2), flush=True)
