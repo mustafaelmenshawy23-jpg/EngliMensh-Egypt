@@ -46,3 +46,17 @@ The newly indexed pass-9 records are in `src/data/extracted/visual-assets-pass9.
 2. No source page is marked academically approved by this report.
 3. The 41-page high-resolution artifact is not the full 73-page earlier visual-review set; it covers only the empty-OCR candidates selected by the workflow.
 4. The deferred file `Performance Tasks Prep 2-OnlineMaterials.PDF` remains postponed and was not included in this pass.
+
+
+## 240-DPI OCR spot-check
+
+A local Tesseract English OCR pass (page segmentation mode 6, followed by targeted mode 11 checks) was run against all 41 rendered images. It produced a nonzero token count on 18 pages and little/no text on 23 pages. **A nonzero OCR count is not proof of usable text**: several pages are photographs, covers, ruled notes, or illustrations, and their OCR output is noise.
+
+Useful observations:
+- `English_Primary6_T1 (1).pdf`, PDF p.84: image inspection confirms the exact prominent strings `THE WATER SAVERS` and `SAVE WATER`. These are now recorded in the pass-9 visual asset JSONL.
+- Same source, PDF p.83: the page is a museum interior photograph with the visible heading `Lesson 5`; the large OCR token count is false-positive noise from the photograph and hieroglyphic details.
+- Connect Plus Primary 1, PDF p.270: OCR partially detects the phonics chart headings and example words, but is incomplete. The chart must continue to use the manual visual transcription already recorded; OCR output must not overwrite it.
+- Primary 4 official book, PDF p.119: OCR detects many ruled-line artifacts, not lesson text. Pages 117–119 remain structural Notes pages.
+- Covers, theme openers, and reader title pages produce fragmented OCR. Keep the image and metadata; do not treat fragments as verified curriculum text.
+
+No OCR output from this spot-check has been promoted as academically approved lesson text. The OCR pass is diagnostic only.
