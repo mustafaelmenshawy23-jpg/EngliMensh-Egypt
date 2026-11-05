@@ -10,20 +10,21 @@
 - All records remain `needs_review`.
 - Structural errors: 0.
 
-## Primary 1–6 page-reference pass
+## Primary 1–6 unit-opening page-reference pass
 
-Added unit opening-page references only where the extracted PDF page text contained a clear unit heading or opening content:
-- Primary 1: Unit 1 p7; Unit 2 p26.
-- Primary 3: Unit 1 p13; Unit 2 p29; Unit 4 p71.
-- Primary 4: Unit 1 p8.
-- Primary 5: Unit 1 p8; Unit 2 p26.
+Additional physical PDF page references were added from extracted page text where a unit heading/opening was identifiable:
+- Primary 1: Unit 1 p7; Unit 2 p26; Unit 3 p45.
+- Primary 2: Unit 1 p7; Unit 2 p19; Unit 4 p51. Other unit starts remain unconfirmed.
+- Primary 3: Unit 1 p13; Unit 2 p29; Unit 4 p71. Other unit starts remain unconfirmed.
+- Primary 4: Unit 1 p8; Unit 2 p24; Unit 3 p40; Unit 4 p62; Unit 5 p80; Unit 6 p96.
+- Primary 5: Unit 1 p8; Unit 2 p26; Unit 3 p41; Unit 4 p61; Unit 5 p77; Unit 6 p92.
 - Primary 6: Unit 1 p7; Unit 2 p24; Unit 3 p37; Unit 5 p70.
 
-All page numbers are 1-based physical PDF pages. Unconfirmed page references remain null. In particular, this pass does not yet establish exact opening pages for all units in Primary 1–5, and Primary 2 remains without confirmed unit-opening page references.
+Page numbers are 1-based physical PDF pages. These are extraction-based references, not yet a completed visual verification. Any unclear or absent start remains null rather than being guessed.
 
 ## Primary 6 title correction
 
-The previous draft incorrectly treated the scope/skill label "Time Management" as the Unit 1 title and retained an OCR-damaged Unit 2 title. These were replaced using extracted page headings:
+The earlier draft confused a scope/skill label with the Unit 1 title and retained an OCR-damaged Unit 2 title. The draft now uses extracted headings:
 - Unit 1: Amazing Places in Egypt — PDF p7.
 - Unit 2: How’s the Weather in Your City? — PDF p24.
 - Unit 3: Jobs that Help the Community — PDF p37.
@@ -32,7 +33,8 @@ Unit 4 (Resources Around Us) and Unit 6 (Wise Savers) retain scope-and-sequence 
 
 ## Limitations and next review
 
-- Extracted text is still marked `needs_review`; visual confirmation is required before academic release.
+- Extracted text remains `needs_review`; visual confirmation is required before academic release.
+- Primary 2 and Primary 3 still have incomplete unit page references.
 - Commercial Primary 5 and Hello Plus Prep 2 contents remain incomplete.
 - No question-bank content has been imported; this draft index is not connected to runtime curriculum navigation.
 - The missing Prep 2 Performance Tasks PDF remains deferred until the 33 available books are completed.
