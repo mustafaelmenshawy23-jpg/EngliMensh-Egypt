@@ -6,7 +6,7 @@ import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
 
 const app = document.querySelector('#app');
-const state = { stage: 'primary', grade: 1, path: 'general', search: '', preview: null };
+const state = { stage: 'primary', grade: 1, path: 'general', search: '', preview: null, unitSelection: null, activeModule: null, quizAnswers: {} };
 
 const stageNames = {
   primary: 'Primary',
@@ -159,8 +159,66 @@ function renderUnitWorkspace() {
       : '<p class="unit-module-empty">Content not added yet. This section is in progress; no questions or activities are being invented.</p>';
     const hasItems = items.length > 0 || indexedItems.length > 0;
     const sectionStatus = items.length ? 'Review pending' : indexedItems.length ? 'Index metadata' : (baseSection?.status === 'not_populated' ? 'In progress' : 'No source data');
-    return `<section class="unit-module" data-module="${definition.type}"><div class="unit-module-head"><div><h5>${definition.title}</h5><p>${definition.subtitle}</p></div><span class="lesson-status">${sectionStatus}</span></div>${content}</section>`;
+    return `<button type="button" class="unit-module-launch" data-open-module="${definition.type}"><span class="unit-module-icon" aria-hidden="true">${({vocabulary:'Aa',vocabulary_questions:'✓',grammar:'文',grammar_questions:'?',reading:'▤',listening:'♫',games:'★',comprehensive_test:'◎'})[definition.type]}</span><span class="unit-module-launch-copy"><strong>${definition.title}</strong><small>${definition.subtitle}</small></span><span class="unit-module-count">${items.length || indexedItems.length ? (items.length || indexedItems.length) + ' items' : 'Open section'}</span><span class="unit-module-arrow" aria-hidden="true">›</span></button>`;
   }).join('');
+  if (state.activeModule) {
+    const definition = moduleDefinitions.find((entry) => entry.type === state.activeModule);
+    const selectedSections = lessonRecords.flatMap((lesson) => (lesson.sections || [])
+      .filter((section) => section.type === state.activeModule)
+      .flatMap((section) => section.items.map((item) => ({ lesson, item, section }))));
+    const indexedWords = state.activeModule === 'vocabulary' ? (unit.vocabulary || []).map((word) => ({ lesson: null, item: { content: { word } }, section: null })) : [];
+    const words = [...selectedSections, ...indexedWords];
+    const meanings = {
+      read:'يقرأ',write:'يكتب',clean:'ينظّف',draw:'يرسم',sit:'يجلس',stand:'يقف',play:'يلعب',color:'يلوّن',
+      shy:'خجول',tired:'متعب',bored:'يشعر بالملل',scared:'خائف',goal:'هدف',try:'يحاول',step:'خطوة',plan:'خطة',
+      happy:'سعيد',sad:'حزين',angry:'غاضب',excited:'متحمس',share:'يشارك',care:'يهتم',family:'عائلة',
+      'tidy up the bed':'يرتّب السرير',grandpa:'جد',grandma:'جدة',dad:'أب',mom:'أم',brother:'أخ',sister:'أخت',
+      baby:'طفل رضيع',tall:'طويل',drip:'قطرة / يقطر',overflow:'يفيض',puddle:'بركة ماء',leak:'تسرّب',
+      hallway:'ممر',hose:'خرطوم',tap:'صنبور',pipe:'أنبوب',drop:'قطرة'
+    };
+    const examples = {
+      read:'I read a story every night.',write:'I write my name in my notebook.',clean:'I clean my room every day.',
+      draw:'I draw a picture of my family.',sit:'Please sit on your chair.',stand:'Stand up, please.',
+      play:'I play with my friends after school.',color:'I color the picture with blue.',shy:'The shy girl speaks quietly.',
+      tired:'I feel tired after running.',bored:'I feel bored when I have nothing to do.',
+      scared:'The little boy is scared of the dark.',goal:'My goal is to learn English.',
+      try:'I try again when something is difficult.',step:'The first step is to read the question.',
+      plan:'I have a plan for the weekend.',happy:'I feel happy with my friends.',
+      sad:'She feels sad when she loses her toy.',angry:'He feels angry but speaks politely.',
+      excited:'We are excited about the school trip.',share:'I share my books with my friends.',
+      care:'We care for our family.',family:'My family is very kind.'
+    };
+    const renderQuestion = ({lesson,item}, index) => {
+      const data = item.content || {};
+      const questionId = item.itemId || `${state.activeModule}-${index}`;
+      const chosen = state.quizAnswers[questionId];
+      const options = Array.isArray(data.options) ? data.options : [];
+      const hasKey = typeof data.correctAnswer === 'string';
+      return `<article class="interactive-question"><p class="question-instruction">${escapeHtml(data.instruction || 'Choose the correct answer.')}</p><h4>${escapeHtml(data.question || data.prompt || data.sentence || data.title || 'Choose the correct answer')}</h4><div class="quiz-options">${options.map((option) => `<button type="button" class="quiz-option ${chosen ? (option === data.correctAnswer ? 'is-correct' : option === chosen ? 'is-wrong' : '') : ''}" data-quiz-question="${escapeHtml(questionId)}" data-quiz-choice="${escapeHtml(option)}" ${chosen ? 'disabled' : ''}>${escapeHtml(option)}</button>`).join('')}</div>${chosen ? `<p class="quiz-feedback ${hasKey && chosen === data.correctAnswer ? 'correct' : 'incorrect'}">${hasKey && chosen === data.correctAnswer ? 'Correct! Well done.' : hasKey ? `Not quite. Correct answer: ${escapeHtml(data.correctAnswer)}` : 'Your answer has been recorded.'} ${data.explanation ? escapeHtml(data.explanation) : ''}</p>` : ''}<small class="quiz-origin">${escapeHtml(item.notes || (item.reviewStatus === 'needs_review' ? 'Practice draft · teacher review pending' : 'Practice question'))}</small></article>`;
+    };
+    let body = '';
+    if (state.activeModule === 'vocabulary') {
+      body = words.length ? `<div class="vocabulary-list">${words.map(({item}, index) => {
+        const data = item.content || {};
+        const word = data.word || data.title || item.itemId || 'Word';
+        const meaning = data.arabicMeaning || data.arabicGloss || meanings[String(word).toLowerCase()] || 'المعنى قيد المراجعة';
+        const example = data.example || examples[String(word).toLowerCase()] || 'Example sentence is being prepared.';
+        return `<article class="vocabulary-entry"><div class="vocabulary-entry-top"><span class="vocabulary-number">${index+1}</span><strong class="vocabulary-word" dir="ltr">${escapeHtml(word)}</strong><span class="vocabulary-meaning" dir="rtl">${escapeHtml(meaning)}</span></div><p class="vocabulary-example" dir="ltr">${escapeHtml(example)}</p>${data.notes ? `<small>${escapeHtml(data.notes)}</small>` : ''}</article>`;
+      }).join('')}</div>` : '<p class="unit-module-empty">Vocabulary has not been added to this unit yet.</p>';
+    } else if (state.activeModule === 'vocabulary_questions' || state.activeModule === 'grammar_questions' || state.activeModule === 'comprehensive_test') {
+      const playable = selectedSections.filter(({item}) => Array.isArray(item.content?.options) && typeof item.content?.correctAnswer === 'string');
+      const count = playable.filter(({item}) => state.quizAnswers[item.itemId]).length;
+      body = playable.length ? `<div class="quiz-summary"><strong>${count} / ${playable.length}</strong><span>answered</span></div>${playable.map(renderQuestion).join('')}` : '<p class="unit-module-empty">No playable questions are available in this section yet. Questions will appear here once their content and answer keys are prepared and reviewed.</p>';
+    } else if (state.activeModule === 'games') {
+      body = '<p class="unit-module-empty">Interactive vocabulary and grammar games will be added here after the unit question bank is ready. No empty game buttons are shown.</p>';
+    } else {
+      body = selectedSections.length ? selectedSections.map(({item}) => {
+        const data = item.content || {};
+        return `<article class="learning-content-entry">${Object.entries(data).map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('')}</article>`;
+      }).join('') : '<p class="unit-module-empty">Content is still being prepared. This section will open here when source material is ready.</p>';
+    }
+    return `<section class="unit-module-screen"><button type="button" class="module-back" data-back-modules>‹ Back to Unit ${unit.number}</button><div class="module-screen-heading"><p class="eyebrow">${escapeHtml(book.grade)} · UNIT ${unit.number}</p><h3>${escapeHtml(definition.title)}</h3><p>${escapeHtml(definition.subtitle)}</p></div>${state.activeModule.includes('questions') || state.activeModule === 'comprehensive_test' ? '<p class="practice-note">Supplementary practice is identified separately from official printed questions. Draft content may require teacher review.</p>' : ''}${body}</section>`;
+  }
   const lessonHeadings = lessonRecords.map((lesson) => `<p class="lesson-draft-note"><strong>${escapeHtml(lesson.title)}</strong> · ${escapeHtml(lesson.grade)} · PDF page ${lesson.pdfPage} · ${escapeHtml(lesson.reviewStatus)}</p>`).join('');
   return `<section class="unit-workspace" aria-label="Unit details">
     <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
@@ -168,7 +226,7 @@ function renderUnitWorkspace() {
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
     ${lessonHeadings}
-    <div class="unit-module-grid">${modules}</div>
+    <div class="unit-module-grid" aria-label="Unit learning sections">${modules}</div>
     <p class="lesson-draft-note">Scaffold source: ${scaffold ? escapeHtml(scaffold.unitId) : 'No unit scaffold record found'}. Extracted items remain drafts until checked against the original PDF. Unreviewed content is excluded from student question banks and answer keys.</p>
     <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
     ${renderReviewCandidates(book, unit.number)}
@@ -269,8 +327,11 @@ function render() {
   });
   applySearch();
 
-  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.preview = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { state.unitSelection = null; render(); });
+  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.activeModule = null; state.quizAnswers = {}; state.preview = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { state.unitSelection = null; state.activeModule = null; state.quizAnswers = {}; render(); });
+  app.querySelectorAll('[data-open-module]').forEach((button) => button.addEventListener('click', () => { state.activeModule = button.dataset.openModule; state.quizAnswers = {}; render(); app.querySelector('.unit-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-back-modules]')?.addEventListener('click', () => { state.activeModule = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  app.querySelectorAll('[data-quiz-question]').forEach((button) => button.addEventListener('click', () => { state.quizAnswers[button.dataset.quizQuestion] = button.dataset.quizChoice; render(); }));
   app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', () => {
@@ -281,6 +342,7 @@ function render() {
   app.querySelector('[data-close-preview]')?.addEventListener('click', () => {
     state.preview = null;
     state.unitSelection = null;
+    state.activeModule = null;
     render();
   });
   app.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
