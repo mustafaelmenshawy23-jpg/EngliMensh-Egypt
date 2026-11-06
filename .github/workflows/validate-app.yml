@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: ''
       - name: Install dependencies
         run: npm install
       - name: Validate source-book index and original PDFs
