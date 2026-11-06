@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository and hydrate original source PDFs
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -46,7 +46,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build web application with original source PDFs
+      - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
+        run: rm -rf public/books
+
+      - name: Build web application with remote original source PDFs
+        env:
+          VITE_BOOKS_BASE_URL: https://media.githubusercontent.com/media/mustafaelmenshawy23-jpg/EngliMensh-Egypt/main/public/books/
         run: npm run build
 
       - name: Generate Android project
