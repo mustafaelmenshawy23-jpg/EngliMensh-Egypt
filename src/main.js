@@ -111,22 +111,30 @@ function renderUnitWorkspace() {
   const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
   const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
   const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number);
-  const renderLessonDraft = (lesson) => `
-    <article class="lesson-draft">
-      <div class="lesson-draft-heading"><div><span class="lesson-status">Academic review pending</span><h4>${escapeHtml(lesson.title)}</h4><p>${escapeHtml(lesson.grade)} · Unit ${lesson.unitNumber} · PDF page ${lesson.pdfPage}</p></div></div>
-      ${lesson.sections.map((section) => `
-        <section class="lesson-draft-section">
-          <h5>${escapeHtml(section.type)} · ${escapeHtml(section.title)}</h5>
-          ${section.items.length ? `<ul>${section.items.map((item) => `<li><strong>${escapeHtml(item.content?.word || item.itemId)}</strong><span>${escapeHtml(item.content?.visualCue || '')}</span><small>Page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus)}</small></li>`).join('')}</ul>` : '<p>No source-verified items recorded yet.</p>'}
-        </section>`).join('')}
-      <p class="lesson-draft-note">Draft transcription only. Compare every item with the original PDF before approval. This content is not available in student assessments.</p>
-    </article>`;
+  const moduleDefinitions = [
+    { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pronunciation, and examples' },
+    { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'A separate practice bank for unit words' },
+    { type: 'grammar', title: 'Grammar', subtitle: 'Clear rule explanations and examples' },
+    { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'A separate grammar practice bank' },
+    { type: 'reading', title: 'Reading', subtitle: 'Unit reading texts and comprehension' },
+    { type: 'listening', title: 'Listening', subtitle: 'Audio activities and listening questions' },
+    { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' }
+  ];
+  const renderLessonDraft = (lesson) => {
+    const modules = moduleDefinitions.map((definition) => {
+      const section = lesson.sections.find((item) => item.type === definition.type);
+      const items = section?.items || [];
+      const content = items.length ? '<ul>' + items.map((item) => '<li><strong>' + escapeHtml(item.content?.word || item.content?.title || item.itemId) + '</strong><span>' + escapeHtml(item.content?.visualCue || item.content?.explanation || item.content?.text || '') + '</span><small>Page ' + (item.sourcePdfPage || lesson.pdfPage) + ' · ' + escapeHtml(item.reviewStatus) + '</small></li>').join('') + '</ul>' : '<p class="unit-module-empty">No source-verified content has been added to this section yet.</p>';
+      return '<section class="unit-module" data-module="' + definition.type + '"><div class="unit-module-head"><div><h5>' + definition.title + '</h5><p>' + definition.subtitle + '</p></div><span class="lesson-status">Pending</span></div>' + content + '</section>';
+    }).join('');
+    return '<article class="lesson-draft"><div class="lesson-draft-heading"><div><span class="lesson-status">Academic review pending</span><h4>' + escapeHtml(lesson.title) + '</h4><p>' + escapeHtml(lesson.grade) + ' · Unit ' + lesson.unitNumber + ' · PDF page ' + lesson.pdfPage + '</p></div></div><div class="unit-module-grid">' + modules + '</div><p class="lesson-draft-note">Draft content only. Source-check every item before approval. Unreviewed material is excluded from student question banks and answer keys.</p></article>';
+  };
   return `<section class="unit-workspace" aria-label="Unit details">
     <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
     ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
-    ${lessonRecords.map(renderLessonDraft).join('')}
+    ${lessonRecords.length ? lessonRecords.map(renderLessonDraft).join('') : '<div class="unit-module-grid">' + moduleDefinitions.map((module) => '<section class="unit-module"><div class="unit-module-head"><div><h5>' + module.title + '</h5><p>' + module.subtitle + '</p></div><span class="lesson-status">Not populated</span></div><p class="unit-module-empty">This section is reserved for source-verified unit content.</p></section>').join('') + '</div>'}
     <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
     ${renderReviewCandidates(book, unit.number)}
     <p class="unit-source-note">Proposed unit links and transcriptions remain unapproved. They are shown for source review only and are not used in lessons, tests, or answer keys.</p>
