@@ -53,3 +53,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-recoveries-pass21.jsonl`: 20 pages visually inspected at 240 DPI in workflow run 42215770749. Contains page-level visual triage only; all records remain `needs_review` and `not_academically_verified`. No machine OCR or curriculum data was modified. See `docs/visual-ocr-review-pass21.md`.
 
 - `ocr-quality-audit-pass22.jsonl`: 19 high-resolution confirmation candidates selected from the original 73-page manual-review queue, checked for duplicate source-page pairs against indexed Pass 11 and Pass 13–21 audits. Render at 300 DPI with `.github/workflows/render-pass22-quality-audit.yml`. These are confirmation renders, not new OCR or academic approval.
+
+- `visual-recoveries-pass22.jsonl`: 19 pages visually inspected at 300 DPI from the high-resolution confirmation artifact in workflow run 42217082502. Records preserve exact source filenames and 1-based physical PDF pages; all remain `needs_review` and `not_academically_verified`. Observations are structural/visual triage only and do not modify OCR or enter curriculum/question-bank data. See `docs/visual-ocr-review-pass22.md`.
