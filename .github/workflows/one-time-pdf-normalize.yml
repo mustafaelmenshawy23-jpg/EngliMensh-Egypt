@@ -13,14 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
           fetch-depth: 0
       - name: Hydrate and verify original PDF
         shell: bash
         run: |
           set -euo pipefail
           FILE="public/books/Performance Tasks Prep 2-OnlineMaterials.PDF"
-          git lfs checkout "$FILE"
+          git lfs fetch --object-id origin 3965c782dc0f2d4cb79515e8981c4b07d88fc768cb1087d616d91cb02e845618
+          git lfs smudge < "$FILE" > "$FILE.tmp"
+          mv "$FILE.tmp" "$FILE"
           test -f "$FILE"
           echo "ACTUAL_SHA256=$(sha256sum "$FILE" | cut -d' ' -f1)"
           echo "ACTUAL_SIZE=$(stat -c%s "$FILE")"
