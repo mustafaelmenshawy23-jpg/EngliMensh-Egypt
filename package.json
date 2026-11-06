@@ -12,7 +12,8 @@
     "validate:manual-recoveries": "node scripts/validate-manual-recoveries.mjs",
     "validate:source-index": "node scripts/validate-source-book-index.mjs",
     "validate:review-candidates": "node scripts/validate-review-candidates.mjs",
-    "validate:visual-recoveries-pass22": "node scripts/validate-visual-recoveries-pass22.mjs"
+    "validate:visual-recoveries-pass22": "node scripts/validate-visual-recoveries-pass22.mjs",
+    "validate:lesson-content": "node scripts/validate-lesson-content.mjs"
   },
   "devDependencies": {
     "vite": "^6.4.1",
