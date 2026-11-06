@@ -20,13 +20,22 @@
           "id": "general",
           "name": "General",
           "series": "Connect",
-          "status": "awaiting_books"
+          "status": "awaiting_books",
+          "sourcePathwayId": "egypt-primary-general"
         },
         {
           "id": "advanced",
           "name": "Advanced",
           "series": "Connect Plus",
-          "status": "awaiting_books"
+          "status": "awaiting_books",
+          "sourcePathwayId": "egypt-primary-advanced"
+        },
+        {
+          "id": "supplementary",
+          "name": "Supplementary references",
+          "series": "Commercial guides (El-Moasser Connect Plus)",
+          "status": "supplementary_available",
+          "sourcePathwayId": "commercial-reference-guides"
         }
       ]
     },
@@ -43,13 +52,22 @@
           "id": "general",
           "name": "General",
           "series": "New Hello",
-          "status": "awaiting_books"
+          "status": "awaiting_books",
+          "sourcePathwayId": "egypt-preparatory-general"
         },
         {
           "id": "advanced",
           "name": "Advanced",
           "series": null,
-          "status": "reserved_empty"
+          "status": "reserved_empty",
+          "sourcePathwayId": "egypt-preparatory-advanced"
+        },
+        {
+          "id": "supplementary",
+          "name": "Supplementary references",
+          "series": "Commercial guides (Hello Plus)",
+          "status": "supplementary_available",
+          "sourcePathwayId": "commercial-reference-guides"
         }
       ]
     },
@@ -66,13 +84,15 @@
           "id": "general",
           "name": "General Secondary",
           "series": "General Secondary",
-          "status": "awaiting_books"
+          "status": "awaiting_books",
+          "sourcePathwayId": "egypt-secondary-general"
         },
         {
           "id": "advanced",
           "name": "Advanced",
           "series": null,
-          "status": "reserved_empty"
+          "status": "reserved_empty",
+          "sourcePathwayId": "egypt-secondary-advanced"
         }
       ]
     },
