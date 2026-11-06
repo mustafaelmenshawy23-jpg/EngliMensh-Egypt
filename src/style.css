@@ -75,3 +75,20 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .fatal-state h1{font-size:22px;margin:0 0 10px}
 .fatal-state p{font-size:14px;line-height:1.7;color:#71809c;margin:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Source-linked lesson draft presentation */
+.lesson-draft{margin:16px 0;padding:16px;border:1px solid #dce4f1;border-radius:13px;background:#fff}
+.lesson-draft-heading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.lesson-status{display:inline-block;padding:5px 8px;border-radius:20px;background:#fff5dc;color:#806322;font-size:10px;font-weight:800}
+.lesson-draft h4{margin:9px 0 4px;color:#203967;font-size:16px}
+.lesson-draft-heading p,.lesson-draft-note{margin:0;color:#8290a9;font-size:10px;line-height:1.7}
+.lesson-draft-section{margin-top:13px;padding-top:12px;border-top:1px solid #edf0f6}
+.lesson-draft-section h5{margin:0 0 9px;color:#526482;font-size:11px;text-transform:capitalize}
+.lesson-draft-section ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lesson-draft-section li{display:grid;gap:4px;padding:10px;border:1px solid #edf0f6;border-radius:9px;background:#fbfcff}
+.lesson-draft-section li strong{color:#203967;font-size:12px}
+.lesson-draft-section li span,.lesson-draft-section li small{color:#8290a9;font-size:10px;line-height:1.5}
+.lesson-draft-section>p{color:#8290a9;font-size:11px}
+.lesson-draft-note{margin-top:12px;padding-top:10px;border-top:1px dashed #e5eaf3}
+@media(max-width:620px){.lesson-draft-section ul{grid-template-columns:1fr}}
