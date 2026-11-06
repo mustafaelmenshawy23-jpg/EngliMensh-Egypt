@@ -14,7 +14,7 @@ for (const book of index.books) {
 
 if (manifest.bookCount !== index.books.length) errors.push('Manifest bookCount does not match the source index.');
 if (manifest.unitCount !== expected.size) errors.push('Manifest unitCount does not match indexed units.');
-if (JSON.stringify(manifest.sectionTypes) !== JSON.stringify(expectedTypes)) errors.push('Manifest sectionTypes are not the required seven independent modules.');
+if (JSON.stringify(manifest.sectionTypes) !== JSON.stringify(expectedTypes)) errors.push('Manifest sectionTypes are not the required eight independent modules.');
 
 const seen = new Set();
 for (const record of manifest.records || []) {
