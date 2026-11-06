@@ -18,7 +18,7 @@ if (!unit || !Number.isInteger(unit.startPdfPage)) throw new Error('Unit start p
 const next = (book.units||[]).filter(u=>u.number>unitNumber && Number.isInteger(u.startPdfPage)).sort((a,b)=>a.startPdfPage-b.startPdfPage)[0];
 const start = unit.startPdfPage;
 const end = next ? next.startPdfPage-1 : null;
-const rows = pagesText.split(/\\r?\\n/).filter(Boolean).map(line=>JSON.parse(line)).filter(p=>p.sourceFilename===book.sourceFile && p.pdfPage>=start && (end===null || p.pdfPage<=end));
+const rows = pagesText.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line)).filter(p=>p.sourceFilename===book.sourceFile && p.pdfPage>=start && (end===null || p.pdfPage<=end));
 if (!rows.length) throw new Error('No extracted pages found for this unit. Run the book extraction workflow first.');
 const unusable = rows.filter(p=>!p.text || p.text.length<20);
 if (unusable.length) throw new Error('Unit has pages requiring OCR/visual review: '+unusable.map(p=>p.pdfPage).join(', ')+'. Refusing to generate from incomplete source text.');
@@ -92,5 +92,5 @@ if(errors.length) throw new Error('Generated draft failed validation:\\n'+errors
 const output={schemaVersion:1,datasetStatus:'draft',generatedAt:new Date().toISOString(),generator:{provider:'Google Gemini API',model,reviewStatus:'needs_review'},bookId,sourceFilename:book.sourceFile,grade:book.grade,unitNumber,unitTitle:generated.unitTitle,sourcePdfRange:{start,end},sourceCoverage:generated.sourceCoverage,reviewStatus:'needs_review',reviewedBy:null,reviewedAt:null,sections:generated.sections.map(s=>({...s,items:s.items.map(i=>({...i,reviewStatus:'needs_review',notes:i.content.origin==='supplementary'?'AI-generated supplementary practice; not printed in source book. Teacher review required.':'Transcribed from the source book; teacher verification required.'}))}))};
 await fs.mkdir('artifacts/unit-drafts',{recursive:true});
 const file='artifacts/unit-drafts/'+bookId+'-unit-'+unitNumber+'.json';
-await fs.writeFile(file,JSON.stringify(output,null,2)+'\\n');
+await fs.writeFile(file,JSON.stringify(output,null,2)+'\n');
 console.log(JSON.stringify({output:file,bookId,unitNumber,pages:rows.length,sections:output.sections.map(s=>({type:s.type,items:s.items.length})),status:'needs_review'},null,2));
