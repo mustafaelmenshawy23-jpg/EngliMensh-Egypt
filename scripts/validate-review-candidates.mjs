@@ -50,6 +50,28 @@ for (const [i, record] of (candidateData.records || []).entries()) {
     console.error(`${label}: answerKey must remain null.`);
     errors += 1;
   }
+  const link = record.unitLink;
+  if (!link || !['proposed_needs_review', 'cross_unit_reference', 'not_unit_based'].includes(link.status)) {
+    console.error(`${label}: missing or invalid unit-link review status.`);
+    errors += 1;
+  } else if (Number.isInteger(link.unitNumber)) {
+    const sourceBook = books.get(record.sourceFilename);
+    const unit = sourceBook?.units?.find((item) => item.number === link.unitNumber);
+    if (!unit || sourceBook.grade !== record.grade || link.status !== 'proposed_needs_review' || !link.evidence) {
+      console.error(`${label}: proposed unit link must match the source book/grade and remain pending review.`);
+      errors += 1;
+    }
+  } else if (link.status === 'cross_unit_reference') {
+    const sourceBook = books.get(record.sourceFilename);
+    const validUnits = Array.isArray(link.unitNumbers) && link.unitNumbers.length > 0 && link.unitNumbers.every((number) => sourceBook?.units?.some((unit) => unit.number === number));
+    if (!validUnits || !link.evidence) {
+      console.error(`${label}: cross-unit reference must point to existing units and include evidence.`);
+      errors += 1;
+    }
+  } else if (link.status === 'not_unit_based' && !link.evidence) {
+    console.error(`${label}: unassigned record must explain why no unit is linked.`);
+    errors += 1;
+  }
 }
 if (errors) {
   console.error(`Review-candidate validation failed: ${errors} issue(s).`);
