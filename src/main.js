@@ -121,7 +121,8 @@ function renderUnitWorkspace() {
     { type: 'reading', title: 'Reading', subtitle: 'Unit reading texts and comprehension' },
     { type: 'listening', title: 'Listening', subtitle: 'Audio activities and listening questions' },
     { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' },
-    { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' }
+    { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' },
+    { type: 'phonics', title: 'Phonics', subtitle: 'Letter patterns, IPA sounds, and printed examples' }
   ];
   const renderValue = (value) => {
     if (value === null || value === undefined || value === '') return '';
