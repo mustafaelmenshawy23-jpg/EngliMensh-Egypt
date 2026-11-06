@@ -30,7 +30,9 @@ jobs:
         run: npm install
       - name: Exclude large source PDFs from the lightweight UI preview
         run: rm -rf public/books
-      - name: Build preview
+      - name: Build preview with remote original source PDFs
+        env:
+          VITE_BOOKS_BASE_URL: https://media.githubusercontent.com/media/mustafaelmenshawy23-jpg/EngliMensh-Egypt/main/public/books/
         run: npm run build
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
