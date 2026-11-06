@@ -34,7 +34,7 @@ for (const [i, lesson] of (data.records || []).entries()) {
   for (const section of lesson.sections || []) {
     if (!section.sectionId || sectionIds.has(section.sectionId)) errors.push(`${label}: missing or duplicate sectionId.`);
     sectionIds.add(section.sectionId);
-    if (!['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'games', 'speaking', 'writing', 'exercises', 'assessments', 'phonics'].includes(section.type)) errors.push(`${label}: unsupported section type.`);
+    if (!['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'games', 'comprehensive_test', 'speaking', 'writing', 'exercises', 'assessments', 'phonics'].includes(section.type)) errors.push(`${label}: unsupported section type.`);
     if (!Array.isArray(section.items)) errors.push(`${label}: section items must be an array.`);
     const itemIds = new Set();
     for (const item of section.items || []) {
