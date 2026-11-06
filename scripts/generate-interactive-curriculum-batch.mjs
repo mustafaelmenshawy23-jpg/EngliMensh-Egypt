@@ -13,7 +13,7 @@ if (!Number.isInteger(startIndex) || startIndex < 0 || !Number.isInteger(batchSi
 }
 const candidates = [];
 for (const book of index.books || []) {
-  if (!['student_book','workbook'].includes(book.documentType)) continue;
+  if (!['student_book','workbook','commercial_supplement'].includes(book.documentType)) continue;
   const units = [...(book.units || [])].sort((a,b)=>a.number-b.number);
   for (let i=0;i<units.length;i++) {
     const unit=units[i], next=units[i+1];
