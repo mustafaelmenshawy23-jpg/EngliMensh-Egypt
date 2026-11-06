@@ -26,7 +26,7 @@ function selectedBooks() {
     : state.stage === 'preparatory'
       ? (state.path === 'advanced' ? 'commercial-reference-guides' : 'egypt-preparatory-general')
       : state.stage === 'secondary' ? 'egypt-secondary-general' : 'egypt-baccalaureate';
-  return sourceIndex.books.filter((book) => book.grade === gradeName && book.pathwayId === pathwayId);
+  return sourceIndex.books.filter((book) => book.pathwayId === pathwayId && (state.stage === 'egyptian-baccalaureate' || book.grade === gradeName));
 }
 
 function bookUrl(file, page) {
