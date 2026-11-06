@@ -92,3 +92,42 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .lesson-draft-section>p{color:#8290a9;font-size:11px}
 .lesson-draft-note{margin-top:12px;padding-top:10px;border-top:1px dashed #e5eaf3}
 @media(max-width:620px){.lesson-draft-section ul{grid-template-columns:1fr}}
+
+
+/* Independent learning modules inside every unit */
+.unit-module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+.unit-module {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line, #dbe3ef);
+  border-radius: 14px;
+  background: var(--surface, #fff);
+}
+.unit-module-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.unit-module-head h5 { margin: 0 0 5px; font-size: 1rem; }
+.unit-module-head p, .unit-module-empty {
+  margin: 0;
+  color: var(--muted, #64748b);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+.unit-module-empty {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--soft, #f5f7fb);
+}
+.unit-module ul { margin: 0; padding-inline-start: 20px; }
+.unit-module li { margin: 8px 0; }
+.unit-module li span, .unit-module li small { display: block; color: var(--muted, #64748b); }
+.unit-module li small { margin-top: 4px; font-size: .75rem; }
