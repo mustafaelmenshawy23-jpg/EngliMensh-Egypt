@@ -127,10 +127,18 @@ function renderPreview() {
 
 function render() {
   const stage = currentStage();
-  const paths = stage.paths;
+  if (!stage) {
+    app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1><p>The selected curriculum stage could not be loaded. Please refresh the page.</p></main>';
+    return;
+  }
+  const paths = stage.paths || [];
   const selectedPath = state.stage === 'egyptian-baccalaureate'
     ? (sourceIndex.pathways.find((item) => item.id === (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')) || paths[0])
     : (paths.find((item) => item.id === state.path) || paths[0]);
+  if (!selectedPath) {
+    app.innerHTML = '<main class="fatal-state"><h1>Pathway unavailable</h1><p>No pathway configuration is available for this selection yet.</p></main>';
+    return;
+  }
   if (state.stage !== 'egyptian-baccalaureate') state.path = selectedPath.id;
   const grades = stage.grades;
   const books = selectedBooks();
@@ -175,7 +183,7 @@ function render() {
         </div>
       </section>
       <section class="library-section">
-        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.name)}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
+        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
         ${renderUnitWorkspace()}
