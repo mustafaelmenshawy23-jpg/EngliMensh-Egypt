@@ -1,0 +1,59 @@
+name: Generate interactive unit draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      book_id:
+        description: Exact bookId from source-book-index.draft.json
+        required: true
+        type: string
+      unit_number:
+        description: Unit number
+        required: true
+        type: number
+      gemini_model:
+        description: Gemini model
+        required: true
+        default: gemini-2.5-flash
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm ci
+      - name: Hydrate source PDFs
+        run: git lfs pull
+      - name: Extract source pages and OCR scans
+        run: |
+          npm run extract:books
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
+          python3 -m venv .venv
+          .venv/bin/pip install pymupdf
+          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 .venv/bin/python scripts/ocr-scanned-pages.py
+      - name: Generate source-grounded interactive unit draft
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ inputs.gemini_model }}
+          BOOK_ID: ${{ inputs.book_id }}
+          UNIT_NUMBER: ${{ inputs.unit_number }}
+        run: node scripts/generate-interactive-unit.mjs
+      - name: Upload unit draft for academic review
+        uses: actions/upload-artifact@v4
+        with:
+          name: interactive-unit-draft-${{ inputs.book_id }}-unit-${{ inputs.unit_number }}
+          path: artifacts/unit-drafts/*.json
+          if-no-files-found: error
+          retention-days: 30
