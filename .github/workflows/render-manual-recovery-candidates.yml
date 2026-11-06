@@ -1,0 +1,53 @@
+name: Render manual recovery candidate source pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/render-manual-recovery-candidates.py"
+      - "src/data/extracted/manual-recovery-candidates.json"
+      - ".github/workflows/render-manual-recovery-candidates.yml"
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: Render resolution
+        required: true
+        type: choice
+        options: ["240", "300"]
+        default: "300"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-recovery-source-review
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout and hydrate original source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull Git LFS objects
+        run: git lfs pull
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PDF renderer
+        run: python -m pip install --no-cache-dir pymupdf
+      - name: Render candidate source pages
+        env:
+          RENDER_DPI: ${{ inputs.dpi || '300' }}
+        run: python scripts/render-manual-recovery-candidates.py
+      - name: Upload source review images
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-manual-recovery-candidates-${{ inputs.dpi || '300' }}dpi
+          path: review-pages-manual-recoveries/
+          if-no-files-found: error
+          retention-days: 14
