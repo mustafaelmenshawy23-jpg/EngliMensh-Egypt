@@ -37,7 +37,7 @@ function selectedBooks() {
 }
 
 function bookUrl(file, page) {
-  const path = `/books/${encodeURIComponent(file)}`;
+  const path = `${import.meta.env.BASE_URL}books/${encodeURIComponent(file)}`;
   return page ? `${path}#page=${page}` : path;
 }
 
