@@ -36,6 +36,7 @@ jobs:
         run: npm run validate:unit-modules
       - name: Check interactive unit generator syntax
         run: node --check scripts/generate-interactive-unit.mjs
+          node --check scripts/generate-interactive-curriculum-batch.mjs
       - name: Build application
         run: npm run build
       - name: Upload production build
