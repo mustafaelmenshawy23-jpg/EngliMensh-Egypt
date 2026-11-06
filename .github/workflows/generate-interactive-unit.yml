@@ -20,7 +20,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: englimensh-curriculum-generation
@@ -56,6 +56,18 @@ jobs:
           START_INDEX: ${{ inputs.start_index }}
           BATCH_SIZE: ${{ inputs.batch_size }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
+      - name: Persist unapproved drafts for resumable continuation
+        if: always()
+        run: |
+          if [ -d artifacts/unit-drafts ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add artifacts/unit-drafts/*.json 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -m "Save unapproved interactive curriculum drafts"
+              git push
+            fi
+          fi
       - name: Upload drafts and progress report for academic review
         if: always()
         uses: actions/upload-artifact@v4
