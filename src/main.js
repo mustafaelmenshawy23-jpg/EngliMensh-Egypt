@@ -1,6 +1,7 @@
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
+import lessonDrafts from './data/lessons/lessons.draft.json';
 import './style.css';
 
 const app = document.querySelector('#app');
@@ -108,11 +109,23 @@ function renderUnitWorkspace() {
   if (!book || !unit) return '';
   const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
   const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
+  const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number);
+  const renderLessonDraft = (lesson) => `
+    <article class="lesson-draft">
+      <div class="lesson-draft-heading"><div><span class="lesson-status">Academic review pending</span><h4>${escapeHtml(lesson.title)}</h4><p>${escapeHtml(lesson.grade)} · Unit ${lesson.unitNumber} · PDF page ${lesson.pdfPage}</p></div></div>
+      ${lesson.sections.map((section) => `
+        <section class="lesson-draft-section">
+          <h5>${escapeHtml(section.type)} · ${escapeHtml(section.title)}</h5>
+          ${section.items.length ? `<ul>${section.items.map((item) => `<li><strong>${escapeHtml(item.content?.word || item.itemId)}</strong><span>${escapeHtml(item.content?.visualCue || '')}</span><small>Page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus)}</small></li>`).join('')}</ul>` : '<p>No source-verified items recorded yet.</p>'}
+        </section>`).join('')}
+      <p class="lesson-draft-note">Draft transcription only. Compare every item with the original PDF before approval. This content is not available in student assessments.</p>
+    </article>`;
   return `<section class="unit-workspace" aria-label="Unit details">
     <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
     ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
+    ${lessonRecords.map(renderLessonDraft).join('')}
     <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
     ${renderReviewCandidates(book, unit.number)}
     <p class="unit-source-note">Proposed unit links and transcriptions remain unapproved. They are shown for source review only and are not used in lessons, tests, or answer keys.</p>
