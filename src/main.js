@@ -118,7 +118,8 @@ function renderUnitWorkspace() {
     { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'A separate grammar practice bank' },
     { type: 'reading', title: 'Reading', subtitle: 'Unit reading texts and comprehension' },
     { type: 'listening', title: 'Listening', subtitle: 'Audio activities and listening questions' },
-    { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' }
+    { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' },
+    { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' }
   ];
   const renderLessonDraft = (lesson) => {
     const modules = moduleDefinitions.map((definition) => {
