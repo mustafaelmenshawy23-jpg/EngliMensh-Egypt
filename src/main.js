@@ -45,11 +45,11 @@ function bookUrl(file, page) {
 }
 
 
-function renderReviewCandidates(book) {
-  const candidates = reviewCandidates.records.filter((record) => record.sourceFilename === book.sourceFile);
+function renderReviewCandidates(book, unitNumber = null) {
+  const candidates = reviewCandidates.records.filter((record) => record.sourceFilename === book.sourceFile && (unitNumber === null ? !Number.isInteger(record.unitLink?.unitNumber) : record.unitLink?.unitNumber === unitNumber));
   if (!candidates.length) return '';
   return `<section class="review-candidates"><div class="review-candidates-heading"><div><p class="eyebrow">SOURCE TRANSCRIPTION CANDIDATES</p><strong>Extracted material · academic review pending</strong></div><span>${candidates.length} candidate${candidates.length === 1 ? '' : 's'}</span></div>
-    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>Needs academic review · Not used in tests or answer keys</small></article>`).join('')}
+    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>${record.unitLink?.status === 'proposed_needs_review' ? 'Proposed unit link · review pending' : record.unitLink?.status === 'cross_unit_reference' ? 'Shared cross-unit reference · review pending' : 'Not assigned to a unit · review pending'} · Not used in tests or answer keys</small>${record.unitLink?.evidence ? `<small>${escapeHtml(record.unitLink.evidence)}</small>` : ''}</article>`).join('')}
   </section>`;
 }
 
@@ -86,7 +86,8 @@ function renderUnitWorkspace() {
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
     <div class="unit-source-actions"><button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a></div>
-    <p class="unit-source-note">Only metadata already indexed from the source is shown here. Lesson text, exercises, and answer keys are not invented. The original book remains the authoritative lesson content.</p>
+    ${renderReviewCandidates(book, unit.number)}
+    <p class="unit-source-note">Proposed unit links and transcriptions remain unapproved. They are shown for source review only and are not used in lessons, tests, or answer keys.</p>
   </section>`;
 }
 
