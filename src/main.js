@@ -128,8 +128,10 @@ function renderPreview() {
 function render() {
   const stage = currentStage();
   const paths = stage.paths;
-  const selectedPath = paths.find((item) => item.id === state.path) || paths[0];
-  state.path = selectedPath.id;
+  const selectedPath = state.stage === 'egyptian-baccalaureate'
+    ? (sourceIndex.pathways.find((item) => item.id === (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')) || paths[0])
+    : (paths.find((item) => item.id === state.path) || paths[0]);
+  if (state.stage !== 'egyptian-baccalaureate') state.path = selectedPath.id;
   const grades = stage.grades;
   const books = selectedBooks();
   const visiblePathways = state.stage === 'egyptian-baccalaureate'
