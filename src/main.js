@@ -123,8 +123,7 @@ function renderUnitWorkspace() {
     { type: 'listening', title: 'Listening & Questions', subtitle: 'Audio activities, listening tasks, and their questions in one section' },
     { type: 'games', title: 'Games', subtitle: 'Vocabulary and grammar games only; no reading or listening questions' },
     { type: 'comprehensive_test', title: 'Comprehensive Unit Test', subtitle: 'Full-unit assessment; blueprint and item mix must follow the applicable Egyptian MOE specifications' },
-    { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' },
-    { type: 'phonics', title: 'Phonics', subtitle: 'Letter patterns, IPA sounds, and printed examples' }
+
   ];
   const renderValue = (value) => {
     if (value === null || value === undefined || value === '') return '';
@@ -141,15 +140,24 @@ function renderUnitWorkspace() {
       .filter((section) => section.type === definition.type)
       .map((section) => ({ lesson, section })));
     const items = sourcedSections.flatMap(({ lesson, section }) => section.items.map((item) => ({ lesson, item })));
+    // The source index may contain unit-level vocabulary or a grammar focus even
+    // when no lesson transcription exists yet. Surface it honestly as index metadata.
+    const indexedItems = definition.type === 'vocabulary'
+      ? (unit.vocabulary || []).map((word, index) => ({ heading: word, provenance: 'Curriculum index · needs source-page verification', id: `index-vocab-${index}` }))
+      : definition.type === 'grammar' && unit.languageFocus
+        ? [{ heading: unit.languageFocus, provenance: 'Curriculum index · needs source-page verification', id: 'index-grammar-focus' }]
+        : [];
     const content = items.length ? '<ul>' + items.map(({ lesson, item }) => {
       const data = item.content || {};
       const heading = data.word || data.title || data.instruction || item.itemId;
       const detailHtml = Object.entries(data).filter(([key, value]) => !['word', 'title'].includes(key) && value !== null && value !== undefined && value !== '')
         .map(([key, value]) => `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${renderValue(value)}</span>`).join('');
       return `<li><strong>${escapeHtml(heading)}</strong>${detailHtml}<small>PDF page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus || lesson.reviewStatus || 'needs_review')}</small></li>`;
-    }).join('') + '</ul>' : '<p class="unit-module-empty">No extracted source content is recorded in this section yet.</p>';
-    const hasItems = items.length > 0;
-    const sectionStatus = hasItems ? 'Review pending' : (baseSection?.status === 'not_populated' ? 'Not populated' : 'No source data');
+    }).join('') + '</ul>' : indexedItems.length
+      ? '<ul>' + indexedItems.map((item) => `<li><strong>${escapeHtml(item.heading)}</strong><small>${escapeHtml(item.provenance)}</small></li>`).join('') + '</ul>'
+      : '<p class="unit-module-empty">Content not added yet. This section is in progress; no questions or activities are being invented.</p>';
+    const hasItems = items.length > 0 || indexedItems.length > 0;
+    const sectionStatus = items.length ? 'Review pending' : indexedItems.length ? 'Index metadata' : (baseSection?.status === 'not_populated' ? 'In progress' : 'No source data');
     return `<section class="unit-module" data-module="${definition.type}"><div class="unit-module-head"><div><h5>${definition.title}</h5><p>${definition.subtitle}</p></div><span class="lesson-status">${sectionStatus}</span></div>${content}</section>`;
   }).join('');
   const lessonHeadings = lessonRecords.map((lesson) => `<p class="lesson-draft-note"><strong>${escapeHtml(lesson.title)}</strong> · ${escapeHtml(lesson.grade)} · PDF page ${lesson.pdfPage} · ${escapeHtml(lesson.reviewStatus)}</p>`).join('');
