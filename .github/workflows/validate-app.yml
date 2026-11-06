@@ -28,6 +28,8 @@ jobs:
         run: npm run validate:source-index
       - name: Validate source-linked review candidates
         run: npm run validate:review-candidates
+      - name: Validate Pass 22 high-resolution visual observations
+        run: npm run validate:visual-recoveries-pass22
       - name: Build application
         run: npm run build
       - name: Upload production build
