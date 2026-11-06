@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mustafaelmenshawy23-jpg.github.io/EngliMensh-Egypt/schemas/lesson-content.schema.json",
+  "title": "EngliMensh source-linked lesson content",
+  "type": "object",
+  "required": ["schemaVersion", "datasetStatus", "records"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "datasetStatus": { "enum": ["draft", "review"] },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lessonId", "sourceFilename", "pdfPage", "stage", "grade", "pathwayId", "bookId", "unitNumber", "title", "reviewStatus", "sections"],
+        "properties": {
+          "lessonId": { "type": "string", "minLength": 1 },
+          "sourceFilename": { "type": "string", "minLength": 1 },
+          "pdfPage": { "type": "integer", "minimum": 1 },
+          "stage": { "enum": ["primary", "preparatory", "secondary", "egyptian-baccalaureate"] },
+          "grade": { "type": "string", "minLength": 1 },
+          "pathwayId": { "type": "string", "minLength": 1 },
+          "bookId": { "type": "string", "minLength": 1 },
+          "unitNumber": { "type": "integer", "minimum": 1 },
+          "lessonNumber": { "type": ["integer", "null"], "minimum": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "reviewStatus": { "enum": ["needs_review", "approved", "rejected"] },
+          "reviewedBy": { "type": ["string", "null"] },
+          "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["sectionId", "type", "title", "items"],
+              "properties": {
+                "sectionId": { "type": "string", "minLength": 1 },
+                "type": { "enum": ["vocabulary", "grammar", "reading", "listening", "speaking", "writing", "exercises", "assessments"] },
+                "title": { "type": "string", "minLength": 1 },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["itemId", "content", "reviewStatus"],
+                    "properties": {
+                      "itemId": { "type": "string", "minLength": 1 },
+                      "content": {},
+                      "reviewStatus": { "enum": ["needs_review", "approved", "rejected"] },
+                      "sourcePdfPage": { "type": "integer", "minimum": 1 },
+                      "notes": { "type": "string" }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
