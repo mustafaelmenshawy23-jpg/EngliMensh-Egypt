@@ -39,7 +39,8 @@ function selectedBooks() {
 }
 
 function bookUrl(file, page) {
-  const path = `${import.meta.env.BASE_URL}books/${encodeURIComponent(file)}`;
+  const base = import.meta.env.VITE_BOOKS_BASE_URL || `${import.meta.env.BASE_URL}books/`;
+  const path = `${base}${encodeURIComponent(file)}`;
   return page ? `${path}#page=${page}` : path;
 }
 
