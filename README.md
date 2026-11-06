@@ -44,7 +44,7 @@ See [the extraction workflow](docs/BOOK_EXTRACTION_WORKFLOW.md) for Git LFS hydr
 - `docs/` — upload, extraction, and content-governance documentation
 
 ## Current status
-The source PDF set is present in the repository. The extraction pipeline is ready to run locally; extracted content is not yet generated or academically approved.
+The original source PDF set is present in the repository and is approved by the project owner as the authoritative curriculum reference set. Original PDFs are immutable and must never be edited, replaced, renamed, or recompressed. Application work now focuses on connecting and organizing curriculum content. OCR output and individual extracted text fields must not be described as individually academically verified unless separately checked.
 
 ## Visual OCR review passes
 - [Pass 15 visual review](docs/visual-ocr-review-pass15.md) — 20 rendered pages from 14 books.
@@ -53,3 +53,14 @@ The source PDF set is present in the repository. The extraction pipeline is read
 - [Pass 18 OCR visual review](docs/visual-ocr-review-pass18.md) — 20 pages from 5 books visually inspected at 240 DPI; observations remain recovery candidates and academically unverified.
 - [Pass 19 OCR visual review](docs/visual-ocr-review-pass19.md) — 20 pages from 12 books visually inspected at 240 DPI; 11 blank renders and remaining cover/writing/title pages documented without academic approval.
 - [Pass 20 OCR visual review](docs/visual-ocr-review-pass20.md) — 20 pages from 14 books visually inspected at 240 DPI; visual observations remain unverified candidates.
+
+
+## Project decision — source approval and review scope
+
+- The project owner confirms that the supplied books were obtained from the Ministry of Education website, personally reviewed, and are familiar teaching materials.
+- Treat the supplied books as approved source references for EngliMensh-Egypt.
+- Stop broad visual-review passes. Do not create another pass merely to inspect more pages.
+- Preserve every original PDF byte-for-byte; all extraction, indexing, and app changes must be additive and stored separately.
+- If a specific mismatch or defect appears in the application, investigate only the affected source PDF and 1-based physical PDF page, then make a targeted correction.
+- Source approval does not mean OCR output is infallible. Never invent unreadable words, exercise content, or answer keys; flag only concrete extraction defects when they affect a real app feature.
+- Keep each imported lesson, activity, and question linked to its exact source filename and physical PDF page.

@@ -52,7 +52,7 @@ function render() {
         </div>
       </section>
       <section class="content-panel">
-        <div class="content-copy"><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${selectedPath.series || selectedPath.name}</h2><p>${selectedPath.status === 'reserved_empty' ? 'This pathway is reserved and will remain empty until its official source books are uploaded.' : 'The curriculum library is being prepared from your official PDF books. No lessons or questions will be displayed until the source material is uploaded and reviewed.'}</p></div>
+        <div class="content-copy"><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${selectedPath.series || selectedPath.name}</h2><p>${selectedPath.status === 'reserved_empty' ? 'This pathway is reserved and will remain empty until its approved source materials are added.' : 'The Ministry-sourced books have been approved as the project’s reference materials and are preserved unchanged. Lessons and activities are being connected to their exact source pages.'}</p></div>
         <div class="empty-state"><div class="book-icon">▤</div><strong>Books will appear here</strong><span>Official source materials only</span></div>
       </section>
       <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
