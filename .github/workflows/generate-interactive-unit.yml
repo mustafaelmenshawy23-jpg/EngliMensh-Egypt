@@ -1,16 +1,18 @@
-name: Generate interactive unit draft
+name: Generate interactive curriculum batch
 
 on:
   workflow_dispatch:
     inputs:
-      book_id:
-        description: Exact bookId from source-book-index.draft.json
+      start_index:
+        description: Zero-based position in the eligible unit queue (use the previous report to continue)
         required: true
+        default: "0"
         type: string
-      unit_number:
-        description: Unit number
+      batch_size:
+        description: Number of units to process in this run (1-10)
         required: true
-        type: number
+        default: "5"
+        type: string
       gemini_model:
         description: Gemini model
         required: true
@@ -20,10 +22,14 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: englimensh-curriculum-generation
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,25 +41,26 @@ jobs:
         run: npm install
       - name: Hydrate source PDFs
         run: git lfs pull
-      - name: Extract source pages and OCR scans
+      - name: Extract source pages and OCR scans once for this batch
         run: |
           npm run extract:books
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
           python3 -m venv .venv
           .venv/bin/pip install pymupdf
-          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 .venv/bin/python scripts/ocr-scanned-pages.py
-      - name: Generate source-grounded interactive unit draft
+          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+      - name: Generate resumable unit batch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ inputs.gemini_model }}
-          BOOK_ID: ${{ inputs.book_id }}
-          UNIT_NUMBER: ${{ inputs.unit_number }}
-        run: node scripts/generate-interactive-unit.mjs
-      - name: Upload unit draft for academic review
+          START_INDEX: ${{ inputs.start_index }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
+        run: node scripts/generate-interactive-curriculum-batch.mjs
+      - name: Upload drafts and progress report for academic review
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: interactive-unit-draft-${{ inputs.book_id }}-unit-${{ inputs.unit_number }}
+          name: interactive-curriculum-batch-${{ inputs.start_index }}
           path: artifacts/unit-drafts/*.json
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 30
