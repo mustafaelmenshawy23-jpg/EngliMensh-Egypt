@@ -45,11 +45,42 @@ function bookUrl(file, page) {
 }
 
 
+function renderCandidateContent(record) {
+  const blocks = [];
+  const paragraph = (label, value) => value ? `<p><strong>${label}:</strong> ${escapeHtml(value)}</p>` : '';
+  const list = (label, values, formatter = (value) => escapeHtml(typeof value === 'string' ? value : JSON.stringify(value))) => {
+    if (!Array.isArray(values) || !values.length) return '';
+    return `<div class="candidate-content-group"><strong>${label}</strong><ul>${values.map((value) => `<li>${formatter(value)}</li>`).join('')}</ul></div>`;
+  };
+  blocks.push(paragraph('Instruction', record.instruction || record.pairInstruction));
+  blocks.push(list('Vocabulary / labels', record.vocabulary || record.labels));
+  blocks.push(list('Extracted words', record.items, (item) => {
+    if (typeof item === 'string') return escapeHtml(item);
+    return [item.text, item.printedString, item.visualCue].filter(Boolean).map(escapeHtml).join(' — ');
+  }));
+  blocks.push(list('Phonics patterns', record.patterns, (pattern) => {
+    const examples = Array.isArray(pattern.examples) ? pattern.examples.join(', ') : '';
+    return [pattern.grapheme, pattern.printedSound || pattern.sound, examples].filter(Boolean).map(escapeHtml).join(' — ');
+  }));
+  blocks.push(list('Dialogue', record.dialogue, (line) => `${escapeHtml(line.speaker || '')}: ${escapeHtml(line.text || '')}`));
+  blocks.push(list('Picture prompts', record.picturePrompts));
+  blocks.push(list('Printed reference labels', record.printedReferenceLabels, (item) => `${escapeHtml(item.number)}. ${escapeHtml(item.text)}`));
+  blocks.push(paragraph('Follow-up question', record.followUpQuestion));
+  if (record.sectionA) {
+    blocks.push(`<div class="candidate-content-group"><strong>Section A</strong>${paragraph('Instruction', record.sectionA.instruction)}${list('Printed items', record.sectionA.items, (item) => escapeHtml(item.printedString || item))}</div>`);
+  }
+  if (record.sectionB) {
+    blocks.push(`<div class="candidate-content-group"><strong>Section B</strong>${paragraph('Instruction', record.sectionB.instruction)}${list('Printed items', record.sectionB.items)}</div>`);
+  }
+  const content = blocks.filter(Boolean).join('');
+  return content ? `<details class="candidate-content"><summary>Review extracted content</summary>${content}<p class="unit-source-note">Transcription only · verify wording and layout against the original PDF before approval.</p></details>` : '';
+}
+
 function renderReviewCandidates(book, unitNumber = null) {
   const candidates = reviewCandidates.records.filter((record) => record.sourceFilename === book.sourceFile && (unitNumber === null ? !Number.isInteger(record.unitLink?.unitNumber) : record.unitLink?.unitNumber === unitNumber));
   if (!candidates.length) return '';
   return `<section class="review-candidates"><div class="review-candidates-heading"><div><p class="eyebrow">SOURCE TRANSCRIPTION CANDIDATES</p><strong>Extracted material · academic review pending</strong></div><span>${candidates.length} candidate${candidates.length === 1 ? '' : 's'}</span></div>
-    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>${record.unitLink?.status === 'proposed_needs_review' ? 'Proposed unit link · review pending' : record.unitLink?.status === 'cross_unit_reference' ? 'Shared cross-unit reference · review pending' : 'Not assigned to a unit · review pending'} · Not used in tests or answer keys</small>${record.unitLink?.evidence ? `<small>${escapeHtml(record.unitLink.evidence)}</small>` : ''}</article>`).join('')}
+    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>${record.unitLink?.status === 'proposed_needs_review' ? 'Proposed unit link · review pending' : record.unitLink?.status === 'cross_unit_reference' ? 'Shared cross-unit reference · review pending' : 'Not assigned to a unit · review pending'} · Not used in tests or answer keys</small>${record.unitLink?.evidence ? `<small>${escapeHtml(record.unitLink.evidence)}</small>` : ''}${renderCandidateContent(record)}</article>`).join('')}
   </section>`;
 }
 
