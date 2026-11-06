@@ -56,8 +56,8 @@ for (const unit of selected) {
     summary.results.push({...unit,status:blockedByReview?'blocked_review':'failed',error:error.message});
     console.error(`${blockedByReview?'BLOCKED FOR SOURCE REVIEW':'FAILED'} ${unit.bookId} unit ${unit.unitNumber}: ${error.message}`);
   }
-  await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\\n');
+  await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\n');
 }
-await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\\n');
+await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\n');
 console.log(JSON.stringify({eligibleTotal:summary.eligibleTotal,selected:summary.selected,generated:summary.results.filter(x=>x.status==='generated').length,skipped:summary.results.filter(x=>x.status==='already_generated').length,blockedForReview:summary.results.filter(x=>x.status==='blocked_review').length,failed:summary.results.filter(x=>x.status==='failed').length,progress:'artifacts/unit-drafts/progress.json'},null,2));
 if (summary.results.some(x=>x.status==='failed')) process.exitCode=1;
