@@ -152,7 +152,8 @@ function renderUnitWorkspace() {
       const heading = data.word || data.title || data.instruction || item.itemId;
       const detailHtml = Object.entries(data).filter(([key, value]) => !['word', 'title'].includes(key) && value !== null && value !== undefined && value !== '')
         .map(([key, value]) => `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${renderValue(value)}</span>`).join('');
-      return `<li><strong>${escapeHtml(heading)}</strong>${detailHtml}<small>PDF page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus || lesson.reviewStatus || 'needs_review')}</small></li>`;
+      const provenanceHtml = item.notes ? `<small class="source-provenance">${escapeHtml(item.notes)}</small>` : '';
+      return `<li><strong>${escapeHtml(heading)}</strong>${detailHtml}${provenanceHtml}<small>PDF page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus || lesson.reviewStatus || 'needs_review')}</small></li>`;
     }).join('') + '</ul>' : indexedItems.length
       ? '<ul>' + indexedItems.map((item) => `<li><strong>${escapeHtml(item.heading)}</strong><small>${escapeHtml(item.provenance)}</small></li>`).join('') + '</ul>'
       : '<p class="unit-module-empty">Content not added yet. This section is in progress; no questions or activities are being invented.</p>';
