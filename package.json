@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "extract:books": "node scripts/extract-pdfs.mjs",
     "validate:extraction": "node scripts/validate-extraction.mjs",
-    "validate:manual-recoveries": "node scripts/validate-manual-recoveries.mjs"
+    "validate:manual-recoveries": "node scripts/validate-manual-recoveries.mjs",
+    "validate:source-index": "node scripts/validate-source-book-index.mjs"
   },
   "devDependencies": {
     "vite": "^6.4.1",
