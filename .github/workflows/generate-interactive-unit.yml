@@ -52,6 +52,9 @@ jobs:
       - name: Generate resumable unit batch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_BACKUP: ${{ secrets.GEMINI_API_KEY_BACKUP }}
+          GEMINI_API_KEY_BACKUP_2: ${{ secrets.GEMINI_API_KEY_BACKUP_2 }}
+          GEMINI_API_KEY_BACKUP_3: ${{ secrets.GEMINI_API_KEY_BACKUP_3 }}
           GEMINI_MODEL: ${{ inputs.gemini_model }}
           START_INDEX: ${{ inputs.start_index }}
           BATCH_SIZE: ${{ inputs.batch_size }}
