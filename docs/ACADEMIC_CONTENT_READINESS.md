@@ -50,15 +50,19 @@ The section inventory above includes supplementary section types (speaking, phon
 
 ## Recommended first academic pilot
 
-Use **Primary 3 — Unit 4: How We Feel** as the first review candidate because the current draft has a compact source-linked vocabulary/dialogue record:
+Use **Primary 2 — Unit 3: Classroom Actions & Routines** as the first review candidate. It has the strongest consistent link between the indexed unit title and the source-page context:
 
-- Source: `English_language_prim3_t1 (1).pdf`
-- Physical PDF page: 69
-- Candidate vocabulary: `shy`, `tired`, `bored`, `scared`
-- Candidate pair dialogue: “How do you feel?” / “I feel so happy!”
-- Candidate follow-up prompt: “How do you feel when you play with your friends?”
+- Source: `English_language_prim2_t1 (1).pdf`
+- Physical PDF page: 32
+- Candidate lesson heading: “Lesson 1 — Classroom Actions”
+- Candidate vocabulary: `read`, `write`, `clean`, `draw`, `sit`, `stand`, `play`, `color`
+- Adjacent-page context: physical PDF p31 is the Unit 3 cover and p33 continues with an explicit UNIT 3 heading.
 
-The source review notes associate physical PDF page 69 with the printed Unit 4 heading. The lesson transcription itself is still `needs_review`; this audit does not approve it. After academic review, this pilot can be expanded only with additional content supported by the source book. Generated practice can be added as a separate, clearly labeled layer.
+The unit link is context-supported, but the transcription remains `needs_review`; this audit does not approve it. The eight words can form the source-backed vocabulary portion of the pilot after academic review. Any extra questions, examples, or games must be stored as a separate generated layer and labeled as generated, not as printed book content.
+
+### Hold: Primary 3 — Unit 4 candidate
+
+Do not use Primary 3 p69 “How We Feel” as the pilot until its unit/title mapping is reconciled. The reviewed page prints UNIT 4 and the adjacent pages show “How We Feel”, while the source-book index currently labels Unit 4 “Let’s Tell Stories!” with a start page of 71. This discrepancy is not resolved by the current evidence. Keep the candidate at `needs_review` and do not silently rewrite the index or lesson title.
 
 ## Not yet established
 
