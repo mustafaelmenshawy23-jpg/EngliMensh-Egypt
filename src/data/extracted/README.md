@@ -49,3 +49,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `visual-recoveries-pass20.jsonl`: 20 visually inspected pages from 14 source books. All records remain `needs_review` and `not_academically_verified`; observations are supplemental and do not alter machine OCR or enter app curriculum/question-bank data. See `docs/visual-ocr-review-pass20.md`.
 
 - `ocr-quality-audit-pass21.jsonl`: 20 additional OCR-quality candidates across 14 source PDFs, selected from empty/short/fragmented machine extraction and excluding indexed Pass 7–20 page pairs. All remain `needs_review`; render with `.github/workflows/render-pass21-quality-audit.yml`. See `docs/ocr-quality-audit-pass21.md`.
+
+- `visual-recoveries-pass21.jsonl`: 20 pages visually inspected at 240 DPI in workflow run 42215770749. Contains page-level visual triage only; all records remain `needs_review` and `not_academically_verified`. No machine OCR or curriculum data was modified. See `docs/visual-ocr-review-pass21.md`.
