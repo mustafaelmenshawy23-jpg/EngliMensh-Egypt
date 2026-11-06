@@ -6,7 +6,7 @@ const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.dr
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json','utf8'));
 const startIndex = Number(process.env.START_INDEX || 0);
 const batchSize = Number(process.env.BATCH_SIZE || 5);
-const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY secret is required.');
 if (!Number.isInteger(startIndex) || startIndex < 0 || !Number.isInteger(batchSize) || batchSize < 1 || batchSize > 10) {
   throw new Error('START_INDEX must be >= 0 and BATCH_SIZE must be 1..10.');
@@ -52,11 +52,12 @@ for (const unit of selected) {
     });
     summary.results.push({...unit,status:'generated'});
   } catch(error) {
-    summary.results.push({...unit,status:'failed',error:error.message});
-    console.error(`FAILED ${unit.bookId} unit ${unit.unitNumber}: ${error.message}`);
+    const blockedByReview = error.message.includes('pages requiring OCR/visual review');
+    summary.results.push({...unit,status:blockedByReview?'blocked_review':'failed',error:error.message});
+    console.error(`${blockedByReview?'BLOCKED FOR SOURCE REVIEW':'FAILED'} ${unit.bookId} unit ${unit.unitNumber}: ${error.message}`);
   }
   await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\\n');
 }
 await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\\n');
-console.log(JSON.stringify({eligibleTotal:summary.eligibleTotal,selected:summary.selected,generated:summary.results.filter(x=>x.status==='generated').length,skipped:summary.results.filter(x=>x.status==='already_generated').length,failed:summary.results.filter(x=>x.status==='failed').length,progress:'artifacts/unit-drafts/progress.json'},null,2));
+console.log(JSON.stringify({eligibleTotal:summary.eligibleTotal,selected:summary.selected,generated:summary.results.filter(x=>x.status==='generated').length,skipped:summary.results.filter(x=>x.status==='already_generated').length,blockedForReview:summary.results.filter(x=>x.status==='blocked_review').length,failed:summary.results.filter(x=>x.status==='failed').length,progress:'artifacts/unit-drafts/progress.json'},null,2));
 if (summary.results.some(x=>x.status==='failed')) process.exitCode=1;
