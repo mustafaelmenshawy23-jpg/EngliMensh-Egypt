@@ -229,8 +229,9 @@ function render() {
   app.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
     state.stage = button.dataset.stage;
     const next = currentStage();
-    state.grade = next.grades[0] || null;
-    state.path = next.paths[0].id;
+    state.grade = next?.grades?.[0] ?? null;
+    state.path = next?.paths?.[0]?.id ?? '';
+    state.search = '';
     state.search = '';
     state.preview = null;
     state.unitSelection = null;
