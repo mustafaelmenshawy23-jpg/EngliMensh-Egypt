@@ -24,18 +24,46 @@ const unusable = rows.filter(p=>!p.text || p.text.length<20);
 if (unusable.length) throw new Error('Unit has pages requiring OCR/visual review: '+unusable.map(p=>p.pdfPage).join(', ')+'. Refusing to generate from incomplete source text.');
 const existing = lessons.records.filter(l=>l.bookId===bookId && l.unitNumber===unitNumber);
 const sourcePages = rows.map(p=>({pdfPage:p.pdfPage,text:p.text}));
+const dialogueTurnSchema = {
+  type: 'OBJECT',
+  properties: { speaker: { type: 'STRING' }, text: { type: 'STRING' } },
+  required: ['speaker', 'text']
+};
+const contentSchema = {
+  type: 'OBJECT',
+  properties: {
+    word: { type: 'STRING' }, arabicMeaning: { type: 'STRING' }, example: { type: 'STRING' },
+    rule: { type: 'STRING' }, explanation: { type: 'STRING' }, passage: { type: 'STRING' },
+    script: { type: 'STRING' }, dialogue: { type: 'ARRAY', items: dialogueTurnSchema },
+    question: { type: 'STRING' }, instruction: { type: 'STRING' },
+    options: { type: 'ARRAY', items: { type: 'STRING' } },
+    correctAnswer: { type: 'STRING' }, answer: { type: 'STRING' }, reason: { type: 'STRING' },
+    sourcePdfPage: { type: 'INTEGER' }, origin: { type: 'STRING', enum: ['source', 'supplementary'] }
+  },
+  required: ['origin', 'sourcePdfPage']
+};
+const itemSchema = {
+  type: 'OBJECT',
+  properties: { itemId: { type: 'STRING' }, content: contentSchema },
+  required: ['itemId', 'content']
+};
+const sectionSchema = {
+  type: 'OBJECT',
+  properties: {
+    type: { type: 'STRING', enum: required },
+    title: { type: 'STRING' },
+    items: { type: 'ARRAY', items: itemSchema }
+  },
+  required: ['type', 'title', 'items']
+};
 const schema = {
- type:'OBJECT', properties:{
-  unitTitle:{type:'STRING'}, sourceCoverage:{type:'ARRAY',items:{type:'INTEGER'}},
-  sections:{type:'ARRAY',items:{type:'OBJECT',properties:{
-   type:{type:'STRING',enum:required},title:{type:'STRING'},items:{type:'ARRAY',items:{type:'OBJECT',properties:{
-    itemId:{type:'STRING'},content:{type:'OBJECT',properties:{
-     word:{type:'STRING'},arabicMeaning:{type:'STRING'},example:{type:'STRING'},rule:{type:'STRING'},explanation:{type:'STRING'},
-     passage:{type:'STRING'},script:{type:'STRING'},dialogue:{type:'ARRAY',items:{type:'OBJECT',properties:{speaker:{type:'STRING'},text:{type:'STRING'}},required:['speaker','text']}},
-     question:{type:'STRING'},instruction:{type:'STRING'},options:{type:'ARRAY',items:{type:'STRING'}},correctAnswer:{type:'STRING'},answer:{type:'STRING'},reason:{type:'STRING'},sourcePdfPage:{type:'INTEGER'},origin:{type:'STRING'}
-    },required:['origin','sourcePdfPage']},required:['itemId','content']}}
-  },required:['type','title','items']}}
- },required:['unitTitle','sourceCoverage','sections']
+  type: 'OBJECT',
+  properties: {
+    unitTitle: { type: 'STRING' },
+    sourceCoverage: { type: 'ARRAY', items: { type: 'INTEGER' } },
+    sections: { type: 'ARRAY', items: sectionSchema }
+  },
+  required: ['unitTitle', 'sourceCoverage', 'sections']
 };
 const prompt = `You are an Egyptian MOE English curriculum editor. Build a structured INTERACTIVE lesson draft for ${book.grade}, Unit ${unitNumber}: ${unit.title}. Source filename: ${book.sourceFile}. Use ONLY the source page text supplied. Do not invent or attribute text to the printed book. Separate exact source-derived material (origin="source") from new supplementary practice (origin="supplementary"). For each item, cite sourcePdfPage as one of the supplied PDF page numbers. If a category is absent from the pages, return an empty items array for it; do not fabricate a reading/listening/dialogue/grammar. Vocabulary entries need word, arabicMeaning, example. Grammar entries need rule and explanation. Questions need question, options (3-4), correctAnswer, reason. Reading/listening need passage/script and nested questions represented as separate question items in the same section. Speaking needs dialogue array with different speaker labels and short turns. Build a complete coverage draft across these eight section types: ${required.join(', ')}. Use simple age-appropriate English. Every generated practice item must be clearly supplementary. Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
