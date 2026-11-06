@@ -34,6 +34,8 @@ jobs:
         run: npm run validate:lesson-content
       - name: Validate independent unit module scaffolds
         run: npm run validate:unit-modules
+      - name: Check interactive unit generator syntax
+        run: node --check scripts/generate-interactive-unit.mjs
       - name: Build application
         run: npm run build
       - name: Upload production build
