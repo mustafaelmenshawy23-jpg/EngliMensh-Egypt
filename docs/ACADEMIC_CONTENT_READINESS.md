@@ -14,7 +14,7 @@
 | Candidate lesson records | 26 |
 | Candidate records academically approved | 0 |
 | Candidate records awaiting review | 26 |
-| Candidate items across all lesson sections | 145 |
+| Candidate items across all lesson sections | 149 |
 
 The 944 module slots are structural placeholders, not populated lessons. All eight module slots are currently empty/not populated in the unit-module scaffold.
 
@@ -25,7 +25,7 @@ These are transcribed/recovered candidates only. Their presence in the repositor
 | Section type | Candidate items |
 |---|---:|
 | Vocabulary | 92 |
-| Vocabulary questions | 0 |
+| Vocabulary questions | 4 (generated; pending review) |
 | Grammar | 3 |
 | Grammar questions | 1 |
 | Reading | 2 |
@@ -34,7 +34,7 @@ These are transcribed/recovered candidates only. Their presence in the repositor
 | Speaking | 1 |
 | Phonics | 14 |
 | Exercises | 30 |
-| **Total** | **145** |
+| **Total** | **149** |
 
 The section inventory above includes supplementary section types (speaking, phonics, exercises) found in candidate records. The learner-facing unit workspace is intentionally limited to the eight required core modules.
 
@@ -58,7 +58,7 @@ Use **Primary 2 — Unit 3: Classroom Actions & Routines** as the first review c
 - Candidate vocabulary: `read`, `write`, `clean`, `draw`, `sit`, `stand`, `play`, `color`
 - Adjacent-page context: physical PDF p31 is the Unit 3 cover and p33 continues with an explicit UNIT 3 heading.
 
-The unit link is context-supported, but the transcription remains `needs_review`; this audit does not approve it. The eight words can form the source-backed vocabulary portion of the pilot after academic review. Any extra questions, examples, or games must be stored as a separate generated layer and labeled as generated, not as printed book content.
+The unit link is context-supported, but the transcription remains `needs_review`; this audit does not approve it. The eight words form the source-backed vocabulary candidate. Four additional multiple-choice practice items have now been added in a separate section titled **Generated supplementary practice — not printed in the source book**. Each item is marked `needs_review` and carries a note identifying it as AI-generated, not a printed book question. They must not be treated as official assessment questions until reviewed.
 
 ### Hold: Primary 3 — Unit 4 candidate
 
