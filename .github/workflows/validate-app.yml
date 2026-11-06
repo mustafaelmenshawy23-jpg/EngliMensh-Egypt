@@ -25,6 +25,8 @@ jobs:
         run: npm install
       - name: Validate source-book index and original PDFs
         run: npm run validate:source-index
+      - name: Validate source-linked review candidates
+        run: npm run validate:review-candidates
       - name: Build application
         run: npm run build
       - name: Upload production build
