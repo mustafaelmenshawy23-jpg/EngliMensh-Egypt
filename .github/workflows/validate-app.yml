@@ -32,6 +32,8 @@ jobs:
         run: npm run validate:visual-recoveries-pass22
       - name: Validate source-linked lesson content
         run: npm run validate:lesson-content
+      - name: Validate independent unit module scaffolds
+        run: npm run validate:unit-modules
       - name: Build application
         run: npm run build
       - name: Upload production build
