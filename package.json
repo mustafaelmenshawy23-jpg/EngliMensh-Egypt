@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "android:sync": "cap sync android",
+    "android:debug": "cap sync android && cd android && ./gradlew assembleDebug",
     "extract:books": "node scripts/extract-pdfs.mjs",
     "validate:extraction": "node scripts/validate-extraction.mjs",
     "validate:manual-recoveries": "node scripts/validate-manual-recoveries.mjs",
@@ -16,7 +18,12 @@
     "validate:lesson-content": "node scripts/validate-lesson-content.mjs",
     "validate:unit-modules": "node scripts/validate-unit-modules.mjs"
   },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
   "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
     "vite": "^6.4.1",
     "pdfjs-dist": "^4.10.38"
   }
