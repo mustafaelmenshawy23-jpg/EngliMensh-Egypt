@@ -3,14 +3,19 @@ import fs from 'node:fs/promises';
 const required = ['vocabulary','vocabulary_questions','grammar','grammar_questions','reading','listening','speaking','comprehensive_test'];
 const bookId = process.env.BOOK_ID;
 const unitNumber = Number(process.env.UNIT_NUMBER);
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKeys = [
+  ['GEMINI_API_KEY', process.env.GEMINI_API_KEY],
+  ['GEMINI_API_KEY_BACKUP', process.env.GEMINI_API_KEY_BACKUP],
+  ['GEMINI_API_KEY_BACKUP_2', process.env.GEMINI_API_KEY_BACKUP_2],
+  ['GEMINI_API_KEY_BACKUP_3', process.env.GEMINI_API_KEY_BACKUP_3]
+].filter(([, value]) => Boolean(value));
 const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json','utf8'));
 const lessons = JSON.parse(await fs.readFile('src/data/lessons/lessons.draft.json','utf8'));
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json','utf8'));
 const pagesText = await fs.readFile('src/data/extracted/pages.jsonl','utf8');
 if (!bookId || !Number.isInteger(unitNumber) || unitNumber < 1) throw new Error('Set BOOK_ID and UNIT_NUMBER.');
-if (!apiKey) throw new Error('GEMINI_API_KEY secret is required; no content was generated.');
+if (!apiKeys.length) throw new Error('No Gemini API key secrets are configured; no content was generated.');
 const book = index.books.find(b=>b.id===bookId);
 if (!book) throw new Error('BOOK_ID does not exist in source index.');
 const unit = (book.units||[]).find(u=>u.number===unitNumber);
@@ -77,33 +82,57 @@ const prompt = `You are an Egyptian MOE English curriculum editor. Build a struc
 const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',responseSchema:schema,temperature:0.2}});
 let payload;
 let lastFailure;
-for(let attempt=1;attempt<=4;attempt++){
-  try{
-    const response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,{
-      method:'POST',headers:{'content-type':'application/json'},body:requestBody,
-      signal:AbortSignal.timeout(120000)
-    });
-    if(!response.ok){
-      const detail=(await response.text()).slice(0,1000);
-      const error=new Error(`Gemini API ${response.status}: ${detail}`);
-      if(![408,429,500,502,503,504].includes(response.status)) throw error;
-      lastFailure=error;
-    }else{
-      payload=await response.json();
-      break;
+let selectedKeyName;
+for (const [keyName, apiKey] of apiKeys) {
+  let invalidCredential = false;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: requestBody,
+        signal: AbortSignal.timeout(120000)
+      });
+      if (!response.ok) {
+        const detail = (await response.text()).slice(0, 1000);
+        const error = new Error(`Gemini API ${response.status}: ${detail}`);
+        const invalidKey = response.status === 401 ||
+          (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail));
+        if (invalidKey) {
+          lastFailure = error;
+          invalidCredential = true;
+          console.warn(`Credential ${keyName} was rejected; trying the next configured credential.`);
+          break;
+        }
+        if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
+          throw new Error(`Gemini quota/rate limit reached using ${keyName}. Stopping without rotating credentials. ${error.message}`);
+        }
+        if (![408, 500, 502, 503, 504].includes(response.status)) throw error;
+        lastFailure = error;
+      } else {
+        payload = await response.json();
+        selectedKeyName = keyName;
+        break;
+      }
+    } catch (error) {
+      lastFailure = error;
+      if (/quota\/rate limit reached/.test(error.message)) throw error;
+      const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
+        error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
+        /Gemini API (408|500|502|503|504)/.test(error.message);
+      if (!retryable) throw error;
     }
-  }catch(error){
-    lastFailure=error;
-    const retryable=error.name==='TimeoutError'||error.name==='AbortError'||error.cause?.code==='UND_ERR_HEADERS_TIMEOUT'||/fetch failed/i.test(error.message);
-    if(!retryable && !/Gemini API (408|429|500|502|503|504)/.test(error.message)) throw error;
+    if (attempt < 4) {
+      const delay = Math.min(30000, 5000 * 2 ** (attempt - 1));
+      console.warn(`Gemini request attempt ${attempt}/4 failed with ${keyName}: ${lastFailure?.message}. Retrying in ${delay / 1000}s.`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
   }
-  if(attempt<4){
-    const delay=Math.min(30000,5000*2**(attempt-1));
-    console.warn(`Gemini request attempt ${attempt}/4 failed: ${lastFailure?.message}. Retrying in ${delay/1000}s.`);
-    await new Promise(resolve=>setTimeout(resolve,delay));
-  }
+  if (payload) break;
+  if (!invalidCredential) break;
 }
-if(!payload) throw new Error(`Gemini request failed after 4 attempts: ${lastFailure?.message||'unknown error'}`);
+if (!payload) throw new Error(`Gemini request failed. Last issue: ${lastFailure?.message || 'unknown error'}`);
+console.log(`Gemini request authenticated with configured credential slot: ${selectedKeyName}.`);
 const raw=payload.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
 if(!raw) throw new Error('Gemini returned no structured content.');
 const generated=JSON.parse(raw);
