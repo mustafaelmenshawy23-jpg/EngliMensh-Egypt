@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 const index = JSON.parse(fs.readFileSync('data/curriculum/source-book-index.draft.json', 'utf8'));
 const manifest = JSON.parse(fs.readFileSync('src/data/lessons/unit-modules.draft.json', 'utf8'));
-const expectedTypes = ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'games'];
+const expectedTypes = ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'listening', 'reading', 'games', 'comprehensive_test'];
 const errors = [];
 const expected = new Map();
 
@@ -45,4 +45,4 @@ if (errors.length) {
   console.error(errors.join('\\n'));
   process.exit(1);
 }
-console.log(`Validated ${index.books.length} indexed books and ${expected.size} unit scaffolds with seven separate empty modules each.`);
+console.log(`Validated ${index.books.length} indexed books and ${expected.size} unit scaffolds with eight separate empty modules each.`);
