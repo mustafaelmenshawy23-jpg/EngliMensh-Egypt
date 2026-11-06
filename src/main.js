@@ -118,9 +118,10 @@ function renderUnitWorkspace() {
     { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'A separate practice bank for unit words' },
     { type: 'grammar', title: 'Grammar', subtitle: 'Clear rule explanations and examples' },
     { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'A separate grammar practice bank' },
-    { type: 'reading', title: 'Reading', subtitle: 'Unit reading texts and comprehension' },
-    { type: 'listening', title: 'Listening', subtitle: 'Audio activities and listening questions' },
-    { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' },
+    { type: 'reading', title: 'Reading & Questions', subtitle: 'Reading texts, comprehension activities, and their questions in one section' },
+    { type: 'listening', title: 'Listening & Questions', subtitle: 'Audio activities, listening tasks, and their questions in one section' },
+    { type: 'games', title: 'Games', subtitle: 'Vocabulary and grammar games only; no reading or listening questions' },
+    { type: 'comprehensive_test', title: 'Comprehensive Unit Test', subtitle: 'Full-unit assessment; blueprint and item mix must follow the applicable Egyptian MOE specifications' },
     { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' },
     { type: 'phonics', title: 'Phonics', subtitle: 'Letter patterns, IPA sounds, and printed examples' }
   ];
