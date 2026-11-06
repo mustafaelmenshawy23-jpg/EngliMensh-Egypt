@@ -211,6 +211,28 @@ function renderUnitWorkspace() {
       body = playable.length ? `<div class="quiz-summary"><strong>${count} / ${playable.length}</strong><span>answered</span></div>${playable.map(renderQuestion).join('')}` : '<p class="unit-module-empty">No playable questions are available in this section yet. Questions will appear here once their content and answer keys are prepared and reviewed.</p>';
     } else if (state.activeModule === 'games') {
       body = '<p class="unit-module-empty">Interactive vocabulary and grammar games will be added here after the unit question bank is ready. No empty game buttons are shown.</p>';
+    } else if (state.activeModule === 'reading' || state.activeModule === 'listening') {
+      const questionPrompt = (data) => data.question || data.prompt || data.sentence || data.title;
+      const questionLike = (data) => typeof questionPrompt(data) === 'string' && questionPrompt(data).trim().length > 0 && Array.isArray(data.options) && data.options.length >= 2;
+      const answered = selectedSections.reduce((total, {item}, index) => {
+        const data = item.content || {};
+        const nested = Array.isArray(data.questions) ? data.questions : [];
+        const ids = questionLike(data) ? [item.itemId || `${state.activeModule}-${index}`] : nested.map((_, qIndex) => `${item.itemId || `${state.activeModule}-${index}`}-q${qIndex+1}`);
+        return total + ids.filter((id) => state.quizAnswers[id]).length;
+      }, 0);
+      const content = selectedSections.map(({item}, index) => {
+        const data = item.content || {};
+        const questionData = Array.isArray(data.questions) ? data.questions : [];
+        const textFields = Object.entries(data).filter(([key]) => !['questions','options','correctAnswer','answer','explanation'].includes(key));
+        const textHtml = textFields.map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('');
+        const ownQuestion = questionLike(data) ? renderQuestion({item}, index) : '';
+        const nestedQuestions = questionData.map((question, qIndex) => {
+          const nestedItem = {...item, itemId: `${item.itemId || `${state.activeModule}-${index}`}-q${qIndex+1}`, content: question};
+          return questionLike(question) ? renderQuestion({item:nestedItem}, index * 100 + qIndex) : '';
+        }).join('');
+        return `${textHtml ? `<article class="learning-content-entry">${textHtml}</article>` : ''}${ownQuestion}${nestedQuestions}`;
+      }).join('');
+      body = content ? `<div class="quiz-summary"><strong>${answered}</strong><span>answers recorded</span></div>${content}` : '<p class="unit-module-empty">Content is still being prepared. Reading/listening text and its questions will appear together here when source material is ready.</p>';
     } else {
       body = selectedSections.length ? selectedSections.map(({item}) => {
         const data = item.content || {};
