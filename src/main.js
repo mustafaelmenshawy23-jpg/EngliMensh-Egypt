@@ -1,5 +1,6 @@
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
+import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import './style.css';
 
 const app = document.querySelector('#app');
@@ -43,6 +44,15 @@ function bookUrl(file, page) {
   return page ? `${path}#page=${page}` : path;
 }
 
+
+function renderReviewCandidates(book) {
+  const candidates = reviewCandidates.records.filter((record) => record.sourceFilename === book.sourceFile);
+  if (!candidates.length) return '';
+  return `<section class="review-candidates"><div class="review-candidates-heading"><div><p class="eyebrow">SOURCE TRANSCRIPTION CANDIDATES</p><strong>Extracted material · academic review pending</strong></div><span>${candidates.length} candidate${candidates.length === 1 ? '' : 's'}</span></div>
+    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>Needs academic review · Not used in tests or answer keys</small></article>`).join('')}
+  </section>`;
+}
+
 function renderBookLibrary(books) {
   if (!books.length) {
     return '<div class="empty-state"><div class="book-icon">▤</div><strong>No indexed source book for this selection yet</strong><span>Existing source files remain preserved in the library</span></div>';
@@ -58,7 +68,7 @@ function renderBookLibrary(books) {
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
       : book.documentType === 'assessment' ? 'Assessment book'
         : book.documentType === 'reader' ? 'Reader' : 'Supplementary reference';
-    return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}</article>`;
+    return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}${renderReviewCandidates(book)}</article>`;
   }).join('');
 }
 
@@ -165,6 +175,7 @@ function render() {
 
   app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.preview = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-unit]')?.addEventListener('click', () => { state.unitSelection = null; render(); });
+  app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', () => {
     state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 };
