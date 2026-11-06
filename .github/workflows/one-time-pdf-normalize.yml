@@ -20,14 +20,9 @@ jobs:
         run: |
           set -euo pipefail
           FILE="public/books/Performance Tasks Prep 2-OnlineMaterials.PDF"
-          git lfs fetch --object-id origin 3965c782dc0f2d4cb79515e8981c4b07d88fc768cb1087d616d91cb02e845618
-          git lfs smudge < "$FILE" > "$FILE.tmp"
-          mv "$FILE.tmp" "$FILE"
-          test -f "$FILE"
-          echo "ACTUAL_SHA256=$(sha256sum "$FILE" | cut -d' ' -f1)"
-          echo "ACTUAL_SIZE=$(stat -c%s "$FILE")"
-          file "$FILE"
-          git lfs ls-files -l | grep -F "Performance Tasks Prep 2-OnlineMaterials.PDF" || true
+          printf '%s filter=lfs diff=lfs merge=lfs -text\n' "$FILE" >> .git/info/attributes
+          git lfs fetch origin main --include="$FILE"
+          git lfs checkout "$FILE"
           test "$(sha256sum "$FILE" | cut -d' ' -f1)" = "3965c782dc0f2d4cb79515e8981c4b07d88fc768cb1087d616d91cb02e845618"
           printf '%s -filter -diff -merge -text\n' "$FILE" >> .git/info/attributes
           git add -- "$FILE"
