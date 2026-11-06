@@ -66,3 +66,12 @@
 .candidate-row small{grid-column:1/-1}
 .candidate-source{align-self:center;border:1px solid #e8dcb9;border-radius:8px;background:#fff;padding:7px 9px;color:#7c642b;font-size:10px;font-weight:700;cursor:pointer}
 @media(max-width:620px){.candidate-row{grid-template-columns:1fr}.candidate-source{justify-self:start}}
+
+
+/* Keyboard accessibility and resilient empty/error states */
+:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+button:disabled{opacity:.55;cursor:not-allowed}
+.fatal-state{max-width:720px;margin:12vh auto;padding:28px;background:#fff;border:1px solid #e6ebf4;border-radius:18px;color:#203967;box-shadow:0 12px 36px #18356d0a}
+.fatal-state h1{font-size:22px;margin:0 0 10px}
+.fatal-state p{font-size:14px;line-height:1.7;color:#71809c;margin:0}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
