@@ -1,0 +1,41 @@
+name: Recover Prep 2 PDF from verified build artifact
+on:
+  push:
+    paths:
+      - ".github/workflows/recover-prep2-pdf.yml"
+    branches:
+      - main
+permissions:
+  contents: write
+  actions: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 0
+      - name: Download prior verified build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: englimensh-egypt-web-build
+          run-id: 42228356196
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/previous-build
+      - name: Recover exact PDF and commit as normal Git blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED="3965c782dc0f2d4cb79515e8981c4b07d88fc768cb1087d616d91cb02e845618"
+          TARGET="public/books/Performance Tasks Prep 2-OnlineMaterials.PDF"
+          MATCH="$(find /tmp/previous-build -type f -print0 | xargs -0 sha256sum | awk -v h="$EXPECTED" '$1==h {print $2; exit}')"
+          test -n "$MATCH"
+          mkdir -p "$(dirname "$TARGET")"
+          cp "$MATCH" "$TARGET"
+          test "$(sha256sum "$TARGET" | cut -d' ' -f1)" = "$EXPECTED"
+          test "$(stat -c%s "$TARGET")" = "30712470"
+          printf '%s -filter -diff -merge -text\n' "$TARGET" >> .git/info/attributes
+          git add -- "$TARGET"
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Add Performance Tasks Prep 2 PDF as regular Git blob"
+          git push origin HEAD:main
