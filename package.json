@@ -16,7 +16,8 @@
     "validate:review-candidates": "node scripts/validate-review-candidates.mjs",
     "validate:visual-recoveries-pass22": "node scripts/validate-visual-recoveries-pass22.mjs",
     "validate:lesson-content": "node scripts/validate-lesson-content.mjs",
-    "validate:unit-modules": "node scripts/validate-unit-modules.mjs"
+    "validate:unit-modules": "node scripts/validate-unit-modules.mjs",
+    "generate:unit": "node scripts/generate-interactive-unit.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
