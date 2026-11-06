@@ -42,13 +42,13 @@ for (const unit of selected) {
       continue;
     }
     const sourceBook=index.books.find(b=>b.id===unit.bookId);
-    const extractedPages=(await fs.readFile('src/data/extracted/pages.jsonl','utf8')).split(/\\r?\\n/).filter(Boolean).map(line=>JSON.parse(line));
+    const extractedPages=(await fs.readFile('src/data/extracted/pages.jsonl','utf8')).split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));
     const unitRows=extractedPages.filter(p=>p.sourceFilename===sourceBook?.sourceFile && p.pdfPage>=unit.start && p.pdfPage<=unit.end);
     const unusablePages=unitRows.filter(p=>!p.text||p.text.length<20).map(p=>p.pdfPage);
     if(unusablePages.length){
       summary.results.push({...unit,status:'blocked_review',error:`Source pages require OCR/visual review: ${unusablePages.join(', ')}`});
       console.warn(`BLOCKED FOR SOURCE REVIEW ${unit.bookId} unit ${unit.unitNumber}: pages ${unusablePages.join(', ')}`);
-      await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\\n');
+      await fs.writeFile('artifacts/unit-drafts/progress.json',JSON.stringify(summary,null,2)+'\n');
       continue;
     }
     console.log(`Generating ${unit.bookId} unit ${unit.unitNumber}: ${unit.title} (PDF ${unit.start}-${unit.end})`);
