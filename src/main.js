@@ -2,6 +2,7 @@ import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import lessonDrafts from './data/lessons/lessons.draft.json';
+import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
 
 const app = document.querySelector('#app');
@@ -111,6 +112,7 @@ function renderUnitWorkspace() {
   const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
   const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
   const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number);
+  const scaffold = unitModules.records.find((record) => record.bookId === book.id && record.unitNumber === unit.number);
   const moduleDefinitions = [
     { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pronunciation, and examples' },
     { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'A separate practice bank for unit words' },
@@ -121,21 +123,41 @@ function renderUnitWorkspace() {
     { type: 'games', title: 'Games', subtitle: 'Games using this unit’s own vocabulary and grammar' },
     { type: 'speaking', title: 'Speaking', subtitle: 'Pair-work dialogues and speaking prompts' }
   ];
-  const renderLessonDraft = (lesson) => {
-    const modules = moduleDefinitions.map((definition) => {
-      const section = lesson.sections.find((item) => item.type === definition.type);
-      const items = section?.items || [];
-      const content = items.length ? '<ul>' + items.map((item) => '<li><strong>' + escapeHtml(item.content?.word || item.content?.title || item.itemId) + '</strong><span>' + escapeHtml(item.content?.visualCue || item.content?.explanation || item.content?.text || '') + '</span><small>Page ' + (item.sourcePdfPage || lesson.pdfPage) + ' · ' + escapeHtml(item.reviewStatus) + '</small></li>').join('') + '</ul>' : '<p class="unit-module-empty">No source-verified content has been added to this section yet.</p>';
-      return '<section class="unit-module" data-module="' + definition.type + '"><div class="unit-module-head"><div><h5>' + definition.title + '</h5><p>' + definition.subtitle + '</p></div><span class="lesson-status">Pending</span></div>' + content + '</section>';
-    }).join('');
-    return '<article class="lesson-draft"><div class="lesson-draft-heading"><div><span class="lesson-status">Academic review pending</span><h4>' + escapeHtml(lesson.title) + '</h4><p>' + escapeHtml(lesson.grade) + ' · Unit ' + lesson.unitNumber + ' · PDF page ' + lesson.pdfPage + '</p></div></div><div class="unit-module-grid">' + modules + '</div><p class="lesson-draft-note">Draft content only. Source-check every item before approval. Unreviewed material is excluded from student question banks and answer keys.</p></article>';
+  const renderValue = (value) => {
+    if (value === null || value === undefined || value === '') return '';
+    if (Array.isArray(value)) return value.map((entry) => renderValue(entry)).filter(Boolean).join('; ');
+    if (typeof value === 'object') return Object.entries(value).map(([key, entry]) => {
+      const rendered = renderValue(entry);
+      return rendered ? `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${rendered}</span>` : '';
+    }).filter(Boolean).join(' ');
+    return escapeHtml(value);
   };
+  const modules = moduleDefinitions.map((definition) => {
+    const baseSection = scaffold?.sections?.find((section) => section.type === definition.type);
+    const sourcedSections = lessonRecords.flatMap((lesson) => (lesson.sections || [])
+      .filter((section) => section.type === definition.type)
+      .map((section) => ({ lesson, section })));
+    const items = sourcedSections.flatMap(({ lesson, section }) => section.items.map((item) => ({ lesson, item })));
+    const content = items.length ? '<ul>' + items.map(({ lesson, item }) => {
+      const data = item.content || {};
+      const heading = data.word || data.title || data.instruction || item.itemId;
+      const detailHtml = Object.entries(data).filter(([key, value]) => !['word', 'title'].includes(key) && value !== null && value !== undefined && value !== '')
+        .map(([key, value]) => `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${renderValue(value)}</span>`).join('');
+      return `<li><strong>${escapeHtml(heading)}</strong>${detailHtml}<small>PDF page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus || lesson.reviewStatus || 'needs_review')}</small></li>`;
+    }).join('') + '</ul>' : '<p class="unit-module-empty">No extracted source content is recorded in this section yet.</p>';
+    const hasItems = items.length > 0;
+    const sectionStatus = hasItems ? 'Review pending' : (baseSection?.status === 'not_populated' ? 'Not populated' : 'No source data');
+    return `<section class="unit-module" data-module="${definition.type}"><div class="unit-module-head"><div><h5>${definition.title}</h5><p>${definition.subtitle}</p></div><span class="lesson-status">${sectionStatus}</span></div>${content}</section>`;
+  }).join('');
+  const lessonHeadings = lessonRecords.map((lesson) => `<p class="lesson-draft-note"><strong>${escapeHtml(lesson.title)}</strong> · ${escapeHtml(lesson.grade)} · PDF page ${lesson.pdfPage} · ${escapeHtml(lesson.reviewStatus)}</p>`).join('');
   return `<section class="unit-workspace" aria-label="Unit details">
     <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
     ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
-    ${lessonRecords.length ? lessonRecords.map(renderLessonDraft).join('') : '<div class="unit-module-grid">' + moduleDefinitions.map((module) => '<section class="unit-module"><div class="unit-module-head"><div><h5>' + module.title + '</h5><p>' + module.subtitle + '</p></div><span class="lesson-status">Not populated</span></div><p class="unit-module-empty">This section is reserved for source-verified unit content.</p></section>').join('') + '</div>'}
+    ${lessonHeadings}
+    <div class="unit-module-grid">${modules}</div>
+    <p class="lesson-draft-note">Scaffold source: ${scaffold ? escapeHtml(scaffold.unitId) : 'No unit scaffold record found'}. Extracted items remain drafts until checked against the original PDF. Unreviewed content is excluded from student question banks and answer keys.</p>
     <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
     ${renderReviewCandidates(book, unit.number)}
     <p class="unit-source-note">Proposed unit links and transcriptions remain unapproved. They are shown for source review only and are not used in lessons, tests, or answer keys.</p>
