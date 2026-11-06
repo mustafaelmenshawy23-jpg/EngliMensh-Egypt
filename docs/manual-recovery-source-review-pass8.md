@@ -26,3 +26,34 @@
 ## Academic release gate
 
 These are source-page checks, not final academic approval. Before generating questions, a subject editor must separately review spelling, grammar, task intent, and any answer key against the original page and its surrounding lesson context. In particular, do not infer the listening answers on Primary 3 p45 or unscramble answers on the Primary 1 assessment p42.
+
+
+## Pass 9 — Adjacent-page context review (240 DPI)
+
+- Context-render workflow: [42232027066](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42232027066) — **success**.
+- Context artifact: `englimensh-manual-recovery-context-240dpi` (24 rendered pages: each of 8 candidates plus one physical page before and after; 5 source PDFs; 72,676,640 bytes).
+- Visually inspected all 24 contextual page images in four contact sheets. Original PDFs were rendered from hydrated Git LFS sources; no PDF or LFS pointer was changed.
+
+### Context-confirmed unit links
+
+1. **Primary 2 p32 → Unit 3:** p31 is the Unit 3 cover “Classroom Actions & Routines”; p32 is Lesson 1 “Classroom Actions”; p33 continues with an explicit UNIT 3 heading.
+2. **Primary 3 p45 → Unit 3:** p45 explicitly prints UNIT 3; p44 and p46 are Lesson 1 “Places Around Me” pages. The audio numbering remains unresolved except for the preprinted 2.
+3. **Primary 3 p69 → Unit 4:** p69 explicitly prints UNIT 4; p68 starts Lesson 1 “How We Feel” and p70 continues the same lesson.
+4. **Primary 6 p86 → Unit 6:** p85 is the Unit 6 cover “The Water Savers”; p86 has the vertical Unit 6 label and Vocabulary; p87 continues with definitions and story characters.
+5. **Connect Plus Primary 1 p42 → Unit 2:** p41 is a Language reference page explicitly labelled Theme 1 Unit Two and introduces family language; p42 is the family Writing Corner; p43 contains activities on Lessons 1, 2, and 3.
+6. **Connect Plus Primary 1 p86 → Unit 3:** p85 is a continuation activity on Lessons 1–7; p86 is Lesson 8 phonics (OW, OA, O-E); p87 contains Activities on Lesson 8. The same patterns appear in the Unit 3 column of the shared chart at p270.
+
+### Still unassigned / unresolved
+
+- **Primary 1 assessment p42:** p40, p41, and p42 are Weekly Assessments (A), (B), and (C); p43 begins Unit 5 “On the Farm”. This is a standalone assessment sequence, not a unit lesson. The scrambled strings and answer mapping remain unresolved; do not infer answers from the pictures.
+- **Connect Plus Primary 1 p270:** remains a shared cross-unit phonics reference for Units 1–6, not a single-unit lesson.
+
+### Repository data update
+
+- Updated `src/data/extracted/manual-recovery-candidates.json` to mark the six context-supported unit links as `context_confirmed_pending_academic_review` and document the adjacent-page evidence.
+- Kept every transcription as a candidate and every record outside the runtime question bank. No answer keys were added, and no questions were generated.
+- The assessment remains unassigned; the phonics chart remains cross-unit.
+
+### Validation gate
+
+The adjacent-page evidence confirms placement, not final academic correctness. Vocabulary, spelling, IPA, task wording, grammar, and answer keys still require subject-editor approval before any candidate is promoted into lessons or question banks.
