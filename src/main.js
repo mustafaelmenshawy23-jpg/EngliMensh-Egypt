@@ -28,12 +28,9 @@ function selectedBooks() {
     : state.stage === 'preparatory' ? `Preparatory ${state.grade}`
       : state.stage === 'secondary' ? `Secondary ${state.grade}`
         : `Baccalaureate Year ${state.grade || 2}`;
-  const pathwayId = state.stage === 'primary'
-    ? (state.path === 'advanced' ? 'commercial-reference-guides' : 'egypt-primary-general')
-    : state.stage === 'preparatory'
-      ? (state.path === 'advanced' ? 'commercial-reference-guides' : 'egypt-preparatory-general')
-      : state.stage === 'secondary' ? 'egypt-secondary-general'
-        : state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate';
+  const pathwayId = state.stage === 'egyptian-baccalaureate'
+    ? (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')
+    : currentStage().paths.find((item) => item.id === state.path)?.sourcePathwayId;
   return sourceIndex.books.filter((book) => book.pathwayId === pathwayId && (
     state.stage === 'egyptian-baccalaureate' || book.grade === gradeName
   ));
@@ -167,7 +164,7 @@ function render() {
             ${visiblePathways.map((path) => {
               const active = state.stage === 'egyptian-baccalaureate'
                 ? (path.id === 'egypt-baccalaureate' ? state.path !== 'second-language' : state.path === 'second-language')
-                : path.id === (state.path === 'advanced' ? 'commercial-reference-guides' : state.path);
+                : path.id === state.path;
               const id = state.stage === 'egyptian-baccalaureate'
                 ? (path.id === 'egypt-baccalaureate' ? 'first-language' : 'second-language') : path.id;
               return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(path.label || path.name)}</strong><span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span></button>`;
