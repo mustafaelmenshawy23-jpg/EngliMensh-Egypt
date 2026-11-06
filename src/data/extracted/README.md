@@ -47,3 +47,5 @@ Generated output is source text, not approved curriculum content. All records mu
 
 - `ocr-quality-audit-pass20.jsonl`: 20 OCR-quality candidates from 14 source books, rendered at 240 DPI in workflow run 42132532647; see `docs/ocr-quality-audit-pass20.md`.
 - `visual-recoveries-pass20.jsonl`: 20 visually inspected pages from 14 source books. All records remain `needs_review` and `not_academically_verified`; observations are supplemental and do not alter machine OCR or enter app curriculum/question-bank data. See `docs/visual-ocr-review-pass20.md`.
+
+- `ocr-quality-audit-pass21.jsonl`: 20 additional OCR-quality candidates across 14 source PDFs, selected from empty/short/fragmented machine extraction and excluding indexed Pass 7–20 page pairs. All remain `needs_review`; render with `.github/workflows/render-pass21-quality-audit.yml`. See `docs/ocr-quality-audit-pass21.md`.
