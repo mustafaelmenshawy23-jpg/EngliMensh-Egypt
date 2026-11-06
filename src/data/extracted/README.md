@@ -51,3 +51,5 @@ Generated output is source text, not approved curriculum content. All records mu
 - `ocr-quality-audit-pass21.jsonl`: 20 additional OCR-quality candidates across 14 source PDFs, selected from empty/short/fragmented machine extraction and excluding indexed Pass 7–20 page pairs. All remain `needs_review`; render with `.github/workflows/render-pass21-quality-audit.yml`. See `docs/ocr-quality-audit-pass21.md`.
 
 - `visual-recoveries-pass21.jsonl`: 20 pages visually inspected at 240 DPI in workflow run 42215770749. Contains page-level visual triage only; all records remain `needs_review` and `not_academically_verified`. No machine OCR or curriculum data was modified. See `docs/visual-ocr-review-pass21.md`.
+
+- `ocr-quality-audit-pass22.jsonl`: 19 high-resolution confirmation candidates selected from the original 73-page manual-review queue, checked for duplicate source-page pairs against indexed Pass 11 and Pass 13–21 audits. Render at 300 DPI with `.github/workflows/render-pass22-quality-audit.yml`. These are confirmation renders, not new OCR or academic approval.
