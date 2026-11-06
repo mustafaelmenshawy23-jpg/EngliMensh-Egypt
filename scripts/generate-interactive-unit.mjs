@@ -15,11 +15,19 @@ const book = index.books.find(b=>b.id===bookId);
 if (!book) throw new Error('BOOK_ID does not exist in source index.');
 const unit = (book.units||[]).find(u=>u.number===unitNumber);
 if (!unit || !Number.isInteger(unit.startPdfPage)) throw new Error('Unit start page is not verified in source index.');
-const next = (book.units||[]).filter(u=>u.number>unitNumber && Number.isInteger(u.startPdfPage)).sort((a,b)=>a.startPdfPage-b.startPdfPage)[0];
+const orderedUnits = [...(book.units||[])].sort((a,b)=>a.number-b.number);
+const position = orderedUnits.findIndex(u=>u.number===unitNumber);
+const next = orderedUnits[position+1];
+if (next && (!Number.isInteger(next.startPdfPage) || next.number !== unitNumber+1)) {
+  throw new Error(`Unit boundary is ambiguous: Unit ${unitNumber+1} does not have a verified start page. Refusing to include pages from a later unit.`);
+}
+const manifestBook = manifest.books.find(b=>b.source?.endsWith('/'+book.sourceFile) || b.source===`public/books/${book.sourceFile}`);
 const start = unit.startPdfPage;
-const end = next ? next.startPdfPage-1 : null;
+const end = next ? next.startPdfPage-1 : manifestBook?.pages;
+if (!Number.isInteger(end) || end < start) throw new Error('Could not verify the end of this unit from the next unit start or PDF page count.');
 const rows = pagesText.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line)).filter(p=>p.sourceFilename===book.sourceFile && p.pdfPage>=start && (end===null || p.pdfPage<=end));
 if (!rows.length) throw new Error('No extracted pages found for this unit. Run the book extraction workflow first.');
+if (rows[0].pdfPage !== start || rows[rows.length-1].pdfPage !== end) throw new Error(`Extracted page range is incomplete: expected ${start}-${end}, found ${rows[0].pdfPage}-${rows[rows.length-1].pdfPage}.`);
 const unusable = rows.filter(p=>!p.text || p.text.length<20);
 if (unusable.length) throw new Error('Unit has pages requiring OCR/visual review: '+unusable.map(p=>p.pdfPage).join(', ')+'. Refusing to generate from incomplete source text.');
 const existing = lessons.records.filter(l=>l.bookId===bookId && l.unitNumber===unitNumber);
