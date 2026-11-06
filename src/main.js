@@ -52,7 +52,7 @@ function renderBookLibrary(books) {
       const pageLabel = Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Page reference not indexed';
       const title = `Unit ${unit.number}: ${unit.title}`;
       return Number.isInteger(unit.startPdfPage)
-        ? `<button class="unit-link" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="${unit.startPdfPage}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Preview</span></button>`
+        ? `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`
         : `<div class="unit-link unavailable"><strong>${escapeHtml(title)}</strong><span>${pageLabel}</span></div>`;
     }).join('');
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
@@ -60,6 +60,24 @@ function renderBookLibrary(books) {
         : book.documentType === 'reader' ? 'Reader' : 'Supplementary reference';
     return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}</article>`;
   }).join('');
+}
+
+
+function renderUnitWorkspace() {
+  if (!state.unitSelection) return '';
+  const book = sourceIndex.books.find((item) => item.id === state.unitSelection.bookId);
+  const unit = book?.units?.find((item) => item.number === state.unitSelection.unitNumber);
+  if (!book || !unit) return '';
+  const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
+  const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
+  return `<section class="unit-workspace" aria-label="Unit details">
+    <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · PDF page ${unit.startPdfPage}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
+    ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
+    ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
+    ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
+    <div class="unit-source-actions"><button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a></div>
+    <p class="unit-source-note">Only metadata already indexed from the source is shown here. Lesson text, exercises, and answer keys are not invented. The original book remains the authoritative lesson content.</p>
+  </section>`;
 }
 
 function renderPreview() {
@@ -119,6 +137,7 @@ function render() {
         <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.name)}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
+        ${renderUnitWorkspace()}
         ${renderPreview()}
         <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
@@ -144,6 +163,9 @@ function render() {
   });
   applySearch();
 
+  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.preview = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { state.unitSelection = null; render(); });
+  app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', () => {
     state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 };
     render();
@@ -151,6 +173,7 @@ function render() {
   }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', () => {
     state.preview = null;
+    state.unitSelection = null;
     render();
   });
   app.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
@@ -160,6 +183,7 @@ function render() {
     state.path = next.paths[0].id;
     state.search = '';
     state.preview = null;
+    state.unitSelection = null;
     render();
   }));
   app.querySelectorAll('[data-grade]').forEach((button) => button.addEventListener('click', () => {
@@ -172,6 +196,7 @@ function render() {
     state.path = button.dataset.path;
     state.search = '';
     state.preview = null;
+    state.unitSelection = null;
     render();
   }));
 }
