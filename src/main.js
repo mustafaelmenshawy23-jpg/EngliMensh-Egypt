@@ -557,6 +557,7 @@ function renderImportedPrimaryCurriculum() {
     const opts = Array.isArray(q.opts) ? q.opts : [];
     const answer = Number.isInteger(q.ans) ? q.ans : 0;
     const id = prefix + '-' + index;
+    const optionText = (option) => typeof option === 'string' ? option : String(option?.text ?? option?.label ?? option?.value ?? '');
     const correctOption = opts[answer];
     const distractors = opts.filter((_, originalIndex) => originalIndex !== answer);
     let seed = 0;
@@ -582,7 +583,7 @@ function renderImportedPrimaryCurriculum() {
       shuffled.map((option, oi) => {
         const good = saved.isCorrect && Number(saved.choice) === oi;
         const bad = wrong.includes(String(oi));
-        return '<button type="button" class="quiz-option imported-answer ' + (good ? 'is-correct' : bad ? 'is-wrong' : '') + '" data-question="' + escapeHtml(id) + '" data-choice="' + oi + '" data-correct="' + correct + '"' + (saved.isCorrect || bad ? ' disabled' : '') + '><span class="option-letter">' + String.fromCharCode(65 + oi) + '</span><span class="option-text" dir="auto">' + escapeHtml(option.text) + '</span></button>';
+        return '<button type="button" class="quiz-option imported-answer ' + (good ? 'is-correct' : bad ? 'is-wrong' : '') + '" data-question="' + escapeHtml(id) + '" data-choice="' + oi + '" data-correct="' + correct + '"' + (saved.isCorrect || bad ? ' disabled' : '') + '><span class="option-letter">' + String.fromCharCode(65 + oi) + '</span><span class="option-text" dir="auto">' + escapeHtml(optionText(option)) + '</span></button>';
       }).join('') + '</div><p class="imported-feedback ' + (saved.isCorrect ? 'correct' : wrong.length ? 'incorrect' : '') + '" aria-live="polite">' + (saved.isCorrect ? 'Correct! Well done.' : wrong.length ? 'Not quite. Try another answer.' : '') + '</p></article>';
   }).join('');
   const prefix = unit ? 'g' + grade.grade + '-' + track.id + '-u' + unit.number : '';
@@ -1822,6 +1823,10 @@ function renderPreview() {
 }
 
 function render() {
+  const previousScrollY = window.scrollY;
+  const previousViewKey = state._renderViewKey || null;
+  const currentViewKey = [state.stage, state.grade, state.path, state.importedUnitNumber || '', state.activeModule || ''].join(':');
+  state._routeChanged = previousViewKey !== currentViewKey;
   const stage = currentStage();
   if (!stage) {
     app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1></main>';
@@ -2315,6 +2320,11 @@ function render() {
     resetListeningProgress();
     render();
   });
+
+  state._renderViewKey = currentViewKey;
+  if (!state._routeChanged && previousScrollY > 0) {
+    requestAnimationFrame(() => window.scrollTo({ top: previousScrollY, behavior: 'instant' }));
+  }
 }
 
 // Restore a coherent in-app back stack for Android Back and browser Back.
