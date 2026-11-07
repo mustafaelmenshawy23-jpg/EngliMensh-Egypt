@@ -69,3 +69,23 @@ The two dialogue records per unit include generic welcome/teacher text in the su
 This audit is committed on branch `feature/primary-connect-connect-plus-2026-2027`. The branch is one commit ahead of `main` and contains this audit document only. No curriculum data has yet been imported into the student app, no application files have been changed by this branch, no pull request has been opened, and no APK has been built.
 
 The repository's existing governance expects curriculum content to remain source-linked and distinguishes extracted PDF material from review candidates. This HTML package should be added as an explicit, separate owner-supplied content source rather than misrepresented as PDF extraction.
+
+
+## Reproducible import preparation (2026-11-07)
+The source ZIP was available as a conversation attachment and was parsed locally. A normalized JSON export was generated at `englimensh_primary_curriculum_2026_2027.normalized.json` (75 units, 2 tracks, 12 grade-track groups). It preserves the original vocabulary, examples, dialogue, phonics, reading, grammar, games, and assessment records, and explicitly records that item-level PDF page references were not supplied.
+
+A reproducible repository importer has now been added:
+- `scripts/import-primary-html-curriculum.mjs`
+- npm command: `npm run import:primary-html`
+- Expected archive path: `imports/englimensh_primary_full_75_units_2026_2027.zip`
+- Generated repository output: `src/data/curriculum/primary-connect-html-2026-2027.json`
+
+The importer checks the two tracks, six grades per track, all 75 units, 750 vocabulary entries, and all 1,050 supplied multiple-choice questions. It rejects invalid answer indexes/options and warns that all 1,050 source answer keys currently point to option index 0. It sorts unit numbers numerically (including the out-of-order Connect Primary 5 and 6 source keys).
+
+## Remaining integration gates
+- The source ZIP has not yet been committed under `imports/`, so the repository importer has not been executed in GitHub Actions or against the checked-out repository.
+- The normalized dataset has not yet been added to the repository.
+- The student app has not yet been wired to the new normalized dataset.
+- The app currently uses PDF source-index book IDs for its student workspace. Integration must preserve that pathway and add HTML-source curriculum records with explicit provenance rather than fabricate PDF page numbers.
+- Do not mark the 1,050 imported source questions academically reviewed. Randomize answer option positions at runtime while preserving answer identity, and add a separate, clearly labeled bank of supplementary questions with validated answer keys and meaningful distractors.
+- No production build, test suite, APK, or merge has been claimed for this import branch.
