@@ -44,3 +44,21 @@ The source catalog reports 33 successfully processed PDFs and one additional LFS
 ## Release status
 
 **Not complete.** The 33-book/118-unit index and extraction pipeline exist, but no fully populated, academically approved unit has been demonstrated. Build success alone does not prove curriculum completion.
+
+
+## Detailed content and application audit
+
+The current GitHub main branch was rechecked on 7 November 2026:
+
+- All 118 indexed unit scaffolds exist, with nine independent sections each, but all 1,062 section slots are still empty.
+- lessons.draft.json contains 26 lesson records and 149 items. All 26 records remain needs_review; the 149 items do not yet carry consistent item-level origin provenance, so none is counted as verified source content or approved material.
+- The Unit 4 draft is incomplete and corrupted: its source coverage stops at PDF page 131 although the indexed range is 102–139. It is not a completed unit.
+- No unit has been academically approved or demonstrated as fully working in the learner app.
+- The app has a separate vocabulary module screen and device-dependent speaking TTS controls. TTS gender matching is not yet confirmed on a real Android/WebView device; voices depend on the device voice list or manual selection and preview. The current app does not expose a microphone recording workflow in this screen, so simultaneous microphone/TTS behaviour has not been device-tested.
+- There are no approved playable game records yet. The listening TTS preview is generated speech, not an original recording from the book.
+
+## Quality recovery work
+
+The source/content quality validators and automated regression tests are being added to the GitHub pipeline. The generator will keep all output in draft status, require complete page coverage, distinguish source page references from supplementary context references, and reject corrupted OCR, incomplete modules, invalid answer keys, or missing role metadata.
+
+The daily generation workflow is designed to resume from the first eligible unit that is not already a complete draft and to process a small batch. OCR/source blockers remain visible in the progress report rather than being silently skipped. The 19 missing start pages, five ambiguous boundaries, unindexed LFS PDF, reader, and assessment-only files remain separate inventory/review work; they are not silently treated as completed units.

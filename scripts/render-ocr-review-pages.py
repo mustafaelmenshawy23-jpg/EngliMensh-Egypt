@@ -11,7 +11,7 @@ ROOT = Path.cwd()
 BOOKS = ROOT / "public" / "books"
 QUEUE = ROOT / "docs" / "ocr-manual-review-queue.md"
 OUT = ROOT / "review-pages"
-DPI = 120
+DPI = 300
 
 
 def parse_pages(cell: str) -> list[int]:

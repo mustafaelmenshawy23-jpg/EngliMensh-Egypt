@@ -1,4 +1,6 @@
 import fs from 'node:fs/promises';
+import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
+import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 
 const required = ['vocabulary','vocabulary_questions','grammar','grammar_questions','reading','listening','speaking','games','comprehensive_test'];
 const bookId = process.env.BOOK_ID;
@@ -9,9 +11,9 @@ const apiKeys = [
   ['GEMINI_API_KEY_BACKUP_2', process.env.GEMINI_API_KEY_BACKUP_2],
   ['GEMINI_API_KEY_BACKUP_3', process.env.GEMINI_API_KEY_BACKUP_3]
 ].filter(([, value]) => Boolean(value));
-let model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
-// Use the standard Flash API path; fall back only for transient model availability failures.
-const fallbackModels = [...new Set([model, 'gemini-3.5-flash-lite', 'gemini-3.7-flash'])];
+let model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+// Use one explicitly selected standard Flash model. Do not switch models to work around quota limits.
+const fallbackModels = [model];
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json','utf8'));
 const lessons = JSON.parse(await fs.readFile('src/data/lessons/lessons.draft.json','utf8'));
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json','utf8'));
@@ -33,10 +35,16 @@ const start = unit.startPdfPage;
 const end = next ? next.startPdfPage-1 : manifestBook?.pages;
 if (!Number.isInteger(end) || end < start) throw new Error('Could not verify the end of this unit from the next unit start or PDF page count.');
 const rows = pagesText.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line)).filter(p=>p.sourceFilename===book.sourceFile && p.pdfPage>=start && (end===null || p.pdfPage<=end));
-if (!rows.length) throw new Error('No extracted pages found for this unit. Run the book extraction workflow first.');
-if (rows[0].pdfPage !== start || rows[rows.length-1].pdfPage !== end) throw new Error(`Extracted page range is incomplete: expected ${start}-${end}, found ${rows[0].pdfPage}-${rows[rows.length-1].pdfPage}.`);
-const unusable = rows.filter(p=>!p.text || p.text.length<20);
-if (unusable.length) throw new Error('Unit has pages requiring OCR/visual review: '+unusable.map(p=>p.pdfPage).join(', ')+'. Refusing to generate from incomplete source text.');
+const sourceAudit = validateUnitSourceCoverage(rows, start, end);
+if (!sourceAudit.ok) {
+  throw new Error('Unit source quality gate blocked generation: ' + JSON.stringify({
+    missingPages: sourceAudit.missingPages,
+    duplicatePages: sourceAudit.duplicatePages,
+    outOfRangePages: sourceAudit.outOfRangePages,
+    outOfOrderPages: sourceAudit.outOfOrderPages,
+    pageIssues: sourceAudit.pageIssues.map((item) => ({ pdfPage: item.pdfPage, reasons: item.reasons }))
+  }));
+}
 const existing = lessons.records.filter(l=>l.bookId===bookId && l.unitNumber===unitNumber);
 const sourcePages = rows.map(p=>({pdfPage:p.pdfPage,text:p.text}));
 const dialogueTurnSchema = {
@@ -55,9 +63,9 @@ const contentSchema = {
     question: { type: 'STRING' }, instruction: { type: 'STRING' },
     options: { type: 'ARRAY', items: { type: 'STRING' } },
     correctAnswer: { type: 'STRING' }, answer: { type: 'STRING' }, reason: { type: 'STRING' },
-    sourcePdfPage: { type: 'INTEGER' }, origin: { type: 'STRING', enum: ['source', 'supplementary'] }
+    sourcePdfPage: { type: 'INTEGER' }, contextPdfPage: { type: 'INTEGER' }, origin: { type: 'STRING', enum: ['source', 'supplementary'] }
   },
-  required: ['origin', 'sourcePdfPage']
+  required: ['origin']
 };
 const itemSchema = {
   type: 'OBJECT',
@@ -82,7 +90,7 @@ const schema = {
   },
   required: ['unitTitle', 'sourceCoverage', 'sections']
 };
-const prompt = `You are an Egyptian English-curriculum editor. Build a complete interactive draft for ${book.grade}, Unit ${unitNumber}: ${unit.title}. Source PDF: ${book.sourceFile}. Use only supplied page text for claims marked origin=source. Never invent or misattribute printed passages, audio, rules, questions, or page references. Every item must cite a supplied 1-based PDF page in sourcePdfPage; for supplementary items choose the page that supports the unit topic. Use origin=source only for material actually present in the PDF; use origin=supplementary for AI-created material. Vocabulary: extract all identifiable unit words/expressions; provide Arabic meaning and a simple English example. Mark meaningOrigin and exampleOrigin separately (normally supplementary unless literally printed). Grammar: extract all rules and book examples; separate ruleOrigin and explanationOrigin. Vocabulary and grammar practice: create at least 3 varied supplementary questions for each applicable skill, with 3-4 options, correctAnswer included among options, and a brief reason. Reading: reproduce a complete source passage when present; otherwise create one short, clearly supplementary passage on the unit topic, plus comprehension questions as separate items. Listening: transcribe a source script only when it is present in the supplied source; otherwise create a short supplementary listening script and questions, never label it as original book audio. Speaking: include source dialogue when present; otherwise create one short supplementary role-play. Each dialogue turn must include speaker, speakerGender (male/female for clearly assigned supplementary roles; unknown if source gender is not explicit), and text. Games: create at least two supplementary age-appropriate games with gameType, targetSkill, difficulty, instruction, and playable options/answer where suitable. Comprehensive test: create at least five balanced supplementary questions covering the unit, each with answer and reason. Keep all nine sections exactly once: ${required.join(', ')}. Match the language and difficulty to ${book.grade}; do not use adult or culturally unsuitable examples. Set sourceCoverage to the source PDF pages actually used. Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
+const prompt = 'You are an Egyptian English-curriculum editor. Build a complete interactive draft for ' + book.grade + ', Unit ' + unitNumber + ': ' + unit.title + '. Source PDF: ' + book.sourceFile + '. Use only supplied page text for claims marked origin=source. Never invent or misattribute printed passages, audio, rules, questions, dialogues, answers, or page references. sourceCoverage MUST list every supplied PDF page exactly once, in ascending order. For every item use origin=source only when the item itself is visibly present in the book and cite sourcePdfPage. For AI-created practice use origin=supplementary and contextPdfPage; never put sourcePdfPage on supplementary content. Vocabulary: extract all identifiable words and expressions, give a real Arabic meaning and an age-appropriate English example; set meaningOrigin and exampleOrigin separately. Grammar: extract actual book rules/examples, and clearly label any added explanation using ruleOrigin/explanationOrigin. Create at least three varied practice questions for vocabulary and grammar where applicable, each with 3–4 unique options, a correctAnswer that exactly matches one option, and a short reason. Reading: reproduce a complete source passage only if present; otherwise write a clearly supplementary passage, not a claimed quotation. Listening: transcribe only a script actually present in the source; otherwise create a clearly supplementary short script and questions. Speaking: use a source dialogue only if present; otherwise create a supplementary role-play with speaker names and male/female speakerGender for each invented role; use unknown only when source gender is genuinely unclear. Games: create at least two supplementary age-appropriate playable games with gameType, targetSkill, difficulty, instruction, question, options, correctAnswer, and reason. Comprehensive test: create at least five balanced supplementary questions. Keep all nine sections exactly once: ' + required.join(', ') + '. Every section must contain its required content; use supplementary labels when the book does not contain that skill. Match the language and difficulty to ' + book.grade + '. Do not use culturally unsuitable examples. Source text follows as JSON: ' + JSON.stringify(sourcePages);
 const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',responseSchema:schema,temperature:0.2}});
 let payload;
 let lastFailure;
@@ -160,52 +168,50 @@ console.log(`Gemini request succeeded with model ${selectedModel} and configured
 const raw=payload.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
 if(!raw) throw new Error('Gemini returned no structured content.');
 const generated=JSON.parse(raw);
-const errors=[];
-if(!Array.isArray(generated.sections)) errors.push('Missing sections array');
-const byType=new Map();
-for(const section of generated.sections||[]){
- if(!required.includes(section.type)) errors.push('Unexpected section type: '+section.type);
- if(byType.has(section.type)) errors.push('Duplicate section type: '+section.type);
- byType.set(section.type,section);
- if(!Array.isArray(section.items)) errors.push('Section items must be an array: '+section.type);
-}
-for(const type of required) if(!byType.has(type)) errors.push('Missing required section: '+type);
-if(!Array.isArray(generated.sourceCoverage)||!generated.sourceCoverage.length) errors.push('Missing source page coverage');
-else if(generated.sourceCoverage.some(p=>!rows.some(r=>r.pdfPage===p))) errors.push('Model cited a page outside the extracted unit range.');
-let totalItems=0,sourceItems=0;
-for(const section of generated.sections||[]) for(const item of section.items||[]){
- totalItems++;const c=item.content||{};
- if(!item.itemId||!c.origin||!['source','supplementary'].includes(c.origin)) errors.push('Missing item identity/origin');
- if(!Number.isInteger(c.sourcePdfPage)||!rows.some(r=>r.pdfPage===c.sourcePdfPage)) errors.push('Invalid source page: '+item.itemId);
- if(c.origin==='source')sourceItems++;
- if(section.type==='vocabulary'&&(!c.word||!c.arabicMeaning||!c.example||!c.meaningOrigin||!c.exampleOrigin))errors.push('Incomplete vocabulary/field provenance: '+item.itemId);
- if(section.type==='grammar'&&(!c.rule||!c.explanation||!c.ruleOrigin||!c.explanationOrigin))errors.push('Incomplete grammar/field provenance: '+item.itemId);
- if(section.type.endsWith('_questions')||section.type==='comprehensive_test'||(section.type==='games'&&Array.isArray(c.options))){
-  if(!c.question||!Array.isArray(c.options)||c.options.length<3||!c.correctAnswer||!c.reason)errors.push('Incomplete question/key/reason: '+item.itemId);
-  else if(!c.options.includes(c.correctAnswer))errors.push('Answer key not among options: '+item.itemId);
- }
- if(section.type==='speaking'){
-  if(!Array.isArray(c.dialogue)||c.dialogue.length<2)errors.push('Speaking item needs at least two dialogue turns: '+item.itemId);
-  else for(const turn of c.dialogue)if(!turn.speaker||!turn.text||!['male','female','unknown'].includes(turn.speakerGender))errors.push('Speaking turn needs speaker, text, and honest gender metadata: '+item.itemId);
- }
- if(section.type==='games'&&(c.origin!=='supplementary'||!c.gameType||!c.targetSkill||!c.difficulty||!c.instruction))errors.push('Game must be complete and supplementary: '+item.itemId);
- if(section.type==='reading'&&!c.passage&&!c.question)errors.push('Reading item needs a passage or question: '+item.itemId);
- if(section.type==='listening'&&!c.script&&!c.question)errors.push('Listening item needs a script or question: '+item.itemId);
-}
-const itemCount=type=>byType.get(type)?.items?.length||0;
-const sourceTextChars=rows.reduce((sum,row)=>sum+(row.text||'').length,0);
-if(totalItems<15)errors.push('Draft is too sparse: expected at least 15 items, got '+totalItems);
-if(sourceTextChars>1500&&sourceItems<3)errors.push('Draft is too sparse: fewer than three source-derived items for a substantial unit.');
-if(itemCount('reading')<1)errors.push('Reading section needs a source or supplementary passage.');
-if(itemCount('listening')<1)errors.push('Listening section needs a source or supplementary script.');
-if(itemCount('speaking')<1)errors.push('Speaking section needs at least one dialogue.');
-if(itemCount('games')<2)errors.push('Games section needs at least two age-appropriate games.');
-if(itemCount('comprehensive_test')<5)errors.push('Comprehensive test needs at least five questions.');
-if(itemCount('vocabulary')>0&&itemCount('vocabulary_questions')<3)errors.push('Vocabulary practice needs at least three questions.');
-if(itemCount('grammar')>0&&itemCount('grammar_questions')<3)errors.push('Grammar practice needs at least three questions.');
-if(errors.length)throw new Error('Generated draft failed quality validation:\n'+errors.join('\n'));
-const output={schemaVersion:1,datasetStatus:'draft',generatedAt:new Date().toISOString(),generator:{provider:'Google Gemini API',model:selectedModel,reviewStatus:'needs_review'},bookId,sourceFilename:book.sourceFile,grade:book.grade,unitNumber,unitTitle:generated.unitTitle,sourcePdfRange:{start,end},sourceCoverage:generated.sourceCoverage,qualitySummary:{totalItems,sourceItems,sectionCounts:Object.fromEntries(required.map(type=>[type,itemCount(type)]))},reviewStatus:'needs_review',reviewedBy:null,reviewedAt:null,sections:generated.sections.map(s=>({...s,items:s.items.map(i=>({...i,reviewStatus:'needs_review',notes:i.content.origin==='supplementary'?'AI-generated supplementary practice; not printed in source book. Teacher review required.':'Transcribed from the source book; teacher verification required.'}))}))};
+const output = {
+  schemaVersion: 1,
+  datasetStatus: 'draft',
+  generatedAt: new Date().toISOString(),
+  generator: { provider: 'Google Gemini API', model: selectedModel, reviewStatus: 'needs_review' },
+  bookId,
+  sourceFilename: book.sourceFile,
+  grade: book.grade,
+  unitNumber,
+  unitTitle: generated.unitTitle,
+  sourcePdfRange: { start, end },
+  sourceCoverage: generated.sourceCoverage,
+  reviewStatus: 'needs_review',
+  reviewedBy: null,
+  reviewedAt: null,
+  sections: (generated.sections || []).map((section) => ({
+    ...section,
+    items: (section.items || []).map((item) => ({
+      ...item,
+      reviewStatus: 'needs_review',
+      notes: item.content?.origin === 'supplementary'
+        ? 'AI-generated supplementary practice; not printed in the source book. Teacher review required.'
+        : 'Transcribed from the source book; teacher verification required.'
+    }))
+  }))
+};
+const qualityAudit = validateUnitDraftQuality(output, { rows, start, end, grade: book.grade });
+output.qualityAudit = qualityAudit;
+output.qualitySummary = qualityAudit.metrics;
+output.generationStatus = qualityAudit.ok ? 'ready_for_teacher_review' : 'failed_validation';
 await fs.mkdir('artifacts/unit-drafts',{recursive:true});
 const file='artifacts/unit-drafts/'+bookId+'-unit-'+unitNumber+'.json';
 await fs.writeFile(file,JSON.stringify(output,null,2)+'\n');
-console.log(JSON.stringify({output:file,bookId,unitNumber,pages:rows.length,sections:output.sections.map(s=>({type:s.type,items:s.items.length})),status:'needs_review'},null,2));
+console.log(JSON.stringify({
+  output: file,
+  bookId,
+  unitNumber,
+  pages: rows.length,
+  sections: output.sections.map((section) => ({ type: section.type, items: section.items.length })),
+  qualityScore: qualityAudit.score,
+  qualityStatus: qualityAudit.status,
+  validationErrors: qualityAudit.errors,
+  reviewStatus: 'needs_review'
+}, null, 2));
+if (!qualityAudit.ok) {
+  throw new Error('Generated draft failed quality validation: ' + qualityAudit.errors.join(' | '));
+}

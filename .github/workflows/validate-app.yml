@@ -34,8 +34,11 @@ jobs:
         run: npm run validate:lesson-content
       - name: Validate independent unit module scaffolds
         run: npm run validate:unit-modules
+      - name: Run unit source/content quality tests
+        run: npm test
       - name: Check interactive unit generator syntax
-        run: node --check scripts/generate-interactive-unit.mjs
+        run: |
+          node --check scripts/generate-interactive-unit.mjs
           node --check scripts/generate-interactive-curriculum-batch.mjs
       - name: Build application
         run: npm run build
