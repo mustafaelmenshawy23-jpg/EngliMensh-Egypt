@@ -22,8 +22,10 @@ if (!Array.isArray(index.books) || index.books.length === 0) {
     let bytes;
     try { bytes = await fs.readFile(pdfPath); }
     catch { errors.push(`${label}: source PDF is missing from public/books/.`); continue; }
-    if (bytes.length < 1024 || bytes.subarray(0, 5).toString('ascii') !== '%PDF-') {
-      errors.push(`${label}: source is not a hydrated PDF (Git LFS pointer or invalid file).`);
+    const isPdf = bytes.length >= 1024 && bytes.subarray(0, 5).toString('ascii') === '%PDF-';
+    const isLfs = bytes.subarray(0, 120).toString('utf8').startsWith('version https://git-lfs.github.com/spec/v1');
+    if (!isPdf && !isLfs) {
+      errors.push(`${label}: source is neither a hydrated PDF nor a valid Git LFS pointer.`);
     }
     for (const [unitIndex, unit] of (book.units || []).entries()) {
       if (!Number.isInteger(unit.number) || unit.number < 1 || !unit.title) {

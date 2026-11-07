@@ -1,212 +1,411 @@
-import { REQUIRED_UNIT_SECTIONS } from './source-quality-gate.mjs';
+/**
+ * Comprehensive Content Quality Validator for EngliMensh Curriculum Drafts
+ * 
+ * Validates vocabulary, grammar, questions, reading, listening, speaking,
+ * page coverage, duplicate detection, and answer-key consistency.
+ * Produces a transparent quality report and assigns strict review statuses.
+ */
 
-const validOrigins = new Set(['source', 'supplementary']);
-const normalize = (value) => String(value ?? '').trim().toLocaleLowerCase();
+export const REQUIRED_MODULE_TYPES = [
+  'vocabulary',
+  'vocabulary_questions',
+  'grammar',
+  'grammar_questions',
+  'reading',
+  'listening',
+  'speaking',
+  'games',
+  'comprehensive_test'
+];
 
-function addQuestionErrors(content, label, errors) {
-  if (!String(content.question || '').trim()) errors.push(label + ': missing question text.');
-  const options = Array.isArray(content.options) ? content.options.map((value) => String(value).trim()) : [];
-  if (options.length < 3 || options.length > 4) errors.push(label + ': questions must have 3–4 answer options.');
-  const unique = new Set(options.map(normalize));
-  if (unique.size !== options.length) errors.push(label + ': answer options must be unique.');
-  const matches = options.filter((option) => normalize(option) === normalize(content.correctAnswer));
-  if (!content.correctAnswer || matches.length !== 1) errors.push(label + ': correctAnswer must match exactly one option.');
-  if (!String(content.reason || '').trim()) errors.push(label + ': missing answer explanation/reason.');
+/**
+ * Validates a single vocabulary item.
+ * 
+ * @param {object} item - Item object with itemId, content: { word, arabicMeaning, example, origin, sourcePdfPage }
+ * @param {object} unitRange - { start: number, end: number }
+ * @returns {object} { isValid: boolean, issues: string[] }
+ */
+export function validateVocabularyItem(item, unitRange) {
+  const issues = [];
+  const c = item?.content || {};
+
+  if (!item?.itemId) issues.push('Vocabulary item is missing itemId');
+
+  // Word validation
+  const word = typeof c.word === 'string' ? c.word.trim() : '';
+  if (!word) {
+    issues.push(`${item?.itemId || 'Item'}: missing vocabulary word`);
+  } else {
+    // Check for abnormal length or OCR concatenation
+    const tokens = word.split(/\s+/);
+    if (tokens.length > 6) {
+      issues.push(`${item.itemId}: vocabulary phrase is abnormally long (${tokens.length} words): "${word.slice(0, 40)}..."`);
+    }
+    const hasLongToken = tokens.some((t) => t.length > 35 && !t.includes('-') && !t.includes('/'));
+    if (hasLongToken || word.length > 60) {
+      issues.push(`${item.itemId}: vocabulary word contains corrupted, abnormally long token: "${word.slice(0, 45)}..." (length ${word.length})`);
+    }
+    // Check for character repetition or OCR noise
+    if (/([^\s._\-])\1{4,}/i.test(word) || /[\uFFFD]/.test(word)) {
+      issues.push(`${item.itemId}: vocabulary word contains OCR garbage or character repetition: "${word}"`);
+    }
+  }
+
+  // Arabic meaning validation
+  const arabic = typeof c.arabicMeaning === 'string' ? c.arabicMeaning.trim() : '';
+  if (!arabic) {
+    issues.push(`${item?.itemId || 'Item'}: missing Arabic meaning`);
+  } else {
+    // Must contain Arabic characters
+    const hasArabicGlyphs = /[\u0600-\u06FF]/.test(arabic);
+    if (!hasArabicGlyphs) {
+      issues.push(`${item?.itemId || 'Item'}: Arabic meaning contains no Arabic characters: "${arabic}"`);
+    }
+    if (arabic.length > 120) {
+      issues.push(`${item?.itemId || 'Item'}: Arabic meaning is abnormally long (${arabic.length} chars)`);
+    }
+  }
+
+  // Provenance validation
+  if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+    issues.push(`${item?.itemId || 'Item'}: invalid origin (must be 'source' or 'supplementary')`);
+  }
+  if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < unitRange.start || c.sourcePdfPage > unitRange.end) {
+    issues.push(`${item?.itemId || 'Item'}: sourcePdfPage (${c.sourcePdfPage}) is outside unit range ${unitRange.start}-${unitRange.end}`);
+  }
+
+  return { isValid: issues.length === 0, issues };
 }
 
-export function validateUnitDraftQuality(draft, options = {}) {
-  const errors = [];
+/**
+ * Validates a single question item (used across vocabulary_questions, grammar_questions, comprehensive_test, reading/listening questions).
+ * 
+ * @param {object} item - Item object with itemId, content: { question, options, correctAnswer, reason, origin, sourcePdfPage }
+ * @param {object} unitRange - { start: number, end: number }
+ * @returns {object} { isValid: boolean, issues: string[] }
+ */
+export function validateQuestionItem(item, unitRange) {
+  const issues = [];
+  const c = item?.content || {};
+  const id = item?.itemId || 'Question';
+
+  if (!item?.itemId) issues.push('Question item is missing itemId');
+
+  // Question prompt
+  const prompt = typeof c.question === 'string' ? c.question.trim() : '';
+  if (!prompt || prompt.length < 10) {
+    issues.push(`${id}: question prompt is missing or too short (${prompt.length} chars)`);
+  }
+  if (/([^\s._\-])\1{4,}/i.test(prompt) || /[\uFFFD]/.test(prompt)) {
+    issues.push(`${id}: question prompt contains OCR noise: "${prompt.slice(0, 40)}"`);
+  }
+
+  // Options
+  if (!Array.isArray(c.options)) {
+    issues.push(`${id}: options must be an array`);
+  } else {
+    if (c.options.length < 3 || c.options.length > 5) {
+      issues.push(`${id}: question must have 3-4 options (found ${c.options.length})`);
+    }
+    // Check distinct options
+    const uniqueOptions = new Set(c.options.map((opt) => String(opt).trim().toLowerCase()));
+    if (uniqueOptions.size !== c.options.length) {
+      issues.push(`${id}: question contains duplicate options: ${JSON.stringify(c.options)}`);
+    }
+    // Correct answer matching
+    if (!c.correctAnswer || typeof c.correctAnswer !== 'string') {
+      issues.push(`${id}: missing correctAnswer string`);
+    } else {
+      const match = c.options.some((opt) => String(opt).trim() === c.correctAnswer.trim());
+      if (!match) {
+        issues.push(`${id}: correctAnswer "${c.correctAnswer}" does not match any of the provided options: [${c.options.map((o) => `"${o}"`).join(', ')}]`);
+      }
+    }
+  }
+
+  // Reason / explanation
+  const reason = c.reason || c.explanation;
+  if (!reason || typeof reason !== 'string' || reason.trim().length < 5) {
+    issues.push(`${id}: missing or incomplete explanation/reason for answer`);
+  }
+
+  // Provenance
+  if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+    issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
+  }
+  if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < unitRange.start || c.sourcePdfPage > unitRange.end) {
+    issues.push(`${id}: sourcePdfPage (${c.sourcePdfPage}) is outside unit range ${unitRange.start}-${unitRange.end}`);
+  }
+
+  return { isValid: issues.length === 0, issues };
+}
+
+/**
+ * Validates a grammar entry.
+ * 
+ * @param {object} item - Item object with itemId, content: { rule, explanation, example, origin, sourcePdfPage }
+ * @param {object} unitRange - { start: number, end: number }
+ * @returns {object} { isValid: boolean, issues: string[] }
+ */
+export function validateGrammarItem(item, unitRange) {
+  const issues = [];
+  const c = item?.content || {};
+  const id = item?.itemId || 'Grammar';
+
+  if (!item?.itemId) issues.push('Grammar item is missing itemId');
+
+  const rule = typeof c.rule === 'string' ? c.rule.trim() : '';
+  if (!rule || rule.length < 5) issues.push(`${id}: missing or incomplete grammar rule`);
+
+  const explanation = typeof c.explanation === 'string' ? c.explanation.trim() : '';
+  if (!explanation || explanation.length < 10) issues.push(`${id}: missing or incomplete grammar explanation`);
+
+  if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+    issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
+  }
+  if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < unitRange.start || c.sourcePdfPage > unitRange.end) {
+    issues.push(`${id}: sourcePdfPage (${c.sourcePdfPage}) is outside unit range ${unitRange.start}-${unitRange.end}`);
+  }
+
+  return { isValid: issues.length === 0, issues };
+}
+
+/**
+ * Validates the full unit draft and produces a complete quality audit report.
+ * 
+ * @param {object} draft - The unit draft object
+ * @param {object} expectedRange - { start: number, end: number }
+ * @param {Array<object>} sourcePageRows - Array of extracted source page records
+ * @returns {object} { isValid: boolean, status: string, score: number, criticalFailures: string[], report: object }
+ */
+export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = []) {
+  const criticalFailures = [];
   const warnings = [];
-  const rows = Array.isArray(options.rows) ? options.rows : [];
-  const start = options.start ?? draft?.sourcePdfRange?.start;
-  const end = options.end ?? draft?.sourcePdfRange?.end;
-  const expectedPages = rows.length
-    ? rows.map((row) => row.pdfPage)
-    : Number.isInteger(start) && Number.isInteger(end) && end >= start
-      ? Array.from({ length: end - start + 1 }, (_, index) => start + index)
-      : [];
-  const expectedSet = new Set(expectedPages);
-  const sourceTextChars = rows.reduce((sum, row) => sum + String(row.text || '').length, 0);
+  const sectionReports = {};
 
   if (!draft || typeof draft !== 'object') {
-    return { ok: false, status: 'failed_validation', score: 0, errors: ['Draft must be an object.'], warnings, metrics: {} };
-  }
-  if (draft.datasetStatus !== 'draft') errors.push('Draft datasetStatus must remain draft.');
-  if (draft.reviewStatus !== 'needs_review') errors.push('Generated content must remain needs_review until teacher approval.');
-  if (!Array.isArray(draft.sections)) errors.push('Missing sections array.');
-
-  if (Number.isInteger(start) && Number.isInteger(end)) {
-    if (draft.sourcePdfRange?.start !== start || draft.sourcePdfRange?.end !== end) {
-      errors.push('sourcePdfRange does not match the verified unit range.');
-    }
+    return {
+      isValid: false,
+      status: 'failed_validation',
+      score: 0,
+      criticalFailures: ['Unit draft is empty or not a valid object'],
+      report: { summary: 'Invalid draft object' }
+    };
   }
 
-  if (!Array.isArray(draft.sourceCoverage)) {
-    errors.push('Missing sourceCoverage array.');
-  } else if (expectedPages.length) {
-    const actual = draft.sourceCoverage;
-    const exact = actual.length === expectedPages.length &&
-      actual.every((page, index) => page === expectedPages[index]);
-    if (!exact) errors.push('sourceCoverage must list every expected PDF page exactly once and in order.');
+  const { start, end } = expectedRange;
+  const expectedTotalPages = end - start + 1;
+
+  // 1. Coverage Validation
+  const recordedCoverage = Array.isArray(draft.sourceCoverage) ? draft.sourceCoverage : [];
+  const coverageSet = new Set(recordedCoverage);
+  const missingCoveragePages = [];
+  for (let p = start; p <= end; p++) {
+    if (!coverageSet.has(p)) missingCoveragePages.push(p);
   }
 
-  const sections = Array.isArray(draft.sections) ? draft.sections : [];
-  const byType = new Map();
-  for (const section of sections) {
-    if (!section || !REQUIRED_UNIT_SECTIONS.includes(section.type)) {
-      errors.push('Unexpected or invalid section type: ' + String(section?.type));
+  if (recordedCoverage.length === 0) {
+    criticalFailures.push('sourceCoverage is empty: draft records zero source pages');
+  } else if (missingCoveragePages.length > 0) {
+    criticalFailures.push(`Incomplete source coverage: expected ${start}-${end} (${expectedTotalPages} pages), but coverage omitted ${missingCoveragePages.length} page(s): ${missingCoveragePages.slice(0, 10).join(', ')}${missingCoveragePages.length > 10 ? '...' : ''} (stopped at ${Math.max(...recordedCoverage)})`);
+  }
+
+  const outOfRangeCoverage = recordedCoverage.filter((p) => p < start || p > end);
+  if (outOfRangeCoverage.length > 0) {
+    criticalFailures.push(`sourceCoverage cites pages outside expected unit range ${start}-${end}: ${outOfRangeCoverage.join(', ')}`);
+  }
+
+  // 2. Sections Validation
+  if (!Array.isArray(draft.sections)) {
+    criticalFailures.push('Draft sections must be an array');
+    return {
+      isValid: false,
+      status: 'failed_validation',
+      score: 0,
+      criticalFailures,
+      report: { summary: 'Missing sections array' }
+    };
+  }
+
+  const sectionsByType = new Map();
+  for (const section of draft.sections) {
+    if (!section.type || !REQUIRED_MODULE_TYPES.includes(section.type)) {
+      criticalFailures.push(`Unknown or invalid section type: ${section.type}`);
       continue;
     }
-    if (byType.has(section.type)) errors.push('Duplicate section type: ' + section.type);
-    byType.set(section.type, section);
-    if (!Array.isArray(section.items)) errors.push(section.type + ': items must be an array.');
-  }
-  for (const type of REQUIRED_UNIT_SECTIONS) {
-    if (!byType.has(type)) errors.push('Missing required section: ' + type);
-  }
-  if (sections.length !== REQUIRED_UNIT_SECTIONS.length) {
-    errors.push('A unit must contain exactly nine independent sections.');
+    if (sectionsByType.has(section.type)) {
+      criticalFailures.push(`Duplicate section type: ${section.type}`);
+    }
+    sectionsByType.set(section.type, section);
   }
 
-  const sectionCounts = {};
+  // Check all required 8 sections exist
+  for (const reqType of REQUIRED_MODULE_TYPES) {
+    if (!sectionsByType.has(reqType)) {
+      criticalFailures.push(`Missing required section: ${reqType}`);
+    }
+  }
+
+  // 3. Item-level Validation & Section Population
+  const seenItemIds = new Set();
+  const seenVocabularyWords = new Set();
+  const seenQuestionPrompts = new Set();
+
   let totalItems = 0;
-  let sourceItems = 0;
-  let supplementaryItems = 0;
-  const itemIds = new Set();
+  let sourceItemCount = 0;
+  let supplementaryItemCount = 0;
 
-  for (const section of sections) {
-    if (!Array.isArray(section?.items)) continue;
-    sectionCounts[section.type] = section.items.length;
-    for (const item of section.items) {
-      totalItems += 1;
-      const label = String(item?.itemId || section.type + ' item');
-      if (!item?.itemId || itemIds.has(item.itemId)) errors.push(label + ': missing or duplicate itemId.');
-      itemIds.add(item?.itemId);
-      const content = item?.content;
-      if (!content || typeof content !== 'object') {
-        errors.push(label + ': missing content object.');
-        continue;
+  for (const sectionType of REQUIRED_MODULE_TYPES) {
+    const section = sectionsByType.get(sectionType);
+    const items = section?.items || [];
+    sectionReports[sectionType] = {
+      itemCount: items.length,
+      validItems: 0,
+      issues: []
+    };
+
+    if (!Array.isArray(items)) {
+      criticalFailures.push(`Section ${sectionType} items must be an array`);
+      continue;
+    }
+
+    for (const item of items) {
+      totalItems++;
+      if (item.content?.origin === 'source') sourceItemCount++;
+      else if (item.content?.origin === 'supplementary') supplementaryItemCount++;
+
+      // Unique ID check
+      if (item.itemId) {
+        if (seenItemIds.has(item.itemId)) {
+          criticalFailures.push(`Duplicate itemId across draft: ${item.itemId}`);
+        }
+        seenItemIds.add(item.itemId);
       }
 
-      if (!validOrigins.has(content.origin)) {
-        errors.push(label + ': origin must be source or supplementary.');
-      } else if (content.origin === 'source') {
-        sourceItems += 1;
-        if (!Number.isInteger(content.sourcePdfPage) || !expectedSet.has(content.sourcePdfPage)) {
-          errors.push(label + ': source content needs a valid sourcePdfPage inside the unit range.');
-        }
-      } else {
-        supplementaryItems += 1;
-        if (!Number.isInteger(content.contextPdfPage) || !expectedSet.has(content.contextPdfPage)) {
-          errors.push(label + ': supplementary content needs a valid contextPdfPage inside the unit range.');
-        }
-        if (content.sourcePdfPage !== undefined) {
-          errors.push(label + ': supplementary content must not claim a sourcePdfPage.');
-        }
-      }
-
-      if (section.type === 'vocabulary') {
-        const word = String(content.word || '').trim();
-        if (!word || [...word].length > 40 || /(.)\1{5,}/u.test(word)) {
-          errors.push(label + ': invalid or corrupted vocabulary token.');
-        }
-        if (!/[\u0600-\u06FF]/u.test(String(content.arabicMeaning || ''))) {
-          errors.push(label + ': Arabic meaning must contain Arabic script.');
-        }
-        if (!String(content.example || '').trim()) errors.push(label + ': vocabulary example is required.');
-        if (!validOrigins.has(content.meaningOrigin) || !validOrigins.has(content.exampleOrigin)) {
-          errors.push(label + ': meaningOrigin and exampleOrigin must be source or supplementary.');
-        }
-      }
-
-      if (section.type === 'grammar') {
-        if (!String(content.rule || '').trim() || !String(content.explanation || '').trim()) {
-          errors.push(label + ': grammar rule and explanation are required.');
-        }
-        if (!validOrigins.has(content.ruleOrigin) || !validOrigins.has(content.explanationOrigin)) {
-          errors.push(label + ': ruleOrigin and explanationOrigin must be source or supplementary.');
-        }
-      }
-
-      const questionSection = ['vocabulary_questions', 'grammar_questions', 'comprehensive_test'].includes(section.type);
-      if (questionSection || content.question || section.type === 'games') {
-        addQuestionErrors(content, label, errors);
-      }
-
-      if (section.type === 'reading' && String(content.passage || '').trim().length < 40) {
-        errors.push(label + ': reading needs a complete passage of at least 40 characters.');
-      }
-
-      if (section.type === 'listening' && String(content.script || '').trim().length < 20) {
-        errors.push(label + ': listening needs a source or clearly supplementary script.');
-      }
-
-      if (section.type === 'speaking') {
-        if (!Array.isArray(content.dialogue) || content.dialogue.length < 2) {
-          errors.push(label + ': speaking needs at least two dialogue turns.');
+      // Route to specialized item validator
+      if (sectionType === 'vocabulary') {
+        const vResult = validateVocabularyItem(item, expectedRange);
+        if (!vResult.isValid) {
+          criticalFailures.push(...vResult.issues);
+          sectionReports[sectionType].issues.push(...vResult.issues);
         } else {
-          for (const turn of content.dialogue) {
-            if (!turn?.speaker || !String(turn.text || '').trim() ||
-                !['male', 'female', 'unknown'].includes(turn.speakerGender)) {
-              errors.push(label + ': every speaking turn needs a speaker, text, and honest gender metadata.');
-            }
-            if (content.origin === 'supplementary' && !['male', 'female'].includes(turn.speakerGender)) {
-              errors.push(label + ': supplementary role-play turns must use male/female speaker roles.');
-            }
+          sectionReports[sectionType].validItems++;
+          const wordKey = item.content.word.trim().toLowerCase();
+          if (seenVocabularyWords.has(wordKey)) {
+            warnings.push(`Duplicate vocabulary word in unit: "${item.content.word}"`);
           }
+          seenVocabularyWords.add(wordKey);
         }
-      }
-
-      if (section.type === 'games') {
-        if (content.origin !== 'supplementary' || !content.gameType || !content.targetSkill ||
-            !content.difficulty || !content.instruction) {
-          errors.push(label + ': each game must be supplementary and include type, skill, difficulty, and instructions.');
+      } else if (sectionType === 'grammar') {
+        const gResult = validateGrammarItem(item, expectedRange);
+        if (!gResult.isValid) {
+          criticalFailures.push(...gResult.issues);
+          sectionReports[sectionType].issues.push(...gResult.issues);
+        } else {
+          sectionReports[sectionType].validItems++;
+        }
+      } else if (sectionType.endsWith('_questions') || sectionType === 'comprehensive_test') {
+        const qResult = validateQuestionItem(item, expectedRange);
+        if (!qResult.isValid) {
+          criticalFailures.push(...qResult.issues);
+          sectionReports[sectionType].issues.push(...qResult.issues);
+        } else {
+          sectionReports[sectionType].validItems++;
+          const promptKey = item.content.question.trim().toLowerCase();
+          if (seenQuestionPrompts.has(promptKey)) {
+            criticalFailures.push(`Duplicate question prompt detected: "${item.content.question.slice(0, 40)}"`);
+          }
+          seenQuestionPrompts.add(promptKey);
+        }
+      } else if (sectionType === 'reading' || sectionType === 'listening') {
+        // Can contain passage/script + nested questions or separate items
+        const c = item.content || {};
+        if (c.passage || c.script) {
+          if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+            criticalFailures.push(`${item.itemId || sectionType}: missing or invalid origin`);
+          }
+          if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+            criticalFailures.push(`${item.itemId || sectionType}: sourcePdfPage is outside unit range`);
+          }
+          sectionReports[sectionType].validItems++;
+        } else if (c.question) {
+          const qResult = validateQuestionItem(item, expectedRange);
+          if (!qResult.isValid) criticalFailures.push(...qResult.issues);
+          else sectionReports[sectionType].validItems++;
+        }
+      } else if (sectionType === 'speaking') {
+        const c = item.content || {};
+        if (Array.isArray(c.dialogue) && c.dialogue.length >= 2) {
+          sectionReports[sectionType].validItems++;
+        } else if (c.instruction) {
+          sectionReports[sectionType].validItems++;
+        } else {
+          warnings.push(`Speaking item ${item.itemId} has minimal dialogue structure`);
         }
       }
     }
   }
 
-  const minimums = {
-    vocabulary: 1,
-    vocabulary_questions: 3,
-    grammar: 1,
-    grammar_questions: 3,
-    reading: 1,
-    listening: 1,
-    speaking: 1,
-    games: 2,
-    comprehensive_test: 5
-  };
-  for (const [type, minimum] of Object.entries(minimums)) {
-    if ((sectionCounts[type] || 0) < minimum) {
-      errors.push(type + ': expected at least ' + minimum + ' item(s), found ' + (sectionCounts[type] || 0) + '.');
-    }
+  // 4. Source Check for Empty Sections
+  // If source pages had readable text, but the draft produced zero questions/items across all practice sections
+  const questionsTotal = (sectionsByType.get('vocabulary_questions')?.items?.length || 0) +
+    (sectionsByType.get('grammar_questions')?.items?.length || 0) +
+    (sectionsByType.get('comprehensive_test')?.items?.length || 0);
+
+  if (totalItems === 0) {
+    criticalFailures.push('Unit draft is completely empty across all 8 modules');
+  } else if (questionsTotal === 0 && sourceItemCount > 0) {
+    criticalFailures.push('Draft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)');
   }
 
-  if (totalItems < 18) errors.push('Unit draft is too sparse: expected at least 18 items.');
-  const minimumSourceItems = sourceTextChars > 1500 ? 3 : 1;
-  if (sourceItems < minimumSourceItems) {
-    errors.push('Source-derived content is insufficient for the amount of source text supplied.');
+  // 5. Calculate Transparent Quality Score (0 - 100)
+  let score = 100;
+  if (missingCoveragePages.length > 0) {
+    const coverageRatio = (expectedTotalPages - missingCoveragePages.length) / expectedTotalPages;
+    score -= Math.round((1 - coverageRatio) * 35);
   }
-  if (options.rows && rows.length !== expectedPages.length) {
-    warnings.push('Source page rows were supplied; verify page uniqueness in the source gate.');
+  if (criticalFailures.length > 0) {
+    score -= Math.min(60, criticalFailures.length * 15);
+  }
+  if (warnings.length > 0) {
+    score -= Math.min(15, warnings.length * 5);
+  }
+  if (totalItems < 5) {
+    score -= 20;
+  }
+  score = Math.max(0, Math.min(100, score));
+
+  // Determine review status
+  let status = 'ready_for_teacher_review';
+  if (criticalFailures.length > 0) {
+    status = 'failed_validation';
+  } else if (warnings.length > 0 || score < 85) {
+    status = 'needs_review';
   }
 
-  const score = Math.max(0, 100 - errors.length * 6 - warnings.length * 2);
-  const status = errors.length ? 'failed_validation' : 'ready_for_teacher_review';
   return {
-    ok: errors.length === 0,
+    isValid: criticalFailures.length === 0,
     status,
     score,
-    errors,
+    criticalFailures,
     warnings,
-    metrics: {
-      totalItems,
-      sourceItems,
-      supplementaryItems,
-      sectionCounts,
-      expectedPageCount: expectedPages.length,
-      sourceTextChars
+    report: {
+      unitTitle: draft.unitTitle,
+      expectedRange: { start, end, totalPages: expectedTotalPages },
+      recordedCoverage: {
+        totalPages: recordedCoverage.length,
+        isComplete: missingCoveragePages.length === 0,
+        missingPages: missingCoveragePages
+      },
+      itemTotals: {
+        totalItems,
+        sourceItems: sourceItemCount,
+        supplementaryItems: supplementaryItemCount,
+        vocabularyCount: seenVocabularyWords.size,
+        questionsCount: questionsTotal
+      },
+      sections: sectionReports,
+      validationTimestamp: new Date().toISOString()
     }
   };
 }

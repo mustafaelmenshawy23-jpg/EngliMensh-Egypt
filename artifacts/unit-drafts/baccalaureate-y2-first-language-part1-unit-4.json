@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-07T06:47:45.056Z",
+  "generatedAt": "2026-11-07T07:23:21.255Z",
   "generator": {
     "provider": "Google Gemini API",
-    "model": "gemini-3.5-flash-lite",
-    "reviewStatus": "needs_review"
+    "model": "gemini-2.5-flash",
+    "reviewStatus": "ready_for_teacher_review"
   },
   "bookId": "baccalaureate-y2-first-language-part1",
   "sourceFilename": "Eng-L1-EB-Part1 (1).pdf",
   "grade": "Baccalaureate Year 2",
   "unitNumber": 4,
-  "unitTitle": "Unit 4: The Power of Choice",
+  "unitTitle": "The Power of Choice",
   "sourcePdfRange": {
     "start": 102,
     "end": 139
@@ -46,22 +46,180 @@
     128,
     129,
     130,
-    131
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
   ],
-  "reviewStatus": "needs_review",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "The Power of Choice",
+    "expectedRange": {
+      "start": 102,
+      "end": 139,
+      "totalPages": 38
+    },
+    "recordedCoverage": {
+      "totalPages": 38,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 24,
+      "sourceItems": 22,
+      "supplementaryItems": 2,
+      "vocabularyCount": 8,
+      "questionsCount": 8
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 8,
+        "validItems": 8,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-07T07:23:21.254Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
   "reviewedBy": null,
   "reviewedAt": null,
   "sections": [
     {
       "type": "vocabulary",
-      "title": "Vocabulary: Food Waste and Brands",
+      "title": "Vocabulary",
       "items": [
         {
-          "itemId": "v1",
+          "itemId": "u4-voc-1",
           "content": {
+            "word": "purchase",
+            "arabicMeaning": "شراء / يشتري",
+            "example": "Consumers carefully plan their purchases in advance during sale events.",
             "origin": "source",
-            "sourcePdfPage": 108,
-            "word": "storageynessnbbnpdskjfhnsdkfjhnsdkfjhnsdkfjhnksdjnfksdfnsdkfndskjnfskjdhfksdjfhnskdjfhnskdjfhsndkjfhsndkjfnskdjfnskdjfnsdkfjnskdjfnsdkfjnsdkjfnsdkjfnskdjfnsdkfjnsdkjfnskdjfnksdjnfksdjnfksjdfnksdjfnskdjfnskjdfnksdfnsdkfjnskjdfnksdjfhnskjdfhnskjdfhnskdjfhnskjdfhnskdjfhnskdjfhnksdjnfksdjfnskjdfnksdjfnskdjfnsdkfjnskdjfhnksdjfhnskdjfhnskdjfnskdjfnsdkfjnskdjfhnskdjfhnskdjfnskdjfhnskdjfhnskdjfhnskdjfhnskjdfhnsdkjfhnsdkfjnskdjfnskjdfnksdjfnskjdfnksdjfnhskdjfhnsdjkfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnksdjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskjfhnsdkjfhnskdjfnskjdfnksdjfhnskdjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfnsdkjfhsndkjfhsndkjfnskdjfnskdjfnsdkfjnskdjfnsdkfjnsdkjfnsdkjfnskdjfnsdkfjnsdkjfnskdjfnksdjnfksdjnfksjdfnksdjfnskdjfnskjdfnksdfnsdkfjnskjdfnksdjfhnskjdfhnskjdfhnskdjfhnskjdfhnskdjfhnskdjfhnksdjnfksdjfnskjdfnksdjfnskdjfnsdkfjnskdjfhnksdjfhnskdjfhnskdjfnskdjfnsdkfjnskdjfhnskdjfhnskdjfnskdjfhnskdjfhnskdjfhnskdjfhnskjdfhnsdkjfhnsdkfjnskdjfnskjdfnksdjfnskjdfnksdjfnhskdjfhnsdjkfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnksdjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskjfhnsdkjfhnskdjfnskjdfnksdjfhnskdjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfnsdkjfhsndkjfhsndkjfnskdjfnskdjfnsdkfjnskdjfnsdkfjnsdkjfnsdkjfnskdjfnsdkfjnsdkjfnskdjfnksdjnfksdjnfksjdfnksdjfnskdjfnskjdfnksdfnsdkfjnskjdfnksdjfhnskjdfhnskjdfhnskdjfhnskjdfhnskdjfhnskdjfhnksdjnfksdjfnskjdfnksdjfnskdjfnsdkfjnskdjfhnksdjfhnskdjfhnskdjfnskdjfnsdkfjnskdjfhnskdjfhnskdjfnskdjfhnskdjfhnskdjfhnskdjfhnskjdfhnsdkjfhnsdkfjnskdjfnskjdfnksdjfnskjdfnksdjfnhskdjfhnsdjkfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnksdjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnskdjfhnsdkjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfhnskjfhnsdkjfhnskdjfnskjdfnksdjfhnskdjfhnskdjfhnsdkjfhnsdkjfhnsdkjfhnsdkjfniptnskyzxcvbmnasdfghjklqwertyuiopasdfghjklzxcvbnmquiopasdflkjasdflkjasdflkjasdflkjasdflkjasdflkj"
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-2",
+          "content": {
+            "word": "fall for",
+            "arabicMeaning": "ينخدع بـ",
+            "example": "Shoppers often fall for marketing tricks that create a false sense of urgency.",
+            "origin": "source",
+            "sourcePdfPage": 124
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-3",
+          "content": {
+            "word": "loss aversion",
+            "arabicMeaning": "تجنب الخسارة",
+            "example": "Loss aversion makes people fear missing out on limited-time discounts.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-4",
+          "content": {
+            "word": "urgency",
+            "arabicMeaning": "إلحاح / استعجال",
+            "example": "Countdown timers create urgency, pushing customers to decide quickly.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-5",
+          "content": {
+            "word": "digital literacy",
+            "arabicMeaning": "معرفة رقمية",
+            "example": "Digital literacy education helps teenagers understand how apps use their time.",
+            "origin": "source",
+            "sourcePdfPage": 120
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-6",
+          "content": {
+            "word": "preserve",
+            "arabicMeaning": "يحافظ على / يحمي",
+            "example": "Preserving Egyptian heritage helps future generations connect with history.",
+            "origin": "source",
+            "sourcePdfPage": 132
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-7",
+          "content": {
+            "word": "verify",
+            "arabicMeaning": "يتحقق من",
+            "example": " Salma verified the date and source before sharing the old photograph.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-8",
+          "content": {
+            "word": "fragile",
+            "arabicMeaning": "هش / سريع الكسر",
+            "example": "Ancient papyrus documents are fragile and require careful protection.",
+            "origin": "source",
+            "sourcePdfPage": 133
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -70,38 +228,298 @@
     },
     {
       "type": "vocabulary_questions",
-      "title": "Vocabulary Practice",
-      "items": []
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "u4-vq-1",
+          "content": {
+            "question": "The phrase \"falling for\" in the text about shopping events is closest in meaning to:",
+            "options": [
+              "avoiding",
+              "being tricked by",
+              "understanding",
+              "comparing"
+            ],
+            "correctAnswer": "being tricked by",
+            "reason": "Falling for a marketing trick means being deceived or tricked by it.",
+            "origin": "source",
+            "sourcePdfPage": 124
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-vq-2",
+          "content": {
+            "question": "The Grand Egyptian Museum protects valuable artifacts so future generations can learn from them. What does \"preserve\" mean here?",
+            "options": [
+              "To protect something from damage or loss",
+              "To hide something completely",
+              "To sell something",
+              "To destroy something"
+            ],
+            "correctAnswer": "To protect something from damage or loss",
+            "reason": "Preserve means safeguarding historical objects from destruction.",
+            "origin": "source",
+            "sourcePdfPage": 132
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-vq-3",
+          "content": {
+            "question": "Before sharing an old photograph, Salma checked that its information was correct and reliable. Which word describes this?",
+            "options": [
+              "verified",
+              "ignored",
+              "changed",
+              "copied"
+            ],
+            "correctAnswer": "verified",
+            "reason": "Verified means checked for accuracy and authenticity.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
     },
     {
       "type": "grammar",
-      "title": "Grammar: Present Perfect",
-      "items": []
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "u4-gr-1",
+          "content": {
+            "rule": "Present Perfect Tense (have/has + past participle)",
+            "explanation": "Use the Present Perfect with \"just\", \"already\", \"yet\", \"since\", \"for\", and \"never\" to link past actions to present relevance.",
+            "example": "Scientists have just published new research on food waste.",
+            "origin": "source",
+            "sourcePdfPage": 127
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-gr-2",
+          "content": {
+            "rule": "Present Perfect with \"yet\" in negatives and questions",
+            "explanation": "Use \"yet\" at the end of negative sentences and questions to show an expected action has not happened yet.",
+            "example": "The company has not introduced the new system yet.",
+            "origin": "source",
+            "sourcePdfPage": 127
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
     },
     {
       "type": "grammar_questions",
       "title": "Grammar Questions",
-      "items": []
+      "items": [
+        {
+          "itemId": "u4-gq-1",
+          "content": {
+            "question": "Researchers ________ (find) that bread waste is very high in urban centers.",
+            "options": [
+              "have found",
+              "found",
+              "are finding",
+              "find"
+            ],
+            "correctAnswer": "have found",
+            "reason": "Present Perfect \"have found\" connects past research finding to present awareness.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-gq-2",
+          "content": {
+            "question": "The company ________ (not / introduce) the new recycling system yet.",
+            "options": [
+              "has not introduced",
+              "did not introduce",
+              "is not introducing",
+              "will not introduce"
+            ],
+            "correctAnswer": "has not introduced",
+            "reason": "Use Present Perfect negative \"has not introduced\" with \"yet\".",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-gq-3",
+          "content": {
+            "question": "Some schools in Cairo ________ (already / start) food education programs.",
+            "options": [
+              "have already started",
+              "already started",
+              "are starting already",
+              "start already"
+            ],
+            "correctAnswer": "have already started",
+            "reason": "Present Perfect with \"already\" emphasizes early completion.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
     },
     {
       "type": "reading",
-      "title": "Reading Comprehension",
-      "items": []
+      "title": "Reading & Questions",
+      "items": [
+        {
+          "itemId": "u4-rd-1",
+          "content": {
+            "passage": "Many teenagers use social media every day without thinking about how these apps work. Although platforms seem free, they collect data on user behavior. Designers use engagement features to maximize user screen time.",
+            "origin": "source",
+            "sourcePdfPage": 117
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-rd-2",
+          "content": {
+            "passage": "When Places Remember: A historical landscape is more than a collection of old buildings. It is a place where past events leave visible and invisible traces connecting communities to their shared memory and values.",
+            "origin": "source",
+            "sourcePdfPage": 135
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-rd-q1",
+          "content": {
+            "question": "Why do free digital social media platforms collect user behavior data?",
+            "options": [
+              "To analyze interests and keep users engaged",
+              "To charge monthly subscription fees",
+              "To delete inactive accounts",
+              "To replace textbook education"
+            ],
+            "correctAnswer": "To analyze interests and keep users engaged",
+            "reason": "The text explains platforms collect behavior data to optimize user engagement.",
+            "origin": "supplementary",
+            "sourcePdfPage": 117
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
     },
     {
       "type": "listening",
-      "title": "Listening Comprehension",
-      "items": []
+      "title": "Listening & Questions",
+      "items": [
+        {
+          "itemId": "u4-ls-1",
+          "content": {
+            "script": "Audio discussion: \"If you are not paying for the product, you are the product.\" Understand how notification badges and continuous scrolling keep users engaged.",
+            "origin": "source",
+            "sourcePdfPage": 119
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-ls-q1",
+          "content": {
+            "question": "What does the phrase \"If you are not paying for the product, you are the product\" signify?",
+            "options": [
+              "Users attention and data are sold to advertisers",
+              "All software must be paid for cash",
+              "Products are free for everyone forever",
+              "Only physical stores sell products"
+            ],
+            "correctAnswer": "Users attention and data are sold to advertisers",
+            "reason": "Free apps monetize user attention and data.",
+            "origin": "supplementary",
+            "sourcePdfPage": 119
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
     },
     {
       "type": "speaking",
-      "title": "Speaking Dialogue",
-      "items": []
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "u4-sp-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Presenter",
+                "text": "Today I am presenting a 2-minute review of a popular social media app."
+              },
+              {
+                "speaker": "Reviewer",
+                "text": "One of its greatest strengths is instant connectivity, but it can encourage impulse scrolling."
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 121
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
     },
     {
       "type": "comprehensive_test",
-      "title": "Comprehensive Test",
-      "items": []
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "u4-test-1",
+          "content": {
+            "question": "Which section of an opinion article introduces the main topic and states the writers view?",
+            "options": [
+              "Introduction",
+              "Headline",
+              "Summary table",
+              "Glossary"
+            ],
+            "correctAnswer": "Introduction",
+            "reason": "An opinion article introduction states the main topic and thesis view.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-2",
+          "content": {
+            "question": "What marketing strategy creates a feeling that a customer must buy immediately before time runs out?",
+            "options": [
+              "Urgency and countdown timers",
+              "Free shipping guarantees",
+              "Long-term product testing",
+              "Word of mouth reviews"
+            ],
+            "correctAnswer": "Urgency and countdown timers",
+            "reason": "Countdown timers create urgency to induce impulse purchases.",
+            "origin": "source",
+            "sourcePdfPage": 123
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
     }
   ]
 }

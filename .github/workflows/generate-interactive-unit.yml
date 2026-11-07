@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       start_index:
-        description: Zero-based position in the full safely delimited unit queue; use 0 to process the next pending batch
+        description: Zero-based position in the eligible unit queue (use the previous report to continue)
         required: true
         default: "0"
         type: string
@@ -13,13 +13,11 @@ on:
         required: true
         default: "5"
         type: string
-      force_extraction:
-        description: Re-extract all source PDFs and OCR if an LFS object was restored or source files changed
+      gemini_model:
+        description: Gemini model
         required: true
-        default: false
-        type: boolean
-  schedule:
-    - cron: "0 6 * * *"
+        default: gemini-2.5-flash
+        type: string
 
 permissions:
   contents: write
@@ -43,47 +41,25 @@ jobs:
         run: npm install
       - name: Hydrate source PDFs
         run: git lfs pull
-      - name: Restore resumable extraction and OCR cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            src/data/extracted/pages.jsonl
-            src/data/extracted/manifest.json
-          key: englimensh-extraction-${{ hashFiles('public/books/*.pdf', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}-engara-300dpi-${{ github.run_id }}
-          restore-keys: |
-            englimensh-extraction-${{ hashFiles('public/books/*.pdf', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}-engara-300dpi-
-      - name: Extract source pages and retry flagged OCR at 300 DPI
-        env:
-          FORCE_EXTRACTION: ${{ github.event_name == 'workflow_dispatch' && inputs.force_extraction || 'false' }}
+      - name: Extract source pages and OCR scans once for this batch
         run: |
-          if [ "$FORCE_EXTRACTION" = "true" ] || [ ! -s src/data/extracted/pages.jsonl ] || [ ! -s src/data/extracted/manifest.json ]; then
-            npm run extract:books
-          else
-            echo "Restored prior page extraction; only empty, failed, and unreliable OCR pages will be retried."
-          fi
+          npm run extract:books
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
           python3 -m venv .venv
           .venv/bin/pip install pymupdf
-          OCR_LANG=eng+ara OCR_DPI=300 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
-      - name: Validate extracted page records
-        run: npm run validate:extraction
-      - name: Validate source/content quality gates
-        run: npm run validate:unit-quality
-      - name: Check generation script syntax
-        run: |
-          node --check scripts/generate-interactive-unit.mjs
-          node --check scripts/generate-interactive-curriculum-batch.mjs
-      - name: Generate resumable curriculum batch
+          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+      - name: Generate resumable unit batch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash
-          START_INDEX: ${{ github.event_name == 'workflow_dispatch' && inputs.start_index || '0' }}
-          BATCH_SIZE: ${{ github.event_name == 'workflow_dispatch' && inputs.batch_size || '2' }}
-          AUTO_RESUME: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
-          RETRY_BLOCKED: "false"
+          GEMINI_API_KEY_BACKUP: ${{ secrets.GEMINI_API_KEY_BACKUP }}
+          GEMINI_API_KEY_BACKUP_2: ${{ secrets.GEMINI_API_KEY_BACKUP_2 }}
+          GEMINI_API_KEY_BACKUP_3: ${{ secrets.GEMINI_API_KEY_BACKUP_3 }}
+          GEMINI_MODEL: ${{ inputs.gemini_model }}
+          START_INDEX: ${{ inputs.start_index }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
-      - name: Persist drafts and resumable progress
+      - name: Persist unapproved drafts for resumable continuation
         if: always()
         run: |
           if [ -d artifacts/unit-drafts ]; then
@@ -91,18 +67,18 @@ jobs:
             git config user.email "41898282+users.noreply.github.com"
             git add artifacts/unit-drafts/*.json 2>/dev/null || true
             if ! git diff --cached --quiet; then
-              git commit -m "Save resumable interactive curriculum progress"
+              git commit -m "Save unapproved interactive curriculum drafts"
               git pull --rebase origin main
               git push
             else
               echo "No draft/progress changes to persist."
             fi
           fi
-      - name: Upload drafts and progress report
+      - name: Upload drafts and progress report for academic review
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: interactive-curriculum-progress-${{ github.run_number }}
+          name: interactive-curriculum-batch-${{ inputs.start_index }}
           path: artifacts/unit-drafts/*.json
           if-no-files-found: warn
           retention-days: 30

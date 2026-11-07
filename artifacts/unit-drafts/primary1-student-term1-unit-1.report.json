@@ -1,0 +1,23 @@
+{
+  "status": "blocked_source_review",
+  "bookId": "primary1-student-term1",
+  "unitNumber": 1,
+  "expectedRange": {
+    "start": 7,
+    "end": 25
+  },
+  "coveragePercentage": 94.7,
+  "issues": [
+    "Missing 1 expected page(s): 25"
+  ],
+  "pageEvaluations": [
+    {
+      "pdfPage": 25,
+      "status": "blocked",
+      "score": 0,
+      "issues": [
+        "Page is missing from the extraction dataset"
+      ]
+    }
+  ]
+}

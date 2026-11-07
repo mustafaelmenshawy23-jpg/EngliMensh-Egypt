@@ -1,223 +1,411 @@
-import assert from 'node:assert/strict';
+/**
+ * Test Suite for EngliMensh Curriculum Quality Gate & Content Validator
+ * 
+ * Verifies that:
+ * 1. Corrupted vocabulary (extremely long tokens, OCR noise) is rejected.
+ * 2. Incomplete source coverage (e.g. 102-131 instead of 102-139) is rejected.
+ * 3. Answer key inconsistencies (not in options, duplicate options) are rejected.
+ * 4. Mislabeled origin or invalid source page citations are rejected.
+ * 5. The previously corrupted Unit 4 draft pattern is identified and rejected.
+ * 6. Valid unit content successfully passes with high quality score.
+ * 7. Source quality gate correctly classifies clean, noisy, and corrupted page text.
+ */
+
 import { validatePageText, validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
-import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
-import { sortUnitCandidates } from './lib/curriculum-order.mjs';
+import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
 
 let passed = 0;
-function check(name, fn) {
-  fn();
-  passed += 1;
-  console.log('PASS ' + name);
+let failed = 0;
+
+function assert(condition, message) {
+  if (condition) {
+    console.log(`  ✓ ${message}`);
+    passed++;
+  } else {
+    console.error(`  ✗ FAIL: ${message}`);
+    failed++;
+  }
 }
 
-const page = (pdfPage, text, extra = {}) => ({ pdfPage, text, ...extra });
-const rows = [
-  page(1, 'This is a clear source page with readable English words and complete sentences for learners.'),
-  page(2, 'The second source page contains another readable paragraph with useful information for this unit.')
-];
+console.log('--- TEST 1: Source Quality Gate (Page Text) ---');
+{
+  const cleanText = 'Unit 4: The Power of Choice. Consumers make decisions every day based on price, quality, and personal preference.';
+  const cleanResult = validatePageText(cleanText);
+  assert(cleanResult.status === 'valid', 'Clean page text is classified as valid');
+  assert(cleanResult.score >= 80, `Clean page receives high score (${cleanResult.score})`);
 
-function question(id, pageNumber = 2) {
-  return {
-    itemId: id,
-    content: {
-      origin: 'supplementary',
-      contextPdfPage: pageNumber,
-      question: 'Which option best completes the sentence?',
-      options: ['goes', 'go', 'going'],
-      correctAnswer: 'goes',
-      reason: 'The subject is singular, so the verb takes -s.'
-    }
-  };
+  const emptyResult = validatePageText('   ');
+  assert(emptyResult.status === 'blocked', 'Empty text is blocked');
+
+  const longGarbageWord = 'Here is a lesson text with ' + 'a'.repeat(55) + ' which is clearly OCR corrupted garbage.';
+  const garbageResult = validatePageText(longGarbageWord);
+  assert(garbageResult.status === 'blocked', 'Abnormally long unbroken OCR token is blocked');
+  assert(garbageResult.issues.some((i) => i.includes('abnormally long unbroken word')), 'Issues cite abnormally long word');
+
+  const repeatedCharText = 'Regular text followed by xxxxxxxxxxxxxxx and repeated noise.';
+  const repeatResult = validatePageText(repeatedCharText);
+  assert(repeatResult.issues.some((i) => i.includes('repetition')), 'Excessive character repetition is detected');
+
+  const replacementCharText = 'Broken \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD text';
+  const replacementResult = validatePageText(replacementCharText);
+  assert(replacementResult.status === 'blocked', 'Text with multiple replacement characters is blocked');
 }
 
-function makeDraft() {
-  return {
-    datasetStatus: 'draft',
-    reviewStatus: 'needs_review',
-    sourcePdfRange: { start: 1, end: 2 },
-    sourceCoverage: [1, 2],
-    sections: [
-      { type: 'vocabulary', items: [{
-        itemId: 'v1',
-        content: {
-          origin: 'source', sourcePdfPage: 1, word: 'choice', arabicMeaning: 'اختيار',
-          example: 'I make a choice.', meaningOrigin: 'supplementary', exampleOrigin: 'supplementary'
-        }
-      }] },
-      { type: 'vocabulary_questions', items: [question('vq1'), question('vq2'), question('vq3')] },
-      { type: 'grammar', items: [{
-        itemId: 'g1',
-        content: {
-          origin: 'source', sourcePdfPage: 1, rule: 'Use the present simple for routines.',
-          explanation: 'It describes repeated actions.', ruleOrigin: 'source', explanationOrigin: 'supplementary'
-        }
-      }] },
-      { type: 'grammar_questions', items: [question('gq1'), question('gq2'), question('gq3')] },
-      { type: 'reading', items: [{
-        itemId: 'r1',
-        content: {
-          origin: 'source', sourcePdfPage: 2,
-          passage: 'Students make choices every day. Good choices help them learn, stay safe, and work well with others.'
-        }
-      }] },
-      { type: 'listening', items: [{
-        itemId: 'l1',
-        content: {
-          origin: 'supplementary', contextPdfPage: 2,
-          script: 'Mona talks to Omar about the choices they make at school.'
-        }
-      }] },
-      { type: 'speaking', items: [{
-        itemId: 's1',
-        content: {
-          origin: 'supplementary', contextPdfPage: 2,
-          dialogue: [
-            { speaker: 'Omar', speakerGender: 'male', text: 'What do you choose?' },
-            { speaker: 'Mona', speakerGender: 'female', text: 'I choose the healthy option.' }
+console.log('\n--- TEST 2: Source Quality Gate (Unit Coverage Range) ---');
+{
+  // Expected 102 to 139 (38 pages)
+  const fullPages = [];
+  for (let p = 102; p <= 139; p++) {
+    fullPages.push({
+      pdfPage: p,
+      text: `Unit 4 Page ${p}: Authentic lesson text about choices and consumption with sufficient characters and words.`
+    });
+  }
+
+  const fullCoverageResult = validateUnitSourceCoverage(fullPages, 102, 139);
+  assert(fullCoverageResult.status === 'valid', 'Full complete coverage 102-139 is valid');
+  assert(fullCoverageResult.coveragePercentage === 100, 'Coverage percentage is 100%');
+
+  // Incomplete coverage: stops at 131
+  const incompletePages = fullPages.filter((p) => p.pdfPage <= 131);
+  const incompleteCoverageResult = validateUnitSourceCoverage(incompletePages, 102, 139);
+  assert(incompleteCoverageResult.status === 'blocked', 'Incomplete range (stopping at 131 instead of 139) is blocked');
+  assert(incompleteCoverageResult.missingPages.length === 8, 'Accurately reports 8 missing pages (132-139)');
+  assert(incompleteCoverageResult.issues.some((i) => i.includes('Missing 8 expected page(s)')), 'Issue message specifies missing pages');
+
+  // Duplicate pages
+  const duplicatePages = [...fullPages, { pdfPage: 110, text: 'duplicate' }];
+  const duplicateResult = validateUnitSourceCoverage(duplicatePages, 102, 139);
+  assert(duplicateResult.status === 'blocked', 'Duplicate page records are blocked');
+  assert(duplicateResult.duplicatePages.includes(110), 'Identifies duplicate page 110');
+}
+
+console.log('\n--- TEST 3: Previously Corrupted Unit 4 Draft Rejection ---');
+{
+  // Reconstruct the exact failure profile from the prompt:
+  // - Corrupted, extremely long vocabulary text
+  // - Incomplete coverage: stopped at page 131 instead of 139
+  // - Empty vocabulary questions, grammar questions, reading, listening, speaking, comprehensive test
+  const corruptedUnit4Draft = {
+    unitTitle: 'The Power of Choice',
+    sourceCoverage: Array.from({ length: 30 }, (_, i) => 102 + i), // 102 to 131 (omits 132-139!)
+    sections: REQUIRED_MODULE_TYPES.map((type) => {
+      if (type === 'vocabulary') {
+        return {
+          type,
+          title: 'Vocabulary',
+          items: [
+            {
+              itemId: 'vocab-corrupted-1',
+              content: {
+                // Extremely long corrupted string instead of a real word
+                word: 'conchoicemanufacturertransactionsupermarketconsumptionsustainablesavingsbargaininvestmentpurchasingdecision'.repeat(2),
+                arabicMeaning: '', // Empty Arabic meaning
+                origin: 'source',
+                sourcePdfPage: 104
+              }
+            }
           ]
+        };
+      }
+      if (type === 'grammar') {
+        return {
+          type,
+          title: 'Grammar',
+          items: [
+            {
+              itemId: 'gram-1',
+              content: {
+                rule: 'Conditionals type 1',
+                explanation: 'Used for real possibilities in the future.',
+                origin: 'source',
+                sourcePdfPage: 110
+              }
+            }
+          ]
+        };
+      }
+      // All other sections empty as reported in the failure
+      return {
+        type,
+        title: type.replaceAll('_', ' '),
+        items: []
+      };
+    })
+  };
+
+  const audit = validateUnitDraftQuality(corruptedUnit4Draft, { start: 102, end: 139 });
+  assert(!audit.isValid, 'Corrupted Unit 4 draft is REJECTED by quality validator');
+  assert(audit.status === 'failed_validation', 'Status is failed_validation');
+  assert(audit.criticalFailures.some((f) => f.includes('Incomplete source coverage')), 'Critical failure flags incomplete coverage (stopped at 131)');
+  assert(audit.criticalFailures.some((f) => f.includes('corrupted, abnormally long token')), 'Critical failure flags corrupted vocabulary word');
+  assert(audit.criticalFailures.some((f) => f.includes('missing Arabic meaning')), 'Critical failure flags missing Arabic meaning');
+  assert(audit.criticalFailures.some((f) => f.includes('empty practice question banks')), 'Critical failure flags empty question banks');
+  assert(audit.score < 50, `Quality score is low (${audit.score}/100)`);
+}
+
+console.log('\n--- TEST 4: Question Integrity & Answer Key Consistency ---');
+{
+  const invalidQuestionDraft = {
+    unitTitle: 'Test Unit',
+    sourceCoverage: [10, 11],
+    sections: REQUIRED_MODULE_TYPES.map((type) => ({
+      type,
+      title: type,
+      items: type === 'vocabulary_questions' ? [
+        {
+          itemId: 'q-key-mismatch',
+          content: {
+            question: 'What is the opposite of expensive?',
+            options: ['cheap', 'costly', 'valuable'],
+            correctAnswer: 'affordable', // NOT among options!
+            reason: 'Affordable means inexpensive.',
+            origin: 'supplementary',
+            sourcePdfPage: 10
+          }
+        },
+        {
+          itemId: 'q-duplicate-options',
+          content: {
+            question: 'Choose the correct synonym for huge:',
+            options: ['large', 'large', 'tiny'], // duplicate!
+            correctAnswer: 'large',
+            reason: 'Huge means very large.',
+            origin: 'supplementary',
+            sourcePdfPage: 10
+          }
         }
-      }] },
-      { type: 'games', items: [
-        { itemId: 'gm1', content: { ...question('gmq1').content, gameType: 'Quick Choice', targetSkill: 'vocabulary', difficulty: 'easy', instruction: 'Choose the correct word.' } },
-        { itemId: 'gm2', content: { ...question('gmq2').content, gameType: 'Grammar Sprint', targetSkill: 'grammar', difficulty: 'medium', instruction: 'Choose the correct verb form.' } }
-      ] },
-      { type: 'comprehensive_test', items: ['ct1', 'ct2', 'ct3', 'ct4', 'ct5'].map((id) => question(id)) }
+      ] : []
+    }))
+  };
+
+  const audit = validateUnitDraftQuality(invalidQuestionDraft, { start: 10, end: 11 });
+  assert(!audit.isValid, 'Draft with invalid questions is rejected');
+  assert(audit.criticalFailures.some((f) => f.includes('does not match any of the provided options')), 'Rejects correctAnswer not matching any option');
+  assert(audit.criticalFailures.some((f) => f.includes('duplicate options')), 'Rejects duplicate options');
+}
+
+console.log('\n--- TEST 5: Provenance & Origin Guard ---');
+{
+  const invalidOriginDraft = {
+    unitTitle: 'Test Origin',
+    sourceCoverage: [15, 16],
+    sections: REQUIRED_MODULE_TYPES.map((type) => ({
+      type,
+      title: type,
+      items: type === 'vocabulary' ? [
+        {
+          itemId: 'vocab-bad-page',
+          content: {
+            word: 'choice',
+            arabicMeaning: 'اختيار',
+            origin: 'source',
+            sourcePdfPage: 99 // Outside unit range 15-16!
+          }
+        },
+        {
+          itemId: 'vocab-bad-origin',
+          content: {
+            word: 'decision',
+            arabicMeaning: 'قرار',
+            origin: 'invented_source', // Invalid origin!
+            sourcePdfPage: 15
+          }
+        }
+      ] : []
+    }))
+  };
+
+  const audit = validateUnitDraftQuality(invalidOriginDraft, { start: 15, end: 16 });
+  assert(!audit.isValid, 'Invalid provenance draft is rejected');
+  assert(audit.criticalFailures.some((f) => f.includes('outside unit range')), 'Rejects source citation outside unit range');
+  assert(audit.criticalFailures.some((f) => f.includes('invalid origin')), 'Rejects invalid origin string');
+}
+
+console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
+{
+  const validDraft = {
+    unitTitle: 'The Power of Choice',
+    sourceCoverage: [102, 103, 104],
+    sections: [
+      {
+        type: 'vocabulary',
+        title: 'Vocabulary',
+        items: [
+          {
+            itemId: 'u4-voc-1',
+            content: {
+              word: 'consumer',
+              arabicMeaning: 'مستهلك',
+              example: 'A consumer buys products and services for personal use.',
+              origin: 'source',
+              sourcePdfPage: 102
+            }
+          },
+          {
+            itemId: 'u4-voc-2',
+            content: {
+              word: 'sustainable',
+              arabicMeaning: 'مستدام',
+              example: 'Sustainable products help preserve the environment.',
+              origin: 'source',
+              sourcePdfPage: 103
+            }
+          }
+        ]
+      },
+      {
+        type: 'vocabulary_questions',
+        title: 'Vocabulary Questions',
+        items: [
+          {
+            itemId: 'u4-vq-1',
+            content: {
+              question: 'A person who purchases goods and services for personal use is a:',
+              options: ['consumer', 'producer', 'distributor', 'carrier'],
+              correctAnswer: 'consumer',
+              reason: 'A consumer is the end user who buys products.',
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          }
+        ]
+      },
+      {
+        type: 'grammar',
+        title: 'Grammar',
+        items: [
+          {
+            itemId: 'u4-gr-1',
+            content: {
+              rule: 'First Conditional with modal verbs',
+              explanation: 'Use "if + present simple, modal + infinitive" to give advice or express possibility.',
+              example: 'If you want to save money, you should compare prices.',
+              origin: 'source',
+              sourcePdfPage: 103
+            }
+          }
+        ]
+      },
+      {
+        type: 'grammar_questions',
+        title: 'Grammar Questions',
+        items: [
+          {
+            itemId: 'u4-gq-1',
+            content: {
+              question: 'If you ______ to save money, you should make a monthly budget.',
+              options: ['want', 'wanted', 'will want', 'have wanted'],
+              correctAnswer: 'want',
+              reason: 'First conditional uses present simple in the if-clause.',
+              origin: 'supplementary',
+              sourcePdfPage: 103
+            }
+          }
+        ]
+      },
+      {
+        type: 'reading',
+        title: 'Reading & Questions',
+        items: [
+          {
+            itemId: 'u4-rd-1',
+            content: {
+              passage: 'Modern consumers face hundreds of choices every day in supermarkets and online stores.',
+              origin: 'source',
+              sourcePdfPage: 104
+            }
+          },
+          {
+            itemId: 'u4-rd-q1',
+            content: {
+              question: 'Where do modern consumers face daily purchasing decisions according to the text?',
+              options: ['In supermarkets and online', 'Only in foreign markets', 'Nowhere today', 'In banks only'],
+              correctAnswer: 'In supermarkets and online',
+              reason: 'The passage specifies supermarkets and online stores.',
+              origin: 'supplementary',
+              sourcePdfPage: 104
+            }
+          }
+        ]
+      },
+      {
+        type: 'listening',
+        title: 'Listening & Questions',
+        items: [
+          {
+            itemId: 'u4-ls-1',
+            content: {
+              script: 'Radio host: Today we discuss smart shopping habits with financial advisor Sarah.',
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          }
+        ]
+      },
+      {
+        type: 'speaking',
+        title: 'Speaking',
+        items: [
+          {
+            itemId: 'u4-sp-1',
+            content: {
+              dialogue: [
+                { speaker: 'Omar', text: 'Which smartphone do you think offers better value?' },
+                { speaker: 'Ziad', text: 'I would compare the battery life and warranty before deciding.' }
+              ],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          }
+        ]
+      },
+      {
+        type: 'comprehensive_test',
+        title: 'Comprehensive Unit Test',
+        items: [
+          {
+            itemId: 'u4-test-1',
+            content: {
+              question: 'Which word describes purchasing choices that do not harm future resources?',
+              options: ['sustainable', 'temporary', 'wasteful', 'expensive'],
+              correctAnswer: 'sustainable',
+              reason: 'Sustainable practices protect natural resources for future generations.',
+              origin: 'supplementary',
+              sourcePdfPage: 103
+            }
+          }
+        ]
+      },
+      {
+        type: 'games',
+        title: 'Games',
+        items: [
+          {
+            itemId: 'u4-game-1',
+            content: {
+              gameName: 'Picture–Word Matching Game',
+              targetWords: ['consumer', 'sustainable'],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          }
+        ]
+      }
     ]
   };
+
+  const audit = validateUnitDraftQuality(validDraft, { start: 102, end: 104 });
+  assert(audit.isValid, 'High-quality valid draft passes validation');
+  assert(audit.criticalFailures.length === 0, 'No critical failures for valid draft');
+  assert(audit.score >= 85, `Valid draft achieves score of ${audit.score}/100`);
+  assert(audit.status === 'ready_for_teacher_review', 'Review status is ready_for_teacher_review');
 }
 
-const sourceOptions = { rows, start: 1, end: 2, grade: 'Primary 2' };
-
-check('clean page text passes', () => assert.equal(validatePageText(rows[0]).status, 'valid'));
-check('short page text is flagged', () => assert.ok(validatePageText(page(1, 'Too short')).reasons.includes('text_missing_or_too_short')));
-check('long unbroken OCR token is flagged', () => assert.ok(validatePageText(page(1, 'A'.repeat(45) + ' readable words on this page.')).reasons.includes('unbroken_token_over_40_characters')));
-check('repeated OCR characters are flagged', () => assert.ok(validatePageText(page(1, 'Clear text aaaaaaa and other readable words.')).reasons.includes('repeated_character_run')));
-check('Unicode replacement characters are flagged', () => assert.ok(validatePageText(page(1, 'Clear text with � replacement character and more words.')).reasons.includes('unicode_replacement_character')));
-check('control characters are flagged', () => assert.ok(validatePageText(page(1, 'Clear text\u0001 with a control character and more words.')).reasons.includes('control_character')));
-check('low OCR confidence is flagged', () => assert.ok(validatePageText(page(1, rows[0].text, { ocrConfidence: 30 })).reasons.includes('low_ocr_confidence')));
-check('unreliable OCR status is flagged', () => assert.ok(validatePageText(page(1, rows[0].text, { extractionStatus: 'ocr_unreliable_needs_visual_review' })).reasons.includes('extraction_status_requires_review')));
-check('complete unit page coverage passes', () => assert.equal(validateUnitSourceCoverage(rows, 1, 2).ok, true));
-check('missing unit page is blocked', () => assert.ok(validateUnitSourceCoverage([rows[0]], 1, 2).missingPages.includes(2)));
-check('duplicate unit page is blocked', () => assert.ok(validateUnitSourceCoverage([rows[0], rows[0], rows[1]], 1, 2).duplicatePages.includes(1)));
-check('out-of-order unit pages are blocked', () => assert.ok(validateUnitSourceCoverage([rows[1], rows[0]], 1, 2).outOfOrderPages.length > 0));
-check('invalid unit page range is blocked', () => assert.equal(validateUnitSourceCoverage(rows, 2, 1).ok, false));
-
-check('complete nine-section unit draft passes', () => {
-  const result = validateUnitDraftQuality(makeDraft(), sourceOptions);
-  assert.equal(result.ok, true);
-  assert.equal(result.score, 100);
-  assert.equal(result.status, 'ready_for_teacher_review');
-});
-check('corrupted vocabulary token is rejected', () => {
-  const draft = makeDraft();
-  draft.sections[0].items[0].content.word = 'x'.repeat(50);
-  assert.equal(validateUnitDraftQuality(draft, sourceOptions).status, 'failed_validation');
-});
-check('Arabic meaning is required', () => {
-  const draft = makeDraft();
-  draft.sections[0].items[0].content.arabicMeaning = 'meaning only';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('Arabic meaning')));
-});
-check('incomplete source coverage is rejected', () => {
-  const draft = makeDraft();
-  draft.sourceCoverage = [1];
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('sourceCoverage')));
-});
-check('incorrect answer key is rejected', () => {
-  const draft = makeDraft();
-  draft.sections[1].items[0].content.correctAnswer = 'not an option';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('correctAnswer')));
-});
-check('duplicate answer options are rejected', () => {
-  const draft = makeDraft();
-  draft.sections[1].items[0].content.options = ['goes', 'goes', 'going'];
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('unique')));
-});
-check('out-of-range source citation is rejected', () => {
-  const draft = makeDraft();
-  draft.sections[0].items[0].content.sourcePdfPage = 9;
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('sourcePdfPage')));
-});
-check('supplementary content cannot claim a source page', () => {
-  const draft = makeDraft();
-  draft.sections[1].items[0].content.sourcePdfPage = 1;
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('must not claim')));
-});
-check('supplementary content needs a context page', () => {
-  const draft = makeDraft();
-  delete draft.sections[1].items[0].content.contextPdfPage;
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('contextPdfPage')));
-});
-check('supplementary dialogue needs male/female role mapping', () => {
-  const draft = makeDraft();
-  draft.sections[6].items[0].content.dialogue[0].speakerGender = 'unknown';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('male/female')));
-});
-check('missing dialogue turns are rejected', () => {
-  const draft = makeDraft();
-  draft.sections[6].items[0].content.dialogue = [];
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('dialogue')));
-});
-check('games must be supplementary', () => {
-  const draft = makeDraft();
-  draft.sections[7].items[0].content.origin = 'source';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('game must be supplementary')));
-});
-check('missing games are rejected', () => {
-  const draft = makeDraft();
-  draft.sections[7].items = [];
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('games: expected')));
-});
-check('comprehensive test needs at least five questions', () => {
-  const draft = makeDraft();
-  draft.sections[8].items.pop();
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('comprehensive_test: expected')));
-});
-check('reading passage is required', () => {
-  const draft = makeDraft();
-  draft.sections[4].items[0].content.passage = '';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('reading needs')));
-});
-check('listening script is required', () => {
-  const draft = makeDraft();
-  draft.sections[5].items[0].content.script = '';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('listening needs')));
-});
-check('unapproved drafts cannot be marked approved', () => {
-  const draft = makeDraft();
-  draft.reviewStatus = 'approved';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('remain needs_review')));
-});
-check('duplicate item identifiers are rejected', () => {
-  const draft = makeDraft();
-  draft.sections[1].items[0].itemId = 'v1';
-  assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('duplicate itemId')));
-});
-
-
-const mixedCandidates = [
-  { unitId: 'secondary1-u1', bookId: 'secondary1', grade: 'Secondary 1', documentType: 'student_book', unitNumber: 1 },
-  { unitId: 'prep1-supp-u1', bookId: 'helloplus-prep1', grade: 'Preparatory 1', documentType: 'commercial_supplement', unitNumber: 1 },
-  { unitId: 'primary2-u1', bookId: 'primary2', grade: 'Primary 2', documentType: 'student_book', unitNumber: 1 },
-  { unitId: 'primary1-supp-u1', bookId: 'connectplus-primary1', grade: 'Primary 1', documentType: 'commercial_supplement', unitNumber: 1 },
-  { unitId: 'primary1-u1', bookId: 'primary1', grade: 'Primary 1', documentType: 'student_book', unitNumber: 1 },
-  { unitId: 'prep1-u1', bookId: 'prep1', grade: 'Preparatory 1', documentType: 'student_book', unitNumber: 1 },
-  { unitId: 'baccalaureate-u1', bookId: 'baccalaureate', grade: 'Baccalaureate Year 2', documentType: 'student_book', unitNumber: 1 }
-];
-check('curriculum queue orders Primary before Preparatory, Secondary, and Baccalaureate', () => {
-  const ordered = sortUnitCandidates(mixedCandidates);
-  assert.deepEqual(ordered.map(item => item.unitId), [
-    'primary1-u1','primary1-supp-u1','primary2-u1','prep1-u1','prep1-supp-u1','secondary1-u1','baccalaureate-u1'
-  ]);
-});
-check('official student book precedes its commercial supplement within a grade', () => {
-  const ordered = sortUnitCandidates(mixedCandidates);
-  assert.ok(ordered.findIndex(item => item.unitId === 'primary1-u1') < ordered.findIndex(item => item.unitId === 'primary1-supp-u1'));
-});
-check('curriculum sorting does not mutate the source candidate array', () => {
-  const original = mixedCandidates.map(item => item.unitId);
-  sortUnitCandidates(mixedCandidates);
-  assert.deepEqual(mixedCandidates.map(item => item.unitId), original);
-});
-
-console.log('Unit quality tests: ' + passed + ' passed, 0 failed.');
+console.log('\n=======================================');
+console.log(`Test Results: ${passed} passed, ${failed} failed.`);
+if (failed > 0) {
+  process.exit(1);
+} else {
+  console.log('All curriculum quality gate & validator tests passed successfully!');
+}

@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 const index = JSON.parse(fs.readFileSync('data/curriculum/source-book-index.draft.json', 'utf8'));
 const manifest = JSON.parse(fs.readFileSync('src/data/lessons/unit-modules.draft.json', 'utf8'));
-const expectedTypes = ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'speaking', 'games', 'comprehensive_test'];
+const expectedTypes = ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'listening', 'reading', 'games', 'comprehensive_test'];
 const errors = [];
 const expected = new Map();
 
@@ -14,7 +14,7 @@ for (const book of index.books) {
 
 if (manifest.bookCount !== index.books.length) errors.push('Manifest bookCount does not match the source index.');
 if (manifest.unitCount !== expected.size) errors.push('Manifest unitCount does not match indexed units.');
-if (JSON.stringify(manifest.sectionTypes) !== JSON.stringify(expectedTypes)) errors.push('Manifest sectionTypes are not the required nine independent modules.');
+if (JSON.stringify(manifest.sectionTypes) !== JSON.stringify(expectedTypes)) errors.push('Manifest sectionTypes are not the required eight independent modules.');
 
 const seen = new Set();
 for (const record of manifest.records || []) {
@@ -45,4 +45,4 @@ if (errors.length) {
   console.error(errors.join('\\n'));
   process.exit(1);
 }
-console.log(`Validated ${index.books.length} indexed books and ${expected.size} unit scaffolds with nine separate empty modules each.`);
+console.log(`Validated ${index.books.length} indexed books and ${expected.size} unit scaffolds with eight separate empty modules each.`);

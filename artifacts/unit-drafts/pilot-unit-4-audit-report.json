@@ -1,0 +1,73 @@
+{
+  "bookId": "baccalaureate-y2-first-language-part1",
+  "unitNumber": 4,
+  "unitTitle": "The Power of Choice",
+  "sourceFilename": "Eng-L1-EB-Part1 (1).pdf",
+  "expectedPdfRange": {
+    "start": 102,
+    "end": 139,
+    "totalPages": 38
+  },
+  "gateStatus": "blocked_source_review",
+  "coveragePercentage": 0,
+  "missingPages": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "directPdfTextStreamsAvailable": 0,
+  "visualReviewRecordsFound": 3,
+  "visualRecordDetails": [
+    {
+      "file": "visual-assets-pass10.jsonl",
+      "pdfPage": 102,
+      "observation": "concept_unit_opener"
+    },
+    {
+      "file": "visual-recoveries-pass17.jsonl",
+      "pdfPage": 102,
+      "observation": "Unit 4 “The Power of Choice” / Concept 4 “Consumption and Choice”; school/café and shopping scenes."
+    },
+    {
+      "file": "ocr-quality-audit-pass17.jsonl",
+      "pdfPage": 102
+    }
+  ],
+  "recommendation": "Stop generation; queue pages 102-139 for OCR and visual review. Do not fabricate educational content.",
+  "generatedAt": "2026-11-07T07:08:20.288Z"
+}

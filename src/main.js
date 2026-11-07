@@ -3,10 +3,188 @@ import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import lessonDrafts from './data/lessons/lessons.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
+import p1u1Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-1.json';
 import './style.css';
 
 const app = document.querySelector('#app');
-const state = { stage: 'primary', grade: 1, path: 'general', search: '', preview: null, unitSelection: null, activeModule: null, quizAnswers: {}, voicePreferences: { male: '', female: '' }, voiceNotice: '' };
+
+// Student App State (Preserves all progress across back-and-forth navigation and reloads)
+const STORAGE_KEY = 'englimensh_p1u1_progress';
+
+const vocabVisualMap = {
+  hello: { icon: '👋', tag: 'Greeting', phonetic: '/həˈləʊ/' },
+  goodbye: { icon: '🙋‍♂️', tag: 'Farewell', phonetic: '/ɡʊdˈbaɪ/' },
+  name: { icon: '🏷️', tag: 'Identity', phonetic: '/neɪm/' },
+  wave: { icon: '👋', tag: 'Action', phonetic: '/weɪv/' },
+  'shake hands': { icon: '🤝', tag: 'Action', phonetic: '/ʃeɪk hændz/' },
+  friend: { icon: '👫', tag: 'People', phonetic: '/frend/' },
+  teacher: { icon: '👩‍🏫', tag: 'People', phonetic: '/ˈtiːtʃə/', image: '/assets/vocab/teacher.svg' },
+  chair: { icon: '🪑', tag: 'Classroom', phonetic: '/tʃeə/', image: '/assets/vocab/chair.svg' },
+  bag: { icon: '🎒', tag: 'School Supply', phonetic: '/bæɡ/', image: '/assets/vocab/bag.svg' },
+  desk: { icon: '🧑‍💻', tag: 'Classroom', phonetic: '/desk/', image: '/assets/vocab/desk.svg' },
+  pencil: { icon: '✏️', tag: 'School Supply', phonetic: '/ˈpensəl/', image: '/assets/vocab/pencil.svg' },
+  board: { icon: '📋', tag: 'Classroom', phonetic: '/bɔːd/' },
+  book: { icon: '📖', tag: 'School Supply', phonetic: '/bʊk/', image: '/assets/vocab/book.svg' },
+  'stand up': { icon: '🧍', tag: 'Action Command', phonetic: '/stænd ʌp/' },
+  'sit down': { icon: '🧎', tag: 'Action Command', phonetic: '/sɪt daʊn/' },
+  open: { icon: '📖', tag: 'Action Command', phonetic: '/ˈəʊpən/' },
+  close: { icon: '📕', tag: 'Action Command', phonetic: '/kləʊz/' },
+  tiger: { icon: '🐯', tag: 'Phonics Letter T', phonetic: '/ˈtaɪɡə/', image: '/assets/vocab/tiger.svg' },
+  tomato: { icon: '🍅', tag: 'Phonics Letter T', phonetic: '/təˈmɑːtəʊ/', image: '/assets/vocab/tomato.svg' },
+  table: { icon: '🪵', tag: 'Phonics Letter T', phonetic: '/ˈteɪbəl/' },
+  tree: { icon: '🌳', tag: 'Phonics Letter T', phonetic: '/triː/', image: '/assets/vocab/tree.svg' },
+  in: { icon: '📥', tag: 'Phonics Letter I', phonetic: '/ɪn/' },
+  ink: { icon: '🖋️', tag: 'Phonics Letter I', phonetic: '/ɪŋk/' },
+  insect: { icon: '🐛', tag: 'Phonics Letter I', phonetic: '/ˈɪnsekt/', image: '/assets/vocab/insect.svg' }
+};
+
+const state = {
+  stage: 'primary',
+  grade: 1,
+  path: 'general',
+  search: '',
+  preview: null,
+  unitSelection: null,
+  activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
+  activeVocabSubtab: 'words', // 'words' or 'practice'
+  activeGrammarSubtab: 'rules', // 'rules' or 'practice'
+  activeGameTab: 1, // 1, 2, 3, 4
+  vocabIndex: 0, // 0 to 23 for focused card view
+  vocabViewMode: 'card', // 'card' or 'grid'
+  testQuestionIndex: 0, // 0 to 9 for 1-question-at-a-time test
+  listeningSpeed: 1.0, // 0.75, 1.0, 1.25
+  quizAnswers: {},
+  shuffledOptions: {},
+  game1: { selectedWord: null, selectedPic: null, matches: [], score: 0 },
+  game2: { index: 0, placed: [], score: 0, checkResult: null },
+  game3: { index: 0, score: 0, selectedOption: null },
+  game4: { index: 0, score: 0, selectedOption: null },
+  selfIntro: { name: 'Omar', avatar: '👧' },
+  politeness: { answers: {} }
+};
+
+function getQuestionState(qId) {
+  const val = state.quizAnswers[qId];
+  if (!val) return { choice: null, isCorrect: false, wrongChoices: [] };
+  if (typeof val === 'string') {
+    return { choice: val, isCorrect: true, wrongChoices: [] };
+  }
+  return {
+    choice: val.choice || null,
+    isCorrect: Boolean(val.isCorrect),
+    wrongChoices: Array.isArray(val.wrongChoices) ? val.wrongChoices : []
+  };
+}
+
+function getShuffledOptions(itemId, options) {
+  if (!Array.isArray(options)) return [];
+  if (!state.shuffledOptions) state.shuffledOptions = {};
+  if (!state.shuffledOptions[itemId]) {
+    const copy = [...options];
+    let seed = 0;
+    const idStr = String(itemId || 'q');
+    for (let i = 0; i < idStr.length; i++) {
+      seed = (seed * 31 + idStr.charCodeAt(i)) % 1000000007;
+    }
+    for (let i = copy.length - 1; i > 0; i--) {
+      seed = (seed * 16807) % 2147483647;
+      const j = Math.floor((seed / 2147483647) * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    state.shuffledOptions[itemId] = copy;
+    saveProgressToStorage();
+  }
+  return state.shuffledOptions[itemId];
+}
+
+function resetReadingProgress() {
+  if (!p1u1Draft) return;
+  const readSec = p1u1Draft.sections.find((s) => s.type === 'reading');
+  const items = readSec?.items?.filter(i => i.content?.question) || [];
+  items.forEach(q => {
+    delete state.quizAnswers[q.itemId];
+  });
+  saveProgressToStorage();
+}
+
+function resetListeningProgress() {
+  if (!p1u1Draft) return;
+  const listSec = p1u1Draft.sections.find((s) => s.type === 'listening');
+  const items = listSec?.items?.filter(i => i.content?.question) || [];
+  items.forEach(q => {
+    delete state.quizAnswers[q.itemId];
+  });
+  saveProgressToStorage();
+}
+
+function loadProgressFromStorage() {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const parsed = JSON.parse(raw);
+    const isPlainObject = (val) => Boolean(val && typeof val === 'object' && !Array.isArray(val));
+    if (parsed && typeof parsed === 'object') {
+      if (isPlainObject(parsed.quizAnswers)) state.quizAnswers = parsed.quizAnswers;
+      if (isPlainObject(parsed.shuffledOptions)) state.shuffledOptions = parsed.shuffledOptions;
+      if (parsed.activeModule !== undefined) state.activeModule = parsed.activeModule;
+      if (parsed.activeVocabSubtab) state.activeVocabSubtab = parsed.activeVocabSubtab;
+      if (parsed.activeGrammarSubtab) state.activeGrammarSubtab = parsed.activeGrammarSubtab;
+      if (parsed.activeGameTab) state.activeGameTab = parsed.activeGameTab;
+      if (typeof parsed.vocabIndex === 'number' && parsed.vocabIndex >= 0 && parsed.vocabIndex < 24) state.vocabIndex = parsed.vocabIndex;
+      if (parsed.vocabViewMode === 'card' || parsed.vocabViewMode === 'grid') state.vocabViewMode = parsed.vocabViewMode;
+      if (typeof parsed.testQuestionIndex === 'number' && parsed.testQuestionIndex >= 0 && parsed.testQuestionIndex < 10) state.testQuestionIndex = parsed.testQuestionIndex;
+      if (typeof parsed.listeningSpeed === 'number') state.listeningSpeed = parsed.listeningSpeed;
+      if (isPlainObject(parsed.game1)) state.game1 = { ...state.game1, ...parsed.game1 };
+      if (isPlainObject(parsed.game2)) {
+        state.game2 = { ...state.game2, ...parsed.game2 };
+        if (typeof state.game2.index !== 'number' || state.game2.index < 0) state.game2.index = 0;
+        if (state.game2.index > 6) state.game2.index = 6;
+      }
+      if (isPlainObject(parsed.game3)) {
+        state.game3 = { ...state.game3, ...parsed.game3 };
+        if (typeof state.game3.index !== 'number' || state.game3.index < 0) state.game3.index = 0;
+        if (state.game3.index > 6) state.game3.index = 6;
+      }
+      if (isPlainObject(parsed.game4)) {
+        state.game4 = { ...state.game4, ...parsed.game4 };
+        if (typeof state.game4.index !== 'number' || state.game4.index < 0) state.game4.index = 0;
+        if (state.game4.index > 4) state.game4.index = 4;
+      }
+      if (isPlainObject(parsed.selfIntro)) state.selfIntro = { ...state.selfIntro, ...parsed.selfIntro };
+      if (isPlainObject(parsed.politeness)) state.politeness = { ...state.politeness, ...parsed.politeness };
+    }
+  } catch (err) {
+    console.warn('Safe recovery from storage parse error:', err);
+  }
+}
+
+function saveProgressToStorage() {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  try {
+    const dataToSave = {
+      quizAnswers: state.quizAnswers,
+      shuffledOptions: state.shuffledOptions,
+      activeModule: state.activeModule,
+      activeVocabSubtab: state.activeVocabSubtab,
+      activeGrammarSubtab: state.activeGrammarSubtab,
+      activeGameTab: state.activeGameTab,
+      vocabIndex: state.vocabIndex,
+      vocabViewMode: state.vocabViewMode,
+      testQuestionIndex: state.testQuestionIndex,
+      listeningSpeed: state.listeningSpeed,
+      game1: state.game1,
+      game2: state.game2,
+      game3: state.game3,
+      game4: state.game4,
+      selfIntro: state.selfIntro,
+      politeness: state.politeness
+    };
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+  } catch (err) {
+    console.warn('LocalStorage save warning:', err);
+  }
+}
 
 const stageNames = {
   primary: 'Primary',
@@ -21,111 +199,34 @@ function escapeHtml(value) {
   })[char]);
 }
 
-function availableSpeechVoices() {
-  if (!('speechSynthesis' in window)) return [];
-  try {
-    return window.speechSynthesis.getVoices().filter((voice) => /^en(?:-|$)/i.test(voice.lang || ''));
-  } catch {
-    return [];
-  }
-}
-
-function detectedVoiceGender(voice) {
-  const label = `${voice.name || ''} ${voice.voiceURI || ''}`.toLowerCase();
-  if (/(?:^|[\\s_-])(female|woman|girl)(?:$|[\\s_-])/.test(label)) return 'female';
-  if (/(?:^|[\\s_-])(male|man|boy)(?:$|[\\s_-])/.test(label)) return 'male';
-  return 'unknown';
-}
-
-function voiceId(voice) {
-  return voice.voiceURI || voice.name;
-}
-
-function voiceForGender(gender) {
-  const voices = availableSpeechVoices();
-  const preferredId = state.voicePreferences[gender];
-  return voices.find((voice) => preferredId && voiceId(voice) === preferredId)
-    || voices.find((voice) => detectedVoiceGender(voice) === gender)
-    || null;
-}
-
-function updateSpeechStatus(message) {
-  state.voiceNotice = message;
-  const status = app.querySelector('[data-speech-status]');
-  if (status) status.textContent = message;
-}
-
-function speakText(text, gender = null) {
-  if (!text) return false;
-  if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance !== 'function') {
-    updateSpeechStatus('Speech synthesis is not available in this browser or WebView.');
-    return false;
-  }
-  const voices = availableSpeechVoices();
-  const voice = gender === 'male' || gender === 'female' ? voiceForGender(gender) : (voices[0] || null);
-  if (!voice) {
-    updateSpeechStatus(gender === 'male' || gender === 'female'
-      ? `No ${gender} English voice is available or identifiable. Choose and preview a device voice above.`
-      : 'No English text-to-speech voice is available on this device.');
-    return false;
-  }
-  const utterance = new window.SpeechSynthesisUtterance(String(text));
-  utterance.voice = voice;
-  utterance.lang = voice.lang || 'en-US';
-  utterance.onstart = () => updateSpeechStatus(`Playing with ${voice.name}. You can stop or replay the audio.`);
-  utterance.onend = () => updateSpeechStatus('Playback finished. You can replay or choose another voice.');
-  utterance.onerror = () => updateSpeechStatus('The platform reported a text-to-speech playback error.');
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
-  return true;
-}
-
-function speakDialogue(turns) {
-  if (!Array.isArray(turns) || !turns.length) return false;
-  if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance !== 'function') {
-    updateSpeechStatus('Speech synthesis is not available in this browser or WebView.');
-    return false;
-  }
-  const defaultVoice = availableSpeechVoices()[0] || null;
-  const prepared = [];
-  for (const turn of turns) {
-    const gender = ['male', 'female'].includes(turn.speakerGender) ? turn.speakerGender : null;
-    const voice = gender ? voiceForGender(gender) : defaultVoice;
-    if (!voice) {
-      updateSpeechStatus(`A suitable ${gender || 'English'} voice is unavailable. Choose and preview voices before playing the full dialogue.`);
-      return false;
+// Child-friendly SpeechSynthesis TTS player with speed control and error protection
+function speakText(text, rate = null) {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = rate || state.listeningSpeed || 0.85;
+      utterance.onerror = (e) => {
+        console.warn('SpeechSynthesis audio notice:', e);
+      };
+      window.speechSynthesis.speak(utterance);
+    } catch (err) {
+      console.warn('Audio playback error:', err);
     }
-    prepared.push({turn,voice});
+  } else {
+    console.warn('SpeechSynthesis is not supported in this runtime environment.');
   }
-  window.speechSynthesis.cancel();
-  prepared.forEach(({turn,voice}) => {
-    const utterance = new window.SpeechSynthesisUtterance(`${turn.speaker}: ${turn.text}`);
-    utterance.voice = voice;
-    utterance.lang = voice.lang || 'en-US';
-    window.speechSynthesis.speak(utterance);
-  });
-  updateSpeechStatus('Playing the dialogue in speaker order. Use Stop to end playback.');
-  return true;
 }
 
-function renderVoiceControls() {
-  if (!('speechSynthesis' in window)) {
-    return '<p class="speech-status" data-speech-status>Text-to-speech is unavailable on this device.</p>';
+function stopAudio() {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch (err) {
+      console.warn('Stop audio error:', err);
+    }
   }
-  const voices = availableSpeechVoices();
-  const controls = ['male','female'].map((gender) => {
-    const selected = state.voicePreferences[gender];
-    const options = voices.map((voice) => {
-      const marker = detectedVoiceGender(voice);
-      const label = marker === gender ? ' · gender label detected' : marker === 'unknown' ? ' · gender not exposed by platform' : ' · other gender label';
-      return `<option value="${escapeHtml(voiceId(voice))}" ${selected === voiceId(voice) ? 'selected' : ''}>${escapeHtml(voice.name)} · ${escapeHtml(voice.lang)}${label}</option>`;
-    }).join('');
-    return `<label class="voice-control">${gender === 'male' ? 'Male speaker voice' : 'Female speaker voice'}<select data-voice-select="${gender}"><option value="">Auto-detect ${gender} voice</option>${options}</select><button type="button" class="voice-preview" data-preview-voice="${gender}" ${voices.length ? '' : 'disabled'}>Preview voice</button></label>`;
-  }).join('');
-  const note = voices.length
-    ? 'Auto-detection works only when the platform labels voice gender. Otherwise, choose and preview a voice manually; device availability varies.'
-    : 'No English TTS voices are currently exposed by the platform. Enable an English voice in device settings and reopen the app.';
-  return `<div class="speaking-voice-controls">${controls}</div><p class="speech-status" data-speech-status>${escapeHtml(state.voiceNotice || note)}</p>`;
 }
 
 function currentStage() {
@@ -150,7 +251,6 @@ function bookUrl(file, page) {
   const path = `${base}${encodeURIComponent(file)}`;
   return page ? `${path}#page=${page}` : path;
 }
-
 
 function renderCandidateContent(record) {
   const blocks = [];
@@ -180,7 +280,7 @@ function renderCandidateContent(record) {
     blocks.push(`<div class="candidate-content-group"><strong>Section B</strong>${paragraph('Instruction', record.sectionB.instruction)}${list('Printed items', record.sectionB.items)}</div>`);
   }
   const content = blocks.filter(Boolean).join('');
-  return content ? `<details class="candidate-content"><summary>Review extracted content</summary>${content}<p class="unit-source-note">Transcription only · verify wording and layout against the original PDF before approval.</p></details>` : '';
+  return content ? `<details class="candidate-content"><summary>Review extracted content</summary>${content}<p class="unit-source-note">Transcription only · verify wording and layout against original PDF before approval.</p></details>` : '';
 }
 
 function renderReviewCandidates(book, unitNumber = null) {
@@ -199,7 +299,10 @@ function renderBookLibrary(books) {
     const units = (book.units || []).map((unit) => {
       const pageLabel = Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Page reference not indexed';
       const title = `Unit ${unit.number}: ${unit.title}`;
-      return `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`;
+      const hasLessonDraft = lessonDrafts.records.some((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number) || (book.id === 'primary1-student-term1' && unit.number === 1);
+      return Number.isInteger(unit.startPdfPage) || hasLessonDraft
+        ? `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`
+        : `<div class="unit-link unavailable"><strong>${escapeHtml(title)}</strong><span>${pageLabel}</span></div>`;
     }).join('');
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
       : book.documentType === 'assessment' ? 'Assessment book'
@@ -208,197 +311,1048 @@ function renderBookLibrary(books) {
   }).join('');
 }
 
+// Digital Visual Activity 1: Self-Introduction Widget (Page 9)
+function renderSelfIntroWidget() {
+  const { name, avatar } = state.selfIntro;
+  const avatars = ['👧', '👦', '🐝', '👩‍🏫'];
+  const greetingText = `Hello! I am ${name.trim() || '________'}.`;
+  return `
+    <div class="visual-activity-card">
+      <div class="visual-activity-badge">DIGITAL ACTIVITY · PAGE 9</div>
+      <h4>Self-Introduction: "Hello! I am..."</h4>
+      <p class="visual-activity-desc">Type your name and choose an avatar to introduce yourself to your friends!</p>
+      <div class="self-intro-controls">
+        <label class="self-intro-label">Your Name:
+          <input type="text" class="self-intro-input" value="${escapeHtml(name)}" placeholder="Type your name..." data-intro-name>
+        </label>
+        <div class="avatar-picker">
+          <span>Avatar:</span>
+          ${avatars.map((av) => `<button type="button" class="avatar-btn ${av === avatar ? 'active' : ''}" data-intro-avatar="${av}">${av}</button>`).join('')}
+        </div>
+      </div>
+      <div class="self-intro-preview">
+        <div class="self-intro-avatar-display">${avatar}</div>
+        <div class="self-intro-bubble">
+          <strong>${escapeHtml(greetingText)}</strong>
+          <small>Connect Primary 1</small>
+        </div>
+        <button type="button" class="tts-play-btn" data-tts-text="${escapeHtml(greetingText)}">🔊 Listen</button>
+      </div>
+    </div>
+  `;
+}
 
+// Digital Visual Activity 2: Friendship & Politeness Checkmarks (Page 13)
+function renderPolitenessActivity() {
+  const scenarios = [
+    { id: 'sc1', icon: '🤝', text: 'Shaking hands and saying "Hello!"', correct: 'polite', desc: 'Greeting friends warmly is polite classroom behavior.' },
+    { id: 'sc2', icon: '👋', text: 'Waving and smiling at a new classmate', correct: 'polite', desc: 'Waving helps make new friends feel welcome.' },
+    { id: 'sc3', icon: '🎒', text: 'Pulling a friend’s bag away without asking', correct: 'impolite', desc: 'Taking items without asking is not polite.' },
+    { id: 'sc4', icon: '🙋', text: 'Saying "Goodbye, teacher!" politely', correct: 'polite', desc: 'Saying goodbye shows respect and kindness.' }
+  ];
+  const userAnswers = state.politeness.answers;
+  const totalAnswered = Object.keys(userAnswers).length;
+  const correctCount = scenarios.filter((sc) => userAnswers[sc.id] === sc.correct).length;
+
+  return `
+    <div class="visual-activity-card">
+      <div class="visual-activity-badge">DIGITAL ACTIVITY · PAGE 13</div>
+      <h4>Friendship & Politeness Checkmark Activity</h4>
+      <p class="visual-activity-desc">Is the action polite ✔ or impolite ✘? Click to check your answer!</p>
+      <div class="politeness-grid">
+        ${scenarios.map((sc) => {
+          const chosen = userAnswers[sc.id];
+          const isRight = chosen === sc.correct;
+          return `
+            <div class="politeness-item ${chosen ? (isRight ? 'correct' : 'wrong') : ''}">
+              <div class="politeness-icon">${sc.icon}</div>
+              <div class="politeness-copy">
+                <strong>${escapeHtml(sc.text)}</strong>
+                ${chosen ? `<small class="politeness-feedback">${isRight ? '✔ Correct!' : '✘ Try again.'} ${escapeHtml(sc.desc)}</small>` : ''}
+              </div>
+              <div class="politeness-btns">
+                <button type="button" class="politeness-btn polite ${chosen === 'polite' ? 'selected' : ''}" data-politeness-id="${sc.id}" data-politeness-val="polite">✔ Polite</button>
+                <button type="button" class="politeness-btn impolite ${chosen === 'impolite' ? 'selected' : ''}" data-politeness-id="${sc.id}" data-politeness-val="impolite">✘ Impolite</button>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      ${totalAnswered > 0 ? `<div class="politeness-score">Score: <strong>${correctCount} / ${scenarios.length}</strong> correct choices recorded!</div>` : ''}
+    </div>
+  `;
+}
+
+// Game Registry (Stage-based mechanics)
+const gameRegistry = {
+  primary: {
+    low: {
+      grades: [1, 2, 3],
+      games: [
+        { title: '🧩 Picture–Word Matching', renderer: renderGame1Matching },
+        { title: '🔤 Word Builder', renderer: renderGame2WordBuilder },
+        { title: '🔊 Listen and Choose', renderer: renderGame3ListenChoose },
+        { title: '📣 Classroom Commands', renderer: renderGame4CommandsChallenge }
+      ]
+    },
+    high: {
+      grades: [4, 5, 6],
+      games: [] // Content unavailable
+    }
+  },
+  preparatory: {
+    grades: [1, 2, 3],
+    games: [] // Content unavailable
+  },
+  secondary: {
+    grades: [1, 2, 3],
+    games: [] // Content unavailable
+  },
+  egyptian_baccalaureate: {
+    grades: [1, 2, 3],
+    games: [] // Content unavailable
+  }
+};
+
+function getGamesForState(stage, grade) {
+  if (stage === 'primary') {
+    return grade <= 3 ? gameRegistry.primary.low.games : gameRegistry.primary.high.games;
+  }
+  return gameRegistry[stage]?.games || [];
+}
+
+function renderGames() {
+  const games = getGamesForState(state.stage, state.grade);
+  if (games.length === 0) {
+    return `
+      <div class="empty-state">
+        <div class="book-icon">🧩</div>
+        <strong>Educational Games in Preparation</strong>
+        <p>Interactive games for this stage and grade level are currently being developed and will be available soon.</p>
+      </div>
+    `;
+  }
+  
+  const gameComponents = games.map(g => g.renderer);
+  
+  return `
+    <div class="game-selector-bar">
+      ${games.map((g, idx) => `
+        <button type="button" class="game-tab-btn ${state.activeGameTab === idx + 1 ? 'active' : ''}" data-game-tab="${idx + 1}">${g.title}</button>
+      `).join('')}
+    </div>
+    ${(gameComponents[state.activeGameTab - 1] || gameComponents[0])()}
+  `;
+}
+
+// 4 Interactive Mini-Games (Purely Student View - No technical internal metadata)
+function renderGame1Matching() {
+  const pairs = [
+    { word: 'pencil', pic: '✏️', label: 'Pencil (قلم رصاص)' },
+    { word: 'bag', pic: '🎒', label: 'Bag (حقيبة)' },
+    { word: 'chair', pic: '🪑', label: 'Chair (كرسي)' },
+    { word: 'tiger', pic: '🐯', label: 'Tiger (نمر)' },
+    { word: 'tree', pic: '🌳', label: 'Tree (شجرة)' },
+    { word: 'tomato', pic: '🍅', label: 'Tomato (طماطم)' }
+  ];
+  const { selectedWord, selectedPic, matches } = state.game1;
+  const isComplete = matches.length === pairs.length;
+
+  return `
+    <article class="interactive-game-container">
+      <div class="game-header">
+        <span class="game-badge">GAME 1 OF 4</span>
+        <h4>🧩 Picture–Word Matching Game</h4>
+        <p>Click a word on the left, then click its matching picture on the right!</p>
+      </div>
+      <div class="game-score-bar">Matched: <strong>${matches.length} / ${pairs.length}</strong></div>
+      ${isComplete ? `
+        <div class="game-victory-card">
+          <h3>🎉 Great Job!</h3>
+          <p>You matched all classroom objects and phonics words correctly!</p>
+          <button type="button" class="game-reset-btn" data-reset-game="1">Play Again</button>
+        </div>
+      ` : ''}
+      <div class="matching-game-grid">
+        <div class="matching-col">
+          <span class="col-title">Word Cards</span>
+          ${pairs.map((p) => {
+            const isMatched = matches.includes(p.word);
+            const isSelected = selectedWord === p.word;
+            return `
+              <button type="button" class="matching-card word-card ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}" data-match-word="${p.word}" ${isMatched ? 'disabled' : ''}>
+                <span dir="ltr">${p.word}</span>
+                <button type="button" class="card-audio-icon" data-tts-text="${p.word}" title="Listen to word">🔊</button>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        <div class="matching-col">
+          <span class="col-title">Picture Cards</span>
+          ${[...pairs].reverse().map((p) => {
+            const isMatched = matches.includes(p.word);
+            const isSelected = selectedPic === p.word;
+            return `
+              <button type="button" class="matching-card pic-card ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}" data-match-pic="${p.word}" ${isMatched ? 'disabled' : ''}>
+                <span class="pic-symbol">${p.pic}</span>
+                <small>${escapeHtml(p.label)}</small>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderGame2WordBuilder() {
+  const wordsData = [
+    { target: 'tiger', arabic: 'نمر', icon: '🐯' },
+    { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
+    { target: 'table', arabic: 'طاولة', icon: '🪑' },
+    { target: 'tree', arabic: 'شجرة', icon: '🌳' },
+    { target: 'ink', arabic: 'حبر', icon: '🖋️' },
+    { target: 'insect', arabic: 'حشرة', icon: '🐛' }
+  ];
+  const { index, placed, score, checkResult } = state.game2;
+  const current = wordsData[index];
+  if (!current) {
+    return `
+      <article class="interactive-game-container">
+        <div class="game-victory-card">
+          <h3>🎉 Word Builder Complete!</h3>
+          <p>You built all target unit words successfully! Score: <strong>${score} / ${wordsData.length}</strong></p>
+          <button type="button" class="game-reset-btn" data-reset-game="2">Play Again</button>
+        </div>
+      </article>
+    `;
+  }
+  const targetChars = current.target.split('');
+  const tiles = [...targetChars].sort((a, b) => b.charCodeAt(0) - a.charCodeAt(0));
+
+  return `
+    <article class="interactive-game-container">
+      <div class="game-header">
+        <span class="game-badge">GAME 2 OF 4</span>
+        <h4>🔤 Word Builder Game</h4>
+        <p>Arrange the letter tiles in the correct order to spell the word!</p>
+      </div>
+      <div class="game-score-bar">Word <strong>${index + 1} / ${wordsData.length}</strong> · Score: <strong>${score}</strong></div>
+      <div class="word-builder-card">
+        <div class="word-builder-hint">
+          <span class="hint-icon">${current.icon}</span>
+          <div class="hint-copy">
+            <strong>${current.arabic}</strong>
+          </div>
+          <button type="button" class="tts-play-btn" data-tts-text="${current.target}">🔊 Listen</button>
+        </div>
+        <div class="word-builder-slots">
+          ${targetChars.map((_, slotIdx) => {
+            const char = placed[slotIdx] || '';
+            return `<button type="button" class="builder-slot ${char ? 'filled' : ''}" data-unplace-tile="${slotIdx}">${char}</button>`;
+          }).join('')}
+        </div>
+        <div class="word-builder-tiles">
+          ${tiles.map((char) => {
+            const usedCount = placed.filter((c) => c === char).length;
+            const availableCount = tiles.filter((c) => c === char).length;
+            const isUsed = usedCount >= availableCount;
+            return `<button type="button" class="builder-tile ${isUsed ? 'used' : ''}" data-place-tile="${char}" ${isUsed ? 'disabled' : ''}>${char}</button>`;
+          }).join('')}
+        </div>
+        <div class="builder-actions">
+          <button type="button" class="builder-action-btn clear" data-builder-clear>Clear Tiles</button>
+          <button type="button" class="builder-action-btn check" data-builder-check="${current.target}" ${checkResult ? 'disabled' : ''}>Check Word</button>
+        </div>
+        ${checkResult ? `
+          <div class="builder-feedback ${checkResult.isCorrect ? 'correct' : 'wrong'}">
+            <p>${checkResult.isCorrect ? '✔ Outstanding! Word spelled correctly.' : `✘ Not quite. Try again!`}</p>
+            <button type="button" class="next-word-btn" data-builder-next>Next Word ›</button>
+          </div>
+        ` : ''}
+      </div>
+    </article>
+  `;
+}
+
+function renderGame3ListenChoose() {
+  const rounds = [
+    { target: 'hello', options: ['hello', 'goodbye', 'chair'], prompt: 'Listen to the greeting:' },
+    { target: 'goodbye', options: ['pencil', 'goodbye', 'bag'], prompt: 'Listen to the farewell:' },
+    { target: 'teacher', options: ['teacher', 'desk', 'board'], prompt: 'Listen to the classroom word:' },
+    { target: 'board', options: ['book', 'board', 'tiger'], prompt: 'Listen to the classroom word:' },
+    { target: 'desk', options: ['desk', 'tree', 'tomato'], prompt: 'Listen to the classroom object:' },
+    { target: 'insect', options: ['ink', 'insect', 'table'], prompt: 'Listen to the phonics target:' }
+  ];
+  const { index, score, selectedOption } = state.game3;
+  const current = rounds[index];
+  if (!current) {
+    return `
+      <article class="interactive-game-container">
+        <div class="game-victory-card">
+          <h3>🎉 Listening Challenge Complete!</h3>
+          <p>You identified all words from listening audio! Score: <strong>${score} / ${rounds.length}</strong></p>
+          <button type="button" class="game-reset-btn" data-reset-game="3">Play Again</button>
+        </div>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="interactive-game-container">
+      <div class="game-header">
+        <span class="game-badge">GAME 3 OF 4</span>
+        <h4>🔊 Listen and Choose Game</h4>
+        <p>Listen to the audio pronunciation and select the correct word card!</p>
+      </div>
+      <div class="game-score-bar">Round <strong>${index + 1} / ${rounds.length}</strong> · Score: <strong>${score}</strong></div>
+      <div class="listen-game-card">
+        <p class="listen-prompt-label">${escapeHtml(current.prompt)}</p>
+        <button type="button" class="big-audio-btn" data-tts-text="${current.target}">
+          <span class="speaker-icon">🔊</span>
+          <span>Click to Listen to Word</span>
+        </button>
+        <div class="listen-options-grid">
+          ${current.options.map((opt) => {
+            const isChosen = selectedOption === opt;
+            const isRight = opt === current.target;
+            const optClass = selectedOption ? (isRight ? 'is-correct' : isChosen ? 'is-wrong' : '') : '';
+            return `
+              <button type="button" class="listen-opt-card ${optClass}" data-listen-choose="${opt}" ${selectedOption ? 'disabled' : ''}>
+                <span dir="ltr">${opt}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        ${selectedOption ? `
+          <div class="listen-feedback ${selectedOption === current.target ? 'correct' : 'wrong'}">
+            <p>${selectedOption === current.target ? '✔ Correct! You recognized the word.' : `✘ Try again next round!`}</p>
+            <button type="button" class="next-word-btn" data-listen-next>Next Round ›</button>
+          </div>
+        ` : ''}
+      </div>
+    </article>
+  `;
+}
+
+function renderGame4CommandsChallenge() {
+  const commands = [
+    { target: 'stand up', icon: '🧍', desc: 'Stand up on your feet', options: ['stand up', 'sit down', 'close your book', 'open your bag'] },
+    { target: 'sit down', icon: '🪑', desc: 'Sit down on your chair', options: ['open your bag', 'sit down', 'stand up', 'close your book'] },
+    { target: 'open your bag', icon: '🎒', desc: 'Open your school bag', options: ['open your bag', 'close your book', 'stand up', 'sit down'] },
+    { target: 'close your book', icon: '📖', desc: 'Close your English book', options: ['sit down', 'open your bag', 'close your book', 'stand up'] }
+  ];
+  const { index, score, selectedOption } = state.game4;
+  const current = commands[index];
+  if (!current) {
+    return `
+      <article class="interactive-game-container">
+        <div class="game-victory-card">
+          <h3>🎉 Classroom Commands Challenge Complete!</h3>
+          <p>You mastered all classroom imperatives! Score: <strong>${score} / ${commands.length}</strong></p>
+          <button type="button" class="game-reset-btn" data-reset-game="4">Play Again</button>
+        </div>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="interactive-game-container">
+      <div class="game-header">
+        <span class="game-badge">GAME 4 OF 4</span>
+        <h4>📣 Classroom Commands Challenge</h4>
+        <p>Listen to the teacher's command and choose the matching action card!</p>
+      </div>
+      <div class="game-score-bar">Command <strong>${index + 1} / ${commands.length}</strong> · Score: <strong>${score}</strong></div>
+      <div class="commands-game-card">
+        <div class="command-prompt-box">
+          <button type="button" class="tts-play-btn big" data-tts-text="${current.target}">🔊 Listen: "${current.target}"</button>
+        </div>
+        <div class="command-options-grid">
+          ${current.options.map((opt) => {
+            const isChosen = selectedOption === opt;
+            const isRight = opt === current.target;
+            const optClass = selectedOption ? (isRight ? 'is-correct' : isChosen ? 'is-wrong' : '') : '';
+            return `
+              <button type="button" class="command-action-card ${optClass}" data-command-choose="${opt}" ${selectedOption ? 'disabled' : ''}>
+                <span class="action-title" dir="ltr">${opt}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        ${selectedOption ? `
+          <div class="command-feedback ${selectedOption === current.target ? 'correct' : 'wrong'}">
+            <p>${selectedOption === current.target ? `✔ Correct! "${current.target}" — ${current.desc}` : `✘ Try again!`}</p>
+            <button type="button" class="next-word-btn" data-command-next>Next Command ›</button>
+          </div>
+        ` : ''}
+      </div>
+    </article>
+  `;
+}
+
+// Interactive Questions Card Renderer (Clean Student View - NO technical data!)
+function renderStudentQuestionCard(item, index, sectionType, customBadge = null) {
+  const data = item.content || {};
+  const qId = item.itemId || `${sectionType}-${index}`;
+  const qState = getQuestionState(qId);
+  const hasKey = typeof data.correctAnswer === 'string';
+  const shuffledOpts = getShuffledOptions(qId, data.options);
+
+  return `
+    <article class="interactive-question">
+      <div class="question-header-row">
+        <span class="question-badge">${customBadge || `Question ${index + 1}`}</span>
+        ${qState.isCorrect ? '<span class="status-chip correct">✓ Solved</span>' : (qState.wrongChoices.length > 0 ? '<span class="status-chip wrong">Try again</span>' : '')}
+      </div>
+      <p class="question-instruction">${escapeHtml(data.instruction || 'Choose the correct answer:')}</p>
+      <h4 class="question-prompt-text">${escapeHtml(data.question)}</h4>
+      <div class="quiz-options">
+        ${shuffledOpts.map((opt, optIdx) => {
+          const letter = String.fromCharCode(65 + optIdx);
+          const isChosen = qState.choice === opt;
+          const isWrong = qState.wrongChoices.includes(opt);
+          const isCorrect = qState.isCorrect && opt === data.correctAnswer;
+
+          let optClass = '';
+          if (isCorrect) optClass = 'is-correct';
+          else if (isWrong) optClass = 'is-wrong';
+          else if (isChosen && !qState.isCorrect) optClass = 'is-wrong';
+
+          // Disable button ONLY if the question was answered correctly OR this specific option was already tried and wrong
+          const isBtnDisabled = qState.isCorrect || isWrong;
+
+          return `<button type="button" class="quiz-option ${optClass}" data-quiz-question="${qId}" data-quiz-choice="${escapeHtml(opt)}" ${isBtnDisabled ? 'disabled' : ''}><span class="option-letter">${letter}</span><span class="option-text">${escapeHtml(opt)}</span>${isCorrect ? '<span class="option-indicator">✓</span>' : (isWrong ? '<span class="option-indicator">✗</span>' : '')}</button>`;
+        }).join('')}
+      </div>
+      ${qState.isCorrect ? `<div class="quiz-feedback correct"><span class="feedback-icon">🌟</span> Correct! Well done.</div>` : (qState.wrongChoices.length > 0 ? `<div class="quiz-feedback incorrect"><span class="feedback-icon">💡</span> Not quite. Choose another option!</div>` : '')}
+    </article>
+  `;
+}
+
+// Renders the Unit Workspace Dashboard & Independent Section Screens
 function renderUnitWorkspace() {
   if (!state.unitSelection) return '';
   const book = sourceIndex.books.find((item) => item.id === state.unitSelection.bookId);
   const unit = book?.units?.find((item) => item.number === state.unitSelection.unitNumber);
   if (!book || !unit) return '';
-  const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
-  const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
-  const pendingLessonCount = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number && lesson.reviewStatus !== 'approved').length;
-  const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number && lesson.reviewStatus === 'approved');
-  const scaffold = unitModules.records.find((record) => record.bookId === book.id && record.unitNumber === unit.number);
-  const moduleDefinitions = [
-    { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pronunciation, and examples' },
-    { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'A separate practice bank for unit words' },
-    { type: 'grammar', title: 'Grammar', subtitle: 'Clear rule explanations and examples' },
-    { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'A separate grammar practice bank' },
-    { type: 'reading', title: 'Reading & Questions', subtitle: 'Reading texts, comprehension activities, and their questions in one section' },
-    { type: 'listening', title: 'Listening & Questions', subtitle: 'Source or clearly supplementary listening scripts and questions' },
-    { type: 'speaking', title: 'Speaking & Dialogues', subtitle: 'Role-based dialogues with changeable speaker voices' },
-    { type: 'games', title: 'Games', subtitle: 'Interactive, age-appropriate practice games for unit skills' },
-    { type: 'comprehensive_test', title: 'Comprehensive Unit Test', subtitle: 'Full-unit assessment; blueprint and item mix must follow the applicable Egyptian MOE specifications' },
 
+  const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1;
+
+  // The Six Consolidated Independent Student Sections
+  const sixSections = [
+    { type: 'vocabulary', title: 'Vocabulary', subtitle: '24 Words, meanings, audio & practice', icon: 'Aa', draftType: 'vocabulary' },
+    { type: 'grammar', title: 'Grammar', subtitle: 'Language structures & classroom commands', icon: '文', draftType: 'grammar' },
+    { type: 'reading', title: 'Reading', subtitle: 'Maya & Hana dialogue & reading story', icon: '▤', draftType: 'reading' },
+    { type: 'listening', title: 'Listening', subtitle: 'Audio listening tasks & exercises', icon: '♫', draftType: 'listening' },
+    { type: 'games', title: 'Games', subtitle: '4 Fun interactive learning mini-games', icon: '★', draftType: 'games' },
+    { type: 'comprehensive_test', title: 'Final Test', subtitle: 'Full 10-question evaluation assessment', icon: '◎', draftType: 'comprehensive_test' }
   ];
-  const renderValue = (value) => {
-    if (value === null || value === undefined || value === '') return '';
-    if (Array.isArray(value)) return value.map((entry) => renderValue(entry)).filter(Boolean).join('; ');
-    if (typeof value === 'object') return Object.entries(value).map(([key, entry]) => {
-      const rendered = renderValue(entry);
-      return rendered ? `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${rendered}</span>` : '';
-    }).filter(Boolean).join(' ');
-    return escapeHtml(value);
+
+  // Helper to count answered questions without duplicates
+  const countAnswered = (items) => {
+    if (!Array.isArray(items)) return 0;
+    return items.filter((q) => getQuestionState(q.itemId).isCorrect).length;
   };
-  const modules = moduleDefinitions.map((definition) => {
-    const baseSection = scaffold?.sections?.find((section) => section.type === definition.type);
-    const sourcedSections = lessonRecords.flatMap((lesson) => (lesson.sections || [])
-      .filter((section) => section.type === definition.type)
-      .map((section) => ({ lesson, section })));
-    const items = sourcedSections.flatMap(({ lesson, section }) => section.items.map((item) => ({ lesson, item })));
-    // The source index may contain unit-level vocabulary or a grammar focus even
-    // when no lesson transcription exists yet. Surface it honestly as index metadata.
-    const indexedItems = definition.type === 'vocabulary'
-      ? (unit.vocabulary || []).map((word, index) => ({ heading: word, provenance: 'Curriculum index · needs source-page verification', id: `index-vocab-${index}` }))
-      : definition.type === 'grammar' && unit.languageFocus
-        ? [{ heading: unit.languageFocus, provenance: 'Curriculum index · needs source-page verification', id: 'index-grammar-focus' }]
-        : [];
-    const content = items.length ? '<ul>' + items.map(({ lesson, item }) => {
-      const data = item.content || {};
-      const heading = data.word || data.title || data.instruction || item.itemId;
-      const detailHtml = Object.entries(data).filter(([key, value]) => !['word', 'title'].includes(key) && value !== null && value !== undefined && value !== '')
-        .map(([key, value]) => `<span><strong>${escapeHtml(key.replaceAll(/([A-Z])/g, ' $1'))}:</strong> ${renderValue(value)}</span>`).join('');
-      const provenanceHtml = item.notes ? `<small class="source-provenance">${escapeHtml(item.notes)}</small>` : '';
-      return `<li><strong>${escapeHtml(heading)}</strong>${detailHtml}${provenanceHtml}<small>PDF page ${item.sourcePdfPage || lesson.pdfPage} · ${escapeHtml(item.reviewStatus || lesson.reviewStatus || 'needs_review')}</small></li>`;
-    }).join('') + '</ul>' : indexedItems.length
-      ? '<ul>' + indexedItems.map((item) => `<li><strong>${escapeHtml(item.heading)}</strong><small>${escapeHtml(item.provenance)}</small></li>`).join('') + '</ul>'
-      : '<p class="unit-module-empty">Content not added yet. This section is in progress; no questions or activities are being invented.</p>';
-    const hasItems = items.length > 0 || indexedItems.length > 0;
-    const sectionStatus = items.length ? 'Review pending' : indexedItems.length ? 'Index metadata' : (baseSection?.status === 'not_populated' ? 'In progress' : 'No source data');
-    return `<button type="button" class="unit-module-launch" data-open-module="${definition.type}"><span class="unit-module-icon" aria-hidden="true">${({vocabulary:'Aa',vocabulary_questions:'✓',grammar:'文',grammar_questions:'?',reading:'▤',listening:'♫',speaking:'☏',games:'★',comprehensive_test:'◎'})[definition.type]}</span><span class="unit-module-launch-copy"><strong>${definition.title}</strong><small>${definition.subtitle}</small></span><span class="unit-module-count">${items.length || indexedItems.length ? (items.length || indexedItems.length) + ' items' : 'Open section'}</span><span class="unit-module-arrow" aria-hidden="true">›</span></button>`;
-  }).join('');
+
+  // SECTION SCREEN (When a student opens an independent section)
   if (state.activeModule) {
-    const definition = moduleDefinitions.find((entry) => entry.type === state.activeModule);
-    const selectedSections = lessonRecords.flatMap((lesson) => (lesson.sections || [])
-      .filter((section) => section.type === state.activeModule)
-      .flatMap((section) => section.items.map((item) => ({ lesson, item, section }))));
-    const indexedWords = state.activeModule === 'vocabulary' ? (unit.vocabulary || []).map((word) => ({ lesson: null, item: { content: { word } }, section: null })) : [];
-    const words = [...selectedSections, ...indexedWords];
-    const meanings = {
-      read:'يقرأ',write:'يكتب',clean:'ينظّف',draw:'يرسم',sit:'يجلس',stand:'يقف',play:'يلعب',color:'يلوّن',
-      shy:'خجول',tired:'متعب',bored:'يشعر بالملل',scared:'خائف',goal:'هدف',try:'يحاول',step:'خطوة',plan:'خطة',
-      happy:'سعيد',sad:'حزين',angry:'غاضب',excited:'متحمس',share:'يشارك',care:'يهتم',family:'عائلة',
-      'tidy up the bed':'يرتّب السرير',grandpa:'جد',grandma:'جدة',dad:'أب',mom:'أم',brother:'أخ',sister:'أخت',
-      baby:'طفل رضيع',tall:'طويل',drip:'قطرة / يقطر',overflow:'يفيض',puddle:'بركة ماء',leak:'تسرّب',
-      hallway:'ممر',hose:'خرطوم',tap:'صنبور',pipe:'أنبوب',drop:'قطرة'
-    };
-    const examples = {
-      read:'I read a story every night.',write:'I write my name in my notebook.',clean:'I clean my room every day.',
-      draw:'I draw a picture of my family.',sit:'Please sit on your chair.',stand:'Stand up, please.',
-      play:'I play with my friends after school.',color:'I color the picture with blue.',shy:'The shy girl speaks quietly.',
-      tired:'I feel tired after running.',bored:'I feel bored when I have nothing to do.',
-      scared:'The little boy is scared of the dark.',goal:'My goal is to learn English.',
-      try:'I try again when something is difficult.',step:'The first step is to read the question.',
-      plan:'I have a plan for the weekend.',happy:'I feel happy with my friends.',
-      sad:'She feels sad when she loses her toy.',angry:'He feels angry but speaks politely.',
-      excited:'We are excited about the school trip.',share:'I share my books with my friends.',
-      care:'We care for our family.',family:'My family is very kind.'
-    };
-    const renderQuestion = ({lesson,item}, index) => {
-      const data = item.content || {};
-      const questionId = item.itemId || `${state.activeModule}-${index}`;
-      const chosen = state.quizAnswers[questionId];
-      const options = Array.isArray(data.options) ? data.options : [];
-      const hasKey = typeof data.correctAnswer === 'string' && data.correctAnswer.length > 0;
-      return `<article class="interactive-question"><p class="question-instruction">${escapeHtml(data.instruction || 'Choose the correct answer.')}</p><h4>${escapeHtml(data.question || data.prompt || data.sentence || data.title)}</h4><div class="quiz-options">${options.map((option) => { const optionClass = chosen ? (hasKey && option === data.correctAnswer ? 'is-correct' : hasKey && option === chosen ? 'is-wrong' : !hasKey && option === chosen ? 'is-selected' : '') : ''; return `<button type="button" class="quiz-option ${optionClass}" data-quiz-question="${escapeHtml(questionId)}" data-quiz-choice="${escapeHtml(option)}" ${chosen ? 'disabled' : ''}>${escapeHtml(option)}</button>`; }).join('')}</div>${chosen ? `<p class="quiz-feedback ${hasKey ? (chosen === data.correctAnswer ? 'correct' : 'incorrect') : 'pending'}">${hasKey ? (chosen === data.correctAnswer ? 'Correct! Well done.' : `Not quite. Correct answer: ${escapeHtml(data.correctAnswer)}`) : 'Your answer has been recorded. Automatic marking is pending an approved answer key.'} ${data.explanation ? escapeHtml(data.explanation) : ''}</p>` : ''}<small class="quiz-origin">${escapeHtml(item.notes || (item.reviewStatus === 'needs_review' ? 'Practice draft · teacher review pending' : 'Practice question'))}</small></article>`;
-    };
-    let body = '';
-    if (state.activeModule === 'vocabulary') {
-      body = words.length ? `<div class="vocabulary-list">${words.map(({item}, index) => {
-        const data = item.content || {};
-        const word = data.word || data.title || item.itemId || 'Word';
-        const meaning = data.arabicMeaning || data.arabicGloss || meanings[String(word).toLowerCase()] || 'المعنى قيد المراجعة';
-        const example = data.example || examples[String(word).toLowerCase()] || 'Example sentence is being prepared.';
-        return `<article class="vocabulary-entry"><div class="vocabulary-entry-top"><span class="vocabulary-number">${index+1}</span><strong class="vocabulary-word" dir="ltr">${escapeHtml(word)}</strong><span class="vocabulary-meaning" dir="rtl">${escapeHtml(meaning)}</span></div><p class="vocabulary-example" dir="ltr">${escapeHtml(example)}</p><button type="button" class="tts-play" data-speak-word="${escapeHtml(word)}">Hear word</button>${data.notes ? `<small>${escapeHtml(data.notes)}</small>` : ''}</article>`;
-      }).join('')}</div>` : '<p class="unit-module-empty">Vocabulary has not been added to this unit yet.</p>';
-    } else if (state.activeModule === 'vocabulary_questions' || state.activeModule === 'grammar_questions' || state.activeModule === 'comprehensive_test') {
-      const playable = selectedSections.filter(({item}) => { const data = item.content || {}; const prompt = data.question || data.prompt || data.sentence || data.title; return typeof prompt === 'string' && prompt.trim().length > 0 && Array.isArray(data.options) && data.options.length >= 2; });
-      const count = playable.filter(({item}, index) => state.quizAnswers[item.itemId || `${state.activeModule}-${index}`]).length;
-      body = playable.length ? `<div class="quiz-summary"><strong>${count} / ${playable.length}</strong><span>answered</span></div>${playable.map(renderQuestion).join('')}` : '<p class="unit-module-empty">No playable questions are available in this section yet. Questions will appear here once their content and answer keys are prepared and reviewed.</p>';
-    } else if (state.activeModule === 'games') {
-      body = selectedSections.length ? selectedSections.map(({item}, index) => {
-        const data = item.content || {};
-        const details = [data.targetSkill, data.difficulty, data.instruction].filter(Boolean).map(value => `<p>${escapeHtml(value)}</p>`).join('');
-        const playable = Array.isArray(data.options) && data.options.length >= 3 ? renderQuestion({item}, index) : '';
-        return `<article class="game-card"><h4>${escapeHtml(data.gameType || data.title || `Game ${index+1}`)}</h4>${details}${playable || '<p class="unit-module-empty">This game needs a reviewed playable prompt before launch.</p>'}<small>${escapeHtml(item.notes || 'Supplementary game · teacher review pending')}</small></article>`;
-      }).join('') : '<p class="unit-module-empty">No approved games are available yet. Games appear here only after their prompts and answer keys pass review.</p>';
-    } else if (state.activeModule === 'speaking') {
-      const dialogues = selectedSections.filter(({item}) => Array.isArray(item.content?.dialogue) && item.content.dialogue.length);
-      body = `${renderVoiceControls()}${dialogues.length ? dialogues.map(({item}, index) => {
-        const data = item.content || {};
-        const turns = Array.isArray(data.dialogue) ? data.dialogue : [];
-        return `<article class="speaking-dialogue"><h4>${escapeHtml(data.title || `Dialogue ${index+1}`)}</h4><ol>${turns.map((turn) => {
-          const gender = ['male','female'].includes(turn.speakerGender) ? turn.speakerGender : 'unknown';
-          return `<li><div><strong>${escapeHtml(turn.speaker || 'Speaker')}</strong><span class="speaker-gender"> · ${escapeHtml(gender)} speaker</span></div><p dir="ltr">${escapeHtml(turn.text || '')}</p><button type="button" class="tts-play" data-speak-turn data-speak-gender="${gender}" data-speak-text="${escapeHtml(turn.text || '')}">Play turn</button></li>`;
-        }).join('')}</ol><div class="speech-actions"><button type="button" data-play-dialogue data-dialogue="${escapeHtml(JSON.stringify(turns))}">Play full dialogue</button><button type="button" data-stop-speech>Stop</button></div><small>${escapeHtml(item.notes || 'Review source/AI provenance and speaker roles before release.')}</small></article>`;
-      }).join('') : '<p class="unit-module-empty">No approved dialogue is available yet. Draft dialogues remain hidden until academic review.</p>'}`;
-    } else if (state.activeModule === 'reading' || state.activeModule === 'listening') {
-      const questionPrompt = (data) => data.question || data.prompt || data.sentence || data.title;
-      const questionLike = (data) => typeof questionPrompt(data) === 'string' && questionPrompt(data).trim().length > 0 && Array.isArray(data.options) && data.options.length >= 2;
-      const answered = selectedSections.reduce((total, {item}, index) => {
-        const data = item.content || {};
-        const nested = Array.isArray(data.questions) ? data.questions : [];
-        const ids = questionLike(data) ? [item.itemId || `${state.activeModule}-${index}`] : nested.map((_, qIndex) => `${item.itemId || `${state.activeModule}-${index}`}-q${qIndex+1}`);
-        return total + ids.filter((id) => state.quizAnswers[id]).length;
-      }, 0);
-      const content = selectedSections.map(({item}, index) => {
-        const data = item.content || {};
-        const questionData = Array.isArray(data.questions) ? data.questions : [];
-        const textFields = Object.entries(data).filter(([key]) => !['questions','options','correctAnswer','answer','explanation'].includes(key));
-        const textHtml = textFields.map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('') + (state.activeModule === 'listening' && data.script ? `<button type="button" class="tts-play" data-speak-script="${escapeHtml(data.script)}">Play TTS script preview</button><small class="quiz-origin">Generated speech preview, not the original book recording.</small>` : '');
-        const ownQuestion = questionLike(data) ? renderQuestion({item}, index) : '';
-        const nestedQuestions = questionData.map((question, qIndex) => {
-          const nestedItem = {...item, itemId: `${item.itemId || `${state.activeModule}-${index}`}-q${qIndex+1}`, content: question};
-          return questionLike(question) ? renderQuestion({item:nestedItem}, index * 100 + qIndex) : '';
-        }).join('');
-        return `${textHtml ? `<article class="learning-content-entry">${textHtml}</article>` : ''}${ownQuestion}${nestedQuestions}`;
-      }).join('');
-      body = content ? `<div class="quiz-summary"><strong>${answered}</strong><span>answers recorded</span></div>${content}` : '<p class="unit-module-empty">Content is still being prepared. Reading/listening text and its questions will appear together here when source material is ready.</p>';
+    const secDef = sixSections.find((s) => s.type === state.activeModule) || sixSections[0];
+    let bodyHtml = '';
+
+    if (isP1U1 && p1u1Draft) {
+      if (state.activeModule === 'vocabulary') {
+        const vocabSec = p1u1Draft.sections.find((s) => s.type === 'vocabulary');
+        const vocabQSec = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions');
+        const words = vocabSec?.items || [];
+        const questions = vocabQSec?.items || [];
+        const answeredQ = countAnswered(questions);
+        const currentIndex = Math.min(Math.max(0, state.vocabIndex || 0), words.length - 1);
+        const currentItem = words[currentIndex] || words[0] || {};
+        const currentData = currentItem.content || {};
+        const wordKey = (currentData.word || '').toLowerCase();
+        const visual = vocabVisualMap[wordKey] || { icon: '📖', tag: 'Vocabulary', phonetic: '' };
+
+        bodyHtml = `
+          <div class="section-subtab-bar">
+            <button type="button" class="subtab-btn ${state.activeVocabSubtab === 'words' ? 'active' : ''}" data-vocab-subtab="words">
+              📖 Learn Words (${words.length})
+            </button>
+            <button type="button" class="subtab-btn ${state.activeVocabSubtab === 'practice' ? 'active' : ''}" data-vocab-subtab="practice">
+              ✏️ Practice Questions (${answeredQ}/${questions.length})
+            </button>
+          </div>
+
+          ${state.activeVocabSubtab === 'words' ? `
+            <div class="vocab-mode-bar">
+              <span class="vocab-counter">Word <strong>${currentIndex + 1}</strong> of <strong>${words.length}</strong></span>
+              <div class="vocab-view-toggle">
+                <button type="button" class="toggle-btn ${state.vocabViewMode === 'card' ? 'active' : ''}" data-vocab-view="card" title="Flashcard Single Word View">🗂️ Card</button>
+                <button type="button" class="toggle-btn ${state.vocabViewMode === 'grid' ? 'active' : ''}" data-vocab-view="grid" title="Grid All Words View">▦ Grid</button>
+              </div>
+            </div>
+
+            ${state.vocabViewMode === 'card' ? `
+              <!-- Single Focused Card View -->
+              <div class="vocab-hero-card-container">
+                <article class="vocab-hero-card">
+                  <div class="vocab-card-header">
+                    <span class="vocab-tag-pill">${escapeHtml(visual.tag)}</span>
+                    <span class="vocab-page-tag">PDF Page ${currentData.sourcePdfPage || '8'}</span>
+                  </div>
+
+                  <div class="vocab-illustration-wrapper">
+                    ${visual.image ? `<img src="${visual.image}" alt="${escapeHtml(visual.tag)}" class="vocab-hero-image">` : `<span class="vocab-hero-icon" aria-hidden="true">${visual.icon}</span>`}
+                  </div>
+
+                  <div class="vocab-card-body">
+                    <h2 class="vocab-word-large" dir="ltr">${escapeHtml(currentData.word)}</h2>
+                    ${visual.phonetic ? `<span class="vocab-phonetic">${visual.phonetic}</span>` : ''}
+                    <div class="vocab-meaning-badge" dir="rtl">${escapeHtml(currentData.arabicMeaning)}</div>
+                    ${currentData.example ? `
+                      <div class="vocab-example-card" dir="ltr">
+                        <span class="example-label">Example</span>
+                        <p class="example-text">"${escapeHtml(currentData.example)}"</p>
+                      </div>
+                    ` : ''}
+                  </div>
+
+                  <div class="vocab-card-footer">
+                    <button type="button" class="vocab-audio-hero-btn" data-tts-text="${escapeHtml(currentData.word)}">
+                      🔊 Listen Pronunciation
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Navigation Stepper -->
+                <div class="vocab-stepper-row">
+                  <button type="button" class="vocab-nav-btn prev" data-vocab-step="prev" ${currentIndex === 0 ? 'disabled' : ''}>
+                    ‹ Previous
+                  </button>
+                  <div class="vocab-chips-scroller">
+                    ${words.map((w, idx) => {
+                      const isActive = idx === currentIndex;
+                      return `<button type="button" class="vocab-chip ${isActive ? 'active' : ''}" data-vocab-jump="${idx}">${idx + 1}</button>`;
+                    }).join('')}
+                  </div>
+                  <button type="button" class="vocab-nav-btn next" data-vocab-step="next" ${currentIndex === words.length - 1 ? 'disabled' : ''}>
+                    Next ›
+                  </button>
+                </div>
+              </div>
+            ` : `
+              <!-- Grid Reference View -->
+              <div class="vocab-grid-responsive">
+                ${words.map((item, idx) => {
+                  const data = item.content || {};
+                  const vKey = (data.word || '').toLowerCase();
+                  const vInfo = vocabVisualMap[vKey] || { icon: '📖', tag: 'Word', phonetic: '' };
+                  const isCurrent = idx === currentIndex;
+                  return `
+                    <article class="vocab-compact-card ${isCurrent ? 'current' : ''}" data-vocab-select="${idx}">
+                      <div class="vocab-compact-top">
+                        <span class="vocab-compact-icon">${vInfo.icon}</span>
+                        <span class="vocab-compact-num">#${idx + 1}</span>
+                      </div>
+                      <strong class="vocab-compact-word" dir="ltr">${escapeHtml(data.word)}</strong>
+                      <span class="vocab-compact-meaning" dir="rtl">${escapeHtml(data.arabicMeaning)}</span>
+                      <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.word)}">🔊</button>
+                    </article>
+                  `;
+                }).join('')}
+              </div>
+            `}
+          ` : `
+            <div class="quiz-summary-pill">Answered: <strong>${answeredQ} / ${questions.length}</strong> Questions</div>
+            <div class="questions-stack">
+              ${questions.map((q, idx) => renderStudentQuestionCard(q, idx, 'vocabulary_questions')).join('')}
+            </div>
+          `}
+        `;
+      } else if (state.activeModule === 'grammar') {
+        const gramSec = p1u1Draft.sections.find((s) => s.type === 'grammar');
+        const gramQSec = p1u1Draft.sections.find((s) => s.type === 'grammar_questions');
+        const rules = gramSec?.items || [];
+        const questions = gramQSec?.items || [];
+        const answeredQ = countAnswered(questions);
+
+        bodyHtml = `
+          <div class="section-subtab-bar">
+            <button type="button" class="subtab-btn ${state.activeGrammarSubtab === 'rules' ? 'active' : ''}" data-grammar-subtab="rules">
+              💡 Grammar Rules (${rules.length})
+            </button>
+            <button type="button" class="subtab-btn ${state.activeGrammarSubtab === 'practice' ? 'active' : ''}" data-grammar-subtab="practice">
+              ✏️ Practice Questions (${answeredQ}/${questions.length})
+            </button>
+          </div>
+
+          ${state.activeGrammarSubtab === 'rules' ? `
+            <div class="grammar-lessons-container">
+              ${rules.map((item, idx) => {
+                const data = item.content || {};
+                const isGreeting = idx === 0;
+                return `
+                  <article class="grammar-concept-card">
+                    <div class="grammar-concept-head">
+                      <span class="grammar-concept-badge">${isGreeting ? 'RULE 01 · GREETINGS' : 'RULE 02 · IMPERATIVES'}</span>
+                      <span class="grammar-page-tag">PDF Page ${data.sourcePdfPage || '8'}</span>
+                    </div>
+                    <h3 class="grammar-concept-title">${escapeHtml(data.rule || 'Language Structure')}</h3>
+                    <p class="grammar-explanation-text">${escapeHtml(data.explanation || '')}</p>
+
+                    <div class="grammar-formula-box">
+                      <span class="formula-label">Structured Formula</span>
+                      ${isGreeting ? `
+                        <div class="formula-grid">
+                          <div class="formula-item">
+                            <span class="formula-tag">Ask</span>
+                            <strong>"Hello! What's your name?"</strong>
+                            <button type="button" class="tts-play-btn small" data-tts-text="Hello! What's your name?">🔊</button>
+                          </div>
+                          <div class="formula-item">
+                            <span class="formula-tag">Answer</span>
+                            <strong>"My name is [name]" / "I am [name]"</strong>
+                            <button type="button" class="tts-play-btn small" data-tts-text="My name is Maya.">🔊</button>
+                          </div>
+                        </div>
+                      ` : `
+                        <div class="imperatives-visual-grid">
+                          <div class="command-tile"><span>🧍</span><strong>Stand up</strong><button type="button" class="tts-play-btn small" data-tts-text="Stand up">🔊</button></div>
+                          <div class="command-tile"><span>🧎</span><strong>Sit down</strong><button type="button" class="tts-play-btn small" data-tts-text="Sit down">🔊</button></div>
+                          <div class="command-tile"><span>🎒</span><strong>Open your bag</strong><button type="button" class="tts-play-btn small" data-tts-text="Open your bag">🔊</button></div>
+                          <div class="command-tile"><span>📖</span><strong>Close your book</strong><button type="button" class="tts-play-btn small" data-tts-text="Close your book">🔊</button></div>
+                        </div>
+                      `}
+                    </div>
+
+                    ${data.example ? `
+                      <div class="grammar-example-callout">
+                        <span class="example-badge">Textbook Example</span>
+                        <p class="example-content">${escapeHtml(data.example)}</p>
+                        <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.example)}">🔊 Listen</button>
+                      </div>
+                    ` : ''}
+                  </article>
+                `;
+              }).join('')}
+            </div>
+          ` : `
+            <div class="quiz-summary-pill">Answered: <strong>${answeredQ} / ${questions.length}</strong> Questions</div>
+            <div class="questions-stack">
+              ${questions.map((q, idx) => renderStudentQuestionCard(q, idx, 'grammar_questions')).join('')}
+            </div>
+          `}
+        `;
+      } else if (state.activeModule === 'reading') {
+        const readSec = p1u1Draft.sections.find((s) => s.type === 'reading');
+        const items = readSec?.items || [];
+        const passageItem = items.find((i) => i.itemId === 'p1u1-rd-1');
+        const readQuestions = items.filter((i) => i.content?.question);
+        const answeredRead = countAnswered(readQuestions);
+
+        bodyHtml = `
+          <div class="reading-screen-wrapper">
+            ${passageItem ? `
+              <article class="reading-passage-card">
+                <div class="reading-card-head">
+                  <span class="reading-badge">SUPPLEMENTARY READING PRACTICE · PAGE 8</span>
+                  <h4>Maya and Hana Meet at School</h4>
+                  <p class="reading-subtitle">Read and listen to the complete official dialogue between Maya and Hana.</p>
+                </div>
+
+                <div class="chat-dialogue-thread">
+                  <div class="chat-bubble maya">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Maya</span>
+                      <p class="chat-text">"Hello!"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Hello!">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble hana">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Hana</span>
+                      <p class="chat-text">"Hello! What's your name?"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Hello! What's your name?">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble maya">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Maya</span>
+                      <p class="chat-text">"My name is Maya."</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="My name is Maya.">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble hana">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Hana</span>
+                      <p class="chat-text">"I'm Hana!"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="I'm Hana!">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble maya">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Maya</span>
+                      <p class="chat-text">"Nice to meet you, Maya!"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Nice to meet you, Maya!">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble hana">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Hana</span>
+                      <p class="chat-text">"Nice to meet you, too, Hana!"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Nice to meet you, too, Hana!">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble hana">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Hana</span>
+                      <p class="chat-text">"Do you want to shake hands?"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Do you want to shake hands?">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble maya">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Maya</span>
+                      <p class="chat-text">"Yes! (They shake hands)"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Yes! They shake hands.">🔊</button>
+                  </div>
+
+                  <div class="chat-bubble maya">
+                    <div class="chat-avatar">👧</div>
+                    <div class="chat-body">
+                      <span class="chat-sender">Maya</span>
+                      <p class="chat-text">"Goodbye, Hana!"</p>
+                    </div>
+                    <button type="button" class="tts-play-btn small" data-tts-text="Goodbye, Hana!">🔊</button>
+                  </div>
+                </div>
+
+                <div class="dialogue-full-audio-row">
+                  <button type="button" class="big-audio-btn secondary" data-tts-text="Maya: Hello! Hana: Hello! What's your name? Maya: My name is Maya. Hana: I'm Hana! Nice to meet you, Maya! Nice to meet you, too, Hana! Do you want to shake hands? Yes! They shake hands. Goodbye, Hana!">
+                    🔊 Play Entire Dialogue
+                  </button>
+                </div>
+              </article>
+            ` : ''}
+
+            <section class="reading-comprehension-section">
+              <div class="comprehension-head">
+                <span class="comp-badge">READING COMPREHENSION · ${answeredRead} / ${readQuestions.length} ANSWERED</span>
+                <h4>Check Your Understanding</h4>
+                <button type="button" class="section-reset-btn" data-reset-reading>↺ Reset Reading Answers</button>
+              </div>
+              <div class="questions-stack">
+                ${readQuestions.map((q, idx) => renderStudentQuestionCard(q, idx, 'reading', `Reading Question ${idx + 1} of ${readQuestions.length}`)).join('')}
+              </div>
+            </section>
+          </div>
+        `;
+      } else if (state.activeModule === 'listening') {
+        const listSec = p1u1Draft.sections.find((s) => s.type === 'listening');
+        const items = listSec?.items || [];
+        const scriptItem = items.find((i) => i.itemId === 'p1u1-ls-1');
+        const listenQuestions = items.filter((i) => i.content?.question);
+        const answeredListen = countAnswered(listenQuestions);
+        const data = scriptItem?.content || {};
+        const scriptText = data.script || 'Stand up. Sit down. Open your bag. Close your book.';
+
+        bodyHtml = `
+          <div class="listening-screen-wrapper">
+            <article class="listening-console-card">
+              <div class="listening-card-head">
+                <span class="listening-badge">SUPPLEMENTARY LISTENING PRACTICE · PAGE 20</span>
+                <h4>Listen and Point: Classroom Commands</h4>
+                <p class="listening-prompt">${escapeHtml(data.activityInstruction || 'Listen to your teacher and point to the correct action.')}</p>
+                <small class="tts-notice-badge">ℹ️ Note: Audio playback uses browser Text-to-Speech (TTS) synthesis.</small>
+              </div>
+
+              <!-- Dedicated Modern Audio Player Console -->
+              <div class="audio-player-console">
+                <div class="player-visual-wave">
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                </div>
+
+                <div class="player-controls-row">
+                  <button type="button" class="player-btn play-btn" data-tts-text="${escapeHtml(scriptText)}" title="Play listening audio">
+                    ▶ Play
+                  </button>
+                  <button type="button" class="player-btn stop-btn" data-audio-stop title="Stop audio">
+                    ⏹ Stop
+                  </button>
+                  <button type="button" class="player-btn replay-btn" data-tts-text="${escapeHtml(scriptText)}" title="Replay from start">
+                    🔄 Replay
+                  </button>
+                </div>
+
+                <div class="speed-selector-row">
+                  <span class="speed-label">Speed:</span>
+                  <div class="speed-buttons">
+                    <button type="button" class="speed-btn ${state.listeningSpeed === 0.75 ? 'active' : ''}" data-set-speed="0.75">0.75x Slow</button>
+                    <button type="button" class="speed-btn ${(state.listeningSpeed || 1.0) === 1.0 ? 'active' : ''}" data-set-speed="1.0">1.0x Normal</button>
+                    <button type="button" class="speed-btn ${state.listeningSpeed === 1.25 ? 'active' : ''}" data-set-speed="1.25">1.25x Fast</button>
+                  </div>
+                </div>
+
+                <details class="transcript-collapsible">
+                  <summary>Audio Script (Click to Reveal)</summary>
+                  <p class="transcript-text">"${escapeHtml(scriptText)}"</p>
+                </details>
+              </div>
+            </article>
+
+            <section class="listening-comprehension-section">
+              <div class="comprehension-head">
+                <span class="comp-badge">LISTENING COMPREHENSION · ${answeredListen} / ${listenQuestions.length} ANSWERED</span>
+                <h4>Answer the Questions</h4>
+                <button type="button" class="section-reset-btn" data-reset-listening>↺ Reset Listening Answers</button>
+              </div>
+              <div class="questions-stack">
+                ${listenQuestions.map((q, idx) => renderStudentQuestionCard(q, idx, 'listening', `Listening Question ${idx + 1} of ${listenQuestions.length}`)).join('')}
+              </div>
+            </section>
+          </div>
+        `;
+      } else if (state.activeModule === 'games') {
+        bodyHtml = renderGames();
+      } else if (state.activeModule === 'comprehensive_test') {
+        const testSec = p1u1Draft.sections.find((s) => s.type === 'comprehensive_test');
+        const items = testSec?.items || [];
+        const answeredQ = countAnswered(items);
+        const testIdx = Math.min(Math.max(0, state.testQuestionIndex || 0), Math.max(0, items.length - 1));
+        const currentQ = items[testIdx] || items[0];
+        const isComplete = items.length > 0 && answeredQ === items.length;
+
+        bodyHtml = `
+          <div class="test-stepper-wrapper">
+            <!-- Test Header with Progress Indicator -->
+            <div class="test-progress-header">
+              <div class="test-progress-info">
+                <span class="test-badge">FINAL EVALUATION TEST · 10 QUESTIONS</span>
+                <div class="test-progress-metrics">
+                  <span>Question <strong>${testIdx + 1}</strong> of <strong>${items.length}</strong></span>
+                  <span class="test-score-counter">Answered: <strong>${answeredQ} / ${items.length}</strong></span>
+                </div>
+              </div>
+              <div class="test-progress-bar-track">
+                <div class="test-progress-bar-fill" style="width: ${(answeredQ / items.length) * 100}%;"></div>
+              </div>
+              <!-- Quick Question Jump Navigator -->
+              <div class="test-nav-chips">
+                ${items.map((item, idx) => {
+                  const qStatus = getQuestionState(item.itemId);
+                  const isCurrent = idx === testIdx;
+                  let chipClass = '';
+                  if (isCurrent) chipClass += ' current';
+                  if (qStatus.isCorrect) chipClass += ' correct';
+                  else if (qStatus.wrongChoices.length > 0) chipClass += ' wrong';
+                  return `<button type="button" class="test-q-chip ${chipClass}" data-test-jump="${idx}">${idx + 1}</button>`;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Single Question Card -->
+            <div class="test-active-question-card">
+              ${currentQ ? renderStudentQuestionCard(currentQ, testIdx, 'comprehensive_test', `Question ${testIdx + 1} of ${items.length}`) : ''}
+            </div>
+
+            <!-- Stepper Footer -->
+            <div class="test-stepper-footer">
+              <button type="button" class="test-nav-btn prev" data-test-step="prev" ${testIdx === 0 ? 'disabled' : ''}>
+                ‹ Previous Question
+              </button>
+              <span class="test-pos-indicator">${testIdx + 1} / ${items.length}</span>
+              <button type="button" class="test-nav-btn next" data-test-step="next" ${testIdx === items.length - 1 ? 'disabled' : ''}>
+                Next Question ›
+              </button>
+            </div>
+
+            ${isComplete ? `
+              <div class="test-completion-banner">
+                <div class="completion-icon">🏆</div>
+                <div class="completion-copy">
+                  <h4>Assessment Completed!</h4>
+                  <p>Congratulations! You answered all 10 evaluation questions correctly.</p>
+                </div>
+                <button type="button" class="completion-review-btn" data-back-unit>Return to Unit 1 Dashboard</button>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
     } else {
-      body = selectedSections.length ? selectedSections.map(({item}) => {
-        const data = item.content || {};
-        return `<article class="learning-content-entry">${Object.entries(data).map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('')}</article>`;
-      }).join('') : '<p class="unit-module-empty">Content is still being prepared. This section will open here when source material is ready.</p>';
+      bodyHtml = `
+        <div class="empty-state">
+          <div class="book-icon">📖</div>
+          <strong>Digital interactive exercises for Unit ${unit.number} (${escapeHtml(secDef.title)}) are in preparation</strong>
+          <span>This unit is mapped from the official curriculum textbook (${escapeHtml(book.sourceFile)}). You can view the original lesson material on PDF page ${unit.startPdfPage || 'N/A'}.</span>
+          ${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Open PDF Page ${unit.startPdfPage} ↗</button>` : ''}
+        </div>
+      `;
     }
-    return `<section class="unit-module-screen"><button type="button" class="module-back" data-back-modules>‹ Back to Unit ${unit.number}</button><div class="module-screen-heading"><p class="eyebrow">${escapeHtml(book.grade)} · UNIT ${unit.number}</p><h3>${escapeHtml(definition.title)}</h3><p>${escapeHtml(definition.subtitle)}</p></div>${state.activeModule.includes('questions') || state.activeModule === 'comprehensive_test' ? '<p class="practice-note">Supplementary practice is identified separately from official printed questions. Draft content may require teacher review.</p>' : ''}${body}</section>`;
+
+    return `
+      <section class="unit-module-screen">
+        <div class="sticky-section-header">
+          <button type="button" class="fixed-back-btn" data-back-unit>‹ Back to Unit ${unit.number} Dashboard</button>
+        </div>
+        <div class="module-screen-heading">
+          <p class="eyebrow">${escapeHtml(book.grade || 'PRIMARY 1').toUpperCase()} · UNIT ${unit.number}</p>
+          <h3>${escapeHtml(secDef.title)}</h3>
+          <p>${escapeHtml(secDef.subtitle)}</p>
+        </div>
+        ${bodyHtml}
+      </section>
+    `;
   }
-  const lessonHeadings = lessonRecords.map((lesson) => `<p class="lesson-draft-note"><strong>${escapeHtml(lesson.title)}</strong> · ${escapeHtml(lesson.grade)} · PDF page ${lesson.pdfPage} · ${escapeHtml(lesson.reviewStatus)}</p>`).join('');
-  const pendingReviewNotice = pendingLessonCount ? `<p class="practice-note">${pendingLessonCount} draft lesson record(s) are waiting for academic review. Unapproved content is not displayed in learner modules.</p>` : '';
-  return `<section class="unit-workspace" aria-label="Unit details">
-    <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
-    ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
-    ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
-    ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
-    ${lessonHeadings}
-    ${pendingReviewNotice}
-    <div class="unit-module-grid" aria-label="Unit learning sections">${modules}</div>
-    <p class="lesson-draft-note">Scaffold source: ${scaffold ? escapeHtml(scaffold.unitId) : 'No unit scaffold record found'}. Extracted items remain drafts until checked against the original PDF. Unreviewed content is excluded from student question banks and answer keys.</p>
-    <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
-    ${renderReviewCandidates(book, unit.number)}
-    <p class="unit-source-note">Proposed unit links and transcriptions remain unapproved. They are shown for source review only and are not used in lessons, tests, or answer keys.</p>
-  </section>`;
+
+  // UNIT DASHBOARD (The 6 Consolidated Section Cards + 2 Visual Activities)
+  const calculateProgress = (secType) => {
+    if (!isP1U1 || !p1u1Draft) return 'Open section';
+    if (secType === 'vocabulary') {
+      const vocabQ = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [];
+      const count = countAnswered(vocabQ);
+      return `24 Words · ${count}/${vocabQ.length} Practice Qs`;
+    }
+    if (secType === 'grammar') {
+      const gramQ = p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || [];
+      const count = countAnswered(gramQ);
+      return `2 Rules · ${count}/${gramQ.length} Practice Qs`;
+    }
+    if (secType === 'reading') {
+      const readQ = p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter(i => i.content?.question) || [];
+      const count = countAnswered(readQ);
+      return `1 Dialogue · ${count}/${readQ.length} Answered`;
+    }
+    if (secType === 'listening') {
+      const listQ = p1u1Draft.sections.find((s) => s.type === 'listening')?.items?.filter(i => i.content?.question) || [];
+      const count = countAnswered(listQ);
+      return `1 Task · ${count}/${listQ.length} Answered`;
+    }
+    if (secType === 'games') return '4 Mini-Games';
+    if (secType === 'comprehensive_test') {
+      const testSec = p1u1Draft.sections.find((s) => s.type === 'comprehensive_test');
+      const items = testSec?.items || [];
+      const count = countAnswered(items);
+      return `${count} / ${items.length} Scored`;
+    }
+    return 'Open section';
+  };
+
+  const totalAnswered = isP1U1 && p1u1Draft ? (
+    countAnswered(p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || []) +
+    countAnswered(p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || []) +
+    countAnswered(p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter(i => i.content?.question) || []) +
+    countAnswered(p1u1Draft.sections.find((s) => s.type === 'listening')?.items?.filter(i => i.content?.question) || []) +
+    countAnswered(p1u1Draft.sections.find((s) => s.type === 'comprehensive_test')?.items || [])
+  ) : 0;
+  const totalQuestions = 19;
+  const progressPercent = Math.round((totalAnswered / totalQuestions) * 100);
+
+  const sectionCards = sixSections.map((sec) => `
+    <button type="button" class="unit-section-card" data-open-section="${sec.type}">
+      <span class="section-card-icon">${sec.icon}</span>
+      <div class="section-card-copy">
+        <div class="section-card-title-row">
+          <strong>${sec.title}</strong>
+        </div>
+        <small>${sec.subtitle}</small>
+        <span class="section-card-progress">${calculateProgress(sec.type)}</span>
+      </div>
+      <span class="section-card-arrow" aria-hidden="true">›</span>
+    </button>
+  `).join('');
+
+  return `
+    <section class="unit-workspace" aria-label="Unit details">
+      <!-- Modern Compact Unit Overview Header -->
+      <div class="unit-hero-banner">
+        <div class="unit-hero-left">
+          <span class="unit-stage-tag">${escapeHtml(book.grade || 'PRIMARY 1').toUpperCase()} · ${book.term ? `TERM ${book.term}` : 'COURSE'}</span>
+          <h2 class="unit-hero-title">Unit ${unit.number}: ${escapeHtml(unit.title)}</h2>
+          <p class="unit-hero-subtitle">${escapeHtml(unit.theme || (isP1U1 ? 'Welcome to My School' : unit.title) || book.sourceFile)}</p>
+        </div>
+        <div class="unit-hero-right">
+          ${isP1U1 ? `
+            <div class="unit-progress-meter">
+              <div class="meter-info">
+                <span class="meter-label">Unit Progress</span>
+                <strong class="meter-val">${totalAnswered} / ${totalQuestions} Completed (${progressPercent}%)</strong>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" style="width: ${progressPercent}%;"></div>
+              </div>
+            </div>
+          ` : ''}
+          <button type="button" class="preview-close unit-close-btn" data-close-unit>Close Unit ✕</button>
+        </div>
+      </div>
+
+      ${!isP1U1 && Number.isInteger(unit.startPdfPage) ? `
+        <div class="unit-source-preview-prompt">
+          <p>Official curriculum source: <strong>${escapeHtml(book.sourceFile)}</strong> · Starting at PDF page <strong>${unit.startPdfPage}</strong></p>
+          <button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview Unit in Original PDF ↗</button>
+        </div>
+      ` : ''}
+
+      <div class="six-sections-grid">
+        ${sectionCards}
+      </div>
+
+      <!-- Secondary Interactive Digital Activities (Neat container below core sections) -->
+      ${isP1U1 ? `
+        <div class="complementary-activities-wrapper">
+          <div class="activities-heading">
+            <h4>Digital Interactive Activities</h4>
+            <p>Practice self-introduction and polite classroom manners.</p>
+          </div>
+          <div class="activities-grid">
+            ${renderSelfIntroWidget()}
+            ${renderPolitenessActivity()}
+          </div>
+        </div>
+      ` : ''}
+
+      ${renderReviewCandidates(book, unit.number)}
+    </section>
+  `;
 }
 
 function renderPreview() {
   if (!state.preview) return '';
   const { file, page } = state.preview;
-  return `<section class="pdf-preview" aria-label="PDF preview"><div class="preview-heading"><div><p class="eyebrow">ORIGINAL SOURCE · READ ONLY</p><strong>${escapeHtml(file)}</strong><span>PDF page ${page}</span></div><button type="button" class="preview-close" data-close-preview>Close preview ✕</button></div><iframe title="Original source book preview" src="${bookUrl(file, page)}" loading="lazy"></iframe><p class="preview-note">The original PDF is displayed without modification. If your browser cannot display PDFs, use the full-file link below.</p><a class="source-open preview-fallback" href="${bookUrl(file, page)}" target="_blank" rel="noopener">Open PDF in a new tab ↗</a></section>`;
+  return `<section class="pdf-preview" aria-label="PDF preview"><div class="preview-heading"><div><p class="eyebrow">ORIGINAL SOURCE · READ ONLY</p><strong>${escapeHtml(file)}</strong><span>PDF page ${page}</span></div><button type="button" class="preview-close" data-close-preview>Close preview ✕</button></div><iframe title="Original source book preview" src="${bookUrl(file, page)}" loading="lazy"></iframe><p class="preview-note">The original PDF is displayed without modification.</p><a class="source-open preview-fallback" href="${bookUrl(file, page)}" target="_blank" rel="noopener">Open PDF in a new tab ↗</a></section>`;
 }
 
 function render() {
   const stage = currentStage();
   if (!stage) {
-    app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1><p>The selected curriculum stage could not be loaded. Please refresh the page.</p></main>';
+    app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1></main>';
     return;
   }
   const paths = stage.paths || [];
   const selectedPath = state.stage === 'egyptian-baccalaureate'
     ? (sourceIndex.pathways.find((item) => item.id === (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')) || paths[0])
     : (paths.find((item) => item.id === state.path) || paths[0]);
-  if (!selectedPath) {
-    app.innerHTML = '<main class="fatal-state"><h1>Pathway unavailable</h1><p>No pathway configuration is available for this selection yet.</p></main>';
-    return;
-  }
   if (state.stage !== 'egyptian-baccalaureate') state.path = selectedPath.id;
   const grades = stage.grades;
   const books = selectedBooks();
@@ -411,7 +1365,7 @@ function render() {
       <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
       <span class="country-tag">EGYPTIAN CURRICULUM</span>
     </header>
-    <main class="shell">
+    <main class="shell stage-${state.stage}">
       <section class="welcome">
         <p class="eyebrow">YOUR ENGLISH LEARNING SPACE</p>
         <h1>Learn. Practice. Achieve.</h1>
@@ -472,60 +1426,327 @@ function render() {
   });
   applySearch();
 
-  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.activeModule = null; state.quizAnswers = {}; state.preview = null; state.voiceNotice = ''; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.unitSelection = null; state.activeModule = null; state.quizAnswers = {}; render(); });
-  app.querySelectorAll('[data-open-module]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.activeModule = button.dataset.openModule; state.quizAnswers = {}; state.voiceNotice = ''; render(); app.querySelector('.unit-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-back-modules]')?.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.activeModule = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-  app.querySelectorAll('[data-voice-select]').forEach((select) => select.addEventListener('change', () => { state.voicePreferences[select.dataset.voiceSelect] = select.value; updateSpeechStatus(select.value ? 'Voice assigned manually. Preview it to confirm speaker identity on this device.' : 'Automatic gender-labelled voice detection selected.'); }));
-  app.querySelectorAll('[data-preview-voice]').forEach((button) => button.addEventListener('click', () => speakText('Hello. This is a voice preview.', button.dataset.previewVoice)));
-  app.querySelectorAll('[data-speak-word]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakWord)));
-  app.querySelectorAll('[data-speak-script]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakScript)));
-  app.querySelectorAll('[data-speak-turn]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakText, button.dataset.speakGender)));
-  app.querySelectorAll('[data-play-dialogue]').forEach((button) => button.addEventListener('click', () => { try { speakDialogue(JSON.parse(button.dataset.dialogue)); } catch { updateSpeechStatus('The dialogue data could not be read.'); } }));
-  app.querySelectorAll('[data-stop-speech]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); updateSpeechStatus('Playback stopped.'); }));
-  app.querySelectorAll('[data-quiz-question]').forEach((button) => button.addEventListener('click', () => { state.quizAnswers[button.dataset.quizQuestion] = button.dataset.quizChoice; render(); }));
-  app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', () => {
-    state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 };
-    render();
-    app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }));
-  app.querySelector('[data-close-preview]')?.addEventListener('click', () => {
+  // Navigation & Workspace Listeners (Preserves student progress permanently)
+  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) };
+    state.activeModule = null;
     state.preview = null;
+    saveProgressToStorage();
+    render();
+    app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  app.querySelector('[data-close-unit]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
     state.unitSelection = null;
     state.activeModule = null;
+    saveProgressToStorage();
     render();
   });
-  app.querySelectorAll('[data-stage]').forEach((button) => button.addEventListener('click', () => {
-    state.stage = button.dataset.stage;
-    const next = currentStage();
-    state.grade = next?.grades?.[0] ?? null;
-    state.path = next?.paths?.[0]?.id ?? '';
-    state.search = '';
-    state.search = '';
-    state.preview = null;
-    state.unitSelection = null;
+
+  app.querySelectorAll('[data-open-section]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.activeModule = button.dataset.openSection;
+    saveProgressToStorage();
+    render();
+    app.querySelector('.unit-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  app.querySelector('[data-back-unit]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.activeModule = null;
+    saveProgressToStorage();
+    render();
+    app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Subtab Listeners
+  app.querySelectorAll('[data-vocab-subtab]').forEach((btn) => btn.addEventListener('click', () => {
+    state.activeVocabSubtab = btn.dataset.vocabSubtab;
+    saveProgressToStorage();
     render();
   }));
-  app.querySelectorAll('[data-grade]').forEach((button) => button.addEventListener('click', () => {
-    state.grade = Number(button.dataset.grade);
-    state.search = '';
-    state.preview = null;
+
+  app.querySelectorAll('[data-grammar-subtab]').forEach((btn) => btn.addEventListener('click', () => {
+    state.activeGrammarSubtab = btn.dataset.grammarSubtab;
+    saveProgressToStorage();
     render();
   }));
-  app.querySelectorAll('[data-path]').forEach((button) => button.addEventListener('click', () => {
-    state.path = button.dataset.path;
-    state.search = '';
-    state.preview = null;
-    state.unitSelection = null;
+
+  app.querySelectorAll('[data-game-tab]').forEach((btn) => btn.addEventListener('click', () => {
+    state.activeGameTab = Number(btn.dataset.gameTab);
+    saveProgressToStorage();
     render();
   }));
+
+  // Vocabulary Stepper, Jump & View Listeners
+  app.querySelectorAll('[data-vocab-step]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dir = btn.dataset.vocabStep;
+    if (dir === 'prev') state.vocabIndex = Math.max(0, (state.vocabIndex || 0) - 1);
+    else if (dir === 'next') state.vocabIndex = Math.min(23, (state.vocabIndex || 0) + 1);
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelectorAll('[data-vocab-jump]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.vocabIndex = Number(btn.dataset.vocabJump);
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelectorAll('[data-vocab-view]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.vocabViewMode = btn.dataset.vocabView;
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelectorAll('[data-vocab-select]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.vocabIndex = Number(btn.dataset.vocabSelect);
+    state.vocabViewMode = 'card';
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Listening Speed & Audio Control Listeners
+  app.querySelectorAll('[data-set-speed]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.listeningSpeed = Number(btn.dataset.setSpeed);
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelector('[data-audio-stop]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    stopAudio();
+  });
+
+  // Final Test Stepper & Jump Listeners
+  app.querySelectorAll('[data-test-step]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dir = btn.dataset.testStep;
+    if (dir === 'prev') state.testQuestionIndex = Math.max(0, (state.testQuestionIndex || 0) - 1);
+    else if (dir === 'next') state.testQuestionIndex = Math.min(9, (state.testQuestionIndex || 0) + 1);
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelectorAll('[data-test-jump]').forEach((btn) => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.testQuestionIndex = Number(btn.dataset.testJump);
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Quiz Option Retry Listener (Allows retrying wrong options until correct answer is chosen)
+  app.querySelectorAll('[data-quiz-question]').forEach((button) => button.addEventListener('click', () => {
+    const qId = button.dataset.quizQuestion;
+    const choice = button.dataset.quizChoice;
+    const qState = getQuestionState(qId);
+    if (qState.isCorrect) return; // Locked once answered correctly
+
+    // Lookup question correct answer from draft
+    let correctAnswer = null;
+    if (p1u1Draft && p1u1Draft.sections) {
+      p1u1Draft.sections.forEach((sec) => {
+        const found = sec.items?.find((it) => (it.itemId || '') === qId);
+        if (found && found.content && typeof found.content.correctAnswer === 'string') {
+          correctAnswer = found.content.correctAnswer;
+        }
+      });
+    }
+
+    if (correctAnswer) {
+      if (choice === correctAnswer) {
+        state.quizAnswers[qId] = {
+          choice,
+          isCorrect: true,
+          wrongChoices: qState.wrongChoices
+        };
+      } else {
+        const updatedWrong = qState.wrongChoices.includes(choice) ? qState.wrongChoices : [...qState.wrongChoices, choice];
+        state.quizAnswers[qId] = {
+          choice,
+          isCorrect: false,
+          wrongChoices: updatedWrong
+        };
+      }
+    } else {
+      state.quizAnswers[qId] = { choice, isCorrect: true, wrongChoices: [] };
+    }
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Preview Listeners
+  app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
+  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+
+  // TTS Listeners
+  app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    speakText(button.dataset.ttsText);
+  }));
+
+  // Self Intro Listeners
+  app.querySelector('[data-intro-name]')?.addEventListener('input', (e) => {
+    state.selfIntro.name = e.target.value;
+    saveProgressToStorage();
+    const bubble = app.querySelector('.self-intro-bubble strong');
+    if (bubble) bubble.textContent = `Hello! I am ${e.target.value.trim() || '________'}.`;
+  });
+  app.querySelectorAll('[data-intro-avatar]').forEach((btn) => btn.addEventListener('click', () => {
+    state.selfIntro.avatar = btn.dataset.introAvatar;
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Politeness Listeners
+  app.querySelectorAll('[data-politeness-id]').forEach((btn) => btn.addEventListener('click', () => {
+    state.politeness.answers[btn.dataset.politenessId] = btn.dataset.politenessVal;
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Game 1 Matching Listeners
+  app.querySelectorAll('[data-match-word]').forEach((btn) => btn.addEventListener('click', () => {
+    const word = btn.dataset.matchWord;
+    if (state.game1.matches.includes(word)) return;
+    if (state.game1.selectedPic) {
+      if (state.game1.selectedPic === word) state.game1.matches.push(word);
+      state.game1.selectedWord = null;
+      state.game1.selectedPic = null;
+    } else {
+      state.game1.selectedWord = word;
+    }
+    saveProgressToStorage();
+    render();
+  }));
+  app.querySelectorAll('[data-match-pic]').forEach((btn) => btn.addEventListener('click', () => {
+    const word = btn.dataset.matchPic;
+    if (state.game1.matches.includes(word)) return;
+    if (state.game1.selectedWord) {
+      if (state.game1.selectedWord === word) state.game1.matches.push(word);
+      state.game1.selectedWord = null;
+      state.game1.selectedPic = null;
+    } else {
+      state.game1.selectedPic = word;
+    }
+    saveProgressToStorage();
+    render();
+  }));
+
+  // Game 2 Word Builder Listeners
+  app.querySelectorAll('[data-place-tile]').forEach((btn) => btn.addEventListener('click', () => {
+    const char = btn.dataset.placeTile;
+    const wordsData = ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
+    const target = wordsData[state.game2.index] || '';
+    if (state.game2.placed.length < target.length) {
+      state.game2.placed.push(char);
+      saveProgressToStorage();
+      render();
+    }
+  }));
+  app.querySelectorAll('[data-unplace-tile]').forEach((btn) => btn.addEventListener('click', () => {
+    const idx = Number(btn.dataset.unplaceTile);
+    if (state.game2.placed[idx] !== undefined) {
+      state.game2.placed.splice(idx, 1);
+      state.game2.checkResult = null;
+      saveProgressToStorage();
+      render();
+    }
+  }));
+  app.querySelector('[data-builder-clear]')?.addEventListener('click', () => {
+    state.game2.placed = [];
+    state.game2.checkResult = null;
+    saveProgressToStorage();
+    render();
+  });
+  app.querySelector('[data-builder-check]')?.addEventListener('click', (btn) => {
+    const target = btn.target.dataset.builderCheck;
+    if (!state.game2.checkResult) {
+      const isCorrect = state.game2.placed.join('') === target;
+      if (isCorrect) state.game2.score += 1;
+      state.game2.checkResult = { isCorrect };
+      saveProgressToStorage();
+      render();
+    }
+  });
+  app.querySelector('[data-builder-next]')?.addEventListener('click', () => {
+    if (state.game2.index < 6) state.game2.index += 1;
+    state.game2.placed = [];
+    state.game2.checkResult = null;
+    saveProgressToStorage();
+    render();
+  });
+
+  // Game 3 Listen and Choose Listeners
+  app.querySelectorAll('[data-listen-choose]').forEach((btn) => btn.addEventListener('click', () => {
+    if (!state.game3.selectedOption) {
+      const chosen = btn.dataset.listenChoose;
+      state.game3.selectedOption = chosen;
+      const targets = ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
+      if (chosen === targets[state.game3.index]) state.game3.score += 1;
+      saveProgressToStorage();
+      render();
+    }
+  }));
+  app.querySelector('[data-listen-next]')?.addEventListener('click', () => {
+    if (state.game3.index < 6) state.game3.index += 1;
+    state.game3.selectedOption = null;
+    saveProgressToStorage();
+    render();
+  });
+
+  // Game 4 Classroom Commands Listeners
+  app.querySelectorAll('[data-command-choose]').forEach((btn) => btn.addEventListener('click', () => {
+    if (!state.game4.selectedOption) {
+      const chosen = btn.dataset.commandChoose;
+      state.game4.selectedOption = chosen;
+      const targets = ['stand up', 'sit down', 'open your bag', 'close your book'];
+      if (chosen === targets[state.game4.index]) state.game4.score += 1;
+      saveProgressToStorage();
+      render();
+    }
+  }));
+  app.querySelector('[data-command-next]')?.addEventListener('click', () => {
+    if (state.game4.index < 4) state.game4.index += 1;
+    state.game4.selectedOption = null;
+    saveProgressToStorage();
+    render();
+  });
+
+  // Game Reset Listeners
+  app.querySelectorAll('[data-reset-game]').forEach((btn) => btn.addEventListener('click', () => {
+    const gNum = btn.dataset.resetGame;
+    if (gNum === '1') state.game1 = { selectedWord: null, selectedPic: null, matches: [], score: 0 };
+    if (gNum === '2') state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
+    if (gNum === '3') state.game3 = { index: 0, score: 0, selectedOption: null };
+    if (gNum === '4') state.game4 = { index: 0, score: 0, selectedOption: null };
+    saveProgressToStorage();
+    render();
+  }));
+
+  app.querySelector('[data-reset-reading]')?.addEventListener('click', () => {
+    resetReadingProgress();
+    render();
+  });
+
+  app.querySelector('[data-reset-listening]')?.addEventListener('click', () => {
+    resetListeningProgress();
+    render();
+  });
 }
 
+// Initial storage load and render
+loadProgressFromStorage();
 render();
-if ('speechSynthesis' in window && typeof window.speechSynthesis.addEventListener === 'function') {
-  window.speechSynthesis.addEventListener('voiceschanged', () => {
-    if (state.activeModule === 'speaking') render();
-  });
-}
