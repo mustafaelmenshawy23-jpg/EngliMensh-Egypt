@@ -1,3 +1,5 @@
+import { Capacitor } from '@capacitor/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
@@ -199,33 +201,53 @@ function escapeHtml(value) {
   })[char]);
 }
 
-// Child-friendly SpeechSynthesis TTS player with speed control and error protection
-function speakText(text, rate = null) {
+// Use Android's native TextToSpeech engine inside the APK; keep browser TTS for web.
+async function speakText(text, rate = null) {
+  const phrase = String(text || '').trim();
+  if (!phrase) return;
+  const speechRate = Number(rate || state.listeningSpeed || 0.85);
+
+  if (Capacitor.isNativePlatform()) {
+    try {
+      if ('speechSynthesis' in window && window.speechSynthesis) window.speechSynthesis.cancel();
+      await TextToSpeech.stop().catch(() => {});
+      await TextToSpeech.speak({
+        text: phrase,
+        lang: 'en-US',
+        rate: speechRate,
+        pitch: 1,
+        volume: 1,
+        queueStrategy: 1
+      });
+      return;
+    } catch (nativeError) {
+      console.warn('Native Android TTS unavailable; trying browser speech:', nativeError);
+    }
+  }
+
   if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
     try {
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
+      const utterance = new SpeechSynthesisUtterance(phrase);
       utterance.lang = 'en-US';
-      utterance.rate = rate || state.listeningSpeed || 0.85;
-      utterance.onerror = (e) => {
-        console.warn('SpeechSynthesis audio notice:', e);
-      };
+      utterance.rate = speechRate;
+      utterance.volume = 1;
+      utterance.onerror = (event) => console.warn('Browser speech playback error:', event.error);
       window.speechSynthesis.speak(utterance);
-    } catch (err) {
-      console.warn('Audio playback error:', err);
+    } catch (error) {
+      console.warn('Audio playback error:', error);
     }
   } else {
-    console.warn('SpeechSynthesis is not supported in this runtime environment.');
+    console.warn('No supported text-to-speech engine is available.');
   }
 }
 
-function stopAudio() {
+async function stopAudio() {
   if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-    try {
-      window.speechSynthesis.cancel();
-    } catch (err) {
-      console.warn('Stop audio error:', err);
-    }
+    try { window.speechSynthesis.cancel(); } catch (error) { console.warn('Browser stop error:', error); }
+  }
+  if (Capacitor.isNativePlatform()) {
+    try { await TextToSpeech.stop(); } catch (error) { console.warn('Native stop error:', error); }
   }
 }
 
@@ -739,14 +761,15 @@ function renderUnitWorkspace() {
 
   const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1;
 
-  // The Six Consolidated Independent Student Sections
+  // Clear, named learning areas. Speaking is included because Unit 1 has a verified role-play.
   const sixSections = [
-    { type: 'vocabulary', title: 'Vocabulary', subtitle: '24 Words, meanings, audio & practice', icon: 'Aa', draftType: 'vocabulary' },
-    { type: 'grammar', title: 'Grammar', subtitle: 'Language structures & classroom commands', icon: '文', draftType: 'grammar' },
-    { type: 'reading', title: 'Reading', subtitle: 'Maya & Hana dialogue & reading story', icon: '▤', draftType: 'reading' },
-    { type: 'listening', title: 'Listening', subtitle: 'Audio listening tasks & exercises', icon: '♫', draftType: 'listening' },
-    { type: 'games', title: 'Games', subtitle: '4 Fun interactive learning mini-games', icon: '★', draftType: 'games' },
-    { type: 'comprehensive_test', title: 'Final Test', subtitle: 'Full 10-question evaluation assessment', icon: '◎', draftType: 'comprehensive_test' }
+    { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pictures & pronunciation', icon: 'Aa', draftType: 'vocabulary' },
+    { type: 'grammar', title: 'Grammar', subtitle: 'Rules and classroom language', icon: '文', draftType: 'grammar' },
+    { type: 'reading', title: 'Reading', subtitle: 'Read the Maya & Hana dialogue', icon: '▤', draftType: 'reading' },
+    { type: 'listening', title: 'Listening', subtitle: 'Listen, replay and answer', icon: '♫', draftType: 'listening' },
+    { type: 'speaking', title: 'Speaking', subtitle: 'Practise the dialogue aloud', icon: '🎤', draftType: 'speaking' },
+    { type: 'games', title: 'Games', subtitle: '4 interactive learning games', icon: '★', draftType: 'games' },
+    { type: 'comprehensive_test', title: 'Tests', subtitle: '10-question unit assessment', icon: '✓', draftType: 'comprehensive_test' }
   ];
 
   // Helper to count answered questions without duplicates
@@ -1132,6 +1155,25 @@ function renderUnitWorkspace() {
             </section>
           </div>
         `;
+      } else if (state.activeModule === 'speaking') {
+        const speakingSection = p1u1Draft.sections.find((section) => section.type === 'speaking');
+        const rolePlay = speakingSection?.items?.[0]?.content?.dialogue || [];
+        bodyHtml = rolePlay.length ? `
+          <div class="speaking-practice-card">
+            <p class="speaking-instruction">Take turns with a partner. Listen to each line, then say it aloud.</p>
+            <div class="speaking-dialogue-list">
+              ${rolePlay.map((line, index) => `
+                <article class="speaking-line-card">
+                  <span class="speaking-line-speaker">${escapeHtml(line.speaker || `Speaker ${index + 1}`)}</span>
+                  <p>${escapeHtml(line.text || '')}</p>
+                  <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
+                </article>
+              `).join('')}
+            </div>
+            <p class="speaking-practice-note">Now practise the full dialogue with a classmate.</p>
+            <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(rolePlay.map((line) => `${line.speaker}: ${line.text}`).join('. '))}">🔊 Listen to Full Dialogue</button>
+          </div>
+        ` : '<div class="empty-state"><strong>Speaking practice is being prepared.</strong></div>';
       } else if (state.activeModule === 'games') {
         bodyHtml = renderGames();
       } else if (state.activeModule === 'comprehensive_test') {
@@ -1248,6 +1290,7 @@ function renderUnitWorkspace() {
       const count = countAnswered(listQ);
       return `1 Task · ${count}/${listQ.length} Answered`;
     }
+    if (secType === 'speaking') return '1 Role-Play Dialogue';
     if (secType === 'games') return '4 Mini-Games';
     if (secType === 'comprehensive_test') {
       const testSec = p1u1Draft.sections.find((s) => s.type === 'comprehensive_test');
@@ -1274,11 +1317,11 @@ function renderUnitWorkspace() {
     : 0;
 
   const sectionCards = sixSections.map((sec) => `
-    <button type="button" class="unit-section-card" data-open-section="${sec.type}">
-      <span class="section-card-icon">${sec.icon}</span>
+    <button type="button" class="unit-section-card" data-open-section="${sec.type}" aria-label="Open ${sec.title}">
+      <span class="section-card-icon" aria-hidden="true">${sec.icon}</span>
       <div class="section-card-copy">
         <div class="section-card-title-row">
-          <strong>${sec.title}</strong>
+          <strong class="section-card-label">${sec.title}</strong>
         </div>
         <small>${sec.subtitle}</small>
         <span class="section-card-progress">${calculateProgress(sec.type)}</span>
