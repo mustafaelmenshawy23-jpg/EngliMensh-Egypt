@@ -2180,7 +2180,9 @@ function render() {
                 : path.id === state.path;
               const id = state.stage === 'egyptian-baccalaureate'
                 ? (path.id === 'egypt-baccalaureate' ? 'first-language' : 'second-language') : path.id;
-              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(path.label || path.name)}</strong><span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span></button>`;
+              const pathTitle = state.stage === 'primary' ? (path.series || path.officialSeries || path.name) : (path.label || path.name);
+              const pathSubtitle = state.stage === 'primary' ? '' : `<span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span>`;
+              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(pathTitle)}</strong>${pathSubtitle}</button>`;
             }).join('')}
           </div>
         </div>
