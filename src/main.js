@@ -1258,15 +1258,20 @@ function renderUnitWorkspace() {
     return 'Open section';
   };
 
-  const totalAnswered = isP1U1 && p1u1Draft ? (
-    countAnswered(p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || []) +
-    countAnswered(p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || []) +
-    countAnswered(p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter(i => i.content?.question) || []) +
-    countAnswered(p1u1Draft.sections.find((s) => s.type === 'listening')?.items?.filter(i => i.content?.question) || []) +
-    countAnswered(p1u1Draft.sections.find((s) => s.type === 'comprehensive_test')?.items || [])
-  ) : 0;
-  const totalQuestions = 19;
-  const progressPercent = Math.round((totalAnswered / totalQuestions) * 100);
+  // Keep the progress numerator and denominator based on the exact same scored question set.
+  // This automatically includes future questions added to any scored section.
+  const scoredQuestionGroups = isP1U1 && p1u1Draft ? [
+    p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [],
+    p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || [],
+    p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter((item) => item.content?.question) || [],
+    p1u1Draft.sections.find((s) => s.type === 'listening')?.items?.filter((item) => item.content?.question) || [],
+    p1u1Draft.sections.find((s) => s.type === 'comprehensive_test')?.items || []
+  ] : [];
+  const totalQuestions = scoredQuestionGroups.reduce((total, items) => total + items.length, 0);
+  const totalAnswered = scoredQuestionGroups.reduce((total, items) => total + countAnswered(items), 0);
+  const progressPercent = totalQuestions > 0
+    ? Math.min(100, Math.round((totalAnswered / totalQuestions) * 100))
+    : 0;
 
   const sectionCards = sixSections.map((sec) => `
     <button type="button" class="unit-section-card" data-open-section="${sec.type}">
