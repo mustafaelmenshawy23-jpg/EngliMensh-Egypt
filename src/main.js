@@ -281,6 +281,92 @@ function bookUrl(file, page) {
 }
 
 
+function explainGrammarRule(rule, examples = []) {
+  const text = String(rule || '').toLowerCase();
+  const exampleList = examples.slice(0, 3);
+  let title = 'Understand the pattern';
+  let explanation = 'Read the pattern, then notice how the words work together in each example.';
+  let formula = rule || 'Grammar pattern';
+  let tip = 'Say each example aloud, then change one word and make a new sentence.';
+  if (/this is my|introducing people|demonstrative/.test(text)) {
+    title = 'Talking about one person or thing';
+    explanation = 'Use “This is my …” to introduce one person or one thing. “This” points to one thing, “is” is the verb, and “my” shows that it belongs to you.';
+    formula = 'This is my + one person or thing';
+    tip = 'Use a singular noun after “my”: This is my brother. / This is my book.';
+  } else if (/imperative|verb in stem|rules \(must/.test(text)) {
+    title = 'Giving instructions';
+    explanation = 'An instruction usually starts with the base form of the verb. Do not add -s or -ing to the verb at the beginning.';
+    formula = 'Base verb + the rest of the instruction';
+    tip = 'Wash your hands. / Touch your nose. For a negative instruction, use “Don’t” + base verb.';
+  } else if (/a vs an|indefinite article/.test(text)) {
+    title = 'Choosing a or an';
+    explanation = 'Use “a” before a consonant sound and “an” before a vowel sound. Listen to the first sound, not only the first letter.';
+    formula = 'a + consonant sound · an + vowel sound';
+    tip = 'a banana, a university, an apple, an orange.';
+  } else if (/in vs on|prepositions of place/.test(text)) {
+    title = 'Describing place';
+    explanation = 'A preposition tells us where something is. “In” often means inside; “on” means touching a surface. Other place words describe position in relation to something else.';
+    formula = 'person / thing + be + preposition + place';
+    tip = 'The book is in the bag. / The pencil is on the desk.';
+  } else if (/ability|can \+|modal verbs: can|could \/ couldn't/.test(text)) {
+    title = 'Talking about ability';
+    explanation = 'Use “can” before the base form of a verb to say what someone is able to do. The verb after can does not take -s or -ing.';
+    formula = 'Subject + can / can’t + base verb';
+    tip = 'I can swim. / She can’t fly.';
+  } else if (/there is \/ there are|there is/.test(text)) {
+    title = 'Saying that something exists';
+    explanation = 'Use “There is” with one thing and “There are” with more than one thing.';
+    formula = 'There is + singular noun · There are + plural noun';
+    tip = 'There is a book. / There are two books.';
+  } else if (/has got|have got/.test(text)) {
+    title = 'Talking about possession';
+    explanation = 'Use “has got” with he, she or it. Use “have got” with I, you, we or they.';
+    formula = 'He / She / It has got · I / You / We / They have got';
+    tip = 'She has got a sister. / They have got two bags.';
+  } else if (/like \+ verb-ing/.test(text)) {
+    title = 'Talking about likes';
+    explanation = 'When an action follows “like”, use the -ing form of the verb.';
+    formula = 'like / likes + verb-ing';
+    tip = 'I like reading. / He likes playing football.';
+  } else if (/comparative/.test(text)) {
+    title = 'Comparing two things';
+    explanation = 'A comparative adjective compares two people or things. Short adjectives often take -er; longer adjectives often use “more”.';
+    formula = 'adjective-er + than · more + adjective + than';
+    tip = 'A tiger is faster than a cat. / This book is more interesting than that one.';
+  } else if (/superlative/.test(text)) {
+    title = 'Comparing three or more things';
+    explanation = 'A superlative describes the top or bottom of a group. Short adjectives often use -est; longer adjectives often use “the most”.';
+    formula = 'the + adjective-est · the most + adjective';
+    tip = 'the tallest tree / the most beautiful place.';
+  } else if (/present simple/.test(text)) {
+    title = 'Using the present simple';
+    explanation = 'Use the present simple for routines and facts. With he, she or it, most verbs add -s or -es. Use the base form with I, you, we and they.';
+    formula = 'I / You / We / They + base verb · He / She / It + verb-s';
+    tip = 'I play every day. / She plays every day.';
+  } else if (/past simple/.test(text)) {
+    title = 'Talking about the past';
+    explanation = 'Use the past simple for a finished action in the past. Regular verbs often end in -ed; irregular verbs have their own past forms.';
+    formula = 'Subject + past form of the verb';
+    tip = 'We visited Luxor. / She went to school.';
+  } else if (/future|going to|future plans/.test(text)) {
+    title = 'Talking about future plans';
+    explanation = 'Use “be going to” before the base verb for a plan or intention.';
+    formula = 'am / is / are + going to + base verb';
+    tip = 'I am going to study. / They are going to travel.';
+  } else if (/should/.test(text)) {
+    title = 'Giving advice';
+    explanation = 'Use “should” for a good idea and “shouldn’t” for advice not to do something. Follow it with the base form of the verb.';
+    formula = 'should / shouldn’t + base verb';
+    tip = 'You should sleep early. / You shouldn’t eat too much sugar.';
+  } else if (/conditionals/.test(text)) {
+    title = 'Using if sentences';
+    explanation = 'An if-clause describes a condition. The other clause tells us the result. The verb forms change according to whether we mean a fact, a real possibility or an imaginary situation.';
+    formula = 'If + condition, result';
+    tip = 'Read both parts together and check the time and meaning before choosing the verb form.';
+  }
+  return { title, explanation, formula, tip, examples: exampleList };
+}
+
 function renderImportedPrimaryCurriculum() {
   if (state.stage !== 'primary' || !['general', 'advanced'].includes(state.path)) return '';
   const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
@@ -312,6 +398,15 @@ function renderImportedPrimaryCurriculum() {
     if (question) grammarPractice.push(question);
   });
   const grammarExampleSource = (unit?.grammar?.examples || [])[0] || unitWords[0]?.ex || '';
+  const grammarTargets = [...new Set(unitWords.map((item) => item.en).filter((word) =>
+    word && (unit?.grammar?.examples || []).some((example) => String(example).toLowerCase().includes(String(word).toLowerCase()))
+  ))];
+  grammarTargets.forEach((target, index) => {
+    if (grammarPractice.length >= 8) return;
+    const sentence = (unit?.grammar?.examples || []).find((example) => String(example).toLowerCase().includes(String(target).toLowerCase()));
+    const question = makeCloze(sentence, index + 4, 'Choose the word that completes the grammar example: ', target);
+    if (question && !grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
+  });
   const grammarTokens = String(grammarExampleSource).match(/[A-Za-z][A-Za-z']*/g) || [];
   while (grammarPractice.length < 3 && grammarTokens.length) {
     const target = grammarTokens[grammarPractice.length % grammarTokens.length];
@@ -335,25 +430,33 @@ function renderImportedPrimaryCurriculum() {
     opts: choiceOptions(word.en, index),
     ans: 0
   }));
-  const speakingPrompts = unitWords.slice(0, 5).map((word, index) => ({
+  const speakingPrompts = unitWords.slice(0, 10).map((word, index) => ({
     prompt: index % 2 === 0 ? 'Say this word clearly:' : 'Make a sentence using this word:',
     target: index % 2 === 0 ? word.en : (word.ex || word.en)
   }));
+  const vocabularySupplementary = unitWords.map((word, index) => ({
+    q: 'Which English word matches this meaning: ' + word.ar + '?',
+    opts: choiceOptions(word.en, index),
+    ans: 0
+  }));
   const unitTestQuestions = [
-    ...(unit?.vocabularyQuestions || []).slice(0, 4),
-    ...grammarPractice.slice(0, 3),
-    ...readingPractice.slice(0, 3)
-  ].slice(0, 10);
+    ...(unit?.vocabularyQuestions || []).slice(0, 5),
+    ...grammarPractice.slice(0, 8),
+    ...readingPractice.slice(0, 5),
+    ...listeningPractice.slice(0, 4),
+    ...(unit?.examQuestions || []).slice(0, 2)
+  ].slice(0, 24);
+  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, unit?.grammar?.examples || []);
   const modules = [
     { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
-    { id: 'grammar', title: 'Grammar', subtitle: 'Rules, examples and 3 practice questions', icon: '✏️', count: grammarPractice.length },
+    { id: 'grammar', title: 'Grammar', subtitle: 'Clear explanation, examples and practice', icon: '✏️', count: grammarPractice.length },
     { id: 'phonics', title: 'Phonics', subtitle: 'Sounds and word patterns', icon: '🔤', count: (unit?.phonics?.words || []).length },
     { id: 'reading', title: 'Reading', subtitle: 'Passage and 5 reading activities', icon: '📖', count: (unit?.readingText ? 1 : 0) + readingPractice.length },
-    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and oral practice', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length + speakingPrompts.length },
+    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and 10 speaking prompts', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length + speakingPrompts.length },
     { id: 'listening', title: 'Listening Practice', subtitle: '5 listen-and-choose questions', icon: '🎧', count: listeningPractice.length },
     { id: 'games', title: 'Word Games', subtitle: '4 interactive games using unit words', icon: '🎮', count: 4 },
-    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Check your new words', icon: '🧠', count: (unit?.vocabularyQuestions || []).length },
-    { id: 'tests', title: 'Unit Tests', subtitle: '10 mixed review questions', icon: '📝', count: unitTestQuestions.length }
+    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Source quiz plus 10 extra questions', icon: '🧠', count: (unit?.vocabularyQuestions || []).length + vocabularySupplementary.length },
+    { id: 'tests', title: 'Unit Tests', subtitle: 'Up to 24 mixed review questions', icon: '📝', count: unitTestQuestions.length }
   ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
     const opts = Array.isArray(q.opts) ? q.opts : [];
@@ -388,14 +491,14 @@ function renderImportedPrimaryCurriculum() {
   if (unit && state.activeModule) {
     switch (state.activeModule) {
       case 'vocabulary': body = '<div class="imported-vocab-grid">' + vocab + '</div>'; break;
-      case 'grammar': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.grammar?.rule || 'Grammar') + '</h3><ul>' + (unit.grammar?.examples || []).map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul><p class="unit-source-note">Includes supplementary practice built from this unit’s examples; these are not represented as printed textbook questions.</p></article><h3 class="module-subheading">Grammar practice</h3>' + renderQuestions(grammarPractice, prefix + '-r'); break;
+      case 'grammar': body = '<article class="imported-section-card grammar-lesson-card"><p class="eyebrow">GRAMMAR GUIDE</p><h3>' + escapeHtml(grammarLesson.title) + '</h3><p>' + escapeHtml(grammarLesson.explanation) + '</p><div class="grammar-formula"><strong>Pattern</strong><span>' + escapeHtml(grammarLesson.formula) + '</span></div><p class="grammar-tip"><strong>Remember:</strong> ' + escapeHtml(grammarLesson.tip) + '</p><h4>Examples</h4><ul>' + grammarLesson.examples.map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul><p class="unit-source-note">The guide is a simplified learning explanation based on this unit’s grammar heading and examples.</p></article><h3 class="module-subheading">Grammar practice · ' + grammarPractice.length + ' questions</h3>' + renderQuestions(grammarPractice, prefix + '-r'); break;
       case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><p class="unit-source-note">Listen to each sound and repeat it aloud.</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<button type="button" class="imported-phonics-word" data-tts-text="' + escapeHtml(w) + '">🔊 ' + escapeHtml(w) + '</button>').join('') + '</div></article>'; break;
       case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article><h3 class="module-subheading">Reading comprehension · 5 activities</h3><p class="unit-source-note">Supplementary sentence-completion practice generated from the passage text.</p>' + renderQuestions(readingPractice, prefix + '-read'); break;
       case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<div class="imported-speaking-prompts">' + speakingPrompts.map((item) => '<article class="imported-section-card"><strong>' + escapeHtml(item.prompt) + '</strong><p dir="ltr">' + escapeHtml(item.target) + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(item.target) + '">🔊 Hear a model</button></article>').join('') + '</div>'; break;
       case 'listening': body = '<p class="unit-source-note">Listen to each word, then choose the word you heard.</p>' + renderQuestions(listeningPractice, prefix + '-listen'); break;
       case 'games': body = renderGames(); break;
-      case 'vocabulary-practice': body = renderQuestions(unit.vocabularyQuestions, prefix + '-v'); break;
-      case 'tests': body = '<h3 class="module-subheading">Unit assessment · 10 questions</h3><p class="unit-source-note">A mixed review built from the unit vocabulary, grammar examples and reading passage. Supplementary items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
+      case 'vocabulary-practice': body = '<h3 class="module-subheading">Textbook-source questions</h3>' + renderQuestions(unit.vocabularyQuestions, prefix + '-v') + '<h3 class="module-subheading">Extra meaning practice</h3><p class="unit-source-note">Extra questions generated from this unit’s vocabulary list.</p>' + renderQuestions(vocabularySupplementary, prefix + '-vs'); break;
+      case 'tests': body = '<h3 class="module-subheading">Unit assessment · ' + unitTestQuestions.length + ' questions</h3><p class="unit-source-note">A mixed review using vocabulary, grammar, reading, listening and the supplied exam questions. Extra generated items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
     }
     const active = modules.find((item) => item.id === state.activeModule);
     return '<section class="panel imported-curriculum imported-module-screen"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
