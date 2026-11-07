@@ -17,28 +17,42 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: ''
+
       - name: Install dependencies
         run: npm install
+
       - name: Validate source-book index and original PDFs
         run: npm run validate:source-index
+
       - name: Validate source-linked review candidates
         run: npm run validate:review-candidates
+
       - name: Validate Pass 22 high-resolution visual observations
         run: npm run validate:visual-recoveries-pass22
+
       - name: Validate source-linked lesson content
         run: npm run validate:lesson-content
+
       - name: Validate independent unit module scaffolds
         run: npm run validate:unit-modules
-      - name: Check interactive unit generator syntax
-        run: node --check scripts/generate-interactive-unit.mjs
+
+      - name: Check JavaScript generator syntax
+        run: |
+          node --check scripts/generate-interactive-unit.mjs
           node --check scripts/generate-interactive-curriculum-batch.mjs
+
+      - name: Run automated application and unit tests
+        run: npm test
+
       - name: Build application
         run: npm run build
+
       - name: Upload production build
         uses: actions/upload-artifact@v4
         with:
