@@ -529,11 +529,17 @@ function renderImportedPrimaryCurriculum() {
     prompt: index % 2 === 0 ? 'Say this word clearly:' : 'Make a sentence using this word:',
     target: index % 2 === 0 ? word.en : (word.ex || word.en)
   }));
-  const vocabularySupplementary = unitWords.map((word, index) => ({
-    q: 'Which English word matches this meaning: ' + word.ar + '?',
-    opts: choiceOptions(word.en, index),
-    ans: 0
-  }));
+  const vocabularySupplementary = unitWords.flatMap((word, index) => {
+    const arabicOptions = [word.ar, ...unitWords
+      .filter((item) => item.en !== word.en && item.ar)
+      .map((item) => item.ar)
+      .filter((meaning, meaningIndex, all) => meaning && meaning !== word.ar && all.indexOf(meaning) === meaningIndex)
+      .slice(index % 3, (index % 3) + 2)];
+    return [
+      { q: 'Choose the English word for: ' + word.ar, opts: choiceOptions(word.en, index), ans: 0 },
+      { q: 'What does "' + word.en + '" mean?', opts: arabicOptions, ans: 0 }
+    ];
+  });
   const unitTestQuestions = [
     ...(unit?.vocabularyQuestions || []).slice(0, 5),
     ...grammarPractice.slice(0, 8),
@@ -831,12 +837,12 @@ function renderGames() {
 function renderGame1Matching() {
   const importedWords = getPrimaryGameWords(6);
   const pairs = importedWords?.map((item) => ({ word: item.target, pic: item.icon, label: item.label })) || [
-    { word: 'pencil', pic: '✏️', label: 'Pencil (قلم رصاص)' },
-    { word: 'bag', pic: '🎒', label: 'Bag (حقيبة)' },
-    { word: 'chair', pic: '🪑', label: 'Chair (كرسي)' },
-    { word: 'tiger', pic: '🐯', label: 'Tiger (نمر)' },
-    { word: 'tree', pic: '🌳', label: 'Tree (شجرة)' },
-    { word: 'tomato', pic: '🍅', label: 'Tomato (طماطم)' }
+    { word: 'pencil', pic: '✏️', label: 'قلم رصاص' },
+    { word: 'bag', pic: '🎒', label: 'حقيبة' },
+    { word: 'chair', pic: '🪑', label: 'كرسي' },
+    { word: 'tiger', pic: '🐯', label: 'نمر' },
+    { word: 'tree', pic: '🌳', label: 'شجرة' },
+    { word: 'tomato', pic: '🍅', label: 'طماطم' }
   ];
   const { selectedWord, selectedPic, matches } = state.game1;
   const isComplete = matches.length === pairs.length;
