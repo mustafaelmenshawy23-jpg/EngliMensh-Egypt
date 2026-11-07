@@ -2503,26 +2503,79 @@ button:disabled{opacity:.55;cursor:not-allowed}
 
 
 
-/* Strong, unmistakable labels on every unit section tile */
-.unit-section-card { align-items: center; min-height: 104px; }
-.section-card-copy { align-items: flex-start; text-align: left; }
-.section-card-copy .section-card-label {
-  display: inline-flex;
+/* Compact section tiles: labels and optional subtitles stay inside the card. */
+.unit-section-card {
+  display: flex;
   align-items: center;
-  width: auto;
+  gap: 10px;
+  min-width: 0;
+  min-height: 92px;
+  padding: 12px;
+  overflow: hidden;
+}
+.unit-section-card .section-card-icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+}
+.unit-section-card .section-card-copy {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  width: 0;
+  min-width: 0;
   max-width: 100%;
-  padding: 4px 10px;
-  margin: 0 0 3px;
-  border-radius: 8px;
-  background: #e8f3f5;
+  overflow: hidden;
+  text-align: left;
+}
+.unit-section-card .section-card-title-row {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.unit-section-card .section-card-label {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: #102c4c !important;
-  font-size: 16px !important;
+  font-size: clamp(12px, 3.2vw, 15px) !important;
   font-weight: 900 !important;
-  line-height: 1.35;
-  letter-spacing: .2px;
+  line-height: 1.25;
+  letter-spacing: 0;
   white-space: normal;
-  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
   text-overflow: clip;
+}
+.unit-section-card .section-card-subtitle,
+.unit-section-card .section-card-copy small,
+.unit-section-card .section-card-copy p {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media(max-width:520px) {
+  .unit-section-card { min-height: 82px; padding: 10px; gap: 8px; }
+  .unit-section-card .section-card-icon { flex-basis: 32px; width: 32px; height: 32px; }
+  .unit-section-card .section-card-label { font-size: 12px !important; }
+  .unit-section-card .section-card-subtitle,
+  .unit-section-card .section-card-copy small,
+  .unit-section-card .section-card-copy p { font-size: 9px; }
 }
 .speaking-practice-card { display: grid; gap: 14px; }
 .speaking-instruction,.speaking-practice-note { margin: 0; color: #405477; font-size: 13px; line-height: 1.7; }
