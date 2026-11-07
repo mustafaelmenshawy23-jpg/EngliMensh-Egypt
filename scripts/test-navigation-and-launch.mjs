@@ -51,6 +51,7 @@ const mainJs = fs.readFileSync('./src/main.js', 'utf8');
   const pathButtonSelectorUsed = mainJs.includes(".path-button[data-path]");
   assert(pathButtonSelectorUsed, 'Pathway listener targets .path-button[data-path] specifically');
   assert(mainJs.includes("window.history.pushState") && mainJs.includes("window.addEventListener('popstate'"), 'Android/browser Back follows the in-app unit and section history');
+  assert(mainJs.includes("window.history.back()"), 'Visible Back buttons return exactly one level in the route history');
   assert(mainJs.includes("importedUnitView ? 'hidden' : ''") && mainJs.includes("window.scrollTo({ top: 0, behavior: 'auto' })"), 'Unit and section routes hide setup clutter and open at the top of the new screen');
   assert(mainJs.includes('data-home'), 'Home shortcut returns to the grade and unit selection screen');
 
