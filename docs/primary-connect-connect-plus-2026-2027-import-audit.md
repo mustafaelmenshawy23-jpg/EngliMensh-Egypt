@@ -93,3 +93,12 @@ The importer checks the two tracks, six grades per track, all 75 units, 750 voca
 
 ## Repository handoff details
 The branch now also contains `imports/README.md`, which documents the exact archive location, and `scripts/import-primary-html-curriculum.mjs` with the npm command `npm run import:primary-html`. The package script has been registered. The importer is designed to preserve source content as supplied, sort unit numbers, validate all MCQ answer indexes, and write the normalized JSON. It has not yet been executed in the repository because the ZIP itself is not yet present under `imports/`.
+
+
+## Verification update (2026-11-07, follow-up)
+
+The original conversation attachment was re-opened and independently parsed from its actual ZIP bytes. Its archive SHA-256 is `267126e18a5fae8db23aba5b33e49339cd25b28761a11b1eb843b05fe2266b18`. The expected `js/data.js` member exists and parses successfully. Structural validation confirmed 2 tracks, 6 grades per track, 75 units, 750 vocabulary entries, 750 vocabulary quiz items, 150 dialogue records, 75 speaking quiz items, 75 phonics records, 75 reading texts, 75 grammar records, 75 grammar quiz items, 150 word games, 150 exam questions, and 1,050 valid MCQs. All 1,050 MCQ answer indexes are 0, so runtime answer shuffling with answer identity preserved remains mandatory.
+
+Important correction: the archive currently committed at `imports/EngliMensh_Primary_Curriculum_2026_2027.zip` is **not** the original HTML bundle. Its ZIP directory contains only `EngliMensh_Primary_Curriculum_2026_2027.json`; it does not contain `englimensh_primary_full_75_units_2026_2027/js/data.js`. Therefore the current importer cannot consume the committed ZIP as-is. The locally generated normalized JSON is 702,204 bytes and is not yet committed to the repository.
+
+The open PR is #1. The feature branch is 10 commits ahead of `main`, 0 behind, and changes only the audit, import README, package script, importer script, and the mismatched ZIP. No application source file has been modified and the new curriculum is not wired into the student app. Do not merge PR #1 yet. Remaining gates: reconcile the archive format/path, commit the validated normalized dataset, integrate through an adapter without replacing existing PDF-backed pathways or progress storage, then run tests and production build and review the diff for regressions.
