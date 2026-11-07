@@ -75,6 +75,23 @@
       "status": "classification_rule"
     },
     {
+      "id": "commercial-reference-guides",
+      "label": "Commercial supplementary reference guides — separate from official MOE pathways",
+      "grades": [
+        "Primary 1",
+        "Primary 2",
+        "Primary 3",
+        "Primary 4",
+        "Primary 5",
+        "Primary 6",
+        "Preparatory 1",
+        "Preparatory 2",
+        "Preparatory 3"
+      ],
+      "officialSeries": "Commercial guides (including El-Moasser Connect Plus and Hello Plus)",
+      "status": "supplementary_classification"
+    },
+    {
       "id": "egypt-baccalaureate-second-language",
       "label": "Egyptian Baccalaureate — English as a Second Foreign Language",
       "grades": [
@@ -489,6 +506,293 @@
         }
       ],
       "status": "needs_review"
+    },
+    {
+      "id": "connectplus-primary1-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_1_ابتدائي_ترم_1_ذاكرولي1.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 1",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 3,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book.",
+        "Contents also lists Review 1 (PDF p104), Homes around the world (p208), The Little Red Hen (p212), and Homework Interactive (p221)."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "This is me",
+          "startPdfPage": 10
+        },
+        {
+          "number": 2,
+          "title": "Meet my family",
+          "startPdfPage": 43
+        },
+        {
+          "number": 3,
+          "title": "In my community",
+          "startPdfPage": 70
+        },
+        {
+          "number": 4,
+          "title": "On the farm",
+          "startPdfPage": 109
+        },
+        {
+          "number": 5,
+          "title": "Transportation",
+          "startPdfPage": 146
+        },
+        {
+          "number": 6,
+          "title": "The world around us",
+          "startPdfPage": 179
+        }
+      ]
+    },
+    {
+      "id": "connectplus-primary2-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 2",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 3,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book.",
+        "Contents also lists Review 1 (PDF p123), Review 2 (p231), Animals in the wild (p250), and The Gingerbread Man."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "Ready, get set, go!",
+          "startPdfPage": 11
+        },
+        {
+          "number": 2,
+          "title": "Let’s get fit!",
+          "startPdfPage": 56
+        },
+        {
+          "number": 3,
+          "title": "A day in my life",
+          "startPdfPage": 87
+        },
+        {
+          "number": 4,
+          "title": "Into space",
+          "startPdfPage": 128
+        },
+        {
+          "number": 5,
+          "title": "A boat trip",
+          "startPdfPage": 158
+        },
+        {
+          "number": 6,
+          "title": "Monuments",
+          "startPdfPage": 207
+        }
+      ]
+    },
+    {
+      "id": "connectplus-primary3-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_3_ابتدائي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 3",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 6,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book.",
+        "OCR row ordering in the contents was uncertain; visually confirm the unit-to-page mapping before release.",
+        "Contents also lists Hospitals and Fares and the Fish."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "At the track",
+          "startPdfPage": 12
+        },
+        {
+          "number": 2,
+          "title": "Body matters",
+          "startPdfPage": 58
+        },
+        {
+          "number": 3,
+          "title": "What’s on your plate?",
+          "startPdfPage": 90
+        },
+        {
+          "number": 4,
+          "title": "In the wild",
+          "startPdfPage": 129
+        },
+        {
+          "number": 5,
+          "title": "All about water",
+          "startPdfPage": 167
+        },
+        {
+          "number": 6,
+          "title": "What is a flood?",
+          "startPdfPage": 204
+        }
+      ]
+    },
+    {
+      "id": "connectplus-primary4-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 4",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 7,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book.",
+        "Contents also lists Review 1 (PDF p119), Review 2 (p221), Coral Reefs (p223), Khayameya Summer (p228), and homework (p257)."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "What do I do?",
+          "startPdfPage": 15
+        },
+        {
+          "number": 2,
+          "title": "Plants and animals",
+          "startPdfPage": 49
+        },
+        {
+          "number": 3,
+          "title": "My world",
+          "startPdfPage": 85
+        },
+        {
+          "number": 4,
+          "title": "City and country",
+          "startPdfPage": 124
+        },
+        {
+          "number": 5,
+          "title": "Resources in our world",
+          "startPdfPage": 166
+        },
+        {
+          "number": 6,
+          "title": "Let’s work",
+          "startPdfPage": 190
+        }
+      ]
+    },
+    {
+      "id": "connectplus-primary5-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_5_ابتدائي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 5",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 6,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; exact unit names and numbering unresolved."
+      ]
+    },
+    {
+      "id": "connectplus-primary6-supplement",
+      "sourceFile": "المعاصر_كونكت_بلس_6_ابتدائي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Primary 6",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 11,
+      "status": "needs_review",
+      "notes": [
+        "Commercial El-Moasser guide; not an official MOE Student’s Book.",
+        "Contents also lists Review 1 (PDF p88), Hassan Fathy: A biography (p167), and A Wonderful Surprise (p175)."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "Express yourself!",
+          "startPdfPage": 13
+        },
+        {
+          "number": 2,
+          "title": "Home is where the heart is",
+          "startPdfPage": 50
+        },
+        {
+          "number": 3,
+          "title": "School time!",
+          "startPdfPage": 93
+        },
+        {
+          "number": 4,
+          "title": "We can make a difference!",
+          "startPdfPage": 132
+        }
+      ]
+    },
+    {
+      "id": "helloplus-prep1-supplement",
+      "sourceFile": "المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf",
+      "pathwayId": "commercial-reference-guides",
+      "grade": "Preparatory 1",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "contentsPdfPage": 4,
+      "units": [
+        {
+          "number": 1,
+          "title": "Friends matter",
+          "startPdfPage": 8
+        },
+        {
+          "number": 2,
+          "title": "The world of work",
+          "startPdfPage": 48
+        },
+        {
+          "number": 3,
+          "title": "Activities",
+          "startPdfPage": 91
+        },
+        {
+          "number": 4,
+          "title": "Shopping well",
+          "startPdfPage": 160
+        },
+        {
+          "number": 5,
+          "title": "Feeling well",
+          "startPdfPage": 196
+        },
+        {
+          "number": 6,
+          "title": "Literature: The Prince and the Pauper — Part A",
+          "startPdfPage": 251
+        }
+      ],
+      "status": "needs_review",
+      "notes": [
+        "Commercial supplementary guide; not the official MOE Student’s Book.",
+        "Project 1 is listed at PDF p157; exact unit/project boundary needs visual confirmation."
+      ]
     },
     {
       "id": "primary1-student-term1",
@@ -948,6 +1252,66 @@
       "notes": [
         "Assessment/performance tasks document; no unit mapping inferred."
       ]
+    },
+    {
+      "id": "helloplus-prep2-supplement",
+      "sourceFile": "المعاصر_هالو_بلس_تانية_إعدادي_كتاب_الشرح_1.pdf",
+      "grade": "Preparatory 2",
+      "notes": [
+        "Commercial El-Moasser Hello Plus guide; OCR is dominated by watermark text, so no contents or unit sequence has been asserted."
+      ],
+      "pathwayId": "commercial-reference-guides",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "units": [],
+      "status": "needs_review"
+    },
+    {
+      "id": "helloplus-prep3-supplement",
+      "sourceFile": "Hello plus prep 3 كامل(1).pdf",
+      "grade": "Preparatory 3",
+      "notes": [
+        "Commercial Hello Plus guide; not an official MOE Student’s Book.",
+        "Contents lists Project 1 Setting Goals, Project 2 A School Newspaper, Revision A/B, and Part Two Master Your Skills; OCR layout damage prevents reliable start-page assignment."
+      ],
+      "pathwayId": "commercial-reference-guides",
+      "term": 1,
+      "documentType": "commercial_supplement",
+      "publisherClass": "commercial",
+      "units": [
+        {
+          "number": 1,
+          "title": "My World",
+          "startPdfPage": null
+        },
+        {
+          "number": 2,
+          "title": "Changes",
+          "startPdfPage": null
+        },
+        {
+          "number": 3,
+          "title": "Ambitions",
+          "startPdfPage": null
+        },
+        {
+          "number": 4,
+          "title": "Traditional Stories",
+          "startPdfPage": null
+        },
+        {
+          "number": 5,
+          "title": "News and Media",
+          "startPdfPage": null
+        },
+        {
+          "number": 6,
+          "title": "Literature — The Prisoner of Zenda",
+          "startPdfPage": null
+        }
+      ],
+      "status": "needs_review"
     }
   ]
 }
