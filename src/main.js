@@ -657,7 +657,7 @@ function renderImportedPrimaryCurriculum() {
     { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and 10 speaking prompts', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length + speakingPrompts.length },
     { id: 'listening', title: 'Listening Practice', subtitle: '5 listen-and-choose questions', icon: '🎧', count: listeningPractice.length },
     { id: 'games', title: 'Word Games', subtitle: '4 interactive games using unit words', icon: '🎮', count: 4 },
-    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Source quiz plus 10 extra questions', icon: '🧠', count: (unit?.vocabularyQuestions || []).length + vocabularySupplementary.length },
+    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Source quiz plus 20 extra questions', icon: '🧠', count: (unit?.vocabularyQuestions || []).length + vocabularySupplementary.length },
     { id: 'tests', title: 'Unit Tests', subtitle: 'Up to 24 mixed review questions', icon: '📝', count: unitTestQuestions.length }
   ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
