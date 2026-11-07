@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 const data = JSON.parse(fs.readFileSync('./src/data/curriculum/primary-connect-html-2026-2027.json', 'utf8'));
+const curriculum = JSON.parse(fs.readFileSync('./src/data/curriculum/structure.json', 'utf8'));
 const main = fs.readFileSync('./src/main.js', 'utf8');
 let passed = 0;
 let failed = 0;
@@ -11,6 +12,7 @@ const assert = (condition, message) => {
 
 assert(data.tracks.length === 2, 'Both Connect and Connect Plus tracks exist');
 assert(data.tracks.every((track) => track.grades.length === 6), 'Both tracks include all six primary grades');
+assert(!curriculum.stages.find((stage) => stage.id === 'primary').paths.some((path) => /moasser|supplementary/i.test(path.id + ' ' + path.series)), 'Primary curriculum contains only Connect and Connect Plus pathways');
 
 let units = 0;
 let questions = 0;
@@ -39,16 +41,19 @@ for (const track of data.tracks) {
             invalid++;
             continue;
           }
-          const shuffled = q.opts.map((text, originalIndex) => ({ text, originalIndex }));
+          const correctOption = q.opts[q.ans];
+          const distractors = q.opts.filter((_, originalIndex) => originalIndex !== q.ans);
           let seed = 0;
           for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
-          for (let i = shuffled.length - 1; i > 0; i--) {
+          for (let i = distractors.length - 1; i > 0; i--) {
             seed = (seed * 16807) % 2147483647;
             const j = Math.floor((seed / 2147483647) * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
           }
-          const correct = shuffled.findIndex((item) => item.originalIndex === q.ans);
-          if (correct < 0 || shuffled[correct].text !== q.opts[q.ans]) invalid++;
+          const correct = index % Math.max(1, q.opts.length);
+          const shuffled = [...distractors];
+          shuffled.splice(correct, 0, correctOption);
+          if (correct < 0 || shuffled[correct] !== q.opts[q.ans]) invalid++;
           if (correct >= 0 && correct < answerPositions.length) answerPositions[correct]++;
           questions++;
         }
@@ -67,7 +72,11 @@ assert(main.includes('state.quizAnswers[questionId] = {') && main.includes('save
 assert(main.includes('saved.isCorrect') && main.includes('saved.wrongChoices'), 'Previously answered and wrong choices are restored in the interface');
 assert(main.includes('Listen to pronunciation') && main.includes('Listen to the full passage') && main.includes('imported-phonics-word'), 'Imported vocabulary, phonics and reading have pronunciation controls');
 assert(main.includes('const grammarPractice') && main.includes('const readingPractice') && main.includes('const listeningPractice'), 'Imported units build supplementary grammar, reading and listening practice');
-assert(main.includes('const unitTestQuestions') && main.includes('10 mixed review questions'), 'Imported units provide a ten-question mixed assessment');
+assert(main.includes('const unitTestQuestions') && main.includes('unitTestQuestions.length') && main.includes('Up to 24 mixed review questions'), 'Imported units provide an expanded mixed assessment of up to 24 questions');
+assert(main.includes('function explainGrammarRule') && main.includes('grammar-formula'), 'Grammar screens include a clear explanation, pattern, examples and study tip');
+assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
+assert(main.includes('label: String(item.ar).trim()') && !main.includes("label: item.en + ' (' + item.ar + ')'"), 'Matching-game clue side shows Arabic meaning without revealing the English answer');
+assert(main.includes('correctPosition = index % Math.max(1, opts.length)'), 'Correct answer positions rotate evenly within each question group');
 assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
 for (const track of data.tracks) {
   for (const grade of track.grades) {
