@@ -2080,6 +2080,7 @@ function render() {
     event.preventDefault();
     state.importedUnitNumber = null;
     state.activeModule = null;
+    state.navigationEpoch += 1;
     window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
     saveProgressToStorage();
     render();
