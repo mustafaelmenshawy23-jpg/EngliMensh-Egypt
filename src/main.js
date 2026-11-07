@@ -481,6 +481,15 @@ function renderImportedPrimaryCurriculum() {
     }
     return [answer, ...distractors];
   };
+  const grammarDistractors = {
+    my: ['your', 'his', 'her'], your: ['my', 'his', 'her'], his: ['her', 'my', 'their'], her: ['his', 'my', 'their'],
+    is: ['are', 'am', 'be'], are: ['is', 'am', 'be'], am: ['is', 'are', 'be'], have: ['has', 'had', 'are'], has: ['have', 'had', 'is'],
+    this: ['that', 'these', 'those'], these: ['this', 'that', 'those'], that: ['this', 'these', 'those'], those: ['these', 'this', 'that'],
+    a: ['an', 'the', 'some'], an: ['a', 'the', 'some'], in: ['on', 'under', 'behind'], on: ['in', 'under', 'behind'],
+    can: ['could', 'must', 'are'], will: ['would', 'is', 'has'], who: ['which', 'where', 'whose'], which: ['who', 'where', 'whose'],
+    was: ['were', 'is', 'are'], were: ['was', 'is', 'are'], had: ['has', 'have', 'is'],
+    next: ['behind', 'between', 'under'], behind: ['next to', 'in front of', 'between']
+  };
   const makeCloze = (sentence, index, prefix, targetOverride = null) => {
     const tokens = String(sentence || '').match(/[A-Za-z][A-Za-z']*/g) || [];
     if (!tokens.length) return null;
@@ -488,7 +497,9 @@ function renderImportedPrimaryCurriculum() {
     const rawSentence = String(sentence);
     const targetAt = rawSentence.toLowerCase().indexOf(String(targetWord).toLowerCase());
     const prompt = targetAt >= 0 ? rawSentence.slice(0, targetAt) + '____' + rawSentence.slice(targetAt + String(targetWord).length) : rawSentence;
-    return { q: prefix + prompt, opts: choiceOptions(targetWord, index), ans: 0 };
+    const grammarOptions = grammarDistractors[String(targetWord).toLowerCase()];
+    const options = /grammar/i.test(prefix) && grammarOptions ? [targetWord, ...grammarOptions] : choiceOptions(targetWord, index);
+    return { q: prefix + prompt, opts: options, ans: 0 };
   };
   const grammarPractice = [...(unit?.grammar?.quiz || []).filter((item) => !/(verification|application check|key pattern|correct structure|incorrect syntax)/i.test(String(item.q || '')))];
   const grammarRuleText = String(unit?.grammar?.rule || '').toLowerCase();
