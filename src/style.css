@@ -2678,3 +2678,11 @@ button:disabled{opacity:.55;cursor:not-allowed}
   .imported-section-grid .section-card-copy small { font-size:10px; }
   .imported-unit-list { grid-template-columns:1fr; }
 }
+
+
+/* Imported primary curriculum: pronunciation controls */
+.imported-vocab .tts-play-btn { margin: 5px 4px 0 0; }
+.imported-phonics-word { border: 1px solid var(--border, #cbd5e1); border-radius: 999px; padding: 9px 13px; background: var(--surface, #f8fafc); color: inherit; cursor: pointer; font: inherit; font-weight: 700; }
+.imported-phonics-word:active { transform: scale(.98); }
+.imported-question-audio { margin-bottom: 8px; }
+.imported-reading-text + .big-audio-btn { margin-top: 12px; }
