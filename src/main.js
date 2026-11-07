@@ -284,15 +284,29 @@ function renderImportedPrimaryCurriculum() {
   const grade = track?.grades.find((item) => item.grade === state.grade);
   if (!grade) return '';
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
-    const options = Array.isArray(q.opts) ? q.opts : [];
-    const correct = Number.isInteger(q.ans) ? q.ans : 0;
-    const id = `${prefix}-${index}`;
-    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}">
-      <p class="question-prompt-text" dir="auto">${escapeHtml(q.q || 'Choose the correct answer')}</p>
-      <div class="quiz-options">${options.map((option, oi) => `<button type="button" class="quiz-option imported-answer" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}"><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option)}</span></button>`).join('')}</div>
+    const originalOptions = Array.isArray(q.opts) ? q.opts : [];
+    const originalCorrect = Number.isInteger(q.ans) ? q.ans : 0;
+    const id = \`\${prefix}-\${index}\`;
+
+    // Shuffle source choices deterministically so the correct answer is not always A.
+    // Keep the same order for this question across renders and preserve its answer key.
+    const shuffledOptions = originalOptions.map((text, originalIndex) => ({ text, originalIndex }));
+    let seed = 0;
+    for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
+    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+      seed = (seed * 16807) % 2147483647;
+      const j = Math.floor((seed / 2147483647) * (i + 1));
+      [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+    }
+    const correct = shuffledOptions.findIndex((option) => option.originalIndex === originalCorrect);
+
+    return \`<article class="interactive-question imported-question" data-imported-question="\${escapeHtml(id)}">
+      <p class="question-prompt-text" dir="auto">\${escapeHtml(q.q || 'Choose the correct answer')}</p>
+      <div class="quiz-options">\${shuffledOptions.map((option, oi) => \`<button type="button" class="quiz-option imported-answer" data-question="\${escapeHtml(id)}" data-choice="\${oi}" data-correct="\${correct}"><span class="option-letter">\${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">\${escapeHtml(option.text)}</span></button>\`).join('')}</div>
       <p class="imported-feedback" aria-live="polite"></p>
-    </article>`;
+    </article>\`;
   }).join('');
+
   return `<section class="panel imported-curriculum">
     <div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · SOURCE HTML</p><h2>${escapeHtml(track.name)} · Grade ${grade.grade}</h2></div><span class="book-count">${grade.units.length} units</span></div>
     <p class="unit-source-note">Imported content · needs academic review. Original answer positions are preserved; source page references were not supplied.</p>
