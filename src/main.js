@@ -2063,12 +2063,14 @@ function render() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
-    if (window.history.state?.app === 'englimensh') {
-      window.history.back();
-      return;
+    if (button.dataset.importedBack === 'unit' && state.importedUnitNumber) {
+      state.activeModule = null;
+      window.history.replaceState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
+    } else {
+      state.importedUnitNumber = null;
+      state.activeModule = null;
+      window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
     }
-    if (button.dataset.importedBack === 'unit') state.activeModule = null;
-    else { state.importedUnitNumber = null; state.activeModule = null; }
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
