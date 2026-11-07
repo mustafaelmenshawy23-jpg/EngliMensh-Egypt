@@ -89,3 +89,7 @@ The importer checks the two tracks, six grades per track, all 75 units, 750 voca
 - The app currently uses PDF source-index book IDs for its student workspace. Integration must preserve that pathway and add HTML-source curriculum records with explicit provenance rather than fabricate PDF page numbers.
 - Do not mark the 1,050 imported source questions academically reviewed. Randomize answer option positions at runtime while preserving answer identity, and add a separate, clearly labeled bank of supplementary questions with validated answer keys and meaningful distractors.
 - No production build, test suite, APK, or merge has been claimed for this import branch.
+
+
+## Repository handoff details
+The branch now also contains `imports/README.md`, which documents the exact archive location, and `scripts/import-primary-html-curriculum.mjs` with the npm command `npm run import:primary-html`. The package script has been registered. The importer is designed to preserve source content as supplied, sort unit numbers, validate all MCQ answer indexes, and write the normalized JSON. It has not yet been executed in the repository because the ZIP itself is not yet present under `imports/`.
