@@ -660,8 +660,8 @@ function renderImportedPrimaryCurriculum() {
       && !/أ\. محمد المنشاوي/.test(String(line.speaker || ''));
   });
   const modelDialogue = authenticDialogue.length ? authenticDialogue : [
-    { speaker: 'Teacher', text: 'Can you say a sentence about ' + unit.title + '?' },
-    { speaker: 'Student', text: sourceGrammarExamples[0] || unitWords[0]?.ex || 'I can talk about ' + unit.title + '.' }
+    { speaker: 'Teacher', text: 'What can you say about ' + (unitWords[0]?.en || unit.title) + '?' },
+    { speaker: 'Student', text: unitWords[0]?.ex || sourceGrammarExamples[0] || 'I can talk about ' + unit.title + '.' }
   ];
   const authenticSpeakingQuestions = (unit?.speakingQuestions || []).filter((item) =>
     item.q && !/where does the conversation take place|other topic/i.test(String(item.q) + ' ' + (item.opts || []).join(' '))
@@ -1025,7 +1025,7 @@ function renderGame1Matching() {
       ${isComplete ? `
         <div class="game-victory-card">
           <h3>🎉 Great Job!</h3>
-          <p>You matched all classroom objects and phonics words correctly!</p>
+          <p>You matched all the words from this unit correctly!</p>
           <button type="button" class="game-reset-btn" data-reset-game="1">Play Again</button>
         </div>
       ` : ''}
