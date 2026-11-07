@@ -2742,3 +2742,16 @@ html { scroll-padding-top: 10px; }
 .imported-module-content {
   padding-bottom: max(24px, env(safe-area-inset-bottom));
 }
+
+
+/* Short, reduced-motion-aware transitions for independent lesson screens. */
+.imported-unit-dashboard.route-enter,
+.imported-module-screen.route-enter { animation: importedScreenEnter 180ms ease-out both; }
+@keyframes importedScreenEnter {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .imported-unit-dashboard.route-enter,
+  .imported-module-screen.route-enter { animation: none; }
+}
