@@ -14,6 +14,7 @@ assert(data.tracks.length === 2, 'Both Connect and Connect Plus tracks exist');
 assert(data.tracks.every((track) => track.grades.length === 6), 'Both tracks include all six primary grades');
 assert(!curriculum.stages.find((stage) => stage.id === 'primary').paths.some((path) => /moasser|supplementary/i.test(path.id + ' ' + path.series)), 'Primary curriculum contains only Connect and Connect Plus pathways');
 assert(!curriculum.stages.some((stage) => stage.paths.some((path) => path.sourcePathwayId === 'commercial-reference-guides')), 'Commercial supplementary references are not exposed as a student pathway');
+assert(main.includes("state.stage === 'primary' ? (path.series || path.officialSeries || path.name)"), 'Primary pathway buttons display Connect and Connect Plus rather than internal General/Advanced labels');
 
 let units = 0;
 let questions = 0;
