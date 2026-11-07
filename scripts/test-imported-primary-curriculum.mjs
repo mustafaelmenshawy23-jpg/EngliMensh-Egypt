@@ -2,6 +2,7 @@ import fs from 'node:fs';
 
 const data = JSON.parse(fs.readFileSync('./src/data/curriculum/primary-connect-html-2026-2027.json', 'utf8'));
 const curriculum = JSON.parse(fs.readFileSync('./src/data/curriculum/structure.json', 'utf8'));
+const sourceIndex = JSON.parse(fs.readFileSync('./data/curriculum/source-book-index.draft.json', 'utf8'));
 const main = fs.readFileSync('./src/main.js', 'utf8');
 let passed = 0;
 let failed = 0;
@@ -13,6 +14,8 @@ const assert = (condition, message) => {
 assert(data.tracks.length === 2, 'Both Connect and Connect Plus tracks exist');
 assert(data.tracks.every((track) => track.grades.length === 6), 'Both tracks include all six primary grades');
 assert(!curriculum.stages.find((stage) => stage.id === 'primary').paths.some((path) => /moasser|supplementary/i.test(path.id + ' ' + path.series)), 'Primary curriculum contains only Connect and Connect Plus pathways');
+assert(!sourceIndex.pathways.some((path) => /moasser|commercial-reference-guides/i.test(path.id + ' ' + (path.officialSeries || path.label || ''))), 'Commercial El-Moasser pathway is removed from the app');
+assert(!sourceIndex.books.some((book) => /المعاصر|moasser/i.test((book.sourceFile || '') + ' ' + (book.id || ''))), 'No El-Moasser source books remain in the app library');
 
 let units = 0;
 let questions = 0;
