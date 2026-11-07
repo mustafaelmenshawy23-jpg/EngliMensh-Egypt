@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-07T16:00:00.000Z",
+  "generator": {
+    "provider": "source-grounded-manual-curation",
+    "model": "manual",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary1-student-term1",
+  "sourceFilename": "English_language_prim1_t1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 2,
+  "unitTitle": "The Garden of Colors and Shapes",
+  "sourcePdfRange": {
+    "start": 25,
+    "end": 41
+  },
+  "sourceCoverage": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41
+  ],
+  "qualityScore": null,
+  "qualityReport": {
+    "status": "needs_review",
+    "sourceBasis": "Official student book OCR extraction artifact; verify every item against original PDF page images.",
+    "notes": [
+      "Source items cite exact PDF pages.",
+      "Generated questions are marked supplementary.",
+      "No missing OCR content has been guessed."
+    ]
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "p1u2-voc-1",
+          "content": {
+            "word": "bird",
+            "arabicMeaning": "طائر",
+            "example": "I can see a bird.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-2",
+          "content": {
+            "word": "flower",
+            "arabicMeaning": "زهرة",
+            "example": "I can see a flower.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-3",
+          "content": {
+            "word": "butterfly",
+            "arabicMeaning": "فراشة",
+            "example": "The butterfly is flying.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-4",
+          "content": {
+            "word": "grass",
+            "arabicMeaning": "عشب",
+            "example": "The grass is green.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-5",
+          "content": {
+            "word": "sky",
+            "arabicMeaning": "سماء",
+            "example": "The sky is blue.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-6",
+          "content": {
+            "word": "tree",
+            "arabicMeaning": "شجرة",
+            "example": "I can see a tree.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-7",
+          "content": {
+            "word": "sun",
+            "arabicMeaning": "شمس",
+            "example": "The sun is yellow.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-8",
+          "content": {
+            "word": "green",
+            "arabicMeaning": "أخضر",
+            "example": "The grass is green.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-9",
+          "content": {
+            "word": "blue",
+            "arabicMeaning": "أزرق",
+            "example": "The sky is blue.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-10",
+          "content": {
+            "word": "yellow",
+            "arabicMeaning": "أصفر",
+            "example": "The sun is yellow.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-11",
+          "content": {
+            "word": "red",
+            "arabicMeaning": "أحمر",
+            "example": "The flower is red.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-12",
+          "content": {
+            "word": "triangle",
+            "arabicMeaning": "مثلث",
+            "example": "This is a triangle.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-13",
+          "content": {
+            "word": "circle",
+            "arabicMeaning": "دائرة",
+            "example": "This is a circle.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-14",
+          "content": {
+            "word": "rectangle",
+            "arabicMeaning": "مستطيل",
+            "example": "This is a rectangle.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-15",
+          "content": {
+            "word": "square",
+            "arabicMeaning": "مربع",
+            "example": "This is a square.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-16",
+          "content": {
+            "word": "spoon",
+            "arabicMeaning": "ملعقة",
+            "example": "S is for spoon.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-17",
+          "content": {
+            "word": "snake",
+            "arabicMeaning": "ثعبان",
+            "example": "S is for snake.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-18",
+          "content": {
+            "word": "star",
+            "arabicMeaning": "نجمة",
+            "example": "S is for star.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-19",
+          "content": {
+            "word": "apple",
+            "arabicMeaning": "تفاحة",
+            "example": "A is for apple.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-20",
+          "content": {
+            "word": "arrow",
+            "arabicMeaning": "سهم",
+            "example": "A is for arrow.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-21",
+          "content": {
+            "word": "axe",
+            "arabicMeaning": "فأس",
+            "example": "A is for axe.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-voc-22",
+          "content": {
+            "word": "ant",
+            "arabicMeaning": "نملة",
+            "example": "A is for ant.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "OCR transcription; verify against original PDF scan."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Language Structures",
+      "items": [
+        {
+          "itemId": "p1u2-gr-1",
+          "content": {
+            "rule": "Describing colors",
+            "explanation": "Use The + noun + is + color to describe an object.",
+            "example": "The grass is green. The sky is blue.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "Based on the printed language model; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-gr-2",
+          "content": {
+            "rule": "Naming shapes",
+            "explanation": "Ask What shape is this? Answer This is a + shape.",
+            "example": "What shape is this? This is a circle.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "Based on the printed language model; verify against original PDF scan."
+        },
+        {
+          "itemId": "p1u2-gr-3",
+          "content": {
+            "rule": "Sides of shapes",
+            "explanation": "A rectangle has 4 sides. A triangle has 3 sides.",
+            "example": "The triangle has 3 sides.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "Based on the printed language model; verify against original PDF scan."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading & Dialogue",
+      "items": [
+        {
+          "itemId": "p1u2-rd-1",
+          "content": {
+            "passage": "Maya: Look! The grass is green.\nHana: I can see a flower.\nMaya: Yes, the flower is red. And look at the sky! It’s blue.\nHana: I can see a tree.\nMaya: Me too! Oh, look! A butterfly! The butterfly is flying near the tree!\nHana: And I see a little bird in the tree!",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "origin": "source",
+          "notes": "Transcribed from the unit dialogue; verify against original PDF scan."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "p1u2-vq-1",
+          "content": {
+            "question": "What color is the grass?",
+            "options": [
+              "green",
+              "red",
+              "yellow"
+            ],
+            "correctAnswer": "green",
+            "reason": "The source says the grass is green.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary question based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-vq-2",
+          "content": {
+            "question": "What color is the flower?",
+            "options": [
+              "red",
+              "blue",
+              "green"
+            ],
+            "correctAnswer": "red",
+            "reason": "The source says the flower is red.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary question based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-vq-3",
+          "content": {
+            "question": "Which thing is flying near the tree?",
+            "options": [
+              "butterfly",
+              "bird",
+              "ant"
+            ],
+            "correctAnswer": "butterfly",
+            "reason": "The dialogue says the butterfly is flying near the tree.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary question based only on unit source content."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "p1u2-gq-1",
+          "content": {
+            "question": "A triangle has how many sides?",
+            "options": [
+              "3",
+              "4",
+              "1"
+            ],
+            "correctAnswer": "3",
+            "reason": "The source states a triangle has 3 sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary question based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-gq-2",
+          "content": {
+            "question": "The rectangle has how many sides?",
+            "options": [
+              "4",
+              "3",
+              "1"
+            ],
+            "correctAnswer": "4",
+            "reason": "The source states a rectangle has 4 sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary question based only on unit source content."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Assessment",
+      "items": [
+        {
+          "itemId": "p1u2-test-1",
+          "content": {
+            "question": "What color is the grass?",
+            "options": [
+              "green",
+              "red",
+              "yellow"
+            ],
+            "correctAnswer": "green",
+            "reason": "The source says the grass is green.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-test-2",
+          "content": {
+            "question": "What color is the flower?",
+            "options": [
+              "red",
+              "blue",
+              "green"
+            ],
+            "correctAnswer": "red",
+            "reason": "The source says the flower is red.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-test-3",
+          "content": {
+            "question": "Which thing is flying near the tree?",
+            "options": [
+              "butterfly",
+              "bird",
+              "ant"
+            ],
+            "correctAnswer": "butterfly",
+            "reason": "The dialogue says the butterfly is flying near the tree.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-test-4",
+          "content": {
+            "question": "A triangle has how many sides?",
+            "options": [
+              "3",
+              "4",
+              "1"
+            ],
+            "correctAnswer": "3",
+            "reason": "The source states a triangle has 3 sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-test-5",
+          "content": {
+            "question": "The rectangle has how many sides?",
+            "options": [
+              "4",
+              "3",
+              "1"
+            ],
+            "correctAnswer": "4",
+            "reason": "The source states a rectangle has 4 sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        },
+        {
+          "itemId": "p1u2-test-6",
+          "content": {
+            "question": "Which word begins with A?",
+            "options": [
+              "apple",
+              "snake",
+              "spoon"
+            ],
+            "correctAnswer": "apple",
+            "reason": "Apple is listed in the A phonics lesson.",
+            "origin": "supplementary",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "origin": "supplementary",
+          "notes": "Supplementary assessment item based only on unit source content."
+        }
+      ]
+    }
+  ]
+}
