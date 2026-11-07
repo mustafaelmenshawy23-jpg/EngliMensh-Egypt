@@ -2717,3 +2717,21 @@ button:disabled{opacity:.55;cursor:not-allowed}
   .imported-unit-dashboard,
   .imported-module-screen { animation: none; }
 }
+
+
+/* Clearer grammar lesson hierarchy on small screens. */
+.grammar-lesson-card > p { line-height: 1.75; }
+.grammar-lesson-card h3 { margin-bottom: 10px; }
+.grammar-lesson-card h4 { margin: 18px 0 8px; color: var(--brand-navy, #102c4c); }
+.grammar-formula {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+  padding: 13px 15px;
+  border-left: 4px solid var(--brand-teal, #16b8b0);
+  border-radius: 10px;
+  background: #effcfb;
+}
+.grammar-formula strong { color: #0d7f79; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.grammar-formula span { color: #102c4c; font-weight: 800; line-height: 1.55; }
+.grammar-tip { padding: 10px 12px; border-radius: 10px; background: #f6f8fc; }
