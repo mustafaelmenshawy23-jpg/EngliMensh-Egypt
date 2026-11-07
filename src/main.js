@@ -283,7 +283,7 @@ function bookUrl(file, page) {
 
 function explainGrammarRule(rule, examples = []) {
   const text = String(rule || '').toLowerCase();
-  const exampleList = examples.slice(0, 3);
+  const exampleList = examples.filter((item) => !/(key pattern|verification|correct structure|incorrect syntax)/i.test(String(item))).slice(0, 3);
   let title = 'Understand the pattern';
   let explanation = 'Read the pattern, then notice how the words work together in each example.';
   let formula = rule || 'Grammar pattern';
@@ -305,9 +305,10 @@ function explainGrammarRule(rule, examples = []) {
     tip = 'a banana, a university, an apple, an orange.';
   } else if (/in vs on|prepositions of place/.test(text)) {
     title = 'Describing place';
-    explanation = 'A preposition tells us where something is. “In” often means inside; “on” means touching a surface. Other place words describe position in relation to something else.';
-    formula = 'person / thing + be + preposition + place';
-    tip = 'The book is in the bag. / The pencil is on the desk.';
+    explanation = 'A preposition tells us where something is. “Next to” means beside something; “behind” means at the back of something. “In” means inside, while “on” means touching a surface. Put the preposition before the place or object it describes.';
+    formula = 'subject + am / is / are + preposition + place';
+    tip = 'The bakery is next to the school. / The park is behind the supermarket.';
+    exampleList.splice(0, exampleList.length, 'The bakery is next to the school.', 'The park is behind the supermarket.', 'The book is in the bag.');
   } else if (/ability|can \+|modal verbs: can|could \/ couldn't/.test(text)) {
     title = 'Talking about ability';
     explanation = 'Use “can” before the base form of a verb to say what someone is able to do. The verb after can does not take -s or -ing.';
@@ -395,9 +396,10 @@ function explainGrammarRule(rule, examples = []) {
     tip = 'I’ll answer the phone. / Look at those clouds! It is going to rain.';
   } else if (/has got|have got/.test(text)) {
     title = 'Talking about possession';
-    explanation = 'Use “has got” with he, she or it. Use “have got” with I, you, we or they.';
-    formula = 'He / She / It has got · I / You / We / They have got';
-    tip = 'She has got a sister. / They have got two bags.';
+    explanation = 'Use “have got” with I, you, we and they, but “has got” with he, she and it. The form stays the same before the thing someone owns. In negatives, use “haven’t got” or “hasn’t got”. In questions, move “have” or “has” before the subject.';
+    formula = 'I / You / We / They have got + noun · He / She / It has got + noun';
+    tip = 'I have got a new bag. / She has got curly hair. / Have they got a cousin?';
+    exampleList.splice(0, exampleList.length, 'I have got a new bag.', 'She has got curly hair.', 'Have they got a cousin?');
   } else if (/like \+ verb-ing/.test(text)) {
     title = 'Talking about likes';
     explanation = 'When an action follows “like”, use the -ing form of the verb.';
