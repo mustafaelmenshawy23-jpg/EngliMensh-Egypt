@@ -289,7 +289,25 @@ function explainGrammarRule(rule, examples = []) {
   let explanation = 'Read the pattern, then notice how the words work together in each example.';
   let formula = rule || 'Grammar pattern';
   let tip = 'Say each example aloud, then change one word and make a new sentence.';
-  if (/questions: is there/.test(text)) {
+  if (/expressing feelings|i feel \+ adjective/.test(text)) {
+    title = 'Talking about feelings';
+    explanation = 'Use “feel” before an adjective to describe an emotion or condition. After “I”, use “feel”; after he or she, use “feels”. Ask “How do you feel?” when you want to know someone’s emotion.';
+    formula = 'I / You / We / They feel + adjective · He / She feels + adjective';
+    tip = 'I feel happy. / She feels excited. / How do you feel?';
+    exampleList.splice(0, exampleList.length, 'I feel happy.', 'She feels excited.', 'How do you feel?');
+  } else if (/expressing illness|i have a \+ illness/.test(text)) {
+    title = 'Talking about illness';
+    explanation = 'Use “have” or “has” with an illness. Use “have” with I, you, we and they; use “has” with he, she and it. Many common illnesses take “a” before the noun.';
+    formula = 'I / You / We / They have a + illness · He / She has a + illness';
+    tip = 'I have a cold. / She has a headache.';
+    exampleList.splice(0, exampleList.length, 'I have a cold.', 'She has a headache.');
+  } else if (/giving directions/.test(text)) {
+    title = 'Giving directions';
+    explanation = 'Start a direction with the base form of the verb. Use direction phrases such as “go straight”, “turn right” and “turn left” to explain the route.';
+    formula = 'Go / Turn + direction';
+    tip = 'Go straight. / Turn right at the traffic lights. / Turn left at the next street.';
+    exampleList.splice(0, exampleList.length, 'Go straight.', 'Turn right at the traffic lights.', 'Turn left at the next street.');
+  } else if (/questions: is there/.test(text)) {
     title = 'Asking about things that exist';
     explanation = 'Use “Is there …?” to ask about one thing. Use “Are there …?” to ask about more than one. In short answers, repeat the verb: “Yes, there is” or “No, there aren’t.”';
     formula = 'Is there + a / an + singular noun? · Are there + plural noun?';
