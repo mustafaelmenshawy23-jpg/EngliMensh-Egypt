@@ -44,6 +44,13 @@ for (const track of data.tracks) {
           }
           const correctOption = q.opts[q.ans];
           const distractors = q.opts.filter((_, originalIndex) => originalIndex !== q.ans);
+          const arabicOptions = q.opts.some((option) => /[\\u0600-\\u06FF]/.test(String(option)));
+          const candidates = unit.vocabulary.map((word) => arabicOptions ? word.ar : word.en);
+          for (const candidate of candidates) {
+            if (distractors.length >= 3) break;
+            if (candidate && candidate !== correctOption && !distractors.includes(candidate)) distractors.push(candidate);
+          }
+          while (distractors.length < 3) distractors.push('extra distractor ' + distractors.length);
           let seed = 0;
           for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
           for (let i = distractors.length - 1; i > 0; i--) {
@@ -51,10 +58,10 @@ for (const track of data.tracks) {
             const j = Math.floor((seed / 2147483647) * (i + 1));
             [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
           }
-          const correct = index % Math.max(1, q.opts.length);
+          const correct = index % 4;
           const shuffled = [...distractors];
           shuffled.splice(correct, 0, correctOption);
-          if (correct < 0 || shuffled[correct] !== q.opts[q.ans]) invalid++;
+          if (correct < 0 || correct > 3 || shuffled[correct] !== q.opts[q.ans] || shuffled.length !== 4) invalid++;
           if (correct >= 0 && correct < answerPositions.length) answerPositions[correct]++;
           questions++;
         }
@@ -65,7 +72,7 @@ for (const track of data.tracks) {
 assert(units === 75, 'Exactly 75 source units are imported');
 assert(questions === 1050, 'All 1,050 source questions are included');
 assert(invalid === 0, 'Question IDs and all answer keys remain valid after shuffling');
-assert(answerPositions.filter((count) => count > 0).length >= 3, 'Correct answers are distributed across at least three option positions');
+assert(answerPositions.every((count) => count > 0), 'Correct answers are distributed across all four option positions');
 assert(main.includes('data-imported-unit') && main.includes('data-imported-section'), 'Imported curriculum has separate unit and section navigation screens');
 assert(main.includes('data-imported-back="unit"') && main.includes('data-imported-back="grade"'), 'Imported unit and section screens have back navigation');
 assert(!main.includes('<details class="imported-unit-card">'), 'Imported units are not rendered as a long expandable list');
