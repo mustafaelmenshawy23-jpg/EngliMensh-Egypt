@@ -297,12 +297,13 @@ function renderImportedPrimaryCurriculum() {
     }
     return [answer, ...distractors];
   };
-  const makeCloze = (sentence, index, prefix) => {
+  const makeCloze = (sentence, index, prefix, targetOverride = null) => {
     const tokens = String(sentence || '').match(/[A-Za-z][A-Za-z']*/g) || [];
     if (!tokens.length) return null;
-    const targetWord = tokens[Math.min(tokens.length - 1, Math.max(0, Math.floor(tokens.length / 2)))];
-    const prompt = String(sentence).replace(new RegExp(targetWord.replace(/[.*+?^$()|[\]\\]/g, '\\  const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
-  const modules = ['), 'i'), '____');
+    const targetWord = targetOverride || tokens[Math.min(tokens.length - 1, Math.max(0, Math.floor(tokens.length / 2)))];
+    const rawSentence = String(sentence);
+    const targetAt = rawSentence.toLowerCase().indexOf(String(targetWord).toLowerCase());
+    const prompt = targetAt >= 0 ? rawSentence.slice(0, targetAt) + '____' + rawSentence.slice(targetAt + String(targetWord).length) : rawSentence;
     return { q: prefix + prompt, opts: choiceOptions(targetWord, index), ans: 0 };
   };
   const grammarPractice = [...(unit?.grammar?.quiz || [])];
@@ -310,14 +311,14 @@ function renderImportedPrimaryCurriculum() {
     const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
     if (question) grammarPractice.push(question);
   });
-  const readingSentences = String(unit?.readingText || '').split(/(?<=[.!?])\\s+/).filter(Boolean);
+  const readingSentences = String(unit?.readingText || '').split(/(?<=[.!?])\s+/).filter(Boolean);
   const readingPractice = [];
   const readingTargets = unitWords.map((item) => item.en).filter((word) => word && String(unit?.readingText || '').toLowerCase().includes(word.toLowerCase()));
   const passageWords = (String(unit?.readingText || '').match(/[A-Za-z][A-Za-z']*/g) || []).filter((word, index, all) => all.findIndex((x) => x.toLowerCase() === word.toLowerCase()) === index);
   const readingPool = [...readingTargets, ...passageWords.filter((word) => !readingTargets.some((x) => x.toLowerCase() === word.toLowerCase()))].slice(0, 5);
   readingPool.forEach((word, index) => {
     const sentence = readingSentences.find((line) => line.toLowerCase().includes(word.toLowerCase())) || unit.readingText || '';
-    const question = makeCloze(sentence, index, 'Complete the reading sentence: ');
+    const question = makeCloze(sentence, index, 'Complete the reading sentence: ', word);
     if (question) readingPractice.push(question);
   });
   const listeningPractice = unitWords.slice(0, 5).map((word, index) => ({
@@ -344,7 +345,7 @@ function renderImportedPrimaryCurriculum() {
     { id: 'listening', title: 'Listening Practice', subtitle: '5 listen-and-choose questions', icon: '🎧', count: listeningPractice.length },
     { id: 'games', title: 'Word Games', subtitle: '4 interactive games using unit words', icon: '🎮', count: 4 },
     { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Check your new words', icon: '🧠', count: (unit?.vocabularyQuestions || []).length },
-    { id: 'tests', title: 'Unit Tests', subtitle: 'Speaking and final exam', icon: '📝', count: (unit?.examQuestions || []).length + (unit?.speakingQuestions || []).length }
+    { id: 'tests', title: 'Unit Tests', subtitle: '10 mixed review questions', icon: '📝', count: unitTestQuestions.length }
   ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
     const opts = Array.isArray(q.opts) ? q.opts : [];
