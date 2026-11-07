@@ -16,7 +16,7 @@ on:
       gemini_model:
         description: Gemini model
         required: true
-        default: gemini-3.8-flash
+        default: gemini-4-argon
         type: string
 
 permissions:
