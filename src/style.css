@@ -2686,3 +2686,34 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .imported-phonics-word:active { transform: scale(.98); }
 .imported-question-audio { margin-bottom: 8px; }
 .imported-reading-text + .big-audio-btn { margin-top: 12px; }
+
+
+/* Screen-based primary learning flow: one focused screen at a time. */
+[hidden] { display: none !important; }
+.selection-panel { scroll-margin-top: 12px; }
+.imported-unit-dashboard,
+.imported-module-screen {
+  animation: importedScreenEnter .2s ease-out both;
+  min-height: calc(100dvh - 108px);
+}
+@keyframes importedScreenEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.imported-back-button {
+  min-height: 44px;
+  margin-bottom: 14px;
+  padding: 10px 15px;
+  touch-action: manipulation;
+}
+.imported-section-grid .unit-section-card,
+.imported-unit-button,
+.quiz-option,
+.matching-card {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  .imported-unit-dashboard,
+  .imported-module-screen { animation: none; }
+}
