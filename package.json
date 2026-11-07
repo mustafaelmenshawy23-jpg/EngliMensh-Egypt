@@ -23,7 +23,8 @@
     "validate:lesson-content": "node scripts/validate-lesson-content.mjs",
     "validate:unit-modules": "node scripts/validate-unit-modules.mjs",
     "generate:unit": "node scripts/generate-interactive-unit.mjs",
-    "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs"
+    "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs",
+    "import:primary-html": "node scripts/import-primary-html-curriculum.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
