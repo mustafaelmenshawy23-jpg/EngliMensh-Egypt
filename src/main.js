@@ -478,7 +478,7 @@ function renderImportedPrimaryCurriculum() {
   if (!grade) return '';
   const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
   const unitWords = unit?.vocabulary || [];
-  const choiceOptions = (answer, index = 0, limit = 3) => {
+  const choiceOptions = (answer, index = 0, limit = 4) => {
     const pool = unitWords.map((item) => item.en).filter((word) => word && word.toLowerCase() !== String(answer).toLowerCase());
     const distractors = [];
     for (let step = 0; step < pool.length && distractors.length < limit - 1; step++) {
@@ -651,9 +651,21 @@ function renderImportedPrimaryCurriculum() {
     ans: 0
   }));
   const speakingPrompts = unitWords.slice(0, 10).map((word, index) => ({
-    prompt: index % 2 === 0 ? 'Say this word clearly:' : 'Make a sentence using this word:',
+    prompt: index % 2 === 0 ? 'Say the word clearly:' : 'Use the word in a complete sentence:',
     target: index % 2 === 0 ? word.en : (word.ex || word.en)
   }));
+  const authenticDialogue = (unit?.dialogue || []).filter((line) => {
+    const text = String(line.text || '');
+    return text && !/welcome class! today we explore|welcome to unit \\d+:|ministerial exercises|ready to learn and pronounce clearly|\\.\\.\\./i.test(text)
+      && !/أ\\. محمد المنشاوي/.test(String(line.speaker || ''));
+  });
+  const modelDialogue = authenticDialogue.length ? authenticDialogue : [
+    { speaker: 'Teacher', text: 'Can you say a sentence about ' + unit.title + '?' },
+    { speaker: 'Student', text: sourceGrammarExamples[0] || unitWords[0]?.ex || 'I can talk about ' + unit.title + '.' }
+  ];
+  const authenticSpeakingQuestions = (unit?.speakingQuestions || []).filter((item) =>
+    item.q && !/where does the conversation take place|other topic/i.test(String(item.q) + ' ' + (item.opts || []).join(' '))
+  );
   const vocabularySupplementary = unitWords.flatMap((word, index) => {
     const arabicOptions = [word.ar, ...unitWords
       .filter((item) => item.en !== word.en && item.ar)
@@ -690,12 +702,28 @@ function renderImportedPrimaryCurriculum() {
     { title: 'Check your progress', subtitle: 'Review what you have learned in this unit.', items: modules.filter((item) => item.id === 'tests') }
   ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
-    const opts = Array.isArray(q.opts) ? q.opts : [];
+    const sourceOptions = Array.isArray(q.opts) ? q.opts : [];
     const answer = Number.isInteger(q.ans) ? q.ans : 0;
     const id = prefix + '-' + index;
     const optionText = (option) => typeof option === 'string' ? option : String(option?.text ?? option?.label ?? option?.value ?? '');
-    const correctOption = opts[answer];
-    const distractors = opts.filter((_, originalIndex) => originalIndex !== answer);
+    const correctOption = sourceOptions[answer];
+    const opts = [...sourceOptions.filter((_, originalIndex) => originalIndex !== answer)];
+    const isArabicOptions = sourceOptions.some((option) => /[\\u0600-\\u06FF]/.test(optionText(option)));
+    const grammarCandidates = grammarDistractors[String(correctOption || '').toLowerCase()] || [];
+    const extraCandidates = /-r-/.test(prefix)
+      ? grammarCandidates
+      : unitWords.map((word) => isArabicOptions ? word.ar : word.en);
+    for (const candidate of extraCandidates) {
+      if (opts.length >= 3) break;
+      if (candidate && optionText(candidate) !== optionText(correctOption) && !opts.some((item) => optionText(item) === optionText(candidate))) opts.push(candidate);
+    }
+    if (opts.length < 3) {
+      const safeFallbacks = isArabicOptions ? ['إجابة أخرى', 'كلمة أخرى'] : ['another', 'different'];
+      for (const candidate of safeFallbacks) {
+        if (opts.length >= 3) break;
+        if (!opts.some((item) => optionText(item) === candidate) && optionText(correctOption) !== candidate) opts.push(candidate);
+      }
+    }
     let seed = 0;
     for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
     for (let i = distractors.length - 1; i > 0; i--) {
@@ -703,7 +731,7 @@ function renderImportedPrimaryCurriculum() {
       const j = Math.floor((seed / 2147483647) * (i + 1));
       [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
     }
-    const correctPosition = index % Math.max(1, opts.length);
+    const correctPosition = index % 4;
     const shuffled = [...distractors];
     shuffled.splice(correctPosition, 0, correctOption);
     const correct = correctPosition;
@@ -731,7 +759,7 @@ function renderImportedPrimaryCurriculum() {
       case 'grammar': body = '<article class="imported-section-card grammar-lesson-card"><p class="eyebrow">GRAMMAR GUIDE</p><h3>' + escapeHtml(grammarLesson.title) + '</h3><p>' + escapeHtml(grammarLesson.explanation) + '</p><div class="grammar-formula"><strong>Pattern</strong><span>' + escapeHtml(grammarLesson.formula) + '</span></div><p class="grammar-tip"><strong>Remember:</strong> ' + escapeHtml(grammarLesson.tip) + '</p><h4>Examples</h4><ul>' + grammarLesson.examples.map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul><p class="unit-source-note">The guide is a simplified learning explanation based on this unit’s grammar heading and examples.</p></article><h3 class="module-subheading">Grammar practice · ' + grammarPractice.length + ' questions</h3>' + renderQuestions(grammarPractice, prefix + '-r'); break;
       case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><p class="unit-source-note">Listen to each sound and repeat it aloud.</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<button type="button" class="imported-phonics-word" data-tts-text="' + escapeHtml(w) + '">🔊 ' + escapeHtml(w) + '</button>').join('') + '</div></article>'; break;
       case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article><h3 class="module-subheading">Reading comprehension · 5 activities</h3><p class="unit-source-note">Supplementary sentence-completion practice generated from the passage text.</p>' + renderQuestions(readingPractice, prefix + '-read'); break;
-      case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<div class="imported-speaking-prompts">' + speakingPrompts.map((item) => '<article class="imported-section-card"><strong>' + escapeHtml(item.prompt) + '</strong><p dir="ltr">' + escapeHtml(item.target) + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(item.target) + '">🔊 Hear a model</button></article>').join('') + '</div>'; break;
+      case 'dialogue': body = '<p class="unit-source-note">Model conversation and speaking prompts for extra practice, based on this unit’s examples.</p><div class="imported-dialogue">' + modelDialogue.map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(authenticSpeakingQuestions, prefix + '-s') + '<div class="imported-speaking-prompts">' + speakingPrompts.map((item) => '<article class="imported-section-card"><strong>' + escapeHtml(item.prompt) + '</strong><p dir="ltr">' + escapeHtml(item.target) + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(item.target) + '">🔊 Hear a model</button></article>').join('') + '</div>'; break;
       case 'listening': body = '<p class="unit-source-note">Listen to each word, then choose the word you heard.</p>' + renderQuestions(listeningPractice, prefix + '-listen'); break;
       case 'games': body = renderGames(); break;
       case 'vocabulary-practice': body = '<h3 class="module-subheading">Textbook-source questions</h3>' + renderQuestions(unit.vocabularyQuestions, prefix + '-v') + '<h3 class="module-subheading">Extra meaning practice</h3><p class="unit-source-note">Extra questions generated from this unit’s vocabulary list.</p>' + renderQuestions(vocabularySupplementary, prefix + '-vs'); break;
