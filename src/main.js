@@ -2077,11 +2077,6 @@ function render() {
   }));
   app.querySelector('[data-home]')?.addEventListener('click', (event) => {
     event.preventDefault();
-    const stepsBack = state.activeModule ? 2 : state.importedUnitNumber ? 1 : 0;
-    if (stepsBack && window.history.state?.app === 'englimensh') {
-      window.history.go(-stepsBack);
-      return;
-    }
     state.importedUnitNumber = null;
     state.activeModule = null;
     window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
