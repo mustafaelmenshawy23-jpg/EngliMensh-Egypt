@@ -608,10 +608,10 @@ function renderImportedPrimaryCurriculum() {
       case 'tests': body = '<h3 class="module-subheading">Unit assessment · ' + unitTestQuestions.length + ' questions</h3><p class="unit-source-note">A mixed review using vocabulary, grammar, reading, listening and the supplied exam questions. Extra generated items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
     }
     const active = modules.find((item) => item.id === state.activeModule);
-    return '<section class="panel imported-curriculum imported-module-screen ${state._routeChanged ? "route-enter" : ""}"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
+    return '<section class="panel imported-curriculum imported-module-screen ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
   }
   if (unit) {
-    return '<section class="panel imported-curriculum imported-unit-dashboard ${state._routeChanged ? "route-enter" : ""}"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-section-grid">' +
+    return '<section class="panel imported-curriculum imported-unit-dashboard ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-section-grid">' +
       modules.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>';
   }
   return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
@@ -2061,14 +2061,12 @@ function render() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
-    if (button.dataset.importedBack === 'unit' && state.importedUnitNumber) {
-      state.activeModule = null;
-      window.history.replaceState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
-    } else {
-      state.importedUnitNumber = null;
-      state.activeModule = null;
-      window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
+    if (window.history.state?.app === 'englimensh') {
+      window.history.back();
+      return;
     }
+    if (button.dataset.importedBack === 'unit') state.activeModule = null;
+    else { state.importedUnitNumber = null; state.activeModule = null; }
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
