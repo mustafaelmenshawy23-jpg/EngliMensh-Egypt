@@ -76,7 +76,7 @@ assert(main.includes('const grammarPractice') && main.includes('const readingPra
 assert(main.includes('const unitTestQuestions') && main.includes('unitTestQuestions.length') && main.includes('Up to 24 mixed review questions'), 'Imported units provide an expanded mixed assessment of up to 24 questions');
 assert(main.includes('function explainGrammarRule') && main.includes('grammar-formula'), 'Grammar screens include a clear explanation, pattern, examples and study tip');
 assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
-assert(main.includes('const arabicOnly =') && main.includes('label: arabicOnly || rawMeaning'), 'Matching-game clue side strips any repeated English answer from the Arabic meaning');
+assert(main.includes('const arabicOnly =') && main.includes("label: arabicOnly || 'معنى غير متاح'"), 'Matching-game clue side strips any repeated English answer from the Arabic meaning');
 assert(main.includes('correctPosition = index % Math.max(1, opts.length)'), 'Correct answer positions rotate evenly within each question group');
 assert(main.includes('grammarQuestionSets') && main.includes('verification|application check|key pattern'), 'Placeholder grammar checks are filtered and replaced with rule-based practice');
 assert(main.includes('unitWords.flatMap') && main.includes('What does'), 'Vocabulary practice mixes English prompts with Arabic meaning choices');
