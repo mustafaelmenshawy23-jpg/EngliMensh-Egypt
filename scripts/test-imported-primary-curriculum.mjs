@@ -77,6 +77,10 @@ assert(main.includes('function explainGrammarRule') && main.includes('grammar-fo
 assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
 assert(main.includes('label: String(item.ar).trim()') && !main.includes("label: item.en + ' (' + item.ar + ')'"), 'Matching-game clue side shows Arabic meaning without revealing the English answer');
 assert(main.includes('correctPosition = index % Math.max(1, opts.length)'), 'Correct answer positions rotate evenly within each question group');
+assert(main.includes('grammarQuestionSets') && main.includes('verification|application check|key pattern'), 'Placeholder grammar checks are filtered and replaced with rule-based practice');
+assert(main.includes('unitWords.flatMap') && main.includes('What does'), 'Vocabulary practice mixes English prompts with Arabic meaning choices');
+assert(main.includes('navigationEpoch') && main.includes('state._renderViewKey') && main.includes('route-enter'), 'Lesson navigation guards stale history and preserves scroll between interactions');
+assert(!main.includes('window.history.back();') && !main.includes('window.history.go(-stepsBack)'), 'In-app navigation avoids unpredictable history jumps');
 assert(main.includes('Choose the correct meaning of') && main.includes('meaningMatch'), 'Arabic vocabulary stems are rewritten as English prompts while Arabic meanings remain in the choices');
 assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
 for (const track of data.tracks) {
