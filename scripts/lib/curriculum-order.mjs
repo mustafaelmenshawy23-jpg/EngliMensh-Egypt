@@ -1,13 +1,13 @@
 const stageRank = (grade = "") => {
-  if (/^primary\\s/i.test(grade)) return 0;
-  if (/^preparatory\\s/i.test(grade)) return 1;
-  if (/^secondary\\s/i.test(grade)) return 2;
-  if (/^baccalaureate\\s/i.test(grade)) return 3;
+  if (/^primary\s/i.test(grade)) return 0;
+  if (/^preparatory\s/i.test(grade)) return 1;
+  if (/^secondary\s/i.test(grade)) return 2;
+  if (/^baccalaureate\s/i.test(grade)) return 3;
   return 4;
 };
 
 const gradeNumber = (grade = "") => {
-  const match = String(grade).match(/\\d+/);
+  const match = String(grade).match(/\d+/);
   return match ? Number(match[0]) : 99;
 };
 
