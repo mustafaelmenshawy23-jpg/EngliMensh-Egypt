@@ -288,7 +288,7 @@ function explainGrammarRule(rule, examples = []) {
   let explanation = 'Read the pattern, then notice how the words work together in each example.';
   let formula = rule || 'Grammar pattern';
   let tip = 'Say each example aloud, then change one word and make a new sentence.';
-  if (/this is my|introducing people|demonstrative/.test(text)) {
+  if (/this is my|introducing people/.test(text)) {
     title = 'Talking about one person or thing';
     explanation = 'Use “This is my …” to introduce one person or one thing. “This” points to one thing, “is” is the verb, and “my” shows that it belongs to you.';
     formula = 'This is my + one person or thing';
@@ -318,6 +318,76 @@ function explainGrammarRule(rule, examples = []) {
     explanation = 'Use “There is” with one thing and “There are” with more than one thing.';
     formula = 'There is + singular noun · There are + plural noun';
     tip = 'There is a book. / There are two books.';
+  } else if (/demonstratives|this \/ that \/ these \/ those/.test(text)) {
+    title = 'Choosing this, that, these or those';
+    explanation = 'Use “this” for one thing near you, “that” for one thing farther away, “these” for more than one thing near you, and “those” for more than one thing farther away.';
+    formula = 'this = one near · that = one far · these = many near · those = many far';
+    tip = 'This is my pen. / Those are my books.';
+  } else if (/past continuous|past simple vs past continuous/.test(text)) {
+    title = 'Describing an action in progress in the past';
+    explanation = 'Use the past continuous for an action that was happening at a particular time. Use the past simple for a shorter finished action that happened during it.';
+    formula = 'was / were + verb-ing · past simple for the interrupting action';
+    tip = 'I was reading when the phone rang. / While they were playing, it started to rain.';
+  } else if (/passive voice/.test(text)) {
+    title = 'Using the passive voice';
+    explanation = 'Use the passive when the action or its result is more important than the person who does it. Make the object the subject, then use the correct form of “be” and the past participle.';
+    formula = 'subject + be + past participle';
+    tip = 'People grow rice. → Rice is grown. / The team built the bridge. → The bridge was built.';
+  } else if (/relative pronouns|relative clauses/.test(text)) {
+    title = 'Joining ideas with relative clauses';
+    explanation = 'A relative clause gives more information about a person, thing or place. Use “who” for people, “which” for things and “where” for places. “Whose” shows possession.';
+    formula = 'person + who · thing + which · place + where · possession + whose';
+    tip = 'A doctor is a person who helps sick people. / This is the town where I live.';
+  } else if (/reported speech/.test(text)) {
+    title = 'Reporting what someone said';
+    explanation = 'Reported speech tells us what a person said without repeating the exact words. The tense and pronouns may change to match the reporting sentence.';
+    formula = 'said (that) + reported message';
+    tip = '“I am tired,” Ali said. → Ali said that he was tired.';
+  } else if (/quantifiers|some in affirmative|some.*any/.test(text)) {
+    title = 'Choosing some or any';
+    explanation = 'Use “some” most often in positive sentences and offers or requests. Use “any” most often in questions and negative sentences.';
+    formula = 'some + plural / uncountable noun · any in questions and negatives';
+    tip = 'There are some apples. / Are there any apples? / There isn’t any milk.';
+  } else if (/adverbs of frequency/.test(text)) {
+    title = 'Saying how often something happens';
+    explanation = 'Adverbs of frequency tell us how often we do something. They usually come before the main verb, but after the verb “be”.';
+    formula = 'subject + always / usually / often / sometimes / never + main verb';
+    tip = 'I usually walk to school. / She is always kind.';
+  } else if (/apostrophe|possession with/.test(text)) {
+    title = 'Showing ownership with ’s';
+    explanation = 'Add ’s to a singular owner to show that something belongs to that person. For a regular plural noun ending in s, add only an apostrophe.';
+    formula = 'one owner + ’s + thing · plural owner ending in s + ’';
+    tip = 'Mona’s bag / the students’ books.';
+  } else if (/adjective ordering/.test(text)) {
+    title = 'Putting adjectives in order';
+    explanation = 'When several adjectives come before a noun, they usually follow a natural order. Opinion comes before size, age, shape, colour, origin, material and purpose.';
+    formula = 'opinion → size → age → shape → colour → origin → material → noun';
+    tip = 'a lovely small old wooden box.';
+  } else if (/conjunctions|and vs but/.test(text)) {
+    title = 'Joining ideas with and or but';
+    explanation = 'Use “and” to add similar information. Use “but” to join two ideas that contrast or are different.';
+    formula = 'idea 1 + and / but + idea 2';
+    tip = 'I like apples and bananas. / I like tea, but I don’t like coffee.';
+  } else if (/adverbs of degree/.test(text)) {
+    title = 'Making adjectives stronger or softer';
+    explanation = 'Adverbs of degree tell us how strong an adjective or action is. “Very” and “extremely” make the meaning stronger; “quite” can make it less strong.';
+    formula = 'adverb of degree + adjective';
+    tip = 'The water is very cold. / The test was quite easy.';
+  } else if (/prepositions of movement/.test(text)) {
+    title = 'Describing movement';
+    explanation = 'Prepositions of movement show the direction or path of movement from one place to another.';
+    formula = 'movement verb + preposition + destination';
+    tip = 'Walk across the road. / The cat jumped onto the chair.';
+  } else if (/modal verbs of possibility|modals of deduction/.test(text)) {
+    title = 'Expressing possibility and deduction';
+    explanation = 'Use “may”, “might” or “could” when something is possible but not certain. Use “must” for a strong logical conclusion and “can’t” when something seems impossible.';
+    formula = 'modal verb + base verb';
+    tip = 'It might rain. / She must be at home. / That can’t be true.';
+  } else if (/will & going to|future with will/.test(text)) {
+    title = 'Choosing will or going to';
+    explanation = 'Use “will” for a decision made now or a prediction. Use “be going to” for a plan already made or a prediction based on what you can see.';
+    formula = 'will + base verb · am / is / are going to + base verb';
+    tip = 'I’ll answer the phone. / Look at those clouds! It is going to rain.';
   } else if (/has got|have got/.test(text)) {
     title = 'Talking about possession';
     explanation = 'Use “has got” with he, she or it. Use “have got” with I, you, we or they.';
