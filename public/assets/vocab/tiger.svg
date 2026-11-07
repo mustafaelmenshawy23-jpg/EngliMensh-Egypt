@@ -1,6 +1,28 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M25 30c0-15 15-20 25-20s25 5 25 20v40c0 10-10 15-25 15s-25-5-25-15z" fill="#FFA500" stroke="#102C4C" stroke-width="3"/>
-  <path d="M30 45h40M30 65h40" stroke="#102C4C" stroke-width="3"/>
-  <path d="M35 30l10 10M65 30l-10 10" stroke="#102C4C" stroke-width="3"/>
-  <path d="M30 75l10 10M70 75l-10 10" stroke="#102C4C" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-labelledby="title desc">
+  <title id="title">Tiger</title>
+  <desc id="desc">A full-body orange tiger with black stripes, four legs, a tail, and a recognizable tiger face.</desc>
+  <defs>
+    <clipPath id="bodyClip"><path d="M34 55c5-17 22-27 48-27 23 0 39 9 46 25l-5 27c-8 11-25 16-48 16-24 0-41-8-48-22z"/></clipPath>
+  </defs>
+  <!-- curved tail -->
+  <path d="M39 75C20 82 13 99 22 108c7 7 18 2 18-6" fill="none" stroke="#E88922" stroke-width="10" stroke-linecap="round"/>
+  <path d="M23 103l-5 5M30 91l-7 3" stroke="#172B42" stroke-width="4" stroke-linecap="round"/>
+  <!-- body -->
+  <path d="M34 55c5-17 22-27 48-27 23 0 39 9 46 25l-5 27c-8 11-25 16-48 16-24 0-41-8-48-22z" fill="#F49A2F" stroke="#172B42" stroke-width="3" stroke-linejoin="round"/>
+  <g clip-path="url(#bodyClip)" fill="none" stroke="#172B42" stroke-width="6" stroke-linecap="round">
+    <path d="M52 27l13 20-11 13M75 25l11 22-10 13M100 27l9 19-10 13M122 39l-9 17 12 12"/>
+    <path d="M49 73l14 8-7 15M82 75l12 9-8 13M112 73l-8 13 12 10"/>
+  </g>
+  <!-- four legs and paws -->
+  <path d="M49 82l-3 23q0 5 6 5h10q5 0 4-5l-1-20M77 91l-1 15q0 5 5 5h10q5 0 4-5l-3-17M111 85l3 21q1 5 6 5h9q5-1 3-6l-7-27" fill="#E88922" stroke="#172B42" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M47 98l9 4M78 99l9 4M115 99l9 4" stroke="#172B42" stroke-width="3" stroke-linecap="round"/>
+  <!-- head, ears and muzzle -->
+  <path d="M113 36l-1-13 13 8 7-10 8 18c5 7 4 19-2 27-6 8-18 10-28 5-10-5-14-16-10-26 2-4 6-7 13-9z" fill="#F49A2F" stroke="#172B42" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M117 31l-1-4 6 4M134 31l4-5 2 9" fill="#F7C6A0" stroke="#172B42" stroke-width="2"/>
+  <path d="M115 43l7 8-7 4M137 42l-7 9 8 4" fill="none" stroke="#172B42" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M119 61q8-8 16 0-2 9-8 9t-8-9z" fill="#FFF4E5" stroke="#172B42" stroke-width="2"/>
+  <circle cx="119" cy="51" r="2.8" fill="#172B42"/><circle cx="136" cy="50" r="2.8" fill="#172B42"/>
+  <path d="M126 60l3 2 3-2" fill="none" stroke="#172B42" stroke-width="2" stroke-linecap="round"/>
+  <!-- facial stripes -->
+  <path d="M108 42l7 5M142 39l-6 7M109 57l7 1" stroke="#172B42" stroke-width="3" stroke-linecap="round"/>
 </svg>
