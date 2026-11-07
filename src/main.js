@@ -286,7 +286,7 @@ function renderImportedPrimaryCurriculum() {
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
     const originalOptions = Array.isArray(q.opts) ? q.opts : [];
     const originalCorrect = Number.isInteger(q.ans) ? q.ans : 0;
-    const id = \`\${prefix}-\${index}\`;
+    const id = `${prefix}-${index}`;
 
     // Shuffle source choices deterministically so the correct answer is not always A.
     // Keep the same order for this question across renders and preserve its answer key.
@@ -300,11 +300,11 @@ function renderImportedPrimaryCurriculum() {
     }
     const correct = shuffledOptions.findIndex((option) => option.originalIndex === originalCorrect);
 
-    return \`<article class="interactive-question imported-question" data-imported-question="\${escapeHtml(id)}">
-      <p class="question-prompt-text" dir="auto">\${escapeHtml(q.q || 'Choose the correct answer')}</p>
-      <div class="quiz-options">\${shuffledOptions.map((option, oi) => \`<button type="button" class="quiz-option imported-answer" data-question="\${escapeHtml(id)}" data-choice="\${oi}" data-correct="\${correct}"><span class="option-letter">\${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">\${escapeHtml(option.text)}</span></button>\`).join('')}</div>
+    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}">
+      <p class="question-prompt-text" dir="auto">${escapeHtml(q.q || 'Choose the correct answer')}</p>
+      <div class="quiz-options">${shuffledOptions.map((option, oi) => `<button type="button" class="quiz-option imported-answer" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}"><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option.text)}</span></button>`).join('')}</div>
       <p class="imported-feedback" aria-live="polite"></p>
-    </article>\`;
+    </article>`;
   }).join('');
 
   return `<section class="panel imported-curriculum">
@@ -1518,6 +1518,10 @@ function render() {
   if (state.stage !== 'egyptian-baccalaureate') state.path = selectedPath.id;
   const grades = stage.grades;
   const books = selectedBooks();
+  const importedPrimaryTrack = state.stage === 'primary' && ['general', 'advanced'].includes(state.path)
+    ? primaryHtmlCurriculum.tracks.find((item) => item.id === state.path)
+    : null;
+  const importedPrimaryGrade = importedPrimaryTrack?.grades.find((item) => item.grade === state.grade) || null;
   const visiblePathways = state.stage === 'egyptian-baccalaureate'
     ? sourceIndex.pathways.filter((item) => item.id.startsWith('egypt-baccalaureate'))
     : paths;
@@ -1559,13 +1563,13 @@ function render() {
         </div>
       </section>
       <section class="library-section">
-        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
+        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">${importedPrimaryGrade ? 'Connect and Connect Plus lessons for the selected grade.' : 'Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.'}</p></div><span class="book-count">${importedPrimaryGrade ? `${importedPrimaryGrade.units.length} units` : `${books.length} source file${books.length === 1 ? '' : 's'}`}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
-        ${renderUnitWorkspace()}
-        ${renderImportedPrimaryCurriculum()}
+        ${importedPrimaryGrade ? '' : renderUnitWorkspace()}
+        ${importedPrimaryGrade ? renderImportedPrimaryCurriculum() : ''}
         ${renderPreview()}
-        <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
+        ${importedPrimaryGrade ? '' : `<div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>`}
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
       </section>
       <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
