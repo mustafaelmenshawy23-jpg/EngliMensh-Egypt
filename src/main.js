@@ -710,7 +710,7 @@ function renderImportedPrimaryCurriculum() {
     const opts = [...sourceOptions.filter((_, originalIndex) => originalIndex !== answer)];
     const isArabicOptions = sourceOptions.some((option) => /[\u0600-\u06FF]/.test(optionText(option)));
     const grammarCandidates = grammarDistractors[String(correctOption || '').toLowerCase()] || [];
-    const extraCandidates = /-r-/.test(prefix)
+    const extraCandidates = /-r(?:-|$)/.test(prefix)
       ? grammarCandidates
       : unitWords.map((word) => isArabicOptions ? word.ar : word.en);
     for (const candidate of extraCandidates) {
