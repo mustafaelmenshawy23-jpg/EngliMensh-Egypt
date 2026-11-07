@@ -672,6 +672,11 @@ function renderImportedPrimaryCurriculum() {
     { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Source quiz plus 20 extra questions', icon: '🧠', count: (unit?.vocabularyQuestions || []).length + vocabularySupplementary.length },
     { id: 'tests', title: 'Unit Tests', subtitle: 'Up to 24 mixed review questions', icon: '📝', count: unitTestQuestions.length }
   ];
+  const moduleGroups = [
+    { title: 'Learn', subtitle: 'Build understanding before you practise.', items: modules.filter((item) => ['vocabulary', 'grammar', 'phonics', 'reading'].includes(item.id)) },
+    { title: 'Practice', subtitle: 'Use the new language in activities and games.', items: modules.filter((item) => ['dialogue', 'listening', 'games', 'vocabulary-practice'].includes(item.id)) },
+    { title: 'Check your progress', subtitle: 'Review what you have learned in this unit.', items: modules.filter((item) => item.id === 'tests') }
+  ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
     const opts = Array.isArray(q.opts) ? q.opts : [];
     const answer = Number.isInteger(q.ans) ? q.ans : 0;
@@ -725,7 +730,7 @@ function renderImportedPrimaryCurriculum() {
   }
   if (unit) {
     return '<section class="panel imported-curriculum imported-unit-dashboard ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-section-grid">' +
-      modules.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>';
+      moduleGroups.map((group) => '<section class="imported-module-group"><div class="imported-module-group-heading"><h3>' + group.title + '</h3><p>' + group.subtitle + '</p></div><div class="imported-section-grid">' + group.items.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>').join('') + '</div></section>';
   }
   return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
     grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
