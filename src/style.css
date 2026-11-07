@@ -2735,3 +2735,10 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .grammar-formula strong { color: #0d7f79; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
 .grammar-formula span { color: #102c4c; font-weight: 800; line-height: 1.55; }
 .grammar-tip { padding: 10px 12px; border-radius: 10px; background: #f6f8fc; }
+
+
+/* Keep section controls clear of Android gesture/navigation areas. */
+html { scroll-padding-top: 10px; }
+.imported-module-content {
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+}
