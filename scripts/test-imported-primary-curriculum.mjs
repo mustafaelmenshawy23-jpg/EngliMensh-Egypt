@@ -77,6 +77,7 @@ assert(main.includes('function explainGrammarRule') && main.includes('grammar-fo
 assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
 assert(main.includes('label: String(item.ar).trim()') && !main.includes("label: item.en + ' (' + item.ar + ')'"), 'Matching-game clue side shows Arabic meaning without revealing the English answer');
 assert(main.includes('correctPosition = index % Math.max(1, opts.length)'), 'Correct answer positions rotate evenly within each question group');
+assert(main.includes('Choose the correct meaning of') && main.includes('meaningMatch'), 'Arabic vocabulary stems are rewritten as English prompts while Arabic meanings remain in the choices');
 assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
 for (const track of data.tracks) {
   for (const grade of track.grades) {
