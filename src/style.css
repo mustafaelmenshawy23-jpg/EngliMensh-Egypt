@@ -2754,3 +2754,12 @@ html { scroll-padding-top: 10px; }
   .imported-unit-dashboard.route-enter,
   .imported-module-screen.route-enter { animation: none; }
 }
+
+
+/* Clear visual grouping on each unit dashboard. */
+.imported-module-groups { display: grid; gap: 24px; margin-top: 22px; }
+.imported-module-group { min-width: 0; }
+.imported-module-group-heading { margin: 0 0 10px; padding: 0 2px; }
+.imported-module-group-heading h3 { margin: 0 0 4px; color: var(--brand-navy, #18356d); font-size: 16px; }
+.imported-module-group-heading p { margin: 0; color: var(--muted, #7b8aa5); font-size: 11px; line-height: 1.5; }
+.imported-module-group .imported-section-grid { margin-top: 0; }
