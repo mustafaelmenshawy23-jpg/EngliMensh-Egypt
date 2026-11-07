@@ -477,8 +477,13 @@ function renderImportedPrimaryCurriculum() {
     const correct = correctPosition;
     const saved = getQuestionState(id);
     const wrong = saved.wrongChoices.map(String);
+    const rawPrompt = String(q.q || 'Choose the correct answer');
+    const meaningMatch = rawPrompt.match(/ما معنى كلمة\s*[（(]([^）)]+)[）)]\s*[؟?]?/);
+    const displayPrompt = meaningMatch
+      ? 'Choose the correct meaning of “' + meaningMatch[1].trim() + '”.'
+      : rawPrompt;
     return '<article class="interactive-question imported-question" data-imported-question="' + escapeHtml(id) + '" data-answered="' + (saved.isCorrect ? 'true' : 'false') + '">' +
-      (q.audio ? '<button type="button" class="tts-play-btn small imported-question-audio" data-tts-text="' + escapeHtml(q.audio) + '">🔊 Listen</button>' : '') + '<p class="question-prompt-text" dir="auto">' + escapeHtml(q.q || 'Choose the correct answer') + '</p><div class="quiz-options">' +
+      (q.audio ? '<button type="button" class="tts-play-btn small imported-question-audio" data-tts-text="' + escapeHtml(q.audio) + '">🔊 Listen</button>' : '') + '<p class="question-prompt-text" dir="auto">' + escapeHtml(displayPrompt) + '</p><div class="quiz-options">' +
       shuffled.map((option, oi) => {
         const good = saved.isCorrect && Number(saved.choice) === oi;
         const bad = wrong.includes(String(oi));
