@@ -65,6 +65,18 @@ assert(main.includes('data-imported-back="unit"') && main.includes('data-importe
 assert(!main.includes('<details class="imported-unit-card">'), 'Imported units are not rendered as a long expandable list');
 assert(main.includes('state.quizAnswers[questionId] = {') && main.includes('saveProgressToStorage();'), 'Imported quiz answers are persisted through app storage');
 assert(main.includes('saved.isCorrect') && main.includes('saved.wrongChoices'), 'Previously answered and wrong choices are restored in the interface');
+assert(main.includes('Listen to pronunciation') && main.includes('Listen to the full passage') && main.includes('imported-phonics-word'), 'Imported vocabulary, phonics and reading have pronunciation controls');
+assert(main.includes('const grammarPractice') && main.includes('const readingPractice') && main.includes('const listeningPractice'), 'Imported units build supplementary grammar, reading and listening practice');
+assert(main.includes('const unitTestQuestions') && main.includes('10 mixed review questions'), 'Imported units provide a ten-question mixed assessment');
+assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
+for (const track of data.tracks) {
+  for (const grade of track.grades) {
+    for (const unit of grade.units) {
+      assert(unit.vocabulary.length >= 6 && unit.vocabularyQuestions.length >= 10, `Unit has enough source vocabulary and vocabulary questions: ${track.id}/${grade.grade}/${unit.number}`);
+      assert(unit.grammar.examples.length >= 2 && unit.readingText && unit.dialogue.length >= 2, `Unit has source material for generated practice and audio: ${track.id}/${grade.grade}/${unit.number}`);
+    }
+  }
+}
 
 console.log(`Imported curriculum verification: ${passed} passed, ${failed} failed.`);
 if (failed) process.exit(1);
