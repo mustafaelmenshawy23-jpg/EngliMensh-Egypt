@@ -1815,6 +1815,11 @@ function render() {
   app.querySelectorAll('[data-imported-unit]').forEach((button) => button.addEventListener('click', () => {
     state.importedUnitNumber = Number(button.dataset.importedUnit);
     state.activeModule = null;
+    state.activeGameTab = 1;
+    state.game1 = { selectedWord: null, selectedPic: null, matches: [], score: 0 };
+    state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
+    state.game3 = { index: 0, score: 0, selectedOption: null };
+    state.game4 = { index: 0, score: 0, selectedOption: null };
     saveProgressToStorage();
     render();
     app.querySelector('.imported-unit-dashboard')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
