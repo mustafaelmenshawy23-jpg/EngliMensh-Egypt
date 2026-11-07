@@ -9,7 +9,8 @@ const apiKeys = [
   ['GEMINI_API_KEY_BACKUP_2', process.env.GEMINI_API_KEY_BACKUP_2],
   ['GEMINI_API_KEY_BACKUP_3', process.env.GEMINI_API_KEY_BACKUP_3]
 ].filter(([, value]) => Boolean(value));
-const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+let model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+const fallbackModels = [...new Set([model, 'gemini-3.5-flash-lite', 'gemini-3.7-flash'])];
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json','utf8'));
 const lessons = JSON.parse(await fs.readFile('src/data/lessons/lessons.draft.json','utf8'));
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json','utf8'));
@@ -83,56 +84,74 @@ const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationC
 let payload;
 let lastFailure;
 let selectedKeyName;
-for (const [keyName, apiKey] of apiKeys) {
-  let invalidCredential = false;
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: requestBody,
-        signal: AbortSignal.timeout(120000)
-      });
-      if (!response.ok) {
-        const detail = (await response.text()).slice(0, 1000);
-        const error = new Error(`Gemini API ${response.status}: ${detail}`);
-        const invalidKey = response.status === 401 ||
-          (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail));
-        if (invalidKey) {
+let selectedModel;
+let authenticated = false;
+for (const candidateModel of fallbackModels) {
+  model = candidateModel;
+  console.log(`Attempting Gemini model: ${model}`);
+  let modelUnavailable = false;
+  for (const [keyName, apiKey] of apiKeys) {
+    let invalidCredential = false;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: requestBody,
+          signal: AbortSignal.timeout(120000)
+        });
+        if (!response.ok) {
+          const detail = (await response.text()).slice(0, 1000);
+          const error = new Error(`Gemini API ${response.status}: ${detail}`);
+          const invalidKey = response.status === 401 ||
+            (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail));
+          if (invalidKey) {
+            lastFailure = error;
+            invalidCredential = true;
+            console.warn(`Credential ${keyName} was rejected; trying the next configured credential.`);
+            break;
+          }
+          if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
+            throw new Error(`Gemini quota/rate limit reached using ${keyName}. Stopping without rotating credentials or models. ${error.message}`);
+          }
+          if (![408, 500, 502, 503, 504].includes(response.status)) throw error;
           lastFailure = error;
-          invalidCredential = true;
-          console.warn(`Credential ${keyName} was rejected; trying the next configured credential.`);
+          if (response.status === 503) modelUnavailable = true;
+        } else {
+          payload = await response.json();
+          selectedKeyName = keyName;
+          selectedModel = model;
+          authenticated = true;
           break;
         }
-        if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
-          throw new Error(`Gemini quota/rate limit reached using ${keyName}. Stopping without rotating credentials. ${error.message}`);
-        }
-        if (![408, 500, 502, 503, 504].includes(response.status)) throw error;
+      } catch (error) {
         lastFailure = error;
-      } else {
-        payload = await response.json();
-        selectedKeyName = keyName;
-        break;
+        if (/quota\/rate limit reached/.test(error.message)) throw error;
+        const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
+          error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
+          /Gemini API (408|500|502|503|504)/.test(error.message);
+        if (!retryable) throw error;
+        if (/Gemini API 503/.test(error.message)) modelUnavailable = true;
       }
-    } catch (error) {
-      lastFailure = error;
-      if (/quota\/rate limit reached/.test(error.message)) throw error;
-      const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
-        error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
-        /Gemini API (408|500|502|503|504)/.test(error.message);
-      if (!retryable) throw error;
+      if (payload) break;
+      if (attempt < 3) {
+        const delay = Math.min(20000, 5000 * 2 ** (attempt - 1));
+        console.warn(`Gemini ${model} attempt ${attempt}/3 failed with ${keyName}: ${lastFailure?.message}. Retrying in ${delay / 1000}s.`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
     }
-    if (attempt < 4) {
-      const delay = Math.min(30000, 5000 * 2 ** (attempt - 1));
-      console.warn(`Gemini request attempt ${attempt}/4 failed with ${keyName}: ${lastFailure?.message}. Retrying in ${delay / 1000}s.`);
-      await new Promise(resolve => setTimeout(resolve, delay));
-    }
+    if (payload) break;
+    if (!invalidCredential) break;
   }
   if (payload) break;
-  if (!invalidCredential) break;
+  if (modelUnavailable) {
+    console.warn(`Gemini model ${model} is unavailable or timing out; switching to the next configured model. API keys will not be rotated to bypass quota limits.`);
+    continue;
+  }
+  break;
 }
 if (!payload) throw new Error(`Gemini request failed. Last issue: ${lastFailure?.message || 'unknown error'}`);
-console.log(`Gemini request authenticated with configured credential slot: ${selectedKeyName}.`);
+console.log(`Gemini request succeeded with model ${selectedModel} and configured credential slot: ${selectedKeyName}.`);
 const raw=payload.candidates?.[0]?.content?.parts?.map(p=>p.text||'').join('');
 if(!raw) throw new Error('Gemini returned no structured content.');
 const generated=JSON.parse(raw);
@@ -150,7 +169,7 @@ for(const section of generated.sections) for(const item of section.items){
  }
 }
 if(errors.length) throw new Error('Generated draft failed validation:\\n'+errors.join('\\n'));
-const output={schemaVersion:1,datasetStatus:'draft',generatedAt:new Date().toISOString(),generator:{provider:'Google Gemini API',model,reviewStatus:'needs_review'},bookId,sourceFilename:book.sourceFile,grade:book.grade,unitNumber,unitTitle:generated.unitTitle,sourcePdfRange:{start,end},sourceCoverage:generated.sourceCoverage,reviewStatus:'needs_review',reviewedBy:null,reviewedAt:null,sections:generated.sections.map(s=>({...s,items:s.items.map(i=>({...i,reviewStatus:'needs_review',notes:i.content.origin==='supplementary'?'AI-generated supplementary practice; not printed in source book. Teacher review required.':'Transcribed from the source book; teacher verification required.'}))}))};
+const output={schemaVersion:1,datasetStatus:'draft',generatedAt:new Date().toISOString(),generator:{provider:'Google Gemini API',model:selectedModel,reviewStatus:'needs_review'},bookId,sourceFilename:book.sourceFile,grade:book.grade,unitNumber,unitTitle:generated.unitTitle,sourcePdfRange:{start,end},sourceCoverage:generated.sourceCoverage,reviewStatus:'needs_review',reviewedBy:null,reviewedAt:null,sections:generated.sections.map(s=>({...s,items:s.items.map(i=>({...i,reviewStatus:'needs_review',notes:i.content.origin==='supplementary'?'AI-generated supplementary practice; not printed in source book. Teacher review required.':'Transcribed from the source book; teacher verification required.'}))}))};
 await fs.mkdir('artifacts/unit-drafts',{recursive:true});
 const file='artifacts/unit-drafts/'+bookId+'-unit-'+unitNumber+'.json';
 await fs.writeFile(file,JSON.stringify(output,null,2)+'\n');
