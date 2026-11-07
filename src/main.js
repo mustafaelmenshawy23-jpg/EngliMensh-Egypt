@@ -270,7 +270,7 @@ function selectedBooks() {
   const pathwayId = state.stage === 'egyptian-baccalaureate'
     ? (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')
     : currentStage().paths.find((item) => item.id === state.path)?.sourcePathwayId;
-  return sourceIndex.books.filter((book) => book.pathwayId === pathwayId && (
+  return sourceIndex.books.filter((book) => book.pathwayId !== 'commercial-reference-guides' && book.pathwayId === pathwayId && (
     state.stage === 'egyptian-baccalaureate' || book.grade === gradeName
   ));
 }
