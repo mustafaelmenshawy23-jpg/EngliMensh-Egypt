@@ -311,6 +311,14 @@ function renderImportedPrimaryCurriculum() {
     const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
     if (question) grammarPractice.push(question);
   });
+  const grammarExampleSource = (unit?.grammar?.examples || [])[0] || unitWords[0]?.ex || '';
+  const grammarTokens = String(grammarExampleSource).match(/[A-Za-z][A-Za-z']*/g) || [];
+  while (grammarPractice.length < 3 && grammarTokens.length) {
+    const target = grammarTokens[grammarPractice.length % grammarTokens.length];
+    const question = makeCloze(grammarExampleSource, grammarPractice.length, 'Complete the grammar example: ', target);
+    if (question) grammarPractice.push(question);
+    else break;
+  }
   const readingSentences = String(unit?.readingText || '').split(/(?<=[.!?])\s+/).filter(Boolean);
   const readingPractice = [];
   const readingTargets = unitWords.map((item) => item.en).filter((word) => word && String(unit?.readingText || '').toLowerCase().includes(word.toLowerCase()));
