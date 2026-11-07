@@ -60,10 +60,11 @@ assert(units === 75, 'Exactly 75 source units are imported');
 assert(questions === 1050, 'All 1,050 source questions are included');
 assert(invalid === 0, 'Question IDs and all answer keys remain valid after shuffling');
 assert(answerPositions.filter((count) => count > 0).length >= 3, 'Correct answers are distributed across at least three option positions');
-assert(main.includes('importedPrimaryGrade ? \'\' : renderUnitWorkspace()'), 'Legacy unit workspace is hidden when imported primary curriculum is active');
-assert(main.includes('importedPrimaryGrade ? renderImportedPrimaryCurriculum() : \'\''), 'Imported primary curriculum is the single primary content view');
+assert(main.includes('data-imported-unit') && main.includes('data-imported-section'), 'Imported curriculum has separate unit and section navigation screens');
+assert(main.includes('data-imported-back="unit"') && main.includes('data-imported-back="grade"'), 'Imported unit and section screens have back navigation');
+assert(!main.includes('<details class="imported-unit-card">'), 'Imported units are not rendered as a long expandable list');
 assert(main.includes('state.quizAnswers[questionId] = {') && main.includes('saveProgressToStorage();'), 'Imported quiz answers are persisted through app storage');
-assert(main.includes('answerState.isCorrect') && main.includes('answerState.wrongChoices'), 'Previously answered and wrong choices are restored in the interface');
+assert(main.includes('saved.isCorrect') && main.includes('saved.wrongChoices'), 'Previously answered and wrong choices are restored in the interface');
 
 console.log(`Imported curriculum verification: ${passed} passed, ${failed} failed.`);
 if (failed) process.exit(1);
