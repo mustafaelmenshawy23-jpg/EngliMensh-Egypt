@@ -2342,7 +2342,7 @@ function render() {
 
 // Restore a coherent in-app back stack for Android Back and browser Back.
 loadProgressFromStorage();
-window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', window.location.pathname + window.location.search + '#grade');
+window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', window.location.pathname + window.location.search + '#grade');
 if (state.importedUnitNumber) {
   window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
   if (state.activeModule) window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
