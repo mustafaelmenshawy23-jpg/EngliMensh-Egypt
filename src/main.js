@@ -6,6 +6,8 @@ import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import lessonDrafts from './data/lessons/lessons.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
 import p1u1Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-1.json';
+import p1u2Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-2.json';
+import p1u3Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-3.json';
 import './style.css';
 
 const app = document.querySelector('#app');
@@ -760,6 +762,10 @@ function renderUnitWorkspace() {
   if (!book || !unit) return '';
 
   const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1;
+  const activeUnitDraft = book.id === 'primary1-student-term1'
+    ? ({ 1: p1u1Draft, 2: p1u2Draft, 3: p1u3Draft }[unit.number] || null)
+    : null;
+  const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3);
 
   // Clear, named learning areas. Speaking is included because Unit 1 has a verified role-play.
   const sixSections = [
@@ -783,7 +789,56 @@ function renderUnitWorkspace() {
     const secDef = sixSections.find((s) => s.type === state.activeModule) || sixSections[0];
     let bodyHtml = '';
 
-    if (isP1U1 && p1u1Draft) {
+    if (isP1U2U3 && activeUnitDraft) {
+      const getItems = (type) => activeUnitDraft.sections.find((section) => section.type === type)?.items || [];
+      const vocabulary = getItems('vocabulary');
+      const vocabularyQuestions = getItems('vocabulary_questions');
+      const grammar = getItems('grammar');
+      const grammarQuestions = getItems('grammar_questions');
+      const reading = getItems('reading');
+      const tests = getItems('comprehensive_test');
+      const renderQuestionGroup = (items, type) => items.length
+        ? `<div class="questions-stack">${items.map((q, idx) => renderStudentQuestionCard(q, idx, type)).join('')}</div>`
+        : '<div class="empty-state">No questions are available in this section yet.</div>';
+
+      if (state.activeModule === 'vocabulary') {
+        bodyHtml = `
+          <div class="vocab-grid-responsive">
+            ${vocabulary.map((item, idx) => {
+              const data = item.content || {};
+              const icons = { bird: '🐦', flower: '🌸', butterfly: '🦋', grass: '🌱', sky: '🌤️', tree: '🌳', father: '👨', mother: '👩', parents: '👨‍👩‍👧', brother: '👦', sister: '👧', grandfather: '👴', grandmother: '👵', apple: '🍎', ant: '🐜', nurse: '👩‍⚕️', pencil: '✏️', potato: '🥔', parrot: '🦜', panda: '🐼', pizza: '🍕', hat: '🧢', horse: '🐴', dog: '🐶', duck: '🦆', door: '🚪', doll: '🪆', drum: '🥁' };
+              return `<article class="vocab-compact-card"><div class="vocab-compact-top"><span class="vocab-compact-icon">${icons[(data.word || '').toLowerCase()] || '📘'}</span><span class="vocab-compact-num">#${idx + 1} · p.${data.sourcePdfPage || '—'}</span></div><strong class="vocab-compact-word" dir="ltr">${escapeHtml(data.word || '')}</strong><span class="vocab-compact-meaning" dir="rtl">${escapeHtml(data.arabicMeaning || '')}</span>${data.example ? `<p dir="ltr">${escapeHtml(data.example)}</p>` : ''}<button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.word || '')}">🔊 Listen</button></article>`;
+            }).join('')}
+          </div>
+          <h3 class="module-subheading">Vocabulary practice</h3>
+          ${renderQuestionGroup(vocabularyQuestions, 'vocabulary_questions')}
+        `;
+      } else if (state.activeModule === 'grammar') {
+        bodyHtml = `
+          <div class="grammar-lessons-container">
+            ${grammar.map((item) => {
+              const data = item.content || {};
+              return `<article class="grammar-concept-card"><div class="grammar-concept-head"><span class="grammar-concept-badge">LANGUAGE STRUCTURE</span><span class="grammar-page-tag">PDF Page ${data.sourcePdfPage || '—'}</span></div><h3 class="grammar-concept-title">${escapeHtml(data.rule || '')}</h3><p class="grammar-explanation-text">${escapeHtml(data.explanation || '')}</p>${data.example ? `<div class="grammar-example-callout"><span class="example-badge">Textbook model</span><p class="example-content" dir="ltr">${escapeHtml(data.example)}</p><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.example)}">🔊 Listen</button></div>` : ''}</article>`;
+            }).join('')}
+          </div>
+          <h3 class="module-subheading">Grammar practice</h3>
+          ${renderQuestionGroup(grammarQuestions, 'grammar_questions')}
+        `;
+      } else if (state.activeModule === 'reading' || state.activeModule === 'speaking' || state.activeModule === 'listening') {
+        const passage = reading[0]?.content?.passage || '';
+        const lines = passage.split('\\n').filter(Boolean);
+        bodyHtml = `
+          <article class="reading-passage-card"><div class="reading-card-head"><span class="reading-badge">OFFICIAL BOOK DIALOGUE · PDF PAGE ${reading[0]?.content?.sourcePdfPage || '—'}</span><h4>${escapeHtml(activeUnitDraft.unitTitle)}</h4><p class="reading-subtitle">Read each line, then listen and practise with a partner.</p></div>
+          <div class="chat-dialogue-thread">${lines.map((line, idx) => { const split = line.match(/^([^:]+):\\s*(.*)$/); const speaker = split?.[1] || `Line ${idx + 1}`; const words = split?.[2] || line; return `<div class="chat-bubble ${idx % 2 ? 'hana' : 'maya'}"><div class="chat-avatar">${idx % 2 ? '👧' : '👦'}</div><div class="chat-body"><span class="chat-sender">${escapeHtml(speaker)}</span><p class="chat-text" dir="ltr">${escapeHtml(words)}</p></div><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(words)}">🔊</button></div>`; }).join('')}</div>
+          <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(lines.join('. '))}">🔊 Listen to full dialogue</button></article>
+          <p class="speaking-practice-note">Practise the dialogue aloud with a partner.</p>
+        `;
+      } else if (state.activeModule === 'comprehensive_test') {
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}`;
+      } else if (state.activeModule === 'games') {
+        bodyHtml = `<div class="empty-state"><strong>Games are being prepared for this unit.</strong><span>Use Vocabulary, Reading and Tests to practise the source content.</span></div>`;
+      }
+    } else if (isP1U1 && p1u1Draft) {
       if (state.activeModule === 'vocabulary') {
         const vocabSec = p1u1Draft.sections.find((s) => s.type === 'vocabulary');
         const vocabQSec = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions');
