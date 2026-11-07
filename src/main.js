@@ -50,6 +50,7 @@ const state = {
   search: '',
   preview: null,
   unitSelection: null,
+  importedUnitNumber: null,
   activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
   activeVocabSubtab: 'words', // 'words' or 'practice'
   activeGrammarSubtab: 'rules', // 'rules' or 'practice'
@@ -133,6 +134,7 @@ function loadProgressFromStorage() {
       if (isPlainObject(parsed.quizAnswers)) state.quizAnswers = parsed.quizAnswers;
       if (isPlainObject(parsed.shuffledOptions)) state.shuffledOptions = parsed.shuffledOptions;
       if (parsed.activeModule !== undefined) state.activeModule = parsed.activeModule;
+      if (Number.isInteger(parsed.importedUnitNumber)) state.importedUnitNumber = parsed.importedUnitNumber;
       if (parsed.activeVocabSubtab) state.activeVocabSubtab = parsed.activeVocabSubtab;
       if (parsed.activeGrammarSubtab) state.activeGrammarSubtab = parsed.activeGrammarSubtab;
       if (parsed.activeGameTab) state.activeGameTab = parsed.activeGameTab;
@@ -171,6 +173,7 @@ function saveProgressToStorage() {
       quizAnswers: state.quizAnswers,
       shuffledOptions: state.shuffledOptions,
       activeModule: state.activeModule,
+      importedUnitNumber: state.importedUnitNumber,
       activeVocabSubtab: state.activeVocabSubtab,
       activeGrammarSubtab: state.activeGrammarSubtab,
       activeGameTab: state.activeGameTab,
@@ -283,60 +286,64 @@ function renderImportedPrimaryCurriculum() {
   const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
   const grade = track?.grades.find((item) => item.grade === state.grade);
   if (!grade) return '';
+  const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
+  const modules = [
+    { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
+    { id: 'grammar', title: 'Grammar', subtitle: 'Rules, examples and practice', icon: '✏️', count: (unit?.grammar?.quiz || []).length },
+    { id: 'phonics', title: 'Phonics', subtitle: 'Sounds and word patterns', icon: '🔤', count: (unit?.phonics?.words || []).length },
+    { id: 'reading', title: 'Reading', subtitle: 'Reading passage', icon: '📖', count: unit?.readingText ? 1 : 0 },
+    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and speaking practice', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length },
+    { id: 'games', title: 'Word Games', subtitle: 'Vocabulary games and hints', icon: '🎮', count: (unit?.wordGames || []).length },
+    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Check your new words', icon: '🧠', count: (unit?.vocabularyQuestions || []).length },
+    { id: 'tests', title: 'Unit Tests', subtitle: 'Speaking and final exam', icon: '📝', count: (unit?.examQuestions || []).length + (unit?.speakingQuestions || []).length }
+  ];
   const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
-    const originalOptions = Array.isArray(q.opts) ? q.opts : [];
-    const originalCorrect = Number.isInteger(q.ans) ? q.ans : 0;
-    const id = `${prefix}-${index}`;
-
-    // Shuffle source choices deterministically so the correct answer is not always A.
-    // Keep the same order for this question across renders and preserve its answer key.
-    const shuffledOptions = originalOptions.map((text, originalIndex) => ({ text, originalIndex }));
+    const opts = Array.isArray(q.opts) ? q.opts : [];
+    const answer = Number.isInteger(q.ans) ? q.ans : 0;
+    const id = prefix + '-' + index;
+    const shuffled = opts.map((text, originalIndex) => ({ text, originalIndex }));
     let seed = 0;
     for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
-    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+    for (let i = shuffled.length - 1; i > 0; i--) {
       seed = (seed * 16807) % 2147483647;
       const j = Math.floor((seed / 2147483647) * (i + 1));
-      [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    const correct = shuffledOptions.findIndex((option) => option.originalIndex === originalCorrect);
-    const answerState = getQuestionState(id);
-    const wrongChoices = answerState.wrongChoices.map(String);
-
-    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}" data-answered="${answerState.isCorrect ? 'true' : 'false'}">
-      <p class="question-prompt-text" dir="auto">${escapeHtml(q.q || 'Choose the correct answer')}</p>
-      <div class="quiz-options">${shuffledOptions.map((option, oi) => {
-        const isCorrectChoice = answerState.isCorrect && Number(answerState.choice) === oi;
-        const isWrongChoice = wrongChoices.includes(String(oi));
-        const choiceClass = isCorrectChoice ? 'is-correct' : isWrongChoice ? 'is-wrong' : '';
-        const disabled = answerState.isCorrect || isWrongChoice;
-        return `<button type="button" class="quiz-option imported-answer ${choiceClass}" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}" ${disabled ? 'disabled' : ''}><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option.text)}</span></button>`;
-      }).join('')}</div>
-      <p class="imported-feedback ${answerState.isCorrect ? 'correct' : wrongChoices.length ? 'incorrect' : ''}" aria-live="polite">${answerState.isCorrect ? 'Correct! Well done.' : wrongChoices.length ? 'Not quite. Try another answer.' : ''}</p>
-    </article>`;
+    const correct = shuffled.findIndex((option) => option.originalIndex === answer);
+    const saved = getQuestionState(id);
+    const wrong = saved.wrongChoices.map(String);
+    return '<article class="interactive-question imported-question" data-imported-question="' + escapeHtml(id) + '" data-answered="' + (saved.isCorrect ? 'true' : 'false') + '">' +
+      '<p class="question-prompt-text" dir="auto">' + escapeHtml(q.q || 'Choose the correct answer') + '</p><div class="quiz-options">' +
+      shuffled.map((option, oi) => {
+        const good = saved.isCorrect && Number(saved.choice) === oi;
+        const bad = wrong.includes(String(oi));
+        return '<button type="button" class="quiz-option imported-answer ' + (good ? 'is-correct' : bad ? 'is-wrong' : '') + '" data-question="' + escapeHtml(id) + '" data-choice="' + oi + '" data-correct="' + correct + '"' + (saved.isCorrect || bad ? ' disabled' : '') + '><span class="option-letter">' + String.fromCharCode(65 + oi) + '</span><span class="option-text" dir="auto">' + escapeHtml(option.text) + '</span></button>';
+      }).join('') + '</div><p class="imported-feedback ' + (saved.isCorrect ? 'correct' : wrong.length ? 'incorrect' : '') + '" aria-live="polite">' + (saved.isCorrect ? 'Correct! Well done.' : wrong.length ? 'Not quite. Try another answer.' : '') + '</p></article>';
   }).join('');
-
-  return `<section class="panel imported-curriculum">
-    <div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · SOURCE HTML</p><h2>${escapeHtml(track.name)} · Grade ${grade.grade}</h2></div><span class="book-count">${grade.units.length} units</span></div>
-    <p class="unit-source-note">Imported content · needs academic review. Original answer positions are preserved; source page references were not supplied.</p>
-    <div class="imported-unit-list">${grade.units.map((unit) => `
-      <details class="imported-unit-card">
-        <summary><strong>Unit ${unit.number}: ${escapeHtml(unit.title)}</strong><span>${unit.vocabulary.length} words · ${unit.vocabularyQuestions.length + unit.speakingQuestions.length + unit.grammar.quiz.length + unit.examQuestions.length} questions</span></summary>
-        <div class="imported-unit-content">
-          <h3>Vocabulary</h3><div class="imported-vocab-grid">${unit.vocabulary.map((v) => `<article class="imported-vocab"><span>${escapeHtml(v.e || '📘')}</span><strong dir="ltr">${escapeHtml(v.en || '')}</strong><span dir="rtl">${escapeHtml(v.ar || '')}</span><small dir="ltr">${escapeHtml(v.ex || '')}</small></article>`).join('')}</div>
-          <h3>Dialogue</h3><div class="imported-dialogue">${unit.dialogue.map((line) => `<p><strong>${escapeHtml(line.speaker || '')}:</strong> ${escapeHtml(line.text || '')}</p>`).join('')}</div>
-          <h3>Phonics</h3><p><strong>${escapeHtml(unit.phonics.title || '')}</strong> — ${escapeHtml(unit.phonics.desc || '')}</p><p>${(unit.phonics.words || []).map(escapeHtml).join(' · ')}</p>
-          <h3>Reading</h3><p dir="auto">${escapeHtml(unit.readingText || '')}</p>
-          <h3>Grammar</h3><p><strong>${escapeHtml(unit.grammar.rule || '')}</strong></p><ul>${(unit.grammar.examples || []).map((x) => `<li dir="auto">${escapeHtml(x)}</li>`).join('')}</ul>
-          <h3>Vocabulary practice</h3>${renderQuestions(unit.vocabularyQuestions, `g${grade.grade}-${track.id}-u${unit.number}-v`)}
-          <h3>Speaking practice</h3>${renderQuestions(unit.speakingQuestions, `g${grade.grade}-${track.id}-u${unit.number}-s`)}
-          <h3>Grammar practice</h3>${renderQuestions(unit.grammar.quiz, `g${grade.grade}-${track.id}-u${unit.number}-r`)}
-          <h3>Unit exam</h3>${renderQuestions(unit.examQuestions, `g${grade.grade}-${track.id}-u${unit.number}-e`)}
-          <h3>Word games</h3><ul>${unit.wordGames.map((x) => `<li><strong>${escapeHtml(x.word || '')}</strong> — ${escapeHtml(x.hint || '')}</li>`).join('')}</ul>
-        </div>
-      </details>`).join('')}</div>
-  </section>`;
+  const prefix = unit ? 'g' + grade.grade + '-' + track.id + '-u' + unit.number : '';
+  const vocab = (unit?.vocabulary || []).map((v) => '<article class="imported-vocab"><span>' + escapeHtml(v.e || '📘') + '</span><strong dir="ltr">' + escapeHtml(v.en || '') + '</strong><span dir="rtl">' + escapeHtml(v.ar || '') + '</span><small dir="ltr">' + escapeHtml(v.ex || '') + '</small></article>').join('');
+  let body = '';
+  if (unit && state.activeModule) {
+    switch (state.activeModule) {
+      case 'vocabulary': body = '<div class="imported-vocab-grid">' + vocab + '</div>'; break;
+      case 'grammar': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.grammar?.rule || 'Grammar') + '</h3><ul>' + (unit.grammar?.examples || []).map((x) => '<li dir="auto">' + escapeHtml(x) + '</li>').join('') + '</ul></article><h3 class="module-subheading">Grammar practice</h3>' + renderQuestions(unit.grammar?.quiz, prefix + '-r'); break;
+      case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<span>' + escapeHtml(w) + '</span>').join('') + '</div></article>'; break;
+      case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p></article>'; break;
+      case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s'); break;
+      case 'games': body = '<div class="imported-game-grid">' + (unit.wordGames || []).map((game, i) => '<article class="imported-game-card"><span>🎯 Game ' + (i + 1) + '</span><strong dir="auto">' + escapeHtml(game.word || '') + '</strong><p dir="auto">' + escapeHtml(game.hint || '') + '</p></article>').join('') + '</div>'; break;
+      case 'vocabulary-practice': body = renderQuestions(unit.vocabularyQuestions, prefix + '-v'); break;
+      case 'tests': body = '<h3 class="module-subheading">Speaking questions</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<h3 class="module-subheading">Final unit exam</h3>' + renderQuestions(unit.examQuestions, prefix + '-e'); break;
+    }
+    const active = modules.find((item) => item.id === state.activeModule);
+    return '<section class="panel imported-curriculum imported-module-screen"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
+  }
+  if (unit) {
+    return '<section class="panel imported-curriculum imported-unit-dashboard"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-section-grid">' +
+      modules.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>';
+  }
+  return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
+    grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
 }
-
 function renderCandidateContent(record) {
   const blocks = [];
   const paragraph = (label, value) => value ? `<p><strong>${label}:</strong> ${escapeHtml(value)}</p>` : '';
@@ -1715,6 +1722,28 @@ function render() {
     state.testQuestionIndex = Number(btn.dataset.testJump);
     saveProgressToStorage();
     render();
+  }));
+
+  // Imported primary curriculum: each unit and section opens as its own screen.
+  app.querySelectorAll('[data-imported-unit]').forEach((button) => button.addEventListener('click', () => {
+    state.importedUnitNumber = Number(button.dataset.importedUnit);
+    state.activeModule = null;
+    saveProgressToStorage();
+    render();
+    app.querySelector('.imported-unit-dashboard')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  app.querySelectorAll('[data-imported-section]').forEach((button) => button.addEventListener('click', () => {
+    state.activeModule = button.dataset.importedSection;
+    saveProgressToStorage();
+    render();
+    app.querySelector('.imported-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
+    if (button.dataset.importedBack === 'unit') state.activeModule = null;
+    else { state.importedUnitNumber = null; state.activeModule = null; }
+    saveProgressToStorage();
+    render();
+    app.querySelector('.imported-curriculum')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
 
   // Imported primary curriculum quiz listener (persists across navigation and reloads)
