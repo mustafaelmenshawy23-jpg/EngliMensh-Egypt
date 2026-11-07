@@ -1643,7 +1643,7 @@ function render() {
 
   app.innerHTML = `
     <header class="topbar">
-      <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
+      <a class="brand" href="#" data-home aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
       <span class="country-tag">EGYPTIAN CURRICULUM</span>
     </header>
     <main class="shell stage-${state.stage}">
