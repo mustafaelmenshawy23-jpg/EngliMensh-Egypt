@@ -6,7 +6,7 @@ import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
 
 const app = document.querySelector('#app');
-const state = { stage: 'primary', grade: 1, path: 'general', search: '', preview: null, unitSelection: null, activeModule: null, quizAnswers: {} };
+const state = { stage: 'primary', grade: 1, path: 'general', search: '', preview: null, unitSelection: null, activeModule: null, quizAnswers: {}, voicePreferences: { male: '', female: '' }, voiceNotice: '' };
 
 const stageNames = {
   primary: 'Primary',
@@ -19,6 +19,113 @@ function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[char]);
+}
+
+function availableSpeechVoices() {
+  if (!('speechSynthesis' in window)) return [];
+  try {
+    return window.speechSynthesis.getVoices().filter((voice) => /^en(?:-|$)/i.test(voice.lang || ''));
+  } catch {
+    return [];
+  }
+}
+
+function detectedVoiceGender(voice) {
+  const label = `${voice.name || ''} ${voice.voiceURI || ''}`.toLowerCase();
+  if (/(?:^|[\\s_-])(female|woman|girl)(?:$|[\\s_-])/.test(label)) return 'female';
+  if (/(?:^|[\\s_-])(male|man|boy)(?:$|[\\s_-])/.test(label)) return 'male';
+  return 'unknown';
+}
+
+function voiceId(voice) {
+  return voice.voiceURI || voice.name;
+}
+
+function voiceForGender(gender) {
+  const voices = availableSpeechVoices();
+  const preferredId = state.voicePreferences[gender];
+  return voices.find((voice) => preferredId && voiceId(voice) === preferredId)
+    || voices.find((voice) => detectedVoiceGender(voice) === gender)
+    || null;
+}
+
+function updateSpeechStatus(message) {
+  state.voiceNotice = message;
+  const status = app.querySelector('[data-speech-status]');
+  if (status) status.textContent = message;
+}
+
+function speakText(text, gender = null) {
+  if (!text) return false;
+  if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance !== 'function') {
+    updateSpeechStatus('Speech synthesis is not available in this browser or WebView.');
+    return false;
+  }
+  const voices = availableSpeechVoices();
+  const voice = gender === 'male' || gender === 'female' ? voiceForGender(gender) : (voices[0] || null);
+  if (!voice) {
+    updateSpeechStatus(gender === 'male' || gender === 'female'
+      ? `No ${gender} English voice is available or identifiable. Choose and preview a device voice above.`
+      : 'No English text-to-speech voice is available on this device.');
+    return false;
+  }
+  const utterance = new window.SpeechSynthesisUtterance(String(text));
+  utterance.voice = voice;
+  utterance.lang = voice.lang || 'en-US';
+  utterance.onstart = () => updateSpeechStatus(`Playing with ${voice.name}. You can stop or replay the audio.`);
+  utterance.onend = () => updateSpeechStatus('Playback finished. You can replay or choose another voice.');
+  utterance.onerror = () => updateSpeechStatus('The platform reported a text-to-speech playback error.');
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
+  return true;
+}
+
+function speakDialogue(turns) {
+  if (!Array.isArray(turns) || !turns.length) return false;
+  if (!('speechSynthesis' in window) || typeof window.SpeechSynthesisUtterance !== 'function') {
+    updateSpeechStatus('Speech synthesis is not available in this browser or WebView.');
+    return false;
+  }
+  const defaultVoice = availableSpeechVoices()[0] || null;
+  const prepared = [];
+  for (const turn of turns) {
+    const gender = ['male', 'female'].includes(turn.speakerGender) ? turn.speakerGender : null;
+    const voice = gender ? voiceForGender(gender) : defaultVoice;
+    if (!voice) {
+      updateSpeechStatus(`A suitable ${gender || 'English'} voice is unavailable. Choose and preview voices before playing the full dialogue.`);
+      return false;
+    }
+    prepared.push({turn,voice});
+  }
+  window.speechSynthesis.cancel();
+  prepared.forEach(({turn,voice}) => {
+    const utterance = new window.SpeechSynthesisUtterance(`${turn.speaker}: ${turn.text}`);
+    utterance.voice = voice;
+    utterance.lang = voice.lang || 'en-US';
+    window.speechSynthesis.speak(utterance);
+  });
+  updateSpeechStatus('Playing the dialogue in speaker order. Use Stop to end playback.');
+  return true;
+}
+
+function renderVoiceControls() {
+  if (!('speechSynthesis' in window)) {
+    return '<p class="speech-status" data-speech-status>Text-to-speech is unavailable on this device.</p>';
+  }
+  const voices = availableSpeechVoices();
+  const controls = ['male','female'].map((gender) => {
+    const selected = state.voicePreferences[gender];
+    const options = voices.map((voice) => {
+      const marker = detectedVoiceGender(voice);
+      const label = marker === gender ? ' · gender label detected' : marker === 'unknown' ? ' · gender not exposed by platform' : ' · other gender label';
+      return `<option value="${escapeHtml(voiceId(voice))}" ${selected === voiceId(voice) ? 'selected' : ''}>${escapeHtml(voice.name)} · ${escapeHtml(voice.lang)}${label}</option>`;
+    }).join('');
+    return `<label class="voice-control">${gender === 'male' ? 'Male speaker voice' : 'Female speaker voice'}<select data-voice-select="${gender}"><option value="">Auto-detect ${gender} voice</option>${options}</select><button type="button" class="voice-preview" data-preview-voice="${gender}" ${voices.length ? '' : 'disabled'}>Preview voice</button></label>`;
+  }).join('');
+  const note = voices.length
+    ? 'Auto-detection works only when the platform labels voice gender. Otherwise, choose and preview a voice manually; device availability varies.'
+    : 'No English TTS voices are currently exposed by the platform. Enable an English voice in device settings and reopen the app.';
+  return `<div class="speaking-voice-controls">${controls}</div><p class="speech-status" data-speech-status>${escapeHtml(state.voiceNotice || note)}</p>`;
 }
 
 function currentStage() {
@@ -92,10 +199,7 @@ function renderBookLibrary(books) {
     const units = (book.units || []).map((unit) => {
       const pageLabel = Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Page reference not indexed';
       const title = `Unit ${unit.number}: ${unit.title}`;
-      const hasLessonDraft = lessonDrafts.records.some((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number);
-      return Number.isInteger(unit.startPdfPage) || hasLessonDraft
-        ? `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`
-        : `<div class="unit-link unavailable"><strong>${escapeHtml(title)}</strong><span>${pageLabel}</span></div>`;
+      return `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`;
     }).join('');
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
       : book.documentType === 'assessment' ? 'Assessment book'
@@ -112,7 +216,8 @@ function renderUnitWorkspace() {
   if (!book || !unit) return '';
   const tags = (items) => items?.length ? `<div class="unit-tags">${items.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>` : '';
   const detail = (label, value) => value ? `<div class="unit-detail"><span>${label}</span><strong>${escapeHtml(value)}</strong></div>` : '';
-  const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number);
+  const pendingLessonCount = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number && lesson.reviewStatus !== 'approved').length;
+  const lessonRecords = lessonDrafts.records.filter((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number && lesson.reviewStatus === 'approved');
   const scaffold = unitModules.records.find((record) => record.bookId === book.id && record.unitNumber === unit.number);
   const moduleDefinitions = [
     { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pronunciation, and examples' },
@@ -120,8 +225,9 @@ function renderUnitWorkspace() {
     { type: 'grammar', title: 'Grammar', subtitle: 'Clear rule explanations and examples' },
     { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'A separate grammar practice bank' },
     { type: 'reading', title: 'Reading & Questions', subtitle: 'Reading texts, comprehension activities, and their questions in one section' },
-    { type: 'listening', title: 'Listening & Questions', subtitle: 'Audio activities, listening tasks, and their questions in one section' },
-    { type: 'games', title: 'Games', subtitle: 'Vocabulary and grammar games only; no reading or listening questions' },
+    { type: 'listening', title: 'Listening & Questions', subtitle: 'Source or clearly supplementary listening scripts and questions' },
+    { type: 'speaking', title: 'Speaking & Dialogues', subtitle: 'Role-based dialogues with changeable speaker voices' },
+    { type: 'games', title: 'Games', subtitle: 'Interactive, age-appropriate practice games for unit skills' },
     { type: 'comprehensive_test', title: 'Comprehensive Unit Test', subtitle: 'Full-unit assessment; blueprint and item mix must follow the applicable Egyptian MOE specifications' },
 
   ];
@@ -159,7 +265,7 @@ function renderUnitWorkspace() {
       : '<p class="unit-module-empty">Content not added yet. This section is in progress; no questions or activities are being invented.</p>';
     const hasItems = items.length > 0 || indexedItems.length > 0;
     const sectionStatus = items.length ? 'Review pending' : indexedItems.length ? 'Index metadata' : (baseSection?.status === 'not_populated' ? 'In progress' : 'No source data');
-    return `<button type="button" class="unit-module-launch" data-open-module="${definition.type}"><span class="unit-module-icon" aria-hidden="true">${({vocabulary:'Aa',vocabulary_questions:'✓',grammar:'文',grammar_questions:'?',reading:'▤',listening:'♫',games:'★',comprehensive_test:'◎'})[definition.type]}</span><span class="unit-module-launch-copy"><strong>${definition.title}</strong><small>${definition.subtitle}</small></span><span class="unit-module-count">${items.length || indexedItems.length ? (items.length || indexedItems.length) + ' items' : 'Open section'}</span><span class="unit-module-arrow" aria-hidden="true">›</span></button>`;
+    return `<button type="button" class="unit-module-launch" data-open-module="${definition.type}"><span class="unit-module-icon" aria-hidden="true">${({vocabulary:'Aa',vocabulary_questions:'✓',grammar:'文',grammar_questions:'?',reading:'▤',listening:'♫',speaking:'☏',games:'★',comprehensive_test:'◎'})[definition.type]}</span><span class="unit-module-launch-copy"><strong>${definition.title}</strong><small>${definition.subtitle}</small></span><span class="unit-module-count">${items.length || indexedItems.length ? (items.length || indexedItems.length) + ' items' : 'Open section'}</span><span class="unit-module-arrow" aria-hidden="true">›</span></button>`;
   }).join('');
   if (state.activeModule) {
     const definition = moduleDefinitions.find((entry) => entry.type === state.activeModule);
@@ -203,14 +309,29 @@ function renderUnitWorkspace() {
         const word = data.word || data.title || item.itemId || 'Word';
         const meaning = data.arabicMeaning || data.arabicGloss || meanings[String(word).toLowerCase()] || 'المعنى قيد المراجعة';
         const example = data.example || examples[String(word).toLowerCase()] || 'Example sentence is being prepared.';
-        return `<article class="vocabulary-entry"><div class="vocabulary-entry-top"><span class="vocabulary-number">${index+1}</span><strong class="vocabulary-word" dir="ltr">${escapeHtml(word)}</strong><span class="vocabulary-meaning" dir="rtl">${escapeHtml(meaning)}</span></div><p class="vocabulary-example" dir="ltr">${escapeHtml(example)}</p>${data.notes ? `<small>${escapeHtml(data.notes)}</small>` : ''}</article>`;
+        return `<article class="vocabulary-entry"><div class="vocabulary-entry-top"><span class="vocabulary-number">${index+1}</span><strong class="vocabulary-word" dir="ltr">${escapeHtml(word)}</strong><span class="vocabulary-meaning" dir="rtl">${escapeHtml(meaning)}</span></div><p class="vocabulary-example" dir="ltr">${escapeHtml(example)}</p><button type="button" class="tts-play" data-speak-word="${escapeHtml(word)}">Hear word</button>${data.notes ? `<small>${escapeHtml(data.notes)}</small>` : ''}</article>`;
       }).join('')}</div>` : '<p class="unit-module-empty">Vocabulary has not been added to this unit yet.</p>';
     } else if (state.activeModule === 'vocabulary_questions' || state.activeModule === 'grammar_questions' || state.activeModule === 'comprehensive_test') {
       const playable = selectedSections.filter(({item}) => { const data = item.content || {}; const prompt = data.question || data.prompt || data.sentence || data.title; return typeof prompt === 'string' && prompt.trim().length > 0 && Array.isArray(data.options) && data.options.length >= 2; });
       const count = playable.filter(({item}, index) => state.quizAnswers[item.itemId || `${state.activeModule}-${index}`]).length;
       body = playable.length ? `<div class="quiz-summary"><strong>${count} / ${playable.length}</strong><span>answered</span></div>${playable.map(renderQuestion).join('')}` : '<p class="unit-module-empty">No playable questions are available in this section yet. Questions will appear here once their content and answer keys are prepared and reviewed.</p>';
     } else if (state.activeModule === 'games') {
-      body = '<p class="unit-module-empty">Interactive vocabulary and grammar games will be added here after the unit question bank is ready. No empty game buttons are shown.</p>';
+      body = selectedSections.length ? selectedSections.map(({item}, index) => {
+        const data = item.content || {};
+        const details = [data.targetSkill, data.difficulty, data.instruction].filter(Boolean).map(value => `<p>${escapeHtml(value)}</p>`).join('');
+        const playable = Array.isArray(data.options) && data.options.length >= 3 ? renderQuestion({item}, index) : '';
+        return `<article class="game-card"><h4>${escapeHtml(data.gameType || data.title || `Game ${index+1}`)}</h4>${details}${playable || '<p class="unit-module-empty">This game needs a reviewed playable prompt before launch.</p>'}<small>${escapeHtml(item.notes || 'Supplementary game · teacher review pending')}</small></article>`;
+      }).join('') : '<p class="unit-module-empty">No approved games are available yet. Games appear here only after their prompts and answer keys pass review.</p>';
+    } else if (state.activeModule === 'speaking') {
+      const dialogues = selectedSections.filter(({item}) => Array.isArray(item.content?.dialogue) && item.content.dialogue.length);
+      body = `${renderVoiceControls()}${dialogues.length ? dialogues.map(({item}, index) => {
+        const data = item.content || {};
+        const turns = Array.isArray(data.dialogue) ? data.dialogue : [];
+        return `<article class="speaking-dialogue"><h4>${escapeHtml(data.title || `Dialogue ${index+1}`)}</h4><ol>${turns.map((turn) => {
+          const gender = ['male','female'].includes(turn.speakerGender) ? turn.speakerGender : 'unknown';
+          return `<li><div><strong>${escapeHtml(turn.speaker || 'Speaker')}</strong><span class="speaker-gender"> · ${escapeHtml(gender)} speaker</span></div><p dir="ltr">${escapeHtml(turn.text || '')}</p><button type="button" class="tts-play" data-speak-turn data-speak-gender="${gender}" data-speak-text="${escapeHtml(turn.text || '')}">Play turn</button></li>`;
+        }).join('')}</ol><div class="speech-actions"><button type="button" data-play-dialogue data-dialogue="${escapeHtml(JSON.stringify(turns))}">Play full dialogue</button><button type="button" data-stop-speech>Stop</button></div><small>${escapeHtml(item.notes || 'Review source/AI provenance and speaker roles before release.')}</small></article>`;
+      }).join('') : '<p class="unit-module-empty">No approved dialogue is available yet. Draft dialogues remain hidden until academic review.</p>'}`;
     } else if (state.activeModule === 'reading' || state.activeModule === 'listening') {
       const questionPrompt = (data) => data.question || data.prompt || data.sentence || data.title;
       const questionLike = (data) => typeof questionPrompt(data) === 'string' && questionPrompt(data).trim().length > 0 && Array.isArray(data.options) && data.options.length >= 2;
@@ -224,7 +345,7 @@ function renderUnitWorkspace() {
         const data = item.content || {};
         const questionData = Array.isArray(data.questions) ? data.questions : [];
         const textFields = Object.entries(data).filter(([key]) => !['questions','options','correctAnswer','answer','explanation'].includes(key));
-        const textHtml = textFields.map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('');
+        const textHtml = textFields.map(([key,value]) => `<p><strong>${escapeHtml(key.replaceAll(/([A-Z])/g,' $1'))}:</strong> ${escapeHtml(Array.isArray(value) ? value.map((v)=>typeof v==='object'?JSON.stringify(v):v).join(' · ') : typeof value==='object'?JSON.stringify(value):value)}</p>`).join('') + (state.activeModule === 'listening' && data.script ? `<button type="button" class="tts-play" data-speak-script="${escapeHtml(data.script)}">Play TTS script preview</button><small class="quiz-origin">Generated speech preview, not the original book recording.</small>` : '');
         const ownQuestion = questionLike(data) ? renderQuestion({item}, index) : '';
         const nestedQuestions = questionData.map((question, qIndex) => {
           const nestedItem = {...item, itemId: `${item.itemId || `${state.activeModule}-${index}`}-q${qIndex+1}`, content: question};
@@ -242,12 +363,14 @@ function renderUnitWorkspace() {
     return `<section class="unit-module-screen"><button type="button" class="module-back" data-back-modules>‹ Back to Unit ${unit.number}</button><div class="module-screen-heading"><p class="eyebrow">${escapeHtml(book.grade)} · UNIT ${unit.number}</p><h3>${escapeHtml(definition.title)}</h3><p>${escapeHtml(definition.subtitle)}</p></div>${state.activeModule.includes('questions') || state.activeModule === 'comprehensive_test' ? '<p class="practice-note">Supplementary practice is identified separately from official printed questions. Draft content may require teacher review.</p>' : ''}${body}</section>`;
   }
   const lessonHeadings = lessonRecords.map((lesson) => `<p class="lesson-draft-note"><strong>${escapeHtml(lesson.title)}</strong> · ${escapeHtml(lesson.grade)} · PDF page ${lesson.pdfPage} · ${escapeHtml(lesson.reviewStatus)}</p>`).join('');
+  const pendingReviewNotice = pendingLessonCount ? `<p class="practice-note">${pendingLessonCount} draft lesson record(s) are waiting for academic review. Unapproved content is not displayed in learner modules.</p>` : '';
   return `<section class="unit-workspace" aria-label="Unit details">
     <div class="unit-workspace-head"><div><p class="eyebrow">UNIT WORKSPACE · SOURCE-LINKED</p><h3>Unit ${unit.number}: ${escapeHtml(unit.title)}</h3><p>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'} · ${Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Unit opening page not yet indexed'}</p></div><button type="button" class="preview-close" data-close-unit>Close unit ✕</button></div>
     ${detail('Language focus', unit.languageFocus)}${detail('Integrated activity', unit.integratedActivity)}${detail('Concept', unit.concept)}
     ${unit.topics?.length ? `<div class="unit-metadata"><span>Topics recorded in the index</span>${tags(unit.topics)}</div>` : ''}
     ${unit.vocabulary?.length ? `<div class="unit-metadata"><span>Vocabulary recorded in the index</span>${tags(unit.vocabulary)}</div>` : ''}
     ${lessonHeadings}
+    ${pendingReviewNotice}
     <div class="unit-module-grid" aria-label="Unit learning sections">${modules}</div>
     <p class="lesson-draft-note">Scaffold source: ${scaffold ? escapeHtml(scaffold.unitId) : 'No unit scaffold record found'}. Extracted items remain drafts until checked against the original PDF. Unreviewed content is excluded from student question banks and answer keys.</p>
     <div class="unit-source-actions">${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview this unit in original book ↗</button><a class="source-open" href="${bookUrl(book.sourceFile, unit.startPdfPage)}" target="_blank" rel="noopener">Open PDF page ↗</a>` : '<span class="unit-source-note">Unit opening page not indexed; use the source-page links on pending candidates below.</span>'}</div>
@@ -349,10 +472,17 @@ function render() {
   });
   applySearch();
 
-  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.activeModule = null; state.quizAnswers = {}; state.preview = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { state.unitSelection = null; state.activeModule = null; state.quizAnswers = {}; render(); });
-  app.querySelectorAll('[data-open-module]').forEach((button) => button.addEventListener('click', () => { state.activeModule = button.dataset.openModule; state.quizAnswers = {}; render(); app.querySelector('.unit-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-back-modules]')?.addEventListener('click', () => { state.activeModule = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.unitSelection = { bookId: button.dataset.unitBook, unitNumber: Number(button.dataset.unitNumber) }; state.activeModule = null; state.quizAnswers = {}; state.preview = null; state.voiceNotice = ''; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-close-unit]')?.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.unitSelection = null; state.activeModule = null; state.quizAnswers = {}; render(); });
+  app.querySelectorAll('[data-open-module]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.activeModule = button.dataset.openModule; state.quizAnswers = {}; state.voiceNotice = ''; render(); app.querySelector('.unit-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+  app.querySelector('[data-back-modules]')?.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); state.activeModule = null; render(); app.querySelector('.unit-workspace')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+  app.querySelectorAll('[data-voice-select]').forEach((select) => select.addEventListener('change', () => { state.voicePreferences[select.dataset.voiceSelect] = select.value; updateSpeechStatus(select.value ? 'Voice assigned manually. Preview it to confirm speaker identity on this device.' : 'Automatic gender-labelled voice detection selected.'); }));
+  app.querySelectorAll('[data-preview-voice]').forEach((button) => button.addEventListener('click', () => speakText('Hello. This is a voice preview.', button.dataset.previewVoice)));
+  app.querySelectorAll('[data-speak-word]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakWord)));
+  app.querySelectorAll('[data-speak-script]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakScript)));
+  app.querySelectorAll('[data-speak-turn]').forEach((button) => button.addEventListener('click', () => speakText(button.dataset.speakText, button.dataset.speakGender)));
+  app.querySelectorAll('[data-play-dialogue]').forEach((button) => button.addEventListener('click', () => { try { speakDialogue(JSON.parse(button.dataset.dialogue)); } catch { updateSpeechStatus('The dialogue data could not be read.'); } }));
+  app.querySelectorAll('[data-stop-speech]').forEach((button) => button.addEventListener('click', () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); updateSpeechStatus('Playback stopped.'); }));
   app.querySelectorAll('[data-quiz-question]').forEach((button) => button.addEventListener('click', () => { state.quizAnswers[button.dataset.quizQuestion] = button.dataset.quizChoice; render(); }));
   app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', () => { state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
@@ -394,3 +524,8 @@ function render() {
 }
 
 render();
+if ('speechSynthesis' in window && typeof window.speechSynthesis.addEventListener === 'function') {
+  window.speechSynthesis.addEventListener('voiceschanged', () => {
+    if (state.activeModule === 'speaking') render();
+  });
+}
