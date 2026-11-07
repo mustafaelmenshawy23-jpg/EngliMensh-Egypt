@@ -330,7 +330,7 @@ function renderImportedPrimaryCurriculum() {
       case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><p class="unit-source-note">Listen to each sound and repeat it aloud.</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<button type="button" class="imported-phonics-word" data-tts-text="' + escapeHtml(w) + '">🔊 ' + escapeHtml(w) + '</button>').join('') + '</div></article>'; break;
       case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article>'; break;
       case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s'); break;
-      case 'games': body = '<div class="imported-game-grid">' + (unit.wordGames || []).map((game, i) => '<article class="imported-game-card"><span>🎯 Game ' + (i + 1) + '</span><strong dir="auto">' + escapeHtml(game.word || '') + '</strong><p dir="auto">' + escapeHtml(game.hint || '') + '</p></article>').join('') + '</div>'; break;
+      case 'games': body = renderGames(); break;
       case 'vocabulary-practice': body = renderQuestions(unit.vocabularyQuestions, prefix + '-v'); break;
       case 'tests': body = '<h3 class="module-subheading">Speaking questions</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<h3 class="module-subheading">Final unit exam</h3>' + renderQuestions(unit.examQuestions, prefix + '-e'); break;
     }
@@ -489,7 +489,12 @@ const gameRegistry = {
     },
     high: {
       grades: [4, 5, 6],
-      games: [] // Content unavailable
+      games: [
+        { title: '🧠 Word Detective', renderer: renderGame1Matching },
+        { title: '🧩 Sentence Builder', renderer: renderGame2WordBuilder },
+        { title: '🎧 Listening Challenge', renderer: renderGame3ListenChoose },
+        { title: '🏆 Meaning Challenge', renderer: renderGame4CommandsChallenge }
+      ]
     }
   },
   preparatory: {
@@ -511,6 +516,24 @@ function getGamesForState(stage, grade) {
     return grade <= 3 ? gameRegistry.primary.low.games : gameRegistry.primary.high.games;
   }
   return gameRegistry[stage]?.games || [];
+}
+
+function getImportedPrimaryUnitForGames() {
+  if (state.stage !== 'primary' || !['general', 'advanced'].includes(state.path) || !state.importedUnitNumber) return null;
+  const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
+  const grade = track?.grades.find((item) => item.grade === state.grade);
+  return grade?.units.find((item) => item.number === Number(state.importedUnitNumber)) || null;
+}
+
+function getPrimaryGameWords(limit = 6) {
+  const unit = getImportedPrimaryUnitForGames();
+  if (!unit) return null;
+  return (unit.vocabulary || []).filter((item) => item.en && item.ar).slice(0, limit).map((item) => ({
+    target: String(item.en).trim().toLowerCase(),
+    arabic: item.ar,
+    icon: item.e || '🔤',
+    label: item.en + ' (' + item.ar + ')'
+  }));
 }
 
 function renderGames() {
@@ -539,7 +562,8 @@ function renderGames() {
 
 // 4 Interactive Mini-Games (Purely Student View - No technical internal metadata)
 function renderGame1Matching() {
-  const pairs = [
+  const importedWords = getPrimaryGameWords(6);
+  const pairs = importedWords?.map((item) => ({ word: item.target, pic: item.icon, label: item.label })) || [
     { word: 'pencil', pic: '✏️', label: 'Pencil (قلم رصاص)' },
     { word: 'bag', pic: '🎒', label: 'Bag (حقيبة)' },
     { word: 'chair', pic: '🪑', label: 'Chair (كرسي)' },
@@ -598,7 +622,8 @@ function renderGame1Matching() {
 }
 
 function renderGame2WordBuilder() {
-  const wordsData = [
+  const importedWords = getPrimaryGameWords(6);
+  const wordsData = importedWords || [
     { target: 'tiger', arabic: 'نمر', icon: '🐯' },
     { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
     { target: 'table', arabic: 'طاولة', icon: '🪑' },
@@ -668,7 +693,12 @@ function renderGame2WordBuilder() {
 }
 
 function renderGame3ListenChoose() {
-  const rounds = [
+  const importedWords = getPrimaryGameWords(6);
+  const rounds = importedWords?.map((item, index) => ({
+    target: item.target,
+    options: [item.target, importedWords[(index + 1) % importedWords.length]?.target, importedWords[(index + 2) % importedWords.length]?.target].filter(Boolean),
+    prompt: 'Listen and choose the matching unit word:'
+  })) || [
     { target: 'hello', options: ['hello', 'goodbye', 'chair'], prompt: 'Listen to the greeting:' },
     { target: 'goodbye', options: ['pencil', 'goodbye', 'bag'], prompt: 'Listen to the farewell:' },
     { target: 'teacher', options: ['teacher', 'desk', 'board'], prompt: 'Listen to the classroom word:' },
@@ -728,7 +758,13 @@ function renderGame3ListenChoose() {
 }
 
 function renderGame4CommandsChallenge() {
-  const commands = [
+  const importedWords = getPrimaryGameWords(4);
+  const commands = importedWords?.map((item, index) => ({
+    target: item.target,
+    icon: item.icon,
+    desc: item.arabic,
+    options: importedWords.map((choice) => choice.target).sort((a, b) => a.localeCompare(b))
+  })) || [
     { target: 'stand up', icon: '🧍', desc: 'Stand up on your feet', options: ['stand up', 'sit down', 'close your book', 'open your bag'] },
     { target: 'sit down', icon: '🪑', desc: 'Sit down on your chair', options: ['open your bag', 'sit down', 'stand up', 'close your book'] },
     { target: 'open your bag', icon: '🎒', desc: 'Open your school bag', options: ['open your bag', 'close your book', 'stand up', 'sit down'] },
@@ -1894,7 +1930,7 @@ function render() {
   // Game 2 Word Builder Listeners
   app.querySelectorAll('[data-place-tile]').forEach((btn) => btn.addEventListener('click', () => {
     const char = btn.dataset.placeTile;
-    const wordsData = ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
+    const wordsData = getPrimaryGameWords(6)?.map((item) => item.target) || ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
     const target = wordsData[state.game2.index] || '';
     if (state.game2.placed.length < target.length) {
       state.game2.placed.push(char);
@@ -1940,7 +1976,7 @@ function render() {
     if (!state.game3.selectedOption) {
       const chosen = btn.dataset.listenChoose;
       state.game3.selectedOption = chosen;
-      const targets = ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
+      const targets = getPrimaryGameWords(6)?.map((item) => item.target) || ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
       if (chosen === targets[state.game3.index]) state.game3.score += 1;
       saveProgressToStorage();
       render();
@@ -1958,7 +1994,7 @@ function render() {
     if (!state.game4.selectedOption) {
       const chosen = btn.dataset.commandChoose;
       state.game4.selectedOption = chosen;
-      const targets = ['stand up', 'sit down', 'open your bag', 'close your book'];
+      const targets = getPrimaryGameWords(4)?.map((item) => item.target) || ['stand up', 'sit down', 'open your bag', 'close your book'];
       if (chosen === targets[state.game4.index]) state.game4.score += 1;
       saveProgressToStorage();
       render();
