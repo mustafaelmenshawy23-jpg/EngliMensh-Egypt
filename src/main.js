@@ -1,6 +1,7 @@
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import curriculum from './data/curriculum/structure.json';
+import primaryHtmlCurriculum from './data/curriculum/primary-connect-html-2026-2027.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import lessonDrafts from './data/lessons/lessons.draft.json';
@@ -274,6 +275,44 @@ function bookUrl(file, page) {
   const base = import.meta.env.VITE_BOOKS_BASE_URL || `${import.meta.env.BASE_URL}books/`;
   const path = `${base}${encodeURIComponent(file)}`;
   return page ? `${path}#page=${page}` : path;
+}
+
+
+function renderImportedPrimaryCurriculum() {
+  if (state.stage !== 'primary' || !['general', 'advanced'].includes(state.path)) return '';
+  const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
+  const grade = track?.grades.find((item) => item.grade === state.grade);
+  if (!grade) return '';
+  const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
+    const options = Array.isArray(q.opts) ? q.opts : [];
+    const correct = Number.isInteger(q.ans) ? q.ans : 0;
+    const id = `${prefix}-${index}`;
+    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}">
+      <p class="question-prompt-text" dir="auto">${escapeHtml(q.q || 'Choose the correct answer')}</p>
+      <div class="quiz-options">${options.map((option, oi) => `<button type="button" class="quiz-option imported-answer" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}"><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option)}</span></button>`).join('')}</div>
+      <p class="imported-feedback" aria-live="polite"></p>
+    </article>`;
+  }).join('');
+  return `<section class="panel imported-curriculum">
+    <div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · SOURCE HTML</p><h2>${escapeHtml(track.name)} · Grade ${grade.grade}</h2></div><span class="book-count">${grade.units.length} units</span></div>
+    <p class="unit-source-note">Imported content · needs academic review. Original answer positions are preserved; source page references were not supplied.</p>
+    <div class="imported-unit-list">${grade.units.map((unit) => `
+      <details class="imported-unit-card">
+        <summary><strong>Unit ${unit.number}: ${escapeHtml(unit.title)}</strong><span>${unit.vocabulary.length} words · ${unit.vocabularyQuestions.length + unit.speakingQuestions.length + unit.grammar.quiz.length + unit.examQuestions.length} questions</span></summary>
+        <div class="imported-unit-content">
+          <h3>Vocabulary</h3><div class="imported-vocab-grid">${unit.vocabulary.map((v) => `<article class="imported-vocab"><span>${escapeHtml(v.e || '📘')}</span><strong dir="ltr">${escapeHtml(v.en || '')}</strong><span dir="rtl">${escapeHtml(v.ar || '')}</span><small dir="ltr">${escapeHtml(v.ex || '')}</small></article>`).join('')}</div>
+          <h3>Dialogue</h3><div class="imported-dialogue">${unit.dialogue.map((line) => `<p><strong>${escapeHtml(line.speaker || '')}:</strong> ${escapeHtml(line.text || '')}</p>`).join('')}</div>
+          <h3>Phonics</h3><p><strong>${escapeHtml(unit.phonics.title || '')}</strong> — ${escapeHtml(unit.phonics.desc || '')}</p><p>${(unit.phonics.words || []).map(escapeHtml).join(' · ')}</p>
+          <h3>Reading</h3><p dir="auto">${escapeHtml(unit.readingText || '')}</p>
+          <h3>Grammar</h3><p><strong>${escapeHtml(unit.grammar.rule || '')}</strong></p><ul>${(unit.grammar.examples || []).map((x) => `<li dir="auto">${escapeHtml(x)}</li>`).join('')}</ul>
+          <h3>Vocabulary practice</h3>${renderQuestions(unit.vocabularyQuestions, `g${grade.grade}-${track.id}-u${unit.number}-v`)}
+          <h3>Speaking practice</h3>${renderQuestions(unit.speakingQuestions, `g${grade.grade}-${track.id}-u${unit.number}-s`)}
+          <h3>Grammar practice</h3>${renderQuestions(unit.grammar.quiz, `g${grade.grade}-${track.id}-u${unit.number}-r`)}
+          <h3>Unit exam</h3>${renderQuestions(unit.examQuestions, `g${grade.grade}-${track.id}-u${unit.number}-e`)}
+          <h3>Word games</h3><ul>${unit.wordGames.map((x) => `<li><strong>${escapeHtml(x.word || '')}</strong> — ${escapeHtml(x.hint || '')}</li>`).join('')}</ul>
+        </div>
+      </details>`).join('')}</div>
+  </section>`;
 }
 
 function renderCandidateContent(record) {
@@ -1510,6 +1549,7 @@ function render() {
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
         ${renderUnitWorkspace()}
+        ${renderImportedPrimaryCurriculum()}
         ${renderPreview()}
         <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
@@ -1520,7 +1560,7 @@ function render() {
   const applySearch = () => {
     const query = state.search.trim().toLocaleLowerCase();
     let shown = 0;
-    app.querySelectorAll('.book-card').forEach((card) => {
+    app.querySelectorAll('.book-card, .imported-unit-card').forEach((card) => {
       const match = !query || card.textContent.toLocaleLowerCase().includes(query);
       card.hidden = !match;
       if (match) shown += 1;
@@ -1649,6 +1689,27 @@ function render() {
     state.testQuestionIndex = Number(btn.dataset.testJump);
     saveProgressToStorage();
     render();
+  }));
+
+  // Imported primary curriculum quiz listener
+  app.querySelectorAll('.imported-answer').forEach((button) => button.addEventListener('click', () => {
+    const card = button.closest('[data-imported-question]');
+    if (!card || card.dataset.answered === 'true') return;
+    const correct = Number(button.dataset.correct);
+    const chosen = Number(button.dataset.choice);
+    const feedback = card.querySelector('.imported-feedback');
+    if (chosen === correct) {
+      card.dataset.answered = 'true';
+      button.classList.add('is-correct');
+      feedback.textContent = 'Correct! Well done.';
+      feedback.classList.add('correct');
+      card.querySelectorAll('.imported-answer').forEach((option) => { option.disabled = true; });
+    } else {
+      button.classList.add('is-wrong');
+      button.disabled = true;
+      feedback.textContent = 'Not quite. Try another answer.';
+      feedback.classList.add('incorrect');
+    }
   }));
 
   // Quiz Option Retry Listener (Allows retrying wrong options until correct answer is chosen)
