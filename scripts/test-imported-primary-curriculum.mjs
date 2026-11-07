@@ -1,0 +1,69 @@
+import fs from 'node:fs';
+
+const data = JSON.parse(fs.readFileSync('./src/data/curriculum/primary-connect-html-2026-2027.json', 'utf8'));
+const main = fs.readFileSync('./src/main.js', 'utf8');
+let passed = 0;
+let failed = 0;
+const assert = (condition, message) => {
+  if (condition) { console.log('✓ ' + message); passed++; }
+  else { console.error('✗ ' + message); failed++; }
+};
+
+assert(data.tracks.length === 2, 'Both Connect and Connect Plus tracks exist');
+assert(data.tracks.every((track) => track.grades.length === 6), 'Both tracks include all six primary grades');
+
+let units = 0;
+let questions = 0;
+let invalid = 0;
+let answerPositions = [0, 0, 0, 0];
+const ids = new Set();
+
+for (const track of data.tracks) {
+  for (const grade of track.grades) {
+    for (const unit of grade.units) {
+      units++;
+      const groups = [
+        ['v', unit.vocabularyQuestions],
+        ['s', unit.speakingQuestions],
+        ['r', unit.grammar?.quiz],
+        ['e', unit.examQuestions]
+      ];
+      for (const [prefix, items] of groups) {
+        assert(Array.isArray(items), `Question group ${prefix} exists: ${track.id}/${grade.grade}/${unit.number}`);
+        for (let index = 0; index < (items || []).length; index++) {
+          const q = items[index];
+          const id = `g${grade.grade}-${track.id}-u${unit.number}-${prefix}-${index}`;
+          if (ids.has(id)) invalid++;
+          ids.add(id);
+          if (!Array.isArray(q.opts) || q.opts.length < 2 || !Number.isInteger(q.ans) || q.ans < 0 || q.ans >= q.opts.length) {
+            invalid++;
+            continue;
+          }
+          const shuffled = q.opts.map((text, originalIndex) => ({ text, originalIndex }));
+          let seed = 0;
+          for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
+          for (let i = shuffled.length - 1; i > 0; i--) {
+            seed = (seed * 16807) % 2147483647;
+            const j = Math.floor((seed / 2147483647) * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+          }
+          const correct = shuffled.findIndex((item) => item.originalIndex === q.ans);
+          if (correct < 0 || shuffled[correct].text !== q.opts[q.ans]) invalid++;
+          if (correct >= 0 && correct < answerPositions.length) answerPositions[correct]++;
+          questions++;
+        }
+      }
+    }
+  }
+}
+assert(units === 75, 'Exactly 75 source units are imported');
+assert(questions === 1050, 'All 1,050 source questions are included');
+assert(invalid === 0, 'Question IDs and all answer keys remain valid after shuffling');
+assert(answerPositions.filter((count) => count > 0).length >= 3, 'Correct answers are distributed across at least three option positions');
+assert(main.includes('importedPrimaryGrade ? \'\' : renderUnitWorkspace()'), 'Legacy unit workspace is hidden when imported primary curriculum is active');
+assert(main.includes('importedPrimaryGrade ? renderImportedPrimaryCurriculum() : \'\''), 'Imported primary curriculum is the single primary content view');
+assert(main.includes('state.quizAnswers[questionId] = {') && main.includes('saveProgressToStorage();'), 'Imported quiz answers are persisted through app storage');
+assert(main.includes('answerState.isCorrect') && main.includes('answerState.wrongChoices'), 'Previously answered and wrong choices are restored in the interface');
+
+console.log(`Imported curriculum verification: ${passed} passed, ${failed} failed.`);
+if (failed) process.exit(1);
