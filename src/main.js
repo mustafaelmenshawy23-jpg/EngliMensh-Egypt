@@ -616,6 +616,8 @@ function renderImportedPrimaryCurriculum() {
     return { q: prefix + prompt, opts: options, ans: 0 };
   };
   const sourceGrammarExamples = (unit?.grammar?.examples || []).filter((example) => !/(key pattern|verification|correct structure|incorrect syntax)/i.test(String(example)));
+  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, sourceGrammarExamples);
+  const grammarLessonExamples = grammarLesson.examples.length ? grammarLesson.examples : unitWords.map((word) => word.ex).filter(Boolean).slice(0, 3);
   const grammarPractice = [...(unit?.grammar?.quiz || []).filter((item) => !/(verification|application check|key pattern|correct structure|incorrect syntax)/i.test(String(item.q || '')))];
   const grammarRuleText = String(unit?.grammar?.rule || '').toLowerCase();
   const grammarQuestionSets = [
@@ -721,17 +723,17 @@ function renderImportedPrimaryCurriculum() {
       if (!grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
     });
   }
-  sourceGrammarExamples.slice(0, 2).forEach((example, index) => {
+  grammarLessonExamples.slice(0, 2).forEach((example, index) => {
     const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
     if (question) grammarPractice.push(question);
   });
-  const grammarExampleSource = sourceGrammarExamples[0] || '';
+  const grammarExampleSource = grammarLessonExamples[0] || '';
   const grammarTargets = [...new Set(unitWords.map((item) => item.en).filter((word) =>
-    word && sourceGrammarExamples.some((example) => String(example).toLowerCase().includes(String(word).toLowerCase()))
+    word && grammarLessonExamples.some((example) => String(example).toLowerCase().includes(String(word).toLowerCase()))
   ))];
   grammarTargets.forEach((target, index) => {
     if (grammarPractice.length >= 8) return;
-    const sentence = sourceGrammarExamples.find((example) => String(example).toLowerCase().includes(String(target).toLowerCase()));
+    const sentence = grammarLessonExamples.find((example) => String(example).toLowerCase().includes(String(target).toLowerCase()));
     const question = makeCloze(sentence, index + 4, 'Choose the word that completes the grammar example: ', target);
     if (question && !grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
   });
@@ -792,7 +794,6 @@ function renderImportedPrimaryCurriculum() {
     ...listeningPractice.slice(0, 4),
     ...(unit?.examQuestions || []).slice(0, 2)
   ].slice(0, 24);
-  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, sourceGrammarExamples);
   const modules = [
     { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
     { id: 'grammar', title: 'Grammar', subtitle: 'Clear explanation, examples and practice', icon: '✏️', count: grammarPractice.length },
