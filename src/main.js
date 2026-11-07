@@ -490,7 +490,105 @@ function renderImportedPrimaryCurriculum() {
     const prompt = targetAt >= 0 ? rawSentence.slice(0, targetAt) + '____' + rawSentence.slice(targetAt + String(targetWord).length) : rawSentence;
     return { q: prefix + prompt, opts: choiceOptions(targetWord, index), ans: 0 };
   };
-  const grammarPractice = [...(unit?.grammar?.quiz || [])];
+  const grammarPractice = [...(unit?.grammar?.quiz || []).filter((item) => !/(verification|application check|key pattern|correct structure|incorrect syntax)/i.test(String(item.q || '')))];
+  const grammarRuleText = String(unit?.grammar?.rule || '').toLowerCase();
+  const grammarQuestionSets = [
+    [/has got|have got/, [
+      { q: 'She ___ got curly hair.', opts: ['has', 'have', 'is'], ans: 0 },
+      { q: 'They ___ got two cousins.', opts: ['have', 'has', 'are'], ans: 0 },
+      { q: 'I ___ got a new bag.', opts: ['have', 'has', 'am'], ans: 0 },
+      { q: '___ he got glasses?', opts: ['Has', 'Have', 'Does'], ans: 0 },
+      { q: 'We ___ got a big family.', opts: ['have', 'has', 'is'], ans: 0 }
+    ]],
+    [/prepositions.*(place|next to|behind)|in vs on/, [
+      { q: 'The bakery is ___ to the school.', opts: ['next', 'behind', 'under'], ans: 0 },
+      { q: 'The park is ___ the supermarket.', opts: ['behind', 'between', 'on'], ans: 0 },
+      { q: 'The book is ___ the bag.', opts: ['in', 'next', 'behind'], ans: 0 },
+      { q: 'The picture is ___ the wall.', opts: ['on', 'in', 'between'], ans: 0 }
+    ]],
+    [/this is my|demonstrative/, [
+      { q: '___ is my book.', opts: ['This', 'These', 'Those'], ans: 0 },
+      { q: 'This ___ my teacher.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'This is ___ bag.', opts: ['my', 'me', 'I'], ans: 0 },
+      { q: '___ are my parents.', opts: ['These', 'This', 'That'], ans: 0 }
+    ]],
+    [/imperative|verb in stem/, [
+      { q: '___ your hands.', opts: ['Wash', 'Washing', 'Washes'], ans: 0 },
+      { q: '___ run in the classroom.', opts: ["Don't", "Doesn't", 'Not'], ans: 0 },
+      { q: '___ your book, please.', opts: ['Open', 'Opens', 'Opening'], ans: 0 }
+    ]],
+    [/a vs an|indefinite articles/, [
+      { q: 'I have ___ apple.', opts: ['an', 'a', 'the'], ans: 0 },
+      { q: 'This is ___ bag.', opts: ['a', 'an', 'the'], ans: 0 },
+      { q: 'She has ___ orange.', opts: ['an', 'a', 'the'], ans: 0 }
+    ]],
+    [/there is \/ there are|there is|there are/, [
+      { q: 'There ___ a book on the desk.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'There ___ two pencils in the bag.', opts: ['are', 'is', 'am'], ans: 0 },
+      { q: '___ there a park near here?', opts: ['Is', 'Are', 'Do'], ans: 0 }
+    ]],
+    [/ability|can \+|modal verbs: can/, [
+      { q: 'She can ___.', opts: ['swim', 'swims', 'swimming'], ans: 0 },
+      { q: 'I ___ play football.', opts: ['can', 'cans', 'am'], ans: 0 },
+      { q: 'He can ___ a ball.', opts: ['kick', 'kicks', 'kicking'], ans: 0 }
+    ]],
+    [/present simple/, [
+      { q: 'He ___ to school every day.', opts: ['goes', 'go', 'going'], ans: 0 },
+      { q: 'They ___ football on Fridays.', opts: ['play', 'plays', 'playing'], ans: 0 },
+      { q: 'She ___ her teeth every morning.', opts: ['brushes', 'brush', 'brushing'], ans: 0 }
+    ]],
+    [/past simple/, [
+      { q: 'Yesterday, we ___ to the park.', opts: ['went', 'go', 'goes'], ans: 0 },
+      { q: 'She ___ her homework last night.', opts: ['finished', 'finish', 'finishes'], ans: 0 },
+      { q: 'They ___ a museum last week.', opts: ['visited', 'visit', 'visits'], ans: 0 }
+    ]],
+    [/comparative/, [
+      { q: 'A tiger is ___ than a cat.', opts: ['faster', 'fastest', 'fast'], ans: 0 },
+      { q: 'This book is ___ interesting than that one.', opts: ['more', 'most', 'many'], ans: 0 },
+      { q: 'My bag is ___ than yours.', opts: ['heavier', 'heaviest', 'heavy'], ans: 0 }
+    ]],
+    [/superlative/, [
+      { q: 'The Nile is one of the ___ rivers in the world.', opts: ['longest', 'longer', 'long'], ans: 0 },
+      { q: 'This is the ___ picture in the class.', opts: ['most beautiful', 'more beautiful', 'beautiful'], ans: 0 },
+      { q: 'Mona is the ___ student in her team.', opts: ['tallest', 'taller', 'tall'], ans: 0 }
+    ]],
+    [/passive voice/, [
+      { q: 'The bridge ___ built in 2020.', opts: ['was', 'were', 'are'], ans: 0 },
+      { q: 'Rice ___ grown in Egypt.', opts: ['is', 'are', 'be'], ans: 0 },
+      { q: 'The letters ___ delivered yesterday.', opts: ['were', 'was', 'is'], ans: 0 }
+    ]],
+    [/conditionals/, [
+      { q: 'If you heat ice, it ___.', opts: ['melts', 'melt', 'will melted'], ans: 0 },
+      { q: 'If it rains tomorrow, we ___ stay at home.', opts: ['will', 'would', 'are'], ans: 0 },
+      { q: 'If I had more time, I ___ learn French.', opts: ['would', 'will', 'am'], ans: 0 }
+    ]],
+    [/future plans|going to/, [
+      { q: 'She is going to ___ for her test.', opts: ['study', 'studies', 'studying'], ans: 0 },
+      { q: 'They are going to ___ tomorrow.', opts: ['travel', 'travels', 'travelled'], ans: 0 },
+      { q: 'I am ___ to visit my aunt.', opts: ['going', 'go', 'goes'], ans: 0 }
+    ]],
+    [/relative pronouns|relative clauses/, [
+      { q: 'A doctor is a person ___ helps people.', opts: ['who', 'which', 'where'], ans: 0 },
+      { q: 'This is the school ___ I study.', opts: ['where', 'who', 'whose'], ans: 0 },
+      { q: 'A laptop is a device ___ stores information.', opts: ['which', 'who', 'where'], ans: 0 }
+    ]],
+    [/past perfect/, [
+      { q: 'The train ___ left before we arrived.', opts: ['had', 'has', 'have'], ans: 0 },
+      { q: 'She had ___ dinner before the guests came.', opts: ['cooked', 'cook', 'cooking'], ans: 0 },
+      { q: 'After they had finished, they ___ home.', opts: ['went', 'go', 'going'], ans: 0 }
+    ]],
+    [/reported speech/, [
+      { q: 'Ali said that he ___ tired.', opts: ['was', 'is', 'am'], ans: 0 },
+      { q: 'Mona said that she ___ the answer.', opts: ['knew', 'knows', 'know'], ans: 0 },
+      { q: 'He said that he ___ help us.', opts: ['would', 'will', 'can'], ans: 0 }
+    ]]
+  ];
+  const matchingGrammarSet = grammarQuestionSets.find(([pattern]) => pattern.test(grammarRuleText));
+  if (matchingGrammarSet) {
+    matchingGrammarSet[1].forEach((question) => {
+      if (!grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
+    });
+  }
   (unit?.grammar?.examples || []).slice(0, 2).forEach((example, index) => {
     const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
     if (question) grammarPractice.push(question);
