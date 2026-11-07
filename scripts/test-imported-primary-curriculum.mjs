@@ -77,9 +77,11 @@ assert(main.includes('const unitTestQuestions') && main.includes('unitTestQuesti
 assert(main.includes('function explainGrammarRule') && main.includes('grammar-formula'), 'Grammar screens include a clear explanation, pattern, examples and study tip');
 assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
 assert(main.includes('const arabicOnly =') && main.includes("label: arabicOnly || 'معنى غير متاح'"), 'Matching-game clue side strips any repeated English answer from the Arabic meaning');
-assert(main.includes('correctPosition = index % Math.max(1, opts.length)'), 'Correct answer positions rotate evenly within each question group');
+assert(main.includes('correctPosition = index % 4') && main.includes('opts.length >= 3'), 'Each multiple-choice question is expanded to four choices and correct positions rotate across all four');
 assert(main.includes('grammarQuestionSets') && main.includes('verification|application check|key pattern'), 'Placeholder grammar checks are filtered and replaced with rule-based practice');
 assert(main.includes('unitWords.flatMap') && main.includes('What does'), 'Vocabulary practice mixes English prompts with Arabic meaning choices');
+assert(main.includes('authenticDialogue') && main.includes('modelDialogue') && main.includes('ministerial exercises'), 'Generated welcome scripts and truncated dialogue placeholders are replaced by unit-based model dialogue');
+assert(main.includes('authenticSpeakingQuestions') && main.includes('Use the word in a complete sentence'), 'Generic speaking placeholders are excluded and replaced with unit vocabulary speaking prompts');
 assert(main.includes('navigationEpoch') && main.includes('state._renderViewKey') && main.includes('route-enter'), 'Lesson navigation guards stale history and preserves scroll between interactions');
 assert(main.includes('window.history.back();') && main.includes('navigationEpoch') && main.includes('event.state.epoch === state.navigationEpoch'), 'Back buttons follow the previous screen and stale Home history is ignored');
 assert(main.includes('Choose the correct meaning of') && main.includes('meaningMatch'), 'Arabic vocabulary stems are rewritten as English prompts while Arabic meanings remain in the choices');
