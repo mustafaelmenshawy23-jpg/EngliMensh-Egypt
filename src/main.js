@@ -299,11 +299,19 @@ function renderImportedPrimaryCurriculum() {
       [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
     }
     const correct = shuffledOptions.findIndex((option) => option.originalIndex === originalCorrect);
+    const answerState = getQuestionState(id);
+    const wrongChoices = answerState.wrongChoices.map(String);
 
-    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}">
+    return `<article class="interactive-question imported-question" data-imported-question="${escapeHtml(id)}" data-answered="${answerState.isCorrect ? 'true' : 'false'}">
       <p class="question-prompt-text" dir="auto">${escapeHtml(q.q || 'Choose the correct answer')}</p>
-      <div class="quiz-options">${shuffledOptions.map((option, oi) => `<button type="button" class="quiz-option imported-answer" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}"><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option.text)}</span></button>`).join('')}</div>
-      <p class="imported-feedback" aria-live="polite"></p>
+      <div class="quiz-options">${shuffledOptions.map((option, oi) => {
+        const isCorrectChoice = answerState.isCorrect && Number(answerState.choice) === oi;
+        const isWrongChoice = wrongChoices.includes(String(oi));
+        const choiceClass = isCorrectChoice ? 'is-correct' : isWrongChoice ? 'is-wrong' : '';
+        const disabled = answerState.isCorrect || isWrongChoice;
+        return `<button type="button" class="quiz-option imported-answer ${choiceClass}" data-question="${escapeHtml(id)}" data-choice="${oi}" data-correct="${correct}" ${disabled ? 'disabled' : ''}><span class="option-letter">${String.fromCharCode(65 + oi)}</span><span class="option-text" dir="auto">${escapeHtml(option.text)}</span></button>`;
+      }).join('')}</div>
+      <p class="imported-feedback ${answerState.isCorrect ? 'correct' : wrongChoices.length ? 'incorrect' : ''}" aria-live="polite">${answerState.isCorrect ? 'Correct! Well done.' : wrongChoices.length ? 'Not quite. Try another answer.' : ''}</p>
     </article>`;
   }).join('');
 
@@ -1709,25 +1717,46 @@ function render() {
     render();
   }));
 
-  // Imported primary curriculum quiz listener
+  // Imported primary curriculum quiz listener (persists across navigation and reloads)
   app.querySelectorAll('.imported-answer').forEach((button) => button.addEventListener('click', () => {
     const card = button.closest('[data-imported-question]');
-    if (!card || card.dataset.answered === 'true') return;
+    if (!card || card.dataset.answered === 'true' || button.disabled) return;
+    const questionId = card.dataset.importedQuestion;
     const correct = Number(button.dataset.correct);
     const chosen = Number(button.dataset.choice);
+    const previous = getQuestionState(questionId);
+    const wrongChoices = previous.wrongChoices.map(String);
     const feedback = card.querySelector('.imported-feedback');
+
     if (chosen === correct) {
+      state.quizAnswers[questionId] = {
+        choice: String(chosen),
+        isCorrect: true,
+        wrongChoices
+      };
       card.dataset.answered = 'true';
       button.classList.add('is-correct');
       feedback.textContent = 'Correct! Well done.';
+      feedback.classList.remove('incorrect');
       feedback.classList.add('correct');
-      card.querySelectorAll('.imported-answer').forEach((option) => { option.disabled = true; });
+      card.querySelectorAll('.imported-answer').forEach((option) => {
+        option.disabled = true;
+        if (option !== button) option.classList.remove('is-wrong');
+      });
     } else {
+      if (!wrongChoices.includes(String(chosen))) wrongChoices.push(String(chosen));
+      state.quizAnswers[questionId] = {
+        choice: null,
+        isCorrect: false,
+        wrongChoices
+      };
       button.classList.add('is-wrong');
       button.disabled = true;
       feedback.textContent = 'Not quite. Try another answer.';
+      feedback.classList.remove('correct');
       feedback.classList.add('incorrect');
     }
+    saveProgressToStorage();
   }));
 
   // Quiz Option Retry Listener (Allows retrying wrong options until correct answer is chosen)
