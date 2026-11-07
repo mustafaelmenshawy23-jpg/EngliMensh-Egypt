@@ -131,7 +131,9 @@ for (const candidateModel of fallbackModels) {
           error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
           /Gemini API (408|500|502|503|504)/.test(error.message);
         if (!retryable) throw error;
-        if (/Gemini API 503/.test(error.message)) modelUnavailable = true;
+        if (error.name === 'TimeoutError' || error.name === 'AbortError' ||
+            error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
+            /Gemini API (408|500|502|503|504)/.test(error.message)) modelUnavailable = true;
       }
       if (payload) break;
       if (attempt < 3) {
