@@ -289,7 +289,115 @@ function explainGrammarRule(rule, examples = []) {
   let explanation = 'Read the pattern, then notice how the words work together in each example.';
   let formula = rule || 'Grammar pattern';
   let tip = 'Say each example aloud, then change one word and make a new sentence.';
-  if (/these are my|plural demonstrative/.test(text)) {
+  if (/questions: is there/.test(text)) {
+    title = 'Asking about things that exist';
+    explanation = 'Use “Is there …?” to ask about one thing. Use “Are there …?” to ask about more than one. In short answers, repeat the verb: “Yes, there is” or “No, there aren’t.”';
+    formula = 'Is there + a / an + singular noun? · Are there + plural noun?';
+    tip = 'Is there a river? Yes, there is. / Are there any trees? Yes, there are.';
+    exampleList.splice(0, exampleList.length, 'Is there a river? Yes, there is.', 'Are there any trees? Yes, there are.');
+  } else if (/telling time/.test(text)) {
+    title = 'Telling the time';
+    explanation = 'For an exact hour, say “It’s” followed by the number and “o’clock”. Use the same pattern to ask and answer about daily schedules.';
+    formula = 'It is / It’s + number + o’clock';
+    tip = 'It’s seven o’clock. / It’s eight o’clock.';
+    exampleList.splice(0, exampleList.length, 'It’s seven o’clock.', 'School starts at eight o’clock.');
+  } else if (/day and night routines/.test(text)) {
+    title = 'Describing daily and natural routines';
+    explanation = 'Use the present simple for routines and facts that happen regularly. Use the base verb with I, you, we and they; add -s or -es with he, she and it.';
+    formula = 'I / We + base verb · He / She / It + verb-s';
+    tip = 'The sun rises in the morning. / Stars appear at night.';
+    exampleList.splice(0, exampleList.length, 'The sun rises in the morning.', 'The moon appears at night.');
+  } else if (/singular vs plural clothes/.test(text)) {
+    title = 'Talking about one item or more than one';
+    explanation = 'Use “this is” with one item and “these are” with two or more. The noun must match: a singular noun after “this”, and a plural noun after “these”.';
+    formula = 'This is + singular noun · These are + plural noun';
+    tip = 'This is my dress. / These are my shoes.';
+    exampleList.splice(0, exampleList.length, 'This is my dress.', 'These are my shoes.');
+  } else if (/adjectives: opposites/.test(text)) {
+    title = 'Using adjectives and their opposites';
+    explanation = 'Adjectives describe people, animals and things. Opposite adjectives give contrasting meanings. After “be”, use the adjective without adding -ly.';
+    formula = 'subject + am / is / are + adjective';
+    tip = 'The clown is funny and short. / The giraffe is tall.';
+    exampleList.splice(0, exampleList.length, 'The clown is funny and short.', 'The giraffe is tall.', 'The old man is kind.');
+  } else if (/animal classification|animal.*traits/.test(text)) {
+    title = 'Describing animal groups and features';
+    explanation = 'Use the present simple to state scientific facts. Use “are” to classify a group and “have” to describe features shared by animals.';
+    formula = 'animal + is / are + group · animal + has / have + feature';
+    tip = 'Lions and camels are mammals. / Fish and reptiles have scales.';
+    exampleList.splice(0, exampleList.length, 'Lions and camels are mammals.', 'Snakes and lizards are reptiles.', 'Fish and reptiles have scales.');
+  } else if (/geography|landscapes/.test(text)) {
+    title = 'Describing places and landscapes';
+    explanation = 'Use “be” with an adjective to describe a place. Use “there is” for one feature and “there are” for more than one.';
+    formula = 'place + is / are + adjective · There is / There are + feature';
+    tip = 'Mount Sinai is majestic. / The Nile Valley is fertile.';
+    exampleList.splice(0, exampleList.length, 'Mount Sinai is majestic.', 'The Nile Valley is fertile.', 'The Nile River is long.');
+  } else if (/nutrition|body needs/.test(text)) {
+    title = 'Talking about food and healthy needs';
+    explanation = 'Use “need” to say what the body requires. Use “should” for helpful advice and “shouldn’t” for advice against something.';
+    formula = 'subject + need(s) + noun · subject + should / shouldn’t + base verb';
+    tip = 'Your body needs water. / You should eat vegetables.';
+    exampleList.splice(0, exampleList.length, 'Your body needs water.', 'You should eat vegetables.', 'You shouldn’t skip breakfast.');
+  } else if (/good at \/ bad at|good at|bad at/.test(text)) {
+    title = 'Saying what you are good or bad at';
+    explanation = 'Use “good at” or “bad at” before a noun or an activity ending in -ing. After “am”, “is” or “are”, keep the phrase “good at” together.';
+    formula = 'am / is / are + good at / bad at + noun or verb-ing';
+    tip = 'I am good at playing squash. / I am bad at tennis.';
+    exampleList.splice(0, exampleList.length, 'I am good at playing squash.', 'I am bad at tennis.');
+  } else if (/could \/ couldn't|past ability/.test(text)) {
+    title = 'Talking about ability in the past';
+    explanation = 'Use “could” for an ability someone had in the past and “couldn’t” for an ability they did not have. Follow both forms with the base verb.';
+    formula = 'subject + could / couldn’t + base verb';
+    tip = 'When I was six, I couldn’t swim. / My sister could ride a bike.';
+    exampleList.splice(0, exampleList.length, 'When I was six, I couldn’t swim.', 'My sister could ride a bike.');
+  } else if (/present simple.*scientific life cycles|present simple for rural life|scientific facts about astronomy|food chains|present simple for natural cycles/.test(text)) {
+    title = 'Using the present simple for facts';
+    explanation = 'Use the present simple for scientific facts, natural processes and regular activities. Add -s or -es to the verb with he, she or it; use the base form with plural subjects.';
+    formula = 'singular subject + verb-s / -es · plural subject + base verb';
+    tip = 'The caterpillar eats leaves. / Planets orbit the sun. / Water evaporates when heated.';
+    exampleList.splice(0, exampleList.length, 'The caterpillar eats leaves.', 'Planets orbit the sun.', 'Water evaporates when heated.');
+  } else if (/past simple.*historical achievements/.test(text)) {
+    title = 'Describing events in history';
+    explanation = 'Use the past simple for completed events in the past. Regular verbs usually end in -ed; irregular verbs have special past forms such as “built”, “went” and “made”.';
+    formula = 'subject + past form of the verb';
+    tip = 'Ancient Egyptians built the pyramids. / Saladin built the Citadel.';
+    exampleList.splice(0, exampleList.length, 'Ancient Egyptians built the pyramids.', 'Saladin built the Citadel.');
+  } else if (/describing amusement parks/.test(text)) {
+    title = 'Describing places and attractions';
+    explanation = 'Use “there is” with one attraction and “there are” with more than one. Add adjectives to describe what an attraction is like.';
+    formula = 'There is + singular noun · There are + plural noun';
+    tip = 'There is a tall Ferris wheel. / There are exciting rides.';
+    exampleList.splice(0, exampleList.length, 'There is a tall Ferris wheel.', 'There are exciting rides.');
+  } else if (/present simple: to be.*nationalities/.test(text)) {
+    title = 'Using be to introduce people and nationalities';
+    explanation = 'Use “am” with I, “is” with he, she or it, and “are” with you, we or they. Nationality words begin with a capital letter in English.';
+    formula = 'I am · He / She is · You / We / They are + nationality';
+    tip = 'I am Egyptian. / They are Egyptian.';
+    exampleList.splice(0, exampleList.length, 'I am Egyptian.', 'She is Egyptian.', 'They are Egyptian.');
+  } else if (/expressing professions|daily tasks/.test(text)) {
+    title = 'Describing jobs and daily tasks';
+    explanation = 'Use the present simple to describe what people do as part of their jobs. With he, she or a singular job title, add -s or -es to most verbs.';
+    formula = 'a / the + job + verb-s / -es';
+    tip = 'A carpenter makes furniture. / A potter shapes clay.';
+    exampleList.splice(0, exampleList.length, 'A carpenter makes furniture.', 'A potter shapes clay.', 'A tour guide shows visitors landmarks.');
+  } else if (/functions of bodily systems/.test(text)) {
+    title = 'Describing body functions and giving advice';
+    explanation = 'Use the present simple for body functions and facts. Use “can” for ability and “should” or “must” when giving advice or explaining what is necessary.';
+    formula = 'body system + verb-s · should / must / can + base verb';
+    tip = 'The heart pumps blood. / You should drink enough water.';
+    exampleList.splice(0, exampleList.length, 'The heart pumps blood.', 'You should drink enough water.');
+  } else if (/conditionals.*cause and effect|cause and effect/.test(text)) {
+    title = 'Showing causes and results';
+    explanation = 'Use “if” or “when” to introduce a condition or cause. Use “as a result” or “therefore” to introduce the result. Keep the verb tense consistent with the meaning.';
+    formula = 'if / when + condition, result · cause. As a result, + effect.';
+    tip = 'If we save energy, we reduce pollution. / We saved energy; therefore, we reduced pollution.';
+    exampleList.splice(0, exampleList.length, 'If we save energy, we reduce pollution.', 'We saved energy; therefore, we reduced pollution.');
+  } else if (/causative verbs/.test(text)) {
+    title = 'Saying that someone arranges a service';
+    explanation = 'Use the causative when someone arranges for another person to do a job. The person arranging the service is the subject; the object receives the action.';
+    formula = 'have / get + object + past participle';
+    tip = 'They had the coral reefs mapped. / She got her bicycle repaired.';
+    exampleList.splice(0, exampleList.length, 'They had the coral reefs mapped.', 'She got her bicycle repaired.');
+  } else if (/these are my|plural demonstrative/.test(text)) {
     title = 'Introducing more than one person or thing';
     explanation = 'Use “These are my …” when you introduce two or more people or things. “These” points to a group nearby, “are” agrees with the plural subject, and “my” shows that the people or things belong to you. For one person or thing, use “This is my …”.';
     formula = 'These are my + plural noun · This is my + singular noun';
