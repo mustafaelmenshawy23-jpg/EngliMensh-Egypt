@@ -17,7 +17,7 @@ if (!fs.existsSync(archive)) {
 const source = execFileSync('unzip', ['-p', archive, member], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
 const prefix = 'const database =';
 if (!source.trimStart().startsWith(prefix)) throw new Error('Unexpected data.js format: database declaration not found.');
-const database = JSON.parse(source.trim().replace(/^const database =/, '').trim().replace(/;\\s*$/, ''));
+const database = JSON.parse(source.trim().replace(/^const database =/, '').trim().replace(/;\s*$/, ''));
 
 const expectedTracks = [
   { id: 'general', name: 'Connect', match: 'Connect (' },
@@ -61,7 +61,7 @@ for (const trackDef of expectedTracks) {
     if (!gradeKey) throw new Error(`Missing ${trackDef.name} Primary ${grade}`);
     const sourceUnits = sourceGrades[gradeKey];
     const units = Object.entries(sourceUnits).map(([sourceTitle, unit]) => {
-      const match = sourceTitle.match(/^Unit (\\d+):\\s*(.*)$/);
+      const match = sourceTitle.match(/^Unit (\d+):\s*(.*)$/);
       if (!match) throw new Error(`Unrecognized unit key: ${sourceTitle}`);
       if (!Array.isArray(unit.vocab) || unit.vocab.length === 0) throw new Error(`Missing vocabulary: ${sourceTitle}`);
       if (!Array.isArray(unit.vocabQuiz) || !Array.isArray(unit.dialogue) || !Array.isArray(unit.speakingQuiz) || !Array.isArray(unit.exam)) {
@@ -117,7 +117,7 @@ if (counts.units !== 75 || counts.vocabulary !== 750 || counts.multipleChoiceQue
   throw new Error(`Unexpected source inventory: ${JSON.stringify(counts)}`);
 }
 fs.mkdirSync(path.dirname(output), { recursive: true });
-fs.writeFileSync(output, JSON.stringify({ ...result, validation: counts }, null, 2) + '\\n', 'utf8');
+fs.writeFileSync(output, JSON.stringify({ ...result, validation: counts }, null, 2) + '\n', 'utf8');
 console.log(JSON.stringify({ output: path.relative(root, output), ...counts }, null, 2));
 if (counts.answerIndexZero === counts.multipleChoiceQuestions) {
   console.warn('QUALITY WARNING: every source MCQ answer is option 1. The app must shuffle options while preserving the answer key and add independently authored supplementary practice.');
