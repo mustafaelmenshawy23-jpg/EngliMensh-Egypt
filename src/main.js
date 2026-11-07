@@ -620,7 +620,11 @@ function renderImportedPrimaryCurriculum() {
     a: ['an', 'the', 'some'], an: ['a', 'the', 'some'], in: ['on', 'under', 'behind'], on: ['in', 'under', 'behind'],
     can: ['could', 'must', 'are'], will: ['would', 'is', 'has'], who: ['which', 'where', 'whose'], which: ['who', 'where', 'whose'],
     was: ['were', 'is', 'are'], were: ['was', 'is', 'are'], had: ['has', 'have', 'is'],
-    next: ['behind', 'between', 'under'], behind: ['next to', 'in front of', 'between']
+    next: ['behind', 'between', 'under'], behind: ['next to', 'in front of', 'between'],
+    happy: ['sad', 'angry', 'tired'], cold: ['headache', 'fever', 'cough'], rises: ['rise', 'rising', 'rose'],
+    mammals: ['reptiles', 'amphibians', 'birds'], majestic: ['fertile', 'vast', 'narrow'], needs: ['need', 'needing', 'needed'],
+    eats: ['eat', 'eating', 'ate'], am: ['is', 'are', 'be'], makes: ['make', 'making', 'made'],
+    mapped: ['map', 'mapping', 'maps'], reduce: ['reduces', 'reduced', 'reducing'], "o'clock": ['clock', 'hour', 'minutes']
   };
   const makeCloze = (sentence, index, prefix, targetOverride = null) => {
     const tokens = String(sentence || '').match(/[A-Za-z][A-Za-z']*/g) || [];
@@ -639,6 +643,71 @@ function renderImportedPrimaryCurriculum() {
   const grammarPractice = [...(unit?.grammar?.quiz || []).filter((item) => !/(verification|application check|key pattern|correct structure|incorrect syntax)/i.test(String(item.q || '')))];
   const grammarRuleText = String(unit?.grammar?.rule || '').toLowerCase();
   const grammarQuestionSets = [
+    [/expressing feelings|i feel \+ adjective/, [
+      { q: 'How do you feel today? I feel ___.', opts: ['happy', 'happily', 'happiness'], ans: 0 },
+      { q: 'She ___ excited.', opts: ['feels', 'feel', 'feeling'], ans: 0 },
+      { q: 'I feel ___ after a good rest.', opts: ['better', 'wellness', 'bestly'], ans: 0 }
+    ]],
+    [/expressing illness|i have a \+ illness/, [
+      { q: 'I have a ___.', opts: ['cold', 'coldly', 'colder'], ans: 0 },
+      { q: 'She ___ a headache.', opts: ['has', 'have', 'having'], ans: 0 },
+      { q: 'They ___ a cough.', opts: ['have', 'has', 'having'], ans: 0 }
+    ]],
+    [/giving directions/, [
+      { q: '___ straight at the next street.', opts: ['Go', 'Goes', 'Going'], ans: 0 },
+      { q: 'Turn ___ at the traffic lights.', opts: ['left', 'between', 'under'], ans: 0 },
+      { q: '___ right to reach the station.', opts: ['Turn', 'Turns', 'Turning'], ans: 0 }
+    ]],
+    [/telling time/, [
+      { q: 'It is seven ___.', opts: ["o'clock", 'clock', 'hours'], ans: 0 },
+      { q: 'School starts ___ eight o’clock.', opts: ['at', 'in', 'on'], ans: 0 },
+      { q: 'What time is it? It ___ nine o’clock.', opts: ['is', 'are', 'am'], ans: 0 }
+    ]],
+    [/day and night routines/, [
+      { q: 'The sun ___ in the morning.', opts: ['rises', 'rise', 'rising'], ans: 0 },
+      { q: 'Stars ___ at night.', opts: ['appear', 'appears', 'appearing'], ans: 0 },
+      { q: 'The moon ___ at night.', opts: ['shines', 'shine', 'shining'], ans: 0 }
+    ]],
+    [/animal classification|animal.*traits/, [
+      { q: 'Lions and camels are ___.', opts: ['mammals', 'reptiles', 'amphibians'], ans: 0 },
+      { q: 'Fish and reptiles ___ scales.', opts: ['have', 'has', 'having'], ans: 0 },
+      { q: 'A frog is an ___.', opts: ['amphibian', 'mammal', 'reptile'], ans: 0 }
+    ]],
+    [/geography|landscapes/, [
+      { q: 'Mount Sinai is ___.', opts: ['majestic', 'majestically', 'majesty'], ans: 0 },
+      { q: 'The Nile Valley ___ fertile.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'There ___ a river in the valley.', opts: ['is', 'are', 'be'], ans: 0 }
+    ]],
+    [/nutrition|body needs/, [
+      { q: 'Your body ___ water every day.', opts: ['needs', 'need', 'needing'], ans: 0 },
+      { q: 'You ___ eat vegetables.', opts: ['should', 'should to', 'shoulds'], ans: 0 },
+      { q: 'You ___ skip breakfast.', opts: ["shouldn't", 'should', 'must to'], ans: 0 }
+    ]],
+    [/present simple.*scientific life cycles|present simple for rural life|scientific facts about astronomy|food chains|present simple for natural cycles/, [
+      { q: 'The caterpillar ___ leaves.', opts: ['eats', 'eat', 'eating'], ans: 0 },
+      { q: 'Planets ___ the sun.', opts: ['orbit', 'orbits', 'orbiting'], ans: 0 },
+      { q: 'A predator ___ its prey.', opts: ['eats', 'eat', 'eating'], ans: 0 }
+    ]],
+    [/present simple: to be.*nationalities/, [
+      { q: 'I ___ Egyptian.', opts: ['am', 'is', 'are'], ans: 0 },
+      { q: 'She ___ Egyptian.', opts: ['is', 'am', 'are'], ans: 0 },
+      { q: 'They ___ Egyptian.', opts: ['are', 'is', 'am'], ans: 0 }
+    ]],
+    [/expressing professions|daily tasks/, [
+      { q: 'A carpenter ___ furniture.', opts: ['makes', 'make', 'making'], ans: 0 },
+      { q: 'A potter ___ clay.', opts: ['shapes', 'shape', 'shaping'], ans: 0 },
+      { q: 'Tour guides ___ visitors around landmarks.', opts: ['show', 'shows', 'showing'], ans: 0 }
+    ]],
+    [/causative verbs/, [
+      { q: 'They had the coral reefs ___.', opts: ['mapped', 'map', 'mapping'], ans: 0 },
+      { q: 'She got her bicycle ___.', opts: ['repaired', 'repair', 'repairing'], ans: 0 },
+      { q: 'Have + object + past ___.', opts: ['participle', 'present', 'infinitive'], ans: 0 }
+    ]],
+    [/conditionals.*cause and effect|cause and effect/, [
+      { q: 'If we save energy, we ___ pollution.', opts: ['reduce', 'reduces', 'reduced'], ans: 0 },
+      { q: 'If water reaches 100°C, it ___.', opts: ['boils', 'boil', 'boiling'], ans: 0 },
+      { q: 'We planted trees. As a result, the air ___.', opts: ['improved', 'improve', 'improving'], ans: 0 }
+    ]],
     [/has got|have got/, [
       { q: 'She ___ got curly hair.', opts: ['has', 'have', 'is'], ans: 0 },
       { q: 'They ___ got two cousins.', opts: ['have', 'has', 'are'], ans: 0 },
