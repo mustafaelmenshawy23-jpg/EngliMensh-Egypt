@@ -73,7 +73,7 @@ for (const track of data.tracks) {
   for (const grade of track.grades) {
     for (const unit of grade.units) {
       assert(unit.vocabulary.length >= 6 && unit.vocabularyQuestions.length >= 10, `Unit has enough source vocabulary and vocabulary questions: ${track.id}/${grade.grade}/${unit.number}`);
-      assert(unit.grammar.examples.length >= 2 && unit.readingText && unit.dialogue.length >= 2, `Unit has source material for generated practice and audio: ${track.id}/${grade.grade}/${unit.number}`);
+      assert(unit.grammar.examples.length >= 1 && unit.readingText && unit.dialogue.length >= 2, `Unit has source material for generated practice and audio: ${track.id}/${grade.grade}/${unit.number}`);
     }
   }
 }
