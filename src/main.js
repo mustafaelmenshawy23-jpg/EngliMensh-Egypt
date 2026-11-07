@@ -44,6 +44,7 @@ const vocabVisualMap = {
 };
 
 const state = {
+  navigationEpoch: 0,
   stage: 'primary',
   grade: 1,
   path: 'general',
@@ -2050,14 +2051,14 @@ function render() {
     state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
     state.game3 = { index: 0, score: 0, selectedOption: null };
     state.game4 = { index: 0, score: 0, selectedOption: null };
-    window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
+    window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-section]').forEach((button) => button.addEventListener('click', () => {
     state.activeModule = button.dataset.importedSection;
-    window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
+    window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -2065,11 +2066,11 @@ function render() {
   app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
     if (button.dataset.importedBack === 'unit' && state.importedUnitNumber) {
       state.activeModule = null;
-      window.history.replaceState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
+      window.history.replaceState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
     } else {
       state.importedUnitNumber = null;
       state.activeModule = null;
-      window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
+      window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
     }
     saveProgressToStorage();
     render();
@@ -2079,7 +2080,7 @@ function render() {
     event.preventDefault();
     state.importedUnitNumber = null;
     state.activeModule = null;
-    window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
+    window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -2172,7 +2173,7 @@ function render() {
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
-  const resetImportedRoute = () => window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
+  const resetImportedRoute = () => { state.navigationEpoch += 1; window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade'); };
   app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
   app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
   app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
@@ -2342,11 +2343,14 @@ function render() {
 loadProgressFromStorage();
 window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', window.location.pathname + window.location.search + '#grade');
 if (state.importedUnitNumber) {
-  window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
-  if (state.activeModule) window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
+  window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
+  if (state.activeModule) window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
 }
 window.addEventListener('popstate', (event) => {
-  const route = event.state?.app === 'englimensh' ? event.state : { route: 'grade' };
+  const route = event.state?.app === 'englimensh' && event.state.epoch === state.navigationEpoch ? event.state : { route: 'grade' };
+  if (route.route === 'grade' && event.state?.epoch !== state.navigationEpoch) {
+    window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
+  }
   state.importedUnitNumber = route.route === 'unit' || route.route === 'module' ? Number(route.unit) : null;
   state.activeModule = route.route === 'module' ? route.module : null;
   saveProgressToStorage();
