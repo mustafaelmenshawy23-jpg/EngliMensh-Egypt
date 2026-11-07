@@ -359,15 +359,19 @@ function renderImportedPrimaryCurriculum() {
     const opts = Array.isArray(q.opts) ? q.opts : [];
     const answer = Number.isInteger(q.ans) ? q.ans : 0;
     const id = prefix + '-' + index;
-    const shuffled = opts.map((text, originalIndex) => ({ text, originalIndex }));
+    const correctOption = opts[answer];
+    const distractors = opts.filter((_, originalIndex) => originalIndex !== answer);
     let seed = 0;
     for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
-    for (let i = shuffled.length - 1; i > 0; i--) {
+    for (let i = distractors.length - 1; i > 0; i--) {
       seed = (seed * 16807) % 2147483647;
       const j = Math.floor((seed / 2147483647) * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
     }
-    const correct = shuffled.findIndex((option) => option.originalIndex === answer);
+    const correctPosition = index % Math.max(1, opts.length);
+    const shuffled = [...distractors];
+    shuffled.splice(correctPosition, 0, correctOption);
+    const correct = correctPosition;
     const saved = getQuestionState(id);
     const wrong = saved.wrongChoices.map(String);
     return '<article class="interactive-question imported-question" data-imported-question="' + escapeHtml(id) + '" data-answered="' + (saved.isCorrect ? 'true' : 'false') + '">' +
@@ -591,7 +595,7 @@ function getPrimaryGameWords(limit = 6) {
     target: String(item.en).trim().toLowerCase(),
     arabic: item.ar,
     icon: item.e || '🔤',
-    label: item.en + ' (' + item.ar + ')'
+    label: String(item.ar).trim()
   }));
 }
 
@@ -657,7 +661,6 @@ function renderGame1Matching() {
             return `
               <button type="button" class="matching-card word-card ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}" data-match-word="${p.word}" ${isMatched ? 'disabled' : ''}>
                 <span dir="ltr">${p.word}</span>
-                <button type="button" class="card-audio-icon" data-tts-text="${p.word}" title="Listen to word">🔊</button>
               </button>
             `;
           }).join('')}
@@ -1632,6 +1635,8 @@ function render() {
     ? primaryHtmlCurriculum.tracks.find((item) => item.id === state.path)
     : null;
   const importedPrimaryGrade = importedPrimaryTrack?.grades.find((item) => item.grade === state.grade) || null;
+  const importedUnitView = Boolean(importedPrimaryGrade && state.importedUnitNumber);
+  const importedModuleView = Boolean(importedUnitView && state.activeModule);
   const visiblePathways = state.stage === 'egyptian-baccalaureate'
     ? sourceIndex.pathways.filter((item) => item.id.startsWith('egypt-baccalaureate'))
     : paths;
@@ -1642,12 +1647,12 @@ function render() {
       <span class="country-tag">EGYPTIAN CURRICULUM</span>
     </header>
     <main class="shell stage-${state.stage}">
-      <section class="welcome">
+      <section class="welcome" ${importedUnitView ? 'hidden' : ''}>
         <p class="eyebrow">YOUR ENGLISH LEARNING SPACE</p>
         <h1>Learn. Practice. Achieve.</h1>
         <p class="intro">Choose your educational stage and curriculum pathway to get started.</p>
       </section>
-      <section class="panel">
+      <section class="panel selection-panel" ${importedUnitView ? 'hidden' : ''}>
         <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your stage</h2></div></div>
         <div class="stage-grid">
           ${curriculum.stages.map((item) => `<button class="stage-card ${item.id === state.stage ? 'active' : ''}" data-stage="${item.id}"><span class="stage-icon">${item.id === 'primary' ? '01' : item.id === 'preparatory' ? '02' : item.id === 'secondary' ? '03' : '04'}</span><span>${stageNames[item.id]}</span><span class="chevron">›</span></button>`).join('')}
@@ -1673,16 +1678,17 @@ function render() {
         </div>
       </section>
       <section class="library-section">
-        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">${importedPrimaryGrade ? 'Connect and Connect Plus lessons for the selected grade.' : 'Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.'}</p></div><span class="book-count">${importedPrimaryGrade ? `${importedPrimaryGrade.units.length} units` : `${books.length} source file${books.length === 1 ? '' : 's'}`}</span></div>
+        ${importedUnitView ? '' : `<div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">${importedPrimaryGrade ? 'Connect and Connect Plus lessons for the selected grade.' : 'Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.'}</p></div><span class="book-count">${importedPrimaryGrade ? `${importedPrimaryGrade.units.length} units` : `${books.length} source file${books.length === 1 ? '' : 's'}`}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
-        <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
+        <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">`}
+
         ${importedPrimaryGrade ? '' : renderUnitWorkspace()}
         ${importedPrimaryGrade ? renderImportedPrimaryCurriculum() : ''}
         ${renderPreview()}
         ${importedPrimaryGrade ? '' : `<div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>`}
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
       </section>
-      <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
+      ${importedUnitView ? '' : '<footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>'}
     </main>`;
 
   const applySearch = () => {
@@ -1819,7 +1825,7 @@ function render() {
     render();
   }));
 
-  // Imported primary curriculum: each unit and section opens as its own screen.
+  // Imported primary curriculum: each selection is a real screen in browser history.
   app.querySelectorAll('[data-imported-unit]').forEach((button) => button.addEventListener('click', () => {
     state.importedUnitNumber = Number(button.dataset.importedUnit);
     state.activeModule = null;
@@ -1828,23 +1834,38 @@ function render() {
     state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
     state.game3 = { index: 0, score: 0, selectedOption: null };
     state.game4 = { index: 0, score: 0, selectedOption: null };
+    window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
     saveProgressToStorage();
     render();
-    app.querySelector('.imported-unit-dashboard')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-section]').forEach((button) => button.addEventListener('click', () => {
     state.activeModule = button.dataset.importedSection;
+    window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
     saveProgressToStorage();
     render();
-    app.querySelector('.imported-module-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
+    if (window.history.state?.app === 'englimensh') {
+      window.history.back();
+      return;
+    }
     if (button.dataset.importedBack === 'unit') state.activeModule = null;
     else { state.importedUnitNumber = null; state.activeModule = null; }
     saveProgressToStorage();
     render();
-    app.querySelector('.imported-curriculum')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }));
+  app.querySelector('[data-home]')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    state.importedUnitNumber = null;
+    state.activeModule = null;
+    window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', '#grade');
+    saveProgressToStorage();
+    render();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
 
   // Imported primary curriculum quiz listener (persists across navigation and reloads)
   app.querySelectorAll('.imported-answer').forEach((button) => button.addEventListener('click', () => {
@@ -2093,6 +2114,19 @@ function render() {
   });
 }
 
-// Initial storage load and render
+// Restore a coherent in-app back stack for Android Back and browser Back.
 loadProgressFromStorage();
+window.history.replaceState({ app: 'englimensh', route: 'grade' }, '', window.location.pathname + window.location.search + '#grade');
+if (state.importedUnitNumber) {
+  window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber }, '', '#unit-' + state.importedUnitNumber);
+  if (state.activeModule) window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
+}
+window.addEventListener('popstate', (event) => {
+  const route = event.state?.app === 'englimensh' ? event.state : { route: 'grade' };
+  state.importedUnitNumber = route.route === 'unit' || route.route === 'module' ? Number(route.unit) : null;
+  state.activeModule = route.route === 'module' ? route.module : null;
+  saveProgressToStorage();
+  render();
+  window.scrollTo({ top: 0, behavior: 'auto' });
+});
 render();
