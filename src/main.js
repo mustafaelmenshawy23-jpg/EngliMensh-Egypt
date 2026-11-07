@@ -323,6 +323,11 @@ function explainGrammarRule(rule, examples = []) {
     explanation = 'Use “this” for one thing near you, “that” for one thing farther away, “these” for more than one thing near you, and “those” for more than one thing farther away.';
     formula = 'this = one near · that = one far · these = many near · those = many far';
     tip = 'This is my pen. / Those are my books.';
+  } else if (/past perfect/.test(text)) {
+    title = 'Showing which past action happened first';
+    explanation = 'Use the past perfect for an action completed before another past action. Use the past simple for the later past event.';
+    formula = 'had + past participle · later event: past simple';
+    tip = 'The train had left before we arrived.';
   } else if (/past continuous|past simple vs past continuous/.test(text)) {
     title = 'Describing an action in progress in the past';
     explanation = 'Use the past continuous for an action that was happening at a particular time. Use the past simple for a shorter finished action that happened during it.';
@@ -398,6 +403,11 @@ function explainGrammarRule(rule, examples = []) {
     explanation = 'When an action follows “like”, use the -ing form of the verb.';
     formula = 'like / likes + verb-ing';
     tip = 'I like reading. / He likes playing football.';
+  } else if (/comparative.*superlative|superlative.*comparative/.test(text)) {
+    title = 'Comparing two things and comparing a whole group';
+    explanation = 'Use a comparative to compare two things, often with “than”. Use a superlative to identify the top or bottom member of a group, usually with “the”.';
+    formula = 'comparative: -er / more + adjective + than · superlative: the -est / the most + adjective';
+    tip = 'Mona is taller than Ali. / Mona is the tallest student in the class.';
   } else if (/comparative/.test(text)) {
     title = 'Comparing two things';
     explanation = 'A comparative adjective compares two people or things. Short adjectives often take -er; longer adjectives often use “more”.';
@@ -428,6 +438,21 @@ function explainGrammarRule(rule, examples = []) {
     explanation = 'Use “should” for a good idea and “shouldn’t” for advice not to do something. Follow it with the base form of the verb.';
     formula = 'should / shouldn’t + base verb';
     tip = 'You should sleep early. / You shouldn’t eat too much sugar.';
+  } else if (/zero & first conditional/.test(text)) {
+    title = 'Using zero and first conditionals';
+    explanation = 'Use the zero conditional for facts and results that are generally true. Use the first conditional for a real future possibility.';
+    formula = 'zero: if + present, present · first: if + present, will + base verb';
+    tip = 'If you heat ice, it melts. / If it rains, we will stay inside.';
+  } else if (/second conditional/.test(text)) {
+    title = 'Imagining an unlikely or unreal situation';
+    explanation = 'Use the second conditional to imagine a present or future situation that is unlikely or unreal.';
+    formula = 'If + past simple, would + base verb';
+    tip = 'If I had wings, I would fly.';
+  } else if (/third conditional/.test(text)) {
+    title = 'Imagining a different past';
+    explanation = 'Use the third conditional to imagine a past situation that did not happen and its imagined result.';
+    formula = 'If + past perfect, would have + past participle';
+    tip = 'If we had left earlier, we would have caught the bus.';
   } else if (/conditionals/.test(text)) {
     title = 'Using if sentences';
     explanation = 'An if-clause describes a condition. The other clause tells us the result. The verb forms change according to whether we mean a fact, a real possibility or an imaginary situation.';
