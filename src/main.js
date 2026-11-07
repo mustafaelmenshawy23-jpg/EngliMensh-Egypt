@@ -289,7 +289,13 @@ function explainGrammarRule(rule, examples = []) {
   let explanation = 'Read the pattern, then notice how the words work together in each example.';
   let formula = rule || 'Grammar pattern';
   let tip = 'Say each example aloud, then change one word and make a new sentence.';
-  if (/this is my|introducing people/.test(text)) {
+  if (/these are my|plural demonstrative/.test(text)) {
+    title = 'Introducing more than one person or thing';
+    explanation = 'Use “These are my …” when you introduce two or more people or things. “These” points to a group nearby, “are” agrees with the plural subject, and “my” shows that the people or things belong to you. For one person or thing, use “This is my …”.';
+    formula = 'These are my + plural noun · This is my + singular noun';
+    tip = 'These are my parents. / These are my grandparents. One person: This is my cousin.';
+    exampleList.splice(0, exampleList.length, 'These are my parents.', 'These are my grandparents.', 'This is my cousin.');
+  } else if (/this is my|introducing people/.test(text)) {
     title = 'Talking about one person or thing';
     explanation = 'Use “This is my …” to introduce one person or one thing. “This” points to one thing, “is” is the verb, and “my” shows that it belongs to you.';
     formula = 'This is my + one person or thing';
@@ -517,6 +523,12 @@ function renderImportedPrimaryCurriculum() {
       { q: 'The park is ___ the supermarket.', opts: ['behind', 'between', 'on'], ans: 0 },
       { q: 'The book is ___ the bag.', opts: ['in', 'next', 'behind'], ans: 0 },
       { q: 'The picture is ___ the wall.', opts: ['on', 'in', 'between'], ans: 0 }
+    ]],
+    [/these are my|plural demonstrative/, [
+      { q: '___ are my parents.', opts: ['These', 'This', 'That'], ans: 0 },
+      { q: 'These ___ my grandparents.', opts: ['are', 'is', 'am'], ans: 0 },
+      { q: 'These are my ___.', opts: ['friends', 'friend', 'friendly'], ans: 0 },
+      { q: 'This is my ___.', opts: ['cousin', 'cousins', 'cousin are'], ans: 0 }
     ]],
     [/this is my|demonstrative/, [
       { q: '___ is my book.', opts: ['This', 'These', 'Those'], ans: 0 },
