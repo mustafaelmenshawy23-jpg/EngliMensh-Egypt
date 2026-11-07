@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T06:47:03.157Z",
+  "generatedAt": "2026-11-07T06:51:55Z",
   "startIndex": 0,
   "batchSize": 5,
   "eligibleTotal": 94,
@@ -11,7 +11,8 @@
       "title": "The Power of Choice",
       "start": 102,
       "end": 139,
-      "status": "generated"
+      "status": "incomplete_draft",
+      "error": "Only one vocabulary item was saved; the other required sections were empty. The draft remains needs_review and is not approved or published."
     },
     {
       "bookId": "baccalaureate-y2-first-language-part1",
@@ -19,7 +20,7 @@
       "title": "The Greenhouse Effect",
       "start": 140,
       "end": 172,
-      "status": "blocked_review",
+      "status": "blocked_ocr_review",
       "error": "Source pages require OCR/visual review: 170"
     },
     {
@@ -28,8 +29,8 @@
       "title": "Circles of Belonging",
       "start": 101,
       "end": 125,
-      "status": "failed",
-      "error": "Generator exited with code 1"
+      "status": "failed_malformed_response",
+      "error": "Gemini 3.8 Flash returned 503/timeouts; fallback output was malformed JSON (SyntaxError near line 14). No draft was saved."
     },
     {
       "bookId": "baccalaureate-y2-first-language-part2",
@@ -37,7 +38,7 @@
       "title": "Behind the Buy",
       "start": 126,
       "end": 164,
-      "status": "blocked_review",
+      "status": "blocked_ocr_review",
       "error": "Source pages require OCR/visual review: 162"
     },
     {
@@ -46,8 +47,22 @@
       "title": "People & Friends",
       "start": 6,
       "end": 39,
-      "status": "blocked_review",
+      "status": "blocked_ocr_review",
       "error": "Source pages require OCR/visual review: 37"
     }
-  ]
+  ],
+  "inventorySnapshot": {
+    "indexedBooks": 33,
+    "indexedUnits": 118,
+    "pdfFilesInGitTree": 34,
+    "indexedSourcePdfFiles": 33,
+    "processedPdfs": 33,
+    "manifestOnlyPdf": "Performance Tasks Prep 2-OnlineMaterials.PDF",
+    "manifestOnlyPdfStatus": "LFS object unavailable during the last extraction audit",
+    "unitsWithVerifiedStartPage": 99,
+    "unitsMissingVerifiedStartPage": 19,
+    "safelyDelimitedCandidates": 94,
+    "ambiguousBoundaries": 5,
+    "approvedUnits": 0
+  }
 }
