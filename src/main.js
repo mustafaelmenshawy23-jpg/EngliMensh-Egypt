@@ -1357,7 +1357,13 @@ function renderUnitWorkspace() {
 
       ${!isP1U1 && Number.isInteger(unit.startPdfPage) ? `
         <div class="unit-source-preview-prompt">
-          <p>Official curriculum source: <strong>${escapeHtml(book.sourceFile)}</strong> · Starting at PDF page <strong>${unit.startPdfPage}</strong></p>
+          <p>Official curriculum source: <strong>${escapeHtml(book.sourceFile)}</strong> · Unit starts at PDF page <strong>${unit.startPdfPage}</strong></p>
+          ${Array.isArray(unit.topics) && unit.topics.length ? `
+            <div class="unit-topic-list" aria-label="Topics listed in the official book contents">
+              <strong>Book topics</strong>
+              ${unit.topics.map((topic) => `<span class="unit-topic-chip">${escapeHtml(topic)}</span>`).join('')}
+            </div>
+          ` : ''}
           <button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Preview Unit in Original PDF ↗</button>
         </div>
       ` : ''}
