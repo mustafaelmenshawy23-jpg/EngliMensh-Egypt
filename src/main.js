@@ -2187,12 +2187,15 @@ function render() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
-    if (window.history.state?.app === 'englimensh') {
+    const currentRoute = window.history.state;
+    const expectedRoute = button.dataset.importedBack === 'unit' ? 'module' : 'unit';
+    if (currentRoute?.app === 'englimensh' && currentRoute.epoch === state.navigationEpoch && currentRoute.route === expectedRoute) {
       window.history.back();
       return;
     }
-    if (button.dataset.importedBack === 'unit') state.activeModule = null;
+    if (button.dataset.importedBack === 'unit' && state.importedUnitNumber) state.activeModule = null;
     else { state.importedUnitNumber = null; state.activeModule = null; }
+    window.history.replaceState({ app: 'englimensh', route: state.importedUnitNumber ? 'unit' : 'grade', unit: state.importedUnitNumber || undefined, epoch: state.navigationEpoch }, '', state.importedUnitNumber ? '#unit-' + state.importedUnitNumber : '#grade');
     saveProgressToStorage();
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
