@@ -4,6 +4,7 @@ import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
+import { compareUnitCandidates } from './lib/curriculum-order.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json', 'utf8'));
@@ -95,6 +96,8 @@ for (const book of index.books || []) {
     unitStates.push(state);
   }
 }
+
+candidates.sort(compareUnitCandidates);
 
 const sourceRowsByUnit = new Map();
 const sourceAudits = new Map();

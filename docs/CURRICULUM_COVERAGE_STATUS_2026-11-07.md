@@ -62,3 +62,21 @@ The current GitHub main branch was rechecked on 7 November 2026:
 The source/content quality validators and automated regression tests are being added to the GitHub pipeline. The generator will keep all output in draft status, require complete page coverage, distinguish source page references from supplementary context references, and reject corrupted OCR, incomplete modules, invalid answer keys, or missing role metadata.
 
 The daily generation workflow is designed to resume from the first eligible unit that is not already a complete draft and to process a small batch. OCR/source blockers remain visible in the progress report rather than being silently skipped. The 19 missing start pages, five ambiguous boundaries, unindexed LFS PDF, reader, and assessment-only files remain separate inventory/review work; they are not silently treated as completed units.
+
+
+---
+
+## Superseding repository-wide audit — 7 November 2026
+
+The Primary 1 page-boundary cross-check expanded the index from 118 to **121 units** and corrected the Primary 1 source starts. Current counts:
+
+- 34 PDF files in the Git tree; 33 indexed; one unindexed LFS-backed PDF still unavailable.
+- 33 indexed books: 15 student books, 9 commercial supplements, 8 assessment PDFs, and 1 reader.
+- 121 indexed units: 81 student-book units and 40 commercial-supplement units.
+- 102 units have a start page; 19 still lack one.
+- 97 safely delimited candidates; 5 ambiguous next-unit boundaries.
+- 0 teacher-approved units.
+- 121 scaffolds × 9 modules = 1,089 empty module placeholders.
+- 26 lesson records / 149 items remain `needs_review`; one existing Unit 4 artifact is incomplete.
+
+The complete per-book/per-unit inventory, exact blockers, app/runtime limitations, and Actions evidence are in [the repository-wide inventory and pipeline audit](REPOSITORY_INVENTORY_AND_PIPELINE_AUDIT_2026-11-07.md). Earlier 118-unit figures in this file are superseded by this audit.

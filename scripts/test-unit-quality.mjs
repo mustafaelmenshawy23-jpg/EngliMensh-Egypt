@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { validatePageText, validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
+import { sortUnitCandidates } from './lib/curriculum-order.mjs';
 
 let passed = 0;
 function check(name, fn) {
@@ -191,6 +192,32 @@ check('duplicate item identifiers are rejected', () => {
   const draft = makeDraft();
   draft.sections[1].items[0].itemId = 'v1';
   assert.ok(validateUnitDraftQuality(draft, sourceOptions).errors.some((error) => error.includes('duplicate itemId')));
+});
+
+
+const mixedCandidates = [
+  { unitId: 'secondary1-u1', bookId: 'secondary1', grade: 'Secondary 1', documentType: 'student_book', unitNumber: 1 },
+  { unitId: 'prep1-supp-u1', bookId: 'helloplus-prep1', grade: 'Preparatory 1', documentType: 'commercial_supplement', unitNumber: 1 },
+  { unitId: 'primary2-u1', bookId: 'primary2', grade: 'Primary 2', documentType: 'student_book', unitNumber: 1 },
+  { unitId: 'primary1-supp-u1', bookId: 'connectplus-primary1', grade: 'Primary 1', documentType: 'commercial_supplement', unitNumber: 1 },
+  { unitId: 'primary1-u1', bookId: 'primary1', grade: 'Primary 1', documentType: 'student_book', unitNumber: 1 },
+  { unitId: 'prep1-u1', bookId: 'prep1', grade: 'Preparatory 1', documentType: 'student_book', unitNumber: 1 },
+  { unitId: 'baccalaureate-u1', bookId: 'baccalaureate', grade: 'Baccalaureate Year 2', documentType: 'student_book', unitNumber: 1 }
+];
+check('curriculum queue orders Primary before Preparatory, Secondary, and Baccalaureate', () => {
+  const ordered = sortUnitCandidates(mixedCandidates);
+  assert.deepEqual(ordered.map(item => item.unitId), [
+    'primary1-u1','primary1-supp-u1','primary2-u1','prep1-u1','prep1-supp-u1','secondary1-u1','baccalaureate-u1'
+  ]);
+});
+check('official student book precedes its commercial supplement within a grade', () => {
+  const ordered = sortUnitCandidates(mixedCandidates);
+  assert.ok(ordered.findIndex(item => item.unitId === 'primary1-u1') < ordered.findIndex(item => item.unitId === 'primary1-supp-u1'));
+});
+check('curriculum sorting does not mutate the source candidate array', () => {
+  const original = mixedCandidates.map(item => item.unitId);
+  sortUnitCandidates(mixedCandidates);
+  assert.deepEqual(mixedCandidates.map(item => item.unitId), original);
 });
 
 console.log('Unit quality tests: ' + passed + ' passed, 0 failed.');
