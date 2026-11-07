@@ -44,7 +44,7 @@ for (const track of data.tracks) {
           }
           const correctOption = q.opts[q.ans];
           const distractors = q.opts.filter((_, originalIndex) => originalIndex !== q.ans);
-          const arabicOptions = q.opts.some((option) => /[\\u0600-\\u06FF]/.test(String(option)));
+          const arabicOptions = q.opts.some((option) => /[\u0600-\u06FF]/.test(String(option)));
           const candidates = unit.vocabulary.map((word) => arabicOptions ? word.ar : word.en);
           for (const candidate of candidates) {
             if (distractors.length >= 3) break;
