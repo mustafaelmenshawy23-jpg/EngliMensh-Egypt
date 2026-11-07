@@ -64,12 +64,14 @@ jobs:
         run: |
           if [ -d artifacts/unit-drafts ]; then
             git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git pull --rebase origin main
+            git config user.email "41898282+users.noreply.github.com"
             git add artifacts/unit-drafts/*.json 2>/dev/null || true
             if ! git diff --cached --quiet; then
               git commit -m "Save unapproved interactive curriculum drafts"
+              git pull --rebase origin main
               git push
+            else
+              echo "No draft/progress changes to persist."
             fi
           fi
       - name: Upload drafts and progress report for academic review
