@@ -928,9 +928,9 @@ function getPrimaryGameWords(limit = 6) {
       : rawMeaning).replace(/[()（）\[\]{}:：]/g, ' ').replace(/\s+/g, ' ').trim();
     return {
       target: english.toLowerCase(),
-      arabic: arabicOnly || rawMeaning,
+      arabic: arabicOnly || 'معنى غير متاح',
       icon: item.e || '🔤',
-      label: arabicOnly || rawMeaning
+      label: arabicOnly || 'معنى غير متاح'
     };
   });
 }
