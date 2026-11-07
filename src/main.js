@@ -656,8 +656,8 @@ function renderImportedPrimaryCurriculum() {
   }));
   const authenticDialogue = (unit?.dialogue || []).filter((line) => {
     const text = String(line.text || '');
-    return text && !/welcome class! today we explore|welcome to unit \\d+:|ministerial exercises|ready to learn and pronounce clearly|\\.\\.\\./i.test(text)
-      && !/أ\\. محمد المنشاوي/.test(String(line.speaker || ''));
+    return text && !/welcome class! today we explore|welcome to unit \d+:|ministerial exercises|ready to learn and pronounce clearly|\.\.\./i.test(text)
+      && !/أ\. محمد المنشاوي/.test(String(line.speaker || ''));
   });
   const modelDialogue = authenticDialogue.length ? authenticDialogue : [
     { speaker: 'Teacher', text: 'Can you say a sentence about ' + unit.title + '?' },
@@ -684,7 +684,7 @@ function renderImportedPrimaryCurriculum() {
     ...listeningPractice.slice(0, 4),
     ...(unit?.examQuestions || []).slice(0, 2)
   ].slice(0, 24);
-  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, unit?.grammar?.examples || []);
+  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, sourceGrammarExamples);
   const modules = [
     { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
     { id: 'grammar', title: 'Grammar', subtitle: 'Clear explanation, examples and practice', icon: '✏️', count: grammarPractice.length },
@@ -708,7 +708,7 @@ function renderImportedPrimaryCurriculum() {
     const optionText = (option) => typeof option === 'string' ? option : String(option?.text ?? option?.label ?? option?.value ?? '');
     const correctOption = sourceOptions[answer];
     const opts = [...sourceOptions.filter((_, originalIndex) => originalIndex !== answer)];
-    const isArabicOptions = sourceOptions.some((option) => /[\\u0600-\\u06FF]/.test(optionText(option)));
+    const isArabicOptions = sourceOptions.some((option) => /[\u0600-\u06FF]/.test(optionText(option)));
     const grammarCandidates = grammarDistractors[String(correctOption || '').toLowerCase()] || [];
     const extraCandidates = /-r-/.test(prefix)
       ? grammarCandidates
@@ -724,6 +724,7 @@ function renderImportedPrimaryCurriculum() {
         if (!opts.some((item) => optionText(item) === candidate) && optionText(correctOption) !== candidate) opts.push(candidate);
       }
     }
+    const distractors = opts;
     let seed = 0;
     for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
     for (let i = distractors.length - 1; i > 0; i--) {
