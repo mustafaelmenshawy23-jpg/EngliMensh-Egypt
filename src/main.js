@@ -287,13 +287,62 @@ function renderImportedPrimaryCurriculum() {
   const grade = track?.grades.find((item) => item.grade === state.grade);
   if (!grade) return '';
   const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
+  const unitWords = unit?.vocabulary || [];
+  const choiceOptions = (answer, index = 0, limit = 3) => {
+    const pool = unitWords.map((item) => item.en).filter((word) => word && word.toLowerCase() !== String(answer).toLowerCase());
+    const distractors = [];
+    for (let step = 0; step < pool.length && distractors.length < limit - 1; step++) {
+      const word = pool[(index + step * 3) % pool.length];
+      if (word && !distractors.includes(word)) distractors.push(word);
+    }
+    return [answer, ...distractors];
+  };
+  const makeCloze = (sentence, index, prefix) => {
+    const tokens = String(sentence || '').match(/[A-Za-z][A-Za-z']*/g) || [];
+    if (!tokens.length) return null;
+    const targetWord = tokens[Math.min(tokens.length - 1, Math.max(0, Math.floor(tokens.length / 2)))];
+    const prompt = String(sentence).replace(new RegExp(targetWord.replace(/[.*+?^$()|[\]\\]/g, '\\  const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
+  const modules = ['), 'i'), '____');
+    return { q: prefix + prompt, opts: choiceOptions(targetWord, index), ans: 0 };
+  };
+  const grammarPractice = [...(unit?.grammar?.quiz || [])];
+  (unit?.grammar?.examples || []).slice(0, 2).forEach((example, index) => {
+    const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
+    if (question) grammarPractice.push(question);
+  });
+  const readingSentences = String(unit?.readingText || '').split(/(?<=[.!?])\\s+/).filter(Boolean);
+  const readingPractice = [];
+  const readingTargets = unitWords.map((item) => item.en).filter((word) => word && String(unit?.readingText || '').toLowerCase().includes(word.toLowerCase()));
+  const passageWords = (String(unit?.readingText || '').match(/[A-Za-z][A-Za-z']*/g) || []).filter((word, index, all) => all.findIndex((x) => x.toLowerCase() === word.toLowerCase()) === index);
+  const readingPool = [...readingTargets, ...passageWords.filter((word) => !readingTargets.some((x) => x.toLowerCase() === word.toLowerCase()))].slice(0, 5);
+  readingPool.forEach((word, index) => {
+    const sentence = readingSentences.find((line) => line.toLowerCase().includes(word.toLowerCase())) || unit.readingText || '';
+    const question = makeCloze(sentence, index, 'Complete the reading sentence: ');
+    if (question) readingPractice.push(question);
+  });
+  const listeningPractice = unitWords.slice(0, 5).map((word, index) => ({
+    q: 'Listen to the word and choose the matching English word.',
+    audio: word.en,
+    opts: choiceOptions(word.en, index),
+    ans: 0
+  }));
+  const speakingPrompts = unitWords.slice(0, 5).map((word, index) => ({
+    prompt: index % 2 === 0 ? 'Say this word clearly:' : 'Make a sentence using this word:',
+    target: index % 2 === 0 ? word.en : (word.ex || word.en)
+  }));
+  const unitTestQuestions = [
+    ...(unit?.vocabularyQuestions || []).slice(0, 4),
+    ...grammarPractice.slice(0, 3),
+    ...readingPractice.slice(0, 3)
+  ].slice(0, 10);
   const modules = [
     { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
-    { id: 'grammar', title: 'Grammar', subtitle: 'Rules, examples and practice', icon: '✏️', count: (unit?.grammar?.quiz || []).length },
+    { id: 'grammar', title: 'Grammar', subtitle: 'Rules, examples and 3 practice questions', icon: '✏️', count: grammarPractice.length },
     { id: 'phonics', title: 'Phonics', subtitle: 'Sounds and word patterns', icon: '🔤', count: (unit?.phonics?.words || []).length },
-    { id: 'reading', title: 'Reading', subtitle: 'Reading passage', icon: '📖', count: unit?.readingText ? 1 : 0 },
-    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and speaking practice', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length },
-    { id: 'games', title: 'Word Games', subtitle: 'Vocabulary games and hints', icon: '🎮', count: (unit?.wordGames || []).length },
+    { id: 'reading', title: 'Reading', subtitle: 'Passage and 5 reading activities', icon: '📖', count: (unit?.readingText ? 1 : 0) + readingPractice.length },
+    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and oral practice', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length + speakingPrompts.length },
+    { id: 'listening', title: 'Listening Practice', subtitle: '5 listen-and-choose questions', icon: '🎧', count: listeningPractice.length },
+    { id: 'games', title: 'Word Games', subtitle: '4 interactive games using unit words', icon: '🎮', count: 4 },
     { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Check your new words', icon: '🧠', count: (unit?.vocabularyQuestions || []).length },
     { id: 'tests', title: 'Unit Tests', subtitle: 'Speaking and final exam', icon: '📝', count: (unit?.examQuestions || []).length + (unit?.speakingQuestions || []).length }
   ];
@@ -326,13 +375,14 @@ function renderImportedPrimaryCurriculum() {
   if (unit && state.activeModule) {
     switch (state.activeModule) {
       case 'vocabulary': body = '<div class="imported-vocab-grid">' + vocab + '</div>'; break;
-      case 'grammar': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.grammar?.rule || 'Grammar') + '</h3><ul>' + (unit.grammar?.examples || []).map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul></article><h3 class="module-subheading">Grammar practice</h3>' + renderQuestions(unit.grammar?.quiz, prefix + '-r'); break;
+      case 'grammar': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.grammar?.rule || 'Grammar') + '</h3><ul>' + (unit.grammar?.examples || []).map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul><p class="unit-source-note">Includes supplementary practice built from this unit’s examples; these are not represented as printed textbook questions.</p></article><h3 class="module-subheading">Grammar practice</h3>' + renderQuestions(grammarPractice, prefix + '-r'); break;
       case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><p class="unit-source-note">Listen to each sound and repeat it aloud.</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<button type="button" class="imported-phonics-word" data-tts-text="' + escapeHtml(w) + '">🔊 ' + escapeHtml(w) + '</button>').join('') + '</div></article>'; break;
-      case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article>'; break;
-      case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s'); break;
+      case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article><h3 class="module-subheading">Reading comprehension · 5 activities</h3><p class="unit-source-note">Supplementary sentence-completion practice generated from the passage text.</p>' + renderQuestions(readingPractice, prefix + '-read'); break;
+      case 'dialogue': body = '<div class="imported-dialogue">' + (unit.dialogue || []).map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<div class="imported-speaking-prompts">' + speakingPrompts.map((item) => '<article class="imported-section-card"><strong>' + escapeHtml(item.prompt) + '</strong><p dir="ltr">' + escapeHtml(item.target) + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(item.target) + '">🔊 Hear a model</button></article>').join('') + '</div>'; break;
+      case 'listening': body = '<p class="unit-source-note">Listen to each word, then choose the word you heard.</p>' + renderQuestions(listeningPractice, prefix + '-listen'); break;
       case 'games': body = renderGames(); break;
       case 'vocabulary-practice': body = renderQuestions(unit.vocabularyQuestions, prefix + '-v'); break;
-      case 'tests': body = '<h3 class="module-subheading">Speaking questions</h3>' + renderQuestions(unit.speakingQuestions, prefix + '-s') + '<h3 class="module-subheading">Final unit exam</h3>' + renderQuestions(unit.examQuestions, prefix + '-e'); break;
+      case 'tests': body = '<h3 class="module-subheading">Unit assessment · 10 questions</h3><p class="unit-source-note">A mixed review built from the unit vocabulary, grammar examples and reading passage. Supplementary items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
     }
     const active = modules.find((item) => item.id === state.activeModule);
     return '<section class="panel imported-curriculum imported-module-screen"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
