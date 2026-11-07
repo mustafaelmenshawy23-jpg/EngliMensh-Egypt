@@ -9,8 +9,9 @@ const apiKeys = [
   ['GEMINI_API_KEY_BACKUP_2', process.env.GEMINI_API_KEY_BACKUP_2],
   ['GEMINI_API_KEY_BACKUP_3', process.env.GEMINI_API_KEY_BACKUP_3]
 ].filter(([, value]) => Boolean(value));
-let model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
-const fallbackModels = [...new Set([model, 'gemini-3.5-flash-lite', 'gemini-3.7-flash'])];
+let model = process.env.GEMINI_MODEL || 'gemini-4-argon';
+// Gemini 4 Argon is the primary model; stable Flash models are compatibility fallbacks for transient model availability failures.
+const fallbackModels = [...new Set([model, 'gemini-3.8-flash', 'gemini-3.7-flash'])];
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json','utf8'));
 const lessons = JSON.parse(await fs.readFile('src/data/lessons/lessons.draft.json','utf8'));
 const manifest = JSON.parse(await fs.readFile('src/data/extracted/manifest.json','utf8'));
@@ -80,7 +81,7 @@ const schema = {
   required: ['unitTitle', 'sourceCoverage', 'sections']
 };
 const prompt = `You are an Egyptian MOE English curriculum editor. Build a structured INTERACTIVE lesson draft for ${book.grade}, Unit ${unitNumber}: ${unit.title}. Source filename: ${book.sourceFile}. Use ONLY the source page text supplied. Do not invent or attribute text to the printed book. Separate exact source-derived material (origin="source") from new supplementary practice (origin="supplementary"). For each item, cite sourcePdfPage as one of the supplied PDF page numbers. If a category is absent from the pages, return an empty items array for it; do not fabricate a reading/listening/dialogue/grammar. Vocabulary entries need word, arabicMeaning, example. Grammar entries need rule and explanation. Questions need question, options (3-4), correctAnswer, reason. Reading/listening need passage/script and nested questions represented as separate question items in the same section. Speaking needs dialogue array with different speaker labels and short turns. Build a complete coverage draft across these eight section types: ${required.join(', ')}. Use simple age-appropriate English. Every generated practice item must be clearly supplementary. Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
-const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',responseSchema:schema,temperature:0.2}});
+const requestBody=JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',responseSchema:schema,thinkingConfig:{thinkingLevel:'MEDIUM'}}});
 let payload;
 let lastFailure;
 let selectedKeyName;
