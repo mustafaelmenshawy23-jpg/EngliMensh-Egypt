@@ -902,12 +902,20 @@ function getImportedPrimaryUnitForGames() {
 function getPrimaryGameWords(limit = 6) {
   const unit = getImportedPrimaryUnitForGames();
   if (!unit) return null;
-  return (unit.vocabulary || []).filter((item) => item.en && item.ar).slice(0, limit).map((item) => ({
-    target: String(item.en).trim().toLowerCase(),
-    arabic: item.ar,
-    icon: item.e || '🔤',
-    label: String(item.ar).trim()
-  }));
+  return (unit.vocabulary || []).filter((item) => item.en && item.ar).slice(0, limit).map((item) => {
+    const english = String(item.en).trim();
+    const rawMeaning = String(item.ar).trim();
+    const englishAt = rawMeaning.toLowerCase().indexOf(english.toLowerCase());
+    const arabicOnly = (englishAt >= 0
+      ? rawMeaning.slice(0, englishAt) + rawMeaning.slice(englishAt + english.length)
+      : rawMeaning).replace(/[()（）\[\]{}:：]/g, ' ').replace(/\s+/g, ' ').trim();
+    return {
+      target: english.toLowerCase(),
+      arabic: arabicOnly || rawMeaning,
+      icon: item.e || '🔤',
+      label: arabicOnly || rawMeaning
+    };
+  });
 }
 
 function renderGames() {
