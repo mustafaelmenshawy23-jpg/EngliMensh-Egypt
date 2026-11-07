@@ -2588,3 +2588,32 @@ button:disabled{opacity:.55;cursor:not-allowed}
   .unit-section-card { min-height: 92px; }
   .section-card-copy .section-card-label { font-size: 14px !important; }
 }
+
+/* Official-book topic tags for indexed Primary 1 units. */
+.unit-topic-list {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+  margin:10px 0 12px;
+  min-width:0;
+}
+.unit-topic-list > strong {
+  flex:0 0 100%;
+  color:#102c4c;
+  font-size:12px;
+  font-weight:800;
+}
+.unit-topic-chip {
+  display:inline-flex;
+  align-items:center;
+  max-width:100%;
+  padding:5px 9px;
+  border:1px solid rgba(22,184,176,.28);
+  border-radius:999px;
+  background:#effcfb;
+  color:#145b62;
+  font-size:11px;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
