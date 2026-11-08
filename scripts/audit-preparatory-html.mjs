@@ -21,19 +21,19 @@ assert.equal(files.length, 31, 'Expected all 31 preserved preparatory HTML sourc
 const records = [];
 for (const file of files) {
   const html = await readFile(file, 'utf8');
-  const title = (html.match(/<title>([\\s\\S]*?)<\\/title>/i)?.[1] || '')
-    .replace(/\\s+/g, ' ').trim();
+  const title = (html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || '')
+    .replace(/\s+/g, ' ').trim();
   const flags = [];
-  if (/مفردة دراسية|An essential curriculum term|Correct Ministerial Option|Incorrect Distractor|Official target vocabulary term|generateQuiz\\(|generateReading\\(|generateListening\\(|generateUnitVocab\\(/i.test(html)) {
+  if (/مفردة دراسية|An essential curriculum term|Correct Ministerial Option|Incorrect Distractor|Official target vocabulary term|generateQuiz\(|generateReading\(|generateListening\(|generateUnitVocab\(/i.test(html)) {
     flags.push('synthetic_or_placeholder_content');
   }
   if (/data-bard-client-injected|__initial_auth_token|initialAuthToken/i.test(html)) {
     flags.push('injected_host_runtime_or_credential_marker');
   }
-  if (/fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|cdn\\.jsdelivr\\.net|unpkg\\.com/i.test(html)) {
+  if (/fonts\.googleapis\.com|fonts\.gstatic\.com|cdn\.jsdelivr\.net|unpkg\.com/i.test(html)) {
     flags.push('external_font_or_cdn_dependency');
   }
-  const initialsVisualCount = (html.match(/<text[^>]*text-anchor=["']middle["'][^>]*>[A-Z]{1,3}<\\/text>/gi) || []).length;
+  const initialsVisualCount = (html.match(/<text[^>]*text-anchor=["']middle["'][^>]*>[A-Z]{1,3}<\/text>/gi) || []).length;
   if (initialsVisualCount) flags.push('placeholder_initials_visuals');
   records.push({
     file: path.relative(root, file).split(path.sep).join('/'),
@@ -56,7 +56,7 @@ const summary = {
 const prep3General = records.find((item) => item.file.endsWith('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'));
 assert.ok(prep3General?.flags.includes('injected_host_runtime_or_credential_marker'));
 assert.ok(prep3General?.flags.includes('synthetic_or_placeholder_content'));
-const prep3PlusFiles = records.filter((item) => /hello-plus\\/Prep_3_New_Hello_Plus_Unit_\\d+\\.html$/.test(item.file));
+const prep3PlusFiles = records.filter((item) => /hello-plus\/Prep_3_New_Hello_Plus_Unit_\d+\.html$/.test(item.file));
 assert.equal(prep3PlusFiles.length, 6, 'All six Prep 3 New Hello Plus sources must be audited.');
 assert.ok(prep3PlusFiles.some((item) => item.flags.includes('synthetic_or_placeholder_content')),
   'Known synthetic Prep 3 New Hello Plus content must remain visible to QA.');
