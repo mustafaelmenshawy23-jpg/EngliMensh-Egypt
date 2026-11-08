@@ -96,8 +96,12 @@ const sourcePages = rows.map((p) => ({ pdfPage: p.pdfPage, text: p.text }));
 // 2. Schema Definition for Structured Output
 const dialogueTurnSchema = {
   type: 'OBJECT',
-  properties: { speaker: { type: 'STRING' }, text: { type: 'STRING' } },
-  required: ['speaker', 'text']
+  properties: {
+    speaker: { type: 'STRING' },
+    text: { type: 'STRING' },
+    speakerGender: { type: 'STRING', enum: ['male', 'female', 'unknown'] }
+  },
+  required: ['speaker', 'text', 'speakerGender']
 };
 
 const contentSchema = {
@@ -111,6 +115,14 @@ const contentSchema = {
     passage: { type: 'STRING' },
     script: { type: 'STRING' },
     dialogue: { type: 'ARRAY', items: dialogueTurnSchema },
+    gameName: { type: 'STRING' },
+    description: { type: 'STRING' },
+    skill: { type: 'STRING', enum: ['vocabulary', 'grammar', 'reading', 'listening', 'speaking'] },
+    difficulty: { type: 'STRING', enum: ['easy', 'medium', 'challenging'] },
+    gameMode: { type: 'STRING', enum: ['matching', 'multiple_choice', 'ordering', 'listening_choice', 'role_play', 'word_builder'] },
+    targetWords: { type: 'ARRAY', items: { type: 'STRING' } },
+    targetCommands: { type: 'ARRAY', items: { type: 'STRING' } },
+    durationMinutes: { type: 'INTEGER' },
     question: { type: 'STRING' },
     instruction: { type: 'STRING' },
     options: { type: 'ARRAY', items: { type: 'STRING' } },
@@ -168,12 +180,24 @@ CRITICAL ACCURACY & QUALITY RULES:
    - "options": exactly 3 or 4 distinct choices. No duplicates.
    - "correctAnswer": must exactly match one of the options.
    - "reason": concise pedagogical explanation why this answer is correct.
-6. Reading & Listening:
-   - If a reading passage or listening text exists in the source, transcribe it accurately with origin="source". If not present, provide a supplementary passage with origin="supplementary".
-7. Speaking:
-   - Provide a natural conversational dialogue (2-4 turns).
-8. Comprehensive Unit Test:
-   - Provide a balanced test reflecting unit vocabulary, grammar, and comprehension.
+6. Reading:
+   - Transcribe each complete reading passage and its printed questions from the source pages; do not shorten a source passage.
+   - If no reading passage exists, leave source reading empty or add a clearly labelled supplementary passage with origin="supplementary".
+7. Listening:
+   - Transcribe a listening script as origin="source" only when the printed source pages actually contain that script/transcript.
+   - If the book only gives an audio activity without a transcript, do not invent a source transcript. You may add a clearly labelled supplementary script with origin="supplementary"; state that its playback is generated TTS, not original book audio.
+   - Include printed listening questions and their answer evidence when present.
+8. Speaking:
+   - Preserve source dialogues and role-play instructions accurately. Any newly written role-play must use origin="supplementary".
+   - Each dialogue turn must contain speaker, text, and speakerGender: "male", "female", or "unknown".
+   - Set male/female only when the source text or explicit context establishes the speaker gender; otherwise use "unknown" rather than guessing from a name.
+   - speakerGender is metadata only; do not claim a matching device voice is available or selected.
+9. Games:
+   - Provide 2–4 age-appropriate supplementary game cards, each with gameName, description, skill, difficulty, and gameMode. Use targetWords/targetCommands when relevant.
+   - Games must be origin="supplementary"; never describe a generated game as a printed textbook activity.
+   - Vary game skill across vocabulary, grammar, reading, listening, and speaking when the unit content supports it.
+10. Comprehensive Unit Test:
+   - Provide a balanced test reflecting unit vocabulary, grammar, and comprehension. All generated questions must be labelled origin="supplementary"; printed questions may be origin="source".
 
 Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
 
@@ -405,9 +429,9 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-sp-1',
               content: {
                 dialogue: [
-                  { speaker: 'Child A', text: 'Hello! What\'s your name?' },
-                  { speaker: 'Child B', text: 'My name is Hana. What\'s your name?' },
-                  { speaker: 'Child A', text: 'My name is Maya. Nice to meet you!' }
+                  { speaker: 'Child A', speakerGender: 'unknown', text: 'Hello! What\'s your name?' },
+                  { speaker: 'Child B', speakerGender: 'unknown', text: 'My name is Hana. What\'s your name?' },
+                  { speaker: 'Child A', speakerGender: 'unknown', text: 'My name is Maya. Nice to meet you!' }
                 ],
                 origin: 'source',
                 sourcePdfPage: 8
@@ -579,7 +603,7 @@ if (isOfflineFallbackAllowed) {
         }
       ]
     };
-  } else {
+  } else if (bookId === 'baccalaureate-y2-first-language-part1' && unitNumber === 4) {
     generated = {
       unitTitle: unit.title || 'The Power of Choice',
       sourceCoverage: allCoverage,
@@ -840,8 +864,8 @@ if (isOfflineFallbackAllowed) {
             itemId: 'u4-sp-1',
             content: {
               dialogue: [
-                { speaker: 'Presenter', text: 'Today I am presenting a 2-minute review of a popular social media app.' },
-                { speaker: 'Reviewer', text: 'One of its greatest strengths is instant connectivity, but it can encourage impulse scrolling.' }
+                { speaker: 'Presenter', speakerGender: 'unknown', text: 'Today I am presenting a 2-minute review of a popular social media app.' },
+                { speaker: 'Reviewer', speakerGender: 'unknown', text: 'One of its greatest strengths is instant connectivity, but it can encourage impulse scrolling.' }
               ],
               origin: 'source',
               sourcePdfPage: 121
@@ -879,7 +903,9 @@ if (isOfflineFallbackAllowed) {
       }
     ]
   };
-}
+  } else {
+    throw new Error('No Gemini API key is configured and no verified offline fallback exists for ' + bookId + ' Unit ' + unitNumber + '. Refusing to reuse unrelated sample content.');
+  }
 
   payload = { candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] };
 } else {
@@ -1003,6 +1029,7 @@ const output = {
   unitTitle: generated.unitTitle || unit.title,
   sourcePdfRange: { start, end },
   sourceCoverage: generated.sourceCoverage,
+  sourceFingerprint: process.env.SOURCE_SIGNATURE || null,
   qualityScore: qualityAudit.score,
   qualityReport: qualityAudit.report,
   reviewStatus: qualityAudit.status,
