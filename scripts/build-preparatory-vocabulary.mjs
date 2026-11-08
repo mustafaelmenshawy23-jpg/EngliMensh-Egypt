@@ -172,34 +172,31 @@ function safeSvg(svg = '') {
 async function findOpenverseImage(word) {
   const params = new URLSearchParams({
     q: word + ' photograph',
-    page_size: '5',
+    page_size: '3',
     license_type: 'commercial',
     extension: 'jpg,jpeg,png,webp'
   });
   const endpoint = 'https://api.openverse.org/v1/images/?' + params.toString();
   let response;
-  for (let attempt = 0; attempt < 3; attempt += 1) {
+  // Openverse can return 429/5xx during bursts. Keep retries short and bounded.
+  for (let attempt = 0; attempt < 2; attempt += 1) {
     response = await fetch(endpoint, {
       headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' },
-      signal: AbortSignal.timeout(12000)
+      signal: AbortSignal.timeout(9000)
     });
-    if (response.status !== 429 && response.status !== 503) break;
-    const retryAfter = Number(response.headers.get('retry-after') || 0);
-    await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, 1000 * (attempt + 1))));
+    if (response.ok || (response.status !== 429 && response.status < 500)) break;
+    if (attempt === 0) {
+      const retryAfter = Number(response.headers.get('retry-after') || 0);
+      await new Promise((resolve) => setTimeout(resolve, Math.min(Math.max(retryAfter * 1000, 1800), 4000)));
+    }
   }
   if (!response?.ok) throw new Error('Openverse search HTTP ' + response?.status);
-  let json = await response.json();
-  if (!json.results?.length) {
-    await new Promise((resolve) => setTimeout(resolve, 1100));
-    const fallbackParams = new URLSearchParams({ q: word, page_size: '5', license_type: 'commercial', extension: 'jpg,jpeg,png,webp' });
-    const fallbackResponse = await fetch('https://api.openverse.org/v1/images/?' + fallbackParams.toString(), { headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' } });
-    if (fallbackResponse.ok) json = await fallbackResponse.json();
-  }
+  const json = await response.json();
   const item = (json.results || []).find((result) => result.thumbnail && result.url && result.mature !== true);
   if (!item) return null;
   const image = await fetch(item.thumbnail, {
     headers: { 'User-Agent': 'EngliMenshEgypt/1.0' },
-    signal: AbortSignal.timeout(15000)
+    signal: AbortSignal.timeout(10000)
   });
   if (!image.ok) return null;
   const bytes = Buffer.from(await image.arrayBuffer());
@@ -256,7 +253,7 @@ let downloaded = 0, missing = 0;
 if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
-} else await mapLimit(imageWords, 4, async (word) => {
+} else await mapLimit(imageWords, 1, async (word) => {
   try {
     const result = await findOpenverseImage(word);
     pendingImages.set(word.toLowerCase(), result);
