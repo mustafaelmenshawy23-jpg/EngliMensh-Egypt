@@ -509,7 +509,7 @@ function renderPreparatoryGame(words) {
       const options = optionsFor(current);
       body = `
         <div class="prep-game-progress">Challenge ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
-        <div class="prep-meaning-card"><span>WORD DETECTIVE</span><h3>Which word means…?</h3><p>${escapeHtml(current.definition || current.arabic || 'Listen and identify the vocabulary word.')}</p></div>
+        <div class="prep-meaning-card"><span>WORD DETECTIVE</span>${current.definition || current.arabic ? `<h3>Which word means…?</h3><p>${escapeHtml(current.definition || current.arabic)}</p>` : `<h3>Which word matches this picture?</h3>${prepImageMarkup(current, 'prep-game-picture')}`}</div>
         <div class="prep-game-options">${options.map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === current.word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>
         ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'That is right!' : 'Correct word: ' + escapeHtml(current.word)}<button data-prep-game-next>Continue</button></div>` : ''}
       `;
@@ -518,13 +518,13 @@ function renderPreparatoryGame(words) {
       body = `
         <div class="prep-game-instruction">Choose a mystery box. Read its clue and identify the word.</div>
         <div class="prep-box-grid">${boxes.map((item, i) => `<button data-prep-open-box="${i}" class="${game.opened === i ? 'opened' : ''}">${game.opened === i ? '🔓' : '🎁'}<small>Box ${i + 1}</small></button>`).join('')}</div>
-        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span><p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic || 'Find the matching vocabulary word.')}</p><div class="prep-game-options">${optionsFor(boxes[game.opened]).map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === boxes[game.opened].word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'You opened the right box!' : 'The answer is ' + escapeHtml(boxes[game.opened].word)}<button data-prep-game-next>Next box</button></div>` : ''}</div>` : ''}
+        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span>${boxes[game.opened]?.definition || boxes[game.opened]?.arabic ? `<p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic)}</p>` : `<p>Find the word shown in this picture.</p>${prepImageMarkup(boxes[game.opened], 'prep-game-picture')}`}<div class="prep-game-options">${optionsFor(boxes[game.opened]).map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === boxes[game.opened].word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'You opened the right box!' : 'The answer is ' + escapeHtml(boxes[game.opened].word)}<button data-prep-game-next>Next box</button></div>` : ''}</div>` : ''}
       `;
     } else {
       body = `
         <div class="prep-game-progress">Card ${game.index + 1} / ${words.length}</div>
         <button class="prep-flashcard ${game.flipped ? 'flipped' : ''}" data-prep-flip>
-          ${game.flipped ? `<span class="prep-flashcard-label">MEANING</span><strong dir="rtl">${escapeHtml(current.arabic || current.definition || 'Meaning not supplied')}</strong><small>${escapeHtml(current.definition || '')}</small>` : `<span class="prep-flashcard-label">VOCABULARY</span>${prepImageMarkup(current, 'prep-flashcard-picture')}<strong>${escapeHtml(current.word)}</strong><small>Tap to reveal meaning</small>`}
+          ${game.flipped ? `<span class="prep-flashcard-label">MEANING</span><strong dir="rtl">${escapeHtml(current.arabic || current.definition || 'Meaning not provided in the source')}</strong><small>${escapeHtml(current.definition || '')}</small>` : `<span class="prep-flashcard-label">VOCABULARY</span>${prepImageMarkup(current, 'prep-flashcard-picture')}<strong>${escapeHtml(current.word)}</strong><small>Tap to reveal meaning</small>`}
         </button>
         <button class="prep-game-primary" data-prep-game-next>Next card</button>
       `;
