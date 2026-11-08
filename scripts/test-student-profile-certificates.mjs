@@ -18,7 +18,7 @@ assert.match(main, /saveDirectory: 'downloads'/, 'Android certificates must be s
 assert.match(main, /relativePath: 'Download\/EngliMensh'/, 'Android certificates must use a valid Downloads relative path');
 assert.match(main, /const pdfBase64 = pdfDataUrl\.slice\(pdfDataUrl\.indexOf\(', '\) \+ 1\)/, 'jsPDF data URL headers, including filename parameters, must be stripped before native save');
 assert.match(main, /base64Data: pdfBase64/, 'only the raw PDF base64 payload must be passed to the native saver');
-assert.match(main, /pdfDataUrl\.startsWith\('data:application\\/pdf'\)/, 'PDF MIME type must be validated without rejecting optional filename parameters');
+assert.ok(main.includes("pdfDataUrl.startsWith('data:application/pdf')"), 'PDF MIME type must be validated without rejecting optional filename parameters');
 assert.match(main, /html2canvas\(exportCard/, 'certificate layout must be rendered as a PDF page');
 assert.match(main, /new jsPDF\(/, 'certificate export must generate a real PDF document');
 assert.doesNotMatch(main, /Printer\.printWebView|window\.print\(/, 'certificate export must not open print dialogs');
