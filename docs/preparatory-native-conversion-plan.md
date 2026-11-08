@@ -104,3 +104,6 @@ A comparison of the HTML page titles against the currently indexed book contents
 - Prep 3 / New Hello general remains a combined source containing synthetic generated sections and host-injected runtime material.
 
 Consequently, **none of these HTML imports may be assumed to be the current textbook's native lesson content**. Preserve them as archival reference material only. The native units must be rebuilt against the actual current source books and their page references; do not merely relabel or renumber these HTML lessons. The audit script now compares extracted unit titles with the indexed book titles and reports mismatches and missing New Hello Plus mappings.
+
+
+The expanded audit run on the current source set reports 24 HTML files whose unit titles differ from the indexed book titles, plus 6 New Hello Plus files without a populated unit mapping (Prep 2 Plus). All 31 HTML files have at least one quality, alignment, or dependency flag. The native module draft currently contains only 30 of the required 36 preparatory unit records, and none of those 30 units has any populated section items yet (0 populated section slots out of 240). This is a structural/content gap, not a UI issue; no preparatory unit should be exposed as complete until the missing records and lesson content are added and reviewed.
