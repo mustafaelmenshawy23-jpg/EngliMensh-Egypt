@@ -178,11 +178,14 @@ async function findOpenverseImage(word) {
   });
   const endpoint = 'https://api.openverse.org/v1/images/?' + params.toString();
   let response;
-  for (let attempt = 0; attempt < 5; attempt += 1) {
-    response = await fetch(endpoint, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' } });
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    response = await fetch(endpoint, {
+      headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' },
+      signal: AbortSignal.timeout(12000)
+    });
     if (response.status !== 429 && response.status !== 503) break;
     const retryAfter = Number(response.headers.get('retry-after') || 0);
-    await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, 1500 * (attempt + 1))));
+    await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, 1000 * (attempt + 1))));
   }
   if (!response?.ok) throw new Error('Openverse search HTTP ' + response?.status);
   let json = await response.json();
@@ -194,7 +197,10 @@ async function findOpenverseImage(word) {
   }
   const item = (json.results || []).find((result) => result.thumbnail && result.url && result.mature !== true);
   if (!item) return null;
-  const image = await fetch(item.thumbnail, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0' } });
+  const image = await fetch(item.thumbnail, {
+    headers: { 'User-Agent': 'EngliMenshEgypt/1.0' },
+    signal: AbortSignal.timeout(15000)
+  });
   if (!image.ok) return null;
   const bytes = Buffer.from(await image.arrayBuffer());
   if (bytes.length < 3000 || bytes.length > 1500000) return null;
@@ -250,10 +256,16 @@ let downloaded = 0, missing = 0;
 if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
-} else await mapLimit(imageWords, 1, async (word, index) => {
-  try { if (index > 0) await new Promise((resolve) => setTimeout(resolve, 1100));
-    const result = await findOpenverseImage(word); pendingImages.set(word.toLowerCase(), result); if (result) downloaded += 1; else missing += 1; }
-  catch (error) { pendingImages.set(word.toLowerCase(), null); missing += 1; console.warn('Image lookup failed for', word, error.message); }
+} else await mapLimit(imageWords, 4, async (word) => {
+  try {
+    const result = await findOpenverseImage(word);
+    pendingImages.set(word.toLowerCase(), result);
+    if (result) downloaded += 1; else missing += 1;
+  } catch (error) {
+    pendingImages.set(word.toLowerCase(), null);
+    missing += 1;
+    console.warn('Image lookup failed for', word, error.message);
+  }
 });
 for (const unit of Object.values(registry)) unit.words = unit.words.map((item) => {
   if (item.svg) return { ...item, imageType: 'svg-illustration' };
