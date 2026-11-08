@@ -1352,7 +1352,7 @@ function renderUnitWorkspace() {
           <div class="reading-draft-list">
             ${passages.map((item) => {
               const data = item.content || {};
-              const text = data.passage || (data.dialogue || []).map((line) => (line.speaker || 'Speaker') + ': ' + (line.text || '')).join('\\n');
+              const text = data.passage || (data.dialogue || []).map((line) => (line.speaker || 'Speaker') + ': ' + (line.text || '')).join('\n');
               return `<article class="reading-passage-card">
                 <div class="reading-card-head"><span class="reading-badge">${escapeHtml(sourceLabel(item))} · ${escapeHtml(pageLabel(item))}</span><h4>${escapeHtml(activeUnitDraft.unitTitle || unit.title)}</h4></div>
                 <p class="reading-passage-text" dir="ltr">${escapeHtml(text)}</p>
