@@ -2763,3 +2763,23 @@ html { scroll-padding-top: 10px; }
 .imported-module-group-heading h3 { margin: 0 0 4px; color: var(--brand-navy, #18356d); font-size: 16px; }
 .imported-module-group-heading p { margin: 0; color: var(--muted, #7b8aa5); font-size: 11px; line-height: 1.5; }
 .imported-module-group .imported-section-grid { margin-top: 0; }
+
+/* Classic classroom theme and student profile experience */
+:root{--brand-navy:#17365f;--brand-navy-light:#244d78;--brand-navy-subtle:#102746;--brand-teal:#b68a3a;--brand-teal-hover:#98702c;--brand-teal-light:#f7edda;--brand-teal-border:#dfc58e;--bg-app:#f3eee3;--bg-surface:#fffaf0;--bg-subtle:#f8f1e4;--bg-card:#fffaf0;--border-line:#dfd1b8;--border-line-subtle:#eee4d3;--text-primary:#27364a;--text-secondary:#687487;--text-muted:#8b8a84;--shadow-sm:0 2px 5px rgba(68,48,22,.08);--shadow-md:0 6px 18px rgba(68,48,22,.10);--shadow-lg:0 12px 28px rgba(68,48,22,.13)}
+body{background:radial-gradient(circle at top,#fffaf0 0,#f3eee3 58%,#e9dfcc 100%)}
+.topbar{background:#17365f;border-bottom:4px solid #c49a50}.brand{color:#fffaf0}.brand-mark{background:linear-gradient(145deg,#c69b4d,#8b6427);color:#17365f}.country-tag{background:#fff5df;border-color:#d5b66f;color:#17365f}
+.panel,.content-panel,.library-section,.book-card{background:#fffaf0;border-color:#dfd1b8}.stage-card,.grade-button,.path-button{background:#fffdf7;border-color:#dfd1b8}.stage-card.active,.grade-button.active,.path-button.active{background:#17365f;border-color:#c49a50}.stage-icon{background:#f3e6ca;color:#17365f}
+.section-heading h2,.selection-row h2,.content-copy h2,.library-heading h2{color:#17365f}
+.profile-switch-btn{border:1px solid #d6b66f;border-radius:999px;padding:8px 11px;background:#fff5df;color:#17365f;font-size:11px;font-weight:800;cursor:pointer}
+.profile-gate{min-height:100dvh;padding:24px 16px 40px;background:linear-gradient(160deg,#17365f 0 22%,#f3eee3 22% 100%)}
+.classic-brand{max-width:680px;margin:0 auto 20px;display:flex;gap:12px;align-items:center;color:#fffaf0}.classic-brand-mark{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#e1bd70,#a8792e);font-size:28px;font-weight:900;color:#17365f;box-shadow:0 4px 12px #10274655}
+.classic-brand strong{display:block;font-size:21px}.classic-brand small{display:block;color:#e9d7b4;margin-top:3px}
+.profile-picker-card{max-width:680px;margin:0 auto;background:#fffaf0;border:1px solid #ddcda9;border-top:5px solid #c49a50;border-radius:22px;padding:24px;box-shadow:0 16px 40px #10274624}
+.classic-eyebrow{color:#9b742e;font-size:11px;font-weight:900;letter-spacing:1.4px}.profile-picker-card h1{color:#17365f;margin:5px 0;font-family:Georgia,serif}.profile-lead{color:#697487}
+.student-profile-list{display:grid;gap:10px;margin:18px 0}.student-profile-option{display:flex;align-items:center;gap:14px;width:100%;padding:12px;border:1px solid #dfd1b8;border-radius:15px;background:#fffdf8;text-align:left;cursor:pointer;color:#26374e}.student-profile-option:hover{border-color:#b68a3a;background:#f8f0df}
+.student-profile-option span:nth-child(2){display:grid;gap:4px;flex:1}.student-profile-option small{color:#778194}.student-profile-option b{font-size:24px;color:#b68a3a}
+.student-profile-photo,.student-profile-placeholder{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid #c49a50;background:#f2e5cc;display:grid;place-items:center;color:#17365f;font-size:24px}
+.new-student-form{border-top:1px solid #e8dcc8;padding-top:18px;display:grid;gap:12px}.new-student-form h2{margin:0;color:#17365f;font-family:Georgia,serif}.new-student-form label{display:grid;gap:6px;color:#42516a;font-size:12px;font-weight:800}
+.new-student-form input,.new-student-form select{width:100%;min-height:44px;border:1px solid #d9c9ac;border-radius:10px;padding:9px 11px;background:#fffdf8;color:#26374e;font:inherit}.new-student-form input[type=file]{padding:8px}
+.classic-primary-button{min-height:48px;border:0;border-radius:12px;background:linear-gradient(135deg,#1e4775,#17365f);color:white;font-weight:900;box-shadow:0 4px 0 #b68a3a;cursor:pointer}.classic-footer{max-width:680px;margin:18px auto 0;text-align:center;color:#f5e8ce;font-size:12px}
+@media(max-width:600px){.topbar{padding:0 12px;height:68px}.profile-switch-btn{padding:7px 8px;font-size:9px}.country-tag{padding:6px 8px;font-size:8px}.profile-picker-card{padding:18px}}
