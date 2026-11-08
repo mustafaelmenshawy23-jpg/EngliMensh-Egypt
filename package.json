@@ -25,7 +25,8 @@
     "generate:unit": "node scripts/generate-interactive-unit.mjs",
     "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs",
     "approve:unit": "node scripts/approve-unit-draft.mjs",
-    "validate:approved-units": "node scripts/validate-approved-unit-drafts.mjs"
+    "validate:approved-units": "node scripts/validate-approved-unit-drafts.mjs",
+    "prebuild": "node scripts/build-preparatory-vocabulary.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
