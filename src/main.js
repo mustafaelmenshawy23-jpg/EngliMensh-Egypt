@@ -903,6 +903,7 @@ function renderUnitWorkspace() {
       const listening = getItems('listening');
       const speaking = getItems('speaking');
       const tests = getItems('comprehensive_test');
+      const games = getItems('games');
       const renderQuestionGroup = (items, type) => items.length
         ? `<div class="questions-stack">${items.map((q, idx) => renderStudentQuestionCard(q, idx, type)).join('')}</div>`
         : '<div class="empty-state">No questions are available in this section yet.</div>';
@@ -990,7 +991,23 @@ function renderUnitWorkspace() {
       } else if (state.activeModule === 'comprehensive_test') {
         bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}`;
       } else if (state.activeModule === 'games') {
-        bodyHtml = `<div class="empty-state"><strong>Games are being prepared for this unit.</strong><span>Use Vocabulary, Reading and Tests to practise the source content.</span></div>`;
+        bodyHtml = `
+          <div class="games-grid">
+            ${games.map((item, idx) => {
+              const data = item.content || {};
+              const playableQuestion = data.question && Array.isArray(data.options) && data.correctAnswer;
+              return `<article class="game-preview-card">
+                <span class="game-number">GAME ${idx + 1} · ${escapeHtml(data.skill || 'unit practice')} · ${escapeHtml(data.difficulty || 'level pending')}</span>
+                <h4>${escapeHtml(data.gameName || 'Supplementary challenge')}</h4>
+                <p>${escapeHtml(data.description || '')}</p>
+                <small>${escapeHtml(data.gameMode || 'game mode pending')} · SUPPLEMENTARY</small>
+                ${Array.isArray(data.targetWords) && data.targetWords.length ? `<p dir="ltr">${escapeHtml(data.targetWords.join(' · '))}</p>` : ''}
+                ${playableQuestion ? renderStudentQuestionCard(item, idx, 'games', 'Challenge ' + (idx + 1)) : '<p class="speaking-practice-note">This game is a design card until its interaction mode is implemented.</p>'}
+              </article>`;
+            }).join('')}
+            ${games.length ? '' : '<div class="empty-state">No reviewed games are available for this unit yet.</div>'}
+          </div>
+        `;
       }
     } else if (isP1U1 && p1u1Draft) {
       if (state.activeModule === 'vocabulary') {
