@@ -2,16 +2,16 @@ name: Extract source books
 
 on:
   workflow_dispatch:
-  push:
-    branches: [feature/primary-connect-connect-plus-2026-2027]
-    paths:
-      - '.github/workflows/extract-books.yml'
     inputs:
       publish_artifact:
         description: Upload extracted page text and manifest as a workflow artifact
         required: true
         type: boolean
         default: true
+  push:
+    branches: [feature/primary-connect-connect-plus-2026-2027]
+    paths:
+      - '.github/workflows/extract-books.yml'
 
 permissions:
   contents: read
@@ -98,7 +98,7 @@ jobs:
         run: npm run validate:manual-recoveries
 
       - name: Upload extraction results
-        if: ${{ inputs.publish_artifact }}
+        if: ${{ inputs.publish_artifact || github.event_name == 'push' }}
         uses: actions/upload-artifact@v4
         with:
           name: englimensh-extracted-books
