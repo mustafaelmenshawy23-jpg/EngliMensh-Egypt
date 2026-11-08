@@ -29,6 +29,16 @@ assert.match(main, /function getWordBuilderWords\(\)/, 'word builder uses a shar
 assert.match(main, /state\.grade <= 2 \? 4 : 5/, 'early primary word builder prioritizes shorter words');
 assert.match(main, /data-builder-shuffle/, 'students can reshuffle letter tiles');
 assert.match(main, /data-builder-hint/, 'students can request a letter hint');
+assert.match(main, /data-builder-retry/, 'incorrect word attempts can be retried');
+assert.match(main, /state\.game2\.usedHint = true/, 'using a hint is tracked');
+assert.match(main, /if \(isCorrect && !state\.game2\.usedHint\)/, 'hint-assisted words do not inflate the score');
+assert.match(main, /speakText\('Great job! That is correct\.'\)/, 'correct quiz answers receive spoken encouragement');
+assert.match(main, /speakText\('Good try\. Have another go\.'\)/, 'wrong quiz answers receive gentle spoken guidance');
+assert.match(main, /Excellent! You built the word\./, 'word builder results are spoken');
+assert.match(main, /function getWordBuilderWords\(\)/, 'word builder uses a shared age-appropriate word list');
+assert.match(main, /state\.grade <= 2 \? 4 : 5/, 'early primary word builder prioritizes shorter words');
+assert.match(main, /data-builder-shuffle/, 'students can reshuffle letter tiles');
+assert.match(main, /data-builder-hint/, 'students can request a letter hint');
 assert.match(main, /state\.game2\.usedHint = true/, 'using a hint is tracked');
 assert.match(main, /if \(isCorrect && !state\.game2\.usedHint\)/, 'hint-assisted words do not inflate the score');
 assert.match(main, /speakText\('Great job! That is correct\.'\)/, 'correct answers receive spoken encouragement');
