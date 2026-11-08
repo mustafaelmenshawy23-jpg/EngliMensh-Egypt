@@ -63,6 +63,10 @@ jobs:
       - name: Sync web application into Android project
         run: npx cap sync android
 
+      - name: Increase Gradle distribution download timeout
+        working-directory: android
+        run: sed -i '/^distributionUrl=/a networkTimeout=120000' gradle/wrapper/gradle-wrapper.properties
+
       - name: Build installable debug APK
         working-directory: android
         env:
