@@ -103,7 +103,7 @@ function parseCombinedUnits(source) {
   const start = source.indexOf('const unitsData =');
   if (start < 0) return out;
   const body = source.slice(source.indexOf('{', start));
-  const unitStarts = [...body.matchAll(/^\s{6}(\d):\s*{\s*title:/gm)];
+  const unitStarts = [...body.matchAll(/^[ \t]{6}(\d):\s*{\s*title:/gm)];
   for (let i = 0; i < unitStarts.length; i += 1) {
     const unitNo = Number(unitStarts[i][1]);
     const block = body.slice(unitStarts[i].index, unitStarts[i + 1]?.index ?? body.length);
