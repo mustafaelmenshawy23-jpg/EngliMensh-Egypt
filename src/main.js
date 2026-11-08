@@ -794,7 +794,7 @@ function renderUnitWorkspace() {
 
   // SECTION SCREEN (When a student opens an independent section)
   if (state.activeModule) {
-    const secDef = unitSections.find((s) => s.type === state.activeModule) || sixSections[0];
+    const secDef = unitSections.find((s) => s.type === state.activeModule) || unitSections[0];
     let bodyHtml = '';
 
     if (isP1U2U3 && activeUnitDraft) {
@@ -804,6 +804,8 @@ function renderUnitWorkspace() {
       const grammar = getItems('grammar');
       const grammarQuestions = getItems('grammar_questions');
       const reading = getItems('reading');
+      const listening = getItems('listening');
+      const speaking = getItems('speaking');
       const tests = getItems('comprehensive_test');
       const renderQuestionGroup = (items, type) => items.length
         ? `<div class="questions-stack">${items.map((q, idx) => renderStudentQuestionCard(q, idx, type)).join('')}</div>`
@@ -836,14 +838,60 @@ function renderUnitWorkspace() {
           <h3 class="module-subheading">Grammar practice</h3>
           ${renderQuestionGroup(grammarQuestions, 'grammar_questions')}
         `;
-      } else if (state.activeModule === 'reading' || state.activeModule === 'speaking' || state.activeModule === 'listening') {
-        const passage = reading[0]?.content?.passage || '';
-        const lines = passage.split(/\r?\n/).filter(Boolean);
+      } else if (state.activeModule === 'reading') {
+        const passage = reading.find((item) => item.content?.passage)?.content || {};
+        const questions = reading.filter((item) => item.content?.question);
         bodyHtml = `
-          <article class="reading-passage-card"><div class="reading-card-head"><span class="reading-badge">OFFICIAL BOOK DIALOGUE · PDF PAGE ${reading[0]?.content?.sourcePdfPage || '—'}</span><h4>${escapeHtml(activeUnitDraft.unitTitle)}</h4><p class="reading-subtitle">Read each line, then listen and practise with a partner.</p></div>
-          <div class="chat-dialogue-thread">${lines.map((line, idx) => { const split = line.match(/^([^:]+):\s*(.*)$/); const speaker = split?.[1] || `Line ${idx + 1}`; const words = split?.[2] || line; return `<div class="chat-bubble ${idx % 2 ? 'hana' : 'maya'}"><div class="chat-avatar">${idx % 2 ? '👧' : '👦'}</div><div class="chat-body"><span class="chat-sender">${escapeHtml(speaker)}</span><p class="chat-text" dir="ltr">${escapeHtml(words)}</p></div><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(words)}">🔊</button></div>`; }).join('')}</div>
-          <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(lines.join('. '))}">🔊 Listen to full dialogue</button></article>
-          <p class="speaking-practice-note">Practise the dialogue aloud with a partner.</p>
+          <article class="reading-passage-card">
+            <div class="reading-card-head"><span class="reading-badge">${passage.origin === 'supplementary' ? 'SUPPLEMENTARY TEXT' : 'SOURCE TEXT'} · PDF PAGE ${passage.sourcePdfPage || '—'}</span><h4>${escapeHtml(activeUnitDraft.unitTitle)}</h4></div>
+            <p class="reading-passage-text" dir="ltr">${escapeHtml(passage.passage || '')}</p>
+            ${passage.passage ? `<button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(passage.passage)}">🔊 Listen to text</button>` : '<p class="empty-state">No reading passage has been extracted for this unit.</p>'}
+          </article>
+          <h3 class="module-subheading">Reading questions</h3>
+          ${renderQuestionGroup(questions, 'reading')}
+        `;
+      } else if (state.activeModule === 'listening') {
+        const scripts = listening.filter((item) => item.content?.script || item.content?.passage);
+        const questions = listening.filter((item) => item.content?.question);
+        bodyHtml = `
+          <div class="listening-draft-list">
+            ${scripts.map((item) => {
+              const data = item.content || {};
+              const script = data.script || data.passage || '';
+              return `<article class="listening-console-card">
+                <span class="listening-badge">${data.origin === 'supplementary' ? 'SUPPLEMENTARY TTS SCRIPT' : 'SOURCE SCRIPT'} · PDF PAGE ${data.sourcePdfPage || '—'}</span>
+                <p dir="ltr">${escapeHtml(script)}</p>
+                <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(script)}">🔊 Play TTS preview</button>
+                <small>TTS preview is not the original book audio recording.</small>
+              </article>`;
+            }).join('')}
+            ${scripts.length ? '' : '<div class="empty-state">No verified listening transcript is available; no source script has been invented.</div>'}
+          </div>
+          <h3 class="module-subheading">Listening questions</h3>
+          ${renderQuestionGroup(questions, 'listening')}
+        `;
+      } else if (state.activeModule === 'speaking') {
+        const dialogues = speaking.filter((item) => Array.isArray(item.content?.dialogue));
+        bodyHtml = `
+          <div class="speaking-practice-card">
+            ${dialogues.map((item) => {
+              const data = item.content || {};
+              return `<article class="speaking-dialogue-block">
+                <span class="speaking-line-speaker">${data.origin === 'supplementary' ? 'SUPPLEMENTARY ROLE-PLAY' : 'SOURCE DIALOGUE'} · PDF PAGE ${data.sourcePdfPage || '—'}</span>
+                <div class="speaking-dialogue-list">
+                  ${(data.dialogue || []).map((line, index) => {
+                    const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                    return `<article class="speaking-line-card">
+                      <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
+                      <p dir="ltr">${escapeHtml(line.text || '')}</p>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
+                    </article>`;
+                  }).join('')}
+                </div>
+              </article>`;
+            }).join('')}
+            ${dialogues.length ? '<p class="speaking-practice-note">The current player uses the platform default English TTS voice. Gender-matched voices have not been tested on a device.</p>' : '<div class="empty-state">No source dialogue or supplementary role-play is available yet.</div>'}
+          </div>
         `;
       } else if (state.activeModule === 'comprehensive_test') {
         bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}`;
@@ -1478,7 +1526,7 @@ function renderUnitWorkspace() {
     `;
   }
 
-  // UNIT DASHBOARD (The 6 Consolidated Section Cards + 2 Visual Activities)
+  // UNIT DASHBOARD (Nine independent learning sections)
   const calculateProgress = (secType) => {
     if (!isP1U1 && activeUnitDraft) {
       const section = activeUnitDraft.sections.find((item) => item.type === secType);
