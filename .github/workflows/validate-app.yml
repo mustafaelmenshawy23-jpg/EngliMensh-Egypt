@@ -57,6 +57,8 @@ jobs:
         run: npm test
 
       - name: Build application
+        env:
+          SKIP_PREPARATORY_IMAGE_FETCH: '1'
         run: npm run build
 
       - name: Upload production build
