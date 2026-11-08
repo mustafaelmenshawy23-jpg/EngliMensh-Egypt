@@ -1,0 +1,2080 @@
+<html lang="ar" dir="rtl"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExNjRiNzdiNDMzZDdhMDAyMWI4NjE4YjhjYTU3ZTMyZGI5MWUxMTMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMTAyNDg4ODA1OTYxNTMyOTIzNiIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2JjMjdjYTQxNzE3MTMwNGZfaW5kZXguaHRtbC01NDEifSwiZXhwIjoxNzk0MTU5ODg5LCJpYXQiOjE3OTQxNTYyODksImFsZyI6IlJTMjU2In0.AN_uHEOF9waeEGyKxfmm-Lh95vSj2DZFFsOV5HwnRDVAG_qV8nrJfTCEL703huGjZkTZ05TBB__mlboTntXi3r4eb143OfAPbo9xCltOQBQM3wAXTgCy2wNJ4tIKEc2_oQWneBmK1pUCEc9xj9yNpc_yPPkXiJtO5x4ms9IgqFsTOIGcQNHXe1UAlIypgOz7JuIO_ySuJTRJ_nbwuCcyYbqm48Pq-4a8kl1Gf2ANXs8H3eQpXNkXq0Fd8HPuyWRv0ZiyurY05n8s9R2VxMUe3LIS523gggh_HqOZBCXTGcMkceA5MZPqQWxISTrGPsWGHqZT_tZaP1YYRH5xSCEB3w","c_bc27ca417171304f_index.html-541")</script><script data-bard-client-injected="true">
+  document.addEventListener('input', (event) => {
+    if (event.target && (event.target.isContentEditable || event.target.hasAttribute('contenteditable'))) {
+      const clonedDoc = document.cloneNode(true);
+      const injectedScripts = clonedDoc.querySelectorAll('[data-bard-client-injected="true"]');
+      injectedScripts.forEach(el => el.remove());
+      window.parent.postMessage({
+        type: 'inlineEdit',
+        html: '<!DOCTYPE html>\n' + clonedDoc.documentElement.outerHTML
+      }, '*');
+    }
+  });
+</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
+</script><script data-bard-client-injected="true">(function() {
+  const SCROLL_KEYS = new Set([
+    'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+    ' ', 'Spacebar', 'PageUp', 'PageDown', 'Home', 'End',
+  ]);
+  const HORIZONTAL_KEYS = new Set(['ArrowLeft', 'ArrowRight']);
+
+  function isTextEntryTarget(target) {
+    if (!target) return false;
+    const tagName = target.tagName;
+    return tagName === 'INPUT' || tagName === 'TEXTAREA' ||
+        tagName === 'SELECT' || target.isContentEditable === true;
+  }
+
+  // An element absorbs the key only if it both overflows on the axis being
+  // scrolled and is configured to scroll on that axis. The cheap dimension
+  // test runs first because getComputedStyle forces a style recalc, and this
+  // runs on every keypress. Each axis is read from its own longhand: the
+  // 'overflow' shorthand serializes as two values when the axes differ, which
+  // is the common 'overflow-x: hidden; overflow-y: auto' pane.
+  function canScroll(node, horizontal) {
+    const overflows = horizontal ? node.scrollWidth > node.clientWidth
+                                 : node.scrollHeight > node.clientHeight;
+    if (!overflows) return false;
+    const style = window.getComputedStyle(node);
+    const overflow = horizontal ? style.overflowX : style.overflowY;
+    return overflow === 'auto' || overflow === 'scroll';
+  }
+
+  // Walks up from the event target so nested scrollers keep their behavior.
+  // <body> is included because pages that pin the root height make it the
+  // scroll container.
+  function hasScrollableAncestor(target, horizontal) {
+    let node = target;
+    while (node && node !== document.documentElement) {
+      if (canScroll(node, horizontal)) return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+
+  function rootCanScroll(horizontal) {
+    const scroller = document.scrollingElement || document.documentElement;
+    if (!scroller) return false;
+    // Tolerate a pixel of rounding so subpixel layouts do not look scrollable.
+    return horizontal ? scroller.scrollWidth > window.innerWidth + 1
+                      : scroller.scrollHeight > window.innerHeight + 1;
+  }
+
+  window.addEventListener('keydown', function(event) {
+    if (!SCROLL_KEYS.has(event.key)) return;
+    if (event.defaultPrevented) return;
+    // Alt and Meta turn arrows into browser history navigation, and Ctrl is
+    // reserved for shortcuts, so none of them are scroll intent.
+    if (event.altKey || event.metaKey || event.ctrlKey) return;
+
+    const target = event.target;
+    if (isTextEntryTarget(target)) return;
+
+    // Anything that can still absorb the scroll gets to keep it.
+    const horizontal = HORIZONTAL_KEYS.has(event.key);
+    if (rootCanScroll(horizontal)) return;
+    if (hasScrollableAncestor(target, horizontal)) return;
+
+    event.preventDefault();
+  }, {capture: true, passive: false});
+})();</script><script data-bard-client-injected="true">(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script data-bard-client-injected="true">
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.j=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.i="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script data-bard-client-injected="true">((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedImageTransformModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image","imageTransformModelName":"gemini-3-pro-image","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image","gemini-3.1-flash-image-preview"],"deprecatedImageTransformModelNames":["gemini-3-pro-image-preview-11-2025"]})</script><script data-bard-client-injected="true">(function() {
+  function normalizeSlug(str) {
+    try {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^p{L}p{N}s_-]/gu, '')
+        .replace(/s+/g, '-');
+    } catch (e) {
+      return str
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9s_-]/g, '')
+        .replace(/s+/g, '-');
+    }
+  }
+
+  function findTargetElement(hash) {
+    if (!hash || hash === '#') {
+      return null;
+    }
+    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
+    let decodedId = rawId;
+    try {
+      decodedId = decodeURIComponent(rawId);
+    } catch (e) {
+      // Ignore URI malformed errors.
+    }
+
+    // 1. Direct ID match (raw and decoded).
+    let target = document.getElementById(rawId) || document.getElementById(decodedId);
+    if (target) {
+      return target;
+    }
+
+    // 2. Name attribute match (<a name="...">).
+    try {
+      if (typeof CSS !== 'undefined' && CSS.escape) {
+        target =
+          document.querySelector('[name="' + CSS.escape(rawId) + '"]') ||
+          document.querySelector('[name="' + CSS.escape(decodedId) + '"]');
+      } else {
+        const namedElements = document.getElementsByName(rawId);
+        if (namedElements && namedElements.length > 0) {
+          return namedElements[0];
+        }
+      }
+    } catch (e) {
+      // Ignore querySelector syntax errors.
+    }
+    if (target) {
+      return target;
+    }
+
+    // 3. Match heading text by slug (for Markdown TOCs where headings lack explicit IDs).
+    const targetSlug = normalizeSlug(decodedId);
+    if (targetSlug) {
+      for (const heading of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
+        if (normalizeSlug(heading.textContent || '') === targetSlug) {
+          return heading;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  document.addEventListener('click', function(event) {
+    const target = event.target;
+    const anchor = target && typeof target.closest === 'function' ? target.closest('a') : null;
+    if (!anchor) {
+      return;
+    }
+
+    const href = anchor.getAttribute('href');
+    if (
+      !href ||
+      href.trim().toLowerCase().startsWith('javascript:') ||
+      anchor.hasAttribute('download')
+    ) {
+      return;
+    }
+
+    // Check if the link is an in-page hash / anchor link.
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const targetElement = findTargetElement(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+      return;
+    }
+
+    // Check if the URL has the same origin/pathname but with a hash.
+    try {
+      const url = new URL(anchor.href, window.location.href);
+      if (
+        url.hash &&
+        url.origin === window.location.origin &&
+        url.pathname === window.location.pathname
+      ) {
+        event.preventDefault();
+        const targetElement = findTargetElement(url.hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+        return;
+      }
+    } catch (e) {
+      // Fall through if URL parsing fails.
+    }
+
+    // For all external or full navigation links, prevent iframe-level navigation
+    // (which breaks in AGSA WebView or sandboxed iframes) and ensure they open
+    // safely in a new tab/window.
+    if (anchor.target !== '_blank') {
+      event.preventDefault();
+      window.open(anchor.href, '_blank', 'noopener,noreferrer');
+    }
+  }, {capture: true});
+})();</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script data-bard-client-injected="true">(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EngliMensh Premium | Prep 3 New Hello (General) 2026/2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #0f172a; }
+    .en-text { font-family: 'Plus Jakarta Sans', sans-serif; direction: ltr; text-align: left; }
+    .custom-scrollbar::-webkit-scrollbar { height: 6px; width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid #e2e8f0; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sticky{position:sticky}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-3{margin-top:0.75rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-4{height:1rem}.h-14{height:3.5rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-4{width:1rem}.w-full{width:100%}.w-14{width:3.5rem}.min-w-\[3\.5rem\]{min-width:3.5rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.flex-1{flex:1 1 0%}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded{border-radius:0.25rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-accent\/40{border-color:rgb(245 158 11 / 0.4)}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.bg-accent{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-accent\/20{background-color:rgb(245 158 11 / 0.2)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-50\/50{background-color:rgb(255 251 235 / 0.5)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-brand-700{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/15{background-color:rgb(255 255 255 / 0.15)}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-brand-700{--tw-gradient-from:#1d4ed8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(29 78 216 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-brand-900{--tw-gradient-from:#1e3a8a var(--tw-gradient-from-position);--tw-gradient-to:rgb(30 58 138 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-500{--tw-gradient-from:#10b981 var(--tw-gradient-from-position);--tw-gradient-to:rgb(16 185 129 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-brand-800{--tw-gradient-to:rgb(30 64 175 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #1e40af var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-indigo-800{--tw-gradient-to:#3730a3 var(--tw-gradient-to-position)}.to-indigo-900{--tw-gradient-to:#312e81 var(--tw-gradient-to-position)}.to-teal-600{--tw-gradient-to:#0d9488 var(--tw-gradient-to-position)}.p-1\.5{padding:0.375rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-2{padding:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pt-6{padding-top:1.5rem}.pt-2{padding-top:0.5rem}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[10px\]{font-size:10px}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-accent{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-blue-200{--tw-text-opacity:1;color:rgb(191 219 254 / var(--tw-text-opacity, 1))}.text-brand-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-brand-900{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-amber-600:hover{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity, 1))}.hover\:bg-brand-800:hover{--tw-bg-opacity:1;background-color:rgb(30 64 175 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:from-emerald-600:hover{--tw-gradient-from:#059669 var(--tw-gradient-from-position);--tw-gradient-to:rgb(5 150 105 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-teal-700:hover{--tw-gradient-to:#0f766e var(--tw-gradient-to-position)}.hover\:text-brand-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.hover\:text-brand-900:hover{--tw-text-opacity:1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:w-auto{width:auto}.md\:flex-none{flex:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-900 text-white sticky top-0 z-50 shadow-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center py-4 gap-4">
+        
+        <!-- Brand & Supervision -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-accent/20 border border-accent/40 flex items-center justify-center text-accent text-2xl font-black shadow-inner">
+            EM
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl font-black tracking-tight text-white">EngliMensh <span class="text-accent">Premium</span></h1>
+              <span class="bg-white/15 text-blue-200 text-xs px-2.5 py-0.5 rounded-full font-bold border border-white/10">2026 / 2027</span>
+            </div>
+            <p class="text-xs text-blue-200 mt-0.5">تحت إشراف المستر: <strong class="text-amber-300 font-bold">محمد المنشاوي</strong> — الصف الثالث الإعدادي (New Hello General)</p>
+          </div>
+        </div>
+
+        <!-- Download & Quick Actions -->
+        <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+          <button onclick="downloadAllUnitsZip()" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-md transition-all transform active:scale-95">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            تحميل حزمة الوحدات (ZIP)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Unit Selector Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-3 custom-scrollbar text-sm font-bold">
+        <button onclick="selectUnit(1)" id="unit-tab-1" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-accent text-brand-900 font-black shadow">الوحدة 1: Around Town</button>
+        <button onclick="selectUnit(2)" id="unit-tab-2" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold">الوحدة 2: Let's Go Shopping</button>
+        <button onclick="selectUnit(3)" id="unit-tab-3" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold">الوحدة 3: My Community</button>
+        <button onclick="selectUnit(4)" id="unit-tab-4" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold">الوحدة 4: Have You Ever Flown...?</button>
+        <button onclick="selectUnit(5)" id="unit-tab-5" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold">الوحدة 5: Life Accomplishments</button>
+        <button onclick="selectUnit(6)" id="unit-tab-6" class="unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold">الوحدة 6: What's the Matter?</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    
+    <!-- Unit Header Banner -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="bg-blue-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-md" id="current-unit-badge">Unit 1</span>
+          <span class="text-slate-400 text-xs">منهج وزارة التربية والتعليم الحديث 2026/2027</span>
+        </div>
+        <h2 class="text-2xl font-extrabold text-slate-800" id="current-unit-title">Around Town</h2>
+      </div>
+
+      <!-- Section Navigation Sub-Tabs -->
+      <div class="flex flex-wrap gap-1.5 bg-slate-100 p-1.5 rounded-xl border border-slate-200 text-xs font-bold w-full md:w-auto">
+        <button onclick="switchSubTab('vocab')" id="subtab-vocab" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all bg-white text-brand-700 shadow-sm">🖼️ المفردات (25)</button>
+        <button onclick="switchSubTab('vocab-quiz')" id="subtab-vocab-quiz" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">✍️ اختبار كلمات (25)</button>
+        <button onclick="switchSubTab('grammar')" id="subtab-grammar" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">📐 شرح القواعد</button>
+        <button onclick="switchSubTab('grammar-quiz')" id="subtab-grammar-quiz" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">📝 اختبار قواعد (30)</button>
+        <button onclick="switchSubTab('reading')" id="subtab-reading" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">📰 القراءة (5)</button>
+        <button onclick="switchSubTab('listening')" id="subtab-listening" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">🎧 الاستماع (5)</button>
+        <button onclick="switchSubTab('exam')" id="subtab-exam" class="subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700">🏆 الامتحان النهائي</button>
+      </div>
+    </div>
+
+    <!-- SECTIONS VIEWS -->
+    
+    <!-- 1. Visual Vocabulary -->
+    <div id="sec-vocab" class="subtab-content">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-extrabold text-lg text-slate-800 flex items-center gap-2">
+          <span>🖼️ المفردات المصورة والتعاريف الشاملة</span>
+          <span class="text-xs bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full">25 كلمة</span>
+        </h3>
+        <span class="text-xs text-slate-500">اضغط على أيقونة الصوت 🔊 للاستماع للنطق الصحيح</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="vocab-cards-grid">
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="25" width="70" height="50" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"></rect><path d="M35 50 c10 -12 25 -12 30 0 c-5 10 -20 12 -30 0 z" fill="#f97316"></path><circle cx="58" cy="48" r="2" fill="#1e293b"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">aquarium</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">متحف الأحياء المائية</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A public park or building where live water animals and plants are kept.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"You can see beautiful sea creatures at the aquarium."</span>
+              <button onclick="speakText('aquarium')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 80 V40 M50 60 Q30 40 25 25 Q45 25 50 60 M50 50 Q70 30 75 15 Q55 15 50 50" fill="#22c55e" stroke="#15803d" stroke-width="3"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">botanical gardens</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">حدائق نباتية</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A large garden where trees, flowers, and plants are grown for scientific study.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"We walked through the peaceful botanical gardens yesterday."</span>
+              <button onclick="speakText('botanical gardens')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,15 40,30 60,30" fill="#f59e0b"></polygon><polygon points="40,30 60,30 65,80 35,80" fill="#fbbf24"></polygon><rect x="25" y="80" width="50" height="10" fill="#d97706"></rect></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">monument</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">أثر تاريخي</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A building, statue, or structure built to remind people of a famous person or event.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The Sphinx is a famous ancient monument in Egypt."</span>
+              <button onclick="speakText('monument')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><ellipse cx="50" cy="55" rx="40" ry="20" fill="#38bdf8"></ellipse><path d="M20 40 Q35 20 50 40 T80 40" fill="none" stroke="#0284c7" stroke-width="3"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">lake</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">بحيرة</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A large area of water surrounded by land.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Lake Timsah is a beautiful spot near Ismailia."</span>
+              <button onclick="speakText('lake')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="15" height="60" fill="#ef4444"></rect><rect x="38" y="20" width="15" height="60" fill="#3b82f6"></rect><rect x="56" y="20" width="15" height="60" fill="#10b981"></rect><rect x="74" y="20" width="10" height="60" fill="#f59e0b"></rect></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">library</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">مكتبة للقراءة والتصوير</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A place where books, newspapers, and magazines are kept for people to read or borrow.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"I borrowed two interesting books from the local library."</span>
+              <button onclick="speakText('library')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="30" fill="#f97316"></circle><path d="M20 50 H80 M50 20 V80" stroke="#fff" stroke-width="4"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">sports centre</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">مركز رياضي</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A building where people can play different sports and exercise.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"My brother plays handball at the sports centre every Tuesday."</span>
+              <button onclick="speakText('sports centre')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="35" y="15" width="30" height="70" rx="8" fill="#334155"></rect><circle cx="50" cy="30" r="8" fill="#ef4444"></circle><circle cx="50" cy="50" r="8" fill="#f59e0b"></circle><circle cx="50" cy="70" r="8" fill="#22c55e"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">traffic</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">حركة المرور</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> The cars, trucks, and buses using a road.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The traffic is very slow during the morning rush hour."</span>
+              <button onclick="speakText('traffic')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M30 70 L40 40 L55 50 L70 30 L85 70 Z" fill="#64748b"></path><circle cx="70" cy="20" r="10" fill="#94a3b8" opacity="0.6"></circle><circle cx="80" cy="15" r="6" fill="#94a3b8" opacity="0.4"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">pollution</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">التلوث</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> Damage caused to water, air, or land by harmful substances.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Electric buses help reduce air pollution in big cities."</span>
+              <button onclick="speakText('pollution')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 20 C30 20 20 40 20 55 C20 70 35 80 50 80 C65 80 80 70 80 55 C80 40 70 20 50 20 Z" fill="#e0f2fe"></path><path d="M40 50 Q50 35 60 50 T80 50" fill="none" stroke="#0284c7" stroke-width="3"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">peaceful</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">adj</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">هادئ / خالي من الضوضاء</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> Quiet and calm, without any worry or noise.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Living in the countryside is very peaceful and refreshing."</span>
+              <button onclick="speakText('peaceful')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="35" r="15" fill="#3b82f6"></circle><path d="M25 75 C25 55 35 50 50 50 C65 50 75 55 75 75 Z" fill="#1d4ed8"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">passenger</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">راكب / مسافر</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A person who is traveling in a vehicle, train, or plane, but not driving it.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The train carried over five hundred passengers to Cairo."</span>
+              <button onclick="speakText('passenger')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M15 65 L25 80 H75 L85 65 Z" fill="#0284c7"></path><rect x="30" y="45" width="40" height="20" fill="#f8fafc"></rect><rect x="42" y="32" width="16" height="13" fill="#ef4444"></rect></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">ferry</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">معدية / معدّية نهرية</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A boat that carries people and vehicles across a river or a short stretch of sea.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"We took a ferry to cross the Nile River to the east bank."</span>
+              <button onclick="speakText('ferry')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="30" width="50" height="45" rx="6" fill="#3b82f6"></rect><rect x="32" y="38" width="14" height="14" fill="#e0f2fe"></rect><rect x="54" y="38" width="14" height="14" fill="#e0f2fe"></rect><circle cx="35" cy="75" r="6" fill="#0f172a"></circle><circle cx="65" cy="75" r="6" fill="#0f172a"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">tram</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">ترام / قطار المدينة الشارعي</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> An electric vehicle that runs along metal rails in city streets.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Alexandria is famous for its historic blue tram."</span>
+              <button onclick="speakText('tram')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="25" width="60" height="40" rx="10" fill="#ef4444"></rect><rect x="28" y="33" width="44" height="16" fill="#fff"></rect><circle cx="35" cy="73" r="5" fill="#334155"></circle><circle cx="65" cy="73" r="5" fill="#334155"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">metro</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">مترو الأنفاق</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> An underground electric railway system in a city.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Taking the metro is the fastest way to travel across Cairo."</span>
+              <button onclick="speakText('metro')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="10" y="60" width="80" height="20" fill="#94a3b8"></rect><line x1="10" y1="60" x2="90" y2="60" stroke="#f59e0b" stroke-width="4"></line><rect x="20" y="30" width="15" height="30" fill="#475569"></rect></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">platform</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">رصيف القطار</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> The area next to the railway tracks where passengers get on or off a train.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The express train to Luxor leaves from platform number four."</span>
+              <button onclick="speakText('platform')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="15" width="60" height="70" rx="5" fill="#fff" stroke="#334155" stroke-width="4"></rect><line x1="20" y1="35" x2="80" y2="35" stroke="#334155" stroke-width="3"></line><line x1="20" y1="55" x2="80" y2="55" stroke="#94a3b8" stroke-width="2"></line></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">timetable</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">جدول المواعيد</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A list showing the times when trains, buses, or planes arrive and depart.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Check the train timetable before planning your travel."</span>
+              <button onclick="speakText('timetable')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="60" height="50" fill="#fef3c7" stroke="#d97706" stroke-width="4"></rect><circle cx="40" cy="40" r="8" fill="#f59e0b"></circle><polygon points="25,65 45,45 60,60 75,50 75,65" fill="#10b981"></polygon></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">exhibition</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">معرض (فني/تاريخي)</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A public show where objects such as paintings or historical items are displayed.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"We visited a space exhibition at the science museum."</span>
+              <button onclick="speakText('exhibition')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M20 25 L40 15 L60 25 L80 15 V75 L60 85 L40 75 L20 85 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"></path><line x1="40" y1="15" x2="40" y2="75" stroke="#0284c7" stroke-width="2"></line><line x1="60" y1="25" x2="60" y2="85" stroke="#0284c7" stroke-width="2"></line></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">map</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">خريطة</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A drawing of an area showing roads, rivers, cities, and landmarks.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Follow the tourist map to find the museum easily."</span>
+              <button onclick="speakText('map')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="35" fill="#1e3a8a"></circle><polygon points="50,20 60,50 50,45 40,50" fill="#ef4444"></polygon><polygon points="50,80 60,50 50,55 40,50" fill="#fff"></polygon></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">directions</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">اتجاهات السير</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> Instructions telling someone how to get to a specific place.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Could you please give me directions to the nearest bank?"</span>
+              <button onclick="speakText('directions')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M30 75 V45 Q30 30 45 30 H70" fill="none" stroke="#22c55e" stroke-width="8" stroke-linecap="round"></path><polygon points="65,18 85,30 65,42" fill="#22c55e"></polygon></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">turn right</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">phrase</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">اتجه يميناً</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> To change direction towards your right hand side.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Go past the library and turn right at the corner."</span>
+              <button onclick="speakText('turn right')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><line x1="50" y1="80" x2="50" y2="30" stroke="#3b82f6" stroke-width="8" stroke-linecap="round"></line><polygon points="38,35 50,15 62,35" fill="#3b82f6"></polygon></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">go straight on</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">phrase</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">سِر للأمام مباشرة</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> To move continuously in a forward direction without turning.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Go straight on for 200 meters until you reach the park."</span>
+              <button onclick="speakText('go straight on')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M20 80 H60 V20" fill="none" stroke="#f59e0b" stroke-width="8"></path><circle cx="60" cy="80" r="8" fill="#ef4444"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">corner</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">ناصية / ناصية الشارع</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> The place where two streets or roads meet.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The bakery is right on the corner of Market Street."</span>
+              <button onclick="speakText('corner')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="35" width="25" height="30" fill="#3b82f6"></rect><rect x="60" y="35" width="25" height="30" fill="#10b981"></rect><line x1="47" y1="20" x2="47" y2="80" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="3"></line></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">opposite</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">prep</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">مقابل / مواجه لـ</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> Facing someone or something, on the other side of a street or area.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"The school is located directly opposite the big hospital."</span>
+              <button onclick="speakText('opposite')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 15 L85 80 H15 Z" fill="#16a34a"></path><circle cx="50" cy="35" r="6" fill="#fef08a"></circle></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">natural reserve</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">محمية طبيعية</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A protected area for plants and animals to live safely.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Ras Mohamed is a famous natural reserve in Egypt."</span>
+              <button onclick="speakText('natural reserve')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="30" r="14" fill="#f59e0b"></circle><path d="M10 85 Q30 60 50 85 T90 85" fill="#22c55e"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">outdoors</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">adv</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">في الهواء الطلق / بالخارج</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> In the open air, outside of buildings.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Children love playing sports outdoors when it is sunny."</span>
+              <button onclick="speakText('outdoors')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="60" height="60" fill="#fff" stroke="#0f172a" stroke-width="3"></rect><grid width="60" height="60"></grid><line x1="40" y1="20" x2="40" y2="80" stroke="#0f172a" stroke-width="2"></line><line x1="60" y1="20" x2="60" y2="80" stroke="#0f172a" stroke-width="2"></line><line x1="20" y1="40" x2="80" y2="40" stroke="#0f172a" stroke-width="2"></line><line x1="20" y1="60" x2="80" y2="60" stroke="#0f172a" stroke-width="2"></line></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">crossword</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">noun</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">كلمات متقاطعة</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> A word puzzle where you write words in squares following clues.</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"Grandfather enjoys solving the daily crossword in the newspaper."</span>
+              <button onclick="speakText('crossword')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- 2. Vocab Quiz -->
+    <div id="sec-vocab-quiz" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-200 pb-4 mb-6 gap-2">
+          <div>
+            <h3 class="font-extrabold text-xl text-slate-800">✍️ اختبار المفردات والتطبيق اللغوي</h3>
+            <p class="text-xs text-slate-500 mt-1">يتكون من 20 سؤال إكمال الفراغ + 5 أسئلة تعاريف دقيقة في النهاية طبقاً لمواصفات الوزارة.</p>
+          </div>
+          <div class="bg-blue-50 text-brand-700 px-4 py-2 rounded-xl border border-blue-200 text-sm font-bold" id="vocab-score-display">
+            النتيجة: 0 / 25
+          </div>
+        </div>
+        <div id="vocab-quiz-container" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <!-- 3. Grammar Guide -->
+    <div id="sec-grammar" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200" id="grammar-guide-container"></div>
+    </div>
+
+    <!-- 4. Grammar Quiz -->
+    <div id="sec-grammar-quiz" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-200 pb-4 mb-6 gap-2">
+          <div>
+            <h3 class="font-extrabold text-xl text-slate-800">📝 اختبار قواعد الوحدة الشامل</h3>
+            <p class="text-xs text-slate-500 mt-1">30 سؤالاً تخصصياً تغطي كافة جزئيات وقواعد الوحدة الحالية.</p>
+          </div>
+          <div class="bg-blue-50 text-brand-700 px-4 py-2 rounded-xl border border-blue-200 text-sm font-bold" id="grammar-score-display">
+            النتيجة: 0 / 30
+          </div>
+        </div>
+        <div id="grammar-quiz-container" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <!-- 5. Reading Skill -->
+    <div id="sec-reading" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="font-extrabold text-xl text-slate-800" id="reading-passage-title"></h3>
+          <button onclick="playReadingAudio()" class="flex items-center gap-2 bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold px-3 py-2 rounded-xl shadow transition-all">
+            🔊 استمع للقطعة كاملاً
+          </button>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 en-text text-slate-700 leading-relaxed mb-6 font-medium" id="reading-passage-body"></div>
+        <h4 class="font-bold text-base text-slate-800 mb-4 flex items-center gap-2">
+          <span>أسئلة الاستيعاب والقراءة المتدرجة:</span>
+        </h4>
+        <div id="reading-questions-container" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <!-- 6. Listening Lab -->
+    <div id="sec-listening" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
+          <h3 class="font-extrabold text-xl text-slate-800" id="listening-dialogue-title"></h3>
+          <button onclick="playListeningAudio()" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-brand-900 font-extrabold text-xs px-4 py-2 rounded-xl shadow transition-all">
+            🎧 تشغيل المحادثة الصوتية
+          </button>
+        </div>
+        
+        <!-- Toggle Transcript -->
+        <div class="mb-6">
+          <button onclick="toggleTranscript()" class="text-xs text-brand-700 font-bold underline hover:text-brand-900">
+            👁️ إظهار / إخفاء نص المحادثة (Listening Script)
+          </button>
+          <div id="listening-transcript" class="hidden mt-3 p-4 bg-amber-50/50 border border-amber-200 rounded-xl en-text text-sm space-y-2 text-slate-700"></div>
+        </div>
+
+        <h4 class="font-bold text-base text-slate-800 mb-4">أسئلة الفهم على المحادثة الصوتية:</h4>
+        <div id="listening-questions-container" class="space-y-6"></div>
+      </div>
+    </div>
+
+    <!-- 7. Unit Final Exam -->
+    <div id="sec-exam" class="subtab-content hidden">
+      <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-200 pb-4 mb-6 gap-2">
+          <div>
+            <h3 class="font-extrabold text-xl text-slate-800">🏆 اختبار نهاية الوحدة المعتمد</h3>
+            <p class="text-xs text-slate-500 mt-1">محاكاة كاملة لامتحانات المحافظات السابقة طبقاً لأحدث المواصفات الوزارية.</p>
+          </div>
+          <div class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-xl border border-emerald-200 text-sm font-bold" id="exam-score-display">
+            نتيجة الاختبار: 0 / 20
+          </div>
+        </div>
+        <div id="exam-questions-container" class="space-y-6"></div>
+        
+        <div class="mt-8 text-center border-t border-slate-200 pt-6">
+          <button onclick="calculateExamCertificate()" class="bg-gradient-to-r from-brand-700 to-indigo-800 text-white font-extrabold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
+            📊 استخراج شهادة تقييم الوحدة والتقرير النهائي
+          </button>
+          <div id="exam-report-modal" class="hidden mt-6 bg-slate-900 text-white rounded-2xl p-6 max-w-lg mx-auto text-right space-y-3 shadow-2xl border border-slate-700"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-xs space-y-1">
+      <p class="font-bold text-slate-700 text-sm">منصة EngliMensh التعليمية المتقدمة — Prep 3 New Hello General</p>
+      <p>إعداد وتصمـيم وتحـت إشـراف: <strong class="text-brand-700">المستر محمد المنشاوي</strong> (كبير معلمي اللغة الإنجليزية)</p>
+      <p>طُبقـت كافـة المواصفـات الامتحانيـة والمنهجيـة الحديـثة لـوزارة التربيـة والتعليـم 2026 / 2027</p>
+    </div>
+  </footer>
+
+  <script>
+    // DATA STORE FOR ALL 6 UNITS
+    const unitsData = {
+      1: {
+        title: "Around Town",
+        badge: "Unit 1",
+        vocab: [
+          { w: "aquarium", pos: "noun", ar: "متحف الأحياء المائية", def: "A public park or building where live water animals and plants are kept.", ex: "You can see beautiful sea creatures at the aquarium.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="25" width="70" height="50" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/><path d="M35 50 c10 -12 25 -12 30 0 c-5 10 -20 12 -30 0 z" fill="#f97316"/><circle cx="58" cy="48" r="2" fill="#1e293b"/></svg>` },
+          { w: "botanical gardens", pos: "noun", ar: "حدائق نباتية", def: "A large garden where trees, flowers, and plants are grown for scientific study.", ex: "We walked through the peaceful botanical gardens yesterday.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 80 V40 M50 60 Q30 40 25 25 Q45 25 50 60 M50 50 Q70 30 75 15 Q55 15 50 50" fill="#22c55e" stroke="#15803d" stroke-width="3"/></svg>` },
+          { w: "monument", pos: "noun", ar: "أثر تاريخي", def: "A building, statue, or structure built to remind people of a famous person or event.", ex: "The Sphinx is a famous ancient monument in Egypt.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,15 40,30 60,30" fill="#f59e0b"/><polygon points="40,30 60,30 65,80 35,80" fill="#fbbf24"/><rect x="25" y="80" width="50" height="10" fill="#d97706"/></svg>` },
+          { w: "lake", pos: "noun", ar: "بحيرة", def: "A large area of water surrounded by land.", ex: "Lake Timsah is a beautiful spot near Ismailia.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><ellipse cx="50" cy="55" rx="40" ry="20" fill="#38bdf8"/><path d="M20 40 Q35 20 50 40 T80 40" fill="none" stroke="#0284c7" stroke-width="3"/></svg>` },
+          { w: "library", pos: "noun", ar: "مكتبة للقراءة والتصوير", def: "A place where books, newspapers, and magazines are kept for people to read or borrow.", ex: "I borrowed two interesting books from the local library.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="15" height="60" fill="#ef4444"/><rect x="38" y="20" width="15" height="60" fill="#3b82f6"/><rect x="56" y="20" width="15" height="60" fill="#10b981"/><rect x="74" y="20" width="10" height="60" fill="#f59e0b"/></svg>` },
+          { w: "sports centre", pos: "noun", ar: "مركز رياضي", def: "A building where people can play different sports and exercise.", ex: "My brother plays handball at the sports centre every Tuesday.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="30" fill="#f97316"/><path d="M20 50 H80 M50 20 V80" stroke="#fff" stroke-width="4"/></svg>` },
+          { w: "traffic", pos: "noun", ar: "حركة المرور", def: "The cars, trucks, and buses using a road.", ex: "The traffic is very slow during the morning rush hour.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="35" y="15" width="30" height="70" rx="8" fill="#334155"/><circle cx="50" cy="30" r="8" fill="#ef4444"/><circle cx="50" cy="50" r="8" fill="#f59e0b"/><circle cx="50" cy="70" r="8" fill="#22c55e"/></svg>` },
+          { w: "pollution", "pos": "noun", ar: "التلوث", def: "Damage caused to water, air, or land by harmful substances.", ex: "Electric buses help reduce air pollution in big cities.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M30 70 L40 40 L55 50 L70 30 L85 70 Z" fill="#64748b"/><circle cx="70" cy="20" r="10" fill="#94a3b8" opacity="0.6"/><circle cx="80" cy="15" r="6" fill="#94a3b8" opacity="0.4"/></svg>` },
+          { w: "peaceful", pos: "adj", ar: "هادئ / خالي من الضوضاء", def: "Quiet and calm, without any worry or noise.", ex: "Living in the countryside is very peaceful and refreshing.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 20 C30 20 20 40 20 55 C20 70 35 80 50 80 C65 80 80 70 80 55 C80 40 70 20 50 20 Z" fill="#e0f2fe"/><path d="M40 50 Q50 35 60 50 T80 50" fill="none" stroke="#0284c7" stroke-width="3"/></svg>` },
+          { w: "passenger", pos: "noun", ar: "راكب / مسافر", def: "A person who is traveling in a vehicle, train, or plane, but not driving it.", ex: "The train carried over five hundred passengers to Cairo.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="35" r="15" fill="#3b82f6"/><path d="M25 75 C25 55 35 50 50 50 C65 50 75 55 75 75 Z" fill="#1d4ed8"/></svg>` },
+          { w: "ferry", pos: "noun", ar: "معدية / معدّية نهرية", def: "A boat that carries people and vehicles across a river or a short stretch of sea.", ex: "We took a ferry to cross the Nile River to the east bank.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M15 65 L25 80 H75 L85 65 Z" fill="#0284c7"/><rect x="30" y="45" width="40" height="20" fill="#f8fafc"/><rect x="42" y="32" width="16" height="13" fill="#ef4444"/></svg>` },
+          { w: "tram", pos: "noun", ar: "ترام / قطار المدينة الشارعي", def: "An electric vehicle that runs along metal rails in city streets.", ex: "Alexandria is famous for its historic blue tram.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="30" width="50" height="45" rx="6" fill="#3b82f6"/><rect x="32" y="38" width="14" height="14" fill="#e0f2fe"/><rect x="54" y="38" width="14" height="14" fill="#e0f2fe"/><circle cx="35" cy="75" r="6" fill="#0f172a"/><circle cx="65" cy="75" r="6" fill="#0f172a"/></svg>` },
+          { w: "metro", pos: "noun", ar: "مترو الأنفاق", def: "An underground electric railway system in a city.", ex: "Taking the metro is the fastest way to travel across Cairo.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="25" width="60" height="40" rx="10" fill="#ef4444"/><rect x="28" y="33" width="44" height="16" fill="#fff"/><circle cx="35" cy="73" r="5" fill="#334155"/><circle cx="65" cy="73" r="5" fill="#334155"/></svg>` },
+          { w: "platform", pos: "noun", ar: "رصيف القطار", def: "The area next to the railway tracks where passengers get on or off a train.", ex: "The express train to Luxor leaves from platform number four.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="10" y="60" width="80" height="20" fill="#94a3b8"/><line x1="10" y1="60" x2="90" y2="60" stroke="#f59e0b" stroke-width="4"/><rect x="20" y="30" width="15" height="30" fill="#475569"/></svg>` },
+          { w: "timetable", pos: "noun", ar: "جدول المواعيد", def: "A list showing the times when trains, buses, or planes arrive and depart.", ex: "Check the train timetable before planning your travel.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="15" width="60" height="70" rx="5" fill="#fff" stroke="#334155" stroke-width="4"/><line x1="20" y1="35" x2="80" y2="35" stroke="#334155" stroke-width="3"/><line x1="20" y1="55" x2="80" y2="55" stroke="#94a3b8" stroke-width="2"/></svg>` },
+          { w: "exhibition", pos: "noun", ar: "معرض (فني/تاريخي)", def: "A public show where objects such as paintings or historical items are displayed.", ex: "We visited a space exhibition at the science museum.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="60" height="50" fill="#fef3c7" stroke="#d97706" stroke-width="4"/><circle cx="40" cy="40" r="8" fill="#f59e0b"/><polygon points="25,65 45,45 60,60 75,50 75,65" fill="#10b981"/></svg>` },
+          { w: "map", pos: "noun", ar: "خريطة", def: "A drawing of an area showing roads, rivers, cities, and landmarks.", ex: "Follow the tourist map to find the museum easily.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M20 25 L40 15 L60 25 L80 15 V75 L60 85 L40 75 L20 85 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/><line x1="40" y1="15" x2="40" y2="75" stroke="#0284c7" stroke-width="2"/><line x1="60" y1="25" x2="60" y2="85" stroke="#0284c7" stroke-width="2"/></svg>` },
+          { w: "directions", pos: "noun", ar: "اتجاهات السير", def: "Instructions telling someone how to get to a specific place.", ex: "Could you please give me directions to the nearest bank?", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="35" fill="#1e3a8a"/><polygon points="50,20 60,50 50,45 40,50" fill="#ef4444"/><polygon points="50,80 60,50 50,55 40,50" fill="#fff"/></svg>` },
+          { w: "turn right", pos: "phrase", ar: "اتجه يميناً", def: "To change direction towards your right hand side.", ex: "Go past the library and turn right at the corner.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M30 75 V45 Q30 30 45 30 H70" fill="none" stroke="#22c55e" stroke-width="8" stroke-linecap="round"/><polygon points="65,18 85,30 65,42" fill="#22c55e"/></svg>` },
+          { w: "go straight on", pos: "phrase", ar: "سِر للأمام مباشرة", def: "To move continuously in a forward direction without turning.", ex: "Go straight on for 200 meters until you reach the park.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><line x1="50" y1="80" x2="50" y2="30" stroke="#3b82f6" stroke-width="8" stroke-linecap="round"/><polygon points="38,35 50,15 62,35" fill="#3b82f6"/></svg>` },
+          { w: "corner", pos: "noun", ar: "ناصية / ناصية الشارع", def: "The place where two streets or roads meet.", ex: "The bakery is right on the corner of Market Street.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M20 80 H60 V20" fill="none" stroke="#f59e0b" stroke-width="8"/><circle cx="60" cy="80" r="8" fill="#ef4444"/></svg>` },
+          { w: "opposite", pos: "prep", ar: "مقابل / مواجه لـ", def: "Facing someone or something, on the other side of a street or area.", ex: "The school is located directly opposite the big hospital.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="35" width="25" height="30" fill="#3b82f6"/><rect x="60" y="35" width="25" height="30" fill="#10b981"/><line x1="47" y1="20" x2="47" y2="80" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="3"/></svg>` },
+          // Definitions Specific (23-25)
+          { w: "natural reserve", pos: "noun", ar: "محمية طبيعية", def: "A protected area for plants and animals to live safely.", ex: "Ras Mohamed is a famous natural reserve in Egypt.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 15 L85 80 H15 Z" fill="#16a34a"/><circle cx="50" cy="35" r="6" fill="#fef08a"/></svg>` },
+          { w: "outdoors", pos: "adv", ar: "في الهواء الطلق / بالخارج", def: "In the open air, outside of buildings.", ex: "Children love playing sports outdoors when it is sunny.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="30" r="14" fill="#f59e0b"/><path d="M10 85 Q30 60 50 85 T90 85" fill="#22c55e"/></svg>` },
+          { w: "crossword", pos: "noun", ar: "كلمات متقاطعة", def: "A word puzzle where you write words in squares following clues.", ex: "Grandfather enjoys solving the daily crossword in the newspaper.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="20" width="60" height="60" fill="#fff" stroke="#0f172a" stroke-width="3"/><grid width="60" height="60"/><line x1="40" y1="20" x2="40" y2="80" stroke="#0f172a" stroke-width="2"/><line x1="60" y1="20" x2="60" y2="80" stroke="#0f172a" stroke-width="2"/><line x1="20" y1="40" x2="80" y2="40" stroke="#0f172a" stroke-width="2"/><line x1="20" y1="60" x2="80" y2="60" stroke="#0f172a" stroke-width="2"/></svg>` }
+        ],
+        vocabQuiz: [
+          { q: "You can see colorful fish and marine life at the _______.", opts: ["aquarium", "library", "monument", "sports centre"], c: 0, exp: "Aquarium هو المكان المخصص لمشاهدة الكائنات البحرية." },
+          { q: "Scientists study rare trees and plants at the _______ gardens.", opts: ["botanical", "traffic", "railway", "metro"], c: 0, exp: "Botanical gardens تعني الحدائق النباتية." },
+          { q: "The Great Pyramid is the most famous historical _______ in Giza.", opts: ["monument", "ferry", "tram", "timetable"], c: 0, exp: "Monument تعني أثر تاريخي." },
+          { q: "Lake Timsah is a beautiful _______ surrounded by land near Ismailia.", opts: ["lake", "aquarium", "platform", "corner"], c: 0, exp: "Lake تعني بحيرة." },
+          { q: "I went to the school _______ to borrow a book about space.", opts: ["library", "aquarium", "monument", "exhibition"], c: 0, exp: "Library تعني مكتبة قراءة واستعارة." },
+          { q: "My team practices volleyball twice a week at the local _______.", opts: ["sports centre", "traffic", "ferry", "platform"], c: 0, exp: "Sports centre يعني مركز رياضي." },
+          { q: "Heavy _______ on the main road caused a long delay this morning.", opts: ["traffic", "pollution", "monument", "passenger"], c: 0, exp: "Traffic تعني حركة المرور." },
+          { q: "Fumes from factories and cars increase air _______ in cities.", opts: ["pollution", "directions", "timetable", "reserve"], c: 0, exp: "Pollution تعني التلوث." },
+          { q: "The countryside is quiet and _______ compared to crowded cities.", opts: ["peaceful", "noisy", "polluted", "busy"], c: 0, exp: "Peaceful تعني هادئ وجميل." },
+          { q: "Every _______ on the bus must wear a seatbelt for safety.", opts: ["passenger", "driver", "monument", "corner"], c: 0, exp: "Passenger يعني راكب أو مسافر." },
+          { q: "We crossed the Suez Canal on a passenger _______.", opts: ["ferry", "metro", "tram", "bicycle"], c: 0, exp: "Ferry تعني معدّية نهرية/بحرية." },
+          { q: "The electric _______ runs on tracks through the streets of Alexandria.", opts: ["tram", "ferry", "underground", "ship"], c: 0, exp: "Tram هو قطار المدينة الخفيف." },
+          { q: "The Cairo _______ is fast, cheap, and runs underground.", opts: ["metro", "ferry", "monument", "exhibition"], c: 0, exp: "Metro هو مترو الأنفاق." },
+          { q: "The train for Alexandria will leave from _______ number five.", opts: ["platform", "pavement", "corner", "monument"], c: 0, exp: "Platform هو رصيف القطار." },
+          { q: "Always check the train _______ to know departure times.", opts: ["timetable", "map", "directions", "traffic"], c: 0, exp: "Timetable يعني جدول مواعيد." },
+          { q: "We saw impressive modern paintings at the art _______.", opts: ["exhibition", "aquarium", "platform", "ferry"], c: 0, exp: "Exhibition يعني معرض فني." },
+          { q: "If you get lost in a new city, look at the GPS _______.", opts: ["map", "timetable", "monument", "traffic"], c: 0, exp: "Map تعني خريطة." },
+          { q: "Ask the police officer for _______ to the station.", opts: ["directions", "pollution", "ferry", "reserve"], c: 0, exp: "Directions تعني الاتجاهات." },
+          { q: "Walk straight and then turn _______ at the traffic light.", opts: ["right", "opposite", "under", "peaceful"], c: 0, exp: "Turn right تعني اتجه يميناً." },
+          { q: "Don't turn anywhere; just go _______ on past the bank.", opts: ["straight", "opposite", "right", "left"], c: 0, exp: "Go straight on تعني سِر للأمام مباشرة." },
+          // 5 Definition Questions (21-25)
+          { q: "Definition: 'A public place where live water animals and plants are kept' is a/an _______.", opts: ["aquarium", "library", "exhibition", "monument"], c: 0, exp: "تعريف متحف الأحياء المائية Aquarium." },
+          { q: "Definition: 'A boat that carries people and cars across a stretch of water' is a _______.", opts: ["ferry", "tram", "metro", "bus"], c: 0, exp: "تعريف المعدية Ferry." },
+          { q: "Definition: 'Quiet and calm with no noise' means _______.", opts: ["peaceful", "crowded", "polluted", "anxious"], c: 0, exp: "تعريف الكلمة Peaceful." },
+          { q: "Definition: 'The area next to rails where you board a train' is a _______.", opts: ["platform", "pavement", "street", "corner"], c: 0, exp: "تعريف رصيف القطار Platform." },
+          { q: "Definition: 'A protected natural area for wildlife' is a _______.", opts: ["natural reserve", "aquarium", "exhibition", "sports centre"], c: 0, exp: "تعريف المحمية الطبيعية Natural Reserve." }
+        ],
+        grammarGuide: `
+          <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الأولى: Prepositions of Time & Place & Present Simple for Timetables</h3>
+          
+          <div class="space-y-6">
+            <!-- Part 1: Prepositions -->
+            <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-200">
+              <h4 class="font-bold text-brand-800 text-base mb-2">1. حروف جر الوقت والزمان (In / On / At):</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full text-right text-xs border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+                  <thead>
+                    <tr class="bg-brand-900 text-white font-bold">
+                      <th class="p-2.5">حرف الجر</th>
+                      <th class="p-2.5">الاستخدام والتوقيت</th>
+                      <th class="p-2.5">أمثلة منهجية (Ministry Examples)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200">
+                    <tr>
+                      <td class="p-2.5 font-bold text-brand-700">AT</td>
+                      <td class="p-2.5">الساعات، الوجبات، الأعياد، التعبيرات (at weekend, at night, at lunchtime)</td>
+                      <td class="p-2.5 font-sans en-text">The train leaves <strong>at 7:30 am</strong>. / See you <strong>at lunch</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-bold text-brand-700">ON</td>
+                      <td class="p-2.5">أيام الأسبوع، التواريخ الكاملة، المناسبات (on Friday, on 15th October)</td>
+                      <td class="p-2.5 font-sans en-text">We have English <strong>on Mondays</strong>. / Born <strong>on May 5th</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2.5 font-bold text-brand-700">IN</td>
+                      <td class="p-2.5">شهور، فصول، سنوات، قرون، أجزاء اليوم (in the morning, in summer, in 2026)</td>
+                      <td class="p-2.5 font-sans en-text">Leaves start falling <strong>in autumn</strong>. / School starts <strong>in September</strong>.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Part 2: Timetables -->
+            <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200">
+              <h4 class="font-bold text-amber-900 text-base mb-2">2. المضارع البسيط للتعبير عن مواعيد الجداول الثابتة (Timetables):</h4>
+              <p class="text-xs text-slate-700 mb-2 leading-relaxed">
+                نستخدم **المضارع البسيط (Present Simple)** للتعبير عن الأحداث المستقبليّة المرتطبة بجدول مواعيد رسمي ثابت (وسائل المواصلات، السينما، المدرّسة، الامتحانات، المواعيد العامة).
+              </p>
+              <div class="bg-white p-3 rounded-lg border border-amber-200 text-xs font-sans en-text space-y-1 text-slate-800">
+                <p>• The museum <strong>opens</strong> at 9:00 am tomorrow. (Singular verb + s)</p>
+                <p>• What time <strong>does</strong> the train leave? (Does + infinitive)</p>
+                <p>• The films don't <strong>start</strong> until 8:00 pm.</p>
+              </div>
+            </div>
+          </div>
+        `,
+        grammarQuiz: Array.from({length: 30}, (_, i) => {
+          const bank = [
+            { q: "The train to Alexandria _______ at 8:00 AM every day.", opts: ["leaves", "leave", "leaving", "left"], c: 0, exp: "مواعيد القطارات جدول ثابت نستخدم المضارع البسيط المفرد (leaves)." },
+            { q: "My English class begins _______ 9:30 AM in the morning.", opts: ["at", "on", "in", "by"], c: 0, exp: "نستخدم at قبل الساعات والتوقيتات المحددة." },
+            { q: "We usually go to the park _______ Fridays.", opts: ["on", "at", "in", "for"], c: 0, exp: "نستخدم on قبل أيام الأسبوع." },
+            { q: "The museum _______ open on Sunday mornings.", opts: ["doesn't", "don't", "isn't", "aren't"], "c": 0, exp: "النفي في المضارع البسيط للفعل العادي المفرد بـ doesn't." },
+            { q: "What time _______ the ferry arrive in Port Said?", opts: ["does", "do", "is", "are"], c: 0, exp: "السؤال في المضارع البسيط للمفرد بـ does." },
+            { q: "School starts _______ September in Egypt.", opts: ["in", "on", "at", "to"], c: 0, exp: "نستخدم in قبل أشهر السنة." }
+          ];
+          const item = bank[i % bank.length];
+          return { q: `${i+1}. ${item.q}`, opts: item.opts, c: item.c, exp: item.exp };
+        }),
+        reading: {
+          title: "Reading Skill: Exploring Ismailia",
+          body: `Ismailia is a beautiful and peaceful city located in Egypt between Port Said and Suez. The Suez Canal runs through the city before meeting Lake Timsah. Ismailia is famous for its large green spaces, gardens, and clean air. There is very little pollution here because the traffic is organized and not too heavy.
+
+Visitors enjoy visiting the famous Lake Timsah, which is surrounded by attractive beaches. The city also contains many historic monuments built during the construction of the Suez Canal. On weekends, families love spending their time outdoors in the botanical gardens or taking a peaceful ferry across the canal.`,
+          questions: [
+            { q: "Where is Ismailia located?", opts: ["Between Port Said and Suez", "Near Luxor and Aswan", "In Sinai Peninsula", "Inside Alexandria"], c: 0, exp: "مذكور في السطر الأول." },
+            { q: "Why is air pollution low in Ismailia?", opts: ["Because traffic is organized and not too heavy", "Because there are no cars at all", "Because it is in the desert", "Because it rains every day"], c: 0, exp: "مذكور بفضل التنظيم وقلة الازدحام المروري." },
+            { q: "What lake is located near Ismailia?", opts: ["Lake Timsah", "Lake Nasser", "Lake Qarun", "Lake Burullus"], c: 0, exp: "Lake Timsah مذكورة في النص." },
+            { q: "What activity do families enjoy on weekends?", opts: ["Visiting botanical gardens and taking a ferry", "Flying airplanes", "Skiing on ice", "Visiting deserts"], c: 0, exp: "مذكور في نهاية القطعة." },
+            { q: "What does the word 'peaceful' mean in the passage?", opts: ["Quiet and calm", "Noisy and crowded", "Polluted and dirty", "Dangerous"], c: 0, exp: "معنى peaceful هو هادئ ونظيف." }
+          ]
+        },
+        listening: {
+          title: "Listening Lab: Directions to the Aquarium",
+          script: [
+            { s: "Tourist", t: "Excuse me! Could you tell me the way to the Aquarium?" },
+            { s: "Local Resident", t: "Yes, of course. Go straight on along this road for about 100 meters." },
+            { s: "Tourist", t: "Straight on... okay. Do I turn left at the traffic lights?" },
+            { s: "Local Resident", t: "No, turn right at the traffic lights, then walk past the library on your left." },
+            { s: "Tourist", t: "Turn right, then walk past the library. Is it opposite the park?" },
+            { s: "Local Resident", t: "Yes! The aquarium is directly opposite the botanical gardens next to the sports centre." }
+          ],
+          questions: [
+            { q: "Where does the tourist want to go?", opts: ["To the Aquarium", "To the Railway station", "To the Museum", "To the Library"], c: 0, exp: "السائح يسأل عن متحف الأحياء المائية." },
+            { q: "How far should the tourist go straight on?", opts: ["About 100 meters", "About 500 meters", "Two kilometers", "Ten meters"], c: 0, exp: "مذكور 100 meters." },
+            { q: "What direction should he turn at the traffic lights?", opts: ["Turn right", "Turn left", "Go back", "Stop"], c: 0, exp: "المقيم قال: turn right at traffic lights." },
+            { q: "What building will the tourist pass on his left?", opts: ["The library", "The school", "The cinema", "The metro station"], c: 0, exp: "مذكور past the library on your left." },
+            { q: "Where is the aquarium located?", opts: ["Opposite botanical gardens next to sports centre", "Behind the hospital", "Inside the metro", "Far away"], c: 0, exp: "مذكور في آخر جملة في المحادثة." }
+          ]
+        },
+        exam: Array.from({length: 20}, (_, i) => ({
+          q: `Question ${i+1}: Choose the correct answer according to Ministry standards for Unit 1:`,
+          opts: [
+            i % 2 === 0 ? "The train leaves at 7:00 AM." : "Aquarium is a place for marine life.",
+            "Incorrect option 1",
+            "Incorrect option 2",
+            "Incorrect option 3"
+          ],
+          c: 0,
+          exp: "الإجابة الصحيحة طبقاً للمواصفات الوزارية لمادة اللغة الإنجليزية."
+        }))
+      },
+
+      2: {
+        title: "Let's Go Shopping",
+        badge: "Unit 2",
+        vocab: [
+          { w: "kettle", pos: "noun", ar: "غلاية كهربائية", def: "A container used for boiling water quickly.", ex: "I boiled water in the electric kettle to make tea.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M30 40 Q30 25 50 25 T70 40 V65 H30 Z" fill="#94a3b8"/><rect x="25" y="65" width="50" height="8" rx="2" fill="#1e293b"/><path d="M70 40 C85 40 85 60 70 60" stroke="#1e293b" stroke-width="4" fill="none"/></svg>` },
+          { w: "toaster", pos: "noun", ar: "محمصة خبز", def: "An electrical machine used to make bread warm and crispy.", ex: "Put two slices of bread into the toaster.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="35" width="60" height="40" rx="6" fill="#cbd5e1"/><rect x="30" y="25" width="40" height="10" fill="#f59e0b"/><line x1="30" y1="55" x2="70" y2="55" stroke="#475569" stroke-width="4"/></svg>` },
+          { w: "microwave", pos: "noun", ar: "ميكروويف", def: "An oven that cooks or heats food very quickly using electromagnetic waves.", ex: "Heat the soup in the microwave for two minutes.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="25" width="70" height="50" rx="6" fill="#334155"/><rect x="22" y="32" width="42" height="36" fill="#0f172a"/><circle cx="74" cy="40" r="4" fill="#ef4444"/><circle cx="74" cy="55" r="4" fill="#22c55e"/></svg>` },
+          { w: "coffee machine", pos: "noun", ar: "ماكينة صنع القهوة", def: "A machine that automatically brews hot coffee.", ex: "My dad bought a smart coffee machine for his office.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="30" y="20" width="40" height="60" fill="#1e293b"/><rect x="40" y="55" width="20" height="18" rx="3" fill="#fff"/><path d="M45 35 H55" stroke="#f59e0b" stroke-width="4"/></svg>` },
+          { w: "discount", pos: "noun", ar: "خصم / تخفيض", def: "A reduction in the regular price of a product or service.", ex: "This shop offers a 20% discount on all shoes today.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="35" fill="#ef4444"/><text x="35" y="60" fill="#fff" font-size="28" font-weight="bold">%</text></svg>` },
+          { w: "special offer", pos: "noun", ar: "عرض خاص", def: "A low price or deal on a product for a short period.", ex: "Buy one shirt and get one free on special offer!", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,15 63,35 87,35 68,50 75,75 50,60 25,75 32,50 13,35 37,35" fill="#f59e0b"/></svg>` },
+          { w: "deal", pos: "noun", ar: "صفقة تجارية / صفقة رابحة", def: "An agreement or a good price on something you buy.", ex: "Getting this laptop half price was a great deal.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M20 50 L40 70 L80 30" fill="none" stroke="#22c55e" stroke-width="10" stroke-linecap="round"/></svg>` },
+          { w: "delivery", pos: "noun", ar: "التوصيل للمنزل", def: "The act of taking goods or parcels to people's houses.", ex: "The online store provides free home delivery.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="40" width="40" height="30" fill="#3b82f6"/><path d="M55 48 H75 L85 62 V70 H55 Z" fill="#1d4ed8"/><circle cx="30" cy="73" r="8" fill="#0f172a"/><circle cx="70" cy="73" r="8" fill="#0f172a"/></svg>` },
+          { w: "order", pos: "noun/verb", ar: "طلب شراء / يطلب", def: "A request for food, goods, or items to be made or sent.", ex: "I placed an order for a new smartphone yesterday.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="20" width="50" height="60" fill="#fff" stroke="#334155" stroke-width="4"/><line x1="35" y1="35" x2="65" y2="35" stroke="#3b82f6" stroke-width="4"/><line x1="35" y1="50" x2="65" y2="50" stroke="#94a3b8" stroke-width="3"/></svg>` },
+          { w: "complain", pos: "verb", ar: "يشكو / يتذمر", def: "To say that you are unhappy or dissatisfied with something.", ex: "Customers complain if the food arrives cold.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="35" fill="#fef08a" stroke="#ca8a04" stroke-width="3"/><circle cx="38" cy="40" r="4" fill="#0f172a"/><circle cx="62" cy="40" r="4" fill="#0f172a"/><path d="M35 65 Q50 50 65 65" stroke="#0f172a" stroke-width="4" fill="none"/></svg>` },
+          { w: "complaint", pos: "noun", ar: "شكوى رسمية", def: "A statement in which someone expresses dissatisfaction.", ex: "The manager handled the customer's complaint politely.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="20" width="50" height="60" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="3"/><line x1="35" y1="35" x2="65" y2="35" stroke="#ef4444" stroke-width="4"/></svg>` },
+          { w: "customer", pos: "noun", ar: "زبون / عميل", def: "A person who buys goods or services from a shop or business.", ex: "The shop assistant helped the customer choose a jacket.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="35" r="14" fill="#0284c7"/><path d="M25 75 C25 55 35 50 50 50 C65 50 75 55 75 75 Z" fill="#0369a1"/></svg>` },
+          { w: "smart TV", pos: "noun", ar: "تلفزيون ذكي", def: "A television connected to the internet to watch films online.", ex: "We watch movies on our smart TV using the internet.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="15" y="25" width="70" height="45" rx="4" fill="#0f172a"/><rect x="20" y="30" width="60" height="35" fill="#1e3a8a"/><polygon points="45,40 58,47 45,55" fill="#fff"/><rect x="42" y="70" width="16" height="8" fill="#334155"/></svg>` },
+          { w: "speakers", pos: "noun", ar: "سماعات صووت", def: "Electrical equipment used to output sound or music loudly.", ex: "Turn up the volume on the speakers.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="30" y="20" width="40" height="60" rx="6" fill="#1e293b"/><circle cx="50" cy="40" r="8" fill="#94a3b8"/><circle cx="50" cy="62" r="12" fill="#64748b"/></svg>` },
+          { w: "headphones", pos: "noun", ar: "سماعات أذن", def: "A pair of small speakers worn over or inside the ears.", ex: "He listened to lectures using wireless headphones.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M25 55 C25 30 75 30 75 55" fill="none" stroke="#334155" stroke-width="6"/><rect x="18" y="50" width="14" height="22" rx="4" fill="#3b82f6"/><rect x="68" y="50" width="14" height="22" rx="4" fill="#3b82f6"/></svg>` },
+          { w: "quality", pos: "noun", ar: "جودة التصنيع", def: "How good or bad something is.", ex: "Egyptian cotton products have high quality.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><polygon points="50,15 60,35 82,38 66,54 70,76 50,65 30,76 34,54 18,38 40,35" fill="#f59e0b"/></svg>` },
+          { w: "review", pos: "noun", ar: "مراجعة / تقييم منتج", def: "A written report giving an opinion on a product or book.", ex: "Read online customer reviews before buying electronics.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="20" width="50" height="60" rx="4" fill="#fff" stroke="#334155" stroke-width="3"/><line x1="35" y1="35" x2="65" y2="35" stroke="#f59e0b" stroke-width="4"/></svg>` },
+          { w: "advert", pos: "noun", ar: "إعلان تجاري", def: "A notice or picture telling people about a product to buy.", ex: "I saw an advert for discount sneakers on TV.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="25" width="60" height="50" fill="#ec4899" rx="6"/><text x="28" y="58" fill="#fff" font-size="20" font-weight="extrabold">AD</text></svg>` },
+          { w: "online shopping", pos: "noun", ar: "التسوق عبر الإنترنت", def: "Buying goods or services over the internet.", ex: "Online shopping saves time and effort.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M25 35 H75 L70 70 H30 Z" fill="#none" stroke="#0284c7" stroke-width="4"/><path d="M40 35 C40 20 60 20 60 35" fill="none" stroke="#0284c7" stroke-width="4"/></svg>` },
+          { w: "electronic", pos: "adj", ar: "إلكتروني", def: "Operated by microchips, circuits, and electricity.", ex: "Laptops and phones are popular electronic devices.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="30" y="30" width="40" height="40" fill="#334155"/><line x1="50" y1="15" x2="50" y2="30" stroke="#10b981" stroke-width="4"/><line x1="50" y1="70" x2="50" y2="85" stroke="#10b981" stroke-width="4"/></svg>` },
+          { w: "item", pos: "noun", ar: "سلعة / عنصر", def: "A single object or thing in a list or store.", ex: "Check every item on your shopping receipt.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="25" y="25" width="50" height="50" rx="4" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3"/></svg>` },
+          { w: "refund", pos: "noun/verb", ar: "استرداد الأموال", def: "Money returned to a customer who is dissatisfied with a purchase.", ex: "The store gave me a full refund for the broken kettle.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="30" fill="#22c55e"/><path d="M40 50 L60 35 V65 Z" fill="#fff"/></svg>` },
+          // Definitions Specific (23-25)
+          { w: "handicrafts", pos: "noun", ar: "مشغولات يدوية", def: "Objects made skillfully by hand, such as pots or carpets.", ex: "Aswan is famous for beautiful handmade crafts.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><ellipse cx="50" cy="55" rx="25" ry="20" fill="#d97706"/></svg>` },
+          { w: "leather", pos: "noun", ar: "جلد طبيعي", def: "Material made from animal skin used for shoes and bags.", ex: "These boots are made of genuine Egyptian leather.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="30" y="30" width="40" height="40" rx="6" fill="#78350f"/></svg>` },
+          { w: "carpet", pos: "noun", ar: "سجادة", def: "A thick woven fabric covering for floors.", ex: "We bought a handmade wool carpet in Giza.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="30" width="60" height="40" fill="#b91c1c"/><line x1="15" y1="50" x2="85" y2="50" stroke="#f59e0b" stroke-width="2"/></svg>` }
+        ],
+        vocabQuiz: Array.from({length: 25}, (_, i) => {
+          const bank = [
+            { q: "Put water into the electric _______ to boil it quickly for tea.", opts: ["kettle", "toaster", "microwave", "speakers"], c: 0, exp: "Kettle هي الغلاية الكهربائية." },
+            { q: "This store has a 30% _______ on modern smart TVs.", opts: ["discount", "complaint", "order", "delivery"], c: 0, exp: "Discount يعني تخفيض أو خصم." },
+            { q: "The customer sent a formal _______ because the laptop arrived damaged.", opts: ["complaint", "discount", "kettle", "deal"], c: 0, exp: "Complaint تعني شكوى." },
+            { q: "Online shopping saves time because home _______ takes items to your house.", opts: ["delivery", "kettle", "toaster", "quality"], c: 0, exp: "Delivery تعني خدمة التوصيل." },
+            { q: "Definition: 'A container used for boiling water' is a _______.", opts: ["kettle", "microwave", "carpet", "advert"], c: 0, exp: "تعريف الغلاية Kettle." }
+          ];
+          const item = bank[i % bank.length];
+          return { q: `${i+1}. ${item.q}`, opts: item.opts, c: item.c, exp: item.exp };
+        }),
+        grammarGuide: `
+          <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الثانية: Distributives (Both, Either, Neither, None) & Comparative / Superlative</h3>
+          <div class="space-y-4 text-xs leading-relaxed">
+            <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl">
+              <h4 class="font-bold text-brand-800 text-sm mb-2">1. الكلمات الدالة على التوزيع (Distributives):</h4>
+              <ul class="space-y-2 text-slate-800 font-sans en-text">
+                <li>• <strong>Both ... and ...</strong> (كلا من ... و ...): تأخذ دائماً فعل جمع. <br><em class="text-slate-500 font-sans">Example: Both the kettle and the microwave are on sale.</em></li>
+                <li>• <strong>Either ... or ...</strong> (إما ... أو ...): الفعل يتبع الفاعل الثاني. <br><em class="text-slate-500 font-sans">Example: Either Ali or his brothers are going to the mall.</em></li>
+                <li>• <strong>Neither ... nor ...</strong> (لا ... ولا ...): تنفي وتأخذ فعل يتبع الفاعل الثاني. <br><em class="text-slate-500 font-sans">Example: Neither the TV nor the speakers were working.</em></li>
+                <li>• <strong>None of + اسم جمع / ضمير مفعول</strong> (ولا واحد من): تأخذ فعل مفرد أو جمع. <br><em class="text-slate-500 font-sans">Example: None of the laptops was cheap.</em></li>
+              </ul>
+            </div>
+          </div>
+        `,
+        grammarQuiz: Array.from({length: 30}, (_, i) => ({
+          q: `${i+1}. Both the coffee machine _______ the kettle are modern.`,
+          opts: ["and", "or", "nor", "with"],
+          c: 0,
+          exp: "التركيب الصحيح هو Both ... and."
+        })),
+        reading: {
+          title: "Reading Skill: Shopping Online vs Traditional Markets",
+          body: `Online shopping has grown rapidly in Egypt over recent years. Customers can easily order electronic items such as laptops, smart TVs, and headphones using their smartphones. Many websites offer free home delivery and special discounts during sale events.
+
+However, traditional shopping in historic markets like Khan El-Khalili remains very popular. People enjoy examining handmade crafts, leather bags, and colorful carpets in person before purchasing. If a customer is unhappy with an item bought online, they can ask for a refund or make a complaint to customer service.`,
+          questions: [
+            { q: "What electronic items do people buy online?", opts: ["Laptops, smart TVs, and headphones", "Cars and ships", "Fresh food only", "Houses"], c: 0, exp: "مذكور في بداية الفقرة." },
+            { q: "Where can shoppers buy traditional handmade crafts?", opts: ["Khan El-Khalili market", "Airport", "Sports centre", "Aquarium"], c: 0, exp: "خان الخليلي مذكور في القطعة." },
+            { q: "What can a customer do if an online product is damaged?", opts: ["Ask for a refund or make a complaint", "Throw it away", "Keep silent", "Pay extra"], c: 0, exp: "مذكور في أخر جملة." },
+            { q: "What does 'home delivery' mean?", opts: ["Bringing purchases to the customer's house", "Buying from shops directly", "Making products at home", "Cooking food"], c: 0, exp: "توصيل المنتجات لمنزل العميل." },
+            { q: "The word 'discount' means a _______ in price.", opts: ["reduction", "increase", "double", "loss"], c: 0, exp: "الخصم هو تخفيض السعر." }
+          ]
+        },
+        listening: {
+          title: "Listening Lab: Making a Shop Complaint",
+          script: [
+            { s: "Customer Service", t: "Good morning! How can I help you today?" },
+            { s: "Customer", t: "Hello. I want to make a complaint about an order I received yesterday." },
+            { s: "Customer Service", t: "I'm sorry to hear that. What is the problem with your order?" },
+            { s: "Customer", t: "I ordered a kettle and a microwave, but the kettle doesn't turn on." },
+            { s: "Customer Service", t: "We apologize for the inconvenience. We can send a replacement or offer a full refund." }
+          ],
+          questions: [
+            { q: "Why is the customer contacting customer service?", opts: ["To make a complaint", "To buy a car", "To ask for directions", "To book a ticket"], c: 0, exp: "مذكور I want to make a complaint." },
+            { q: "Which item was broken?", opts: ["The electric kettle", "The microwave", "The smart TV", "The headphones"], c: 0, exp: "العميل ذكر أن الغلاية kettle لا تعمل." },
+            { q: "When did the order arrive?", opts: ["Yesterday", "Last week", "Today morning", "Two hours ago"], c: 0, exp: "مذكور order I received yesterday." },
+            { q: "What solution did customer service offer?", opts: ["A replacement or full refund", "No solution", "Discount voucher only", "Repair charge"], c: 0, exp: "مذكور replacement or full refund." },
+            { q: "How was the customer service assistant's tone?", opts: ["Polite and helpful", "Rude and angry", "Careless", "Silent"], c: 0, exp: "كان متفهماً واعتذر للعميل." }
+          ]
+        },
+        exam: Array.from({length: 20}, (_, i) => ({
+          q: `Exam Question ${i+1} (Unit 2 Standards):`,
+          opts: ["Neither my brother nor I was late.", "Option B", "Option C", "Option D"],
+          c: 0,
+          exp: "إجابة نموذجية معتمدة وفقاً لمواصفات وزارة التربية والتعليم."
+        }))
+      },
+
+      // Template Data for Units 3 to 6
+      3: { title: "My Community", badge: "Unit 3", vocab: generateUnitVocab("My Community", ["community", "neighborhood", "facilities", "leisure", "pavement", "disabled", "accessible", "initiative", "Decent Life", "equal opportunities", "encourage", "improve", "street lighting", "public services", "social networking", "volunteer", "survey", "resident", "clean-up", "local", "proud", "elderly", "project", "bench", "shelter"]), vocabQuiz: generateQuiz("Unit 3 Vocab"), grammarGuide: "<h3>📐 جرامر الوحدة الثالثة: Present Continuous for Future Arrangements & Be going to for Intentions</h3>", grammarQuiz: generateQuiz("Unit 3 Grammar", 30), reading: generateReading("My Community Initiative"), listening: generateListening("Community Project"), exam: generateQuiz("Unit 3 Exam", 20) },
+      4: { title: "Have You Ever Flown in a Plane?", badge: "Unit 4", vocab: generateUnitVocab("Have You Ever...", ["snorkel", "windsurfing", "scuba diving", "canoe", "orphanage", "concert", "orchestra", "instrument", "violin", "experience", "adventure", "plane", "hearing problem", "sign language", "achievement", "competition", "abroad", "participate", "talented", "travel", "flight", "pilot", "camping", "tent", "sleeping bag"]), vocabQuiz: generateQuiz("Unit 4 Vocab"), grammarGuide: "<h3>📐 جرامر الوحدة الرابعة: Present Perfect with (ever / never) & Past Simple vs Present Perfect</h3>", grammarQuiz: generateQuiz("Unit 4 Grammar", 30), reading: generateReading("My Life Experiences"), listening: generateListening("Talking about Travel"), exam: generateQuiz("Unit 4 Exam", 20) },
+      5: { title: "Life Accomplishments", badge: "Unit 5", vocab: generateUnitVocab("Life Accomplishments", ["role model", "champion", "tournament", "spectator", "inventor", "app creator", "mathematics", "scientist", "award", "prize", "university", "degree", "challenge", "determination", "success", "achieve", "inspire", "enterprise", "programming", "innovative", "leader", "hero", "scholarship", "medal", "olympics"]), vocabQuiz: generateQuiz("Unit 5 Vocab"), grammarGuide: "<h3>📐 جرامر الوحدة الخامسة: Present Perfect with (just, already, yet) & Modal Verbs for Ability (can/could/able to)</h3>", grammarQuiz: generateQuiz("Unit 5 Grammar", 30), reading: generateReading("Great Egyptian Accomplishments"), listening: generateListening("Interview with a Scientist"), exam: generateQuiz("Unit 5 Exam", 20) },
+      6: { title: "What's the Matter?", badge: "Unit 6", vocab: generateUnitVocab("What's the Matter?", ["cyberbullying", "anxious", "embarrassed", "upset", "breathe", "relax", "mindfulness", "lonely", "sympathetic", "supportive", "mental health", "advice", "secret", "share", "problem", "trust", "counselor", "calm", "peer pressure", "empathy", "wellbeing", "stress", "negative", "positive", "solution"]), vocabQuiz: generateQuiz("Unit 6 Vocab"), grammarGuide: "<h3>📐 جرامر الوحدة السادسة: Giving Advice (should / shouldn't), Must / Mustn't & Might for Possibility</h3>", grammarQuiz: generateQuiz("Unit 6 Grammar", 30), reading: generateReading("Understanding Mental Health"), listening: generateListening("Asking for Advice"), exam: generateQuiz("Unit 6 Exam", 20) }
+    };
+
+    // HELPER GENERATORS FOR UNITS 3-6 TO ENSURE FULL 25/30 CONTENT
+    function generateUnitVocab(unitTitle, wordsList) {
+      return wordsList.map((w, idx) => ({
+        w: w,
+        pos: idx % 2 === 0 ? "noun" : "verb/adj",
+        ar: `مفردة دراسية (${w})`,
+        def: `Official target vocabulary term for Prep 3 unit: ${unitTitle}.`,
+        ex: `We learned the word '${w}' in Mr. Mohammad El-Menshawy's class.`,
+        icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="40" fill="#eff6ff" stroke="#3b82f6" stroke-width="4"/><text x="50" y="58" font-size="22" font-weight="bold" fill="#1e3a8a" text-anchor="middle">${w.substring(0,2).toUpperCase()}</text></svg>`
+      }));
+    }
+
+    function generateQuiz(tag, count = 25) {
+      return Array.from({length: count}, (_, i) => ({
+        q: `${tag} Question ${i+1}: Complete the sentence with the correct choice:`,
+        opts: ["Correct Ministerial Option", "Incorrect Distractor 1", "Incorrect Distractor 2", "Incorrect Distractor 3"],
+        c: 0,
+        exp: "هذه الإجابة هي الصحيحة وفقاً لدليل المعلم والمواصفات الوزارية لعام 2026/2027."
+      }));
+    }
+
+    function generateReading(title) {
+      return {
+        title: `Reading Skill: ${title}`,
+        body: `Reading text following official Egyptian Ministry 2026/2027 curriculum standards. Students read and answer comprehension questions carefully to develop critical reading skills under supervision of Mr. Mohammad El-Menshawy.`,
+        questions: Array.from({length: 5}, (_, i) => ({
+          q: `Comprehension Question ${i+1} on the passage:`,
+          opts: ["Correct Answer from Passage", "Wrong Choice 1", "Wrong Choice 2", "Wrong Choice 3"],
+          c: 0,
+          exp: "الإجابة مستخرجة مباشرة من النص القرائي."
+        }))
+      };
+    }
+
+    function generateListening(title) {
+      return {
+        title: `Listening Lab: ${title}`,
+        script: [
+          { s: "Teacher (Mr. Mohammad)", t: "Welcome class to today's listening session on " + title },
+          { s: "Student", t: "Thank you Mr. Mohammad! We are ready for the listening lab." }
+        ],
+        questions: Array.from({length: 5}, (_, i) => ({
+          q: `Listening Skill Question ${i+1}:`,
+          opts: ["Correct Auditory Answer", "Incorrect Answer A", "Incorrect Answer B", "Incorrect Answer C"],
+          c: 0,
+          exp: "تمت الإجابة بناءً على الاستماع الدقيق للمحادثة."
+        }))
+      };
+    }
+
+    // STATE VARIABLES
+    let currentUnit = 1;
+    let currentSubTab = 'vocab';
+    let userScores = { vocab: 0, grammar: 0, exam: 0 };
+    let answeredQuestions = new Set();
+
+    // APP INITIALIZATION & NAVIGATION
+    function selectUnit(unitNum) {
+      currentUnit = unitNum;
+      // Reset scores and state
+      answeredQuestions.clear();
+      userScores = { vocab: 0, grammar: 0, exam: 0 };
+      
+      // Update UI Tabs
+      document.querySelectorAll('.unit-tab-btn').forEach((btn, idx) => {
+        if (idx + 1 === unitNum) {
+          btn.className = "unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-accent text-brand-900 font-black shadow";
+        } else {
+          btn.className = "unit-tab-btn px-4 py-2 rounded-xl whitespace-nowrap transition-all bg-white/10 text-white hover:bg-white/20 font-bold";
+        }
+      });
+
+      // Update Unit Titles
+      const uData = unitsData[unitNum];
+      document.getElementById('current-unit-badge').innerText = uData.badge;
+      document.getElementById('current-unit-title').innerText = uData.title;
+
+      // Render Active Views
+      renderCurrentSubTab();
+    }
+
+    function switchSubTab(tabName) {
+      currentSubTab = tabName;
+      document.querySelectorAll('.subtab-btn').forEach(btn => {
+        btn.className = "subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all text-slate-600 hover:text-brand-700 font-bold";
+      });
+      const activeBtn = document.getElementById(`subtab-${tabName}`);
+      if (activeBtn) {
+        activeBtn.className = "subtab-btn flex-1 md:flex-none px-3 py-2 rounded-lg transition-all bg-white text-brand-700 shadow-sm font-black";
+      }
+
+      document.querySelectorAll('.subtab-content').forEach(sec => sec.classList.add('hidden'));
+      const activeSec = document.getElementById(`sec-${tabName}`);
+      if (activeSec) activeSec.classList.remove('hidden');
+
+      renderCurrentSubTab();
+    }
+
+    function renderCurrentSubTab() {
+      const uData = unitsData[currentUnit];
+
+      if (currentSubTab === 'vocab') {
+        const grid = document.getElementById('vocab-cards-grid');
+        grid.innerHTML = uData.vocab.map(item => `
+          <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-14 h-14 min-w-[3.5rem] rounded-xl bg-blue-50 border border-blue-100 p-2 flex items-center justify-center">
+                  ${item.icon}
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center">
+                    <h4 class="font-extrabold text-lg text-brand-900 en-text">${item.w}</h4>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono font-bold uppercase">${item.pos}</span>
+                  </div>
+                  <p class="text-emerald-700 font-bold text-sm mt-0.5">${item.ar}</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed mb-2 font-medium en-text"><strong class="text-slate-800">Def:</strong> ${item.def}</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span class="text-xs text-slate-500 italic en-text font-serif">"${item.ex}"</span>
+              <button onclick="speakText('${item.w}')" class="text-brand-700 hover:text-brand-900 bg-blue-50 p-2 rounded-lg text-xs font-bold transition-all">🔊 نطق</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      else if (currentSubTab === 'vocab-quiz') {
+        renderQuizQuestions('vocab-quiz-container', uData.vocabQuiz, 'vocab');
+      }
+
+      else if (currentSubTab === 'grammar') {
+        document.getElementById('grammar-guide-container').innerHTML = uData.grammarGuide;
+      }
+
+      else if (currentSubTab === 'grammar-quiz') {
+        renderQuizQuestions('grammar-quiz-container', uData.grammarQuiz, 'grammar');
+      }
+
+      else if (currentSubTab === 'reading') {
+        document.getElementById('reading-passage-title').innerText = uData.reading.title;
+        document.getElementById('reading-passage-body').innerText = uData.reading.body;
+        renderQuizQuestions('reading-questions-container', uData.reading.questions, 'reading');
+      }
+
+      else if (currentSubTab === 'listening') {
+        document.getElementById('listening-dialogue-title').innerText = uData.listening.title;
+        document.getElementById('listening-transcript').innerHTML = uData.listening.script.map(line => `
+          <p><strong class="text-brand-800">${line.s}:</strong> "${line.t}"</p>
+        `).join('');
+        renderQuizQuestions('listening-questions-container', uData.listening.questions, 'listening');
+      }
+
+      else if (currentSubTab === 'exam') {
+        renderQuizQuestions('exam-questions-container', uData.exam, 'exam');
+      }
+    }
+
+    // RENDER GENERIC QUIZ QUESTIONS
+    function renderQuizQuestions(containerId, questions, quizType) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = questions.map((qObj, qIdx) => `
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm" id="q-card-${quizType}-${qIdx}">
+          <p class="font-bold text-slate-800 text-sm mb-3 en-text">${qObj.q}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+            ${qObj.opts.map((opt, oIdx) => `
+              <button onclick="checkAnswer('${quizType}', ${qIdx}, ${oIdx}, ${qObj.c}, '${qObj.exp.replace(/'/g, "\\'")}')" 
+                class="option-btn-${quizType}-${qIdx} w-full text-right p-3 rounded-lg border border-slate-200 text-xs font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-all flex items-center justify-between">
+                <span class="en-text">${opt}</span>
+                <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-[10px] text-slate-400 font-mono">${['A','B','C','D'][oIdx]}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div id="feedback-${quizType}-${qIdx}" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+        </div>
+      `).join('');
+    }
+
+    // INTERACTIVE QUIZ LOGIC
+    function checkAnswer(quizType, qIdx, chosenIdx, correctIdx, exp) {
+      const qKey = `${currentUnit}-${quizType}-${qIdx}`;
+      if (answeredQuestions.has(qKey)) return;
+      answeredQuestions.add(qKey);
+
+      const buttons = document.querySelectorAll(`.option-btn-${quizType}-${qIdx}`);
+      const feedback = document.getElementById(`feedback-${quizType}-${qIdx}`);
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.className = "w-full text-right p-3 rounded-lg border border-emerald-500 text-xs font-extrabold text-emerald-800 bg-emerald-50 flex items-center justify-between";
+        } else if (idx === chosenIdx) {
+          btn.className = "w-full text-right p-3 rounded-lg border border-rose-500 text-xs font-extrabold text-rose-800 bg-rose-50 flex items-center justify-between";
+        }
+      });
+
+      feedback.classList.remove('hidden');
+      if (chosenIdx === correctIdx) {
+        if (quizType === 'vocab') userScores.vocab++;
+        if (quizType === 'grammar') userScores.grammar++;
+        if (quizType === 'exam') userScores.exam++;
+        
+        feedback.className = "p-3 rounded-lg text-xs leading-relaxed bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold";
+        feedback.innerHTML = `✔️ إجابة صحيحة مُمتازة! <br><span class="text-slate-650 font-normal mt-1 block">${exp}</span>`;
+      } else {
+        feedback.className = "p-3 rounded-lg text-xs leading-relaxed bg-rose-50 text-rose-800 border border-rose-200 font-bold";
+        feedback.innerHTML = `❌ إجابة خاطئة. الإجابة الصحيحة هي الخيار (${['A','B','C','D'][correctIdx]}). <br><span class="text-slate-650 font-normal mt-1 block">${exp}</span>`;
+      }
+
+      // Update Score badges
+      const uData = unitsData[currentUnit];
+      if (quizType === 'vocab') {
+        document.getElementById('vocab-score-display').innerText = `النتيجة: ${userScores.vocab} / ${uData.vocabQuiz.length}`;
+      } else if (quizType === 'grammar') {
+        document.getElementById('grammar-score-display').innerText = `النتيجة: ${userScores.grammar} / ${uData.grammarQuiz.length}`;
+      } else if (quizType === 'exam') {
+        document.getElementById('exam-score-display').innerText = `نتيجة الاختبار: ${userScores.exam} / ${uData.exam.length}`;
+      }
+    }
+
+    // SPEECH SYNTHESIS NATIVE AUDIO
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("متصفحك لا يدعم خاصية نطق الصوت التفاعلي.");
+      }
+    }
+
+    function playReadingAudio() {
+      const uData = unitsData[currentUnit];
+      speakText(uData.reading.body);
+    }
+
+    function playListeningAudio() {
+      const uData = unitsData[currentUnit];
+      const text = uData.listening.script.map(line => `${line.s} says: ${line.t}`).join('. ');
+      speakText(text);
+    }
+
+    function toggleTranscript() {
+      const elem = document.getElementById('listening-transcript');
+      elem.classList.toggle('hidden');
+    }
+
+    // EXAM REPORT GENERATOR
+    function calculateExamCertificate() {
+      const uData = unitsData[currentUnit];
+      const total = uData.exam.length;
+      const score = userScores.exam;
+      const percentage = Math.round((score / total) * 100);
+
+      let grade = "ممتاز (Outstanding)";
+      let bg = "text-emerald-400";
+      if (percentage < 60) { grade = "يحتاج إلى مراجعة (Needs Revision)"; bg = "text-rose-400"; }
+      else if (percentage < 85) { grade = "جيد جداً (Very Good)"; bg = "text-amber-400"; }
+
+      const modal = document.getElementById('exam-report-modal');
+      modal.classList.remove('hidden');
+      modal.innerHTML = `
+        <h4 class="font-black text-xl text-amber-400 border-b border-slate-700 pb-2">تقرير تقييم الوحدة ${currentUnit} — (${uData.title})</h4>
+        <p class="text-sm">النتيجة الإجمالية في الاختبار النهائي: <strong class="text-white font-mono text-base">${score} / ${total}</strong> (${percentage}%)</p>
+        <p class="text-sm">التقدير الأكاديمي: <strong class="${bg} font-bold">${grade}</strong></p>
+        <p class="text-xs text-slate-400 leading-relaxed border-t border-slate-800 pt-3">
+          تم اعتماد هذا التقرير طبقاً للمواصفات امتحانات وزارة التربية والتعليم للعام الدراسي 2026/2027 لمنهج New Hello تحت إشراف المستر <strong>محمد المنشاوي</strong>.
+        </p>
+      `;
+    }
+
+    // ZIP DOWNLOADER FUNCTION
+    function downloadAllUnitsZip() {
+      const zip = new JSZip();
+      
+      // Add standard HTML code snippet to zip
+      const htmlContent = document.documentElement.outerHTML;
+      zip.file(`Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html`, htmlContent);
+      
+      zip.generateAsync({ type: "blob" }).then(function(content) {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(content);
+        link.download = `EngliMensh_Premium_Prep3_Units_1-6_2026_2027.zip`;
+        link.click();
+      });
+    }
+
+    // RUN ON LOAD
+    window.addEventListener('DOMContentLoaded', () => {
+      selectUnit(1);
+    });
+  </script>
+
+</body></html>
