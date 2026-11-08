@@ -2,7 +2,7 @@
 
 **Repository:** `mustafaelmenshawy23-jpg/EngliMensh-Egypt`  
 **Branch:** `main`  
-**Snapshot commit:** `abbcda05ba6c6e005a2f13c5a230a77acb8536fa`  
+**Snapshot commit:** `492b76de7e151c6139a857511ec845bf4fd2e902`  
 **Scope:** this repository only. No other EngliMensh repository is part of this report.
 
 ## 1. Source inventory
@@ -18,34 +18,32 @@
 | Indexed lesson units | 118 |
 | Units in official student books | 78 |
 | Units in commercial supplements | 40 |
-| Units missing a verified PDF start page | 19 |
-| Additional units with an ambiguous next-unit boundary | 5 |
-| Structural candidates with safely delimited page ranges (before OCR quality gating) | 94 |
+| Units missing a verified PDF start page | 0 |
+| Additional units with an ambiguous next-unit boundary | 0 |
+| Structural candidates with safely delimited page ranges (before OCR quality gating) | 118 |
 
 The 34 source PDFs remain original Git LFS files. The index includes the previously unindexed Prep 2 performance-tasks PDF as an assessment source. Assessment books and the reader are catalogued separately; the current lesson-generation batch selects student books and commercial supplements, not assessment PDFs or reader chapters.
 
 Books currently present in the index but without unit records are: Connect Plus Primary 5 and Hello Plus Preparatory 2 (their contents/unit pages still need indexing), the Baccalaureate Year 1 reader (chapters not yet indexed), and all nine assessment books (book-level exam sources, not lesson units).
 
-### OCR candidate pages (not yet verified)
+### Visually verified unit-page boundaries
 
-A separate [unit page-boundary candidate file](../data/curriculum/unit-page-boundary-candidates.draft.json) now records 19 candidate PDF pages found in the 5 November extraction artifact. These are explicitly marked `needs_visual_review`; they do not change the source index, and the generator still refuses to use them. Two Baccalaureate Part 1 title pages were OCR-empty/manual-review pages, and the Primary 3/Hello Plus candidates also need a visual check of the exact first page.
+The 19 previously unresolved start pages have now been rendered directly from the hydrated original PDFs at 300 DPI and visually checked. All 19 pages show the expected unit number/title or the corresponding unit overview. The source index and module scaffolds were updated together; the validation workflow confirms both files are consistent.
 
-### Unit-page blockers
+- [Render workflow #42461394078](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461394078) — successful; artifact `englimensh-unit-page-boundary-review-300dpi`.
+- [Verified boundary candidates](../data/curriculum/unit-page-boundary-candidates.draft.json) — retains the OCR evidence, rendered page, and visual-review status.
+- All 118 indexed units now have a positive `startPdfPage`; the 19 newly confirmed pages are also synchronized into `unit-modules.draft.json`.
+- The five previously ambiguous end boundaries are resolved because the next unit's start page is now known. End ranges are derived from the next start page and the source manifest; original PDFs were not edited.
 
-**19 units with no verified start page**
-- Secondary 2 student book: Units 1–6.
-- Baccalaureate Year 2 First Language Part 1: Units 2–3.
-- Baccalaureate Year 2 First Language Part 2: Units 7–8.
-- Primary 3 student book: Unit 3.
-- Primary 6 student book: Units 4 and 6.
-- Hello Plus Preparatory 3 supplement: Units 1–6.
+Newly confirmed pages:
+- Secondary 2 official book: Units 1–6 — PDF pages 6, 18, 30, 48, 60, 72.
+- Baccalaureate Year 2 First Language Part 1: Units 2–3 — pages 39, 74.
+- Baccalaureate Year 2 First Language Part 2: Units 7–8 — pages 40, 67.
+- Primary 3 official book: Unit 3 — page 43.
+- Primary 6 official book: Units 4 and 6 — pages 54, 85.
+- Hello Plus Preparatory 3 supplement: Units 1–6 — pages 3, 66, 106, 157, 205, 254.
 
-**Five units with an ambiguous end boundary because the next unit start is unknown**
-- Baccalaureate Year 2 First Language Part 1: Unit 1.
-- Baccalaureate Year 2 First Language Part 2: Unit 6.
-- Primary 3 student book: Unit 2.
-- Primary 6 student book: Units 3 and 5.
-
+The two OCR-empty Baccalaureate Part 1 title pages were still confirmed visually from their 300-DPI images. These are page-boundary confirmations only, not academic approval of lesson content.
 
 ## 2. Unit structure and content state
 
@@ -74,14 +72,16 @@ The application build verifies compilation, not that all 118 units contain lesso
 
 | Workflow | Run | Result |
 |---|---:|---|
-| Source/index, lesson, scaffold, test, and web build validation | [#42460424241](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42460424241) | Success |
-| Android debug preview APK | [#42460424263](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42460424263) | Success |
-| Web preview deployment | [#42460424273](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42460424273) | Success |
+| Source/index, lesson, scaffold, test, and web build validation after boundary sync | [#42461668942](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461668942) | Success |
+| 300-DPI unit-boundary visual render | [#42461394078](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461394078) | Success; 19 pages rendered and visually checked |
+| Android debug preview APK after boundary sync | [#42461668925](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461668925) | In progress at APK packaging |
+| Web preview deployment after boundary sync | [#42461668936](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461668936) | Success |
 | Resumable interactive curriculum batch | [#42459874358](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42459874358) | In progress at source extraction/OCR |
+| Next ordered batch using corrected page boundaries | [#42461664348](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42461664348) | Queued behind the active extraction run |
 
 A validator defect was found and fixed in `scripts/validate-source-book-index.mjs`: the Git LFS pointer prefix and PDF filename regular expression were over-escaped, causing valid source pointers to be rejected. The validation run above confirms the corrected source-index check and all subsequent validation, tests, and web build passed.
 
-The active generation run has completed checkout, dependency installation, and Git LFS hydration. Its source extraction/OCR step is still running; the batch-generation step has not started yet. The committed `progress.json` is still the older 6 November snapshot, and no `batch-state.json` has yet been committed. Do not treat that old progress file as the result of the active run.
+The active generation run has completed checkout, dependency installation, and Git LFS hydration. Its source extraction/OCR step is still running; the batch-generation step has not started yet. The corrected page index triggered a second ordered batch run, which is queued behind it. The committed `progress.json` is still the older 6 November snapshot, and no `batch-state.json` has yet been committed. Do not treat that old progress file as the result of the active run.
 
 ## 6. Android preview artifact
 
@@ -94,13 +94,12 @@ This is a debug preview APK, not a signed Play Store release. Build success does
 
 ## 7. Remaining work
 
-1. Complete source extraction and OCR for the active generation run; preserve the resulting manifest and page records as review-only material.
-2. Generate the next ordered batch from the first safe Primary unit, persist each draft and queue cursor, and continue across subsequent batches.
-3. Resolve the 19 missing unit start pages and five ambiguous boundaries from the original PDFs before generating those units.
-4. Visually inspect OCR/source pages; OCR and automated quality checks are not academic approval.
-5. Add a separate book-level assessment workflow for the nine assessment PDFs and index the reader's chapters before counting them as covered.
-6. Complete and manually approve all nine sections for every unit; then verify the generic renderer with actual approved drafts.
-7. Test TTS voice lists and playback on real Android devices; implement or explicitly defer microphone recording and broader game mechanics.
-8. Add and test book/term comprehensive review exams and their answer keys.
+1. Complete source extraction and OCR for the active generation run, then generate and persist the first ordered unit batch and its queue cursor.
+2. Continue the remaining ordered batches across all 118 indexed units; generated drafts remain unapproved until reviewed.
+3. Add unit records and page ranges for Connect Plus Primary 5 and Hello Plus Preparatory 2.
+4. Index the Baccalaureate Year 1 reader's chapters and create a separate workflow for the nine assessment PDFs.
+5. Complete and manually approve all nine sections for every unit; then verify the generic renderer with actual approved drafts.
+6. Test TTS voice lists and playback on real Android devices; implement or explicitly defer microphone recording and broader game mechanics.
+7. Add and test book/term comprehensive review exams and their answer keys.
 
 **Release status: not complete.** The repository inventory, nine-section scaffolds, approval gate, generic section renderer, and build/validation pipeline are in place. Curriculum population, manual academic review, device-level audio testing, and full app behavior verification remain outstanding.
