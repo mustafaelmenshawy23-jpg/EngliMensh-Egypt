@@ -433,6 +433,29 @@ function prepImageMarkup(item, className = 'prep-vocab-image') {
   return `<div class="${className} prep-image-missing" role="img" aria-label="Picture not available for ${escapeHtml(item.word)}">Picture pending</div>`;
 }
 
+function renderPreparatoryVocabulary(words) {
+  if (!words.length) return '<div class="prep-game-empty">Vocabulary content is not available in the source package for this unit yet.</div>';
+  return `
+    <section class="prep-vocabulary-section">
+      <div class="prep-vocabulary-heading"><div><p class="eyebrow">UNIT WORD BANK</p><h3>Learn the words with pictures</h3><p>Look, read, listen and remember.</p></div><span>${words.length} words</span></div>
+      <div class="prep-vocabulary-grid">
+        ${words.map((item, index) => `
+          <article class="prep-vocabulary-card">
+            <div class="prep-vocabulary-image-wrap">${prepImageMarkup(item, 'prep-vocabulary-image')}</div>
+            <div class="prep-vocabulary-number">WORD ${index + 1}</div>
+            <h4 dir="ltr">${escapeHtml(item.word)}</h4>
+            ${item.arabic ? `<strong class="prep-vocabulary-arabic" dir="rtl">${escapeHtml(item.arabic)}</strong>` : ''}
+            ${item.definition ? `<p>${escapeHtml(item.definition)}</p>` : ''}
+            ${item.example ? `<div class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</div>` : ''}
+            <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Listen</button>
+            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>` : ''}
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
 function renderPreparatoryGame(words) {
   const games = [
     { id: 'picture-match', title: 'Picture Match', desc: 'Match each word to its picture', icon: '🧩' },
@@ -554,7 +577,7 @@ function renderPreparatoryHtmlLibrary() {
         <div class="prep-module-grid">${modules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
       ` : `
         <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-modules>← ${escapeHtml(selectedUnit.title)}</button><div><span class="eyebrow">${escapeHtml(course.series)} · UNIT ${escapeHtml(selectedUnit.number || '1–6')}</span><h3>${escapeHtml(moduleLabel)}</h3></div></div>
-        ${module === 'games' ? renderPreparatoryGame(selectedWords) : `
+        ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : `
           <div class="imported-html-viewer">
             <div class="imported-html-viewer-head"><div><strong>${escapeHtml(moduleLabel)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade} · ${escapeHtml(selectedUnit.title)}</span></div></div>
             <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml(selectedUnit.url)}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
