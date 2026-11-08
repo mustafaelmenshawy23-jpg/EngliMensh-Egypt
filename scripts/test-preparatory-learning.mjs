@@ -20,7 +20,8 @@ async function htmlFiles(dir) {
 const files = await htmlFiles(sourceRoot);
 assert.equal(files.length, 31, 'Expected all 31 imported preparatory HTML source files.');
 for (const grade of [1, 2, 3]) {
-  assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Unit_'), 'Missing New Hello registry for grade ' + grade);
+  if (grade === 3) assert.ok(registry.includes('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum'), 'Missing combined New Hello registry for grade 3');
+  else assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Unit_'), 'Missing New Hello registry for grade ' + grade);
   assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Plus_Unit_'), 'Missing New Hello Plus registry for grade ' + grade);
 }
 for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'speaking', 'games', 'comprehensive_test']) {
