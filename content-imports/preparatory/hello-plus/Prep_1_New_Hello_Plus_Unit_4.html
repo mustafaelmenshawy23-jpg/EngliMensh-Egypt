@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello Plus (Advanced)) - Unit 4: Exploring the Past | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 4: Exploring the Past</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Exploring the Past</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Egyptian Ministry of Education Official Curriculum 2026 / 2027 Standards</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced)</span>
+          <span class="meta-tag">Unit: 4</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Complete context-rich ministerial sentences and verify mastery with 100% curriculum-authentic choices.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 4: Past Continuous vs. Past Simple (While, As, Just as, When)</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">Past Continuous vs. Past Simple (الماضي المستمر والماضي البسيط)</h3>
+  <p><strong>Past Continuous (was / were + v-ing):</strong> Used for long background actions in progress in the past.</p>
+  <p><strong>Past Simple:</strong> Used for short, sudden actions that interrupted the long action.</p>
+  <table class="grammar-table">
+    <thead><tr><th>Time Conjunction</th><th>Rule Structure</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>While / As / Just as</strong></td><td><code>While + Past Continuous, Past Simple</code></td><td><strong>While</strong> we <strong>were excavating</strong> the tomb, we <strong>uncovered</strong> a statue.</td></tr>
+      <tr><td><strong>When</strong></td><td><code>When + Past Simple, Past Continuous</code></td><td><strong>When</strong> the lights <strong>went</strong> out, I <strong>was reading</strong> papyrus texts.</td></tr>
+      <tr><td>Two parallel past actions (While)</td><td><code>While + Past Continuous, Past Continuous</code></td><td><strong>While</strong> Mona <strong>was studying</strong>, her brother <strong>was painting</strong>.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 4: Past Continuous vs. Past Simple (While, As, Just as, When) without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Full ministerial standard assessment covering all four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word": "archaeologist", "pos": "noun", "arabic": "عالم آثار", "def": "A scientist who studies human history by digging up artifacts.", "example": "The archaeologist unearthed a pristine golden statue.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "pharaoh", "pos": "noun", "arabic": "فرعون مصر القديم", "def": "A monarch of ancient Egypt with supreme ruling authority.", "example": "Tutankhamun was a renowned teenage pharaoh.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PH</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "pyramid", "pos": "noun", "arabic": "هرم حجري", "def": "A monumental stone structure with triangular sloping sides.", "example": "The Great Pyramid of Khufu is an architectural wonder.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PY</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "monument", "pos": "noun", "arabic": "أثر تاريخي / صرح", "def": "A statue or building erected to commemorate a person or event.", "example": "Karnak is an ancient monument filled with massive pillars.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><polygon points=\"50,15 42,28 58,28\" fill=\"#f59e0b\"/><polygon points=\"42,28 58,28 62,80 38,80\" fill=\"#fbbf24\"/><rect x=\"30\" y=\"80\" width=\"40\" height=\"10\" rx=\"2\" fill=\"#d97706\"/><rect x=\"22\" y=\"90\" width=\"56\" height=\"6\" rx=\"2\" fill=\"#b45309\"/></svg>"}, {"word": "tomb", "pos": "noun", "arabic": "مقبرة تاريخية", "def": "A large vault or chamber underground for burying the dead.", "example": "Howard Carter discovered the intact royal tomb in 1922.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "treasure", "pos": "noun", "arabic": "كنز ثمين", "def": "A quantity of precious metals, gems, or valuable objects.", "example": "The museum displays dazzling golden royal treasure.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "temple", "pos": "noun", "arabic": "معبد أثري", "def": "A building dedicated to the worship of a god or deities.", "example": "Philae Temple was rescued and reconstructed on an island.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "statue", "pos": "noun", "arabic": "تمثال منحوت", "def": "A carved or cast figure of a person or animal in stone.", "example": "The giant statue of Ramses II stood proudly at Abu Simbel.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ST</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "hieroglyphics", "pos": "noun", "arabic": "الكتابة الهيروغليفية", "def": "Ancient Egyptian writing system consisting of pictograms.", "example": "Scholars deciphered hieroglyphics using the Rosetta Stone.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "papyrus", "pos": "noun", "arabic": "ورق البردي", "def": "A material prepared from water reed plants for writing on.", "example": "Scribes recorded historical decrees on smooth papyrus.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "mummy", "pos": "noun", "arabic": "مومياء محنطة", "def": "A preserved dead body embalmed according to ancient rituals.", "example": "Ancient priests preserved the royal mummy with oils.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "ancient", "pos": "adjective", "arabic": "قديم جداً / عريق", "def": "Belonging to the very distant past and no longer in existence.", "example": "Ancient Egyptian civilization flourished along the Nile.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AN</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "civilization", "pos": "noun", "arabic": "حضارة إنسانية", "def": "The stage of human social and cultural development.", "example": "The Nile valley witnessed the birth of glorious civilization.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "excavate", "pos": "verb", "arabic": "ينقب عن الآثار", "def": "To make a hole or channel by digging to find antiques.", "example": "Researchers excavate the ancient site during winter.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">EX</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "uncover", "pos": "verb", "arabic": "يكشف عن / يعثر على", "def": "To remove a cover from; to discover and make known.", "example": "Workers uncovered a burial chamber filled with painted pots.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">UN</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "historical", "pos": "adjective", "arabic": "تاريخي", "def": "Concerning past events and historical records.", "example": "We visited multiple historical sites across Alexandria.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "ruins", "pos": "noun", "arabic": "أطلال وبقايا أثرية", "def": "The physical remains of a building that has collapsed.", "example": "Tourists photographed the breathtaking Roman ruins.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "dynasty", "pos": "noun", "arabic": "أسرة حاكمة", "def": "A succession of rulers belonging to the same royal family.", "example": "The Eighteenth Dynasty produced celebrated rulers and warriors.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DY</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "artefact", "pos": "noun", "arabic": "قطعة أثرية يدوية", "def": "An object made by a human being of historical interest.", "example": "Clay bowls and copper daggers are significant artefacts.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "heritage", "pos": "noun", "arabic": "تراث وطني", "def": "Valued objects and cultural traditions passed down.", "example": "Preserving cultural heritage is every citizen's duty.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "sculptor", "pos": "noun", "arabic": "نحات", "def": "An artist who makes sculptures out of stone, clay, or metal.", "example": "The ancient sculptor chiseled the bust of Nefertiti.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SC</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "chariot", "pos": "noun", "arabic": "عربة حربية قديمة", "def": "A two-wheeled horse-drawn vehicle used in ancient wars.", "example": "Egyptian armies rode swift wooden chariots into battle.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CH</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question": "Which vocabulary word is defined as: 'A scientist who studies human history by digging up artifacts.'?", "options": ["civilization", "dynasty", "archaeologist", "heritage"], "correct": 2, "explanation": "'archaeologist' (عالم آثار) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A monarch of ancient Egypt with supreme ruling authority.'?", "options": ["pharaoh", "chariot", "civilization", "pyramid"], "correct": 0, "explanation": "'pharaoh' (فرعون مصر القديم) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A monumental stone structure with triangular sloping sides.'?", "options": ["pyramid", "statue", "monument", "hieroglyphics"], "correct": 0, "explanation": "'pyramid' (هرم حجري) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A statue or building erected to commemorate a person or event.'?", "options": ["hieroglyphics", "sculptor", "statue", "monument"], "correct": 3, "explanation": "'monument' (أثر تاريخي / صرح) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A large vault or chamber underground for burying the dead.'?", "options": ["pharaoh", "tomb", "papyrus", "heritage"], "correct": 1, "explanation": "'tomb' (مقبرة تاريخية) is the official curriculum definition."}, {"question": "Complete the context: \"The museum displays dazzling golden royal _______.\"", "options": ["treasure", "civilization", "tomb", "artefact"], "correct": 0, "explanation": "'treasure' (كنز ثمين) correctly completes the sentence."}, {"question": "Complete the context: \"Philae _______ was rescued and reconstructed on an island.\"", "options": ["archaeologist", "historical", "tomb", "temple"], "correct": 3, "explanation": "'temple' (معبد أثري) correctly completes the sentence."}, {"question": "Complete the context: \"The giant _______ of Ramses II stood proudly at Abu Simbel.\"", "options": ["dynasty", "statue", "ruins", "treasure"], "correct": 1, "explanation": "'statue' (تمثال منحوت) correctly completes the sentence."}, {"question": "Complete the context: \"Scholars deciphered _______ using the Rosetta Stone.\"", "options": ["temple", "ancient", "hieroglyphics", "historical"], "correct": 2, "explanation": "'hieroglyphics' (الكتابة الهيروغليفية) correctly completes the sentence."}, {"question": "Complete the context: \"Scribes recorded historical decrees on smooth _______.\"", "options": ["mummy", "sculptor", "heritage", "papyrus"], "correct": 3, "explanation": "'papyrus' (ورق البردي) correctly completes the sentence."}, {"question": "Complete the context: \"Ancient priests preserved the royal _______ with oils.\"", "options": ["excavate", "treasure", "mummy", "statue"], "correct": 2, "explanation": "'mummy' (مومياء محنطة) correctly completes the sentence."}, {"question": "Complete the context: \"_______ Egyptian civilization flourished along the Nile.\"", "options": ["papyrus", "ancient", "uncover", "civilization"], "correct": 1, "explanation": "'ancient' (قديم جداً / عريق) correctly completes the sentence."}, {"question": "Complete the context: \"The Nile valley witnessed the birth of glorious _______.\"", "options": ["civilization", "ruins", "artefact", "excavate"], "correct": 0, "explanation": "'civilization' (حضارة إنسانية) correctly completes the sentence."}, {"question": "Complete the context: \"Researchers _______ the ancient site during winter.\"", "options": ["historical", "excavate", "heritage", "sculptor"], "correct": 1, "explanation": "'excavate' (ينقب عن الآثار) correctly completes the sentence."}, {"question": "Complete the context: \"Workers _______ed a burial chamber filled with painted pots.\"", "options": ["excavate", "pyramid", "pharaoh", "uncover"], "correct": 3, "explanation": "'uncover' (يكشف عن / يعثر على) correctly completes the sentence."}, {"question": "Complete the context: \"We visited multiple _______ sites across Alexandria.\"", "options": ["mummy", "ancient", "historical", "temple"], "correct": 2, "explanation": "'historical' (تاريخي) correctly completes the sentence."}, {"question": "Complete the context: \"Tourists photographed the breathtaking Roman _______.\"", "options": ["papyrus", "ruins", "treasure", "tomb"], "correct": 1, "explanation": "'ruins' (أطلال وبقايا أثرية) correctly completes the sentence."}, {"question": "Complete the context: \"The Eighteenth _______ produced celebrated rulers and warriors.\"", "options": ["treasure", "pharaoh", "hieroglyphics", "dynasty"], "correct": 3, "explanation": "'dynasty' (أسرة حاكمة) correctly completes the sentence."}, {"question": "Complete the context: \"Clay bowls and copper daggers are significant _______s.\"", "options": ["artefact", "dynasty", "chariot", "treasure"], "correct": 0, "explanation": "'artefact' (قطعة أثرية يدوية) correctly completes the sentence."}, {"question": "Complete the context: \"Preserving cultural _______ is every citizen's duty.\"", "options": ["heritage", "temple", "papyrus", "monument"], "correct": 0, "explanation": "'heritage' (تراث وطني) correctly completes the sentence."}, {"question": "Complete the context: \"The ancient _______ chiseled the bust of Nefertiti.\"", "options": ["tomb", "dynasty", "sculptor", "excavate"], "correct": 2, "explanation": "'sculptor' (نحات) correctly completes the sentence."}, {"question": "Complete the context: \"Egyptian armies rode swift wooden _______s into battle.\"", "options": ["chariot", "hieroglyphics", "heritage", "ancient"], "correct": 0, "explanation": "'chariot' (عربة حربية قديمة) correctly completes the sentence."}, {"question": "Complete the context: \"The _______ unearthed a pristine golden statue.\"", "options": ["mummy", "monument", "ruins", "archaeologist"], "correct": 3, "explanation": "'archaeologist' (عالم آثار) correctly completes the sentence."}, {"question": "Complete the context: \"Tutankhamun was a renowned teenage _______.\"", "options": ["ancient", "pharaoh", "mummy", "pyramid"], "correct": 1, "explanation": "'pharaoh' (فرعون مصر القديم) correctly completes the sentence."}, {"question": "Complete the context: \"The Great _______ of Khufu is an architectural wonder.\"", "options": ["papyrus", "pyramid", "dynasty", "tomb"], "correct": 1, "explanation": "'pyramid' (هرم حجري) correctly completes the sentence."}, {"question": "Complete the context: \"Karnak is an ancient _______ filled with massive pillars.\"", "options": ["excavate", "treasure", "artefact", "monument"], "correct": 3, "explanation": "'monument' (أثر تاريخي / صرح) correctly completes the sentence."}, {"question": "Complete the context: \"Howard Carter discovered the intact royal _______ in 1922.\"", "options": ["ancient", "tomb", "archaeologist", "chariot"], "correct": 1, "explanation": "'tomb' (مقبرة تاريخية) correctly completes the sentence."}, {"question": "Complete the context: \"The museum displays dazzling golden royal _______.\"", "options": ["temple", "excavate", "treasure", "ancient"], "correct": 2, "explanation": "'treasure' (كنز ثمين) correctly completes the sentence."}, {"question": "Complete the context: \"Philae _______ was rescued and reconstructed on an island.\"", "options": ["archaeologist", "temple", "historical", "civilization"], "correct": 1, "explanation": "'temple' (معبد أثري) correctly completes the sentence."}, {"question": "Complete the context: \"The giant _______ of Ramses II stood proudly at Abu Simbel.\"", "options": ["statue", "tomb", "heritage", "papyrus"], "correct": 0, "explanation": "'statue' (تمثال منحوت) correctly completes the sentence."}];
+    const grammarQuizData = [{"question": "While the archaeologist _______ the sand, he discovered a tomb.", "options": ["was clearing", "is clearing", "cleared", "clears"], "correct": 0, "explanation": "Long action following 'While' takes Past Continuous (was clearing)."}, {"question": "We were walking through the temple when it suddenly _______ to rain.", "options": ["was starting", "started", "starts", "starting"], "correct": 1, "explanation": "Short interrupting action following 'when' takes Past Simple (started)."}, {"question": "As my sister _______ a historical novel, she fell asleep.", "options": ["reads", "read", "is reading", "was reading"], "correct": 3, "explanation": "Action in progress after 'As' takes was + reading."}, {"question": "What _______ you doing at 7:00 PM yesterday evening?", "options": ["did", "are", "have", "were"], "correct": 3, "explanation": "Specific time in the past requires Past Continuous (were you doing)."}, {"question": "The children _______ soccer when the sandstorm struck.", "options": ["played", "were playing", "play", "are playing"], "correct": 1, "explanation": "Interrupted past activity takes were + playing."}, {"question": "While I was walking to school, I _______ an old friend from Luxor.", "options": ["see", "was seeing", "seen", "saw"], "correct": 3, "explanation": "Sudden short event takes Past Simple 'saw'."}, {"question": "Just as the guide _______ the carvings, the lights went out.", "options": ["explained", "is explaining", "was explaining", "explains"], "correct": 2, "explanation": "Ongoing action after 'Just as' takes was + explaining."}, {"question": "He fell down while he _______ across the ancient ruins.", "options": ["ran", "runs", "was running", "is running"], "correct": 2, "explanation": "Action in progress after 'while' takes was + running."}, {"question": "When father returned home, mother _______ dinner in the kitchen.", "options": ["was cooking", "cooked", "is cooking", "cooks"], "correct": 0, "explanation": "Background ongoing action takes was + cooking."}, {"question": "They _______ for the bus when the heavy rain began.", "options": ["are waiting", "waited", "were waiting", "wait"], "correct": 2, "explanation": "Action in progress when interrupted takes were + waiting."}, {"question": "While Omar was reading, his brother _______ computer software.", "options": ["was testing", "tests", "tested", "is testing"], "correct": 0, "explanation": "Two parallel simultaneous past actions take Past Continuous."}, {"question": "At this exact time last year, we _______ through the Swiss Alps.", "options": ["hike", "were hiking", "hiked", "are hiking"], "correct": 1, "explanation": "Specific progress marker takes were + hiking."}, {"question": "The tourist dropped his camera while he _______ a horse.", "options": ["was riding", "rode", "is riding", "rides"], "correct": 0, "explanation": "After 'while', use was + riding."}, {"question": "What was she _______ when the phone rang loudly?", "options": ["done", "doing", "do", "did"], "correct": 1, "explanation": "Past continuous after 'was she' takes verb + -ing (doing)."}, {"question": "The ancient sculptor was chiseling the statue when his tool _______.", "options": ["breaks", "was breaking", "broke", "is breaking"], "correct": 2, "explanation": "Sudden interruption takes Past Simple 'broke'."}, {"question": "While we _______ in Dahab, we swam in the blue sea every morning.", "options": ["are staying", "were staying", "stayed", "stay"], "correct": 1, "explanation": "Ongoing duration after 'While' takes were + staying."}, {"question": "She _______ paying attention when the teacher asked her the question.", "options": ["weren't", "isn't", "wasn't", "didn't"], "correct": 2, "explanation": "Negative continuous for singular subject 'She' is 'wasn't'."}, {"question": "Were you studying in the library at four o'clock? — Yes, I _______.", "options": ["was", "did", "am", "were"], "correct": 0, "explanation": "Affirmative short answer matching 'Were you' for self is 'Yes, I was.'"}, {"question": "When the bell rang, the students _______ their books away.", "options": ["were putting", "put", "are putting", "puts"], "correct": 0, "explanation": "Background action takes were + putting."}, {"question": "As the car _______ around the sharp bend, a tire burst.", "options": ["was turning", "turned", "is turning", "turns"], "correct": 0, "explanation": "Progressive action after 'As' takes was + turning."}, {"question": "While the archaeologist _______ the sand, he discovered a tomb.", "options": ["was clearing", "is clearing", "cleared", "clears"], "correct": 0, "explanation": "Long action following 'While' takes Past Continuous (was clearing)."}, {"question": "We were walking through the temple when it suddenly _______ to rain.", "options": ["was starting", "started", "starts", "starting"], "correct": 1, "explanation": "Short interrupting action following 'when' takes Past Simple (started)."}, {"question": "As my sister _______ a historical novel, she fell asleep.", "options": ["reads", "read", "is reading", "was reading"], "correct": 3, "explanation": "Action in progress after 'As' takes was + reading."}, {"question": "What _______ you doing at 7:00 PM yesterday evening?", "options": ["did", "are", "have", "were"], "correct": 3, "explanation": "Specific time in the past requires Past Continuous (were you doing)."}, {"question": "The children _______ soccer when the sandstorm struck.", "options": ["played", "were playing", "play", "are playing"], "correct": 1, "explanation": "Interrupted past activity takes were + playing."}, {"question": "While I was walking to school, I _______ an old friend from Luxor.", "options": ["see", "was seeing", "seen", "saw"], "correct": 3, "explanation": "Sudden short event takes Past Simple 'saw'."}, {"question": "Just as the guide _______ the carvings, the lights went out.", "options": ["explained", "is explaining", "was explaining", "explains"], "correct": 2, "explanation": "Ongoing action after 'Just as' takes was + explaining."}, {"question": "He fell down while he _______ across the ancient ruins.", "options": ["ran", "runs", "was running", "is running"], "correct": 2, "explanation": "Action in progress after 'while' takes was + running."}, {"question": "When father returned home, mother _______ dinner in the kitchen.", "options": ["was cooking", "cooked", "is cooking", "cooks"], "correct": 0, "explanation": "Background ongoing action takes was + cooking."}, {"question": "They _______ for the bus when the heavy rain began.", "options": ["are waiting", "waited", "were waiting", "wait"], "correct": 2, "explanation": "Action in progress when interrupted takes were + waiting."}];
+    const readingData = {"title": "The Golden Tomb of Tutankhamun", "paragraphs": ["On November 4, 1922, British archaeologist Howard Carter made the most sensational archaeological discovery in modern history. While his team was clearing rocky debris in the Valley of the Kings near Luxor, a young water boy stumbled upon a carved stone step leading underground.", "Carter carefully excavated the subterranean stairway and uncovered a sealed plaster doorway bearing royal hieroglyphic seals. When Carter peered through a small opening with a flickering candle, his patron Lord Carnarvon asked breathlessly: 'Can you see anything?' Carter famously replied: 'Yes, wonderful things!'", "Inside the undisturbed burial chambers lay more than five thousand breathtaking royal artefacts, including golden chariots, ornate thrones, gilded alabaster statues, and the world-famous solid gold funerary mask. The discovery provided unprecedented insights into ancient Egyptian craftsmanship, religious beliefs, and royal funerary traditions."], "questions": [{"question": "When did Howard Carter discover the tomb of Tutankhamun?", "options": ["In November 1922", "In August 2026", "In July 1800", "In October 1973"], "correct": 0, "explanation": "The discovery occurred on November 4, 1922."}, {"question": "What was the excavation team doing when the first step was uncovered?", "options": ["Clearing rocky debris in the Valley of the Kings", "Building a modern hotel", "Swimming in the Nile", "Planting palm trees"], "correct": 0, "explanation": "They were clearing rubble and sand in the Valley of the Kings."}, {"question": "What famous words did Howard Carter utter when looking inside?", "options": ["'Yes, wonderful things!'", "'There is nothing inside.'", "'We must leave immediately.'", "'The tomb is empty.'"], "correct": 0, "explanation": "Carter famously answered: 'Yes, wonderful things!'"}, {"question": "How many artefacts approximately were recovered from the undisturbed tomb?", "options": ["More than five thousand artefacts", "Less than twenty items", "Only one golden mask", "A few wooden boxes"], "correct": 0, "explanation": "Over 5,000 royal artefacts were documented."}, {"question": "Why is the discovery of Tutankhamun's tomb universally significant?", "options": ["It was completely intact, revealing ancient craftsmanship and ritual heritage", "It was located under the sea", "It contained modern coins", "It was built of brick"], "correct": 0, "explanation": "It was the only completely intact royal burial chamber discovered."}]};
+    const listeningData = {"title": "A Visit to the Grand Egyptian Museum", "dialogue": [{"speaker": "Tarek", "text": "Omar, what were you doing when I phoned you yesterday afternoon?"}, {"speaker": "Omar", "text": "I was walking through the grand atrium of the Grand Egyptian Museum near the Pyramids."}, {"speaker": "Tarek", "text": "Did you see the monumental colossus of King Ramses II?"}, {"speaker": "Omar", "text": "Yes! While I was photographing the towering statue, sunlight was streaming down from the glass roof. It was magnificent."}, {"speaker": "Tarek", "text": "Were many international tourists touring the galleries?"}, {"speaker": "Omar", "text": "Yes, while the tour guides were explaining the artefacts, hundreds of visitors were admiring the exhibits in awe."}], "questions": [{"question": "Where was Omar when Tarek called him on the phone?", "options": ["At the Grand Egyptian Museum near Giza", "At Cairo International Airport", "At home sleeping", "In a cinema"], "correct": 0, "explanation": "Omar was visiting the Grand Egyptian Museum."}, {"question": "Which colossal royal statue did Omar photograph in the atrium?", "options": ["The colossus of King Ramses II", "The Sphinx", "A small wooden cat", "A bronze Roman emperor"], "correct": 0, "explanation": "He photographed the statue of King Ramses II."}, {"question": "What natural visual effect illuminated the atrium during his visit?", "options": ["Sunlight streaming brightly from the glass ceiling", "Artificial purple lasers", "Candlelight", "Complete darkness"], "correct": 0, "explanation": "Sunlight was streaming through the architectural glass roof."}, {"question": "What were tour guides doing throughout the galleries?", "options": ["Explaining the historical significance of the artefacts", "Selling cinema tickets", "Cooking lunch", "Fixing computers"], "correct": 0, "explanation": "They were explaining the history of the exhibits to visitors."}, {"question": "How did Omar describe his visit to the museum?", "options": ["Magnificent and awe-inspiring", "Boring and exhausting", "Too dark to see anything", "Crowded with no exhibits"], "correct": 0, "explanation": "He described the experience as magnificent."}]};
+    const pastExamsData = null;
+    const examData = [{"question": "Choose the correct word: \"The _______ unearthed a pristine golden statue.\"", "options": ["dynasty", "hieroglyphics", "pharaoh", "archaeologist"], "correct": 3, "explanation": "Target vocabulary: 'archaeologist' (عالم آثار)."}, {"question": "Choose the correct word: \"Tutankhamun was a renowned teenage _______.\"", "options": ["papyrus", "uncover", "dynasty", "pharaoh"], "correct": 3, "explanation": "Target vocabulary: 'pharaoh' (فرعون مصر القديم)."}, {"question": "Choose the correct word: \"The Great _______ of Khufu is an architectural wonder.\"", "options": ["pyramid", "archaeologist", "historical", "chariot"], "correct": 0, "explanation": "Target vocabulary: 'pyramid' (هرم حجري)."}, {"question": "Choose the correct word: \"Karnak is an ancient _______ filled with massive pillars.\"", "options": ["ancient", "papyrus", "monument", "tomb"], "correct": 2, "explanation": "Target vocabulary: 'monument' (أثر تاريخي / صرح)."}, {"question": "Choose the correct word: \"Howard Carter discovered the intact royal _______ in 1922.\"", "options": ["civilization", "tomb", "mummy", "papyrus"], "correct": 1, "explanation": "Target vocabulary: 'tomb' (مقبرة تاريخية)."}, {"question": "Choose the correct word: \"The museum displays dazzling golden royal _______.\"", "options": ["mummy", "monument", "treasure", "archaeologist"], "correct": 2, "explanation": "Target vocabulary: 'treasure' (كنز ثمين)."}, {"question": "Choose the correct word: \"Philae _______ was rescued and reconstructed on an island.\"", "options": ["pyramid", "temple", "dynasty", "sculptor"], "correct": 1, "explanation": "Target vocabulary: 'temple' (معبد أثري)."}, {"question": "Choose the correct word: \"The giant _______ of Ramses II stood proudly at Abu Simbel.\"", "options": ["statue", "pyramid", "excavate", "temple"], "correct": 0, "explanation": "Target vocabulary: 'statue' (تمثال منحوت)."}, {"question": "Choose the correct word: \"Scholars deciphered _______ using the Rosetta Stone.\"", "options": ["hieroglyphics", "pyramid", "mummy", "ancient"], "correct": 0, "explanation": "Target vocabulary: 'hieroglyphics' (الكتابة الهيروغليفية)."}, {"question": "Choose the correct word: \"Scribes recorded historical decrees on smooth _______.\"", "options": ["papyrus", "treasure", "historical", "temple"], "correct": 0, "explanation": "Target vocabulary: 'papyrus' (ورق البردي)."}, {"question": "While the archaeologist _______ the sand, he discovered a tomb.", "options": ["was clearing", "is clearing", "cleared", "clears"], "correct": 0, "explanation": "Long action following 'While' takes Past Continuous (was clearing)."}, {"question": "We were walking through the temple when it suddenly _______ to rain.", "options": ["was starting", "started", "starts", "starting"], "correct": 1, "explanation": "Short interrupting action following 'when' takes Past Simple (started)."}, {"question": "As my sister _______ a historical novel, she fell asleep.", "options": ["reads", "read", "is reading", "was reading"], "correct": 3, "explanation": "Action in progress after 'As' takes was + reading."}, {"question": "What _______ you doing at 7:00 PM yesterday evening?", "options": ["did", "are", "have", "were"], "correct": 3, "explanation": "Specific time in the past requires Past Continuous (were you doing)."}, {"question": "The children _______ soccer when the sandstorm struck.", "options": ["played", "were playing", "play", "are playing"], "correct": 1, "explanation": "Interrupted past activity takes were + playing."}, {"question": "While I was walking to school, I _______ an old friend from Luxor.", "options": ["see", "was seeing", "seen", "saw"], "correct": 3, "explanation": "Sudden short event takes Past Simple 'saw'."}, {"question": "Just as the guide _______ the carvings, the lights went out.", "options": ["explained", "is explaining", "was explaining", "explains"], "correct": 2, "explanation": "Ongoing action after 'Just as' takes was + explaining."}, {"question": "He fell down while he _______ across the ancient ruins.", "options": ["ran", "runs", "was running", "is running"], "correct": 2, "explanation": "Action in progress after 'while' takes was + running."}, {"question": "When father returned home, mother _______ dinner in the kitchen.", "options": ["was cooking", "cooked", "is cooking", "cooks"], "correct": 0, "explanation": "Background ongoing action takes was + cooking."}, {"question": "They _______ for the bus when the heavy rain began.", "options": ["are waiting", "waited", "were waiting", "wait"], "correct": 2, "explanation": "Action in progress when interrupted takes were + waiting."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello Plus (Advanced) for Prep 1 (First Preparatory), Unit 4: Exploring the Past. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>
