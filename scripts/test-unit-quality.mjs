@@ -351,8 +351,8 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
             itemId: 'u4-sp-1',
             content: {
               dialogue: [
-                { speaker: 'Omar', text: 'Which smartphone do you think offers better value?' },
-                { speaker: 'Ziad', text: 'I would compare the battery life and warranty before deciding.' }
+                { speaker: 'Omar', speakerGender: 'male', text: 'Which smartphone do you think offers better value?' },
+                { speaker: 'Ziad', speakerGender: 'male', text: 'I would compare the battery life and warranty before deciding.' }
               ],
               origin: 'supplementary',
               sourcePdfPage: 102
@@ -385,6 +385,10 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
             itemId: 'u4-game-1',
             content: {
               gameName: 'Picture–Word Matching Game',
+              description: 'Match each unit word to its correct meaning or picture.',
+              skill: 'vocabulary',
+              difficulty: 'easy',
+              gameMode: 'matching',
               targetWords: ['consumer', 'sustainable'],
               origin: 'supplementary',
               sourcePdfPage: 102
