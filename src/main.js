@@ -2694,6 +2694,7 @@ function render() {
       feedback.classList.add('incorrect');
     }
     saveProgressToStorage();
+    if (state.activeModule === 'tests') render();
   }));
 
   // Quiz Option Retry Listener (Allows retrying wrong options until correct answer is chosen)
