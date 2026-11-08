@@ -2007,21 +2007,151 @@ function render() {
 
   app.querySelectorAll('[data-html-unit]').forEach((button) => button.addEventListener('click', (e) => {
     e.stopPropagation();
-    state.htmlUnitSelection = {
-      grade: state.grade,
-      path: state.path,
-      unitId: button.dataset.htmlUnit
-    };
+    state.htmlUnitSelection = { grade: state.grade, path: state.path, unitId: button.dataset.htmlUnit };
+    state.htmlModuleSelection = null;
+    state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
     state.unitSelection = null;
     state.activeModule = null;
     state.preview = null;
     render();
-    app.querySelector('.imported-html-viewer')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    app.querySelector('.imported-curriculum')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
 
   app.querySelector('[data-close-html-unit]')?.addEventListener('click', (e) => {
     e.stopPropagation();
     state.htmlUnitSelection = null;
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelector('[data-html-back-units]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = null;
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelector('[data-html-back-modules]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelectorAll('[data-html-module]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlModuleSelection = button.dataset.htmlModule;
+    state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    render();
+    app.querySelector('.prep-learning-toolbar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  const prepFrame = app.querySelector('#prep-html-frame');
+  if (prepFrame) prepFrame.addEventListener('load', () => {
+    try {
+      const doc = prepFrame.contentDocument;
+      const win = prepFrame.contentWindow;
+      const moduleMap = {
+        vocabulary: ['vocab', 'sec-vocab'],
+        vocabulary_questions: ['vocab-quiz', 'sec-vocab-quiz'],
+        grammar: ['grammar', 'sec-grammar'],
+        grammar_questions: ['grammar-quiz', 'sec-grammar-quiz'],
+        reading: ['reading', 'sec-reading'],
+        listening: ['listening', 'sec-listening'],
+        speaking: ['speaking', 'sec-speaking'],
+        comprehensive_test: ['exam', 'sec-exam']
+      };
+      const targets = moduleMap[state.htmlModuleSelection] || [];
+      if (typeof win.switchTab === 'function' && targets[0]) win.switchTab(targets[0]);
+      else if (doc) {
+        doc.querySelectorAll('.section-view, .subtab-content').forEach((node) => {
+          node.classList.remove('active');
+          if (node.classList.contains('section-view')) node.style.display = 'none';
+        });
+        const target = targets.map((id) => doc.getElementById(id)).find(Boolean);
+        if (target) {
+          target.classList.add('active');
+          target.style.display = '';
+          target.classList.remove('hidden');
+        }
+      }
+    } catch (error) {
+      console.warn('Could not focus imported lesson section:', error);
+    }
+  });
+
+  const prepWords = getPreparatoryUnitWords();
+  app.querySelectorAll('[data-prep-game]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame = { id: button.dataset.prepGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    render();
+  }));
+  app.querySelectorAll('[data-prep-match-word]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.selectedWord = button.dataset.prepMatchWord;
+    if (state.htmlGame.selectedImage) {
+      if (state.htmlGame.selectedImage === state.htmlGame.selectedWord) {
+        state.htmlGame.matched = [...state.htmlGame.matched, state.htmlGame.selectedWord];
+        state.htmlGame.score += 1;
+      }
+      state.htmlGame.selectedImage = null;
+      state.htmlGame.selectedWord = null;
+    }
+    render();
+  }));
+  app.querySelectorAll('[data-prep-match-image]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.selectedImage = button.dataset.prepMatchImage;
+    if (state.htmlGame.selectedWord) {
+      if (state.htmlGame.selectedImage === state.htmlGame.selectedWord) {
+        state.htmlGame.matched = [...state.htmlGame.matched, state.htmlGame.selectedWord];
+        state.htmlGame.score += 1;
+      }
+      state.htmlGame.selectedImage = null;
+      state.htmlGame.selectedWord = null;
+    }
+    render();
+  }));
+  app.querySelectorAll('[data-prep-game-option]').forEach((button) => button.addEventListener('click', () => {
+    const current = prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)];
+    state.htmlGame.selectedOption = button.dataset.prepGameOption;
+    state.htmlGame.feedback = state.htmlGame.selectedOption === current?.word ? 'correct' : 'wrong';
+    if (state.htmlGame.feedback === 'correct') state.htmlGame.score += 1;
+    render();
+  }));
+  app.querySelectorAll('[data-prep-letter]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.placed = [...(state.htmlGame.placed || []), Number(button.dataset.prepLetter)];
+    render();
+  }));
+  app.querySelector('[data-prep-word-clear]')?.addEventListener('click', () => {
+    state.htmlGame.placed = [];
+    state.htmlGame.feedback = '';
+    render();
+  });
+  app.querySelector('[data-prep-word-check]')?.addEventListener('click', () => {
+    const current = prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)];
+    const letters = (current?.word.toLowerCase().replace(/[^a-z]/g, '').split('') || []).sort((a, b) => b.localeCompare(a));
+    const answer = (state.htmlGame.placed || []).map((index) => letters[index]).join('');
+    const target = current?.word.toLowerCase().replace(/[^a-z]/g, '');
+    state.htmlGame.feedback = answer === target ? 'correct' : 'wrong';
+    if (state.htmlGame.feedback === 'correct') state.htmlGame.score += 1;
+    render();
+  });
+  app.querySelectorAll('[data-prep-game-next]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.index = (state.htmlGame.index + 1) % Math.max(prepWords.length, 1);
+    state.htmlGame.selectedOption = null;
+    state.htmlGame.placed = [];
+    state.htmlGame.flipped = false;
+    state.htmlGame.opened = null;
+    state.htmlGame.feedback = '';
+    render();
+  }));
+  app.querySelector('[data-prep-flip]')?.addEventListener('click', () => {
+    state.htmlGame.flipped = !state.htmlGame.flipped;
+    render();
+  });
+  app.querySelectorAll('[data-prep-open-box]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.opened = Number(button.dataset.prepOpenBox);
+    render();
+  }));
+  app.querySelector('[data-prep-game-reset]')?.addEventListener('click', () => {
+    state.htmlGame = { ...state.htmlGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
     render();
   });
 
