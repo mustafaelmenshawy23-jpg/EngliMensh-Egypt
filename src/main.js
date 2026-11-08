@@ -448,7 +448,7 @@ function renderPreparatoryVocabulary(words) {
             ${item.definition ? `<p>${escapeHtml(item.definition)}</p>` : ''}
             ${item.example ? `<div class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</div>` : ''}
             <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Listen</button>
-            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>` : ''}
+            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>${item.licenseUrl ? ` <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License</a>` : ''}` : ''}
           </article>
         `).join('')}
       </div>
@@ -532,7 +532,7 @@ function renderPreparatoryGame(words) {
       <div class="prep-games-heading"><div><p class="eyebrow">WORDWALL-INSPIRED GAME STUDIO</p><h3>Choose a learning game</h3><p>Original interactive activities built from this unit's vocabulary.</p></div><span class="prep-game-count">${words.length} words</span></div>
       <div class="prep-game-launch-grid">${games.map((item) => `<button data-prep-game="${item.id}" class="${game.id === item.id ? 'active' : ''}"><span>${item.icon}</span><strong>${item.title}</strong><small>${item.desc}</small></button>`).join('')}</div>
       <article class="prep-game-stage"><div class="prep-game-stage-title"><h3>${games.find((item) => item.id === game.id)?.title || 'Learning game'}</h3><span>Interactive practice</span></div>${body}</article>
-      <div class="prep-image-credit">Images are embedded illustrations from the supplied lessons or licensed Wikimedia Commons images. ${[...new Map(words.filter((item) => item.imageSource && item.sourceUrl).map((item) => [item.sourceUrl, item])).values()].map((item) => `<div><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.word)} · ${escapeHtml(item.imageSource)}</a> · ${escapeHtml(item.license || '')} · ${escapeHtml(item.attribution || 'Creator credit on source page')}</div>`).join('')}</div>
+      <div class="prep-image-credit">Images are embedded illustrations from the supplied lessons or licensed Wikimedia Commons images. ${[...new Map(words.filter((item) => item.imageSource && item.sourceUrl).map((item) => [item.sourceUrl, item])).values()].map((item) => `<div><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.word)} · ${escapeHtml(item.imageSource)}</a> · ${escapeHtml(item.license || '')} · ${escapeHtml(item.attribution || 'Creator credit on source page')}${item.licenseUrl ? ` · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License terms</a>` : ''}</div>`).join('')}</div>
     </section>
   `;
 }
