@@ -2880,15 +2880,18 @@ function render() {
   app.querySelector('[data-builder-hint]')?.addEventListener('click', () => {
     const target = String(getWordBuilderWords()[state.game2.index]?.target || '');
     if (state.game2.placed.length < target.length && !state.game2.checkResult) {
-      state.game2.placed.push(target[state.game2.placed.length]);
+      const currentAttempt = state.game2.placed.join('');
+      let hintIndex = 0;
+      while (hintIndex < currentAttempt.length && currentAttempt[hintIndex] === target[hintIndex]) hintIndex += 1;
+      state.game2.placed = target.slice(0, Math.min(target.length, hintIndex + 1)).split('');
       state.game2.usedHint = true;
       playFeedbackSound(true, 'builder');
       saveProgressToStorage();
       render();
     }
   });
-  app.querySelector('[data-builder-check]')?.addEventListener('click', (btn) => {
-    const target = btn.target.dataset.builderCheck;
+  app.querySelector('[data-builder-check]')?.addEventListener('click', (event) => {
+    const target = event.currentTarget.dataset.builderCheck;
     if (!state.game2.checkResult) {
       const isCorrect = state.game2.placed.join('') === target;
       playFeedbackSound(isCorrect, 'builder');
