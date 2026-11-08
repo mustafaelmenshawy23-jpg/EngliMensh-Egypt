@@ -70,6 +70,21 @@ const state = {
   politeness: { answers: {} }
 };
 
+const STUDENT_PROFILES_KEY = 'englimensh_student_profiles_v1';
+const LEGACY_PROGRESS_KEY = 'englimensh_p1u1_progress';
+let studentProfiles = [];
+let activeStudentId = null;
+function getProgressStorageKey() { return activeStudentId ? 'englimensh_progress_' + activeStudentId : LEGACY_PROGRESS_KEY; }
+function loadStudentProfiles() { try { const saved = JSON.parse(window.localStorage.getItem(STUDENT_PROFILES_KEY) || '[]'); studentProfiles = Array.isArray(saved) ? saved.filter((item) => item && item.id && item.name) : []; } catch { studentProfiles = []; } }
+function saveStudentProfiles() { try { window.localStorage.setItem(STUDENT_PROFILES_KEY, JSON.stringify(studentProfiles)); } catch (error) { console.warn('Student profile save warning:', error); } }
+function resetStudentProgressState() { state.quizAnswers = {}; state.shuffledOptions = {}; state.activeModule = null; state.importedUnitNumber = null; state.activeVocabSubtab = 'words'; state.activeGrammarSubtab = 'rules'; state.activeGameTab = 1; state.vocabIndex = 0; state.vocabViewMode = 'card'; state.testQuestionIndex = 0; state.listeningSpeed = 1; state.game1 = { selectedWord:null, selectedPic:null, matches:[], score:0 }; state.game2 = { index:0, placed:[], score:0, checkResult:null }; state.game3 = { index:0, score:0, selectedOption:null }; state.game4 = { index:0, score:0, selectedOption:null }; state.politeness = { answers:{} }; }
+function activateStudent(profile) { if (!profile) return; if (activeStudentId) saveProgressToStorage(); activeStudentId = profile.id; state.stage = profile.stage || 'primary'; state.grade = Number(profile.grade) || 1; state.path = profile.path || 'general'; state.search = ''; state.preview = null; state.unitSelection = null; resetStudentProgressState(); loadProgressFromStorage(); render(); }
+function renderStudentProfiles() {
+ const cards = studentProfiles.map((p) => '<button type="button" class="student-profile-option" data-select-student="' + escapeHtml(p.id) + '">' + (p.photo ? '<img class="student-profile-photo" src="' + p.photo + '" alt="">' : '<span class="student-profile-placeholder">＋</span>') + '<span><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(stageNames[p.stage] || 'Primary') + ' · Grade ' + escapeHtml(p.grade) + '</small></span><b>›</b></button>').join('');
+ app.innerHTML = '<main class="profile-gate"><header class="classic-brand"><span class="classic-brand-mark">E</span><div><strong>EngliMensh-Egypt</strong><small>Learn · Practice · Achieve</small></div></header><section class="profile-picker-card"><p class="classic-eyebrow">WELCOME TO YOUR LEARNING SPACE</p><h1>Choose Your Profile</h1><p class="profile-lead">Select your profile to continue learning.</p><div class="student-profile-list">' + cards + '</div><form class="new-student-form" id="new-student-form"><h2>Create a Student Profile</h2><label>Student name<input name="studentName" maxlength="40" required placeholder="Enter your name"></label><label>Choose your stage<select name="studentStage"><option value="primary">Primary</option><option value="preparatory">Preparatory</option><option value="secondary">Secondary</option><option value="egyptian-baccalaureate">Egyptian Baccalaureate</option></select></label><label>Choose your grade<select name="studentGrade"><option value="1">Grade 1</option><option value="2">Grade 2</option><option value="3">Grade 3</option><option value="4">Grade 4</option><option value="5">Grade 5</option><option value="6">Grade 6</option></select></label><label>Curriculum<select name="studentPath"><option value="general">Connect</option><option value="advanced">Connect Plus</option><option value="second-language">Second Language</option></select></label><label>Add a personal photo (optional)<input name="studentPhoto" type="file" accept="image/*"></label><button class="classic-primary-button" type="submit">Create Profile</button></form></section><footer class="classic-footer">Your learning progress is saved separately in each profile.</footer></main>';
+ app.querySelectorAll('[data-select-student]').forEach((b) => b.addEventListener('click', () => activateStudent(studentProfiles.find((p) => p.id === b.dataset.selectStudent))));
+ app.querySelector('#new-student-form')?.addEventListener('submit', (event) => { event.preventDefault(); const form = event.currentTarget; const name = String(form.elements.studentName.value || '').trim(); if (!name) return; const profile = { id:'student_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2,7), name, stage:form.elements.studentStage.value, grade:Number(form.elements.studentGrade.value) || 1, path:form.elements.studentPath.value || 'general', photo:'' }; const finish = () => { studentProfiles.push(profile); saveStudentProfiles(); activateStudent(profile); }; const file = form.elements.studentPhoto.files && form.elements.studentPhoto.files[0]; if (file) { const reader = new FileReader(); reader.onload = () => { profile.photo = String(reader.result || ''); finish(); }; reader.onerror = finish; reader.readAsDataURL(file); } else finish(); });
+}
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
   if (!val) return { choice: null, isCorrect: false, wrongChoices: [] };
@@ -127,7 +142,7 @@ function resetListeningProgress() {
 function loadProgressFromStorage() {
   if (typeof window === 'undefined' || !window.localStorage) return;
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const raw = window.localStorage.getItem(getProgressStorageKey()) || (!activeStudentId ? window.localStorage.getItem(LEGACY_PROGRESS_KEY) : null);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     const isPlainObject = (val) => Boolean(val && typeof val === 'object' && !Array.isArray(val));
@@ -189,7 +204,7 @@ function saveProgressToStorage() {
       selfIntro: state.selfIntro,
       politeness: state.politeness
     };
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+    window.localStorage.setItem(getProgressStorageKey(), JSON.stringify(dataToSave));
   } catch (err) {
     console.warn('LocalStorage save warning:', err);
   }
@@ -2307,6 +2322,7 @@ function playFeedbackSound(result, game = null) {
 }
 
 function render() {
+  if (!activeStudentId) { renderStudentProfiles(); return; }
   const previousScrollY = window.scrollY;
   const previousViewKey = state._renderViewKey || null;
   const currentViewKey = [state.stage, state.grade, state.path, state.importedUnitNumber || '', state.activeModule || ''].join(':');
@@ -2336,7 +2352,7 @@ function render() {
   app.innerHTML = `
     <header class="topbar">
       <a class="brand" href="#" data-home aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
-      <span class="country-tag">EGYPTIAN CURRICULUM</span>
+      <span class="country-tag">EGYPTIAN CURRICULUM</span><button type="button" class="profile-switch-btn" data-switch-profile>Switch Profile</button>
     </header>
     <main class="shell stage-${state.stage}">
       <section class="welcome" ${importedUnitView ? 'hidden' : ''}>
@@ -2554,6 +2570,7 @@ function render() {
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
+  app.querySelector('[data-switch-profile]')?.addEventListener('click', () => { saveProgressToStorage(); activeStudentId = null; state.importedUnitNumber = null; state.activeModule = null; render(); });
   app.querySelector('[data-home]')?.addEventListener('click', (event) => {
     event.preventDefault();
     state.importedUnitNumber = null;
@@ -2808,7 +2825,8 @@ function render() {
     if (!state.game4.selectedOption) {
       const chosen = btn.dataset.meaningChoose;
       state.game4.selectedOption = chosen;
-      const meanings = getPrimaryGameWords(4)?.map((item) => item.arabic) || ['شجاع', 'حذر', 'رحلة', 'يحمي'];
+      const meaningWords = getPrimaryGameWords(4);
+      const meanings = meaningWords?.length ? meaningWords.map((item) => item.arabic) : ['شجاع', 'حذر', 'رحلة', 'يحمي'];
       const isCorrect = chosen === meanings[state.game4.index];
       playFeedbackSound(isCorrect, 'challenge');
       if (isCorrect) state.game4.score += 1;
@@ -2851,7 +2869,8 @@ function render() {
 }
 
 // Restore a coherent in-app back stack for Android Back and browser Back.
-loadProgressFromStorage();
+loadStudentProfiles();
+activeStudentId = null;
 window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', window.location.pathname + window.location.search + '#grade');
 if (state.importedUnitNumber) {
   window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
