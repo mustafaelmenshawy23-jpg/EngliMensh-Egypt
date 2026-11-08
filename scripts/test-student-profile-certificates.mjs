@@ -15,7 +15,7 @@ assert.match(main, /data-path=/);
 assert.match(main, /\.curriculum-switcher-button\[data-path\]/, 'top curriculum selector must have a click handler');
 assert.match(main, /FileSharer\.save\(/, 'certificate export must save a real file through the native file saver');
 assert.match(main, /saveDirectory: 'downloads'/, 'Android certificates must be saved in public Downloads');
-assert.match(main, /android: \\{ saveDirectory: 'downloads' \\}/, 'Android certificates must save directly in the public Downloads folder');
+assert.ok(main.includes("android: { saveDirectory: 'downloads' }"), 'Android certificates must save directly in the public Downloads folder');
 assert.equal(main.includes("relativePath: 'Download/EngliMensh'"), false, 'certificates must not be hidden in an app-specific subfolder');
 assert.ok(main.includes("const pdfBase64 = pdfDataUrl.slice(pdfDataUrl.indexOf(',') + 1)"), 'jsPDF data URL headers, including filename parameters, must be stripped before native save');
 assert.match(main, /base64Data: pdfBase64/, 'only the raw PDF base64 payload must be passed to the native saver');
