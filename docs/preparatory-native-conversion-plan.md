@@ -54,3 +54,13 @@ No iframe, HTML viewer, embedded web page, or runtime execution of imported sour
 - Prefer official Ministry/directorate exam papers where available; otherwise retain source URL, publisher/teacher attribution, year, term, governorate, answer-key status, and a verification note.
 - Keep each paper available offline in the app. Use a native exam runner only if the source can be faithfully converted with verified questions and answers; otherwise provide the original PDF/document as a clearly labeled downloadable/openable paper without pretending it is an interactive native exam.
 - Do not infer that the new academic year 2026/2027 uses the same Prep 3 textbook. Confirm the textbook/edition before adding any papers for that year.
+
+
+## Preferred reference: El-Moasser (المعاصر)
+- Use El-Moasser New Hello! 3rd Prep final-revision / governorate-exam collections as a priority reference for checking the exam format, coverage, and the years in which the current textbook edition was in use.
+- A verified discovery lead is "EL-MOASSER GUIDE – FINAL REVISION – New Hello! ENGLISH – 3rd Prep. 2024 – FIRST TERM". Its contents list 15 general sample tests and 5 Al-Azhar sample tests, and the cover states it follows the 2023–2024 exam specifications. Treat these as sample tests, not automatically as actual historical governorate exams.
+- Another discovery lead is a 2025 collection labeled "محافظات كتاب المعاصر لغة إنجليزية ٣ع ترم أول 2025". Verify its individual papers and provenance before classifying any as actual past exams.
+- Separate the section into clear categories where evidence supports them: (A) actual past governorate/ministry exams, with year + term + governorate and source; (B) El-Moasser practice/sample tests, clearly labeled as practice/sample, with edition/year and term. Never mislabel practice tests as historical papers.
+- Use El-Moasser to cross-check topic alignment and exam style; do not copy/reproduce its proprietary question sets, answer keys, scans, or PDFs into the app without permission/licensing. Prefer linking to authorized publisher material or independently sourced official exam papers. If an authorized copy is supplied, preserve its source and usage permissions.
+- Record source URL, exact title, edition/year, term, governorate (if applicable), whether it is a real exam or practice test, answer-key availability, and curriculum-match verification.
+- Only include papers from academic years in which the exact New Hello / New Hello Plus edition was actually taught. Do not assume a 2026/2027 Prep 3 edition matches the older edition without checking.
