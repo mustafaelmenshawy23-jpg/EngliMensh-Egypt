@@ -2815,3 +2815,21 @@ button:disabled{opacity:.55;cursor:not-allowed}
  .prep-module-card strong { font-size:13px; }
  .prep-module-card small { font-size:11px; }
 }
+
+
+.prep-vocabulary-section { margin-top:12px; }
+.prep-vocabulary-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin:8px 0 18px; }
+.prep-vocabulary-heading h3 { margin:0; color:var(--brand-navy); font-size:22px; font-weight:850; }
+.prep-vocabulary-heading p { margin:6px 0 0; color:var(--text-secondary); }
+.prep-vocabulary-heading>span { border-radius:99px; background:var(--brand-teal-light); color:var(--brand-navy); padding:8px 12px; font-size:12px; font-weight:850; }
+.prep-vocabulary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.prep-vocabulary-card { display:flex; flex-direction:column; align-items:flex-start; gap:8px; padding:15px; border:1px solid var(--border-line); border-radius:17px; background:#fff; box-shadow:var(--shadow-sm); min-width:0; }
+.prep-vocabulary-image-wrap { display:grid; place-items:center; width:100%; min-height:155px; border-radius:13px; background:linear-gradient(145deg,#f1f7ff,#f8fafc); border:1px solid #e5edf6; padding:10px; }
+.prep-vocabulary-image { width:100%; height:140px; object-fit:contain; }
+.prep-vocabulary-number { color:var(--brand-teal-hover); font-size:10px; font-weight:900; letter-spacing:1px; }
+.prep-vocabulary-card h4 { margin:0; color:var(--brand-navy); font-size:18px; font-weight:850; overflow-wrap:anywhere; }
+.prep-vocabulary-arabic { color:#047857; font-size:16px; }
+.prep-vocabulary-card p { margin:0; color:var(--text-secondary); font-size:13px; line-height:1.55; }
+.prep-vocabulary-example { width:100%; border-left:3px solid var(--brand-teal); background:#f8fafc; border-radius:0 8px 8px 0; padding:8px; color:#334155; font-size:12px; line-height:1.5; }
+.prep-vocabulary-credit { color:#64748b; font-size:10px; text-decoration:underline; }
+@media(max-width:760px) { .prep-vocabulary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } .prep-vocabulary-card { padding:11px; } .prep-vocabulary-image-wrap { min-height:120px; } .prep-vocabulary-image { height:110px; } }
