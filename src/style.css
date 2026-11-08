@@ -2807,3 +2807,22 @@ body{background:radial-gradient(circle at top,#fffaf0 0,#f3eee3 58%,#e9dfcc 100%
 
 .certificate-teacher-photo{position:absolute;left:18.2%;top:10.2%;width:24.8%;aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff}
 .certificate-teacher-photo img{width:100%;height:100%;object-fit:cover}
+
+.student-hub{margin:18px 0;padding:18px;border-top:3px solid #c49a50}
+.student-hub-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.student-hub-heading h2{margin:0;color:#17365f;font-family:Georgia,serif}
+.student-hub-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c49a50}
+.student-hub-tabs{display:flex;gap:7px;overflow-x:auto;padding:14px 0 10px}
+.student-hub-tabs button{flex:0 0 auto;border:1px solid #dfd1b8;border-radius:999px;background:#fffdf8;color:#17365f;padding:8px 11px;font-size:11px;font-weight:800}
+.student-hub-tabs button.active{background:#17365f;color:#fff8e8;border-color:#c49a50}
+.student-hub-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
+.student-hub-stats article{display:grid;gap:5px;padding:13px 8px;border-radius:12px;background:#f8f0df;text-align:center}
+.student-hub-stats strong{font-size:22px;color:#17365f}.student-hub-stats span{font-size:10px;color:#687487}
+.student-certificate-row{display:grid;grid-template-columns:1fr auto;gap:5px 10px;padding:12px 0;border-bottom:1px solid #e6dac6;color:#17365f}
+.student-certificate-row span{font-size:11px;color:#687487}.student-certificate-row b{grid-row:1/3;grid-column:2;color:#9b742e;align-self:center}
+.student-favorite-list{display:grid;gap:8px}.student-favorite-list span{padding:10px;border:1px solid #dfd1b8;border-radius:10px;background:#fffdf8}
+.student-setting-row{display:grid;gap:8px;color:#17365f;font-weight:800}.student-setting-row select{padding:10px;border:1px solid #dfd1b8;border-radius:10px;background:#fffdf8}
+.creator-card{display:flex;align-items:center;gap:14px;padding:12px;border-radius:12px;background:#f8f0df}.creator-card img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid #c49a50}.creator-card strong{color:#17365f}.creator-card p{margin:5px 0;color:#687487;font-size:12px}
+.favorite-unit-button{border:1px solid #c49a50;border-radius:999px;padding:8px 12px;background:#fff5df;color:#17365f;font-weight:800;cursor:pointer}
+:root[data-student-theme="light"]{--bg-app:#f8f9fc;--bg-surface:#fff;--bg-card:#fff;--text-primary:#26374e}
+:root[data-student-theme="light"] body{background:#f5f7fb}
