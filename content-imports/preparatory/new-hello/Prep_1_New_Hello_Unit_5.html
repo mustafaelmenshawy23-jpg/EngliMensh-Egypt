@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello (General)) - Unit 5: Holidays | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello (General) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 5: Holidays</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Holidays</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Egyptian Ministry of Education Official Curriculum 2026 / 2027 Standards</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello (General)</span>
+          <span class="meta-tag">Unit: 5</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Complete context-rich ministerial sentences and verify mastery with 100% curriculum-authentic choices.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 5: The Past Simple Tense (Regular & Irregular Verbs, Was / Were)</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">1. The Past Simple Tense (زمن الماضي البسيط)</h3>
+  <p><strong>Usage:</strong> Actions completed in the past at a specific finished time (<em>yesterday, last week, in 2020, ago, once</em>).</p>
+  <table class="grammar-table">
+    <thead><tr><th>Category</th><th>Affirmative Form</th><th>Negative (didn't + inf)</th><th>Question Form (Did + S + inf?)</th></tr></thead>
+    <tbody>
+      <tr><td>Regular Verbs (+d, +ed, +ied)</td><td>We <strong>climbed</strong> a mountain.<br>They <strong>visited</strong> Luxor.</td><td>We <strong>didn't climb</strong> the cliff.<br>He <strong>didn't visit</strong> the museum.</td><td><strong>Did</strong> you visit the citadel?<br>&rarr; Yes, I did. / No, I didn't.</td></tr>
+      <tr><td>Irregular Verbs (حفظ بدون قاعدة)</td><td>I <strong>saw</strong> a waterfall.<br>She <strong>bought</strong> souvenirs.</td><td>I <strong>didn't see</strong> any caves.<br>She <strong>didn't buy</strong> a postcard.</td><td><strong>Did</strong> they go camping?<br>&rarr; Yes, they did. / No, they didn't.</td></tr>
+      <tr><td>Verb to Be in Past (was / were)</td><td>I/He/She/It <strong>was</strong> happy.<br>We/You/They <strong>were</strong> tired.</td><td>He <strong>wasn't</strong> ill.<br>They <strong>weren't</strong> late.</td><td><strong>Was</strong> it sunny? &rarr; Yes, it was.<br><strong>Were</strong> they at the beach?</td></tr>
+    </tbody>
+  </table>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 5: The Past Simple Tense (Regular & Irregular Verbs, Was / Were) without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Full ministerial standard assessment covering all four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word": "holiday", "pos": "noun", "arabic": "إجازة / عطلة", "def": "A time of rest from work or school, often for travel.", "example": "We spent an unforgettable summer holiday in Alexandria.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "beach", "pos": "noun", "arabic": "شاطئ رملي", "def": "A sandy or pebbly shore beside the sea or ocean.", "example": "Children built grand sandcastles on the golden beach.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">BE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "sandcastle", "pos": "noun", "arabic": "قلعة من الرمال", "def": "A model of a castle made out of wet beach sand.", "example": "Ali and his sister constructed a huge sandcastle.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "cave", "pos": "noun", "arabic": "كهف", "def": "A large hollow hole or tunnel in the side of a cliff or hill.", "example": "They explored a dark mysterious cave in the rocky mountain.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "desert", "pos": "noun", "arabic": "صحراء", "def": "A barren area of land with little water and very sparse rain.", "example": "Camels can walk long distances across the arid desert.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "forest", "pos": "noun", "arabic": "غابة", "def": "A large area of land covered thickly with tall trees.", "example": "Many wild deer and colorful birds live in the green forest.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "jungle", "pos": "noun", "arabic": "غابة استوائية كثيفة", "def": "An area of land overgrown with dense tropical vegetation.", "example": "Monkeys swung through the dense trees of the African jungle.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">JU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "lake", "pos": "noun", "arabic": "بحيرة", "def": "A large body of water surrounded completely by land.", "example": "Lake Nasser is a massive freshwater lake in southern Egypt.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">LA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "waterfall", "pos": "noun", "arabic": "شلال مياه", "def": "A cascade of water falling from a height over rocks.", "example": "Wadi El-Rayan is famous for its stunning natural waterfalls.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "camp", "pos": "verb", "arabic": "يعسكر / يخيم", "def": "To set up a tent and live outdoors for a short time.", "example": "Scouts camp beside the peaceful river every spring.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "tent", "pos": "noun", "arabic": "خيمة", "def": "A shelter made of cloth supported by poles and ropes.", "example": "We slept comfortably inside a large waterproof canvas tent.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "souvenir", "pos": "noun", "arabic": "هدية تذكارية", "def": "An object you buy to remind yourself of a special place.", "example": "She bought a miniature alabaster pyramid as a souvenir.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "postcard", "pos": "noun", "arabic": "بطاقة بريدية", "def": "A card with a picture on one side for sending messages.", "example": "I sent a colorful postcard from Luxor to my penfriend.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "climb", "pos": "verb", "arabic": "يتسلق", "def": "To go up toward the top of a mountain, hill, or tree.", "example": "The adventurous mountaineers climbed Mount Catherine.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "ride", "pos": "verb", "arabic": "يركب", "def": "To sit on and control the movement of a bike, horse, or camel.", "example": "Tourists love to ride camels near the Giza Pyramids.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "swim", "pos": "verb", "arabic": "يسبح / يعوم", "def": "To move through water by moving limbs and kicking.", "example": "We swam in the crystal-clear turquoise waters of Dahab.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SW</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "see", "pos": "verb", "arabic": "يرى / يشاهد", "def": "To perceive with the eyes or visit historical sights.", "example": "Yesterday, we saw the golden mask of King Tutankhamun.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "picnic", "pos": "noun", "arabic": "نزهة خلوية", "def": "An excursion where a meal is eaten outdoors in nature.", "example": "Our family had a relaxing picnic in Al-Azhar Park.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "castle", "pos": "noun", "arabic": "قلعة حربية", "def": "A large building fortified with thick stone walls.", "example": "Qaitbay Citadel is a historic castle overlooking the sea.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "hotel", "pos": "noun", "arabic": "فندق", "def": "An establishment providing paid lodging and meals for travelers.", "example": "We stayed at a comfortable hotel overlooking the Nile.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "view", "pos": "noun", "arabic": "منظر طبيعي", "def": "What you can see from a particular place or balcony.", "example": "The hotel room offered a breathtaking view of the sea.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">VI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "weather", "pos": "noun", "arabic": "الطقس / حالة الجو", "def": "The state of the atmosphere regarding temperature and rain.", "example": "The weather was sunny and delightfully warm yesterday.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question": "Which vocabulary word is defined as: 'A time of rest from work or school, often for travel.'?", "options": ["holiday", "tent", "swim", "sandcastle"], "correct": 0, "explanation": "'holiday' (إجازة / عطلة) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A sandy or pebbly shore beside the sea or ocean.'?", "options": ["weather", "camp", "beach", "lake"], "correct": 2, "explanation": "'beach' (شاطئ رملي) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A model of a castle made out of wet beach sand.'?", "options": ["souvenir", "sandcastle", "waterfall", "see"], "correct": 1, "explanation": "'sandcastle' (قلعة من الرمال) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A large hollow hole or tunnel in the side of a cliff or hill.'?", "options": ["cave", "holiday", "sandcastle", "weather"], "correct": 0, "explanation": "'cave' (كهف) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A barren area of land with little water and very sparse rain.'?", "options": ["beach", "desert", "cave", "view"], "correct": 1, "explanation": "'desert' (صحراء) is the official curriculum definition."}, {"question": "Complete the context: \"Many wild deer and colorful birds live in the green _______.\"", "options": ["picnic", "postcard", "forest", "tent"], "correct": 2, "explanation": "'forest' (غابة) correctly completes the sentence."}, {"question": "Complete the context: \"Monkeys swung through the dense trees of the African _______.\"", "options": ["beach", "jungle", "holiday", "picnic"], "correct": 1, "explanation": "'jungle' (غابة استوائية كثيفة) correctly completes the sentence."}, {"question": "Complete the context: \"_______ Nasser is a massive freshwater lake in southern Egypt.\"", "options": ["swim", "hotel", "forest", "lake"], "correct": 3, "explanation": "'lake' (بحيرة) correctly completes the sentence."}, {"question": "Complete the context: \"Wadi El-Rayan is famous for its stunning natural _______s.\"", "options": ["see", "swim", "lake", "waterfall"], "correct": 3, "explanation": "'waterfall' (شلال مياه) correctly completes the sentence."}, {"question": "Complete the context: \"Scouts _______ beside the peaceful river every spring.\"", "options": ["jungle", "tent", "camp", "see"], "correct": 2, "explanation": "'camp' (يعسكر / يخيم) correctly completes the sentence."}, {"question": "Complete the context: \"We slept comfortably inside a large waterproof canvas _______.\"", "options": ["forest", "tent", "climb", "ride"], "correct": 1, "explanation": "'tent' (خيمة) correctly completes the sentence."}, {"question": "Complete the context: \"She bought a miniature alabaster pyramid as a _______.\"", "options": ["souvenir", "lake", "tent", "view"], "correct": 0, "explanation": "'souvenir' (هدية تذكارية) correctly completes the sentence."}, {"question": "Complete the context: \"I sent a colorful _______ from Luxor to my penfriend.\"", "options": ["tent", "camp", "postcard", "cave"], "correct": 2, "explanation": "'postcard' (بطاقة بريدية) correctly completes the sentence."}, {"question": "Complete the context: \"The adventurous mountaineers _______ed Mount Catherine.\"", "options": ["climb", "lake", "tent", "hotel"], "correct": 0, "explanation": "'climb' (يتسلق) correctly completes the sentence."}, {"question": "Complete the context: \"Tourists love to _______ camels near the Giza Pyramids.\"", "options": ["ride", "tent", "lake", "cave"], "correct": 0, "explanation": "'ride' (يركب) correctly completes the sentence."}, {"question": "Complete the context: \"The teacher asked students about _______ in their textbook.\"", "options": ["sandcastle", "castle", "swim", "climb"], "correct": 2, "explanation": "'swim' (يسبح / يعوم) correctly completes the sentence."}, {"question": "Complete the context: \"The teacher asked students about _______ in their textbook.\"", "options": ["see", "sandcastle", "waterfall", "souvenir"], "correct": 0, "explanation": "'see' (يرى / يشاهد) correctly completes the sentence."}, {"question": "Complete the context: \"Our family had a relaxing _______ in Al-Azhar Park.\"", "options": ["forest", "ride", "souvenir", "picnic"], "correct": 3, "explanation": "'picnic' (نزهة خلوية) correctly completes the sentence."}, {"question": "Complete the context: \"Qaitbay Citadel is a historic _______ overlooking the sea.\"", "options": ["sandcastle", "castle", "climb", "jungle"], "correct": 1, "explanation": "'castle' (قلعة حربية) correctly completes the sentence."}, {"question": "Complete the context: \"We stayed at a comfortable _______ overlooking the Nile.\"", "options": ["hotel", "desert", "souvenir", "waterfall"], "correct": 0, "explanation": "'hotel' (فندق) correctly completes the sentence."}, {"question": "Complete the context: \"The hotel room offered a breathtaking _______ of the sea.\"", "options": ["postcard", "view", "tent", "picnic"], "correct": 1, "explanation": "'view' (منظر طبيعي) correctly completes the sentence."}, {"question": "Complete the context: \"The _______ was sunny and delightfully warm yesterday.\"", "options": ["weather", "climb", "jungle", "cave"], "correct": 0, "explanation": "'weather' (الطقس / حالة الجو) correctly completes the sentence."}, {"question": "Complete the context: \"We spent an unforgettable summer _______ in Alexandria.\"", "options": ["view", "forest", "swim", "holiday"], "correct": 3, "explanation": "'holiday' (إجازة / عطلة) correctly completes the sentence."}, {"question": "Complete the context: \"Children built grand sandcastles on the golden _______.\"", "options": ["beach", "see", "hotel", "jungle"], "correct": 0, "explanation": "'beach' (شاطئ رملي) correctly completes the sentence."}, {"question": "Complete the context: \"Ali and his sister constructed a huge _______.\"", "options": ["tent", "weather", "souvenir", "sandcastle"], "correct": 3, "explanation": "'sandcastle' (قلعة من الرمال) correctly completes the sentence."}, {"question": "Complete the context: \"They explored a dark mysterious _______ in the rocky mountain.\"", "options": ["ride", "cave", "beach", "climb"], "correct": 1, "explanation": "'cave' (كهف) correctly completes the sentence."}, {"question": "Complete the context: \"Camels can walk long distances across the arid _______.\"", "options": ["view", "camp", "desert", "hotel"], "correct": 2, "explanation": "'desert' (صحراء) correctly completes the sentence."}, {"question": "Complete the context: \"Many wild deer and colorful birds live in the green _______.\"", "options": ["weather", "desert", "castle", "forest"], "correct": 3, "explanation": "'forest' (غابة) correctly completes the sentence."}, {"question": "Complete the context: \"Monkeys swung through the dense trees of the African _______.\"", "options": ["weather", "jungle", "beach", "hotel"], "correct": 1, "explanation": "'jungle' (غابة استوائية كثيفة) correctly completes the sentence."}, {"question": "Complete the context: \"_______ Nasser is a massive freshwater lake in southern Egypt.\"", "options": ["beach", "postcard", "see", "lake"], "correct": 3, "explanation": "'lake' (بحيرة) correctly completes the sentence."}];
+    const grammarQuizData = [{"question": "Last summer, our family _______ to Hurghada by car.", "options": ["went", "goes", "going", "go"], "correct": 0, "explanation": "Finished past time marker 'Last summer' takes Past Simple 'went'."}, {"question": "They _______ climb the steep mountain because it was too slippery.", "options": ["don't", "aren't", "didn't", "weren't"], "correct": 2, "explanation": "Negative past auxiliary with infinitive verb is 'didn't'."}, {"question": "Did you _______ any souvenirs from the Khan el-Khalili market?", "options": ["buys", "buying", "bought", "buy"], "correct": 3, "explanation": "After auxiliary 'Did', verb must be in base infinitive 'buy'."}, {"question": "Yesterday, the weather _______ sunny and wonderfully mild.", "options": ["is", "are", "were", "was"], "correct": 3, "explanation": "Past tense of verb to be with singular 'the weather' is 'was'."}, {"question": "We _______ in a comfortable tent during our scout camp last week.", "options": ["sleeps", "sleep", "slept", "sleeping"], "correct": 2, "explanation": "Irregular past tense of 'sleep' is 'slept'."}, {"question": "Where _______ you spend your mid-year vacation last year?", "options": ["have", "do", "does", "did"], "correct": 3, "explanation": "Past simple wh- question auxiliary is 'did'."}, {"question": "She _______ a beautiful postcard from Paris two days ago.", "options": ["sends", "send", "sending", "sent"], "correct": 3, "explanation": "'two days ago' marks past simple, verb 'sent'."}, {"question": "Did Tarek ride a camel near the Pyramids? — Yes, he _______.", "options": ["is", "does", "was", "did"], "correct": 3, "explanation": "Affirmative short answer with 'Did' is 'Yes, he did.'"}, {"question": "Were your classmates excited about the school trip? — Yes, they _______.", "options": ["was", "were", "did", "are"], "correct": 1, "explanation": "Short answer matching 'Were your classmates' is 'Yes, they were.'"}, {"question": "I didn't _______ the scary bats inside the mountain cave.", "options": ["seeing", "see", "saw", "seen"], "correct": 1, "explanation": "After 'didn't', always use base infinitive 'see'."}, {"question": "Mona _______ a delicious sandwich during our outdoor picnic yesterday.", "options": ["eat", "eats", "eating", "ate"], "correct": 3, "explanation": "Irregular past form of 'eat' is 'ate'."}, {"question": "The children _______ grand sandcastles on the beach last Friday.", "options": ["builds", "building", "build", "built"], "correct": 3, "explanation": "Irregular past form of 'build' is 'built'."}, {"question": "_______ it cold in Saint Catherine last night?", "options": ["Were", "Did", "Does", "Was"], "correct": 3, "explanation": "Singular subject 'it' takes 'Was' in past to be questions."}, {"question": "We _______ at the beach yesterday; we stayed at home.", "options": ["didn't", "weren't", "wasn't", "aren't"], "correct": 1, "explanation": "Negative past to be for plural 'We' is 'weren't'."}, {"question": "How _______ your weekend in Alexandria? — It was fantastic!", "options": ["did", "was", "were", "is"], "correct": 1, "explanation": "'your weekend' is singular, requiring 'was'."}, {"question": "He _______ a bicycle through the countryside two weeks ago.", "options": ["riding", "ride", "rides", "rode"], "correct": 3, "explanation": "Past simple of 'ride' is 'rode'."}, {"question": "Did she enjoy the waterfall views? — No, she _______.", "options": ["isn't", "didn't", "doesn't", "wasn't"], "correct": 1, "explanation": "Negative short answer matching 'Did she' is 'No, she didn't.'"}, {"question": "My father _______ an ancient gold coin in the desert sands.", "options": ["find", "finding", "finds", "found"], "correct": 3, "explanation": "Irregular past simple of 'find' is 'found'."}, {"question": "They _______ swim in the lake because the water was freezing.", "options": ["wasn't", "didn't", "don't", "weren't"], "correct": 1, "explanation": "Past negative before infinitive verb 'swim' is 'didn't'."}, {"question": "I _______ my keys at the hotel reception yesterday morning.", "options": ["leaving", "left", "leaves", "leave"], "correct": 1, "explanation": "Past simple of 'leave' is 'left'."}, {"question": "Last summer, our family _______ to Hurghada by car.", "options": ["went", "goes", "going", "go"], "correct": 0, "explanation": "Finished past time marker 'Last summer' takes Past Simple 'went'."}, {"question": "They _______ climb the steep mountain because it was too slippery.", "options": ["don't", "aren't", "didn't", "weren't"], "correct": 2, "explanation": "Negative past auxiliary with infinitive verb is 'didn't'."}, {"question": "Did you _______ any souvenirs from the Khan el-Khalili market?", "options": ["buys", "buying", "bought", "buy"], "correct": 3, "explanation": "After auxiliary 'Did', verb must be in base infinitive 'buy'."}, {"question": "Yesterday, the weather _______ sunny and wonderfully mild.", "options": ["is", "are", "were", "was"], "correct": 3, "explanation": "Past tense of verb to be with singular 'the weather' is 'was'."}, {"question": "We _______ in a comfortable tent during our scout camp last week.", "options": ["sleeps", "sleep", "slept", "sleeping"], "correct": 2, "explanation": "Irregular past tense of 'sleep' is 'slept'."}, {"question": "Where _______ you spend your mid-year vacation last year?", "options": ["have", "do", "does", "did"], "correct": 3, "explanation": "Past simple wh- question auxiliary is 'did'."}, {"question": "She _______ a beautiful postcard from Paris two days ago.", "options": ["sends", "send", "sending", "sent"], "correct": 3, "explanation": "'two days ago' marks past simple, verb 'sent'."}, {"question": "Did Tarek ride a camel near the Pyramids? — Yes, he _______.", "options": ["is", "does", "was", "did"], "correct": 3, "explanation": "Affirmative short answer with 'Did' is 'Yes, he did.'"}, {"question": "Were your classmates excited about the school trip? — Yes, they _______.", "options": ["was", "were", "did", "are"], "correct": 1, "explanation": "Short answer matching 'Were your classmates' is 'Yes, they were.'"}, {"question": "I didn't _______ the scary bats inside the mountain cave.", "options": ["seeing", "see", "saw", "seen"], "correct": 1, "explanation": "After 'didn't', always use base infinitive 'see'."}];
+    const readingData = {"title": "An Unforgettable Holiday in Sinai", "paragraphs": ["Last July, Fatma and her family traveled to South Sinai for their summer vacation. They stayed in an eco-lodge near Dahab with a breathtaking view of the sparkling blue sea. The weather was sunny, warm, and pleasantly breezy throughout the week.", "On the third day of the holiday, they went on an exciting desert excursion. They rode gentle camels across the golden sands and climbed a high rocky mountain in Saint Catherine. In the evening, they pitched a large canvas tent under the stars, cooked a delicious campfire dinner, and listened to traditional Bedouin music.", "Before leaving, Fatma bought handmade colorful carpets and a miniature carved camel as souvenirs for her best friends in Cairo. She wrote several postcards and posted them at the local post office. Fatma wrote in her diary: 'It was the most peaceful and inspiring journey of my life.'"], "questions": [{"question": "Where did Fatma and her family spend their summer holiday?", "options": ["In South Sinai near Dahab", "In Alexandria", "In London", "In Upper Egypt"], "correct": 0, "explanation": "The text states they traveled to South Sinai near Dahab."}, {"question": "How was the weather during their trip to Sinai?", "options": ["Sunny, warm, and pleasantly breezy", "Stormy and freezing cold", "Extremely rainy with floods", "Cloudy and dark"], "correct": 0, "explanation": "The weather was sunny, warm, and breezy."}, {"question": "What adventurous activities did the family do on the third day?", "options": ["Rode camels, climbed a mountain, and camped in a tent", "Took a ferry to Italy", "Stayed indoors watching television", "Swam in a hotel swimming pool all day"], "correct": 0, "explanation": "They rode camels, climbed a mountain, and camped under the stars."}, {"question": "What souvenirs did Fatma purchase before returning to Cairo?", "options": ["Handmade carpets and a carved camel figurine", "A modern smartphone", "A box of salty crisps", "A new computer printer"], "correct": 0, "explanation": "She bought handmade carpets and a carved camel as souvenirs."}, {"question": "What did Fatma write in her private diary about the holiday?", "options": ["It was the most peaceful and inspiring journey of her life", "She wanted to go home on the first day", "The hotel was uncomfortable", "She disliked desert life"], "correct": 0, "explanation": "She described it as the most peaceful and inspiring journey."}]};
+    const listeningData = {"title": "Talking About Past Holidays", "dialogue": [{"speaker": "Sherif", "text": "Where did you go for your mid-year vacation, Ramy?"}, {"speaker": "Ramy", "text": "I visited Luxor and Aswan with my parents. We went by sleeper train."}, {"speaker": "Sherif", "text": "Did you see the famous ancient temples?"}, {"speaker": "Ramy", "text": "Yes, we saw the magnificent Karnak Temple and the Valley of the Kings. The stone carvings were breathtaking!"}, {"speaker": "Sherif", "text": "Did you take a boat ride on the Nile?"}, {"speaker": "Ramy", "text": "Yes, we sailed on a traditional wooden felucca at sunset. It was unforgettable."}], "questions": [{"question": "Which historical Egyptian cities did Ramy visit?", "options": ["Luxor and Aswan", "Port Said and Suez", "Marsa Matrouh and Siwa", "Tanta and Mansoura"], "correct": 0, "explanation": "Ramy visited Luxor and Aswan."}, {"question": "How did Ramy and his parents travel to Upper Egypt?", "options": ["By sleeper train", "By private car", "By airplane", "By bus"], "correct": 0, "explanation": "They traveled by sleeper train."}, {"question": "Which historic monuments did Ramy visit in Luxor?", "options": ["Karnak Temple and the Valley of the Kings", "Qaitbay Citadel", "The Cairo Tower", "The Roman Amphitheatre"], "correct": 0, "explanation": "He visited Karnak Temple and the Valley of the Kings."}, {"question": "What water craft did the family sail in on the River Nile?", "options": ["A traditional wooden felucca", "A giant submarine", "A motorized speed boat", "A canoe"], "correct": 0, "explanation": "They sailed on a traditional wooden felucca."}, {"question": "How did Ramy feel about his vacation experience?", "options": ["He found it breathtaking and unforgettable", "He felt tired and bored", "He regretted traveling", "He lost his tickets"], "correct": 0, "explanation": "He described the carvings as breathtaking and the sail as unforgettable."}]};
+    const pastExamsData = null;
+    const examData = [{"question": "Choose the correct word: \"We spent an unforgettable summer _______ in Alexandria.\"", "options": ["forest", "holiday", "desert", "hotel"], "correct": 1, "explanation": "Target vocabulary: 'holiday' (إجازة / عطلة)."}, {"question": "Choose the correct word: \"Children built grand sandcastles on the golden _______.\"", "options": ["weather", "beach", "cave", "ride"], "correct": 1, "explanation": "Target vocabulary: 'beach' (شاطئ رملي)."}, {"question": "Choose the correct word: \"Ali and his sister constructed a huge _______.\"", "options": ["souvenir", "waterfall", "tent", "sandcastle"], "correct": 3, "explanation": "Target vocabulary: 'sandcastle' (قلعة من الرمال)."}, {"question": "Choose the correct word: \"They explored a dark mysterious _______ in the rocky mountain.\"", "options": ["camp", "hotel", "lake", "cave"], "correct": 3, "explanation": "Target vocabulary: 'cave' (كهف)."}, {"question": "Choose the correct word: \"Camels can walk long distances across the arid _______.\"", "options": ["holiday", "desert", "hotel", "souvenir"], "correct": 1, "explanation": "Target vocabulary: 'desert' (صحراء)."}, {"question": "Choose the correct word: \"Many wild deer and colorful birds live in the green _______.\"", "options": ["forest", "picnic", "beach", "desert"], "correct": 0, "explanation": "Target vocabulary: 'forest' (غابة)."}, {"question": "Choose the correct word: \"Monkeys swung through the dense trees of the African _______.\"", "options": ["lake", "cave", "ride", "jungle"], "correct": 3, "explanation": "Target vocabulary: 'jungle' (غابة استوائية كثيفة)."}, {"question": "Choose the correct word: \"_______ Nasser is a massive freshwater lake in southern Egypt.\"", "options": ["camp", "jungle", "lake", "climb"], "correct": 2, "explanation": "Target vocabulary: 'lake' (بحيرة)."}, {"question": "Choose the correct word: \"Wadi El-Rayan is famous for its stunning natural _______s.\"", "options": ["waterfall", "ride", "forest", "castle"], "correct": 0, "explanation": "Target vocabulary: 'waterfall' (شلال مياه)."}, {"question": "Choose the correct word: \"Scouts _______ beside the peaceful river every spring.\"", "options": ["postcard", "weather", "camp", "picnic"], "correct": 2, "explanation": "Target vocabulary: 'camp' (يعسكر / يخيم)."}, {"question": "Last summer, our family _______ to Hurghada by car.", "options": ["went", "goes", "going", "go"], "correct": 0, "explanation": "Finished past time marker 'Last summer' takes Past Simple 'went'."}, {"question": "They _______ climb the steep mountain because it was too slippery.", "options": ["don't", "aren't", "didn't", "weren't"], "correct": 2, "explanation": "Negative past auxiliary with infinitive verb is 'didn't'."}, {"question": "Did you _______ any souvenirs from the Khan el-Khalili market?", "options": ["buys", "buying", "bought", "buy"], "correct": 3, "explanation": "After auxiliary 'Did', verb must be in base infinitive 'buy'."}, {"question": "Yesterday, the weather _______ sunny and wonderfully mild.", "options": ["is", "are", "were", "was"], "correct": 3, "explanation": "Past tense of verb to be with singular 'the weather' is 'was'."}, {"question": "We _______ in a comfortable tent during our scout camp last week.", "options": ["sleeps", "sleep", "slept", "sleeping"], "correct": 2, "explanation": "Irregular past tense of 'sleep' is 'slept'."}, {"question": "Where _______ you spend your mid-year vacation last year?", "options": ["have", "do", "does", "did"], "correct": 3, "explanation": "Past simple wh- question auxiliary is 'did'."}, {"question": "She _______ a beautiful postcard from Paris two days ago.", "options": ["sends", "send", "sending", "sent"], "correct": 3, "explanation": "'two days ago' marks past simple, verb 'sent'."}, {"question": "Did Tarek ride a camel near the Pyramids? — Yes, he _______.", "options": ["is", "does", "was", "did"], "correct": 3, "explanation": "Affirmative short answer with 'Did' is 'Yes, he did.'"}, {"question": "Were your classmates excited about the school trip? — Yes, they _______.", "options": ["was", "were", "did", "are"], "correct": 1, "explanation": "Short answer matching 'Were your classmates' is 'Yes, they were.'"}, {"question": "I didn't _______ the scary bats inside the mountain cave.", "options": ["seeing", "see", "saw", "seen"], "correct": 1, "explanation": "After 'didn't', always use base infinitive 'see'."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello (General) for Prep 1 (First Preparatory), Unit 5: Holidays. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>
