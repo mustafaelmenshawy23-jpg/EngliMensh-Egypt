@@ -25,6 +25,7 @@ function sixUnits(filePattern) {
       title: `Unit ${number}`,
       fileName,
       url: assetUrl(fileName),
+      viewerUrl: viewerUrl(fileName),
       format: 'unit'
     };
   });
@@ -72,6 +73,7 @@ export const preparatoryHtmlRegistry = {
         title: `Unit ${index + 1}: ${title}`,
         fileName: 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html',
         url: assetUrl('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'),
+        viewerUrl: viewerUrl('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'),
         format: 'combined'
       }))
     },
