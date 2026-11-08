@@ -5,6 +5,7 @@ import { spawn } from 'node:child_process';
 import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
+import { getConfiguredGeminiKeys } from './lib/gemini-config.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -19,8 +20,9 @@ const requestedStart = process.env.START_INDEX?.trim();
 const batchSize = Number(process.env.BATCH_SIZE || 5);
 const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
-if (!process.env.GEMINI_API_KEY) {
-  throw new Error('GEMINI_API_KEY secret is required. No offline curriculum fallback is used by the batch workflow.');
+const configuredGeminiKeys = getConfiguredGeminiKeys();
+if (!configuredGeminiKeys.length) {
+  throw new Error('At least one Gemini secret is required: GEMINI_API_KEY, GEMINI_API_KEY_BACKUP, GEMINI_API_KEY_BACKUP_2, or GEMINI_API_KEY_BACKUP_3. No offline curriculum fallback is used by the batch workflow.');
 }
 if ((requestedStart && (!Number.isInteger(Number(requestedStart)) || Number(requestedStart) < 0)) ||
     !Number.isInteger(batchSize) || batchSize < 1 || batchSize > 10) {

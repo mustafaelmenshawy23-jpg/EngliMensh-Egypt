@@ -1,19 +1,17 @@
 import fs from 'node:fs/promises';
 import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
+import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
 
 const required = REQUIRED_MODULE_TYPES;
 const bookId = process.env.BOOK_ID;
 const unitNumber = Number(process.env.UNIT_NUMBER);
 
-const apiKeys = [
-  ['GEMINI_API_KEY', process.env.GEMINI_API_KEY],
-  ['GEMINI_API_KEY_BACKUP', process.env.GEMINI_API_KEY_BACKUP]
-].filter(([, value]) => Boolean(value));
+const apiKeys = getConfiguredGeminiKeys();
 
-// Supported standard models - NEVER default to paid-only or non-existent models
+// Supported standard models - prefer the configured model, then stable Flash fallback.
 let model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-const supportedModels = [...new Set([model, 'gemini-1.5-flash', 'gemini-2.0-flash'])];
+const supportedModels = getSupportedGeminiModels(model);
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 const lessons = JSON.parse(await fs.readFile('src/data/lessons/lessons.draft.json', 'utf8'));
@@ -909,70 +907,93 @@ if (isOfflineFallbackAllowed) {
 
   payload = { candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] };
 } else {
-  // 3. API Invocation with Controlled Resilience
-  const [keyName, apiKey] = apiKeys[0];
+  // 3. API Invocation with key rotation and model fallback.
+  const rejectedKeys = new Set();
+  const quotaLimitedPairs = new Set();
 
+  for (const candidateModel of supportedModels) {
+    model = candidateModel;
+    console.log(`Requesting Gemini model: ${model}`);
+    let modelUnavailable = false;
 
-for (const candidateModel of supportedModels) {
-  model = candidateModel;
-  console.log(`Requesting Gemini model: ${model}`);
-  let modelUnavailable = false;
+    for (const [keyName, apiKey] of apiKeys) {
+      const quotaKey = `${model}:${keyName}`;
+      if (rejectedKeys.has(keyName) || quotaLimitedPairs.has(quotaKey)) continue;
 
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: requestBody,
-        signal: AbortSignal.timeout(120000)
-      });
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: requestBody,
+            signal: AbortSignal.timeout(120000)
+          });
 
-      if (!response.ok) {
-        const detail = (await response.text()).slice(0, 1000);
-        const error = new Error(`Gemini API ${response.status}: ${detail}`);
+          if (!response.ok) {
+            const detail = (await response.text()).slice(0, 1000);
+            const error = new Error(`Gemini API ${response.status}: ${detail}`);
 
-        if (response.status === 401 || (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail))) {
-          throw new Error(`Configured API key (${keyName}) was rejected by Gemini API. Check your GEMINI_API_KEY.`);
+            if (response.status === 401 || (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail))) {
+              rejectedKeys.add(keyName);
+              lastFailure = new Error(`Gemini rejected configured secret ${keyName}; check that GitHub Secret.`);
+              console.warn(`${keyName} was rejected; trying the next configured key.`);
+              break;
+            }
+            if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
+              quotaLimitedPairs.add(quotaKey);
+              lastFailure = new Error(`Gemini quota reached for ${keyName} on ${model}.`);
+              console.warn(`${keyName} reached quota for ${model}; trying another configured key.`);
+              break;
+            }
+            if (![408, 500, 502, 503, 504].includes(response.status)) throw error;
+
+            lastFailure = error;
+            if (response.status === 503 || response.status === 504) modelUnavailable = true;
+          } else {
+            payload = await response.json();
+            selectedKeyName = keyName;
+            selectedModel = model;
+            break;
+          }
+        } catch (error) {
+          lastFailure = error;
+          if (/Gemini rejected configured secret/.test(error.message)) {
+            rejectedKeys.add(keyName);
+            break;
+          }
+          if (/Gemini quota reached/.test(error.message)) {
+            quotaLimitedPairs.add(quotaKey);
+            break;
+          }
+
+          const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
+            error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
+            /Gemini API (408|500|502|503|504)/.test(error.message);
+          if (!retryable) throw error;
+          if (/Gemini API (503|504)/.test(error.message)) modelUnavailable = true;
         }
-        if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
-          throw new Error(`Gemini quota limit reached (429). Stopping without rotating credentials or models: ${error.message}`);
-        }
-        if (![408, 500, 502, 503, 504].includes(response.status)) {
-          throw error;
-        }
 
-        lastFailure = error;
-        if (response.status === 503 || response.status === 504) modelUnavailable = true;
-      } else {
-        payload = await response.json();
-        selectedKeyName = keyName;
-        selectedModel = model;
-        break;
+        if (payload || modelUnavailable || rejectedKeys.has(keyName) || quotaLimitedPairs.has(quotaKey)) break;
+        if (attempt < 3) {
+          const delay = Math.min(20000, 4000 * 2 ** (attempt - 1));
+          console.warn(`Gemini ${model} with ${keyName} attempt ${attempt}/3 failed: ${lastFailure?.message}. Retrying in ${delay / 1000}s...`);
+          await new Promise((resolve) => setTimeout(resolve, delay));
+        }
       }
-    } catch (error) {
-      lastFailure = error;
-      if (/quota limit reached|API key.*rejected/.test(error.message)) throw error;
-      const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
-        error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
-        /Gemini API (408|500|502|503|504)/.test(error.message);
-      if (!retryable) throw error;
-      modelUnavailable = true;
+
+      if (payload || modelUnavailable) break;
     }
 
     if (payload) break;
-    if (attempt < 3) {
-      const delay = Math.min(20000, 4000 * 2 ** (attempt - 1));
-      console.warn(`Gemini ${model} attempt ${attempt}/3 failed: ${lastFailure?.message}. Retrying in ${delay / 1000}s...`);
-      await new Promise((resolve) => setTimeout(resolve, delay));
+    if (modelUnavailable) {
+      console.warn(`Gemini model ${model} unavailable; trying next supported fallback model...`);
+      continue;
     }
   }
 
-  if (payload) break;
-  if (modelUnavailable) {
-    console.warn(`Gemini model ${model} unavailable; trying next supported fallback model...`);
-    continue;
+  if (!payload && rejectedKeys.size === apiKeys.length) {
+    lastFailure = new Error('All configured Gemini API secrets were rejected. Check the GitHub Secrets names and values.');
   }
-}
 }
 
 if (!payload) {
