@@ -515,7 +515,7 @@ function renderPreparatoryGame(words) {
       body = `
         <div class="prep-game-instruction">Choose a mystery box. Read its clue and identify the word.</div>
         <div class="prep-box-grid">${boxes.map((item, i) => `<button data-prep-open-box="${i}" class="${game.opened === i ? 'opened' : ''}">${game.opened === i ? '🔓' : '🎁'}<small>Box ${i + 1}</small></button>`).join('')}</div>
-        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span><p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic || 'Find the matching vocabulary word.')}</p><strong>${escapeHtml(boxes[game.opened]?.word || '')}</strong><button data-prep-game-next>Next challenge</button></div>` : ''}
+        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span><p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic || 'Find the matching vocabulary word.')}</p><div class="prep-game-options">${optionsFor(boxes[game.opened]).map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === boxes[game.opened].word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'You opened the right box!' : 'The answer is ' + escapeHtml(boxes[game.opened].word)}<button data-prep-game-next>Next box</button></div>` : ''}</div>` : ''}
       `;
     } else {
       body = `
@@ -2152,9 +2152,9 @@ function render() {
     render();
   }));
   app.querySelectorAll('[data-prep-game-option]').forEach((button) => button.addEventListener('click', () => {
-    const current = prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)];
+    const current = state.htmlGame.openTarget || prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)]?.word;
     state.htmlGame.selectedOption = button.dataset.prepGameOption;
-    state.htmlGame.feedback = state.htmlGame.selectedOption === current?.word ? 'correct' : 'wrong';
+    state.htmlGame.feedback = state.htmlGame.selectedOption === current ? 'correct' : 'wrong';
     if (state.htmlGame.feedback === 'correct') state.htmlGame.score += 1;
     render();
   }));
@@ -2182,6 +2182,7 @@ function render() {
     state.htmlGame.placed = [];
     state.htmlGame.flipped = false;
     state.htmlGame.opened = null;
+    state.htmlGame.openTarget = null;
     state.htmlGame.feedback = '';
     render();
   }));
@@ -2191,6 +2192,10 @@ function render() {
   });
   app.querySelectorAll('[data-prep-open-box]').forEach((button) => button.addEventListener('click', () => {
     state.htmlGame.opened = Number(button.dataset.prepOpenBox);
+    const openWords = [...prepWords].sort((a, b) => a.word.localeCompare(b.word)).slice(0, Math.min(6, prepWords.length));
+    state.htmlGame.openTarget = openWords[state.htmlGame.opened]?.word || null;
+    state.htmlGame.selectedOption = null;
+    state.htmlGame.feedback = '';
     render();
   }));
   app.querySelector('[data-prep-game-reset]')?.addEventListener('click', () => {
