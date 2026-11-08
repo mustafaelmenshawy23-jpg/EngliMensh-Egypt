@@ -27,7 +27,7 @@ assert.match(main, /studentPhotoCamera/);
 assert.match(main, /data-save-certificate/);
 assert.match(main, /window\.print\(\)/);
 assert.match(main, /printing-target/);
-assert.match(main, /const correctPosition = seed % 4/);
+assert.match(main, /\n\s+const correctPosition = seed % 4;/, 'the shuffled correct position must be executable code, not inside a comment');
 assert.match(styles, /data-student-theme=\"ocean\"/);
 assert.match(styles, /data-student-theme=\"forest\"/);
 assert.match(styles, /data-student-theme=\"lavender\"/);
