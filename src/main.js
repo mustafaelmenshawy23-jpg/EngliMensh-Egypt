@@ -2658,7 +2658,7 @@ function render() {
     if (!card || button.disabled) return;
     const studentName = card.querySelector('.certificate-text h2')?.textContent?.trim() || 'Student';
     const unitName = card.querySelector('.certificate-text .certificate-unit')?.textContent?.trim() || 'Certificate';
-    const safeName = (studentName + '_' + unitName).replace(/[^\\p{L}\\p{N}_-]+/gu, '_').replace(/^_+|_+$/g, '').slice(0, 90) || 'EngliMensh_Certificate';
+    const safeName = (studentName + '_' + unitName).replace(/[^A-Za-z0-9\u0600-\u06FF_-]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 90) || 'EngliMensh_Certificate';
     const originalLabel = button.textContent;
     let exportCard = null;
     button.disabled = true;
