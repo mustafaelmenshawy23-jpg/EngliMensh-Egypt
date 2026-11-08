@@ -14,15 +14,15 @@ An independent English-learning application for the Egyptian national curriculum
   - General: Connect
   - Advanced: Connect Plus
 - Preparatory: Grades 1–3
-  - General: New Hello
-  - Advanced: reserved and empty until source books are supplied
+  - General: New Hello (owner-supplied HTML import)
+  - Advanced: New Hello Plus (owner-supplied HTML import)
 - Secondary: Grades 1–3
   - General: General Secondary
   - Advanced: reserved and empty until source books are supplied
 - Egyptian Baccalaureate: separate standalone pathway, reserved and empty until source books are supplied
 
 ## Source books
-The repository's `public/books/` folder contains the uploaded PDF source set. Original filenames are preserved. Do not assume a filename alone proves grade, term, or official curriculum alignment; verify those details from the book itself.
+The repository's `public/books/` folder contains the uploaded PDF source set. Original filenames are preserved. Preparatory HTML source files supplied by the project owner are stored separately under `content-imports/preparatory/` and are retained unchanged. Do not assume a filename alone proves grade, term, or official curriculum alignment; verify those details from the source itself. Imported HTML content remains pending app integration and academic/answer-key verification until those checks are completed.
 
 ## Extract and validate books
 The local extraction pipeline indexes text page by page without inventing missing content:
@@ -36,7 +36,8 @@ npm run validate:extraction
 See [the extraction workflow](docs/BOOK_EXTRACTION_WORKFLOW.md) for Git LFS hydration, output fields, OCR flags, and academic review rules. You can also run the GitHub Actions workflow **Extract source books** manually from the Actions tab; it hydrates Git LFS PDFs, extracts page text, validates source references, and publishes a 14-day artifact. It does not modify the repository or approve extracted content.
 
 ## Repository layout
-- `public/books/` — source PDF books
+- `public/books/` — original source PDF books (immutable)
+- `content-imports/preparatory/` — owner-supplied New Hello and New Hello Plus HTML source files (preserved unchanged)
 - `src/data/curriculum/` — curriculum pathway definitions
 - `src/data/extracted/` — generated page-level text and manifest
 - `src/data/review/` — candidate structures awaiting academic verification
