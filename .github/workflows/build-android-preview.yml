@@ -16,7 +16,7 @@ jobs:
   validate-preparatory:
     if: github.ref == 'refs/heads/feature/preparatory-native-curriculum'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - name: Checkout preparatory curriculum sources
         uses: actions/checkout@v4
@@ -32,11 +32,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install OCR system dependencies
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-ara tesseract-ocr-eng
       - name: Install dependencies
         run: npm install
       - name: Extract source-book text with physical PDF page references
         if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
         run: npm run extract:books
+      - name: OCR scanned preparatory books in English and Arabic
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
+        run: |
+          python3 -m py_compile scripts/ocr-preparatory-books.py
+          python3 scripts/ocr-preparatory-books.py
       - name: Upload preparatory source-page extraction for academic mapping
         if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
         uses: actions/upload-artifact@v4
@@ -45,6 +55,8 @@ jobs:
           path: |
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
+            src/data/extracted/preparatory-ocr-pages.jsonl
+            src/data/extracted/preparatory-ocr-manifest.json
           if-no-files-found: error
           retention-days: 14
       - name: Run application tests and preparatory source audit
