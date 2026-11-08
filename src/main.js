@@ -603,6 +603,12 @@ function renderImportedPrimaryCurriculum() {
   const grade = track?.grades.find((item) => item.grade === state.grade);
   if (!grade) return '';
   const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
+  // Render the unit list before accessing any unit-specific fields.
+  // On a fresh launch there is no selected unit yet.
+  if (!unit) {
+    return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
+      grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
+  }
   const unitWords = unit?.vocabulary || [];
   const choiceOptions = (answer, index = 0, limit = 4) => {
     const pool = unitWords.map((item) => item.en).filter((word) => word && word.toLowerCase() !== String(answer).toLowerCase());
