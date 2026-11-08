@@ -2824,3 +2824,28 @@ body{background:radial-gradient(circle at top,#fffaf0 0,#f3eee3 58%,#e9dfcc 100%
 .favorite-unit-button{border:1px solid #c49a50;border-radius:999px;padding:8px 12px;background:#fff5df;color:#17365f;font-weight:800;cursor:pointer}
 :root[data-student-theme="light"]{--bg-app:#f8f9fc;--bg-surface:#fff;--bg-card:#fff;--text-primary:#26374e}
 :root[data-student-theme="light"] body{background:#f5f7fb}
+
+
+/* Four complete student themes with responsive, wrapped word-builder tiles. */
+:root[data-student-theme="classic"]{--brand-navy:#17365f;--brand-teal:#b68a3a;--bg-app:#f3eee3;--bg-surface:#fffaf0;--bg-subtle:#f8f1e4;--bg-card:#fffaf0;--border-line:#dfd1b8;--text-primary:#27364a;--text-secondary:#687487}
+:root[data-student-theme="ocean"]{--brand-navy:#12466b;--brand-teal:#2b9bb5;--bg-app:#eaf4f8;--bg-surface:#f8fdff;--bg-subtle:#e4f1f6;--bg-card:#f8fdff;--border-line:#c4dce5;--text-primary:#17384b;--text-secondary:#547184}
+:root[data-student-theme="forest"]{--brand-navy:#24543d;--brand-teal:#6b9b58;--bg-app:#edf3e9;--bg-surface:#fbfdf8;--bg-subtle:#e8f0e2;--bg-card:#fbfdf8;--border-line:#cddbc4;--text-primary:#294333;--text-secondary:#647b68}
+:root[data-student-theme="lavender"]{--brand-navy:#51416f;--brand-teal:#9a83c5;--bg-app:#f1edf7;--bg-surface:#fdfbff;--bg-subtle:#eee8f5;--bg-card:#fdfbff;--border-line:#d8cee6;--text-primary:#403650;--text-secondary:#756b85}
+:root[data-student-theme] body{background:var(--bg-app)}
+:root[data-student-theme] .topbar{background:var(--brand-navy);border-bottom-color:var(--brand-teal)}
+:root[data-student-theme] .brand-mark{background:var(--brand-teal);color:#fff}
+:root[data-student-theme] .panel,:root[data-student-theme] .content-panel,:root[data-student-theme] .library-section,:root[data-student-theme] .book-card,:root[data-student-theme] .student-hub{background:var(--bg-surface);border-color:var(--border-line);color:var(--text-primary)}
+:root[data-student-theme] .stage-card,:root[data-student-theme] .grade-button,:root[data-student-theme] .path-button,:root[data-student-theme] .student-profile-option,:root[data-student-theme] .student-hub-tabs button{background:var(--bg-card);border-color:var(--border-line);color:var(--text-primary)}
+:root[data-student-theme] .stage-card.active,:root[data-student-theme] .grade-button.active,:root[data-student-theme] .path-button.active,:root[data-student-theme] .student-hub-tabs button.active{background:var(--brand-navy);border-color:var(--brand-teal);color:#fff}
+:root[data-student-theme] .section-heading h2,:root[data-student-theme] .selection-row h2,:root[data-student-theme] .content-copy h2,:root[data-student-theme] .library-heading h2,:root[data-student-theme] .student-hub-heading h2{color:var(--brand-navy)}
+:root[data-student-theme] .student-hub-stats article,:root[data-student-theme] .profile-curricula-note,:root[data-student-theme] .creator-card{background:var(--bg-subtle);border-color:var(--border-line);color:var(--text-primary)}
+:root[data-student-theme] .classic-primary-button{background:var(--brand-navy);box-shadow:0 4px 0 var(--brand-teal)}
+:root[data-student-theme] .profile-gate{background:linear-gradient(160deg,var(--brand-navy) 0 22%,var(--bg-app) 22% 100%)}
+.profile-edit-form{display:grid;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border-line)}
+.profile-edit-form h3{margin:0;color:var(--brand-navy)}
+.profile-edit-form label{display:grid;gap:6px;color:var(--text-secondary);font-size:12px;font-weight:800}
+.profile-edit-form input,.profile-edit-form select{width:100%;min-height:42px;border:1px solid var(--border-line);border-radius:10px;padding:8px 10px;background:var(--bg-card);color:var(--text-primary);font:inherit}
+.word-builder-slots,.word-builder-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(42px,1fr));gap:8px;width:100%;max-width:520px;margin-inline:auto}
+.builder-tile,.builder-slot{min-width:0;min-height:50px;font-size:clamp(18px,4vw,25px);touch-action:manipulation}
+.certificate-pdf-button{position:absolute;z-index:5;top:8px;right:8px;border:0;border-radius:8px;padding:8px 10px;background:var(--brand-navy);color:#fff;font-weight:800;cursor:pointer}
+@media print{@page{size:A4 portrait;margin:8mm}body.printing-certificate *{visibility:hidden!important}body.printing-certificate .certificate-card,body.printing-certificate .certificate-card *{visibility:visible!important}body.printing-certificate .certificate-card{position:absolute;left:0;top:0;width:100%;max-width:none;aspect-ratio:1189/1600;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}body.printing-certificate .certificate-pdf-button{display:none!important}}
