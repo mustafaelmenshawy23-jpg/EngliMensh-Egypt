@@ -1,5 +1,7 @@
 # Repository-wide inventory and pipeline audit — 7 November 2026
 
+> **Historical snapshot — superseded on 8 November 2026.** The counts and inventory below describe the 7 November audit and should not be used as the current totals. The current verified inventory is 34 indexed books, 34 PDF files, and 118 indexed units (78 official student-book units and 40 commercial-supplement units). See [the current coverage report](CURRICULUM_COVERAGE_STATUS_2026-11-08.md) and [the live unit scaffold index](../src/data/lessons/unit-modules.draft.json) for the reconciled status.
+
 **Repository scope:** `mustafaelmenshawy23-jpg/EngliMensh-Egypt` only.  
 **Default branch:** `main`.  
 **Audit baseline before this commit:** `993bda1b0697b01cf769b2fbea2782c474de752d`.  
