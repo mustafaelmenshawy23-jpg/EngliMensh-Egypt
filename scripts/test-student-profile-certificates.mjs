@@ -11,6 +11,7 @@ assert.match(main, /paths:\(form\.elements\.studentStage\.value === 'primary' \?
 assert.match(main, /attempted === questions\.length && score >= 90/);
 assert.doesNotMatch(main, /certificate-teacher-photo/, 'teacher portrait is already embedded in certificate artwork');
 assert.match(main, /certificate-student-photo/);
+assert.doesNotMatch(main, /<h3>Certificate of Excellence<\\/h3>/, 'certificate title is already part of the artwork and must not be repeated');
 assert.match(main, /data-student-hub/);
 assert.match(main, /data-favorite-current/);
 assert.match(main, /data-student-theme/);
