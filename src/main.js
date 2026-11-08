@@ -451,7 +451,7 @@ function renderPreparatoryVocabulary(words) {
             ${item.definition ? `<p>${escapeHtml(item.definition)}</p>` : ''}
             ${item.example ? `<div class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</div>` : ''}
             <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Listen</button>
-            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>${item.licenseUrl ? ` <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License</a>` : ''}` : ''}
+            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.creator || item.attribution || 'Creator credit on source page')} · ${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>${item.licenseUrl ? ` <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License</a>` : ''}` : ''}
           </article>
         `).join('')}
       </div>
