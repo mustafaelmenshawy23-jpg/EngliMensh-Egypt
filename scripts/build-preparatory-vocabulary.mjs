@@ -147,7 +147,10 @@ for (const file of files) {
 for (const unit of Object.values(registry)) for (const item of unit.words) if (!item.svg && !pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
 const imageWords = [...pendingImages.values()];
 let downloaded = 0, missing = 0;
-if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {\n  for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);\n  missing = imageWords.length;\n} else await mapLimit(imageWords, 1, async (word, index) => {
+if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {
+  for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
+  missing = imageWords.length;
+} else await mapLimit(imageWords, 1, async (word, index) => {
   try { if (index > 0) await new Promise((resolve) => setTimeout(resolve, 1100));
     const result = await findOpenverseImage(word); pendingImages.set(word.toLowerCase(), result); if (result) downloaded += 1; else missing += 1; }
   catch (error) { pendingImages.set(word.toLowerCase(), null); missing += 1; console.warn('Image lookup failed for', word, error.message); }
