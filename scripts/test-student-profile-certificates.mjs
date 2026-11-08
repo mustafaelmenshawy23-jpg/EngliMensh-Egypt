@@ -23,3 +23,4 @@ assert.ok(existsSync(new URL('../public/assets/certificate-template.jpeg', impor
 assert.ok(existsSync(new URL('../public/assets/teacher-portrait.jpeg', import.meta.url)), 'teacher portrait asset is missing');
 assert.ok(packageJson.scripts.test.includes('test-student-profile-certificates.mjs'));
 console.log('Student profiles, curriculum separation, certificate threshold, portraits, and student hub checks passed.');
+// Keep this test in the latest workflow run after build-pipeline maintenance.
