@@ -239,7 +239,7 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     sectionsByType.set(section.type, section);
   }
 
-  // Check all required 8 sections exist
+  // Check all required 9 sections exist
   for (const reqType of REQUIRED_MODULE_TYPES) {
     if (!sectionsByType.has(reqType)) {
       criticalFailures.push(`Missing required section: ${reqType}`);
@@ -336,12 +336,43 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
       } else if (sectionType === 'speaking') {
         const c = item.content || {};
         if (Array.isArray(c.dialogue) && c.dialogue.length >= 2) {
+          for (const [turnIndex, turn] of c.dialogue.entries()) {
+            if (!turn.speaker || !turn.text) {
+              criticalFailures.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} is missing speaker or text`);
+            }
+            if (!['male', 'female', 'unknown'].includes(turn.speakerGender)) {
+              warnings.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} has no verified speakerGender metadata`);
+            } else if (turn.speakerGender === 'unknown') {
+              warnings.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} gender is unknown; no gender-matched TTS voice can be assumed`);
+            }
+          }
           sectionReports[sectionType].validItems++;
         } else if (c.instruction) {
           sectionReports[sectionType].validItems++;
         } else {
           warnings.push(`Speaking item ${item.itemId} has minimal dialogue structure`);
         }
+      } else if (sectionType === 'games') {
+        const c = item.content || {};
+        if (!c.gameName || !c.description) {
+          criticalFailures.push(`Game item ${item.itemId} is missing gameName or description`);
+        }
+        if (c.origin !== 'supplementary') {
+          criticalFailures.push(`Game item ${item.itemId} must be labelled supplementary`);
+        }
+        if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+          criticalFailures.push(`Game item ${item.itemId} has an invalid supporting PDF page`);
+        }
+        if (!['vocabulary', 'grammar', 'reading', 'listening', 'speaking'].includes(c.skill)) {
+          warnings.push(`Game item ${item.itemId} has no supported skill classification`);
+        }
+        if (!['easy', 'medium', 'challenging'].includes(c.difficulty)) {
+          warnings.push(`Game item ${item.itemId} has no supported difficulty classification`);
+        }
+        if (!['matching', 'multiple_choice', 'ordering', 'listening_choice', 'role_play', 'word_builder'].includes(c.gameMode)) {
+          warnings.push(`Game item ${item.itemId} has no supported game mode`);
+        }
+        sectionReports[sectionType].validItems++;
       }
     }
   }
@@ -353,7 +384,7 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     (sectionsByType.get('comprehensive_test')?.items?.length || 0);
 
   if (totalItems === 0) {
-    criticalFailures.push('Unit draft is completely empty across all 8 modules');
+    criticalFailures.push('Unit draft is completely empty across all 9 modules');
   } else if (questionsTotal === 0 && sourceItemCount > 0) {
     criticalFailures.push('Draft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)');
   }
