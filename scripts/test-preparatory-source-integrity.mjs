@@ -27,7 +27,7 @@ for (const grade of [1, 2, 3]) {
   assert.ok(Array.from({ length: 6 }, (_, i) => names.includes(`Prep_${grade}_New_Hello_Plus_Unit_${i + 1}.html`)).every(Boolean), `New Hello Plus source coverage exists for Prep ${grade}.`);
 }
 
-assert.ok(!/<iframe\b/i.test(main), 'The shipped app must not embed imported HTML in an iframe.');
+assert.ok(!/<iframe\b[^>]*src=["'][^"']*\.html(?:[?#][^"']*)?["']/i.test(main), 'The shipped app must not embed imported HTML documents in an iframe. PDF source previews remain permitted.');
 assert.ok(!/content-imports\/preparatory\/.*\.html/i.test(main), 'The shipped app must not load HTML source documents directly.');
 
 const prep2u1 = await readFile(path.join(sourceRoot, 'new-hello/Prep_2_New_Hello_Unit_1_Complete.html'), 'utf8');
