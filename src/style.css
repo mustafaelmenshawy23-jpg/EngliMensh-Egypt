@@ -2785,3 +2785,22 @@ body{background:radial-gradient(circle at top,#fffaf0 0,#f3eee3 58%,#e9dfcc 100%
 @media(max-width:600px){.topbar{padding:0 12px;height:68px}.profile-switch-btn{padding:7px 8px;font-size:9px}.country-tag{padding:6px 8px;font-size:8px}.profile-picker-card{padding:18px}}
 
 .profile-curricula-note{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px;border:1px solid #dfd1b8;border-radius:12px;background:#f8f0df;color:#17365f}.profile-curricula-note strong{width:100%;font-size:12px}.profile-curricula-note span{padding:6px 10px;border-radius:999px;background:#17365f;color:#fff8e8;font-size:12px;font-weight:800}.profile-curricula-note small{width:100%;color:#697487}
+
+
+/* Certificate uses the exact uploaded navy-and-gold artwork. The teacher portrait is
+   already part of that artwork; the student's portrait fills the right-hand frame. */
+.certificate-card{position:relative;width:min(100%,680px);margin:24px auto;padding:0;aspect-ratio:2/3;background:#fff url('/assets/certificate-template.jpeg') center/100% 100% no-repeat;overflow:hidden;color:#17365f;text-align:center;box-shadow:0 12px 28px rgba(23,54,95,.16)}
+.certificate-student-photo{position:absolute;left:56.8%;top:10.2%;width:24.8%;aspect-ratio:1;border-radius:50%;overflow:hidden;display:grid;place-items:center;color:#9a7639;font-family:Georgia,serif;font-size:clamp(10px,2vw,18px);background:#fffaf0}
+.certificate-student-photo img{width:100%;height:100%;object-fit:cover}
+.certificate-text{position:absolute;left:11%;right:11%;top:35%;display:flex;flex-direction:column;align-items:center;gap:clamp(3px,.7vw,9px);font-family:Georgia,serif}
+.certificate-text p{margin:0;color:#314564;font-size:clamp(9px,1.65vw,15px)}
+.certificate-text h3{margin:0;color:#17365f;font-size:clamp(17px,3.2vw,30px)}
+.certificate-text h2{margin:2px 0;color:#9a7639;font-size:clamp(19px,3.7vw,34px);overflow-wrap:anywhere}
+.certificate-text .certificate-unit{font-size:clamp(13px,2.5vw,23px)}
+.certificate-score{margin:2px 0;color:#9a7639;font-size:clamp(18px,3vw,28px)}
+.certificate-text .certificate-message{max-width:90%;font-style:italic}
+.certificate-text small{color:#52617a;font-size:clamp(8px,1.35vw,12px)}
+.certificate-kicker{letter-spacing:1.5px;font-weight:700}
+.certificate-progress-card{margin:20px 0;padding:18px;border:1px solid #dfd1b8;border-radius:14px;background:#fffaf0;color:#314564}
+.certificate-progress-card h3{margin-top:0;color:#17365f}
+@media(max-width:420px){.certificate-text{top:34%;gap:3px}.certificate-text p{font-size:8px}.certificate-text h3{font-size:16px}.certificate-text h2{font-size:18px}.certificate-text .certificate-unit{font-size:12px}.certificate-score{font-size:17px}}
