@@ -774,9 +774,11 @@ function renderUnitWorkspace() {
   const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3) && Boolean(activeUnitDraft);
 
   // Clear, named learning areas. Speaking is included because Unit 1 has a verified role-play.
-  const sixSections = [
+  const unitSections = [
     { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pictures & pronunciation', icon: 'Aa', draftType: 'vocabulary' },
-    { type: 'grammar', title: 'Grammar', subtitle: 'Rules and classroom language', icon: '文', draftType: 'grammar' },
+    { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'Practise the unit words', icon: '✎', draftType: 'vocabulary_questions' },
+    { type: 'grammar', title: 'Grammar', subtitle: 'Rules and examples', icon: '文', draftType: 'grammar' },
+    { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'Practise the unit grammar', icon: '✓', draftType: 'grammar_questions' },
     { type: 'reading', title: 'Reading', subtitle: 'Read source passages and answer questions', icon: '▤', draftType: 'reading' },
     { type: 'listening', title: 'Listening', subtitle: 'Listen, replay and answer', icon: '♫', draftType: 'listening' },
     { type: 'speaking', title: 'Speaking', subtitle: 'Practise the dialogue aloud', icon: '🎤', draftType: 'speaking' },
@@ -792,7 +794,7 @@ function renderUnitWorkspace() {
 
   // SECTION SCREEN (When a student opens an independent section)
   if (state.activeModule) {
-    const secDef = sixSections.find((s) => s.type === state.activeModule) || sixSections[0];
+    const secDef = unitSections.find((s) => s.type === state.activeModule) || sixSections[0];
     let bodyHtml = '';
 
     if (isP1U2U3 && activeUnitDraft) {
@@ -819,6 +821,10 @@ function renderUnitWorkspace() {
           <h3 class="module-subheading">Vocabulary practice</h3>
           ${renderQuestionGroup(vocabularyQuestions, 'vocabulary_questions')}
         `;
+      } else if (state.activeModule === 'vocabulary_questions') {
+        bodyHtml = renderQuestionGroup(vocabularyQuestions, 'vocabulary_questions');
+      } else if (state.activeModule === 'grammar_questions') {
+        bodyHtml = renderQuestionGroup(grammarQuestions, 'grammar_questions');
       } else if (state.activeModule === 'grammar') {
         bodyHtml = `
           <div class="grammar-lessons-container">
@@ -1027,6 +1033,12 @@ function renderUnitWorkspace() {
             </div>
           `}
         `;
+      } else if (state.activeModule === 'vocabulary_questions') {
+        const questions = p1u1Draft.sections.find((section) => section.type === 'vocabulary_questions')?.items || [];
+        bodyHtml = `<div class="quiz-summary-pill">Vocabulary practice · ${questions.length} questions</div><div class="questions-stack">${questions.map((q, idx) => renderStudentQuestionCard(q, idx, 'vocabulary_questions')).join('')}</div>`;
+      } else if (state.activeModule === 'grammar_questions') {
+        const questions = p1u1Draft.sections.find((section) => section.type === 'grammar_questions')?.items || [];
+        bodyHtml = `<div class="quiz-summary-pill">Grammar practice · ${questions.length} questions</div><div class="questions-stack">${questions.map((q, idx) => renderStudentQuestionCard(q, idx, 'grammar_questions')).join('')}</div>`;
       } else if (state.activeModule === 'reading') {
         const readSec = p1u1Draft.sections.find((s) => s.type === 'reading');
         const items = readSec?.items || [];
@@ -1325,9 +1337,9 @@ function renderUnitWorkspace() {
               </article>`;
             }).join('')}
           </div>
-          <h3 class="module-subheading">Vocabulary questions</h3>
-          ${renderQuestionGroup(getItems('vocabulary_questions'), 'vocabulary_questions')}
         `;
+      } else if (state.activeModule === 'vocabulary_questions') {
+        bodyHtml = renderQuestionGroup(getItems('vocabulary_questions'), 'vocabulary_questions', 'Vocabulary question');
       } else if (state.activeModule === 'grammar') {
         const rules = getItems('grammar');
         bodyHtml = `
@@ -1342,9 +1354,9 @@ function renderUnitWorkspace() {
               </article>`;
             }).join('')}
           </div>
-          <h3 class="module-subheading">Grammar questions</h3>
-          ${renderQuestionGroup(getItems('grammar_questions'), 'grammar_questions')}
         `;
+      } else if (state.activeModule === 'grammar_questions') {
+        bodyHtml = renderQuestionGroup(getItems('grammar_questions'), 'grammar_questions', 'Grammar question');
       } else if (state.activeModule === 'reading') {
         const passages = getItems('reading').filter((item) => item.content?.passage || item.content?.dialogue);
         const questions = getItems('reading').filter((item) => item.content?.question);
@@ -1479,6 +1491,14 @@ function renderUnitWorkspace() {
       const count = countAnswered(vocabQ);
       return `24 Words · ${count}/${vocabQ.length} Practice Qs`;
     }
+    if (secType === 'vocabulary_questions') {
+      const items = p1u1Draft.sections.find((section) => section.type === 'vocabulary_questions')?.items || [];
+      return `${countAnswered(items)}/${items.length} answered`;
+    }
+    if (secType === 'grammar_questions') {
+      const items = p1u1Draft.sections.find((section) => section.type === 'grammar_questions')?.items || [];
+      return `${countAnswered(items)}/${items.length} answered`;
+    }
     if (secType === 'grammar') {
       const gramQ = p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || [];
       const count = countAnswered(gramQ);
@@ -1526,7 +1546,7 @@ function renderUnitWorkspace() {
     ? Math.min(100, Math.round((totalAnswered / totalQuestions) * 100))
     : 0;
 
-  const sectionCards = sixSections.map((sec) => `
+  const sectionCards = unitSections.map((sec) => `
     <button type="button" class="unit-section-card" data-open-section="${sec.type}" aria-label="Open ${sec.title}">
       <span class="section-card-icon" aria-hidden="true">${sec.icon}</span>
       <div class="section-card-copy">
