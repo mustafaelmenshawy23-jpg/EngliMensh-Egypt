@@ -1342,13 +1342,6 @@ function getWordBuilderWords() {
 
 function renderGame2WordBuilder() {
   const wordsData = getWordBuilderWords();
-    { target: 'tiger', arabic: 'نمر', icon: '🐯' },
-    { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
-    { target: 'table', arabic: 'طاولة', icon: '🪑' },
-    { target: 'tree', arabic: 'شجرة', icon: '🌳' },
-    { target: 'ink', arabic: 'حبر', icon: '🖋️' },
-    { target: 'insect', arabic: 'حشرة', icon: '🐛' }
-  ];
   const { index, placed, score, checkResult } = state.game2;
   const current = wordsData[index];
   if (!current) {
