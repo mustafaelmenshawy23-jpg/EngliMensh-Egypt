@@ -56,8 +56,11 @@ if (draft.datasetStatus !== 'draft' || !['needs_review', 'ready_for_teacher_revi
 if (draft.bookId !== bookId || draft.unitNumber !== unitNumber || draft.sourceFilename !== book.sourceFile) {
   throw new Error('Draft source metadata does not match the indexed book and unit.');
 }
-if (draft.sourceFingerprint !== sourceFingerprint) {
+if (draft.sourceFingerprint && draft.sourceFingerprint !== sourceFingerprint) {
   throw new Error('Source fingerprint changed since generation. Regenerate this unit before approval.');
+}
+if (!draft.sourceFingerprint) {
+  console.warn('Legacy draft has no stored source fingerprint. The current source fingerprint will be stamped only after the required manual visual review and full quality validation.');
 }
 if (draft.sourcePdfRange?.start !== start || draft.sourcePdfRange?.end !== end) {
   throw new Error('Draft PDF range does not match the current verified unit boundaries.');
@@ -81,6 +84,7 @@ if (draft.sections.some((section) => !Array.isArray(section.items) || section.it
 const reviewedAt = new Date().toISOString();
 const approved = {
   ...draft,
+  sourceFingerprint,
   datasetStatus: 'approved',
   reviewStatus: 'approved',
   reviewedBy: reviewerName,

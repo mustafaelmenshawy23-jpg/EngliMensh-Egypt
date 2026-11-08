@@ -7,3 +7,5 @@ Only unit JSON files that passed source-linked quality validation and a manual v
 - The workflow requires a reviewer name and an explicit visual-review confirmation.
 - The approval script rechecks the source fingerprint, PDF range, source coverage, nine-section schema, answer keys, and item provenance before copying the approved version here.
 - The student application imports only JSON files from this folder.
+
+Legacy drafts without a stored source fingerprint are not silently trusted: the approval workflow requires a current source-page fingerprint, full automated validation, a reviewer name, and explicit visual-review confirmation before stamping the fingerprint into the approved copy.
