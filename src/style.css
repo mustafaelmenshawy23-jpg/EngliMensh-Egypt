@@ -2659,3 +2659,48 @@ button:disabled{opacity:.55;cursor:not-allowed}
   font-weight: 900;
   text-transform: uppercase;
 }
+
+
+/* Explicitly configurable speaker voices for dialogue playback. */
+.speaker-voice-settings {
+  display: grid;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid #dce4f1;
+  border-radius: 13px;
+  background: #f7f9ff;
+}
+.speaker-voice-settings > strong {
+  color: #17365f;
+  font-size: 13px;
+}
+.speaker-voice-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.speaker-voice-choice {
+  display: grid;
+  gap: 6px;
+  color: #405477;
+  font-size: 12px;
+  font-weight: 800;
+}
+.speaker-voice-choice select {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #cbd7e9;
+  border-radius: 9px;
+  background: #fff;
+  color: #17365f;
+  font: inherit;
+}
+.speaker-voice-settings small {
+  color: #5a6d8d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+@media(max-width:600px) {
+  .speaker-voice-controls { grid-template-columns: 1fr; }
+}
