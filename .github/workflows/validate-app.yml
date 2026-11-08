@@ -26,6 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: Prepare official PWA icons from the selected source artwork
+        run: |
+          python -m pip install --disable-pip-version-check Pillow
+          python -m py_compile scripts/prepare-app-icons.py
+          python scripts/prepare-app-icons.py --web
 
       - name: Validate source-book index and original PDFs
         run: npm run validate:source-index
