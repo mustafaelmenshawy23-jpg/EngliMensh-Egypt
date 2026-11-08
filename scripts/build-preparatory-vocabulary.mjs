@@ -145,11 +145,11 @@ async function buildSectionViewers(files) {
     '  }',
     '})();',
     '</script>'
-  ].join('\\n');
+  ].join('\n');
   for (const file of files) {
     const source = await fs.readFile(file, 'utf8');
-    const marker = /<\\/body>/i;
-    const output = marker.test(source) ? source.replace(marker, enhancement + '\\n</body>') : source + enhancement;
+    const marker = /<\/body>/i;
+    const output = marker.test(source) ? source.replace(marker, enhancement + '\n</body>') : source + enhancement;
     await fs.writeFile(path.join(outputDir, path.basename(file)), output);
   }
   console.log('Built section-aware lesson viewer copies:', files.length);
