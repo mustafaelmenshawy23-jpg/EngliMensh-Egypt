@@ -26,6 +26,10 @@ The 34 source PDFs remain original Git LFS files. The index includes the previou
 
 Books currently present in the index but without unit records are: Connect Plus Primary 5 and Hello Plus Preparatory 2 (their contents/unit pages still need indexing), the Baccalaureate Year 1 reader (chapters not yet indexed), and all nine assessment books (book-level exam sources, not lesson units).
 
+### OCR candidate pages (not yet verified)
+
+A separate [unit page-boundary candidate file](../data/curriculum/unit-page-boundary-candidates.draft.json) now records 19 candidate PDF pages found in the 5 November extraction artifact. These are explicitly marked `needs_visual_review`; they do not change the source index, and the generator still refuses to use them. Two Baccalaureate Part 1 title pages were OCR-empty/manual-review pages, and the Primary 3/Hello Plus candidates also need a visual check of the exact first page.
+
 ### Unit-page blockers
 
 **19 units with no verified start page**
