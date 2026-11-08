@@ -1127,7 +1127,7 @@ const gameRegistry = {
         { title: '🧠 Word Detective', renderer: renderGame1Matching },
         { title: '🧩 Sentence Builder', renderer: renderGame2WordBuilder },
         { title: '🎧 Listening Challenge', renderer: renderGame3ListenChoose },
-        { title: '🏆 Meaning Challenge', renderer: renderGame4CommandsChallenge }
+        { title: '🏆 Meaning Challenge', renderer: renderGame4MeaningChallenge }
       ]
     }
   },
@@ -1391,6 +1391,72 @@ function renderGame3ListenChoose() {
           <div class="listen-feedback ${selectedOption === current.target ? 'correct' : 'wrong'}">
             <p>${selectedOption === current.target ? '✔ Correct! You recognized the word.' : `✘ Try again next round!`}</p>
             <button type="button" class="next-word-btn" data-listen-next>Next Round ›</button>
+          </div>
+        ` : ''}
+      </div>
+    </article>
+  `;
+}
+
+function renderGame4MeaningChallenge() {
+  const importedWords = getPrimaryGameWords(4);
+  const rounds = importedWords?.length ? importedWords.map((item) => ({
+    target: item.target,
+    meaning: item.arabic,
+    options: importedWords
+      .map((choice) => choice.arabic)
+      .filter((meaning, index, all) => meaning && all.indexOf(meaning) === index)
+      .sort((a, b) => a.localeCompare(b, 'ar'))
+  })) : [
+    { target: 'brave', meaning: 'شجاع', options: ['شجاع', 'سعيد', 'سريع', 'هادئ'] },
+    { target: 'careful', meaning: 'حذر', options: ['قوي', 'حذر', 'طويل', 'جميل'] },
+    { target: 'journey', meaning: 'رحلة', options: ['مدينة', 'رحلة', 'حديقة', 'مدرسة'] },
+    { target: 'protect', meaning: 'يحمي', options: ['يكتشف', 'يساعد', 'يحمي', 'يتعلم'] }
+  ];
+  const { index, score, selectedOption } = state.game4;
+  const current = rounds[index];
+  if (!current) {
+    return `
+      <article class="interactive-game-container">
+        <div class="game-victory-card">
+          <h3>🎉 Meaning Challenge Complete!</h3>
+          <p>You matched the English words with their Arabic meanings. Score: <strong>${score} / ${rounds.length}</strong></p>
+          <button type="button" class="game-reset-btn" data-reset-game="4">Play Again</button>
+        </div>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="interactive-game-container">
+      <div class="game-header">
+        <span class="game-badge">GAME 4 OF 4</span>
+        <h4>🏆 Meaning Challenge</h4>
+        <p>Read the English word and choose its correct meaning in Arabic.</p>
+      </div>
+      <div class="game-score-bar">Word <strong>${index + 1} / ${rounds.length}</strong> · Score: <strong>${score}</strong></div>
+      <div class="commands-game-card">
+        <div class="command-prompt-box meaning-prompt-box">
+          <span class="meaning-word-label">What does this word mean?</span>
+          <strong class="meaning-english-word" dir="ltr">${escapeHtml(current.target)}</strong>
+          <button type="button" class="tts-play-btn" data-tts-text="${escapeHtml(current.target)}">🔊 Listen to the word</button>
+        </div>
+        <div class="command-options-grid meaning-options-grid" dir="rtl">
+          ${current.options.map((opt) => {
+            const isChosen = selectedOption === opt;
+            const isRight = opt === current.meaning;
+            const optClass = selectedOption ? (isRight ? 'is-correct' : isChosen ? 'is-wrong' : '') : '';
+            return `
+              <button type="button" class="command-action-card meaning-option-card ${optClass}" data-meaning-choose="${escapeHtml(opt)}" ${selectedOption ? 'disabled' : ''}>
+                <span class="action-title" dir="rtl">${escapeHtml(opt)}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+        ${selectedOption ? `
+          <div class="command-feedback ${selectedOption === current.meaning ? 'correct' : 'wrong'}">
+            <p>${selectedOption === current.meaning ? '✔ Correct! Well done.' : '✘ Not quite. The correct meaning is: ' + escapeHtml(current.meaning)}</p>
+            <button type="button" class="next-word-btn" data-meaning-next>Next Word ›</button>
           </div>
         ` : ''}
       </div>
@@ -2717,7 +2783,7 @@ function render() {
     render();
   });
 
-  // Game 4 Classroom Commands Listeners
+  // Game 4 Classroom Commands (Grades 1-3)
   app.querySelectorAll('[data-command-choose]').forEach((btn) => btn.addEventListener('click', () => {
     if (!state.game4.selectedOption) {
       const chosen = btn.dataset.commandChoose;
@@ -2731,6 +2797,26 @@ function render() {
     }
   }));
   app.querySelector('[data-command-next]')?.addEventListener('click', () => {
+    if (state.game4.index < 4) state.game4.index += 1;
+    state.game4.selectedOption = null;
+    saveProgressToStorage();
+    render();
+  });
+
+  // Game 4 Meaning Challenge (Grades 4-6): English prompt, Arabic answer choices.
+  app.querySelectorAll('[data-meaning-choose]').forEach((btn) => btn.addEventListener('click', () => {
+    if (!state.game4.selectedOption) {
+      const chosen = btn.dataset.meaningChoose;
+      state.game4.selectedOption = chosen;
+      const meanings = getPrimaryGameWords(4)?.map((item) => item.arabic) || ['شجاع', 'حذر', 'رحلة', 'يحمي'];
+      const isCorrect = chosen === meanings[state.game4.index];
+      playFeedbackSound(isCorrect, 'challenge');
+      if (isCorrect) state.game4.score += 1;
+      saveProgressToStorage();
+      render();
+    }
+  }));
+  app.querySelector('[data-meaning-next]')?.addEventListener('click', () => {
     if (state.game4.index < 4) state.game4.index += 1;
     state.game4.selectedOption = null;
     saveProgressToStorage();
