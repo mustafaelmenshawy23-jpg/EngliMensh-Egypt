@@ -2,6 +2,10 @@ name: Extract source books
 
 on:
   workflow_dispatch:
+  push:
+    branches: [feature/primary-connect-connect-plus-2026-2027]
+    paths:
+      - '.github/workflows/extract-books.yml'
     inputs:
       publish_artifact:
         description: Upload extracted page text and manifest as a workflow artifact
