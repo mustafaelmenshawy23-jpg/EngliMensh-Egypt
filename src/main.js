@@ -8,6 +8,12 @@ import unitModules from './data/lessons/unit-modules.draft.json';
 import p1u1Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-1.json';
 import p1u2Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-2.json';
 import p1u3Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-3.json';
+const generatedDraftModules = import.meta.glob('../artifacts/unit-drafts/*.json', { eager: true, import: 'default' });
+const unitDraftRegistry = new Map(
+  Object.values(generatedDraftModules)
+    .filter((draft) => draft && typeof draft.bookId === 'string' && Number.isInteger(draft.unitNumber) && Array.isArray(draft.sections))
+    .map((draft) => [`${draft.bookId}-unit-${draft.unitNumber}`, draft])
+);
 import './style.css';
 
 const app = document.querySelector('#app');
@@ -761,20 +767,19 @@ function renderUnitWorkspace() {
   const unit = book?.units?.find((item) => item.number === state.unitSelection.unitNumber);
   if (!book || !unit) return '';
 
-  const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1;
-  const activeUnitDraft = book.id === 'primary1-student-term1'
-    ? ({ 1: p1u1Draft, 2: p1u2Draft, 3: p1u3Draft }[unit.number] || null)
-    : null;
-  const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3);
+  const activeUnitDraft = unitDraftRegistry.get(`${book.id}-unit-${unit.number}`) ||
+    (book.id === 'primary1-student-term1' ? ({ 1: p1u1Draft, 2: p1u2Draft, 3: p1u3Draft }[unit.number] || null) : null);
+  const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1 && Boolean(activeUnitDraft);
+  const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3) && Boolean(activeUnitDraft);
 
   // Clear, named learning areas. Speaking is included because Unit 1 has a verified role-play.
   const sixSections = [
     { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pictures & pronunciation', icon: 'Aa', draftType: 'vocabulary' },
     { type: 'grammar', title: 'Grammar', subtitle: 'Rules and classroom language', icon: '文', draftType: 'grammar' },
-    { type: 'reading', title: 'Reading', subtitle: 'Read the Maya & Hana dialogue', icon: '▤', draftType: 'reading' },
+    { type: 'reading', title: 'Reading', subtitle: 'Read source passages and answer questions', icon: '▤', draftType: 'reading' },
     { type: 'listening', title: 'Listening', subtitle: 'Listen, replay and answer', icon: '♫', draftType: 'listening' },
     { type: 'speaking', title: 'Speaking', subtitle: 'Practise the dialogue aloud', icon: '🎤', draftType: 'speaking' },
-    { type: 'games', title: 'Games', subtitle: '4 interactive learning games', icon: '★', draftType: 'games' },
+    { type: 'games', title: 'Games', subtitle: 'Unit skill practice and challenges', icon: '★', draftType: 'games' },
     { type: 'comprehensive_test', title: 'Tests', subtitle: '10-question unit assessment', icon: '✓', draftType: 'comprehensive_test' }
   ];
 
@@ -826,7 +831,7 @@ function renderUnitWorkspace() {
         `;
       } else if (state.activeModule === 'reading' || state.activeModule === 'speaking' || state.activeModule === 'listening') {
         const passage = reading[0]?.content?.passage || '';
-        const lines = passage.split('\\n').filter(Boolean);
+        const lines = passage.split(/\\r?\\n/).filter(Boolean);
         bodyHtml = `
           <article class="reading-passage-card"><div class="reading-card-head"><span class="reading-badge">OFFICIAL BOOK DIALOGUE · PDF PAGE ${reading[0]?.content?.sourcePdfPage || '—'}</span><h4>${escapeHtml(activeUnitDraft.unitTitle)}</h4><p class="reading-subtitle">Read each line, then listen and practise with a partner.</p></div>
           <div class="chat-dialogue-thread">${lines.map((line, idx) => { const split = line.match(/^([^:]+):\\s*(.*)$/); const speaker = split?.[1] || `Line ${idx + 1}`; const words = split?.[2] || line; return `<div class="chat-bubble ${idx % 2 ? 'hana' : 'maya'}"><div class="chat-avatar">${idx % 2 ? '👧' : '👦'}</div><div class="chat-body"><span class="chat-sender">${escapeHtml(speaker)}</span><p class="chat-text" dir="ltr">${escapeHtml(words)}</p></div><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(words)}">🔊</button></div>`; }).join('')}</div>
@@ -1296,9 +1301,146 @@ function renderUnitWorkspace() {
           </div>
         `;
       }
+    } else if (activeUnitDraft) {
+      const getItems = (type) => activeUnitDraft.sections.find((section) => section.type === type)?.items || [];
+      const renderQuestionGroup = (items, type, label) => items.length
+        ? `<div class="questions-stack">${items.map((item, idx) => renderStudentQuestionCard(item, idx, type, label ? label + ' ' + (idx + 1) : null)).join('')}</div>`
+        : '<div class="empty-state">No questions have been added to this section yet.</div>';
+      const sourceLabel = (item) => item?.content?.origin === 'source' ? 'SOURCE TEXT' : 'SUPPLEMENTARY MATERIAL';
+      const pageLabel = (item) => Number.isInteger(item?.content?.sourcePdfPage) ? 'PDF page ' + item.content.sourcePdfPage : 'Page not verified';
+      if (state.activeModule === 'vocabulary') {
+        const words = getItems('vocabulary');
+        bodyHtml = `
+          <div class="vocab-grid-responsive">
+            ${words.map((item, idx) => {
+              const data = item.content || {};
+              return `<article class="vocab-compact-card">
+                <div class="vocab-compact-top"><span class="vocab-compact-icon">📘</span><span class="vocab-compact-num">#${idx + 1} · ${escapeHtml(pageLabel(item))}</span></div>
+                <strong class="vocab-compact-word" dir="ltr">${escapeHtml(data.word || '')}</strong>
+                <span class="vocab-compact-meaning" dir="rtl">${escapeHtml(data.arabicMeaning || '')}</span>
+                ${data.example ? `<p dir="ltr">${escapeHtml(data.example)}</p>` : ''}
+                <small>${escapeHtml(sourceLabel(item))}</small>
+                <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.word || '')}">🔊 Listen</button>
+              </article>`;
+            }).join('')}
+          </div>
+          <h3 class="module-subheading">Vocabulary questions</h3>
+          ${renderQuestionGroup(getItems('vocabulary_questions'), 'vocabulary_questions')}
+        `;
+      } else if (state.activeModule === 'grammar') {
+        const rules = getItems('grammar');
+        bodyHtml = `
+          <div class="grammar-lessons-container">
+            ${rules.map((item) => {
+              const data = item.content || {};
+              return `<article class="grammar-concept-card">
+                <div class="grammar-concept-head"><span class="grammar-concept-badge">${escapeHtml(sourceLabel(item))}</span><span class="grammar-page-tag">${escapeHtml(pageLabel(item))}</span></div>
+                <h3 class="grammar-concept-title">${escapeHtml(data.rule || '')}</h3>
+                <p class="grammar-explanation-text">${escapeHtml(data.explanation || '')}</p>
+                ${data.example ? `<div class="grammar-example-callout"><p class="example-content" dir="ltr">${escapeHtml(data.example)}</p><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.example)}">🔊 Listen</button></div>` : ''}
+              </article>`;
+            }).join('')}
+          </div>
+          <h3 class="module-subheading">Grammar questions</h3>
+          ${renderQuestionGroup(getItems('grammar_questions'), 'grammar_questions')}
+        `;
+      } else if (state.activeModule === 'reading') {
+        const passages = getItems('reading').filter((item) => item.content?.passage || item.content?.dialogue);
+        const questions = getItems('reading').filter((item) => item.content?.question);
+        bodyHtml = `
+          <div class="reading-draft-list">
+            ${passages.map((item) => {
+              const data = item.content || {};
+              const text = data.passage || (data.dialogue || []).map((line) => (line.speaker || 'Speaker') + ': ' + (line.text || '')).join('\\n');
+              return `<article class="reading-passage-card">
+                <div class="reading-card-head"><span class="reading-badge">${escapeHtml(sourceLabel(item))} · ${escapeHtml(pageLabel(item))}</span><h4>${escapeHtml(activeUnitDraft.unitTitle || unit.title)}</h4></div>
+                <p class="reading-passage-text" dir="ltr">${escapeHtml(text)}</p>
+                <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(text)}">🔊 Listen to text</button>
+              </article>`;
+            }).join('')}
+          </div>
+          <h3 class="module-subheading">Reading questions</h3>
+          ${renderQuestionGroup(questions, 'reading', 'Reading question')}
+        `;
+      } else if (state.activeModule === 'listening') {
+        const scripts = getItems('listening').filter((item) => item.content?.script || item.content?.passage);
+        const questions = getItems('listening').filter((item) => item.content?.question);
+        bodyHtml = `
+          <div class="listening-draft-list">
+            ${scripts.map((item) => {
+              const data = item.content || {};
+              const script = data.script || data.passage || '';
+              return `<article class="listening-console-card">
+                <span class="listening-badge">${escapeHtml(sourceLabel(item))} · ${escapeHtml(pageLabel(item))}</span>
+                <p class="listening-prompt">${escapeHtml(data.instruction || 'Listen and answer the questions.')}</p>
+                <p dir="ltr">${escapeHtml(script)}</p>
+                <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(script)}">🔊 Play TTS preview</button>
+                ${data.origin === 'supplementary' ? '<small>This is generated supplementary text, not original book audio.</small>' : '<small>TTS reads the printed script; it is not the original recording.</small>'}
+              </article>`;
+            }).join('')}
+          </div>
+          ${scripts.length ? '' : '<div class="empty-state">No verified listening transcript is available. No source audio has been invented.</div>'}
+          <h3 class="module-subheading">Listening questions</h3>
+          ${renderQuestionGroup(questions, 'listening', 'Listening question')}
+        `;
+      } else if (state.activeModule === 'speaking') {
+        const rolePlays = getItems('speaking').filter((item) => Array.isArray(item.content?.dialogue));
+        bodyHtml = `
+          <div class="speaking-practice-card">
+            ${rolePlays.map((item) => {
+              const data = item.content || {};
+              return `<article class="speaking-dialogue-block">
+                <p class="speaking-instruction">${escapeHtml(data.instruction || 'Practise the dialogue with a partner.')}</p>
+                <span class="speaking-line-speaker">${escapeHtml(sourceLabel(item))} · ${escapeHtml(pageLabel(item))}</span>
+                <div class="speaking-dialogue-list">
+                  ${(data.dialogue || []).map((line, index) => {
+                    const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                    const roleLabel = gender === 'unknown' ? 'Voice not verified' : gender + ' role';
+                    return `<article class="speaking-line-card">
+                      <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${escapeHtml(roleLabel)}</span>
+                      <p dir="ltr">${escapeHtml(line.text || '')}</p>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
+                    </article>`;
+                  }).join('')}
+                </div>
+              </article>`;
+            }).join('')}
+            ${rolePlays.length ? '<p class="speaking-practice-note">Playback currently uses the platform default English TTS voice; gender-matched voice selection has not been verified.</p>' : '<div class="empty-state">No source dialogue or reviewed supplementary role-play is available yet.</div>'}
+          </div>
+        `;
+      } else if (state.activeModule === 'games') {
+        const games = getItems('games');
+        bodyHtml = `
+          <div class="games-grid">
+            ${games.map((item, idx) => {
+              const data = item.content || {};
+              const playableQuestion = data.question && Array.isArray(data.options) && data.correctAnswer;
+              return `<article class="game-preview-card">
+                <span class="game-number">GAME ${idx + 1} · ${escapeHtml(data.skill || 'unit practice')} · ${escapeHtml(data.difficulty || 'level pending')}</span>
+                <h4>${escapeHtml(data.gameName || 'Supplementary challenge')}</h4>
+                <p>${escapeHtml(data.description || '')}</p>
+                <small>${escapeHtml(data.gameMode || 'game mode pending')} · SUPPLEMENTARY</small>
+                ${Array.isArray(data.targetWords) && data.targetWords.length ? `<p dir="ltr">${escapeHtml(data.targetWords.join(' · '))}</p>` : ''}
+                ${playableQuestion ? renderStudentQuestionCard(item, idx, 'games', 'Challenge ' + (idx + 1)) : '<p class="speaking-practice-note">This game is a design card until its interaction mode is implemented.</p>'}
+              </article>`;
+            }).join('')}
+            ${games.length ? '' : '<div class="empty-state">No reviewed games are available for this unit yet.</div>'}
+          </div>
+        `;
+      } else if (state.activeModule === 'comprehensive_test') {
+        const tests = getItems('comprehensive_test');
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test', 'Question')}`;
+      }
     } else {
       bodyHtml = `
         <div class="empty-state">
+          <div class="book-icon">📖</div>
+          <strong>Digital interactive exercises for Unit ${unit.number} (${escapeHtml(secDef.title)}) are in preparation</strong>
+          <span>This unit is mapped from the official curriculum textbook (${escapeHtml(book.sourceFile)}). You can view the original lesson material on PDF page ${unit.startPdfPage || 'N/A'}.</span>
+          ${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Open PDF Page ${unit.startPdfPage} ↗</button>` : ''}
+        </div>
+      `;
+    }
           <div class="book-icon">📖</div>
           <strong>Digital interactive exercises for Unit ${unit.number} (${escapeHtml(secDef.title)}) are in preparation</strong>
           <span>This unit is mapped from the official curriculum textbook (${escapeHtml(book.sourceFile)}). You can view the original lesson material on PDF page ${unit.startPdfPage || 'N/A'}.</span>
@@ -1317,6 +1459,7 @@ function renderUnitWorkspace() {
           <h3>${escapeHtml(secDef.title)}</h3>
           <p>${escapeHtml(secDef.subtitle)}</p>
         </div>
+        ${activeUnitDraft && activeUnitDraft.reviewStatus !== 'approved' ? '<div class="review-pending-banner">Preview draft · academic review pending · not approved for release</div>' : ''}
         ${bodyHtml}
       </section>
     `;
@@ -1324,6 +1467,11 @@ function renderUnitWorkspace() {
 
   // UNIT DASHBOARD (The 6 Consolidated Section Cards + 2 Visual Activities)
   const calculateProgress = (secType) => {
+    if (!isP1U1 && activeUnitDraft) {
+      const section = activeUnitDraft.sections.find((item) => item.type === secType);
+      const count = section?.items?.length || 0;
+      return count ? count + ' items available' : 'Awaiting reviewed content';
+    }
     if (!isP1U1 || !p1u1Draft) return 'Open section';
     if (secType === 'vocabulary') {
       const vocabQ = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [];
@@ -1364,6 +1512,12 @@ function renderUnitWorkspace() {
     p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter((item) => item.content?.question) || [],
     p1u1Draft.sections.find((s) => s.type === 'listening')?.items?.filter((item) => item.content?.question) || [],
     p1u1Draft.sections.find((s) => s.type === 'comprehensive_test')?.items || []
+  ] : activeUnitDraft ? [
+    activeUnitDraft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [],
+    activeUnitDraft.sections.find((s) => s.type === 'grammar_questions')?.items || [],
+    activeUnitDraft.sections.find((s) => s.type === 'reading')?.items?.filter((item) => item.content?.question) || [],
+    activeUnitDraft.sections.find((s) => s.type === 'listening')?.items?.filter((item) => item.content?.question) || [],
+    activeUnitDraft.sections.find((s) => s.type === 'comprehensive_test')?.items || []
   ] : [];
   const totalQuestions = scoredQuestionGroups.reduce((total, items) => total + items.length, 0);
   const totalAnswered = scoredQuestionGroups.reduce((total, items) => total + countAnswered(items), 0);
@@ -1660,13 +1814,24 @@ function render() {
 
     // Lookup question correct answer from draft
     let correctAnswer = null;
-    if (p1u1Draft && p1u1Draft.sections) {
-      p1u1Draft.sections.forEach((sec) => {
+    for (const draft of unitDraftRegistry.values()) {
+      for (const sec of draft.sections || []) {
         const found = sec.items?.find((it) => (it.itemId || '') === qId);
         if (found && found.content && typeof found.content.correctAnswer === 'string') {
           correctAnswer = found.content.correctAnswer;
+          break;
         }
-      });
+      }
+      if (correctAnswer) break;
+    }
+    if (!correctAnswer && p1u1Draft?.sections) {
+      for (const sec of p1u1Draft.sections) {
+        const found = sec.items?.find((it) => (it.itemId || '') === qId);
+        if (found && typeof found.content?.correctAnswer === 'string') {
+          correctAnswer = found.content.correctAnswer;
+          break;
+        }
+      }
     }
 
     if (correctAnswer) {
