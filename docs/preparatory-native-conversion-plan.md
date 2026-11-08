@@ -79,3 +79,15 @@ No iframe, HTML viewer, embedded web page, or runtime execution of imported sour
 A direct comparison of the preserved source metadata with the official-book index found a concrete mismatch: the Prep 1 New Hello HTML Unit 1 is titled "My Family and Me", while the indexed Egyptian Ministry student book for Preparatory 1 Unit 1 is "Life in a Digital World" (PDF page 13). The Prep 1 New Hello Plus HTML Unit 1 is titled "A World of Work", while no official New Hello Plus student-book record is currently present in the source-book index. These files therefore cannot be treated as verified unit content solely because their filenames and grade/unit numbers match.
 
 The new metadata-only audit script `scripts/audit-preparatory-html.mjs` inventories all 31 source titles and flags synthetic placeholders, injected host/runtime or credential markers, external font/CDN dependencies, and initials-only SVG visuals. It never executes source scripts and never prints credential values. It is part of `npm test`. Its output is a QA inventory, not academic approval. Every source unit must be reconciled against the correct book edition and page before conversion or student visibility.
+
+
+## Automated source-audit run — 2026-11-08
+
+The validation-only workflow run `42521352658` completed successfully. Existing automated checks reported 31 application tests, 25 storage-hardening tests, 41 navigation/launch tests, and 482 imported-curriculum checks passing, with zero failures in those reported groups. The preparatory metadata audit examined all 31 preserved HTML files and found:
+- 25 files with at least one source-quality/dependency flag.
+- 7 files containing synthetic or placeholder content.
+- 1 file containing injected host-runtime / credential markers.
+- 25 files referencing external font/CDN dependencies.
+- 6 files using initials-only SVG visuals.
+
+The workflow deliberately skipped the Android APK job on this preparatory branch. These results validate the audit tooling and existing regression checks only; they do not mean the preparatory curriculum has been converted or approved. The source-to-book mismatch described above remains an active blocker.
