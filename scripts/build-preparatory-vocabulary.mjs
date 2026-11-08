@@ -286,10 +286,13 @@ if (missingUnitKeys.length) throw new Error('Preparatory vocabulary extraction i
 for (const unit of Object.values(registry)) for (const item of unit.words) if (!item.svg && !pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
 const imageWords = [...pendingImages.values()];
 let downloaded = 0, missing = 0;
-if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {
+// Keep normal builds deterministic and offline. Image discovery is an optional
+// enrichment step; it must never hold up curriculum extraction or APK builds.
+if (process.env.FETCH_PREPARATORY_IMAGES !== '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
-} else await mapLimit(imageWords, 2, async (word) => {
+  console.log('Skipped external image lookups. Set FETCH_PREPARATORY_IMAGES=1 to run the optional image-enrichment pass.');
+} else await mapLimit(imageWords, 1, async (word) => {
   let result = null;
   try {
     result = await findOpenverseImage(word);
