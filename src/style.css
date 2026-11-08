@@ -2861,3 +2861,23 @@ body{background:radial-gradient(circle at top,#fffaf0 0,#f3eee3 58%,#e9dfcc 100%
 /* Keep word-building letter rows short on phones; long words continue on a second row. */
 .word-builder-slots,.word-builder-tiles{grid-template-columns:repeat(4,minmax(42px,1fr))}
 @media(max-width:360px){.word-builder-slots,.word-builder-tiles{grid-template-columns:repeat(3,minmax(42px,1fr))}}
+
+
+/* Phone-safe word builder: keep every tile and slot inside the game card. */
+.interactive-game-container,.word-builder-card{min-width:0;max-width:100%;overflow:hidden}
+.word-builder-card{width:100%;padding:clamp(10px,3vw,18px)}
+.word-builder-hint{min-width:0;max-width:100%;flex-wrap:wrap;padding:10px}
+.hint-copy{min-width:0;overflow-wrap:anywhere}
+.word-builder-slots,.word-builder-tiles{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px;width:100%;max-width:100%;min-width:0;justify-items:stretch}
+.builder-slot,.builder-tile{width:100%!important;min-width:0!important;max-width:100%;height:auto;min-height:clamp(42px,12vw,54px);padding:0;aspect-ratio:1/1;font-size:clamp(17px,5vw,24px)}
+.builder-actions{display:flex;flex-wrap:wrap;gap:8px;width:100%;min-width:0}
+.builder-action-btn{flex:1 1 38%;min-width:0;padding:10px 8px;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:380px){.word-builder-slots,.word-builder-tiles{grid-template-columns:repeat(3,minmax(0,1fr))!important}.builder-action-btn{flex-basis:44%}}
+
+/* Move certificate copy below the artwork's pre-printed heading and prevent collisions. */
+.certificate-text{top:43%;left:9%;right:9%;gap:clamp(2px,.45vw,6px);line-height:1.2}
+.certificate-text p{line-height:1.25}
+.certificate-text h2,.certificate-text h3{line-height:1.12;max-width:100%;overflow-wrap:anywhere}
+.certificate-text .certificate-message{max-width:94%;line-height:1.3}
+.certificate-text small{line-height:1.2}
+@media(max-width:420px){.certificate-text{top:43%;gap:2px}.certificate-text p{font-size:clamp(8px,2.2vw,10px)}.certificate-text h2{font-size:clamp(15px,4.3vw,19px)}.certificate-text .certificate-unit{font-size:clamp(11px,3.2vw,14px)}.certificate-text .certificate-message{font-size:8px}}
