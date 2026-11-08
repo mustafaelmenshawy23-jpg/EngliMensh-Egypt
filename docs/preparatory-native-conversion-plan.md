@@ -91,3 +91,16 @@ The validation-only workflow run `42521352658` completed successfully. Existing 
 - 6 files using initials-only SVG visuals.
 
 The workflow deliberately skipped the Android APK job on this preparatory branch. These results validate the audit tooling and existing regression checks only; they do not mean the preparatory curriculum has been converted or approved. The source-to-book mismatch described above remains an active blocker.
+
+
+## Expanded unit-title alignment findings
+
+A comparison of the HTML page titles against the currently indexed book contents shows that this is not an isolated mismatch:
+- Prep 1 / New Hello: the six HTML unit titles (My Family and Me; It's My Favorite Subject; Different People; We're Using Technology; Holidays; Let's Eat!) do not match the six indexed Ministry-book units (Life in a Digital World; Learning to Learn; Role Models; Smart Choices; Future Dreams; Global Citizens).
+- Prep 2 / New Hello: all six HTML titles (Getting Ready; Helping Our Community; Technology and Inventions; Into the Past; Helping You, Helping Me; Different Environments) differ from the indexed Ministry-book units (Gen Alpha; My Digital Footprint; Facing Challenges; Expression; Around the World; Young Innovators).
+- Prep 1 / New Hello Plus: the HTML titles (A World of Work; Communication; Science and Discovery; Exploring the Past; Earth and Beyond; Culture and Heritage) do not align by unit number with the indexed El-Moasser supplementary guide titles (Friends matter; The world of work; Activities; Shopping well; Feeling well; Literature: The Prince and the Pauper — Part A).
+- Prep 3 / New Hello Plus: the HTML titles (Exploring Places & Heritage; Modern Consumerism & Smart Living; Shaping the Future; Overcoming Obstacles & Resilience; Inventions That Changed the World; Mental Wellbeing & Emotional Intelligence) differ from the indexed supplementary guide units (My World; Changes; Ambitions; Traditional Stories; News and Media; Literature — The Prisoner of Zenda).
+- Prep 2 / New Hello Plus has an indexed supplementary PDF, but its six unit page mappings are not yet populated, so those HTML units cannot yet be reconciled.
+- Prep 3 / New Hello general remains a combined source containing synthetic generated sections and host-injected runtime material.
+
+Consequently, **none of these HTML imports may be assumed to be the current textbook's native lesson content**. Preserve them as archival reference material only. The native units must be rebuilt against the actual current source books and their page references; do not merely relabel or renumber these HTML lessons. The audit script now compares extracted unit titles with the indexed book titles and reports mismatches and missing New Hello Plus mappings.
