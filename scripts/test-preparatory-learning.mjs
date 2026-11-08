@@ -32,6 +32,6 @@ for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest',
 }
 assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-match-image'), 'Picture matching controls are not wired.');
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
-assert.ok(builder.includes('Wikimedia Commons') && builder.includes('LicenseShortName'), 'Image sourcing must retain licensing and attribution.');
+assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
 assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
 console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections, 6 game modes, image attribution.');
