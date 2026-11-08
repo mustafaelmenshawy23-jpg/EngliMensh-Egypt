@@ -55,14 +55,21 @@ export const preparatoryHtmlRegistry = {
     general: {
       series: 'New Hello',
       format: 'combined-html',
-      units: [{
-        id: 'all',
-        number: null,
-        title: 'Full curriculum · Units 1–6',
+      units: [
+        'Around Town',
+        "Let's Go Shopping",
+        'My Community',
+        'Have You Ever Flown in a Plane?',
+        'Life Accomplishments',
+        "What's the Matter?"
+      ].map((title, index) => ({
+        id: String(index + 1),
+        number: index + 1,
+        title: `Unit ${index + 1}: ${title}`,
         fileName: 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html',
         url: assetUrl('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'),
         format: 'combined'
-      }]
+      }))
     },
     advanced: {
       series: 'New Hello Plus',
