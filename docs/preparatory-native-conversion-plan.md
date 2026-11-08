@@ -44,3 +44,13 @@ No iframe, HTML viewer, embedded web page, or runtime execution of imported sour
 - Offline operation verified without remote fonts/CDNs.
 - Native navigation, answer randomization, progress persistence, TTS, games and certificates regression-tested.
 - Android debug APK built only after all gates pass.
+
+
+## Prep 3 past-exam section (after Unit 6 only)
+- Add a separate section titled "نماذج امتحانات سابقة" after Unit 6 in Prep 3; do not add it to Prep 1 or Prep 2.
+- Include only real, dated English exams that can be verified as belonging to the New Hello / New Hello Plus curriculum actually taught in that academic year.
+- Initial research found New Hello Prep 3 exam/revision material explicitly labeled 2023/2024 and 2024/2025, and New Hello Prep 3 material advertised for 2025/2026. This is a discovery lead, not yet an approved inclusion list: verify each exam's year, governorate/source, curriculum match, term, and whether it is an actual past exam or merely a predicted/revision test before importing it.
+- Exclude exams for other textbook editions/curricula, predicted exams presented as historical exams, and any undated or unverifiable files.
+- Prefer official Ministry/directorate exam papers where available; otherwise retain source URL, publisher/teacher attribution, year, term, governorate, answer-key status, and a verification note.
+- Keep each paper available offline in the app. Use a native exam runner only if the source can be faithfully converted with verified questions and answers; otherwise provide the original PDF/document as a clearly labeled downloadable/openable paper without pretending it is an interactive native exam.
+- Do not infer that the new academic year 2026/2027 uses the same Prep 3 textbook. Confirm the textbook/edition before adding any papers for that year.
