@@ -13,10 +13,10 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository and hydrate original PDFs
+      - name: Checkout repository and validate Git LFS pointers without downloading the PDFs
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
