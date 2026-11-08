@@ -2693,10 +2693,10 @@ function render() {
         filename: safeName + '.pdf',
         contentType: 'application/pdf',
         base64Data: pdfBase64,
-        android: { saveDirectory: 'downloads', relativePath: 'Download/EngliMensh' }
+        android: { saveDirectory: 'downloads' }
       });
       if (!savedFile?.uri) console.warn('Certificate saved; Android did not return a content URI.');
-      window.alert('تم حفظ الشهادة كملف PDF في مجلد Downloads داخل EngliMensh.');
+      window.alert('تم تنزيل الشهادة بنجاح على جهازك في مجلد التنزيلات (Downloads).');
     } catch (error) {
       console.error('Certificate PDF export failed:', error);
       const failureCode = String(error?.code || error?.message || 'UNKNOWN_ERROR').slice(0, 180);
