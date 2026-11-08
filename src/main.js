@@ -6,6 +6,7 @@ import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
 import { getPreparatoryHtmlCourse } from './data/preparatory-html-registry.js';
+import preparatoryVocabulary from './data/preparatory-vocabulary.json';
 
 const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
 function isApprovedUnitDraft(draft) {
@@ -67,6 +68,8 @@ const state = {
   search: '',
   preview: null,
   htmlUnitSelection: null,
+  htmlModuleSelection: null,
+  htmlGame: { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' },
   unitSelection: null,
   activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
   activeVocabSubtab: 'words', // 'words' or 'practice'
@@ -410,16 +413,128 @@ function renderBookLibrary(books) {
   }).join('');
 }
 
+function getSelectedPreparatoryUnit() {
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  return state.htmlUnitSelection ? course?.units?.find((unit) => unit.id === state.htmlUnitSelection.unitId) || null : null;
+}
+
+function getPreparatoryUnitWords(unit = getSelectedPreparatoryUnit()) {
+  if (!unit) return [];
+  const registry = preparatoryVocabulary.units || {};
+  if (unit.id === 'all' && state.grade === 3 && state.path === 'general') {
+    return [1, 2, 3, 4, 5, 6].flatMap((number) => registry[`3:general:${number}`]?.words || []);
+  }
+  return registry[`${state.grade}:${state.path}:${unit.number || unit.id}`]?.words || [];
+}
+
+function prepImageMarkup(item, className = 'prep-vocab-image') {
+  if (item.image) return `<img class="${className}" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.word)}" loading="lazy" />`;
+  if (item.svg) return `<img class="${className}" src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(item.svg)}" alt="${escapeHtml(item.word)}" loading="lazy" />`;
+  return `<div class="${className} prep-image-missing" role="img" aria-label="Picture not available for ${escapeHtml(item.word)}">Picture pending</div>`;
+}
+
+function renderPreparatoryGame(words) {
+  const games = [
+    { id: 'picture-match', title: 'Picture Match', desc: 'Match each word to its picture', icon: '🧩' },
+    { id: 'picture-quiz', title: 'Picture Quiz', desc: 'Choose the word that names the picture', icon: '🖼️' },
+    { id: 'anagram', title: 'Word Jumble', desc: 'Rebuild the word from mixed letters', icon: '🔤' },
+    { id: 'meaning-quest', title: 'Meaning Quest', desc: 'Find the word from its meaning', icon: '🔎' },
+    { id: 'open-box', title: 'Open the Box', desc: 'Open a mystery box and solve its clue', icon: '🎁' },
+    { id: 'flashcards', title: 'Flashcard Flip', desc: 'Reveal, learn and remember each word', icon: '🃏' }
+  ];
+  const game = state.htmlGame || {};
+  const current = words[game.index % Math.max(words.length, 1)];
+  const shuffled = (items) => [...items].sort((a, b) => a.word.localeCompare(b.word));
+  const optionsFor = (target) => {
+    const distractors = words.filter((item) => item.word !== target.word).sort((a, b) => a.word.localeCompare(b.word)).slice(0, 3);
+    return [target, ...distractors].sort((a, b) => (a.word + state.grade).localeCompare(b.word + state.grade));
+  };
+  let body = '<div class="prep-game-empty">This unit has no verified vocabulary records yet. The original lesson is still available in its learning sections.</div>';
+  if (words.length && current) {
+    if (game.id === 'picture-match') {
+      const round = shuffled(words).slice(0, Math.min(4, words.length));
+      const matched = game.matched || [];
+      body = `
+        <div class="prep-game-instruction">Choose a word, then choose its matching picture.</div>
+        <div class="prep-match-layout">
+          <div class="prep-match-column"><h4>Words</h4>${round.map((item) => `<button class="prep-match-word ${matched.includes(item.word) ? 'is-matched' : ''} ${game.selectedWord === item.word ? 'is-selected' : ''}" data-prep-match-word="${escapeHtml(item.word)}" ${matched.includes(item.word) ? 'disabled' : ''}>${escapeHtml(item.word)}<small dir="rtl">${escapeHtml(item.arabic || '')}</small></button>`).join('')}</div>
+          <div class="prep-match-column"><h4>Pictures</h4>${[...round].reverse().map((item) => `<button class="prep-match-picture ${matched.includes(item.word) ? 'is-matched' : ''} ${game.selectedImage === item.word ? 'is-selected' : ''}" data-prep-match-image="${escapeHtml(item.word)}" ${matched.includes(item.word) ? 'disabled' : ''}>${prepImageMarkup(item, 'prep-game-picture')}<span>${matched.includes(item.word) ? 'Matched ✓' : 'Choose picture'}</span></button>`).join('')}</div>
+        </div>
+        <div class="prep-game-progress">Matched ${matched.length} / ${round.length} · Score ${game.score || 0}</div>
+        ${matched.length === round.length ? '<div class="prep-game-feedback success">Excellent! All pairs matched.</div>' : ''}
+        <button class="prep-game-secondary" data-prep-game-reset>New round</button>
+      `;
+    } else if (game.id === 'picture-quiz') {
+      const options = optionsFor(current);
+      body = `
+        <div class="prep-game-progress">Question ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-picture-question">${prepImageMarkup(current, 'prep-question-picture')}<p>Which word matches this picture?</p></div>
+        <div class="prep-game-options">${options.map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === current.word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'Correct answer! Great job.' : 'Not quite. The correct word is ' + escapeHtml(current.word) + '.'}<button data-prep-game-next>Next</button></div>` : ''}
+      `;
+    } else if (game.id === 'anagram') {
+      const letters = current.word.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a, b) => b.localeCompare(a));
+      body = `
+        <div class="prep-game-progress">Word ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-anagram-card">${prepImageMarkup(current, 'prep-question-picture')}<p dir="rtl">${escapeHtml(current.arabic || current.definition || 'Build the word')}</p><div class="prep-letter-slots">${letters.map((_, i) => `<span>${escapeHtml((game.placed || [])[i] || '＿')}</span>`).join('')}</div><div class="prep-letter-bank">${letters.map((letter, i) => `<button data-prep-letter="${i}" ${(game.placed || []).filter((x) => x.index === i).length ? 'disabled' : ''}>${letter}</button>`).join('')}</div><button class="prep-game-secondary" data-prep-word-clear>Clear</button><button class="prep-game-primary" data-prep-word-check>Check word</button></div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'Correct spelling!' : 'Try again.'}<button data-prep-game-next>Next word</button></div>` : ''}
+      `;
+    } else if (game.id === 'meaning-quest') {
+      const options = optionsFor(current);
+      body = `
+        <div class="prep-game-progress">Challenge ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-meaning-card"><span>WORD DETECTIVE</span><h3>Which word means…?</h3><p>${escapeHtml(current.definition || current.arabic || 'Listen and identify the vocabulary word.')}</p></div>
+        <div class="prep-game-options">${options.map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === current.word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'That is right!' : 'Correct word: ' + escapeHtml(current.word)}<button data-prep-game-next>Continue</button></div>` : ''}
+      `;
+    } else if (game.id === 'open-box') {
+      const boxes = shuffled(words).slice(0, Math.min(6, words.length));
+      body = `
+        <div class="prep-game-instruction">Choose a mystery box. Read its clue and identify the word.</div>
+        <div class="prep-box-grid">${boxes.map((item, i) => `<button data-prep-open-box="${i}" class="${game.opened === i ? 'opened' : ''}">${game.opened === i ? '🔓' : '🎁'}<small>Box ${i + 1}</small></button>`).join('')}</div>
+        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span><p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic || 'Find the matching vocabulary word.')}</p><strong>${escapeHtml(boxes[game.opened]?.word || '')}</strong><button data-prep-game-next>Next challenge</button></div>` : ''}
+      `;
+    } else {
+      body = `
+        <div class="prep-game-progress">Card ${game.index + 1} / ${words.length}</div>
+        <button class="prep-flashcard ${game.flipped ? 'flipped' : ''}" data-prep-flip>
+          ${game.flipped ? `<span class="prep-flashcard-label">MEANING</span><strong dir="rtl">${escapeHtml(current.arabic || current.definition || 'Meaning not supplied')}</strong><small>${escapeHtml(current.definition || '')}</small>` : `<span class="prep-flashcard-label">VOCABULARY</span>${prepImageMarkup(current, 'prep-flashcard-picture')}<strong>${escapeHtml(current.word)}</strong><small>Tap to reveal meaning</small>`}
+        </button>
+        <button class="prep-game-primary" data-prep-game-next>Next card</button>
+      `;
+    }
+  }
+  return `
+    <section class="prep-games">
+      <div class="prep-games-heading"><div><p class="eyebrow">WORDWALL-INSPIRED GAME STUDIO</p><h3>Choose a learning game</h3><p>Original interactive activities built from this unit's vocabulary.</p></div><span class="prep-game-count">${words.length} words</span></div>
+      <div class="prep-game-launch-grid">${games.map((item) => `<button data-prep-game="${item.id}" class="${game.id === item.id ? 'active' : ''}"><span>${item.icon}</span><strong>${item.title}</strong><small>${item.desc}</small></button>`).join('')}</div>
+      <article class="prep-game-stage"><div class="prep-game-stage-title"><h3>${games.find((item) => item.id === game.id)?.title || 'Learning game'}</h3><span>Interactive practice</span></div>${body}</article>
+      <p class="prep-image-credit">Images are embedded illustrations from the supplied lessons or licensed Wikimedia Commons images with source credits.</p>
+    </section>
+  `;
+}
+
 function renderPreparatoryHtmlLibrary() {
   if (state.stage !== 'preparatory') return '';
   const course = getPreparatoryHtmlCourse(state.grade, state.path);
   if (!course?.units?.length) return '';
-
-  const selectedUnit = state.htmlUnitSelection
-    ? course.units.find((unit) => unit.id === state.htmlUnitSelection.unitId)
-    : null;
+  const selectedUnit = getSelectedPreparatoryUnit();
+  const module = state.htmlModuleSelection;
+  const modules = [
+    ['vocabulary', 'Vocabulary', 'Words, meanings, pictures and pronunciation', 'Aa'],
+    ['vocabulary_questions', 'Vocabulary Questions', 'Practise the unit words', '✎'],
+    ['grammar', 'Grammar', 'Rules and examples', '文'],
+    ['grammar_questions', 'Grammar Questions', 'Grammar practice', '✓'],
+    ['reading', 'Reading', 'Read and understand', '▤'],
+    ['listening', 'Listening', 'Listen and answer', '♫'],
+    ['speaking', 'Speaking', 'Practise aloud', '🎤'],
+    ['games', 'Games', 'Play and learn with six game types', '★'],
+    ['comprehensive_test', 'Comprehensive Test', 'Check your unit mastery', '🏆']
+  ];
+  const selectedWords = getPreparatoryUnitWords(selectedUnit);
+  const moduleLabel = modules.find((item) => item[0] === module)?.[1] || '';
   const formatLabel = course.format === 'static-html'
-    ? 'Static HTML source · interaction upgrade required'
+    ? 'Static source lesson · app sections and games are provided separately'
     : course.format === 'combined-html'
       ? 'Combined curriculum · Units 1–6'
       : 'Interactive HTML lessons';
@@ -427,39 +542,25 @@ function renderPreparatoryHtmlLibrary() {
   return `
     <section class="imported-curriculum panel">
       <div class="imported-curriculum-heading">
-        <div>
-          <p class="eyebrow">IMPORTED CURRICULUM · 2026/2027</p>
-          <h2>${escapeHtml(course.series)} · Preparatory ${state.grade}</h2>
-          <p class="library-intro">${escapeHtml(formatLabel)}</p>
-        </div>
-        <span class="book-count">${course.units.length} lesson file${course.units.length === 1 ? '' : 's'}</span>
+        <div><p class="eyebrow">IMPORTED CURRICULUM · 2026/2027</p><h2>${escapeHtml(course.series)} · Preparatory ${state.grade}</h2><p class="library-intro">${escapeHtml(formatLabel)}</p></div>
+        <span class="book-count">${course.units.length} unit file${course.units.length === 1 ? '' : 's'}</span>
       </div>
-      <div class="imported-unit-grid">
-        ${course.units.map((unit) => `
-          <button type="button" class="imported-unit-card ${selectedUnit?.id === unit.id ? 'active' : ''}" data-html-unit="${escapeHtml(unit.id)}">
-            <span class="imported-unit-icon">▤</span>
-            <strong>${escapeHtml(unit.title)}</strong>
-            <small>${escapeHtml(unit.fileName)}</small>
-            <span class="imported-unit-open">Open lesson ↗</span>
-          </button>
-        `).join('')}
-      </div>
-      ${selectedUnit ? `
-        <div class="imported-html-viewer">
-          <div class="imported-html-viewer-head">
-            <div><strong>${escapeHtml(selectedUnit.title)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade}</span></div>
-            <button type="button" class="close-imported-html" data-close-html-unit>Close lesson</button>
+      ${!selectedUnit ? `
+        <div class="imported-unit-grid">${course.units.map((unit) => `
+          <button type="button" class="imported-unit-card" data-html-unit="${escapeHtml(unit.id)}"><span class="imported-unit-icon">▤</span><strong>${escapeHtml(unit.title)}</strong><small>${escapeHtml(unit.fileName)}</small><span class="imported-unit-open">Open unit ↗</span></button>
+        `).join('')}</div>
+      ` : !module ? `
+        <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-units>← All units</button><div><span class="eyebrow">${escapeHtml(course.series)} · PREPARATORY ${state.grade}</span><h3>${escapeHtml(selectedUnit.title)}</h3></div><span class="prep-word-count">${selectedWords.length} vocabulary words</span></div>
+        <div class="prep-module-grid">${modules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
+      ` : `
+        <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-modules>← ${escapeHtml(selectedUnit.title)}</button><div><span class="eyebrow">${escapeHtml(course.series)} · UNIT ${escapeHtml(selectedUnit.number || '1–6')}</span><h3>${escapeHtml(moduleLabel)}</h3></div></div>
+        ${module === 'games' ? renderPreparatoryGame(selectedWords) : `
+          <div class="imported-html-viewer">
+            <div class="imported-html-viewer-head"><div><strong>${escapeHtml(moduleLabel)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade} · ${escapeHtml(selectedUnit.title)}</span></div></div>
+            <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml(selectedUnit.url)}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
           </div>
-          <iframe
-            class="imported-html-frame"
-            title="${escapeHtml(course.series)} Preparatory ${state.grade} ${escapeHtml(selectedUnit.title)}"
-            src="${escapeHtml(selectedUnit.url)}"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-            sandbox="allow-scripts allow-forms"
-          ></iframe>
-        </div>
-      ` : ''}
+        `}
+      `}
     </section>
   `;
 }
