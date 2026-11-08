@@ -51,6 +51,7 @@ jobs:
         run: |
           node --check scripts/generate-interactive-unit.mjs
           node --check scripts/generate-interactive-curriculum-batch.mjs
+          node --check scripts/build-preparatory-vocabulary.mjs
 
       - name: Run automated application and unit tests
         run: npm test
