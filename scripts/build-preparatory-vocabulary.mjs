@@ -111,6 +111,13 @@ function parseCombinedUnits(source) {
     const re = /{\s*["']?w["']?\s*:\s*"([^"]+)",\s*["']?pos["']?\s*:\s*"([^"]*)",\s*["']?ar["']?\s*:\s*"([^"]*)",\s*["']?def["']?\s*:\s*"([^"]*)",\s*["']?ex["']?\s*:\s*"([^"]*)",\s*["']?icon["']?\s*:\s*[\x60]([\s\S]*?)[\x60]\s*}/g;
     let m;
     while ((m = re.exec(block))) items.push({ word: m[1], pos: m[2], arabic: m[3], def: m[4], example: m[5], svg: m[6] });
+    if (!items.length) {
+      const generated = block.match(/vocab:\\s*generateUnitVocab\\(\\s*"[^"]*"\\s*,\\s*\\[([\\s\\S]*?)\\]\\s*\\)/);
+      if (generated) {
+        const words = [...generated[1].matchAll(/"([^"]+)"/g)].map((match) => match[1]);
+        for (const word of words) items.push({ word, pos: '', arabic: '', def: '', example: '', svg: '' });
+      }
+    }
     if (items.length) out[unitNo] = items;
   }
   return out;
