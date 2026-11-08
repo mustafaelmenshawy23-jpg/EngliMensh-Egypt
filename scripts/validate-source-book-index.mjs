@@ -28,7 +28,7 @@ if (!Array.isArray(index.books) || index.books.length === 0) {
     catch { errors.push(`${label}: source PDF is missing from public/books/.`); continue; }
     const isPdf = bytes.length >= 1024 && bytes.subarray(0, 5).toString('ascii') === '%PDF-';
     const pointerText = bytes.toString('utf8');
-    const isLfsPointer = pointerText.startsWith('version https://git-lfs.github.com/spec/v1\\n') &&
+    const isLfsPointer = pointerText.startsWith('version https://git-lfs.github.com/spec/v1\n') &&
       /^oid sha256:[a-f0-9]{64}$/m.test(pointerText) &&
       /^size [1-9][0-9]*$/m.test(pointerText);
     if (!isPdf && !isLfsPointer) {
@@ -52,7 +52,7 @@ if (!Array.isArray(index.books) || index.books.length === 0) {
     }
   }
   const booksDirectory = path.join(root, 'public', 'books');
-  const diskPdfs = (await fs.readdir(booksDirectory)).filter((name) => /\\.pdf$/i.test(name));
+  const diskPdfs = (await fs.readdir(booksDirectory)).filter((name) => /\.pdf$/i.test(name));
   diskPdfCount = diskPdfs.length;
   for (const filename of diskPdfs) {
     if (!indexedFiles.has(filename)) errors.push(`${filename}: PDF exists in public/books/ but is not indexed.`);
