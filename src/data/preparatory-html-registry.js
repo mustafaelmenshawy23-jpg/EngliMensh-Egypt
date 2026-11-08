@@ -11,7 +11,7 @@ function assetUrl(fileName) {
   return match?.[1] || null;
 }
 
-function sixUnits(filePattern) {
+function viewerUrl(fileName) {\n  return `${import.meta.env.BASE_URL}preparatory-viewers/${fileName}`;\n}\n\nfunction sixUnits(filePattern) {
   return Array.from({ length: 6 }, (_, index) => {
     const number = index + 1;
     const fileName = filePattern(number);
