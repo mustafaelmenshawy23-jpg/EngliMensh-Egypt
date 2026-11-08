@@ -22,12 +22,31 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: false
+      - name: Hydrate preparatory source books for one-time extraction
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
+        run: |
+          git lfs version
+          git lfs install
+          git lfs pull --include="public/books/English_Prep1_T1 (1).pdf,public/books/English_language_prep2_t1 (1).pdf,public/books/English_language_prep3_t1 (1).pdf,public/books/المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf,public/books/المعاصر_هالو_بلس_تانية_إعدادي_كتاب_الشرح_1.pdf,public/books/Hello plus prep 3 كامل(1).pdf"
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      - name: Extract source-book text with physical PDF page references
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
+        run: npm run extract:books
+      - name: Upload preparatory source-page extraction for academic mapping
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[extract-preparatory-sources]')
+        uses: actions/upload-artifact@v4
+        with:
+          name: preparatory-source-pages-for-review
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          if-no-files-found: error
+          retention-days: 14
       - name: Run application tests and preparatory source audit
         run: npm test
 
