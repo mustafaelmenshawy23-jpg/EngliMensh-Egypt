@@ -2,7 +2,7 @@ name: Build EngliMensh Android preview APK
 
 on:
   push:
-    branches: [main]
+    branches: [main, feature/primary-connect-connect-plus-2026-2027]
   workflow_dispatch:
 
 permissions:

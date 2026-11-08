@@ -1,6 +1,7 @@
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import curriculum from './data/curriculum/structure.json';
+import primaryHtmlCurriculum from './data/curriculum/primary-connect-html-2026-2027.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
 import lessonDrafts from './data/lessons/lessons.draft.json';
@@ -43,12 +44,14 @@ const vocabVisualMap = {
 };
 
 const state = {
+  navigationEpoch: 0,
   stage: 'primary',
   grade: 1,
   path: 'general',
   search: '',
   preview: null,
   unitSelection: null,
+  importedUnitNumber: null,
   activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
   activeVocabSubtab: 'words', // 'words' or 'practice'
   activeGrammarSubtab: 'rules', // 'rules' or 'practice'
@@ -132,6 +135,7 @@ function loadProgressFromStorage() {
       if (isPlainObject(parsed.quizAnswers)) state.quizAnswers = parsed.quizAnswers;
       if (isPlainObject(parsed.shuffledOptions)) state.shuffledOptions = parsed.shuffledOptions;
       if (parsed.activeModule !== undefined) state.activeModule = parsed.activeModule;
+      if (Number.isInteger(parsed.importedUnitNumber)) state.importedUnitNumber = parsed.importedUnitNumber;
       if (parsed.activeVocabSubtab) state.activeVocabSubtab = parsed.activeVocabSubtab;
       if (parsed.activeGrammarSubtab) state.activeGrammarSubtab = parsed.activeGrammarSubtab;
       if (parsed.activeGameTab) state.activeGameTab = parsed.activeGameTab;
@@ -170,6 +174,7 @@ function saveProgressToStorage() {
       quizAnswers: state.quizAnswers,
       shuffledOptions: state.shuffledOptions,
       activeModule: state.activeModule,
+      importedUnitNumber: state.importedUnitNumber,
       activeVocabSubtab: state.activeVocabSubtab,
       activeGrammarSubtab: state.activeGrammarSubtab,
       activeGameTab: state.activeGameTab,
@@ -265,7 +270,7 @@ function selectedBooks() {
   const pathwayId = state.stage === 'egyptian-baccalaureate'
     ? (state.path === 'second-language' ? 'egypt-baccalaureate-second-language' : 'egypt-baccalaureate')
     : currentStage().paths.find((item) => item.id === state.path)?.sourcePathwayId;
-  return sourceIndex.books.filter((book) => book.pathwayId === pathwayId && (
+  return sourceIndex.books.filter((book) => book.pathwayId !== 'commercial-reference-guides' && book.pathwayId === pathwayId && (
     state.stage === 'egyptian-baccalaureate' || book.grade === gradeName
   ));
 }
@@ -276,6 +281,703 @@ function bookUrl(file, page) {
   return page ? `${path}#page=${page}` : path;
 }
 
+
+function explainGrammarRule(rule, examples = []) {
+  const text = String(rule || '').toLowerCase();
+  const exampleList = examples.filter((item) => !/(key pattern|verification|correct structure|incorrect syntax)/i.test(String(item))).slice(0, 3);
+  let title = 'Understand the pattern';
+  let explanation = 'Read the pattern, then notice how the words work together in each example.';
+  let formula = rule || 'Grammar pattern';
+  let tip = 'Say each example aloud, then change one word and make a new sentence.';
+  if (/expressing feelings|i feel \+ adjective/.test(text)) {
+    title = 'Talking about feelings';
+    explanation = 'Use “feel” before an adjective to describe an emotion or condition. After “I”, use “feel”; after he or she, use “feels”. Ask “How do you feel?” when you want to know someone’s emotion.';
+    formula = 'I / You / We / They feel + adjective · He / She feels + adjective';
+    tip = 'I feel happy. / She feels excited. / How do you feel?';
+    exampleList.splice(0, exampleList.length, 'I feel happy.', 'She feels excited.', 'How do you feel?');
+  } else if (/expressing illness|i have a \+ illness/.test(text)) {
+    title = 'Talking about illness';
+    explanation = 'Use “have” or “has” with an illness. Use “have” with I, you, we and they; use “has” with he, she and it. Many common illnesses take “a” before the noun.';
+    formula = 'I / You / We / They have a + illness · He / She has a + illness';
+    tip = 'I have a cold. / She has a headache.';
+    exampleList.splice(0, exampleList.length, 'I have a cold.', 'She has a headache.');
+  } else if (/giving directions/.test(text)) {
+    title = 'Giving directions';
+    explanation = 'Start a direction with the base form of the verb. Use direction phrases such as “go straight”, “turn right” and “turn left” to explain the route.';
+    formula = 'Go / Turn + direction';
+    tip = 'Go straight. / Turn right at the traffic lights. / Turn left at the next street.';
+    exampleList.splice(0, exampleList.length, 'Go straight.', 'Turn right at the traffic lights.', 'Turn left at the next street.');
+  } else if (/questions: is there/.test(text)) {
+    title = 'Asking about things that exist';
+    explanation = 'Use “Is there …?” to ask about one thing. Use “Are there …?” to ask about more than one. In short answers, repeat the verb: “Yes, there is” or “No, there aren’t.”';
+    formula = 'Is there + a / an + singular noun? · Are there + plural noun?';
+    tip = 'Is there a river? Yes, there is. / Are there any trees? Yes, there are.';
+    exampleList.splice(0, exampleList.length, 'Is there a river? Yes, there is.', 'Are there any trees? Yes, there are.');
+  } else if (/telling time/.test(text)) {
+    title = 'Telling the time';
+    explanation = 'For an exact hour, say “It’s” followed by the number and “o’clock”. Use the same pattern to ask and answer about daily schedules.';
+    formula = 'It is / It’s + number + o’clock';
+    tip = 'It’s seven o’clock. / It’s eight o’clock.';
+    exampleList.splice(0, exampleList.length, 'It’s seven o’clock.', 'School starts at eight o’clock.');
+  } else if (/day and night routines/.test(text)) {
+    title = 'Describing daily and natural routines';
+    explanation = 'Use the present simple for routines and facts that happen regularly. Use the base verb with I, you, we and they; add -s or -es with he, she and it.';
+    formula = 'I / We + base verb · He / She / It + verb-s';
+    tip = 'The sun rises in the morning. / Stars appear at night.';
+    exampleList.splice(0, exampleList.length, 'The sun rises in the morning.', 'The moon appears at night.');
+  } else if (/singular vs plural clothes/.test(text)) {
+    title = 'Talking about one item or more than one';
+    explanation = 'Use “this is” with one item and “these are” with two or more. The noun must match: a singular noun after “this”, and a plural noun after “these”.';
+    formula = 'This is + singular noun · These are + plural noun';
+    tip = 'This is my dress. / These are my shoes.';
+    exampleList.splice(0, exampleList.length, 'This is my dress.', 'These are my shoes.');
+  } else if (/adjectives: opposites/.test(text)) {
+    title = 'Using adjectives and their opposites';
+    explanation = 'Adjectives describe people, animals and things. Opposite adjectives give contrasting meanings. After “be”, use the adjective without adding -ly.';
+    formula = 'subject + am / is / are + adjective';
+    tip = 'The clown is funny and short. / The giraffe is tall.';
+    exampleList.splice(0, exampleList.length, 'The clown is funny and short.', 'The giraffe is tall.', 'The old man is kind.');
+  } else if (/animal classification|animal.*traits/.test(text)) {
+    title = 'Describing animal groups and features';
+    explanation = 'Use the present simple to state scientific facts. Use “are” to classify a group and “have” to describe features shared by animals.';
+    formula = 'animal + is / are + group · animal + has / have + feature';
+    tip = 'Lions and camels are mammals. / Fish and reptiles have scales.';
+    exampleList.splice(0, exampleList.length, 'Lions and camels are mammals.', 'Snakes and lizards are reptiles.', 'Fish and reptiles have scales.');
+  } else if (/geography|landscapes/.test(text)) {
+    title = 'Describing places and landscapes';
+    explanation = 'Use “be” with an adjective to describe a place. Use “there is” for one feature and “there are” for more than one.';
+    formula = 'place + is / are + adjective · There is / There are + feature';
+    tip = 'Mount Sinai is majestic. / The Nile Valley is fertile.';
+    exampleList.splice(0, exampleList.length, 'Mount Sinai is majestic.', 'The Nile Valley is fertile.', 'The Nile River is long.');
+  } else if (/nutrition|body needs/.test(text)) {
+    title = 'Talking about food and healthy needs';
+    explanation = 'Use “need” to say what the body requires. Use “should” for helpful advice and “shouldn’t” for advice against something.';
+    formula = 'subject + need(s) + noun · subject + should / shouldn’t + base verb';
+    tip = 'Your body needs water. / You should eat vegetables.';
+    exampleList.splice(0, exampleList.length, 'Your body needs water.', 'You should eat vegetables.', 'You shouldn’t skip breakfast.');
+  } else if (/good at \/ bad at|good at|bad at/.test(text)) {
+    title = 'Saying what you are good or bad at';
+    explanation = 'Use “good at” or “bad at” before a noun or an activity ending in -ing. After “am”, “is” or “are”, keep the phrase “good at” together.';
+    formula = 'am / is / are + good at / bad at + noun or verb-ing';
+    tip = 'I am good at playing squash. / I am bad at tennis.';
+    exampleList.splice(0, exampleList.length, 'I am good at playing squash.', 'I am bad at tennis.');
+  } else if (/could \/ couldn't|past ability/.test(text)) {
+    title = 'Talking about ability in the past';
+    explanation = 'Use “could” for an ability someone had in the past and “couldn’t” for an ability they did not have. Follow both forms with the base verb.';
+    formula = 'subject + could / couldn’t + base verb';
+    tip = 'When I was six, I couldn’t swim. / My sister could ride a bike.';
+    exampleList.splice(0, exampleList.length, 'When I was six, I couldn’t swim.', 'My sister could ride a bike.');
+  } else if (/present simple.*scientific life cycles|present simple for rural life|scientific facts about astronomy|food chains|present simple for natural cycles/.test(text)) {
+    title = 'Using the present simple for facts';
+    explanation = 'Use the present simple for scientific facts, natural processes and regular activities. Add -s or -es to the verb with he, she or it; use the base form with plural subjects.';
+    formula = 'singular subject + verb-s / -es · plural subject + base verb';
+    tip = 'The caterpillar eats leaves. / Planets orbit the sun. / Water evaporates when heated.';
+    exampleList.splice(0, exampleList.length, 'The caterpillar eats leaves.', 'Planets orbit the sun.', 'Water evaporates when heated.');
+  } else if (/past simple.*historical achievements/.test(text)) {
+    title = 'Describing events in history';
+    explanation = 'Use the past simple for completed events in the past. Regular verbs usually end in -ed; irregular verbs have special past forms such as “built”, “went” and “made”.';
+    formula = 'subject + past form of the verb';
+    tip = 'Ancient Egyptians built the pyramids. / Saladin built the Citadel.';
+    exampleList.splice(0, exampleList.length, 'Ancient Egyptians built the pyramids.', 'Saladin built the Citadel.');
+  } else if (/describing amusement parks/.test(text)) {
+    title = 'Describing places and attractions';
+    explanation = 'Use “there is” with one attraction and “there are” with more than one. Add adjectives to describe what an attraction is like.';
+    formula = 'There is + singular noun · There are + plural noun';
+    tip = 'There is a tall Ferris wheel. / There are exciting rides.';
+    exampleList.splice(0, exampleList.length, 'There is a tall Ferris wheel.', 'There are exciting rides.');
+  } else if (/present simple: to be.*nationalities/.test(text)) {
+    title = 'Using be to introduce people and nationalities';
+    explanation = 'Use “am” with I, “is” with he, she or it, and “are” with you, we or they. Nationality words begin with a capital letter in English.';
+    formula = 'I am · He / She is · You / We / They are + nationality';
+    tip = 'I am Egyptian. / They are Egyptian.';
+    exampleList.splice(0, exampleList.length, 'I am Egyptian.', 'She is Egyptian.', 'They are Egyptian.');
+  } else if (/expressing professions|daily tasks/.test(text)) {
+    title = 'Describing jobs and daily tasks';
+    explanation = 'Use the present simple to describe what people do as part of their jobs. With he, she or a singular job title, add -s or -es to most verbs.';
+    formula = 'a / the + job + verb-s / -es';
+    tip = 'A carpenter makes furniture. / A potter shapes clay.';
+    exampleList.splice(0, exampleList.length, 'A carpenter makes furniture.', 'A potter shapes clay.', 'A tour guide shows visitors landmarks.');
+  } else if (/functions of bodily systems/.test(text)) {
+    title = 'Describing body functions and giving advice';
+    explanation = 'Use the present simple for body functions and facts. Use “can” for ability and “should” or “must” when giving advice or explaining what is necessary.';
+    formula = 'body system + verb-s · should / must / can + base verb';
+    tip = 'The heart pumps blood. / You should drink enough water.';
+    exampleList.splice(0, exampleList.length, 'The heart pumps blood.', 'You should drink enough water.');
+  } else if (/conditionals.*cause and effect|cause and effect/.test(text)) {
+    title = 'Showing causes and results';
+    explanation = 'Use “if” or “when” to introduce a condition or cause. Use “as a result” or “therefore” to introduce the result. Keep the verb tense consistent with the meaning.';
+    formula = 'if / when + condition, result · cause. As a result, + effect.';
+    tip = 'If we save energy, we reduce pollution. / We saved energy; therefore, we reduced pollution.';
+    exampleList.splice(0, exampleList.length, 'If we save energy, we reduce pollution.', 'We saved energy; therefore, we reduced pollution.');
+  } else if (/causative verbs/.test(text)) {
+    title = 'Saying that someone arranges a service';
+    explanation = 'Use the causative when someone arranges for another person to do a job. The person arranging the service is the subject; the object receives the action.';
+    formula = 'have / get + object + past participle';
+    tip = 'They had the coral reefs mapped. / She got her bicycle repaired.';
+    exampleList.splice(0, exampleList.length, 'They had the coral reefs mapped.', 'She got her bicycle repaired.');
+  } else if (/these are my|plural demonstrative/.test(text)) {
+    title = 'Introducing more than one person or thing';
+    explanation = 'Use “These are my …” when you introduce two or more people or things. “These” points to a group nearby, “are” agrees with the plural subject, and “my” shows that the people or things belong to you. For one person or thing, use “This is my …”.';
+    formula = 'These are my + plural noun · This is my + singular noun';
+    tip = 'These are my parents. / These are my grandparents. One person: This is my cousin.';
+    exampleList.splice(0, exampleList.length, 'These are my parents.', 'These are my grandparents.', 'This is my cousin.');
+  } else if (/this is my|introducing people/.test(text)) {
+    title = 'Talking about one person or thing';
+    explanation = 'Use “This is my …” to introduce one person or one thing. “This” points to one thing, “is” is the verb, and “my” shows that it belongs to you.';
+    formula = 'This is my + one person or thing';
+    tip = 'Use a singular noun after “my”: This is my brother. / This is my book.';
+  } else if (/imperative|verb in stem|rules \(must/.test(text)) {
+    title = 'Giving instructions';
+    explanation = 'An instruction usually starts with the base form of the verb. Do not add -s or -ing to the verb at the beginning.';
+    formula = 'Base verb + the rest of the instruction';
+    tip = 'Wash your hands. / Touch your nose. For a negative instruction, use “Don’t” + base verb.';
+  } else if (/a vs an|indefinite article/.test(text)) {
+    title = 'Choosing a or an';
+    explanation = 'Use “a” before a consonant sound and “an” before a vowel sound. Listen to the first sound, not only the first letter.';
+    formula = 'a + consonant sound · an + vowel sound';
+    tip = 'a banana, a university, an apple, an orange.';
+  } else if (/in vs on|prepositions of place/.test(text)) {
+    title = 'Describing place';
+    explanation = 'A preposition tells us where something is. “Next to” means beside something; “behind” means at the back of something. “In” means inside, while “on” means touching a surface. Put the preposition before the place or object it describes.';
+    formula = 'subject + am / is / are + preposition + place';
+    tip = 'The bakery is next to the school. / The park is behind the supermarket.';
+    exampleList.splice(0, exampleList.length, 'The bakery is next to the school.', 'The park is behind the supermarket.', 'The book is in the bag.');
+  } else if (/ability|can \+|modal verbs: can|could \/ couldn't/.test(text)) {
+    title = 'Talking about ability';
+    explanation = 'Use “can” before the base form of a verb to say what someone is able to do. The verb after can does not take -s or -ing.';
+    formula = 'Subject + can / can’t + base verb';
+    tip = 'I can swim. / She can’t fly.';
+  } else if (/there is \/ there are|there is/.test(text)) {
+    title = 'Saying that something exists';
+    explanation = 'Use “There is” with one thing and “There are” with more than one thing.';
+    formula = 'There is + singular noun · There are + plural noun';
+    tip = 'There is a book. / There are two books.';
+  } else if (/demonstratives|this \/ that \/ these \/ those/.test(text)) {
+    title = 'Choosing this, that, these or those';
+    explanation = 'Use “this” for one thing near you, “that” for one thing farther away, “these” for more than one thing near you, and “those” for more than one thing farther away.';
+    formula = 'this = one near · that = one far · these = many near · those = many far';
+    tip = 'This is my pen. / Those are my books.';
+  } else if (/past perfect/.test(text)) {
+    title = 'Showing which past action happened first';
+    explanation = 'Use the past perfect for an action completed before another past action. Use the past simple for the later past event.';
+    formula = 'had + past participle · later event: past simple';
+    tip = 'The train had left before we arrived.';
+  } else if (/past continuous|past simple vs past continuous/.test(text)) {
+    title = 'Describing an action in progress in the past';
+    explanation = 'Use the past continuous for an action that was happening at a particular time. Use the past simple for a shorter finished action that happened during it.';
+    formula = 'was / were + verb-ing · past simple for the interrupting action';
+    tip = 'I was reading when the phone rang. / While they were playing, it started to rain.';
+  } else if (/passive voice/.test(text)) {
+    title = 'Using the passive voice';
+    explanation = 'Use the passive when the action or its result is more important than the person who does it. Make the object the subject, then use the correct form of “be” and the past participle.';
+    formula = 'subject + be + past participle';
+    tip = 'People grow rice. → Rice is grown. / The team built the bridge. → The bridge was built.';
+  } else if (/relative pronouns|relative clauses/.test(text)) {
+    title = 'Joining ideas with relative clauses';
+    explanation = 'A relative clause gives more information about a person, thing or place. Use “who” for people, “which” for things and “where” for places. “Whose” shows possession.';
+    formula = 'person + who · thing + which · place + where · possession + whose';
+    tip = 'A doctor is a person who helps sick people. / This is the town where I live.';
+  } else if (/reported speech/.test(text)) {
+    title = 'Reporting what someone said';
+    explanation = 'Reported speech tells us what a person said without repeating the exact words. The tense and pronouns may change to match the reporting sentence.';
+    formula = 'said (that) + reported message';
+    tip = '“I am tired,” Ali said. → Ali said that he was tired.';
+  } else if (/quantifiers|some in affirmative|some.*any/.test(text)) {
+    title = 'Choosing some or any';
+    explanation = 'Use “some” most often in positive sentences and offers or requests. Use “any” most often in questions and negative sentences.';
+    formula = 'some + plural / uncountable noun · any in questions and negatives';
+    tip = 'There are some apples. / Are there any apples? / There isn’t any milk.';
+  } else if (/adverbs of frequency/.test(text)) {
+    title = 'Saying how often something happens';
+    explanation = 'Adverbs of frequency tell us how often we do something. They usually come before the main verb, but after the verb “be”.';
+    formula = 'subject + always / usually / often / sometimes / never + main verb';
+    tip = 'I usually walk to school. / She is always kind.';
+  } else if (/apostrophe|possession with/.test(text)) {
+    title = 'Showing ownership with ’s';
+    explanation = 'Add ’s to a singular owner to show that something belongs to that person. For a regular plural noun ending in s, add only an apostrophe.';
+    formula = 'one owner + ’s + thing · plural owner ending in s + ’';
+    tip = 'Mona’s bag / the students’ books.';
+  } else if (/adjective ordering/.test(text)) {
+    title = 'Putting adjectives in order';
+    explanation = 'When several adjectives come before a noun, they usually follow a natural order. Opinion comes before size, age, shape, colour, origin, material and purpose.';
+    formula = 'opinion → size → age → shape → colour → origin → material → noun';
+    tip = 'a lovely small old wooden box.';
+  } else if (/conjunctions|and vs but/.test(text)) {
+    title = 'Joining ideas with and or but';
+    explanation = 'Use “and” to add similar information. Use “but” to join two ideas that contrast or are different.';
+    formula = 'idea 1 + and / but + idea 2';
+    tip = 'I like apples and bananas. / I like tea, but I don’t like coffee.';
+  } else if (/adverbs of degree/.test(text)) {
+    title = 'Making adjectives stronger or softer';
+    explanation = 'Adverbs of degree tell us how strong an adjective or action is. “Very” and “extremely” make the meaning stronger; “quite” can make it less strong.';
+    formula = 'adverb of degree + adjective';
+    tip = 'The water is very cold. / The test was quite easy.';
+  } else if (/prepositions of movement/.test(text)) {
+    title = 'Describing movement';
+    explanation = 'Prepositions of movement show the direction or path of movement from one place to another.';
+    formula = 'movement verb + preposition + destination';
+    tip = 'Walk across the road. / The cat jumped onto the chair.';
+  } else if (/modal verbs of possibility|modals of deduction/.test(text)) {
+    title = 'Expressing possibility and deduction';
+    explanation = 'Use “may”, “might” or “could” when something is possible but not certain. Use “must” for a strong logical conclusion and “can’t” when something seems impossible.';
+    formula = 'modal verb + base verb';
+    tip = 'It might rain. / She must be at home. / That can’t be true.';
+  } else if (/will & going to|future with will/.test(text)) {
+    title = 'Choosing will or going to';
+    explanation = 'Use “will” for a decision made now or a prediction. Use “be going to” for a plan already made or a prediction based on what you can see.';
+    formula = 'will + base verb · am / is / are going to + base verb';
+    tip = 'I’ll answer the phone. / Look at those clouds! It is going to rain.';
+  } else if (/has got|have got/.test(text)) {
+    title = 'Talking about possession';
+    explanation = 'Use “have got” with I, you, we and they, but “has got” with he, she and it. The form stays the same before the thing someone owns. In negatives, use “haven’t got” or “hasn’t got”. In questions, move “have” or “has” before the subject.';
+    formula = 'I / You / We / They have got + noun · He / She / It has got + noun';
+    tip = 'I have got a new bag. / She has got curly hair. / Have they got a cousin?';
+    exampleList.splice(0, exampleList.length, 'I have got a new bag.', 'She has got curly hair.', 'Have they got a cousin?');
+  } else if (/like \+ verb-ing/.test(text)) {
+    title = 'Talking about likes';
+    explanation = 'When an action follows “like”, use the -ing form of the verb.';
+    formula = 'like / likes + verb-ing';
+    tip = 'I like reading. / He likes playing football.';
+  } else if (/comparative.*superlative|superlative.*comparative/.test(text)) {
+    title = 'Comparing two things and comparing a whole group';
+    explanation = 'Use a comparative to compare two things, often with “than”. Use a superlative to identify the top or bottom member of a group, usually with “the”.';
+    formula = 'comparative: -er / more + adjective + than · superlative: the -est / the most + adjective';
+    tip = 'Mona is taller than Ali. / Mona is the tallest student in the class.';
+  } else if (/comparative/.test(text)) {
+    title = 'Comparing two things';
+    explanation = 'A comparative adjective compares two people or things. Short adjectives often take -er; longer adjectives often use “more”.';
+    formula = 'adjective-er + than · more + adjective + than';
+    tip = 'A tiger is faster than a cat. / This book is more interesting than that one.';
+  } else if (/superlative/.test(text)) {
+    title = 'Comparing three or more things';
+    explanation = 'A superlative describes the top or bottom of a group. Short adjectives often use -est; longer adjectives often use “the most”.';
+    formula = 'the + adjective-est · the most + adjective';
+    tip = 'the tallest tree / the most beautiful place.';
+  } else if (/present simple/.test(text)) {
+    title = 'Using the present simple';
+    explanation = 'Use the present simple for routines and facts. With he, she or it, most verbs add -s or -es. Use the base form with I, you, we and they.';
+    formula = 'I / You / We / They + base verb · He / She / It + verb-s';
+    tip = 'I play every day. / She plays every day.';
+  } else if (/past simple/.test(text)) {
+    title = 'Talking about the past';
+    explanation = 'Use the past simple for a finished action in the past. Regular verbs often end in -ed; irregular verbs have their own past forms.';
+    formula = 'Subject + past form of the verb';
+    tip = 'We visited Luxor. / She went to school.';
+  } else if (/future|going to|future plans/.test(text)) {
+    title = 'Talking about future plans';
+    explanation = 'Use “be going to” before the base verb for a plan or intention.';
+    formula = 'am / is / are + going to + base verb';
+    tip = 'I am going to study. / They are going to travel.';
+  } else if (/should/.test(text)) {
+    title = 'Giving advice';
+    explanation = 'Use “should” for a good idea and “shouldn’t” for advice not to do something. Follow it with the base form of the verb.';
+    formula = 'should / shouldn’t + base verb';
+    tip = 'You should sleep early. / You shouldn’t eat too much sugar.';
+  } else if (/zero & first conditional/.test(text)) {
+    title = 'Using zero and first conditionals';
+    explanation = 'Use the zero conditional for facts and results that are generally true. Use the first conditional for a real future possibility.';
+    formula = 'zero: if + present, present · first: if + present, will + base verb';
+    tip = 'If you heat ice, it melts. / If it rains, we will stay inside.';
+  } else if (/second conditional/.test(text)) {
+    title = 'Imagining an unlikely or unreal situation';
+    explanation = 'Use the second conditional to imagine a present or future situation that is unlikely or unreal.';
+    formula = 'If + past simple, would + base verb';
+    tip = 'If I had wings, I would fly.';
+  } else if (/third conditional/.test(text)) {
+    title = 'Imagining a different past';
+    explanation = 'Use the third conditional to imagine a past situation that did not happen and its imagined result.';
+    formula = 'If + past perfect, would have + past participle';
+    tip = 'If we had left earlier, we would have caught the bus.';
+  } else if (/conditionals/.test(text)) {
+    title = 'Using if sentences';
+    explanation = 'An if-clause describes a condition. The other clause tells us the result. The verb forms change according to whether we mean a fact, a real possibility or an imaginary situation.';
+    formula = 'If + condition, result';
+    tip = 'Read both parts together and check the time and meaning before choosing the verb form.';
+  }
+  return { title, explanation, formula, tip, examples: exampleList };
+}
+
+function renderImportedPrimaryCurriculum() {
+  if (state.stage !== 'primary' || !['general', 'advanced'].includes(state.path)) return '';
+  const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
+  const grade = track?.grades.find((item) => item.grade === state.grade);
+  if (!grade) return '';
+  const unit = grade.units.find((item) => item.number === Number(state.importedUnitNumber));
+  // Render the unit list before accessing any unit-specific fields.
+  // On a fresh launch there is no selected unit yet.
+  if (!unit) {
+    return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
+      grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
+  }
+  const unitWords = unit?.vocabulary || [];
+  const choiceOptions = (answer, index = 0, limit = 4) => {
+    const pool = unitWords.map((item) => item.en).filter((word) => word && word.toLowerCase() !== String(answer).toLowerCase());
+    const distractors = [];
+    for (let step = 0; step < pool.length && distractors.length < limit - 1; step++) {
+      const word = pool[(index + step * 3) % pool.length];
+      if (word && !distractors.includes(word)) distractors.push(word);
+    }
+    return [answer, ...distractors];
+  };
+  const grammarDistractors = {
+    my: ['your', 'his', 'her'], your: ['my', 'his', 'her'], his: ['her', 'my', 'their'], her: ['his', 'my', 'their'],
+    is: ['are', 'am', 'be'], are: ['is', 'am', 'be'], am: ['is', 'are', 'be'], have: ['has', 'had', 'are'], has: ['have', 'had', 'is'],
+    this: ['that', 'these', 'those'], these: ['this', 'that', 'those'], that: ['this', 'these', 'those'], those: ['these', 'this', 'that'],
+    a: ['an', 'the', 'some'], an: ['a', 'the', 'some'], in: ['on', 'under', 'behind'], on: ['in', 'under', 'behind'],
+    can: ['could', 'must', 'are'], will: ['would', 'is', 'has'], who: ['which', 'where', 'whose'], which: ['who', 'where', 'whose'],
+    was: ['were', 'is', 'are'], were: ['was', 'is', 'are'], had: ['has', 'have', 'is'],
+    next: ['behind', 'between', 'under'], behind: ['next to', 'in front of', 'between'],
+    happy: ['sad', 'angry', 'tired'], cold: ['headache', 'fever', 'cough'], rises: ['rise', 'rising', 'rose'],
+    mammals: ['reptiles', 'amphibians', 'birds'], majestic: ['fertile', 'vast', 'narrow'], needs: ['need', 'needing', 'needed'],
+    eats: ['eat', 'eating', 'ate'], am: ['is', 'are', 'be'], makes: ['make', 'making', 'made'],
+    mapped: ['map', 'mapping', 'maps'], reduce: ['reduces', 'reduced', 'reducing'], "o'clock": ['clock', 'hour', 'minutes']
+  };
+  const makeCloze = (sentence, index, prefix, targetOverride = null) => {
+    const tokens = String(sentence || '').match(/[A-Za-z][A-Za-z']*/g) || [];
+    if (!tokens.length) return null;
+    const targetWord = targetOverride || tokens[Math.min(tokens.length - 1, Math.max(0, Math.floor(tokens.length / 2)))];
+    const rawSentence = String(sentence);
+    const targetAt = rawSentence.toLowerCase().indexOf(String(targetWord).toLowerCase());
+    const prompt = targetAt >= 0 ? rawSentence.slice(0, targetAt) + '____' + rawSentence.slice(targetAt + String(targetWord).length) : rawSentence;
+    const grammarOptions = grammarDistractors[String(targetWord).toLowerCase()];
+    const options = /grammar/i.test(prefix) && grammarOptions ? [targetWord, ...grammarOptions] : choiceOptions(targetWord, index);
+    return { q: prefix + prompt, opts: options, ans: 0 };
+  };
+  const sourceGrammarExamples = (unit?.grammar?.examples || []).filter((example) => !/(key pattern|verification|correct structure|incorrect syntax)/i.test(String(example)));
+  const grammarLesson = explainGrammarRule(unit?.grammar?.rule, sourceGrammarExamples);
+  const grammarLessonExamples = grammarLesson.examples.length ? grammarLesson.examples : unitWords.map((word) => word.ex).filter(Boolean).slice(0, 3);
+  const grammarPractice = [...(unit?.grammar?.quiz || []).filter((item) => !/(verification|application check|key pattern|correct structure|incorrect syntax)/i.test(String(item.q || '')))];
+  const grammarRuleText = String(unit?.grammar?.rule || '').toLowerCase();
+  const grammarQuestionSets = [
+    [/expressing feelings|i feel \+ adjective/, [
+      { q: 'How do you feel today? I feel ___.', opts: ['happy', 'happily', 'happiness'], ans: 0 },
+      { q: 'She ___ excited.', opts: ['feels', 'feel', 'feeling'], ans: 0 },
+      { q: 'I feel ___ after a good rest.', opts: ['better', 'wellness', 'bestly'], ans: 0 }
+    ]],
+    [/expressing illness|i have a \+ illness/, [
+      { q: 'I have a ___.', opts: ['cold', 'coldly', 'colder'], ans: 0 },
+      { q: 'She ___ a headache.', opts: ['has', 'have', 'having'], ans: 0 },
+      { q: 'They ___ a cough.', opts: ['have', 'has', 'having'], ans: 0 }
+    ]],
+    [/giving directions/, [
+      { q: '___ straight at the next street.', opts: ['Go', 'Goes', 'Going'], ans: 0 },
+      { q: 'Turn ___ at the traffic lights.', opts: ['left', 'between', 'under'], ans: 0 },
+      { q: '___ right to reach the station.', opts: ['Turn', 'Turns', 'Turning'], ans: 0 }
+    ]],
+    [/telling time/, [
+      { q: 'It is seven ___.', opts: ["o'clock", 'clock', 'hours'], ans: 0 },
+      { q: 'School starts ___ eight o’clock.', opts: ['at', 'in', 'on'], ans: 0 },
+      { q: 'What time is it? It ___ nine o’clock.', opts: ['is', 'are', 'am'], ans: 0 }
+    ]],
+    [/day and night routines/, [
+      { q: 'The sun ___ in the morning.', opts: ['rises', 'rise', 'rising'], ans: 0 },
+      { q: 'Stars ___ at night.', opts: ['appear', 'appears', 'appearing'], ans: 0 },
+      { q: 'The moon ___ at night.', opts: ['shines', 'shine', 'shining'], ans: 0 }
+    ]],
+    [/animal classification|animal.*traits/, [
+      { q: 'Lions and camels are ___.', opts: ['mammals', 'reptiles', 'amphibians'], ans: 0 },
+      { q: 'Fish and reptiles ___ scales.', opts: ['have', 'has', 'having'], ans: 0 },
+      { q: 'A frog is an ___.', opts: ['amphibian', 'mammal', 'reptile'], ans: 0 }
+    ]],
+    [/geography|landscapes/, [
+      { q: 'Mount Sinai is ___.', opts: ['majestic', 'majestically', 'majesty'], ans: 0 },
+      { q: 'The Nile Valley ___ fertile.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'There ___ a river in the valley.', opts: ['is', 'are', 'be'], ans: 0 }
+    ]],
+    [/nutrition|body needs/, [
+      { q: 'Your body ___ water every day.', opts: ['needs', 'need', 'needing'], ans: 0 },
+      { q: 'You ___ eat vegetables.', opts: ['should', 'should to', 'shoulds'], ans: 0 },
+      { q: 'You ___ skip breakfast.', opts: ["shouldn't", 'should', 'must to'], ans: 0 }
+    ]],
+    [/present simple.*scientific life cycles|present simple for rural life|scientific facts about astronomy|food chains|present simple for natural cycles/, [
+      { q: 'The caterpillar ___ leaves.', opts: ['eats', 'eat', 'eating'], ans: 0 },
+      { q: 'Planets ___ the sun.', opts: ['orbit', 'orbits', 'orbiting'], ans: 0 },
+      { q: 'A predator ___ its prey.', opts: ['eats', 'eat', 'eating'], ans: 0 }
+    ]],
+    [/present simple: to be.*nationalities/, [
+      { q: 'I ___ Egyptian.', opts: ['am', 'is', 'are'], ans: 0 },
+      { q: 'She ___ Egyptian.', opts: ['is', 'am', 'are'], ans: 0 },
+      { q: 'They ___ Egyptian.', opts: ['are', 'is', 'am'], ans: 0 }
+    ]],
+    [/expressing professions|daily tasks/, [
+      { q: 'A carpenter ___ furniture.', opts: ['makes', 'make', 'making'], ans: 0 },
+      { q: 'A potter ___ clay.', opts: ['shapes', 'shape', 'shaping'], ans: 0 },
+      { q: 'Tour guides ___ visitors around landmarks.', opts: ['show', 'shows', 'showing'], ans: 0 }
+    ]],
+    [/causative verbs/, [
+      { q: 'They had the coral reefs ___.', opts: ['mapped', 'map', 'mapping'], ans: 0 },
+      { q: 'She got her bicycle ___.', opts: ['repaired', 'repair', 'repairing'], ans: 0 },
+      { q: 'Have + object + past ___.', opts: ['participle', 'present', 'infinitive'], ans: 0 }
+    ]],
+    [/conditionals.*cause and effect|cause and effect/, [
+      { q: 'If we save energy, we ___ pollution.', opts: ['reduce', 'reduces', 'reduced'], ans: 0 },
+      { q: 'If water reaches 100°C, it ___.', opts: ['boils', 'boil', 'boiling'], ans: 0 },
+      { q: 'We planted trees. As a result, the air ___.', opts: ['improved', 'improve', 'improving'], ans: 0 }
+    ]],
+    [/has got|have got/, [
+      { q: 'She ___ got curly hair.', opts: ['has', 'have', 'is'], ans: 0 },
+      { q: 'They ___ got two cousins.', opts: ['have', 'has', 'are'], ans: 0 },
+      { q: 'I ___ got a new bag.', opts: ['have', 'has', 'am'], ans: 0 },
+      { q: '___ he got glasses?', opts: ['Has', 'Have', 'Does'], ans: 0 },
+      { q: 'We ___ got a big family.', opts: ['have', 'has', 'is'], ans: 0 }
+    ]],
+    [/prepositions.*(place|next to|behind)|in vs on/, [
+      { q: 'The bakery is ___ to the school.', opts: ['next', 'behind', 'under'], ans: 0 },
+      { q: 'The park is ___ the supermarket.', opts: ['behind', 'between', 'on'], ans: 0 },
+      { q: 'The book is ___ the bag.', opts: ['in', 'next', 'behind'], ans: 0 },
+      { q: 'The picture is ___ the wall.', opts: ['on', 'in', 'between'], ans: 0 }
+    ]],
+    [/these are my|plural demonstrative/, [
+      { q: '___ are my parents.', opts: ['These', 'This', 'That'], ans: 0 },
+      { q: 'These ___ my grandparents.', opts: ['are', 'is', 'am'], ans: 0 },
+      { q: 'These are my ___.', opts: ['friends', 'friend', 'friendly'], ans: 0 },
+      { q: 'This is my ___.', opts: ['cousin', 'cousins', 'cousin are'], ans: 0 }
+    ]],
+    [/this is my|demonstrative/, [
+      { q: '___ is my book.', opts: ['This', 'These', 'Those'], ans: 0 },
+      { q: 'This ___ my teacher.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'This is ___ bag.', opts: ['my', 'me', 'I'], ans: 0 },
+      { q: '___ are my parents.', opts: ['These', 'This', 'That'], ans: 0 }
+    ]],
+    [/imperative|verb in stem/, [
+      { q: '___ your hands.', opts: ['Wash', 'Washing', 'Washes'], ans: 0 },
+      { q: '___ run in the classroom.', opts: ["Don't", "Doesn't", 'Not'], ans: 0 },
+      { q: '___ your book, please.', opts: ['Open', 'Opens', 'Opening'], ans: 0 }
+    ]],
+    [/a vs an|indefinite articles/, [
+      { q: 'I have ___ apple.', opts: ['an', 'a', 'the'], ans: 0 },
+      { q: 'This is ___ bag.', opts: ['a', 'an', 'the'], ans: 0 },
+      { q: 'She has ___ orange.', opts: ['an', 'a', 'the'], ans: 0 }
+    ]],
+    [/there is \/ there are|there is|there are/, [
+      { q: 'There ___ a book on the desk.', opts: ['is', 'are', 'am'], ans: 0 },
+      { q: 'There ___ two pencils in the bag.', opts: ['are', 'is', 'am'], ans: 0 },
+      { q: '___ there a park near here?', opts: ['Is', 'Are', 'Do'], ans: 0 }
+    ]],
+    [/ability|can \+|modal verbs: can/, [
+      { q: 'She can ___.', opts: ['swim', 'swims', 'swimming'], ans: 0 },
+      { q: 'I ___ play football.', opts: ['can', 'cans', 'am'], ans: 0 },
+      { q: 'He can ___ a ball.', opts: ['kick', 'kicks', 'kicking'], ans: 0 }
+    ]],
+    [/present simple/, [
+      { q: 'He ___ to school every day.', opts: ['goes', 'go', 'going'], ans: 0 },
+      { q: 'They ___ football on Fridays.', opts: ['play', 'plays', 'playing'], ans: 0 },
+      { q: 'She ___ her teeth every morning.', opts: ['brushes', 'brush', 'brushing'], ans: 0 }
+    ]],
+    [/past simple/, [
+      { q: 'Yesterday, we ___ to the park.', opts: ['went', 'go', 'goes'], ans: 0 },
+      { q: 'She ___ her homework last night.', opts: ['finished', 'finish', 'finishes'], ans: 0 },
+      { q: 'They ___ a museum last week.', opts: ['visited', 'visit', 'visits'], ans: 0 }
+    ]],
+    [/comparative/, [
+      { q: 'A tiger is ___ than a cat.', opts: ['faster', 'fastest', 'fast'], ans: 0 },
+      { q: 'This book is ___ interesting than that one.', opts: ['more', 'most', 'many'], ans: 0 },
+      { q: 'My bag is ___ than yours.', opts: ['heavier', 'heaviest', 'heavy'], ans: 0 }
+    ]],
+    [/superlative/, [
+      { q: 'The Nile is one of the ___ rivers in the world.', opts: ['longest', 'longer', 'long'], ans: 0 },
+      { q: 'This is the ___ picture in the class.', opts: ['most beautiful', 'more beautiful', 'beautiful'], ans: 0 },
+      { q: 'Mona is the ___ student in her team.', opts: ['tallest', 'taller', 'tall'], ans: 0 }
+    ]],
+    [/passive voice/, [
+      { q: 'The bridge ___ built in 2020.', opts: ['was', 'were', 'are'], ans: 0 },
+      { q: 'Rice ___ grown in Egypt.', opts: ['is', 'are', 'be'], ans: 0 },
+      { q: 'The letters ___ delivered yesterday.', opts: ['were', 'was', 'is'], ans: 0 }
+    ]],
+    [/conditionals/, [
+      { q: 'If you heat ice, it ___.', opts: ['melts', 'melt', 'will melted'], ans: 0 },
+      { q: 'If it rains tomorrow, we ___ stay at home.', opts: ['will', 'would', 'are'], ans: 0 },
+      { q: 'If I had more time, I ___ learn French.', opts: ['would', 'will', 'am'], ans: 0 }
+    ]],
+    [/future plans|going to/, [
+      { q: 'She is going to ___ for her test.', opts: ['study', 'studies', 'studying'], ans: 0 },
+      { q: 'They are going to ___ tomorrow.', opts: ['travel', 'travels', 'travelled'], ans: 0 },
+      { q: 'I am ___ to visit my aunt.', opts: ['going', 'go', 'goes'], ans: 0 }
+    ]],
+    [/relative pronouns|relative clauses/, [
+      { q: 'A doctor is a person ___ helps people.', opts: ['who', 'which', 'where'], ans: 0 },
+      { q: 'This is the school ___ I study.', opts: ['where', 'who', 'whose'], ans: 0 },
+      { q: 'A laptop is a device ___ stores information.', opts: ['which', 'who', 'where'], ans: 0 }
+    ]],
+    [/past perfect/, [
+      { q: 'The train ___ left before we arrived.', opts: ['had', 'has', 'have'], ans: 0 },
+      { q: 'She had ___ dinner before the guests came.', opts: ['cooked', 'cook', 'cooking'], ans: 0 },
+      { q: 'After they had finished, they ___ home.', opts: ['went', 'go', 'going'], ans: 0 }
+    ]],
+    [/reported speech/, [
+      { q: 'Ali said that he ___ tired.', opts: ['was', 'is', 'am'], ans: 0 },
+      { q: 'Mona said that she ___ the answer.', opts: ['knew', 'knows', 'know'], ans: 0 },
+      { q: 'He said that he ___ help us.', opts: ['would', 'will', 'can'], ans: 0 }
+    ]]
+  ];
+  const matchingGrammarSet = grammarQuestionSets.find(([pattern]) => pattern.test(grammarRuleText));
+  if (matchingGrammarSet) {
+    matchingGrammarSet[1].forEach((question) => {
+      if (!grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
+    });
+  }
+  grammarLessonExamples.slice(0, 2).forEach((example, index) => {
+    const question = makeCloze(example, index + 1, 'Complete the grammar example: ');
+    if (question) grammarPractice.push(question);
+  });
+  const grammarExampleSource = grammarLessonExamples[0] || '';
+  const grammarTargets = [...new Set(unitWords.map((item) => item.en).filter((word) =>
+    word && grammarLessonExamples.some((example) => String(example).toLowerCase().includes(String(word).toLowerCase()))
+  ))];
+  grammarTargets.forEach((target, index) => {
+    if (grammarPractice.length >= 8) return;
+    const sentence = grammarLessonExamples.find((example) => String(example).toLowerCase().includes(String(target).toLowerCase()));
+    const question = makeCloze(sentence, index + 4, 'Choose the word that completes the grammar example: ', target);
+    if (question && !grammarPractice.some((item) => item.q === question.q)) grammarPractice.push(question);
+  });
+  const grammarTokens = String(grammarExampleSource).match(/[A-Za-z][A-Za-z']*/g) || [];
+  while (grammarPractice.length < 3 && grammarTokens.length) {
+    const target = grammarTokens[grammarPractice.length % grammarTokens.length];
+    const question = makeCloze(grammarExampleSource, grammarPractice.length, 'Complete the grammar example: ', target);
+    if (question) grammarPractice.push(question);
+    else break;
+  }
+  const readingSentences = String(unit?.readingText || '').split(/(?<=[.!?])\s+/).filter(Boolean);
+  const readingPractice = [];
+  const readingTargets = unitWords.map((item) => item.en).filter((word) => word && String(unit?.readingText || '').toLowerCase().includes(word.toLowerCase()));
+  const passageWords = (String(unit?.readingText || '').match(/[A-Za-z][A-Za-z']*/g) || []).filter((word, index, all) => all.findIndex((x) => x.toLowerCase() === word.toLowerCase()) === index);
+  const readingPool = [...readingTargets, ...passageWords.filter((word) => !readingTargets.some((x) => x.toLowerCase() === word.toLowerCase()))].slice(0, 5);
+  readingPool.forEach((word, index) => {
+    const sentence = readingSentences.find((line) => line.toLowerCase().includes(word.toLowerCase())) || unit.readingText || '';
+    const question = makeCloze(sentence, index, 'Complete the reading sentence: ', word);
+    if (question) readingPractice.push(question);
+  });
+  const listeningPractice = unitWords.slice(0, 5).map((word, index) => ({
+    q: 'Listen to the word and choose the matching English word.',
+    audio: word.en,
+    opts: choiceOptions(word.en, index),
+    ans: 0
+  }));
+  const speakingPrompts = unitWords.slice(0, 10).map((word, index) => ({
+    prompt: index % 2 === 0 ? 'Say the word clearly:' : 'Use the word in a complete sentence:',
+    target: index % 2 === 0 ? word.en : (word.ex || word.en)
+  }));
+  const authenticDialogue = (unit?.dialogue || []).filter((line) => {
+    const text = String(line.text || '');
+    return text && !/welcome class! today we explore|welcome to unit \d+:|ministerial exercises|ready to learn and pronounce clearly|\.\.\./i.test(text)
+      && !/أ\. محمد المنشاوي/.test(String(line.speaker || ''));
+  });
+  const modelDialogue = authenticDialogue.length ? authenticDialogue : [
+    { speaker: 'Teacher', text: 'What can you say about ' + (unitWords[0]?.en || unit.title) + '?' },
+    { speaker: 'Student', text: unitWords[0]?.ex || sourceGrammarExamples[0] || 'I can talk about ' + unit.title + '.' }
+  ];
+  const authenticSpeakingQuestions = (unit?.speakingQuestions || []).filter((item) =>
+    item.q && !/where does the conversation take place|other topic/i.test(String(item.q) + ' ' + (item.opts || []).join(' '))
+  );
+  const vocabularySupplementary = unitWords.flatMap((word, index) => {
+    const arabicOptions = [word.ar, ...unitWords
+      .filter((item) => item.en !== word.en && item.ar)
+      .map((item) => item.ar)
+      .filter((meaning, meaningIndex, all) => meaning && meaning !== word.ar && all.indexOf(meaning) === meaningIndex)
+      .slice(index % 3, (index % 3) + 2)];
+    return [
+      { q: 'Choose the English word for: ' + word.ar, opts: choiceOptions(word.en, index), ans: 0 },
+      { q: 'What does "' + word.en + '" mean?', opts: arabicOptions, ans: 0 }
+    ];
+  });
+  const unitTestQuestions = [
+    ...(unit?.vocabularyQuestions || []).slice(0, 5),
+    ...grammarPractice.slice(0, 8),
+    ...readingPractice.slice(0, 5),
+    ...listeningPractice.slice(0, 4),
+    ...(unit?.examQuestions || []).slice(0, 2)
+  ].slice(0, 24);
+  const modules = [
+    { id: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings and examples', icon: '📚', count: unit?.vocabulary?.length || 0 },
+    { id: 'grammar', title: 'Grammar', subtitle: 'Clear explanation, examples and practice', icon: '✏️', count: grammarPractice.length },
+    { id: 'phonics', title: 'Phonics', subtitle: 'Sounds and word patterns', icon: '🔤', count: (unit?.phonics?.words || []).length },
+    { id: 'reading', title: 'Reading', subtitle: 'Passage and 5 reading activities', icon: '📖', count: (unit?.readingText ? 1 : 0) + readingPractice.length },
+    { id: 'dialogue', title: 'Dialogue & Speaking', subtitle: 'Conversation and 10 speaking prompts', icon: '🎤', count: (unit?.dialogue || []).length + (unit?.speakingQuestions || []).length + speakingPrompts.length },
+    { id: 'listening', title: 'Listening Practice', subtitle: '5 listen-and-choose questions', icon: '🎧', count: listeningPractice.length },
+    { id: 'games', title: 'Word Games', subtitle: '4 interactive games using unit words', icon: '🎮', count: 4 },
+    { id: 'vocabulary-practice', title: 'Vocabulary Practice', subtitle: 'Source quiz plus 20 extra questions', icon: '🧠', count: (unit?.vocabularyQuestions || []).length + vocabularySupplementary.length },
+    { id: 'tests', title: 'Unit Tests', subtitle: 'Up to 24 mixed review questions', icon: '📝', count: unitTestQuestions.length }
+  ];
+  const moduleGroups = [
+    { title: 'Learn', subtitle: 'Build understanding before you practise.', items: modules.filter((item) => ['vocabulary', 'grammar', 'phonics', 'reading'].includes(item.id)) },
+    { title: 'Practice', subtitle: 'Use the new language in activities and games.', items: modules.filter((item) => ['dialogue', 'listening', 'games', 'vocabulary-practice'].includes(item.id)) },
+    { title: 'Check your progress', subtitle: 'Review what you have learned in this unit.', items: modules.filter((item) => item.id === 'tests') }
+  ];
+  const renderQuestions = (items, prefix) => (items || []).map((q, index) => {
+    const sourceOptions = Array.isArray(q.opts) ? q.opts : [];
+    const answer = Number.isInteger(q.ans) ? q.ans : 0;
+    const id = prefix + '-' + index;
+    const optionText = (option) => typeof option === 'string' ? option : String(option?.text ?? option?.label ?? option?.value ?? '');
+    const correctOption = sourceOptions[answer];
+    const opts = [...sourceOptions.filter((_, originalIndex) => originalIndex !== answer)];
+    const isArabicOptions = sourceOptions.some((option) => /[\u0600-\u06FF]/.test(optionText(option)));
+    const grammarCandidates = grammarDistractors[String(correctOption || '').toLowerCase()] || [];
+    const extraCandidates = /-r(?:-|$)/.test(prefix)
+      ? grammarCandidates
+      : unitWords.map((word) => isArabicOptions ? word.ar : word.en);
+    for (const candidate of extraCandidates) {
+      if (opts.length >= 3) break;
+      if (candidate && optionText(candidate) !== optionText(correctOption) && !opts.some((item) => optionText(item) === optionText(candidate))) opts.push(candidate);
+    }
+    if (opts.length < 3) {
+      const safeFallbacks = isArabicOptions ? ['إجابة أخرى', 'كلمة أخرى'] : ['another', 'different'];
+      for (const candidate of safeFallbacks) {
+        if (opts.length >= 3) break;
+        if (!opts.some((item) => optionText(item) === candidate) && optionText(correctOption) !== candidate) opts.push(candidate);
+      }
+    }
+    const distractors = opts;
+    let seed = 0;
+    for (const char of id) seed = (seed * 31 + char.charCodeAt(0)) % 2147483647;
+    for (let i = distractors.length - 1; i > 0; i--) {
+      seed = (seed * 16807) % 2147483647;
+      const j = Math.floor((seed / 2147483647) * (i + 1));
+      [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
+    }
+    const correctPosition = index % 4;
+    const shuffled = [...distractors];
+    shuffled.splice(correctPosition, 0, correctOption);
+    const correct = correctPosition;
+    const saved = getQuestionState(id);
+    const wrong = saved.wrongChoices.map(String);
+    const rawPrompt = String(q.q || 'Choose the correct answer');
+    const meaningMatch = rawPrompt.match(/ما معنى كلمة\s*[（(]([^）)]+)[）)]\s*[؟?]?/);
+    const displayPrompt = meaningMatch
+      ? 'Choose the correct meaning of “' + meaningMatch[1].trim() + '”.'
+      : rawPrompt;
+    return '<article class="interactive-question imported-question" data-imported-question="' + escapeHtml(id) + '" data-answered="' + (saved.isCorrect ? 'true' : 'false') + '">' +
+      (q.audio ? '<button type="button" class="tts-play-btn small imported-question-audio" data-tts-text="' + escapeHtml(q.audio) + '">🔊 Listen</button>' : '') + '<p class="question-prompt-text" dir="auto">' + escapeHtml(displayPrompt) + '</p><div class="quiz-options">' +
+      shuffled.map((option, oi) => {
+        const good = saved.isCorrect && Number(saved.choice) === oi;
+        const bad = wrong.includes(String(oi));
+        return '<button type="button" class="quiz-option imported-answer ' + (good ? 'is-correct' : bad ? 'is-wrong' : '') + '" data-question="' + escapeHtml(id) + '" data-choice="' + oi + '" data-correct="' + correct + '"' + (saved.isCorrect || bad ? ' disabled' : '') + '><span class="option-letter">' + String.fromCharCode(65 + oi) + '</span><span class="option-text" dir="auto">' + escapeHtml(optionText(option)) + '</span></button>';
+      }).join('') + '</div><p class="imported-feedback ' + (saved.isCorrect ? 'correct' : wrong.length ? 'incorrect' : '') + '" aria-live="polite">' + (saved.isCorrect ? 'Correct! Well done.' : wrong.length ? 'Not quite. Try another answer.' : '') + '</p></article>';
+  }).join('');
+  const prefix = unit ? 'g' + grade.grade + '-' + track.id + '-u' + unit.number : '';
+  const vocab = (unit?.vocabulary || []).map((v) => '<article class="imported-vocab"><span>' + escapeHtml(v.e || '📘') + '</span><strong dir="ltr">' + escapeHtml(v.en || '') + '</strong><span dir="rtl">' + escapeHtml(v.ar || '') + '</span><small dir="ltr">' + escapeHtml(v.ex || '') + '</small><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(v.en || '') + '">🔊 Listen to pronunciation</button>' + (v.ex ? '<button type="button" class="tts-play-btn small secondary" data-tts-text="' + escapeHtml(v.ex) + '">▶ Listen to example</button>' : '') + '</article>').join('');
+  let body = '';
+  if (unit && state.activeModule) {
+    switch (state.activeModule) {
+      case 'vocabulary': body = '<div class="imported-vocab-grid">' + vocab + '</div>'; break;
+      case 'grammar': body = '<article class="imported-section-card grammar-lesson-card"><p class="eyebrow">GRAMMAR GUIDE</p><h3>' + escapeHtml(grammarLesson.title) + '</h3><p>' + escapeHtml(grammarLesson.explanation) + '</p><div class="grammar-formula"><strong>Pattern</strong><span>' + escapeHtml(grammarLesson.formula) + '</span></div><p class="grammar-tip"><strong>Remember:</strong> ' + escapeHtml(grammarLesson.tip) + '</p><h4>Examples</h4><ul>' + grammarLesson.examples.map((x) => '<li dir="auto">' + escapeHtml(x) + ' <button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(x) + '">🔊 Listen</button></li>').join('') + '</ul><p class="unit-source-note">The guide is a simplified learning explanation based on this unit’s grammar heading and examples.</p></article><h3 class="module-subheading">Grammar practice · ' + grammarPractice.length + ' questions</h3>' + renderQuestions(grammarPractice, prefix + '-r'); break;
+      case 'phonics': body = '<article class="imported-section-card"><h3>' + escapeHtml(unit.phonics?.title || 'Phonics') + '</h3><p>' + escapeHtml(unit.phonics?.desc || '') + '</p><p class="unit-source-note">Listen to each sound and repeat it aloud.</p><div class="imported-chip-list">' + (unit.phonics?.words || []).map((w) => '<button type="button" class="imported-phonics-word" data-tts-text="' + escapeHtml(w) + '">🔊 ' + escapeHtml(w) + '</button>').join('') + '</div></article>'; break;
+      case 'reading': body = '<article class="imported-section-card"><h3>Reading passage</h3><p class="imported-reading-text" dir="auto">' + escapeHtml(unit.readingText || 'No reading passage supplied.') + '</p><button type="button" class="big-audio-btn" data-tts-text="' + escapeHtml(unit.readingText || '') + '">🔊 Listen to the full passage</button></article><h3 class="module-subheading">Reading comprehension · 5 activities</h3><p class="unit-source-note">Supplementary sentence-completion practice generated from the passage text.</p>' + renderQuestions(readingPractice, prefix + '-read'); break;
+      case 'dialogue': body = '<p class="unit-source-note">Model conversation and speaking prompts for extra practice, based on this unit’s examples.</p><div class="imported-dialogue">' + modelDialogue.map((line) => '<article><strong>' + escapeHtml(line.speaker || '') + '</strong><p dir="auto">' + escapeHtml(line.text || '') + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(line.text || '') + '">🔊 Listen</button></article>').join('') + '</div><h3 class="module-subheading">Speaking practice</h3>' + renderQuestions(authenticSpeakingQuestions, prefix + '-s') + '<div class="imported-speaking-prompts">' + speakingPrompts.map((item) => '<article class="imported-section-card"><strong>' + escapeHtml(item.prompt) + '</strong><p dir="ltr">' + escapeHtml(item.target) + '</p><button type="button" class="tts-play-btn small" data-tts-text="' + escapeHtml(item.target) + '">🔊 Hear a model</button></article>').join('') + '</div>'; break;
+      case 'listening': body = '<p class="unit-source-note">Listen to each word, then choose the word you heard.</p>' + renderQuestions(listeningPractice, prefix + '-listen'); break;
+      case 'games': body = renderGames(); break;
+      case 'vocabulary-practice': body = '<h3 class="module-subheading">Textbook-source questions</h3>' + renderQuestions(unit.vocabularyQuestions, prefix + '-v') + '<h3 class="module-subheading">Extra meaning practice</h3><p class="unit-source-note">Extra questions generated from this unit’s vocabulary list.</p>' + renderQuestions(vocabularySupplementary, prefix + '-vs'); break;
+      case 'tests': body = '<h3 class="module-subheading">Unit assessment · ' + unitTestQuestions.length + ' questions</h3><p class="unit-source-note">A mixed review using vocabulary, grammar, reading, listening and the supplied exam questions. Extra generated items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
+    }
+    const active = modules.find((item) => item.id === state.activeModule);
+    return '<section class="panel imported-curriculum imported-module-screen ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
+  }
+  if (unit) {
+    return '<section class="panel imported-curriculum imported-unit-dashboard ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-module-groups">' +
+      moduleGroups.map((group) => '<section class="imported-module-group"><div class="imported-module-group-heading"><h3>' + group.title + '</h3><p>' + group.subtitle + '</p></div><div class="imported-section-grid">' + group.items.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>').join('') + '</div></section>';
+  }
+  return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
+    grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
+}
 function renderCandidateContent(record) {
   const blocks = [];
   const paragraph = (label, value) => value ? `<p><strong>${label}:</strong> ${escapeHtml(value)}</p>` : '';
@@ -421,7 +1123,12 @@ const gameRegistry = {
     },
     high: {
       grades: [4, 5, 6],
-      games: [] // Content unavailable
+      games: [
+        { title: '🧠 Word Detective', renderer: renderGame1Matching },
+        { title: '🧩 Sentence Builder', renderer: renderGame2WordBuilder },
+        { title: '🎧 Listening Challenge', renderer: renderGame3ListenChoose },
+        { title: '🏆 Meaning Challenge', renderer: renderGame4CommandsChallenge }
+      ]
     }
   },
   preparatory: {
@@ -443,6 +1150,32 @@ function getGamesForState(stage, grade) {
     return grade <= 3 ? gameRegistry.primary.low.games : gameRegistry.primary.high.games;
   }
   return gameRegistry[stage]?.games || [];
+}
+
+function getImportedPrimaryUnitForGames() {
+  if (state.stage !== 'primary' || !['general', 'advanced'].includes(state.path) || !state.importedUnitNumber) return null;
+  const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
+  const grade = track?.grades.find((item) => item.grade === state.grade);
+  return grade?.units.find((item) => item.number === Number(state.importedUnitNumber)) || null;
+}
+
+function getPrimaryGameWords(limit = 6) {
+  const unit = getImportedPrimaryUnitForGames();
+  if (!unit) return null;
+  return (unit.vocabulary || []).filter((item) => item.en && item.ar).slice(0, limit).map((item) => {
+    const english = String(item.en).trim();
+    const rawMeaning = String(item.ar).trim();
+    const englishAt = rawMeaning.toLowerCase().indexOf(english.toLowerCase());
+    const arabicOnly = (englishAt >= 0
+      ? rawMeaning.slice(0, englishAt) + rawMeaning.slice(englishAt + english.length)
+      : rawMeaning).replace(/[()（）\[\]{}:：]/g, ' ').replace(/\s+/g, ' ').trim();
+    return {
+      target: english.toLowerCase(),
+      arabic: arabicOnly || 'معنى غير متاح',
+      icon: item.e || '🔤',
+      label: arabicOnly || 'معنى غير متاح'
+    };
+  });
 }
 
 function renderGames() {
@@ -471,13 +1204,14 @@ function renderGames() {
 
 // 4 Interactive Mini-Games (Purely Student View - No technical internal metadata)
 function renderGame1Matching() {
-  const pairs = [
-    { word: 'pencil', pic: '✏️', label: 'Pencil (قلم رصاص)' },
-    { word: 'bag', pic: '🎒', label: 'Bag (حقيبة)' },
-    { word: 'chair', pic: '🪑', label: 'Chair (كرسي)' },
-    { word: 'tiger', pic: '🐯', label: 'Tiger (نمر)' },
-    { word: 'tree', pic: '🌳', label: 'Tree (شجرة)' },
-    { word: 'tomato', pic: '🍅', label: 'Tomato (طماطم)' }
+  const importedWords = getPrimaryGameWords(6);
+  const pairs = importedWords?.map((item) => ({ word: item.target, pic: item.icon, label: item.label })) || [
+    { word: 'pencil', pic: '✏️', label: 'قلم رصاص' },
+    { word: 'bag', pic: '🎒', label: 'حقيبة' },
+    { word: 'chair', pic: '🪑', label: 'كرسي' },
+    { word: 'tiger', pic: '🐯', label: 'نمر' },
+    { word: 'tree', pic: '🌳', label: 'شجرة' },
+    { word: 'tomato', pic: '🍅', label: 'طماطم' }
   ];
   const { selectedWord, selectedPic, matches } = state.game1;
   const isComplete = matches.length === pairs.length;
@@ -493,7 +1227,7 @@ function renderGame1Matching() {
       ${isComplete ? `
         <div class="game-victory-card">
           <h3>🎉 Great Job!</h3>
-          <p>You matched all classroom objects and phonics words correctly!</p>
+          <p>You matched all the words from this unit correctly!</p>
           <button type="button" class="game-reset-btn" data-reset-game="1">Play Again</button>
         </div>
       ` : ''}
@@ -506,7 +1240,6 @@ function renderGame1Matching() {
             return `
               <button type="button" class="matching-card word-card ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}" data-match-word="${p.word}" ${isMatched ? 'disabled' : ''}>
                 <span dir="ltr">${p.word}</span>
-                <button type="button" class="card-audio-icon" data-tts-text="${p.word}" title="Listen to word">🔊</button>
               </button>
             `;
           }).join('')}
@@ -530,7 +1263,8 @@ function renderGame1Matching() {
 }
 
 function renderGame2WordBuilder() {
-  const wordsData = [
+  const importedWords = getPrimaryGameWords(6);
+  const wordsData = importedWords || [
     { target: 'tiger', arabic: 'نمر', icon: '🐯' },
     { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
     { target: 'table', arabic: 'طاولة', icon: '🪑' },
@@ -600,7 +1334,12 @@ function renderGame2WordBuilder() {
 }
 
 function renderGame3ListenChoose() {
-  const rounds = [
+  const importedWords = getPrimaryGameWords(6);
+  const rounds = importedWords?.map((item, index) => ({
+    target: item.target,
+    options: [item.target, importedWords[(index + 1) % importedWords.length]?.target, importedWords[(index + 2) % importedWords.length]?.target].filter(Boolean),
+    prompt: 'Listen and choose the matching unit word:'
+  })) || [
     { target: 'hello', options: ['hello', 'goodbye', 'chair'], prompt: 'Listen to the greeting:' },
     { target: 'goodbye', options: ['pencil', 'goodbye', 'bag'], prompt: 'Listen to the farewell:' },
     { target: 'teacher', options: ['teacher', 'desk', 'board'], prompt: 'Listen to the classroom word:' },
@@ -660,7 +1399,13 @@ function renderGame3ListenChoose() {
 }
 
 function renderGame4CommandsChallenge() {
-  const commands = [
+  const importedWords = getPrimaryGameWords(4);
+  const commands = importedWords?.map((item, index) => ({
+    target: item.target,
+    icon: item.icon,
+    desc: item.arabic,
+    options: importedWords.map((choice) => choice.target).sort((a, b) => a.localeCompare(b))
+  })) || [
     { target: 'stand up', icon: '🧍', desc: 'Stand up on your feet', options: ['stand up', 'sit down', 'close your book', 'open your bag'] },
     { target: 'sit down', icon: '🪑', desc: 'Sit down on your chair', options: ['open your bag', 'sit down', 'stand up', 'close your book'] },
     { target: 'open your bag', icon: '🎒', desc: 'Open your school bag', options: ['open your bag', 'close your book', 'stand up', 'sit down'] },
@@ -1452,7 +2197,54 @@ function renderPreview() {
   return `<section class="pdf-preview" aria-label="PDF preview"><div class="preview-heading"><div><p class="eyebrow">ORIGINAL SOURCE · READ ONLY</p><strong>${escapeHtml(file)}</strong><span>PDF page ${page}</span></div><button type="button" class="preview-close" data-close-preview>Close preview ✕</button></div><iframe title="Original source book preview" src="${bookUrl(file, page)}" loading="lazy"></iframe><p class="preview-note">The original PDF is displayed without modification.</p><a class="source-open preview-fallback" href="${bookUrl(file, page)}" target="_blank" rel="noopener">Open PDF in a new tab ↗</a></section>`;
 }
 
+// Short, accessible feedback tones. These are generated locally, so no network/audio files are required.
+let feedbackAudioContext = null;
+function playFeedbackSound(result, game = null) {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    feedbackAudioContext ||= new AudioContextClass();
+    const context = feedbackAudioContext;
+    if (context.state === 'suspended') context.resume().catch(() => {});
+    const patterns = {
+      questionCorrect: { notes: [659, 880], wave: 'sine', duration: 0.13 },
+      questionWrong: { notes: [247, 185], wave: 'triangle', duration: 0.16 },
+      matchCorrect: { notes: [523, 659, 784], wave: 'sine', duration: 0.11 },
+      matchWrong: { notes: [196, 147], wave: 'triangle', duration: 0.17 },
+      builderCorrect: { notes: [392, 523, 659, 784], wave: 'sine', duration: 0.10 },
+      builderWrong: { notes: [220, 165], wave: 'square', duration: 0.13 },
+      listenCorrect: { notes: [784, 988, 1175], wave: 'sine', duration: 0.10 },
+      listenWrong: { notes: [262, 196], wave: 'triangle', duration: 0.16 },
+      challengeCorrect: { notes: [587, 784, 988, 1175], wave: 'sine', duration: 0.10 },
+      challengeWrong: { notes: [185, 139], wave: 'square', duration: 0.13 }
+    };
+    const key = game ? game + (result ? 'Correct' : 'Wrong') : 'question' + (result ? 'Correct' : 'Wrong');
+    const pattern = patterns[key] || patterns['question' + (result ? 'Correct' : 'Wrong')];
+    const start = context.currentTime + 0.015;
+    pattern.notes.forEach((frequency, index) => {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const noteStart = start + index * pattern.duration * 0.82;
+      oscillator.type = pattern.wave;
+      oscillator.frequency.setValueAtTime(frequency, noteStart);
+      gain.gain.setValueAtTime(0.0001, noteStart);
+      gain.gain.exponentialRampToValueAtTime(0.12, noteStart + 0.018);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteStart + pattern.duration);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(noteStart);
+      oscillator.stop(noteStart + pattern.duration + 0.02);
+    });
+  } catch (error) {
+    // Audio feedback must never interrupt answering or game progress.
+  }
+}
+
 function render() {
+  const previousScrollY = window.scrollY;
+  const previousViewKey = state._renderViewKey || null;
+  const currentViewKey = [state.stage, state.grade, state.path, state.importedUnitNumber || '', state.activeModule || ''].join(':');
+  state._routeChanged = previousViewKey !== currentViewKey;
   const stage = currentStage();
   if (!stage) {
     app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1></main>';
@@ -1465,22 +2257,28 @@ function render() {
   if (state.stage !== 'egyptian-baccalaureate') state.path = selectedPath.id;
   const grades = stage.grades;
   const books = selectedBooks();
+  const importedPrimaryTrack = state.stage === 'primary' && ['general', 'advanced'].includes(state.path)
+    ? primaryHtmlCurriculum.tracks.find((item) => item.id === state.path)
+    : null;
+  const importedPrimaryGrade = importedPrimaryTrack?.grades.find((item) => item.grade === state.grade) || null;
+  const importedUnitView = Boolean(importedPrimaryGrade && state.importedUnitNumber);
+  const importedModuleView = Boolean(importedUnitView && state.activeModule);
   const visiblePathways = state.stage === 'egyptian-baccalaureate'
     ? sourceIndex.pathways.filter((item) => item.id.startsWith('egypt-baccalaureate'))
     : paths;
 
   app.innerHTML = `
     <header class="topbar">
-      <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
+      <a class="brand" href="#" data-home aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
       <span class="country-tag">EGYPTIAN CURRICULUM</span>
     </header>
     <main class="shell stage-${state.stage}">
-      <section class="welcome">
+      <section class="welcome" ${importedUnitView ? 'hidden' : ''}>
         <p class="eyebrow">YOUR ENGLISH LEARNING SPACE</p>
         <h1>Learn. Practice. Achieve.</h1>
         <p class="intro">Choose your educational stage and curriculum pathway to get started.</p>
       </section>
-      <section class="panel">
+      <section class="panel selection-panel" ${importedUnitView ? 'hidden' : ''}>
         <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your stage</h2></div></div>
         <div class="stage-grid">
           ${curriculum.stages.map((item) => `<button class="stage-card ${item.id === state.stage ? 'active' : ''}" data-stage="${item.id}"><span class="stage-icon">${item.id === 'primary' ? '01' : item.id === 'preparatory' ? '02' : item.id === 'secondary' ? '03' : '04'}</span><span>${stageNames[item.id]}</span><span class="chevron">›</span></button>`).join('')}
@@ -1500,27 +2298,31 @@ function render() {
                 : path.id === state.path;
               const id = state.stage === 'egyptian-baccalaureate'
                 ? (path.id === 'egypt-baccalaureate' ? 'first-language' : 'second-language') : path.id;
-              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(path.label || path.name)}</strong><span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span></button>`;
+              const pathTitle = state.stage === 'primary' ? (path.series || path.officialSeries || path.name) : (path.label || path.name);
+              const pathSubtitle = state.stage === 'primary' ? '' : `<span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span>`;
+              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(pathTitle)}</strong>${pathSubtitle}</button>`;
             }).join('')}
           </div>
         </div>
       </section>
       <section class="library-section">
-        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
+        ${importedUnitView ? '' : `<div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">${importedPrimaryGrade ? 'Connect and Connect Plus lessons for the selected grade.' : 'Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.'}</p></div><span class="book-count">${importedPrimaryGrade ? `${importedPrimaryGrade.units.length} units` : `${books.length} source file${books.length === 1 ? '' : 's'}`}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
-        <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
-        ${renderUnitWorkspace()}
+        <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">`}
+
+        ${importedPrimaryGrade ? '' : renderUnitWorkspace()}
+        ${importedPrimaryGrade ? renderImportedPrimaryCurriculum() : ''}
         ${renderPreview()}
-        <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
+        ${importedPrimaryGrade ? '' : `<div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>`}
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
       </section>
-      <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
+      ${importedUnitView ? '' : '<footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>'}
     </main>`;
 
   const applySearch = () => {
     const query = state.search.trim().toLocaleLowerCase();
     let shown = 0;
-    app.querySelectorAll('.book-card').forEach((card) => {
+    app.querySelectorAll('.book-card, .imported-unit-card').forEach((card) => {
       const match = !query || card.textContent.toLocaleLowerCase().includes(query);
       card.hidden = !match;
       if (match) shown += 1;
@@ -1651,6 +2453,96 @@ function render() {
     render();
   }));
 
+  // Imported primary curriculum: each selection is a real screen in browser history.
+  app.querySelectorAll('[data-imported-unit]').forEach((button) => button.addEventListener('click', () => {
+    state.importedUnitNumber = Number(button.dataset.importedUnit);
+    state.activeModule = null;
+    state.activeGameTab = 1;
+    state.game1 = { selectedWord: null, selectedPic: null, matches: [], score: 0 };
+    state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
+    state.game3 = { index: 0, score: 0, selectedOption: null };
+    state.game4 = { index: 0, score: 0, selectedOption: null };
+    window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
+    saveProgressToStorage();
+    render();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }));
+  app.querySelectorAll('[data-imported-section]').forEach((button) => button.addEventListener('click', () => {
+    state.activeModule = button.dataset.importedSection;
+    window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
+    saveProgressToStorage();
+    render();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }));
+  app.querySelectorAll('[data-imported-back]').forEach((button) => button.addEventListener('click', () => {
+    const currentRoute = window.history.state;
+    const expectedRoute = button.dataset.importedBack === 'unit' ? 'module' : 'unit';
+    if (currentRoute?.app === 'englimensh' && currentRoute.epoch === state.navigationEpoch && currentRoute.route === expectedRoute) {
+      window.history.back();
+      return;
+    }
+    if (button.dataset.importedBack === 'unit' && state.importedUnitNumber) state.activeModule = null;
+    else { state.importedUnitNumber = null; state.activeModule = null; }
+    window.history.replaceState({ app: 'englimensh', route: state.importedUnitNumber ? 'unit' : 'grade', unit: state.importedUnitNumber || undefined, epoch: state.navigationEpoch }, '', state.importedUnitNumber ? '#unit-' + state.importedUnitNumber : '#grade');
+    saveProgressToStorage();
+    render();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }));
+  app.querySelector('[data-home]')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    state.importedUnitNumber = null;
+    state.activeModule = null;
+    state.navigationEpoch += 1;
+    window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
+    saveProgressToStorage();
+    render();
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
+
+  // Imported primary curriculum quiz listener (persists across navigation and reloads)
+  app.querySelectorAll('.imported-answer').forEach((button) => button.addEventListener('click', () => {
+    const card = button.closest('[data-imported-question]');
+    if (!card || card.dataset.answered === 'true' || button.disabled) return;
+    const questionId = card.dataset.importedQuestion;
+    const correct = Number(button.dataset.correct);
+    const chosen = Number(button.dataset.choice);
+    const previous = getQuestionState(questionId);
+    const wrongChoices = previous.wrongChoices.map(String);
+    const feedback = card.querySelector('.imported-feedback');
+
+    if (chosen === correct) {
+      state.quizAnswers[questionId] = {
+        choice: String(chosen),
+        isCorrect: true,
+        wrongChoices
+      };
+      card.dataset.answered = 'true';
+      playFeedbackSound(true);
+      button.classList.add('is-correct');
+      feedback.textContent = 'Correct! Well done.';
+      feedback.classList.remove('incorrect');
+      feedback.classList.add('correct');
+      card.querySelectorAll('.imported-answer').forEach((option) => {
+        option.disabled = true;
+        if (option !== button) option.classList.remove('is-wrong');
+      });
+    } else {
+      playFeedbackSound(false);
+      if (!wrongChoices.includes(String(chosen))) wrongChoices.push(String(chosen));
+      state.quizAnswers[questionId] = {
+        choice: null,
+        isCorrect: false,
+        wrongChoices
+      };
+      button.classList.add('is-wrong');
+      button.disabled = true;
+      feedback.textContent = 'Not quite. Try another answer.';
+      feedback.classList.remove('correct');
+      feedback.classList.add('incorrect');
+    }
+    saveProgressToStorage();
+  }));
+
   // Quiz Option Retry Listener (Allows retrying wrong options until correct answer is chosen)
   app.querySelectorAll('[data-quiz-question]').forEach((button) => button.addEventListener('click', () => {
     const qId = button.dataset.quizQuestion;
@@ -1671,12 +2563,14 @@ function render() {
 
     if (correctAnswer) {
       if (choice === correctAnswer) {
+        playFeedbackSound(true);
         state.quizAnswers[qId] = {
           choice,
           isCorrect: true,
           wrongChoices: qState.wrongChoices
         };
       } else {
+        playFeedbackSound(false);
         const updatedWrong = qState.wrongChoices.includes(choice) ? qState.wrongChoices : [...qState.wrongChoices, choice];
         state.quizAnswers[qId] = {
           choice,
@@ -1685,6 +2579,7 @@ function render() {
         };
       }
     } else {
+      playFeedbackSound(true);
       state.quizAnswers[qId] = { choice, isCorrect: true, wrongChoices: [] };
     }
     saveProgressToStorage();
@@ -1696,9 +2591,10 @@ function render() {
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
-  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  const resetImportedRoute = () => { state.navigationEpoch += 1; window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade'); };
+  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
+  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
+  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.importedUnitNumber = null; state.activeModule = null; resetImportedRoute(); render(); }));
 
   // TTS Listeners
   app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
@@ -1731,7 +2627,8 @@ function render() {
     const word = btn.dataset.matchWord;
     if (state.game1.matches.includes(word)) return;
     if (state.game1.selectedPic) {
-      if (state.game1.selectedPic === word) state.game1.matches.push(word);
+      if (state.game1.selectedPic === word) { state.game1.matches.push(word); playFeedbackSound(true, 'match'); }
+      else playFeedbackSound(false, 'match');
       state.game1.selectedWord = null;
       state.game1.selectedPic = null;
     } else {
@@ -1744,7 +2641,8 @@ function render() {
     const word = btn.dataset.matchPic;
     if (state.game1.matches.includes(word)) return;
     if (state.game1.selectedWord) {
-      if (state.game1.selectedWord === word) state.game1.matches.push(word);
+      if (state.game1.selectedWord === word) { state.game1.matches.push(word); playFeedbackSound(true, 'match'); }
+      else playFeedbackSound(false, 'match');
       state.game1.selectedWord = null;
       state.game1.selectedPic = null;
     } else {
@@ -1757,7 +2655,7 @@ function render() {
   // Game 2 Word Builder Listeners
   app.querySelectorAll('[data-place-tile]').forEach((btn) => btn.addEventListener('click', () => {
     const char = btn.dataset.placeTile;
-    const wordsData = ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
+    const wordsData = getPrimaryGameWords(6)?.map((item) => item.target) || ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
     const target = wordsData[state.game2.index] || '';
     if (state.game2.placed.length < target.length) {
       state.game2.placed.push(char);
@@ -1784,6 +2682,7 @@ function render() {
     const target = btn.target.dataset.builderCheck;
     if (!state.game2.checkResult) {
       const isCorrect = state.game2.placed.join('') === target;
+      playFeedbackSound(isCorrect, 'builder');
       if (isCorrect) state.game2.score += 1;
       state.game2.checkResult = { isCorrect };
       saveProgressToStorage();
@@ -1803,8 +2702,10 @@ function render() {
     if (!state.game3.selectedOption) {
       const chosen = btn.dataset.listenChoose;
       state.game3.selectedOption = chosen;
-      const targets = ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
-      if (chosen === targets[state.game3.index]) state.game3.score += 1;
+      const targets = getPrimaryGameWords(6)?.map((item) => item.target) || ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
+      const isCorrect = chosen === targets[state.game3.index];
+      playFeedbackSound(isCorrect, 'listen');
+      if (isCorrect) state.game3.score += 1;
       saveProgressToStorage();
       render();
     }
@@ -1821,8 +2722,10 @@ function render() {
     if (!state.game4.selectedOption) {
       const chosen = btn.dataset.commandChoose;
       state.game4.selectedOption = chosen;
-      const targets = ['stand up', 'sit down', 'open your bag', 'close your book'];
-      if (chosen === targets[state.game4.index]) state.game4.score += 1;
+      const targets = getPrimaryGameWords(4)?.map((item) => item.target) || ['stand up', 'sit down', 'open your bag', 'close your book'];
+      const isCorrect = chosen === targets[state.game4.index];
+      playFeedbackSound(isCorrect, 'challenge');
+      if (isCorrect) state.game4.score += 1;
       saveProgressToStorage();
       render();
     }
@@ -1854,8 +2757,29 @@ function render() {
     resetListeningProgress();
     render();
   });
+
+  state._renderViewKey = currentViewKey;
+  if (!state._routeChanged && previousScrollY > 0) {
+    requestAnimationFrame(() => window.scrollTo({ top: previousScrollY, behavior: 'instant' }));
+  }
 }
 
-// Initial storage load and render
+// Restore a coherent in-app back stack for Android Back and browser Back.
 loadProgressFromStorage();
+window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', window.location.pathname + window.location.search + '#grade');
+if (state.importedUnitNumber) {
+  window.history.pushState({ app: 'englimensh', route: 'unit', unit: state.importedUnitNumber, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber);
+  if (state.activeModule) window.history.pushState({ app: 'englimensh', route: 'module', unit: state.importedUnitNumber, module: state.activeModule, epoch: state.navigationEpoch }, '', '#unit-' + state.importedUnitNumber + '-' + state.activeModule);
+}
+window.addEventListener('popstate', (event) => {
+  const route = event.state?.app === 'englimensh' && event.state.epoch === state.navigationEpoch ? event.state : { route: 'grade' };
+  if (route.route === 'grade' && event.state?.epoch !== state.navigationEpoch) {
+    window.history.replaceState({ app: 'englimensh', route: 'grade', epoch: state.navigationEpoch }, '', '#grade');
+  }
+  state.importedUnitNumber = route.route === 'unit' || route.route === 'module' ? Number(route.unit) : null;
+  state.activeModule = route.route === 'module' ? route.module : null;
+  saveProgressToStorage();
+  render();
+  window.scrollTo({ top: 0, behavior: 'auto' });
+});
 render();

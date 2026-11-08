@@ -8,13 +8,20 @@ on:
         required: true
         type: boolean
         default: true
+  push:
+    branches: [feature/primary-connect-connect-plus-2026-2027]
+    paths:
+      - '.github/workflows/extract-books.yml'
+      - 'public/books/**'
+      - 'scripts/extract-pdfs.mjs'
+      - 'scripts/ocr-scanned-pages.py'
 
 permissions:
   contents: read
 
 concurrency:
   group: extract-source-books
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   extract:
@@ -34,8 +41,45 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Pull Git LFS objects explicitly
-        run: git lfs pull
+      - name: Diagnose and pull Git LFS objects
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git lfs version
+          git lfs env
+          git lfs ls-files -l
+          git lfs pull
+          echo "LFS pull completed; checking assessment PDF signatures"
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+          names = [
+              "English_prim1_t1_Assmt (1).pdf",
+              "English_prim2_t1_Assmt (1).pdf",
+              "English_prim4_t1_Assmt (1).pdf",
+              "English_prim5_t1_Assmt (1).pdf",
+              "English_prim6_t1_Assmt (1).pdf",
+              "كتاب تقييمات الصف الثالث 2026.pdf",
+          ]
+          missing = []
+          for name in names:
+              path = Path("public/books") / name
+              if not path.is_file():
+                  missing.append(f"{name}: file missing")
+                  continue
+              head = path.read_bytes()[:256]
+              if b"git-lfs.github.com/spec" in head:
+                  missing.append(f"{name}: Git LFS pointer remains (object not hydrated)")
+              elif not head.startswith(b"%PDF-"):
+                  missing.append(f"{name}: invalid PDF signature")
+              else:
+                  print(f"READY: {name}")
+          if missing:
+              print("::error::Assessment source PDFs are unavailable:")
+              for item in missing:
+                  print(f" - {item}")
+              sys.exit(1)
+          PY
 
       - name: Confirm source PDFs are hydrated
         shell: bash
@@ -94,7 +138,7 @@ jobs:
         run: npm run validate:manual-recoveries
 
       - name: Upload extraction results
-        if: ${{ inputs.publish_artifact }}
+        if: ${{ inputs.publish_artifact || github.event_name == 'push' }}
         uses: actions/upload-artifact@v4
         with:
           name: englimensh-extracted-books

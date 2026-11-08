@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "lint": "vite build",
-    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs",
+    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs && node scripts/test-imported-primary-curriculum.mjs",
     "test:nav": "node scripts/test-navigation-and-launch.mjs",
     "test:storage": "node scripts/test-storage-hardening.mjs",
     "validate:unit-quality": "node scripts/test-unit-quality.mjs",
@@ -23,7 +23,9 @@
     "validate:lesson-content": "node scripts/validate-lesson-content.mjs",
     "validate:unit-modules": "node scripts/validate-unit-modules.mjs",
     "generate:unit": "node scripts/generate-interactive-unit.mjs",
-    "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs"
+    "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs",
+    "import:primary-html": "node scripts/import-primary-html-curriculum.mjs",
+    "test:primary-import": "node scripts/test-imported-primary-curriculum.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
