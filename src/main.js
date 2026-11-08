@@ -583,7 +583,7 @@ function renderPreparatoryHtmlLibrary() {
         ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : `
           <div class="imported-html-viewer">
             <div class="imported-html-viewer-head"><div><strong>${escapeHtml(moduleLabel)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade} · ${escapeHtml(selectedUnit.title)}</span></div></div>
-            <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml(selectedUnit.url)}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
+            <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml((selectedUnit.viewerUrl || selectedUnit.url) + "#" + module + ":" + (selectedUnit.number || 1))}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
           </div>
         `}
       `}
@@ -2070,60 +2070,6 @@ function render() {
     render();
     app.querySelector('.prep-learning-toolbar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }));
-
-  const prepFrame = app.querySelector('#prep-html-frame');
-  if (prepFrame) prepFrame.addEventListener('load', () => {
-    try {
-      const doc = prepFrame.contentDocument;
-      const win = prepFrame.contentWindow;
-      const moduleMap = {
-        vocabulary: ['vocab', 'sec-vocab'],
-        vocabulary_questions: ['vocab-quiz', 'sec-vocab-quiz'],
-        grammar: ['grammar', 'sec-grammar'],
-        grammar_questions: ['grammar-quiz', 'sec-grammar-quiz'],
-        reading: ['reading', 'sec-reading'],
-        listening: ['listening', 'sec-listening'],
-        speaking: ['speaking', 'sec-speaking'],
-        comprehensive_test: ['exam', 'sec-exam']
-      };
-      const targets = moduleMap[state.htmlModuleSelection] || [];
-      const selectedPreparatoryUnit = getSelectedPreparatoryUnit();
-      const isCombinedPrep3 = state.grade === 3 && state.path === 'general';
-      if (isCombinedPrep3 && selectedPreparatoryUnit?.number) {
-        doc.getElementById('unit-tab-' + selectedPreparatoryUnit.number)?.click();
-      }
-      if (isCombinedPrep3 && typeof win.switchSubTab === 'function') {
-        const tabNames = { vocabulary_questions: 'vocab-quiz', grammar: 'grammar', grammar_questions: 'grammar-quiz', reading: 'reading', listening: 'listening', comprehensive_test: 'exam' };
-        win.switchSubTab(tabNames[state.htmlModuleSelection] || 'vocab');
-      } else if (typeof win.switchTab === 'function' && targets[0]) {
-        win.switchTab(targets[0]);
-      } else if (doc) {
-        const staticSections = [...doc.querySelectorAll('.section')];
-        if (staticSections.length) {
-          const headingPatterns = {
-            vocabulary_questions: /^2\.\s*Vocabulary Quiz/i,
-            grammar: /^3\.\s*Grammar/i,
-            grammar_questions: /^4\.\s*Grammar Quiz/i,
-            reading: /^5\.\s*Reading/i,
-            listening: /^6\.\s*Listening/i
-          };
-          const pattern = headingPatterns[state.htmlModuleSelection];
-          staticSections.forEach((section) => { section.style.display = 'none'; });
-          const targetSection = staticSections.find((section) => pattern && pattern.test(section.querySelector('h1,h2,h3')?.textContent?.trim() || ''));
-          if (targetSection) targetSection.style.display = 'block';
-        } else {
-          doc.querySelectorAll('.section-view, .subtab-content').forEach((node) => {
-            node.classList.remove('active');
-            if (node.classList.contains('section-view')) node.style.display = 'none';
-          });
-          const target = targets.map((id) => doc.getElementById(id)).find(Boolean);
-          if (target) { target.classList.add('active'); target.style.display = ''; target.classList.remove('hidden'); }
-        }
-      }
-    } catch (error) {
-      console.warn('Could not focus imported lesson section:', error);
-    }
-  });
 
   const prepWords = getPreparatoryUnitWords();
   app.querySelectorAll('[data-prep-game]').forEach((button) => button.addEventListener('click', () => {
