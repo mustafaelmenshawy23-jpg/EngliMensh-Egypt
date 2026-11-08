@@ -97,7 +97,13 @@ async function findOpenverseImage(word) {
     await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, 1500 * (attempt + 1))));
   }
   if (!response?.ok) throw new Error('Openverse search HTTP ' + response?.status);
-  const json = await response.json();
+  let json = await response.json();
+  if (!json.results?.length) {
+    await new Promise((resolve) => setTimeout(resolve, 1100));
+    const fallbackParams = new URLSearchParams({ q: word, page_size: '5', license_type: 'commercial', extension: 'jpg,jpeg,png,webp' });
+    const fallbackResponse = await fetch('https://api.openverse.org/v1/images/?' + fallbackParams.toString(), { headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' } });
+    if (fallbackResponse.ok) json = await fallbackResponse.json();
+  }
   const item = (json.results || []).find((result) => result.thumbnail && result.url && result.mature !== true);
   if (!item) return null;
   const image = await fetch(item.thumbnail, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0' } });
@@ -133,12 +139,13 @@ for (const file of files) {
   const source = await fs.readFile(file, 'utf8');
   if (id.combined) {
     const units = parseCombinedUnits(source);
-    for (const [unit, words] of Object.entries(units)) registry['3:general:' + unit] = { words };
+    for (const [unit, words] of Object.entries(units)) { registry['3:general:' + unit] = { words }; console.log('Parsed combined unit:', unit, words.length, 'words'); }
     continue;
   }
   let words = parseVocabArray(source);
   if (!words.length && id.path === 'general' && id.grade === 2) words = parseStaticCards(source);
-  if (!words.length) continue;
+  if (!words.length) { console.warn('No vocabulary parsed from source:', path.basename(file)); continue; }
+  console.log('Parsed vocabulary:', path.basename(file), words.length, 'words');
   registry[id.grade + ':' + id.path + ':' + id.unit] = { words: words.map((item) => ({
     word: decodeHtml(item.word || item.w || ''), pos: decodeHtml(item.pos || ''), arabic: decodeHtml(item.arabic || item.ar || ''),
     definition: decodeHtml(item.def || ''), example: decodeHtml(item.example || item.ex || ''), svg: safeSvg(item.svg || item.icon || '')
