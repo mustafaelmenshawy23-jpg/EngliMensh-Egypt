@@ -1407,7 +1407,7 @@ function renderGame2WordBuilder() {
         ${checkResult ? `
           <div class="builder-feedback ${checkResult.isCorrect ? 'correct' : 'wrong'}">
             <p>${checkResult.isCorrect ? '✔ Outstanding! Word spelled correctly.' : `✘ Not quite. Try again!`}</p>
-            <button type="button" class="next-word-btn" data-builder-next>Next Word ›</button>
+            ${checkResult.isCorrect ? '<button type="button" class="next-word-btn" data-builder-next>Next Word ›</button>' : '<button type="button" class="next-word-btn" data-builder-retry>Try Again ↻</button>'}
           </div>
         ` : ''}
       </div>
@@ -2899,11 +2899,19 @@ function render() {
     if (!state.game2.checkResult) {
       const isCorrect = state.game2.placed.join('') === target;
       playFeedbackSound(isCorrect, 'builder');
+      speakText(isCorrect ? 'Excellent! You built the word.' : 'Good try. Let us try again.');
       if (isCorrect && !state.game2.usedHint) state.game2.score += 1;
       state.game2.checkResult = { isCorrect, usedHint: Boolean(state.game2.usedHint) };
       saveProgressToStorage();
       render();
     }
+  });
+  app.querySelector('[data-builder-retry]')?.addEventListener('click', () => {
+    state.game2.placed = [];
+    state.game2.checkResult = null;
+    state.game2.usedHint = false;
+    saveProgressToStorage();
+    render();
   });
   app.querySelector('[data-builder-next]')?.addEventListener('click', () => {
     if (state.game2.index < getWordBuilderWords().length - 1) state.game2.index += 1;
@@ -2979,7 +2987,7 @@ function render() {
   app.querySelectorAll('[data-reset-game]').forEach((btn) => btn.addEventListener('click', () => {
     const gNum = btn.dataset.resetGame;
     if (gNum === '1') state.game1 = { selectedWord: null, selectedPic: null, matches: [], score: 0 };
-    if (gNum === '2') state.game2 = { index: 0, placed: [], score: 0, checkResult: null };
+    if (gNum === '2') state.game2 = { index: 0, placed: [], score: 0, checkResult: null, shuffleVersion: 0, usedHint: false };
     if (gNum === '3') state.game3 = { index: 0, score: 0, selectedOption: null };
     if (gNum === '4') state.game4 = { index: 0, score: 0, selectedOption: null };
     saveProgressToStorage();
