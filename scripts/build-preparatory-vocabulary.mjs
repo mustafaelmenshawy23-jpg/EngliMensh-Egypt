@@ -122,6 +122,39 @@ function parseCombinedUnits(source) {
   }
   return out;
 }
+async function buildSectionViewers(files) {
+  const outputDir = path.join(ROOT, 'public', 'preparatory-viewers');
+  await fs.mkdir(outputDir, { recursive: true });
+  const enhancement = [
+    '<script>',
+    '(() => {',
+    '  const parts = decodeURIComponent(location.hash.slice(1)).split(\":\");',
+    '  const moduleName = parts[0] || \"vocabulary\";',
+    '  const unitNumber = Number(parts[1] || 0);',
+    '  const tabNames = { vocabulary: \"vocab\", vocabulary_questions: \"vocab-quiz\", grammar: \"grammar\", grammar_questions: \"grammar-quiz\", reading: \"reading\", listening: \"listening\", comprehensive_test: \"exam\" };',
+    '  if (unitNumber && typeof window.selectUnit === \"function\") window.selectUnit(unitNumber);',
+    '  if (typeof window.switchSubTab === \"function\") { window.switchSubTab(tabNames[moduleName] || \"vocab\"); return; }',
+    '  if (typeof window.switchTab === \"function\") { window.switchTab(tabNames[moduleName] || \"vocab\"); return; }',
+    '  const patterns = { vocabulary_questions: \"2. Vocabulary Quiz\", grammar: \"3. Grammar\", grammar_questions: \"4. Grammar Quiz\", reading: \"5. Reading\", listening: \"6. Listening\" };',
+    '  const sections = [...document.querySelectorAll(\".section\")];',
+    '  if (sections.length) {',
+    '    sections.forEach((section) => { section.style.display = \"none\"; });',
+    '    const heading = patterns[moduleName];',
+    '    const target = sections.find((section) => heading && (section.querySelector(\"h1,h2,h3\")?.textContent?.trim() || \"\").startsWith(heading));',
+    '    if (target) target.style.display = \"block\";',
+    '  }',
+    '})();',
+    '</script>'
+  ].join('\\n');
+  for (const file of files) {
+    const source = await fs.readFile(file, 'utf8');
+    const marker = /<\\/body>/i;
+    const output = marker.test(source) ? source.replace(marker, enhancement + '\\n</body>') : source + enhancement;
+    await fs.writeFile(path.join(outputDir, path.basename(file)), output);
+  }
+  console.log('Built section-aware lesson viewer copies:', files.length);
+}
+
 function identify(file) {
   const name = path.basename(file);
   let m = name.match(/^Prep_(1|2|3)_New_Hello_Unit_(\d+)/);
@@ -186,6 +219,7 @@ async function mapLimit(items, limit, worker) {
   }));
 }
 const files = await walk(SOURCE_ROOT);
+await buildSectionViewers(files);
 const registry = {};
 const pendingImages = new Map();
 for (const file of files) {
