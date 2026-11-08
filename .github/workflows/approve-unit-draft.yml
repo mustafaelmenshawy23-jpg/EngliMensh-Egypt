@@ -1,0 +1,108 @@
+name: Approve reviewed unit draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      book_id:
+        description: Exact indexed book ID
+        required: true
+        type: string
+      unit_number:
+        description: Unit number in the indexed source book
+        required: true
+        type: number
+      reviewer_name:
+        description: Teacher/reviewer name
+        required: true
+        type: string
+      confirm_visual_review:
+        description: Confirm that the cited original PDF pages and all content were visually checked
+        required: true
+        default: false
+        type: boolean
+      replace_existing:
+        description: Replace an already approved copy only after a deliberate re-review
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: englimensh-unit-approval
+  cancel-in-progress: false
+
+jobs:
+  approve:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout EngliMensh-Egypt main branch without downloading LFS PDFs on cache hits
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          lfs: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Restore reusable source extraction cache
+        id: source_cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          key: englimensh-source-extraction-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}
+
+      - name: Hydrate original source PDFs
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        run: git lfs pull
+
+      - name: Extract source pages and OCR scans when cache is unavailable
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        run: |
+          npm run extract:books
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
+          python3 -m venv .venv
+          .venv/bin/pip install pymupdf
+          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+
+      - name: Save reusable source extraction cache
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          key: ${{ steps.source_cache.outputs.cache-primary-key }}
+
+      - name: Validate and create approved unit copy
+        env:
+          BOOK_ID: ${{ inputs.book_id }}
+          UNIT_NUMBER: ${{ inputs.unit_number }}
+          REVIEWER_NAME: ${{ inputs.reviewer_name }}
+          CONFIRM_VISUAL_REVIEW: ${{ inputs.confirm_visual_review }}
+          REPLACE_APPROVED: ${{ inputs.replace_existing }}
+        run: node scripts/approve-unit-draft.mjs
+
+      - name: Commit approved unit content only
+        env:
+          BOOK_ID: ${{ inputs.book_id }}
+          UNIT_NUMBER: ${{ inputs.unit_number }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+users.noreply.github.com"
+          git add "src/data/approved-unit-drafts/${BOOK_ID}-unit-${UNIT_NUMBER}.json"
+          git commit -m "Approve reviewed unit content: ${BOOK_ID} Unit ${UNIT_NUMBER}"
+          git pull --rebase origin main
+          git push

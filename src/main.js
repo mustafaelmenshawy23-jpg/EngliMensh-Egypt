@@ -3,20 +3,29 @@ import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { detectSpeakerGender, chooseSpeakerVoice } from './lib/tts-voice-selection.mjs';
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
-import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
-import lessonDrafts from './data/lessons/lessons.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
-import p1u1Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-1.json';
-import p1u2Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-2.json';
-import p1u3Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-3.json';
 import './style.css';
 
-const generatedDraftModules = import.meta.glob('../artifacts/unit-drafts/*.json', { eager: true, import: 'default' });
+const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
+function isApprovedUnitDraft(draft) {
+  const requiredTypes = unitModules.sectionTypes || [];
+  if (!draft || draft.datasetStatus !== 'approved' || draft.reviewStatus !== 'approved' ||
+      !draft.reviewedBy || !draft.reviewedAt || draft.approval?.confirmedVisualReview !== true ||
+      !draft.sourceFingerprint || draft.approval?.sourceFingerprint !== draft.sourceFingerprint ||
+      typeof draft.bookId !== 'string' || !Number.isInteger(draft.unitNumber) || !Array.isArray(draft.sections)) return false;
+  const types = draft.sections.map((section) => section.type);
+  if (types.length !== requiredTypes.length || new Set(types).size !== requiredTypes.length ||
+      !requiredTypes.every((type) => types.includes(type))) return false;
+  return draft.sections.every((section) =>
+    Array.isArray(section.items) && section.items.every((item) => item.reviewStatus === 'approved')
+  );
+}
 const unitDraftRegistry = new Map(
-  Object.values(generatedDraftModules)
-    .filter((draft) => draft && typeof draft.bookId === 'string' && Number.isInteger(draft.unitNumber) && Array.isArray(draft.sections))
+  Object.values(approvedDraftModules)
+    .filter(isApprovedUnitDraft)
     .map((draft) => [`${draft.bookId}-unit-${draft.unitNumber}`, draft])
 );
+const p1u1Draft = unitDraftRegistry.get('primary1-student-term1-unit-1') || null;
 
 const app = document.querySelector('#app');
 
@@ -379,45 +388,6 @@ function bookUrl(file, page) {
   return page ? `${path}#page=${page}` : path;
 }
 
-function renderCandidateContent(record) {
-  const blocks = [];
-  const paragraph = (label, value) => value ? `<p><strong>${label}:</strong> ${escapeHtml(value)}</p>` : '';
-  const list = (label, values, formatter = (value) => escapeHtml(typeof value === 'string' ? value : JSON.stringify(value))) => {
-    if (!Array.isArray(values) || !values.length) return '';
-    return `<div class="candidate-content-group"><strong>${label}</strong><ul>${values.map((value) => `<li>${formatter(value)}</li>`).join('')}</ul></div>`;
-  };
-  blocks.push(paragraph('Instruction', record.instruction || record.pairInstruction));
-  blocks.push(list('Vocabulary / labels', record.vocabulary || record.labels));
-  blocks.push(list('Extracted words', record.items, (item) => {
-    if (typeof item === 'string') return escapeHtml(item);
-    return [item.text, item.printedString, item.visualCue].filter(Boolean).map(escapeHtml).join(' — ');
-  }));
-  blocks.push(list('Phonics patterns', record.patterns, (pattern) => {
-    const examples = Array.isArray(pattern.examples) ? pattern.examples.join(', ') : '';
-    return [pattern.grapheme, pattern.printedSound || pattern.sound, examples].filter(Boolean).map(escapeHtml).join(' — ');
-  }));
-  blocks.push(list('Dialogue', record.dialogue, (line) => `${escapeHtml(line.speaker || '')}: ${escapeHtml(line.text || '')}`));
-  blocks.push(list('Picture prompts', record.picturePrompts));
-  blocks.push(list('Printed reference labels', record.printedReferenceLabels, (item) => `${escapeHtml(item.number)}. ${escapeHtml(item.text)}`));
-  blocks.push(paragraph('Follow-up question', record.followUpQuestion));
-  if (record.sectionA) {
-    blocks.push(`<div class="candidate-content-group"><strong>Section A</strong>${paragraph('Instruction', record.sectionA.instruction)}${list('Printed items', record.sectionA.items, (item) => escapeHtml(item.printedString || item))}</div>`);
-  }
-  if (record.sectionB) {
-    blocks.push(`<div class="candidate-content-group"><strong>Section B</strong>${paragraph('Instruction', record.sectionB.instruction)}${list('Printed items', record.sectionB.items)}</div>`);
-  }
-  const content = blocks.filter(Boolean).join('');
-  return content ? `<details class="candidate-content"><summary>Review extracted content</summary>${content}<p class="unit-source-note">Transcription only · verify wording and layout against original PDF before approval.</p></details>` : '';
-}
-
-function renderReviewCandidates(book, unitNumber = null) {
-  const candidates = reviewCandidates.records.filter((record) => record.sourceFilename === book.sourceFile && (unitNumber === null ? !Number.isInteger(record.unitLink?.unitNumber) : record.unitLink?.unitNumber === unitNumber));
-  if (!candidates.length) return '';
-  return `<section class="review-candidates"><div class="review-candidates-heading"><div><p class="eyebrow">SOURCE TRANSCRIPTION CANDIDATES</p><strong>Extracted material · academic review pending</strong></div><span>${candidates.length} candidate${candidates.length === 1 ? '' : 's'}</span></div>
-    ${candidates.map((record) => `<article class="candidate-row"><div><strong>${escapeHtml(record.heading || record.header || record.instruction || record.contentType)}</strong><span>${escapeHtml(record.contentType.replaceAll('_',' '))} · PDF page ${record.pdfPage}</span></div><button type="button" class="candidate-source" data-candidate-file="${escapeHtml(record.sourceFilename)}" data-candidate-page="${record.pdfPage}">View source page ↗</button><small>${record.unitLink?.status === 'proposed_needs_review' ? 'Proposed unit link · review pending' : record.unitLink?.status === 'cross_unit_reference' ? 'Shared cross-unit reference · review pending' : 'Not assigned to a unit · review pending'} · Not used in tests or answer keys</small>${record.unitLink?.evidence ? `<small>${escapeHtml(record.unitLink.evidence)}</small>` : ''}${renderCandidateContent(record)}</article>`).join('')}
-  </section>`;
-}
-
 function renderBookLibrary(books) {
   if (!books.length) {
     return '<div class="empty-state"><div class="book-icon">▤</div><strong>No indexed source book for this selection yet</strong><span>Existing source files remain preserved in the library</span></div>';
@@ -426,15 +396,15 @@ function renderBookLibrary(books) {
     const units = (book.units || []).map((unit) => {
       const pageLabel = Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Page reference not indexed';
       const title = `Unit ${unit.number}: ${unit.title}`;
-      const hasLessonDraft = lessonDrafts.records.some((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number) || (book.id === 'primary1-student-term1' && unit.number === 1);
-      return Number.isInteger(unit.startPdfPage) || hasLessonDraft
+      const hasApprovedDraft = unitDraftRegistry.has(`${book.id}-unit-${unit.number}`);
+      return Number.isInteger(unit.startPdfPage) || hasApprovedDraft
         ? `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`
         : `<div class="unit-link unavailable"><strong>${escapeHtml(title)}</strong><span>${pageLabel}</span></div>`;
     }).join('');
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
       : book.documentType === 'assessment' ? 'Assessment book'
         : book.documentType === 'reader' ? 'Reader' : 'Supplementary reference';
-    return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}${renderReviewCandidates(book)}</article>`;
+    return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}</article>`;
   }).join('');
 }
 
@@ -864,8 +834,7 @@ function renderUnitWorkspace() {
   const unit = book?.units?.find((item) => item.number === state.unitSelection.unitNumber);
   if (!book || !unit) return '';
 
-  const activeUnitDraft = unitDraftRegistry.get(`${book.id}-unit-${unit.number}`) ||
-    (book.id === 'primary1-student-term1' ? ({ 1: p1u1Draft, 2: p1u2Draft, 3: p1u3Draft }[unit.number] || null) : null);
+  const activeUnitDraft = unitDraftRegistry.get(`${book.id}-unit-${unit.number}`) || null;
   const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1 && Boolean(activeUnitDraft);
   const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3) && Boolean(activeUnitDraft);
 
@@ -893,7 +862,15 @@ function renderUnitWorkspace() {
     const secDef = unitSections.find((s) => s.type === state.activeModule) || unitSections[0];
     let bodyHtml = '';
 
-    if (isP1U2U3 && activeUnitDraft) {
+    if (!activeUnitDraft) {
+      bodyHtml = `
+        <div class="review-pending-banner">
+          <strong>Interactive content is awaiting teacher approval.</strong>
+          <span>Only content checked against the original PDF and manually approved is released to students.</span>
+          ${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Open original PDF · page ${unit.startPdfPage} ↗</button>` : ''}
+        </div>
+      `;
+    } else if (isP1U2U3 && activeUnitDraft) {
       const getItems = (type) => activeUnitDraft.sections.find((section) => section.type === type)?.items || [];
       const vocabulary = getItems('vocabulary');
       const vocabularyQuestions = getItems('vocabulary_questions');
@@ -1630,7 +1607,7 @@ function renderUnitWorkspace() {
           <h3>${escapeHtml(secDef.title)}</h3>
           <p>${escapeHtml(secDef.subtitle)}</p>
         </div>
-        ${activeUnitDraft && activeUnitDraft.reviewStatus !== 'approved' ? '<div class="review-pending-banner">Preview draft · academic review pending · not approved for release</div>' : ''}
+
         ${bodyHtml}
       </section>
     `;
@@ -1638,7 +1615,8 @@ function renderUnitWorkspace() {
 
   // UNIT DASHBOARD (Nine independent learning sections)
   const calculateProgress = (secType) => {
-    if (!isP1U1 && activeUnitDraft) {
+    if (!activeUnitDraft) return 'Awaiting teacher approval';
+    if (!isP1U1) {
       const section = activeUnitDraft.sections.find((item) => item.type === secType);
       const count = section?.items?.length || 0;
       return count ? count + ' items available' : 'Awaiting reviewed content';
@@ -1756,6 +1734,8 @@ function renderUnitWorkspace() {
         </div>
       ` : ''}
 
+      ${!activeUnitDraft ? '<div class="review-pending-banner"><strong>No approved interactive content is available for this unit yet.</strong><span>The original PDF remains available for study while the lesson content is reviewed.</span></div>' : ''}
+
       <div class="six-sections-grid">
         ${sectionCards}
       </div>
@@ -1774,7 +1754,6 @@ function renderUnitWorkspace() {
         </div>
       ` : ''}
 
-      ${renderReviewCandidates(book, unit.number)}
     </section>
   `;
 }
@@ -2036,7 +2015,6 @@ function render() {
   }));
 
   // Preview Listeners
-  app.querySelectorAll('[data-candidate-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.candidateFile, page: Number(button.dataset.candidatePage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
