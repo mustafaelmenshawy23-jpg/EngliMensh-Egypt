@@ -91,6 +91,28 @@ function renderStudentProfiles() {
 
  app.querySelector('#new-student-form')?.addEventListener('submit', (event) => { event.preventDefault(); const form = event.currentTarget; const name = String(form.elements.studentName.value || '').trim(); if (!name) return; const profile = { id:'student_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2,7), name, stage:form.elements.studentStage.value, grade:Number(form.elements.studentGrade.value) || 1, path:'general', paths:(form.elements.studentStage.value === 'primary' ? ['general','advanced'] : (curriculum.stages.find((item) => item.id === form.elements.studentStage.value)?.paths || []).map((item) => item.id)), photo:'' }; const finish = () => { studentProfiles.push(profile); saveStudentProfiles(); activateStudent(profile); }; const file = form.elements.studentPhoto.files && form.elements.studentPhoto.files[0]; if (file) { const reader = new FileReader(); reader.onload = () => { profile.photo = String(reader.result || ''); finish(); }; reader.onerror = finish; reader.readAsDataURL(file); } else finish(); });
 }
+function getActiveStudentProfile() { return studentProfiles.find((item) => item.id === activeStudentId) || null; }
+function getUnitCertificateKey() { return [state.stage, state.grade, state.path, state.importedUnitNumber].join(':'); }
+function buildUnitCertificate(unit, track, grade, questions, prefix) {
+  const profile = getActiveStudentProfile();
+  if (!profile || !unit || !questions.length) return '<p class="unit-source-note">Complete the unit assessment to unlock your certificate.</p>';
+  const answers = questions.map((_, index) => getQuestionState(prefix + '-' + index));
+  const correct = answers.filter((item) => item.isCorrect).length;
+  const attempted = answers.filter((item) => item.isCorrect || item.wrongChoices.length).length;
+  const score = Math.round(correct / questions.length * 100);
+  const complete = attempted === questions.length && score >= 90;
+  const key = getUnitCertificateKey();
+  if (complete) {
+    profile.certificates = profile.certificates || {};
+    if (!profile.certificates[key]) profile.certificates[key] = { studentName: profile.name, stage: stageNames[state.stage] || state.stage, grade: grade.grade, curriculum: track.name, unit: unit.title, unitNumber: unit.number, score, completedAt: new Date().toISOString() };
+    saveStudentProfiles();
+  }
+  const certificate = profile.certificates?.[key];
+  if (!certificate) return '<section class="certificate-progress-card"><h3>Certificate progress</h3><p>You answered ' + correct + ' of ' + questions.length + ' questions correctly (' + score + '%).</p><p>Finish the assessment with at least 90% to earn your certificate.</p></section>';
+  const date = new Date(certificate.completedAt).toLocaleDateString('en-GB');
+  return '<section class="certificate-card" aria-label="Certificate of Excellence"><div class="certificate-portraits"><figure><img src="/assets/teacher-portrait.jpeg" alt="Your teacher"><figcaption>Your Teacher</figcaption></figure><figure>' + (profile.photo ? '<img src="' + profile.photo + '" alt="Student portrait">' : '<span class="certificate-no-photo">Student Photo</span>') + '<figcaption>Student</figcaption></figure></div><p class="certificate-kicker">ENG L I M E N S H · EGYPT</p><h3>Certificate of Excellence</h3><p>This certificate is proudly presented to</p><h2>' + escapeHtml(certificate.studentName) + '</h2><p>For successfully completing</p><h3 class="certificate-unit">' + escapeHtml(certificate.unit) + '</h3><p>' + escapeHtml(certificate.stage) + ' · Grade ' + certificate.grade + ' · ' + escapeHtml(certificate.curriculum) + '</p><strong class="certificate-score">' + certificate.score + '%</strong><p class="certificate-message">Excellent work! Keep learning, keep growing, and believe in yourself.</p><small>Completed: ' + date + '</small></section>';
+}
+
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
   if (!val) return { choice: null, isCorrect: false, wrongChoices: [] };
@@ -987,7 +1009,7 @@ function renderImportedPrimaryCurriculum() {
       case 'listening': body = '<p class="unit-source-note">Listen to each word, then choose the word you heard.</p>' + renderQuestions(listeningPractice, prefix + '-listen'); break;
       case 'games': body = renderGames(); break;
       case 'vocabulary-practice': body = '<h3 class="module-subheading">Textbook-source questions</h3>' + renderQuestions(unit.vocabularyQuestions, prefix + '-v') + '<h3 class="module-subheading">Extra meaning practice</h3><p class="unit-source-note">Extra questions generated from this unit’s vocabulary list.</p>' + renderQuestions(vocabularySupplementary, prefix + '-vs'); break;
-      case 'tests': body = '<h3 class="module-subheading">Unit assessment · ' + unitTestQuestions.length + ' questions</h3><p class="unit-source-note">A mixed review using vocabulary, grammar, reading, listening and the supplied exam questions. Extra generated items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test'); break;
+      case 'tests': body = '<h3 class="module-subheading">Unit assessment · ' + unitTestQuestions.length + ' questions</h3><p class="unit-source-note">A mixed review using vocabulary, grammar, reading, listening and the supplied exam questions. Extra generated items are not presented as printed textbook questions.</p>' + renderQuestions(unitTestQuestions, prefix + '-test') + buildUnitCertificate(unit, track, grade, unitTestQuestions, prefix + '-test'); break;
     }
     const active = modules.find((item) => item.id === state.activeModule);
     return '<section class="panel imported-curriculum imported-module-screen ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
