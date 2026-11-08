@@ -1035,7 +1035,7 @@ function renderImportedPrimaryCurriculum() {
     return '<section class="panel imported-curriculum imported-module-screen ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="unit">← Back to Unit ' + unit.number + '</button><div class="section-heading"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + ' · UNIT ' + unit.number + '</p><h2>' + escapeHtml(active?.title || 'Unit section') + '</h2><p>' + escapeHtml(active?.subtitle || '') + '</p></div></div><div class="imported-module-content">' + body + '</div></section>';
   }
   if (unit) {
-    return '<section class="panel imported-curriculum imported-unit-dashboard ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span></div><div class="imported-module-groups">' +
+    return '<section class="panel imported-curriculum imported-unit-dashboard ' + (state._routeChanged ? 'route-enter' : '') + '"><button type="button" class="imported-back-button" data-imported-back="grade">← Back to all units</button><div class="unit-hero-banner imported-unit-hero"><div><p class="eyebrow">' + escapeHtml(track.name) + ' · GRADE ' + grade.grade + '</p><h2>Unit ' + unit.number + ': ' + escapeHtml(unit.title) + '</h2><p>Choose a section. Each section opens on its own screen.</p></div><span class="book-count">' + unit.vocabulary.length + ' words</span><button type="button" class="favorite-unit-button" data-favorite-current>☆ Save Unit</button></div><div class="imported-module-groups">' +
       moduleGroups.map((group) => '<section class="imported-module-group"><div class="imported-module-group-heading"><h3>' + group.title + '</h3><p>' + group.subtitle + '</p></div><div class="imported-section-grid">' + group.items.map((item) => '<button type="button" class="unit-section-card" data-imported-section="' + item.id + '"><span class="section-card-icon">' + item.icon + '</span><span class="section-card-copy"><strong class="section-card-label">' + item.title + '</strong><small>' + item.subtitle + '</small><span class="section-card-progress">' + item.count + ' items</span></span><span class="section-card-arrow">›</span></button>').join('') + '</div></section>').join('') + '</div></section>';
   }
   return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
@@ -2619,6 +2619,18 @@ function render() {
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
+  app.querySelector('[data-favorite-current]')?.addEventListener('click', () => {
+    const profile = getActiveStudentProfile();
+    const track = primaryHtmlCurriculum.tracks.find((item) => item.id === state.path);
+    const gradeData = track?.grades.find((item) => item.grade === state.grade);
+    const unitData = gradeData?.units.find((item) => item.number === Number(state.importedUnitNumber));
+    if (profile && unitData) {
+      profile.favorites = profile.favorites || [];
+      const label = track.name + ' · Grade ' + state.grade + ' · Unit ' + unitData.number + ': ' + unitData.title;
+      profile.favorites = profile.favorites.includes(label) ? profile.favorites.filter((item) => item !== label) : [...profile.favorites, label];
+      saveStudentProfiles(); render();
+    }
+  });
   app.querySelectorAll('[data-student-hub]').forEach((button) => button.addEventListener('click', () => { state.studentTool = button.dataset.studentHub; render(); }));
   app.querySelector('[data-student-theme]')?.addEventListener('change', (event) => {
     const profile = getActiveStudentProfile();
