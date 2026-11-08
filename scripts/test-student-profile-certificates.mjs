@@ -7,6 +7,8 @@ const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.me
 
 assert.match(main, /STUDENT_PROFILES_KEY/);
 assert.match(main, /englimensh_progress_.*state\.stage.*state\.grade.*state\.path/);
+assert.match(main, /state\.term === 'second' \? base \+ '_term_second'/);
+assert.match(main, /\[state\.term \|\| 'first', state\.stage/);
 assert.match(main, /paths:\(form\.elements\.studentStage\.value === 'primary' \? \['general','advanced'\]/);
 assert.match(main, /YOUR TWO PRIMARY CURRICULA/);
 assert.match(main, /data-path=/);
@@ -24,6 +26,7 @@ assert.match(main, /data-edit-student-profile/);
 assert.match(main, /studentPhotoCamera/);
 assert.match(main, /data-save-certificate/);
 assert.match(main, /window\.print\(\)/);
+assert.match(main, /printing-target/);
 assert.match(main, /const correctPosition = seed % 4/);
 assert.match(styles, /data-student-theme=\"ocean\"/);
 assert.match(styles, /data-student-theme=\"forest\"/);
