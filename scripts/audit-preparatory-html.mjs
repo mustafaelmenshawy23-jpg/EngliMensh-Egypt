@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = process.cwd();
 const sourceRoot = path.join(root, 'content-imports/preparatory');
 const sourceIndex = JSON.parse(await readFile(path.join(root, 'data/curriculum/source-book-index.draft.json'), 'utf8'));
+const unitModules = JSON.parse(await readFile(path.join(root, 'src/data/lessons/unit-modules.draft.json'), 'utf8'));
 
 async function walk(dir) {
   const files = [];
@@ -75,7 +76,19 @@ for (const file of files) {
   });
 }
 
+const nativePreparatoryModules = unitModules.records.filter((item) => String(item.grade || '').startsWith('Preparatory'));
+const nativeSectionSlots = nativePreparatoryModules.flatMap((item) => item.sections || []);
+const expectedNativePreparatoryUnits = 3 * 2 * 6;
+
 const summary = {
+  expectedNativePreparatoryUnits,
+  nativePreparatoryUnitRecordsFound: nativePreparatoryModules.length,
+  nativePreparatoryUnitRecordsMissing: Math.max(0, expectedNativePreparatoryUnits - nativePreparatoryModules.length),
+  nativePreparatoryUnitsWithAnyContent: nativePreparatoryModules.filter((item) =>
+    (item.sections || []).some((section) => Array.isArray(section.items) && section.items.length > 0)).length,
+  nativePreparatorySectionSlots: nativeSectionSlots.length,
+  populatedNativePreparatorySectionSlots: nativeSectionSlots.filter((section) =>
+    Array.isArray(section.items) && section.items.length > 0).length,
   sourceFiles: records.length,
   filesWithFlags: records.filter((item) => item.flags.length).length,
   syntheticOrPlaceholderFiles: records.filter((item) => item.flags.includes('synthetic_or_placeholder_content')).length,
@@ -99,5 +112,5 @@ assert.ok(records.some((item) => item.file.endsWith('Prep_3_New_Hello_Plus_Unit_
   item.flags.includes('unit_title_differs_from_indexed_source_book')),
   'Known Prep 3 Plus title mismatch must remain visible to QA.');
 
-console.log('Preparatory HTML audit (metadata only; no source scripts executed):');
+console.log('Preparatory source and native-module audit (metadata only; no source scripts executed):');
 console.log(JSON.stringify({ summary, records }, null, 2));
