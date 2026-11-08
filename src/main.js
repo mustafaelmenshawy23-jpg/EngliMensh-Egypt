@@ -550,11 +550,11 @@ function renderPreparatoryHtmlLibrary() {
     ['grammar_questions', 'Grammar Questions', 'Grammar practice', '✓'],
     ['reading', 'Reading', 'Read and understand', '▤'],
     ['listening', 'Listening', 'Listen and answer', '♫'],
-    ['speaking', 'Speaking', 'Practise aloud', '🎤'],
     ['games', 'Games', 'Play and learn with six game types', '★'],
     ['comprehensive_test', 'Comprehensive Test', 'Check your unit mastery', '🏆']
   ];
   const selectedWords = getPreparatoryUnitWords(selectedUnit);
+  const availableModules = modules.filter((item) => !(state.grade === 2 && state.path === 'general' && item[0] === 'comprehensive_test'));
   const moduleLabel = modules.find((item) => item[0] === module)?.[1] || '';
   const formatLabel = course.format === 'static-html'
     ? 'Static source lesson · app sections and games are provided separately'
@@ -574,7 +574,7 @@ function renderPreparatoryHtmlLibrary() {
         `).join('')}</div>
       ` : !module ? `
         <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-units>← All units</button><div><span class="eyebrow">${escapeHtml(course.series)} · PREPARATORY ${state.grade}</span><h3>${escapeHtml(selectedUnit.title)}</h3></div><span class="prep-word-count">${selectedWords.length} vocabulary words</span></div>
-        <div class="prep-module-grid">${modules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
+        <div class="prep-module-grid">${availableModules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
       ` : `
         <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-modules>← ${escapeHtml(selectedUnit.title)}</button><div><span class="eyebrow">${escapeHtml(course.series)} · UNIT ${escapeHtml(selectedUnit.number || '1–6')}</span><h3>${escapeHtml(moduleLabel)}</h3></div></div>
         ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : `
@@ -2085,20 +2085,36 @@ function render() {
       };
       const targets = moduleMap[state.htmlModuleSelection] || [];
       const selectedPreparatoryUnit = getSelectedPreparatoryUnit();
-      if (state.grade === 3 && state.path === 'general' && selectedPreparatoryUnit?.number) {
+      const isCombinedPrep3 = state.grade === 3 && state.path === 'general';
+      if (isCombinedPrep3 && selectedPreparatoryUnit?.number) {
         doc.getElementById('unit-tab-' + selectedPreparatoryUnit.number)?.click();
       }
-      if (typeof win.switchTab === 'function' && targets[0]) win.switchTab(targets[0]);
-      else if (doc) {
-        doc.querySelectorAll('.section-view, .subtab-content').forEach((node) => {
-          node.classList.remove('active');
-          if (node.classList.contains('section-view')) node.style.display = 'none';
-        });
-        const target = targets.map((id) => doc.getElementById(id)).find(Boolean);
-        if (target) {
-          target.classList.add('active');
-          target.style.display = '';
-          target.classList.remove('hidden');
+      if (isCombinedPrep3 && typeof win.switchSubTab === 'function') {
+        const tabNames = { vocabulary_questions: 'vocab-quiz', grammar: 'grammar', grammar_questions: 'grammar-quiz', reading: 'reading', listening: 'listening', comprehensive_test: 'exam' };
+        win.switchSubTab(tabNames[state.htmlModuleSelection] || 'vocab');
+      } else if (typeof win.switchTab === 'function' && targets[0]) {
+        win.switchTab(targets[0]);
+      } else if (doc) {
+        const staticSections = [...doc.querySelectorAll('.section')];
+        if (staticSections.length) {
+          const headingPatterns = {
+            vocabulary_questions: /^2\\.\\s*Vocabulary Quiz/i,
+            grammar: /^3\\.\\s*Grammar/i,
+            grammar_questions: /^4\\.\\s*Grammar Quiz/i,
+            reading: /^5\\.\\s*Reading/i,
+            listening: /^6\\.\\s*Listening/i
+          };
+          const pattern = headingPatterns[state.htmlModuleSelection];
+          staticSections.forEach((section) => { section.style.display = 'none'; });
+          const targetSection = staticSections.find((section) => pattern && pattern.test(section.querySelector('h1,h2,h3')?.textContent?.trim() || ''));
+          if (targetSection) targetSection.style.display = 'block';
+        } else {
+          doc.querySelectorAll('.section-view, .subtab-content').forEach((node) => {
+            node.classList.remove('active');
+            if (node.classList.contains('section-view')) node.style.display = 'none';
+          });
+          const target = targets.map((id) => doc.getElementById(id)).find(Boolean);
+          if (target) { target.classList.add('active'); target.style.display = ''; target.classList.remove('hidden'); }
         }
       }
     } catch (error) {
