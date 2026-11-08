@@ -9,6 +9,10 @@ on:
       - 'scripts/lib/curriculum-order.mjs'
       - 'scripts/lib/source-quality-gate.mjs'
       - 'scripts/lib/content-quality-validator.mjs'
+      - 'data/curriculum/source-book-index.draft.json'
+      - 'src/data/extracted/manifest.json'
+      - 'src/data/extracted/pages.jsonl'
+      - '.github/workflows/generate-interactive-unit.yml'
   schedule:
     - cron: '0 6 * * *'
   workflow_dispatch:
