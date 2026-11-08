@@ -2098,11 +2098,11 @@ function render() {
         const staticSections = [...doc.querySelectorAll('.section')];
         if (staticSections.length) {
           const headingPatterns = {
-            vocabulary_questions: /^2\\.\\s*Vocabulary Quiz/i,
-            grammar: /^3\\.\\s*Grammar/i,
-            grammar_questions: /^4\\.\\s*Grammar Quiz/i,
-            reading: /^5\\.\\s*Reading/i,
-            listening: /^6\\.\\s*Listening/i
+            vocabulary_questions: /^2\.\s*Vocabulary Quiz/i,
+            grammar: /^3\.\s*Grammar/i,
+            grammar_questions: /^4\.\s*Grammar Quiz/i,
+            reading: /^5\.\s*Reading/i,
+            listening: /^6\.\s*Listening/i
           };
           const pattern = headingPatterns[state.htmlModuleSelection];
           staticSections.forEach((section) => { section.style.display = 'none'; });
