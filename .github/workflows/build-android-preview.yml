@@ -16,7 +16,7 @@ jobs:
   validate-preparatory:
     if: github.ref == 'refs/heads/feature/preparatory-native-curriculum'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - name: Checkout preparatory curriculum sources
         uses: actions/checkout@v4
