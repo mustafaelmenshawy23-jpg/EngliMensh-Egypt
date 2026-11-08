@@ -1499,13 +1499,6 @@ function renderUnitWorkspace() {
         </div>
       `;
     }
-          <div class="book-icon">📖</div>
-          <strong>Digital interactive exercises for Unit ${unit.number} (${escapeHtml(secDef.title)}) are in preparation</strong>
-          <span>This unit is mapped from the official curriculum textbook (${escapeHtml(book.sourceFile)}). You can view the original lesson material on PDF page ${unit.startPdfPage || 'N/A'}.</span>
-          ${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Open PDF Page ${unit.startPdfPage} ↗</button>` : ''}
-        </div>
-      `;
-    }
 
     return `
       <section class="unit-module-screen">
