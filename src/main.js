@@ -2197,6 +2197,49 @@ function renderPreview() {
   return `<section class="pdf-preview" aria-label="PDF preview"><div class="preview-heading"><div><p class="eyebrow">ORIGINAL SOURCE · READ ONLY</p><strong>${escapeHtml(file)}</strong><span>PDF page ${page}</span></div><button type="button" class="preview-close" data-close-preview>Close preview ✕</button></div><iframe title="Original source book preview" src="${bookUrl(file, page)}" loading="lazy"></iframe><p class="preview-note">The original PDF is displayed without modification.</p><a class="source-open preview-fallback" href="${bookUrl(file, page)}" target="_blank" rel="noopener">Open PDF in a new tab ↗</a></section>`;
 }
 
+// Short, accessible feedback tones. These are generated locally, so no network/audio files are required.
+let feedbackAudioContext = null;
+function playFeedbackSound(result, game = null) {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    feedbackAudioContext ||= new AudioContextClass();
+    const context = feedbackAudioContext;
+    if (context.state === 'suspended') context.resume().catch(() => {});
+    const patterns = {
+      questionCorrect: { notes: [659, 880], wave: 'sine', duration: 0.13 },
+      questionWrong: { notes: [247, 185], wave: 'triangle', duration: 0.16 },
+      matchCorrect: { notes: [523, 659, 784], wave: 'sine', duration: 0.11 },
+      matchWrong: { notes: [196, 147], wave: 'triangle', duration: 0.17 },
+      builderCorrect: { notes: [392, 523, 659, 784], wave: 'sine', duration: 0.10 },
+      builderWrong: { notes: [220, 165], wave: 'square', duration: 0.13 },
+      listenCorrect: { notes: [784, 988, 1175], wave: 'sine', duration: 0.10 },
+      listenWrong: { notes: [262, 196], wave: 'triangle', duration: 0.16 },
+      challengeCorrect: { notes: [587, 784, 988, 1175], wave: 'sine', duration: 0.10 },
+      challengeWrong: { notes: [185, 139], wave: 'square', duration: 0.13 }
+    };
+    const key = game ? game + (result ? 'Correct' : 'Wrong') : 'question' + (result ? 'Correct' : 'Wrong');
+    const pattern = patterns[key] || patterns['question' + (result ? 'Correct' : 'Wrong')];
+    const start = context.currentTime + 0.015;
+    pattern.notes.forEach((frequency, index) => {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const noteStart = start + index * pattern.duration * 0.82;
+      oscillator.type = pattern.wave;
+      oscillator.frequency.setValueAtTime(frequency, noteStart);
+      gain.gain.setValueAtTime(0.0001, noteStart);
+      gain.gain.exponentialRampToValueAtTime(0.12, noteStart + 0.018);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteStart + pattern.duration);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(noteStart);
+      oscillator.stop(noteStart + pattern.duration + 0.02);
+    });
+  } catch (error) {
+    // Audio feedback must never interrupt answering or game progress.
+  }
+}
+
 function render() {
   const previousScrollY = window.scrollY;
   const previousViewKey = state._renderViewKey || null;
@@ -2474,6 +2517,7 @@ function render() {
         wrongChoices
       };
       card.dataset.answered = 'true';
+      playFeedbackSound(true);
       button.classList.add('is-correct');
       feedback.textContent = 'Correct! Well done.';
       feedback.classList.remove('incorrect');
@@ -2483,6 +2527,7 @@ function render() {
         if (option !== button) option.classList.remove('is-wrong');
       });
     } else {
+      playFeedbackSound(false);
       if (!wrongChoices.includes(String(chosen))) wrongChoices.push(String(chosen));
       state.quizAnswers[questionId] = {
         choice: null,
@@ -2518,12 +2563,14 @@ function render() {
 
     if (correctAnswer) {
       if (choice === correctAnswer) {
+        playFeedbackSound(true);
         state.quizAnswers[qId] = {
           choice,
           isCorrect: true,
           wrongChoices: qState.wrongChoices
         };
       } else {
+        playFeedbackSound(false);
         const updatedWrong = qState.wrongChoices.includes(choice) ? qState.wrongChoices : [...qState.wrongChoices, choice];
         state.quizAnswers[qId] = {
           choice,
@@ -2579,7 +2626,8 @@ function render() {
     const word = btn.dataset.matchWord;
     if (state.game1.matches.includes(word)) return;
     if (state.game1.selectedPic) {
-      if (state.game1.selectedPic === word) state.game1.matches.push(word);
+      if (state.game1.selectedPic === word) { state.game1.matches.push(word); playFeedbackSound(true, 'match'); }
+      else playFeedbackSound(false, 'match');
       state.game1.selectedWord = null;
       state.game1.selectedPic = null;
     } else {
@@ -2592,7 +2640,8 @@ function render() {
     const word = btn.dataset.matchPic;
     if (state.game1.matches.includes(word)) return;
     if (state.game1.selectedWord) {
-      if (state.game1.selectedWord === word) state.game1.matches.push(word);
+      if (state.game1.selectedWord === word) { state.game1.matches.push(word); playFeedbackSound(true, 'match'); }
+      else playFeedbackSound(false, 'match');
       state.game1.selectedWord = null;
       state.game1.selectedPic = null;
     } else {
@@ -2632,6 +2681,7 @@ function render() {
     const target = btn.target.dataset.builderCheck;
     if (!state.game2.checkResult) {
       const isCorrect = state.game2.placed.join('') === target;
+      playFeedbackSound(isCorrect, 'builder');
       if (isCorrect) state.game2.score += 1;
       state.game2.checkResult = { isCorrect };
       saveProgressToStorage();
@@ -2652,7 +2702,9 @@ function render() {
       const chosen = btn.dataset.listenChoose;
       state.game3.selectedOption = chosen;
       const targets = getPrimaryGameWords(6)?.map((item) => item.target) || ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'];
-      if (chosen === targets[state.game3.index]) state.game3.score += 1;
+      const isCorrect = chosen === targets[state.game3.index];
+      playFeedbackSound(isCorrect, 'listen');
+      if (isCorrect) state.game3.score += 1;
       saveProgressToStorage();
       render();
     }
@@ -2670,7 +2722,9 @@ function render() {
       const chosen = btn.dataset.commandChoose;
       state.game4.selectedOption = chosen;
       const targets = getPrimaryGameWords(4)?.map((item) => item.target) || ['stand up', 'sit down', 'open your bag', 'close your book'];
-      if (chosen === targets[state.game4.index]) state.game4.score += 1;
+      const isCorrect = chosen === targets[state.game4.index];
+      playFeedbackSound(isCorrect, 'challenge');
+      if (isCorrect) state.game4.score += 1;
       saveProgressToStorage();
       render();
     }
