@@ -22,7 +22,7 @@ const names = files.map((file) => path.basename(file));
 for (const grade of [1, 2, 3]) {
   const general = grade === 3
     ? names.includes('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html')
-    : Array.from({ length: 6 }, (_, i) => names.includes(`Prep_${grade}_New_Hello_Unit_${i + 1}.html`)).every(Boolean);
+    : Array.from({ length: 6 }, (_, i) => { const suffix = grade === 2 ? '_Complete' : ''; return names.includes(`Prep_${grade}_New_Hello_Unit_${i + 1}${suffix}.html`); }).every(Boolean);
   assert.ok(general, `New Hello general source coverage exists for Prep ${grade}.`);
   assert.ok(Array.from({ length: 6 }, (_, i) => names.includes(`Prep_${grade}_New_Hello_Plus_Unit_${i + 1}.html`)).every(Boolean), `New Hello Plus source coverage exists for Prep ${grade}.`);
 }
