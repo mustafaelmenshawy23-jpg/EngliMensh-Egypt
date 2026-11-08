@@ -2618,6 +2618,14 @@ function render() {
     render();
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
+  app.querySelectorAll('[data-student-hub]').forEach((button) => button.addEventListener('click', () => { state.studentTool = button.dataset.studentHub; render(); }));
+  app.querySelector('[data-student-theme]')?.addEventListener('change', (event) => {
+    const profile = getActiveStudentProfile();
+    if (profile) { profile.theme = event.target.value; saveStudentProfiles(); }
+    document.documentElement.dataset.studentTheme = event.target.value;
+  });
+  const activeProfile = getActiveStudentProfile();
+  if (activeProfile?.theme) document.documentElement.dataset.studentTheme = activeProfile.theme;
   app.querySelector('[data-switch-profile]')?.addEventListener('click', () => { saveProgressToStorage(); activeStudentId = null; state.importedUnitNumber = null; state.activeModule = null; render(); });
   app.querySelector('[data-explore-stages]')?.addEventListener('click', () => { const panel = app.querySelector('.selection-panel'); if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none'; });
   app.querySelector('[data-home]')?.addEventListener('click', (event) => {
