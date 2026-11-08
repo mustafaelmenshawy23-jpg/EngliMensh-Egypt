@@ -13,6 +13,7 @@ import fitz
 ROOT = Path.cwd()
 BOOKS = ROOT / "public" / "books"
 SOURCE = ROOT / "data" / "curriculum" / "unit-page-boundary-candidates.draft.json"
+INDEX = ROOT / "data" / "curriculum" / "source-book-index.draft.json"
 OUT = ROOT / "review-pages-unit-boundaries"
 DPI = int(os.environ.get("RENDER_DPI", "300"))
 
@@ -23,8 +24,12 @@ if DPI not in (240, 300):
 def main():
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
     rows = data.get("candidates", [])
-    if data.get("status") != "draft_needs_visual_review" or len(rows) != 19:
-        raise SystemExit(f"Expected 19 visual-review candidates, found {len(rows)}")
+    allowed_statuses = {"draft_needs_visual_review", "boundary_pages_visually_verified"}
+    if data.get("status") not in allowed_statuses or len(rows) != 19:
+        raise SystemExit(f"Expected 19 candidates in a recognized review state, found {len(rows)}")
+
+    index_data = json.loads(INDEX.read_text(encoding="utf-8"))
+    books_by_source = {book.get("sourceFile"): book for book in index_data.get("books", [])}
 
     page_keys = [(row.get("sourceFile"), row.get("candidateStartPdfPage")) for row in rows]
     if len(set(page_keys)) != len(rows):
@@ -36,6 +41,21 @@ def main():
 
     for index, row in enumerate(rows, 1):
         filename = row["sourceFile"]
+        indexed_book = books_by_source.get(filename)
+        if not indexed_book or indexed_book.get("id") != row.get("bookId"):
+            raise SystemExit(f"Candidate source/book ID does not match source index: {filename}")
+        indexed_unit = next(
+            (unit for unit in indexed_book.get("units", []) if unit.get("number") == row.get("unitNumber")),
+            None,
+        )
+        if not indexed_unit:
+            raise SystemExit(f"Candidate unit is missing from source index: {row.get('bookId')} U{row.get('unitNumber')}")
+        if data.get("status") == "boundary_pages_visually_verified":
+            if row.get("visualReviewStatus") != "verified" or row.get("verifiedStartPdfPage") != row.get("candidateStartPdfPage"):
+                raise SystemExit(f"Verified candidate metadata is incomplete: {row.get('bookId')} U{row.get('unitNumber')}")
+            if indexed_unit.get("startPdfPage") != row.get("verifiedStartPdfPage"):
+                raise SystemExit(f"Verified page is not synchronized into the source index: {row.get('bookId')} U{row.get('unitNumber')}")
+
         source_path = BOOKS / filename
         if not source_path.is_file():
             raise SystemExit(f"Missing source PDF: {source_path}")
@@ -76,8 +96,8 @@ def main():
         "dpi": DPI,
         "totalPages": len(rendered),
         "sourceBooks": len(documents),
-        "status": "pending_direct_visual_review",
-        "warning": "Candidate pages are not verified start pages until a reviewer confirms the page visually.",
+        "status": "pending_direct_visual_review" if data.get("status") == "draft_needs_visual_review" else "re-render_of_visually_verified_pages",
+        "warning": "Only the candidate JSON review state and source-index synchronization establish verification; rendering itself does not approve lesson content.",
         "pages": rendered,
     }
     (OUT / "manifest.json").write_text(
