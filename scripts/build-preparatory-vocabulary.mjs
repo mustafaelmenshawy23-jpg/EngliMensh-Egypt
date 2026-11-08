@@ -80,26 +80,42 @@ function safeSvg(svg = '') {
   if (!svg.includes('<svg') || /<script|foreignObject|javascript:/i.test(svg)) return '';
   return svg.includes('xmlns=') ? svg : svg.replace(/<svg\b/, '<svg xmlns="http://www.w3.org/2000/svg"');
 }
-async function findCommonsImage(word) {
-  const query = encodeURIComponent(word + ' Wikimedia Commons photograph');
-  const endpoint = 'https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=' + query + '&gsrnamespace=6&gsrlimit=6&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=480&format=json';
-  const response = await fetch(endpoint, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image attribution)' } });
-  if (!response.ok) throw new Error('Commons search HTTP ' + response.status);
+async function findOpenverseImage(word) {
+  const params = new URLSearchParams({
+    q: word,
+    page_size: '5',
+    license_type: 'commercial',
+    extension: 'jpg,jpeg,png,webp'
+  });
+  const endpoint = 'https://api.openverse.org/v1/images/?' + params.toString();
+  let response;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    response = await fetch(endpoint, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' } });
+    if (response.status !== 429 && response.status !== 503) break;
+    const retryAfter = Number(response.headers.get('retry-after') || 0);
+    await new Promise((resolve) => setTimeout(resolve, Math.max(retryAfter * 1000, 1500 * (attempt + 1))));
+  }
+  if (!response?.ok) throw new Error('Openverse search HTTP ' + response?.status);
   const json = await response.json();
-  const pages = Object.values(json.query?.pages || {});
-  const preferred = pages.find((page) => page.imageinfo?.[0]?.thumburl && /image\/(jpeg|png|webp)/i.test(page.imageinfo[0].mime || ''));
-  if (!preferred) return null;
-  const info = preferred.imageinfo[0];
-  const image = await fetch(info.thumburl, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0' } });
+  const item = (json.results || []).find((result) => result.thumbnail && result.url && result.mature !== true);
+  if (!item) return null;
+  const image = await fetch(item.thumbnail, { headers: { 'User-Agent': 'EngliMenshEgypt/1.0' } });
   if (!image.ok) return null;
   const bytes = Buffer.from(await image.arrayBuffer());
   if (bytes.length < 3000 || bytes.length > 1500000) return null;
-  const extension = (info.mime || '').includes('png') ? 'png' : (info.mime || '').includes('webp') ? 'webp' : 'jpg';
+  const extension = ['jpg', 'jpeg', 'png', 'webp'].includes((item.filetype || '').toLowerCase()) ? item.filetype.toLowerCase() : 'jpg';
   const file = slug(word) + '.' + extension;
   await fs.mkdir(ASSET_ROOT, { recursive: true });
   await fs.writeFile(path.join(ASSET_ROOT, file), bytes);
-  const meta = info.extmetadata || {};
-  return { image: '/assets/preparatory-vocabulary/' + file, imageSource: 'Wikimedia Commons', attribution: decodeHtml((meta.Artist?.value || '').replace(/<[^>]+>/g, ' ')), license: decodeHtml(meta.LicenseShortName?.value || 'See source page'), sourceUrl: info.descriptionurl || preferred.fullurl };
+  return {
+    image: '/assets/preparatory-vocabulary/' + file,
+    imageSource: 'Openverse',
+    attribution: decodeHtml(item.attribution || (item.title || 'Image') + ' by ' + (item.creator || 'Unknown creator')),
+    creator: decodeHtml(item.creator || ''),
+    license: decodeHtml((item.license || 'CC') + (item.license_version ? ' ' + item.license_version : '')),
+    licenseUrl: item.license_url || '',
+    sourceUrl: item.foreign_landing_url || item.detail_url || item.url
+  };
 }
 async function mapLimit(items, limit, worker) {
   let cursor = 0;
@@ -130,8 +146,9 @@ for (const file of files) {
 for (const unit of Object.values(registry)) for (const item of unit.words) if (!item.svg && !pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
 const imageWords = [...pendingImages.values()];
 let downloaded = 0, missing = 0;
-await mapLimit(imageWords, 5, async (word) => {
-  try { const result = await findCommonsImage(word); pendingImages.set(word.toLowerCase(), result); if (result) downloaded += 1; else missing += 1; }
+await mapLimit(imageWords, 1, async (word, index) => {
+  try { if (index > 0) await new Promise((resolve) => setTimeout(resolve, 1100));
+    const result = await findOpenverseImage(word); pendingImages.set(word.toLowerCase(), result); if (result) downloaded += 1; else missing += 1; }
   catch (error) { pendingImages.set(word.toLowerCase(), null); missing += 1; console.warn('Image lookup failed for', word, error.message); }
 });
 for (const unit of Object.values(registry)) unit.words = unit.words.map((item) => {
@@ -142,8 +159,8 @@ for (const unit of Object.values(registry)) unit.words = unit.words.map((item) =
 await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
 await fs.writeFile(OUTPUT, JSON.stringify({
   schemaVersion: 1, source: 'Owner-supplied preparatory HTML; original source files remain unchanged.',
-  imageCredits: 'Wikimedia Commons image attribution is included on each photo record.',
+  imageCredits: 'Openly licensed Openverse image attribution and license are included on each photo record.',
   units: registry,
   imageReport: { units: Object.keys(registry).length, words: Object.values(registry).reduce((sum, unit) => sum + unit.words.length, 0), commonsImagesDownloaded: downloaded, imagesMissing: missing }
 }, null, 2) + '\n');
-console.log('Preparatory vocabulary built:', Object.keys(registry).length, 'units;', imageWords.length, 'Commons lookups;', downloaded, 'photos;', missing, 'without a photo.');
+console.log('Preparatory vocabulary built:', Object.keys(registry).length, 'units;', imageWords.length, 'Openverse lookups;', downloaded, 'photos;', missing, 'without a photo.');
