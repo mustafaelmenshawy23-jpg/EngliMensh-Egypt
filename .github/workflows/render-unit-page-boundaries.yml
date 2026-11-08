@@ -1,0 +1,53 @@
+name: Render unit page-boundary candidates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/curriculum/unit-page-boundary-candidates.draft.json"
+      - "scripts/render-unit-page-boundary-candidates.py"
+      - ".github/workflows/render-unit-page-boundaries.yml"
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: Render resolution
+        required: true
+        type: choice
+        options: ["240", "300"]
+        default: "300"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: unit-page-boundary-visual-review
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout and hydrate original source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Pull Git LFS objects
+        run: git lfs pull
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PDF renderer
+        run: python -m pip install --no-cache-dir pymupdf
+      - name: Render candidate pages
+        env:
+          RENDER_DPI: ${{ inputs.dpi || '300' }}
+        run: python scripts/render-unit-page-boundary-candidates.py
+      - name: Upload visual-review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-unit-page-boundary-review-${{ inputs.dpi || '300' }}dpi
+          path: review-pages-unit-boundaries/
+          if-no-files-found: error
+          retention-days: 14
