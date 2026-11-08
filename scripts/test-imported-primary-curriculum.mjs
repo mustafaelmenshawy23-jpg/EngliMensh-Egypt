@@ -85,7 +85,7 @@ assert(main.includes('const unitTestQuestions') && main.includes('unitTestQuesti
 assert(main.includes('function explainGrammarRule') && main.includes('grammar-formula'), 'Grammar screens include a clear explanation, pattern, examples and study tip');
 assert(main.includes('vocabularySupplementary') && main.includes('Extra meaning practice'), 'Vocabulary practice adds ten supplementary meaning questions');
 assert(main.includes('const arabicOnly =') && main.includes("label: arabicOnly || 'معنى غير متاح'"), 'Matching-game clue side strips any repeated English answer from the Arabic meaning');
-assert(main.includes('correctPosition = index % 4') && main.includes('opts.length >= 3'), 'Each multiple-choice question is expanded to four choices and correct positions rotate across all four');
+assert(main.includes('correctPosition = seed % 4') && main.includes('opts.length >= 3'), 'Each multiple-choice question is expanded to four choices and the correct slot is shuffled by question identity');
 assert(main.includes('grammarQuestionSets') && main.includes('verification|application check|key pattern'), 'Placeholder grammar checks are filtered and replaced with rule-based practice');
 assert(main.includes('unitWords.flatMap') && main.includes('What does'), 'Vocabulary practice mixes English prompts with Arabic meaning choices');
 assert(main.includes('authenticDialogue') && main.includes('modelDialogue') && main.includes('ministerial exercises'), 'Generated welcome scripts and truncated dialogue placeholders are replaced by unit-based model dialogue');
