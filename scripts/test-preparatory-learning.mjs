@@ -35,5 +35,8 @@ assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-matc
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
 assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
 assert.ok(builder.includes('buildSectionViewers') && viewerRegistry.includes('preparatory-viewers/'), 'Lesson modules must open in section-aware viewer copies.');
+assert.ok(viewerRegistry.includes('viewerUrl: viewerUrl(fileName)'), 'Every single-file unit must use the generated section-aware viewer URL.');
+assert.ok(viewerRegistry.includes("viewerUrl: viewerUrl('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html')"), 'The combined grade 3 New Hello units must use the generated section-aware viewer URL.');
+assert.ok(main.includes('selectedUnit.viewerUrl || selectedUnit.url'), 'The preparatory section iframe must prefer the generated viewer URL.');
 assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
 console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections, 6 game modes, image attribution.');
