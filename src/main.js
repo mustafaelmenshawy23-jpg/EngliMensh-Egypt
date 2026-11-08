@@ -64,7 +64,7 @@ const state = {
   quizAnswers: {},
   shuffledOptions: {},
   game1: { selectedWord: null, selectedPic: null, matches: [], score: 0 },
-  game2: { index: 0, placed: [], score: 0, checkResult: null },
+  game2: { index: 0, placed: [], score: 0, checkResult: null, shuffleVersion: 0, usedHint: false },
   game3: { index: 0, score: 0, selectedOption: null },
   game4: { index: 0, score: 0, selectedOption: null },
   selfIntro: { name: 'Omar', avatar: '👧' },
@@ -78,7 +78,7 @@ let activeStudentId = null;
 function getProgressStorageKey() { const base = activeStudentId ? 'englimensh_progress_' + activeStudentId + '_' + state.stage + '_' + state.grade + '_' + state.path : LEGACY_PROGRESS_KEY; return state.term === 'second' ? base + '_term_second' : base; }
 function loadStudentProfiles() { try { const saved = JSON.parse(window.localStorage.getItem(STUDENT_PROFILES_KEY) || '[]'); studentProfiles = Array.isArray(saved) ? saved.filter((item) => item && item.id && item.name) : []; } catch { studentProfiles = []; } }
 function saveStudentProfiles() { try { window.localStorage.setItem(STUDENT_PROFILES_KEY, JSON.stringify(studentProfiles)); } catch (error) { console.warn('Student profile save warning:', error); } }
-function resetStudentProgressState() { state.quizAnswers = {}; state.shuffledOptions = {}; state.activeModule = null; state.importedUnitNumber = null; state.activeVocabSubtab = 'words'; state.activeGrammarSubtab = 'rules'; state.activeGameTab = 1; state.vocabIndex = 0; state.vocabViewMode = 'card'; state.testQuestionIndex = 0; state.listeningSpeed = 1; state.game1 = { selectedWord:null, selectedPic:null, matches:[], score:0 }; state.game2 = { index:0, placed:[], score:0, checkResult:null }; state.game3 = { index:0, score:0, selectedOption:null }; state.game4 = { index:0, score:0, selectedOption:null }; state.politeness = { answers:{} }; }
+function resetStudentProgressState() { state.quizAnswers = {}; state.shuffledOptions = {}; state.activeModule = null; state.importedUnitNumber = null; state.activeVocabSubtab = 'words'; state.activeGrammarSubtab = 'rules'; state.activeGameTab = 1; state.vocabIndex = 0; state.vocabViewMode = 'card'; state.testQuestionIndex = 0; state.listeningSpeed = 1; state.game1 = { selectedWord:null, selectedPic:null, matches:[], score:0 }; state.game2 = { index:0, placed:[], score:0, checkResult:null, shuffleVersion:0, usedHint:false }; state.game3 = { index:0, score:0, selectedOption:null }; state.game4 = { index:0, score:0, selectedOption:null }; state.politeness = { answers:{} }; }
 function activateStudent(profile) { if (!profile) return; if (activeStudentId) saveProgressToStorage(); activeStudentId = profile.id; state.term = 'first'; state.stage = profile.stage || 'primary'; state.grade = Number(profile.grade) || 1; state.path = profile.path || 'general'; const targetKey = getProgressStorageKey(); const previousProfileKey = 'englimensh_progress_' + profile.id; if (!window.localStorage.getItem(targetKey)) { const previous = window.localStorage.getItem(previousProfileKey); const legacy = studentProfiles.length === 1 ? window.localStorage.getItem(LEGACY_PROGRESS_KEY) : null; const migration = previous || legacy; if (migration) window.localStorage.setItem(targetKey, migration); } state.search = ''; state.preview = null; state.unitSelection = null; resetStudentProgressState(); loadProgressFromStorage(); render(); }
 function renderStudentProfiles() {
  const cards = studentProfiles.map((p) => '<button type="button" class="student-profile-option" data-select-student="' + escapeHtml(p.id) + '">' + (p.photo ? '<img class="student-profile-photo" src="' + p.photo + '" alt="">' : '<span class="student-profile-placeholder">＋</span>') + '<span><strong>' + escapeHtml(p.name) + '</strong><small>' + escapeHtml(stageNames[p.stage] || 'Primary') + ' · Grade ' + escapeHtml(p.grade) + '</small></span><b>›</b></button>').join('');
@@ -1327,9 +1327,21 @@ function renderGame1Matching() {
   `;
 }
 
-function renderGame2WordBuilder() {
+function getWordBuilderWords() {
   const importedWords = getPrimaryGameWords(6);
-  const wordsData = importedWords || [
+  const ageAppropriateWords = importedWords?.filter((item) => String(item.target || '').length <= (state.grade <= 2 ? 4 : 5));
+  return (ageAppropriateWords?.length ? ageAppropriateWords : (importedWords?.length ? importedWords : null)) || [
+    { target: 'tiger', arabic: 'نمر', icon: '🐯' },
+    { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
+    { target: 'table', arabic: 'طاولة', icon: '🪑' },
+    { target: 'tree', arabic: 'شجرة', icon: '🌳' },
+    { target: 'ink', arabic: 'حبر', icon: '🖋️' },
+    { target: 'insect', arabic: 'حشرة', icon: '🐛' }
+  ];
+}
+
+function renderGame2WordBuilder() {
+  const wordsData = getWordBuilderWords();
     { target: 'tiger', arabic: 'نمر', icon: '🐯' },
     { target: 'tomato', arabic: 'طماطم', icon: '🍅' },
     { target: 'table', arabic: 'طاولة', icon: '🪑' },
@@ -1351,7 +1363,10 @@ function renderGame2WordBuilder() {
     `;
   }
   const targetChars = current.target.split('');
-  const tiles = [...targetChars].sort((a, b) => b.charCodeAt(0) - a.charCodeAt(0));
+  const tiles = [...targetChars];
+  let tileSeed = (String(current.target).split('').reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 7) + Number(state.game2.shuffleVersion || 0) * 104729) >>> 0;
+  for (let i = tiles.length - 1; i > 0; i--) { tileSeed = (tileSeed * 1664525 + 1013904223) >>> 0; const j = tileSeed % (i + 1); [tiles[i], tiles[j]] = [tiles[j], tiles[i]]; }
+  if (tiles.join('') === current.target && tiles.length > 1) [tiles[0], tiles[1]] = [tiles[1], tiles[0]];
 
   return `
     <article class="interactive-game-container">
@@ -1385,6 +1400,8 @@ function renderGame2WordBuilder() {
         </div>
         <div class="builder-actions">
           <button type="button" class="builder-action-btn clear" data-builder-clear>Clear Tiles</button>
+          <button type="button" class="builder-action-btn" data-builder-shuffle>Shuffle</button>
+          <button type="button" class="builder-action-btn" data-builder-hint ${checkResult || placed.length >= targetChars.length ? 'disabled' : ''}>Hint</button>
           <button type="button" class="builder-action-btn check" data-builder-check="${current.target}" ${checkResult ? 'disabled' : ''}>Check Word</button>
         </div>
         ${checkResult ? `
@@ -2699,6 +2716,7 @@ function render() {
       };
       card.dataset.answered = 'true';
       playFeedbackSound(true);
+      speakText('Great job! That is correct.');
       button.classList.add('is-correct');
       feedback.textContent = 'Correct! Well done.';
       feedback.classList.remove('incorrect');
@@ -2709,6 +2727,7 @@ function render() {
       });
     } else {
       playFeedbackSound(false);
+      speakText('Good try. Have another go.');
       if (!wrongChoices.includes(String(chosen))) wrongChoices.push(String(chosen));
       state.quizAnswers[questionId] = {
         choice: null,
@@ -2837,8 +2856,7 @@ function render() {
   // Game 2 Word Builder Listeners
   app.querySelectorAll('[data-place-tile]').forEach((btn) => btn.addEventListener('click', () => {
     const char = btn.dataset.placeTile;
-    const wordsData = getPrimaryGameWords(6)?.map((item) => item.target) || ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'];
-    const target = wordsData[state.game2.index] || '';
+    const target = String(getWordBuilderWords()[state.game2.index]?.target || '');
     if (state.game2.placed.length < target.length) {
       state.game2.placed.push(char);
       saveProgressToStorage();
@@ -2857,24 +2875,41 @@ function render() {
   app.querySelector('[data-builder-clear]')?.addEventListener('click', () => {
     state.game2.placed = [];
     state.game2.checkResult = null;
+    state.game2.usedHint = false;
     saveProgressToStorage();
     render();
+  });
+  app.querySelector('[data-builder-shuffle]')?.addEventListener('click', () => {
+    state.game2.shuffleVersion = Number(state.game2.shuffleVersion || 0) + 1;
+    saveProgressToStorage();
+    render();
+  });
+  app.querySelector('[data-builder-hint]')?.addEventListener('click', () => {
+    const target = String(getWordBuilderWords()[state.game2.index]?.target || '');
+    if (state.game2.placed.length < target.length && !state.game2.checkResult) {
+      state.game2.placed.push(target[state.game2.placed.length]);
+      state.game2.usedHint = true;
+      playFeedbackSound(true, 'builder');
+      saveProgressToStorage();
+      render();
+    }
   });
   app.querySelector('[data-builder-check]')?.addEventListener('click', (btn) => {
     const target = btn.target.dataset.builderCheck;
     if (!state.game2.checkResult) {
       const isCorrect = state.game2.placed.join('') === target;
       playFeedbackSound(isCorrect, 'builder');
-      if (isCorrect) state.game2.score += 1;
-      state.game2.checkResult = { isCorrect };
+      if (isCorrect && !state.game2.usedHint) state.game2.score += 1;
+      state.game2.checkResult = { isCorrect, usedHint: Boolean(state.game2.usedHint) };
       saveProgressToStorage();
       render();
     }
   });
   app.querySelector('[data-builder-next]')?.addEventListener('click', () => {
-    if (state.game2.index < 6) state.game2.index += 1;
+    if (state.game2.index < getWordBuilderWords().length - 1) state.game2.index += 1;
     state.game2.placed = [];
     state.game2.checkResult = null;
+    state.game2.usedHint = false;
     saveProgressToStorage();
     render();
   });
