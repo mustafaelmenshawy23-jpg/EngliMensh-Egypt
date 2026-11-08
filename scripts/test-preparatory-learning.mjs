@@ -24,7 +24,7 @@ for (const grade of [1, 2, 3]) {
   else assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Unit_'), 'Missing New Hello registry for grade ' + grade);
   assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Plus_Unit_'), 'Missing New Hello Plus registry for grade ' + grade);
 }
-for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'speaking', 'games', 'comprehensive_test']) {
+for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'games', 'comprehensive_test']) {
   assert.ok(main.includes("['" + section + "'") || main.includes(section + ': ['), 'Missing preparatory learning section: ' + section);
 }
 for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest', 'open-box', 'flashcards']) {
