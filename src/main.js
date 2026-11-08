@@ -2358,9 +2358,9 @@ function render() {
       <section class="welcome" ${importedUnitView ? 'hidden' : ''}>
         <p class="eyebrow">YOUR ENGLISH LEARNING SPACE</p>
         <h1>Learn. Practice. Achieve.</h1>
-        <p class="intro">Choose your educational stage and curriculum pathway to get started.</p>
+        <p class="intro">Welcome back! Your selected grade is ready. Explore other stages only when you need them.</p><button type="button" class="explore-stages-btn" data-explore-stages>Explore Other Stages</button>
       </section>
-      <section class="panel selection-panel" ${importedUnitView ? 'hidden' : ''}>
+      <section class="panel selection-panel" style="display:none">
         <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your stage</h2></div></div>
         <div class="stage-grid">
           ${curriculum.stages.map((item) => `<button class="stage-card ${item.id === state.stage ? 'active' : ''}" data-stage="${item.id}"><span class="stage-icon">${item.id === 'primary' ? '01' : item.id === 'preparatory' ? '02' : item.id === 'secondary' ? '03' : '04'}</span><span>${stageNames[item.id]}</span><span class="chevron">›</span></button>`).join('')}
@@ -2571,6 +2571,7 @@ function render() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }));
   app.querySelector('[data-switch-profile]')?.addEventListener('click', () => { saveProgressToStorage(); activeStudentId = null; state.importedUnitNumber = null; state.activeModule = null; render(); });
+  app.querySelector('[data-explore-stages]')?.addEventListener('click', () => { const panel = app.querySelector('.selection-panel'); if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none'; });
   app.querySelector('[data-home]')?.addEventListener('click', (event) => {
     event.preventDefault();
     state.importedUnitNumber = null;
