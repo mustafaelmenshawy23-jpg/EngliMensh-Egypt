@@ -820,8 +820,6 @@ function renderUnitWorkspace() {
               return `<article class="vocab-compact-card"><div class="vocab-compact-top"><span class="vocab-compact-icon">${icons[(data.word || '').toLowerCase()] || '📘'}</span><span class="vocab-compact-num">#${idx + 1} · p.${data.sourcePdfPage || '—'}</span></div><strong class="vocab-compact-word" dir="ltr">${escapeHtml(data.word || '')}</strong><span class="vocab-compact-meaning" dir="rtl">${escapeHtml(data.arabicMeaning || '')}</span>${data.example ? `<p dir="ltr">${escapeHtml(data.example)}</p>` : ''}<button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.word || '')}">🔊 Listen</button></article>`;
             }).join('')}
           </div>
-          <h3 class="module-subheading">Vocabulary practice</h3>
-          ${renderQuestionGroup(vocabularyQuestions, 'vocabulary_questions')}
         `;
       } else if (state.activeModule === 'vocabulary_questions') {
         bodyHtml = renderQuestionGroup(vocabularyQuestions, 'vocabulary_questions');
@@ -835,8 +833,6 @@ function renderUnitWorkspace() {
               return `<article class="grammar-concept-card"><div class="grammar-concept-head"><span class="grammar-concept-badge">LANGUAGE STRUCTURE</span><span class="grammar-page-tag">PDF Page ${data.sourcePdfPage || '—'}</span></div><h3 class="grammar-concept-title">${escapeHtml(data.rule || '')}</h3><p class="grammar-explanation-text">${escapeHtml(data.explanation || '')}</p>${data.example ? `<div class="grammar-example-callout"><span class="example-badge">Textbook model</span><p class="example-content" dir="ltr">${escapeHtml(data.example)}</p><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(data.example)}">🔊 Listen</button></div>` : ''}</article>`;
             }).join('')}
           </div>
-          <h3 class="module-subheading">Grammar practice</h3>
-          ${renderQuestionGroup(grammarQuestions, 'grammar_questions')}
         `;
       } else if (state.activeModule === 'reading') {
         const passage = reading.find((item) => item.content?.passage)?.content || {};
@@ -1292,6 +1288,7 @@ function renderUnitWorkspace() {
               `).join('')}
             </div>
             <p class="speaking-practice-note">Now practise the full dialogue with a classmate.</p>
+            <p class="speaking-practice-note">Playback currently uses the platform default English TTS voice. Male/female voice matching has not been verified.</p>
             <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(rolePlay.map((line) => `${line.speaker}: ${line.text}`).join('. '))}">🔊 Listen to Full Dialogue</button>
           </div>
         ` : '<div class="empty-state"><strong>Speaking practice is being prepared.</strong></div>';
