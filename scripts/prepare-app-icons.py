@@ -61,7 +61,7 @@ def save_android_icons(source: Image.Image) -> None:
     foreground_dir.mkdir(parents=True, exist_ok=True)
     foreground = Image.new("RGBA", (432, 432), (0, 0, 0, 0))
     art = source.resize((288, 288), Image.Resampling.LANCZOS).convert("RGBA")
-    foreground.alpha_composite(art, ((432 - 340) // 2, (432 - 340) // 2))
+    foreground.alpha_composite(art, ((432 - 288) // 2, (432 - 288) // 2))
     foreground.save(foreground_dir / "ic_launcher_foreground.png", format="PNG", optimize=True)
 
     values_dir = res / "values"
