@@ -1,3 +1,4 @@
+import { Printer } from '@capgo/capacitor-printer';
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import curriculum from './data/curriculum/structure.json';
@@ -2650,7 +2651,7 @@ function render() {
     if (profile) { profile.theme = event.target.value; saveStudentProfiles(); }
     document.documentElement.dataset.studentTheme = event.target.value;
   });
-  app.querySelectorAll('[data-save-certificate]').forEach((button) => button.addEventListener('click', () => { const card = button.closest('.certificate-card'); card?.classList.add('printing-target'); document.body.classList.add('printing-certificate'); window.print(); window.setTimeout(() => { document.body.classList.remove('printing-certificate'); card?.classList.remove('printing-target'); }, 800); }));
+  app.querySelectorAll('[data-save-certificate]').forEach((button) => button.addEventListener('click', async () => { const card = button.closest('.certificate-card'); if (!card) return; card.classList.add('printing-target'); document.body.classList.add('printing-certificate'); try { if (Capacitor.isNativePlatform()) { await Printer.printWebView({ name: 'EngliMensh Certificate' }); } else { window.print(); } } catch (error) { console.error('Certificate print failed:', error); window.alert('تعذر فتح نافذة الطباعة. حاول مرة أخرى أو استخدم خدمة الطباعة من إعدادات الهاتف.'); } finally { window.setTimeout(() => { document.body.classList.remove('printing-certificate'); card.classList.remove('printing-target'); }, 1200); } }));
   const editProfileForm = app.querySelector('[data-edit-student-profile]');
   editProfileForm?.elements.editStudentStage?.addEventListener('change', () => {
     const stageInfo = curriculum.stages.find((item) => item.id === editProfileForm.elements.editStudentStage.value);
