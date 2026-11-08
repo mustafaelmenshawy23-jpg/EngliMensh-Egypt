@@ -15,6 +15,8 @@ assert.match(main, /data-path=/);
 assert.match(main, /\.curriculum-switcher-button\[data-path\]/, 'top curriculum selector must have a click handler');
 assert.match(main, /FileSharer\.save\(/, 'certificate export must save a real file through the native file saver');
 assert.match(main, /saveDirectory: 'downloads'/, 'Android certificates must be saved in public Downloads');
+assert.match(main, /relativePath: 'Download\/EngliMensh'/, 'Android certificates must use a valid Downloads relative path');
+assert.match(main, /base64Data: pdfDataUrl/, 'PDF data URL must be passed directly to the native saver');
 assert.match(main, /html2canvas\(exportCard/, 'certificate layout must be rendered as a PDF page');
 assert.match(main, /new jsPDF\(/, 'certificate export must generate a real PDF document');
 assert.doesNotMatch(main, /Printer\.printWebView|window\.print\(/, 'certificate export must not open print dialogs');
