@@ -94,6 +94,9 @@ assert(main.includes('navigationEpoch') && main.includes('state._renderViewKey')
 assert(main.includes('window.history.back();') && main.includes('navigationEpoch') && main.includes('event.state.epoch === state.navigationEpoch'), 'Back buttons follow the previous screen and stale Home history is ignored');
 assert(main.includes('Choose the correct meaning of') && main.includes('meaningMatch'), 'Arabic vocabulary stems are rewritten as English prompts while Arabic meanings remain in the choices');
 assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
+assert(main.includes('function playFeedbackSound') && main.includes('questionCorrect') && main.includes('questionWrong'), 'Ordinary quiz answers have distinct correct and incorrect audio feedback');
+assert(main.includes('matchCorrect') && main.includes('builderCorrect') && main.includes('listenCorrect') && main.includes('challengeCorrect'), 'Each primary game has its own distinct feedback sound pattern');
+assert(main.includes("playFeedbackSound(isCorrect, 'match')") && main.includes("playFeedbackSound(isCorrect, 'builder')") && main.includes("playFeedbackSound(isCorrect, 'listen')") && main.includes("playFeedbackSound(isCorrect, 'challenge')"), 'All four primary games trigger feedback sounds after player actions');
 for (const track of data.tracks) {
   for (const grade of track.grades) {
     for (const unit of grade.units) {

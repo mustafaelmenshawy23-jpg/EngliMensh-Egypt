@@ -2579,6 +2579,7 @@ function render() {
         };
       }
     } else {
+      playFeedbackSound(true);
       state.quizAnswers[qId] = { choice, isCorrect: true, wrongChoices: [] };
     }
     saveProgressToStorage();
