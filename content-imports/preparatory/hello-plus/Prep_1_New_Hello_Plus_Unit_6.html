@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello Plus (Advanced)) - Unit 6: Culture and Heritage | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 6: Culture and Heritage</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Culture and Heritage</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Egyptian Ministry of Education Official Curriculum 2026 / 2027 Standards</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced)</span>
+          <span class="meta-tag">Unit: 6</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Complete context-rich ministerial sentences and verify mastery with 100% curriculum-authentic choices.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 6: Indefinite Pronouns (Some-, Any-, Every-, No-) & Advanced Quantifiers</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">1. Indefinite Pronouns (الضمائر غير المحددة)</h3>
+  <table class="grammar-table">
+    <thead><tr><th>Category</th><th>People (الأشخاص)</th><th>Things (الأشياء)</th><th>Places (الأماكن)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Some- (Affirmative)</strong></td><td>someone / somebody</td><td>something</td><td>somewhere</td></tr>
+      <tr><td><strong>Any- (Negative & Questions)</strong></td><td>anyone / anybody</td><td>anything</td><td>anywhere</td></tr>
+      <tr><td><strong>Every- (Universal/All)</strong></td><td>everyone / everybody</td><td>everything</td><td>everywhere</td></tr>
+      <tr><td><strong>No- (Negative Meaning)</strong></td><td>no one / nobody</td><td>nothing</td><td>nowhere</td></tr>
+    </tbody>
+  </table>
+  <p><em>*Critical Rule:*</em> All indefinite pronouns are grammatically <strong>SINGULAR</strong> and take singular verbs! <em>(e.g., Everyone <strong>is</strong> happy. Somebody <strong>has</strong> lost a bag.)</em></p>
+</div>
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">2. Advanced Quantifiers (a few, a little, few, little)</h3>
+  <ul>
+    <li><strong>a few:</strong> Small number of countable nouns (enough) &rarr; <em>I have <strong>a few</strong> friends.</em></li>
+    <li><strong>few:</strong> Very small number of countable nouns (not enough / scarce) &rarr; <em>He has <strong>few</strong> coins.</em></li>
+    <li><strong>a little:</strong> Small amount of uncountable nouns (enough) &rarr; <em>Add <strong>a little</strong> sugar.</em></li>
+    <li><strong>little:</strong> Very small amount of uncountable nouns (not enough / scarce) &rarr; <em>There is <strong>little</strong> water left.</em></li>
+  </ul>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 6: Indefinite Pronouns (Some-, Any-, Every-, No-) & Advanced Quantifiers without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Full ministerial standard assessment covering all four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word": "heritage", "pos": "noun", "arabic": "تراث وطني", "def": "Property, values, or traditions that are passed down through generations.", "example": "Ancient Egyptian architecture is an invaluable global heritage.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "tradition", "pos": "noun", "arabic": "تقليد متوارث", "def": "A custom or belief that has existed for a long time.", "example": "Baking kahk for Eid is a cherished Egyptian holiday tradition.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "folklore", "pos": "noun", "arabic": "فلكلور / مأثورات شعبية", "def": "The traditional beliefs, customs, and stories of a community.", "example": "Our grandmother recounted enchanting tales of Egyptian folklore.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "festival", "pos": "noun", "arabic": "مهرجان ثقافي / احتفال", "def": "A day or period of celebration typically for religious or cultural reasons.", "example": "The annual international film festival was hosted in Cairo.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "costume", "pos": "noun", "arabic": "زي تراثي / ملابس احتفالية", "def": "A set of clothes in a style typical of a particular country or period.", "example": "Dancers wore elaborate traditional folk costumes.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "monument", "pos": "noun", "arabic": "صرح / أثر تاريخي", "def": "A building or statue of historical importance.", "example": "The Sphinx is a timeless monument guarding the Giza plateau.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><polygon points=\"50,15 42,28 58,28\" fill=\"#f59e0b\"/><polygon points=\"42,28 58,28 62,80 38,80\" fill=\"#fbbf24\"/><rect x=\"30\" y=\"80\" width=\"40\" height=\"10\" rx=\"2\" fill=\"#d97706\"/><rect x=\"22\" y=\"90\" width=\"56\" height=\"6\" rx=\"2\" fill=\"#b45309\"/></svg>"}, {"word": "handicrafts", "pos": "noun", "arabic": "مشغولات يدوية", "def": "Decorative objects made skillfully by hand.", "example": "Nubian villages are world-famous for vibrant woven handicrafts.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "pottery", "pos": "noun", "arabic": "صناعة الفخار", "def": "Pots, dishes, and vessels made of fired clay.", "example": "Artisans in Qena shape moist clay into beautiful pottery.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "carpentry", "pos": "noun", "arabic": "أعمال النجارة", "def": "The trade of making or repairing wooden objects and furniture.", "example": "Damietta is internationally famous for master carpentry and furniture.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "weaving", "pos": "noun", "arabic": "صناعة النسيج والغزل", "def": "The craft of forming fabric by interlacing threads.", "example": "Traditional weavers produce ornate wool tapestries in Akhmim.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "calligraphy", "pos": "noun", "arabic": "فن الخط العربي", "def": "Decorative handwriting or handwritten lettering.", "example": "Arabic calligraphy adorns the domes of historic mosques.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "museum", "pos": "noun", "arabic": "متحف للآثار", "def": "A building in which historical objects are exhibited.", "example": "The Grand Egyptian Museum houses thousands of royal treasures.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "exhibition", "pos": "noun", "arabic": "معرض فني أو تجاري", "def": "A public display of works of art or historical items.", "example": "We attended a contemporary photography exhibition in Zamalek.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">EX</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "ancestors", "pos": "noun", "arabic": "الأجداد والأسلاف القدماء", "def": "Persons from whom one is descended; people of past eras.", "example": "Our ancestors laid the foundations of astronomy and engineering.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AN</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "identity", "pos": "noun", "arabic": "الهوية الوطنية", "def": "The characteristics determining who or what a person or nation is.", "example": "Preserving our native language protects our national identity.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ID</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "celebrate", "pos": "verb", "arabic": "يحتفل بمناسبة", "def": "To acknowledge a significant day or event with festivities.", "example": "Millions of families celebrate Sham El-Nessim in public gardens.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "preserve", "pos": "verb", "arabic": "يحفظ ويصون التراث", "def": "To maintain something in its original state or in good condition.", "example": "Restorers work meticulously to preserve ancient wall murals.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "generous", "pos": "adjective", "arabic": "كريم ومعطاء", "def": "Showing a readiness to give more of something than is expected.", "example": "Egyptian hospitality is renowned for being warm and generous.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">GE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "hospitality", "pos": "noun", "arabic": "كرم الضيافة والترحاب", "def": "The friendly and generous reception and entertainment of guests.", "example": "Foreign travelers praise the genuine warmth of Egyptian hospitality.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">HO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "legend", "pos": "noun", "arabic": "أسطورة تاريخية", "def": "A traditional story sometimes popularly regarded as historical.", "example": "The legend of Isis and Osiris is famous in mythology.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">LE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "custom", "pos": "noun", "arabic": "عرف اجتماعي / عادة متبعة", "def": "A widely accepted way of behaving or doing something.", "example": "It is a respectful custom to greet people with peace.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "symbol", "pos": "noun", "arabic": "رمز ودلالة", "def": "A mark, character, or emblem used as a representation.", "example": "The lotus flower was an ancient Egyptian symbol of rebirth.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SY</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question": "Which vocabulary word is defined as: 'Property, values, or traditions that are passed down through generations.'?", "options": ["weaving", "heritage", "monument", "exhibition"], "correct": 1, "explanation": "'heritage' (تراث وطني) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A custom or belief that has existed for a long time.'?", "options": ["symbol", "ancestors", "calligraphy", "tradition"], "correct": 3, "explanation": "'tradition' (تقليد متوارث) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'The traditional beliefs, customs, and stories of a community.'?", "options": ["carpentry", "folklore", "tradition", "heritage"], "correct": 1, "explanation": "'folklore' (فلكلور / مأثورات شعبية) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A day or period of celebration typically for religious or cultural reasons.'?", "options": ["identity", "costume", "festival", "heritage"], "correct": 2, "explanation": "'festival' (مهرجان ثقافي / احتفال) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A set of clothes in a style typical of a particular country or period.'?", "options": ["handicrafts", "exhibition", "costume", "monument"], "correct": 2, "explanation": "'costume' (زي تراثي / ملابس احتفالية) is the official curriculum definition."}, {"question": "Complete the context: \"The Sphinx is a timeless _______ guarding the Giza plateau.\"", "options": ["monument", "generous", "legend", "calligraphy"], "correct": 0, "explanation": "'monument' (صرح / أثر تاريخي) correctly completes the sentence."}, {"question": "Complete the context: \"Nubian villages are world-famous for vibrant woven _______.\"", "options": ["exhibition", "tradition", "identity", "handicrafts"], "correct": 3, "explanation": "'handicrafts' (مشغولات يدوية) correctly completes the sentence."}, {"question": "Complete the context: \"Artisans in Qena shape moist clay into beautiful _______.\"", "options": ["heritage", "pottery", "festival", "handicrafts"], "correct": 1, "explanation": "'pottery' (صناعة الفخار) correctly completes the sentence."}, {"question": "Complete the context: \"Damietta is internationally famous for master _______ and furniture.\"", "options": ["weaving", "carpentry", "identity", "celebrate"], "correct": 1, "explanation": "'carpentry' (أعمال النجارة) correctly completes the sentence."}, {"question": "Complete the context: \"The teacher asked students about _______ in their textbook.\"", "options": ["handicrafts", "weaving", "symbol", "celebrate"], "correct": 1, "explanation": "'weaving' (صناعة النسيج والغزل) correctly completes the sentence."}, {"question": "Complete the context: \"Arabic _______ adorns the domes of historic mosques.\"", "options": ["costume", "handicrafts", "calligraphy", "custom"], "correct": 2, "explanation": "'calligraphy' (فن الخط العربي) correctly completes the sentence."}, {"question": "Complete the context: \"The Grand Egyptian _______ houses thousands of royal treasures.\"", "options": ["festival", "museum", "monument", "custom"], "correct": 1, "explanation": "'museum' (متحف للآثار) correctly completes the sentence."}, {"question": "Complete the context: \"We attended a contemporary photography _______ in Zamalek.\"", "options": ["symbol", "custom", "heritage", "exhibition"], "correct": 3, "explanation": "'exhibition' (معرض فني أو تجاري) correctly completes the sentence."}, {"question": "Complete the context: \"Our _______ laid the foundations of astronomy and engineering.\"", "options": ["ancestors", "custom", "tradition", "festival"], "correct": 0, "explanation": "'ancestors' (الأجداد والأسلاف القدماء) correctly completes the sentence."}, {"question": "Complete the context: \"Preserving our native language protects our national _______.\"", "options": ["museum", "identity", "legend", "tradition"], "correct": 1, "explanation": "'identity' (الهوية الوطنية) correctly completes the sentence."}, {"question": "Complete the context: \"Millions of families _______ Sham El-Nessim in public gardens.\"", "options": ["calligraphy", "celebrate", "handicrafts", "exhibition"], "correct": 1, "explanation": "'celebrate' (يحتفل بمناسبة) correctly completes the sentence."}, {"question": "Complete the context: \"Restorers work meticulously to _______ ancient wall murals.\"", "options": ["preserve", "festival", "weaving", "monument"], "correct": 0, "explanation": "'preserve' (يحفظ ويصون التراث) correctly completes the sentence."}, {"question": "Complete the context: \"Egyptian hospitality is renowned for being warm and _______.\"", "options": ["celebrate", "legend", "weaving", "generous"], "correct": 3, "explanation": "'generous' (كريم ومعطاء) correctly completes the sentence."}, {"question": "Complete the context: \"Foreign travelers praise the genuine warmth of Egyptian _______.\"", "options": ["museum", "exhibition", "generous", "hospitality"], "correct": 3, "explanation": "'hospitality' (كرم الضيافة والترحاب) correctly completes the sentence."}, {"question": "Complete the context: \"The _______ of Isis and Osiris is famous in mythology.\"", "options": ["legend", "weaving", "pottery", "identity"], "correct": 0, "explanation": "'legend' (أسطورة تاريخية) correctly completes the sentence."}, {"question": "Complete the context: \"It is a respectful _______ to greet people with peace.\"", "options": ["folklore", "symbol", "celebrate", "custom"], "correct": 3, "explanation": "'custom' (عرف اجتماعي / عادة متبعة) correctly completes the sentence."}, {"question": "Complete the context: \"The lotus flower was an ancient Egyptian _______ of rebirth.\"", "options": ["calligraphy", "symbol", "museum", "carpentry"], "correct": 1, "explanation": "'symbol' (رمز ودلالة) correctly completes the sentence."}, {"question": "Complete the context: \"Ancient Egyptian architecture is an invaluable global _______.\"", "options": ["custom", "heritage", "carpentry", "pottery"], "correct": 1, "explanation": "'heritage' (تراث وطني) correctly completes the sentence."}, {"question": "Complete the context: \"Baking kahk for Eid is a cherished Egyptian holiday _______.\"", "options": ["calligraphy", "tradition", "weaving", "costume"], "correct": 1, "explanation": "'tradition' (تقليد متوارث) correctly completes the sentence."}, {"question": "Complete the context: \"Our grandmother recounted enchanting tales of Egyptian _______.\"", "options": ["costume", "monument", "weaving", "folklore"], "correct": 3, "explanation": "'folklore' (فلكلور / مأثورات شعبية) correctly completes the sentence."}, {"question": "Complete the context: \"The annual international film _______ was hosted in Cairo.\"", "options": ["identity", "heritage", "festival", "celebrate"], "correct": 2, "explanation": "'festival' (مهرجان ثقافي / احتفال) correctly completes the sentence."}, {"question": "Complete the context: \"Dancers wore elaborate traditional folk _______s.\"", "options": ["costume", "hospitality", "symbol", "festival"], "correct": 0, "explanation": "'costume' (زي تراثي / ملابس احتفالية) correctly completes the sentence."}, {"question": "Complete the context: \"The Sphinx is a timeless _______ guarding the Giza plateau.\"", "options": ["monument", "custom", "museum", "ancestors"], "correct": 0, "explanation": "'monument' (صرح / أثر تاريخي) correctly completes the sentence."}, {"question": "Complete the context: \"Nubian villages are world-famous for vibrant woven _______.\"", "options": ["handicrafts", "monument", "tradition", "hospitality"], "correct": 0, "explanation": "'handicrafts' (مشغولات يدوية) correctly completes the sentence."}, {"question": "Complete the context: \"Artisans in Qena shape moist clay into beautiful _______.\"", "options": ["generous", "pottery", "hospitality", "folklore"], "correct": 1, "explanation": "'pottery' (صناعة الفخار) correctly completes the sentence."}];
+    const grammarQuizData = [{"question": "Everyone in the classroom _______ listening attentively to the teacher.", "options": ["are", "be", "were", "is"], "correct": 3, "explanation": "Indefinite pronoun 'Everyone' takes singular verb 'is'."}, {"question": "Is there _______ who can speak fluent French in this hall?", "options": ["everyone", "someone", "no one", "anyone"], "correct": 3, "explanation": "Questions asking about identity use 'anyone'."}, {"question": "There is _______ at the door; please open it to welcome our guest.", "options": ["anyone", "anything", "someone", "anywhere"], "correct": 2, "explanation": "Affirmative sentence indicating a person uses 'someone'."}, {"question": "I searched for my lost passport, but I couldn't find it _______.", "options": ["nowhere", "anywhere", "everywhere", "somewhere"], "correct": 1, "explanation": "Negative sentence indicating location uses 'anywhere'."}, {"question": "There was _______ in the ancient tomb; grave robbers had taken all treasures.", "options": ["something", "everything", "nothing", "anything"], "correct": 2, "explanation": "Negative meaning in affirmative verb structure uses 'nothing'."}, {"question": "We have got _______ coins in our wallet, but enough to buy bus tickets.", "options": ["a little", "little", "few", "a few"], "correct": 3, "explanation": "Countable noun with sufficient quantity uses 'a few'."}, {"question": "Hurry up! There is _______ time left before the museum closes its doors.", "options": ["few", "a little", "a few", "little"], "correct": 3, "explanation": "Uncountable noun 'time' with insufficient scarce amount uses 'little'."}, {"question": "Nobody _______ the secret formula for deciphering the manuscript.", "options": ["knows", "knowing", "are knowing", "know"], "correct": 0, "explanation": "Indefinite pronoun 'Nobody' takes singular verb + -s (knows)."}, {"question": "Would you like _______ sweet to eat with your tea?", "options": ["something", "nothing", "anything", "nowhere"], "correct": 0, "explanation": "Polite offer question uses 'something'."}, {"question": "Did you visit _______ interesting during your holiday in Luxor?", "options": ["anywhere", "someone", "somewhere", "nowhere"], "correct": 0, "explanation": "Question asking about places uses 'anywhere'."}, {"question": "Everything in the modern museum _______ labeled in both Arabic and English.", "options": ["is", "were", "are", "be"], "correct": 0, "explanation": "Indefinite pronoun 'Everything' is grammatically singular (is)."}, {"question": "There are _______ tourists at the monument today because of the storm.", "options": ["few", "little", "a few", "a little"], "correct": 0, "explanation": "Countable noun 'tourists' with very scarce amount uses 'few'."}, {"question": "Can _______ help me carry this heavy carton of ceramic pottery?", "options": ["nowhere", "nothing", "no one", "someone"], "correct": 3, "explanation": "Request asking for a person uses 'someone'."}, {"question": "He drank _______ water to quench his thirst after the desert walk.", "options": ["a little", "little", "few", "a few"], "correct": 0, "explanation": "Uncountable 'water' with sufficient small quantity uses 'a little'."}, {"question": "There is _______ left to worry about; all exams have finished successfully.", "options": ["anything", "nothing", "something", "anywhere"], "correct": 1, "explanation": "Negative condition uses 'nothing'."}, {"question": "Everybody _______ invited to attend the annual cultural festival.", "options": ["was", "were", "be", "are"], "correct": 0, "explanation": "'Everybody' takes singular past auxiliary 'was'."}, {"question": "I have got _______ questions about ancient Egyptian calligraphy.", "options": ["much", "a little", "a few", "little"], "correct": 2, "explanation": "Countable plural noun 'questions' takes 'a few'."}, {"question": "She looked everywhere, but there was _______ in the empty corridor.", "options": ["anybody", "somebody", "nobody", "everybody"], "correct": 2, "explanation": "Negative meaning indicating absence uses 'nobody'."}, {"question": "Is there _______ interesting on television tonight?", "options": ["anything", "something", "nowhere", "nothing"], "correct": 0, "explanation": "General question takes 'anything'."}, {"question": "Someone _______ left their leather briefcase on the bench.", "options": ["were", "are", "has", "have"], "correct": 2, "explanation": "Indefinite pronoun 'Someone' takes singular 'has'."}, {"question": "Everyone in the classroom _______ listening attentively to the teacher.", "options": ["are", "be", "were", "is"], "correct": 3, "explanation": "Indefinite pronoun 'Everyone' takes singular verb 'is'."}, {"question": "Is there _______ who can speak fluent French in this hall?", "options": ["everyone", "someone", "no one", "anyone"], "correct": 3, "explanation": "Questions asking about identity use 'anyone'."}, {"question": "There is _______ at the door; please open it to welcome our guest.", "options": ["anyone", "anything", "someone", "anywhere"], "correct": 2, "explanation": "Affirmative sentence indicating a person uses 'someone'."}, {"question": "I searched for my lost passport, but I couldn't find it _______.", "options": ["nowhere", "anywhere", "everywhere", "somewhere"], "correct": 1, "explanation": "Negative sentence indicating location uses 'anywhere'."}, {"question": "There was _______ in the ancient tomb; grave robbers had taken all treasures.", "options": ["something", "everything", "nothing", "anything"], "correct": 2, "explanation": "Negative meaning in affirmative verb structure uses 'nothing'."}, {"question": "We have got _______ coins in our wallet, but enough to buy bus tickets.", "options": ["a little", "little", "few", "a few"], "correct": 3, "explanation": "Countable noun with sufficient quantity uses 'a few'."}, {"question": "Hurry up! There is _______ time left before the museum closes its doors.", "options": ["few", "a little", "a few", "little"], "correct": 3, "explanation": "Uncountable noun 'time' with insufficient scarce amount uses 'little'."}, {"question": "Nobody _______ the secret formula for deciphering the manuscript.", "options": ["knows", "knowing", "are knowing", "know"], "correct": 0, "explanation": "Indefinite pronoun 'Nobody' takes singular verb + -s (knows)."}, {"question": "Would you like _______ sweet to eat with your tea?", "options": ["something", "nothing", "anything", "nowhere"], "correct": 0, "explanation": "Polite offer question uses 'something'."}, {"question": "Did you visit _______ interesting during your holiday in Luxor?", "options": ["anywhere", "someone", "somewhere", "nowhere"], "correct": 0, "explanation": "Question asking about places uses 'anywhere'."}];
+    const readingData = {"title": "Master Handicrafts of Egyptian Heritage", "paragraphs": ["Egypt possesses an extraordinary living heritage of traditional handicrafts that have endured across millennia. In the narrow alleys of historic Islamic Cairo, master craftsmen practice intricate copper engraving, mother-of-pearl wood inlay, and elaborate Arabic calligraphy with ancestral precision.", "In Upper Egypt, Nubian communities along the Nile are celebrated for their vibrant hand-woven palm baskets, beaded jewelry, and cheerfully painted mud-brick homes. Meanwhile, the village of Nagada in Qena preserves the ancient art of handloom weaving, producing delicate silk and cotton ferka textiles sought by collectors worldwide.", "Everyone who visits these historic artisan quarters is captivated by the timeless dedication of the creators. Safeguarding these artisanal traditions is vital for sustaining cultural identity and providing sustainable livelihoods for rural communities. As the proverb affirms: 'A nation without heritage is a tree without roots.'"], "questions": [{"question": "Which historic crafts are practiced in the old quarters of Islamic Cairo?", "options": ["Copper engraving, wood inlay, and Arabic calligraphy", "Computer manufacturing", "Automobile assembly", "Plastics processing"], "correct": 0, "explanation": "Artisans practice copper engraving, inlay, and calligraphy."}, {"question": "What traditional handicrafts distinguish Nubian villages in southern Egypt?", "options": ["Hand-woven palm baskets, beadwork, and painted architecture", "Heavy steel machinery", "Chemical manufacturing", "Paper factory mills"], "correct": 0, "explanation": "Nubian artisans are renowned for woven palm baskets and beadwork."}, {"question": "What famous textile craft is preserved in Nagada, Qena?", "options": ["Handloom weaving of fine ferka silk and cotton fabrics", "Synthetic nylon extrusion", "Rubber footwear manufacturing", "Glassblowing"], "correct": 0, "explanation": "Nagada is renowned for traditional handloom ferka weaving."}, {"question": "Why is supporting local artisan communities culturally vital?", "options": ["It preserves national identity and provides economic livelihoods", "It replaces schools with workshops", "It forces people to stop studying", "It eliminates foreign trade"], "correct": 0, "explanation": "Handicrafts sustain national heritage and local economies."}, {"question": "What timeless wisdom is expressed by the concluding proverb?", "options": ["A nation without heritage is like a tree without roots", "Old crafts should be abandoned", "Only modern machines matter", "Trees do not need roots"], "correct": 0, "explanation": "The proverb underlines that heritage is the foundational root of identity."}]};
+    const listeningData = {"title": "At the Traditional Handicrafts Bazaar", "dialogue": [{"speaker": "Lina", "text": "Look at these magnificent handmade ceramic vases, Tamer! Everything in this shop is crafted with artistic excellence."}, {"speaker": "Tamer", "text": "Did you find something you want to buy for your mother's birthday?"}, {"speaker": "Lina", "text": "Yes, I bought this delicate turquoise vase. The shopkeeper told me that someone in his family has been shaping clay pottery for four generations!"}, {"speaker": "Tamer", "text": "Is there anyone in the next stall selling leather goods?"}, {"speaker": "Lina", "text": "Yes, somebody over there makes genuine camel-leather bags and bookmarks adorned with Islamic calligraphy."}], "questions": [{"question": "Where are Lina and Tamer shopping in the dialogue?", "options": ["At a traditional handicrafts artisan bazaar", "At a supermarket", "At an electronics retail outlet", "At a pharmacy"], "correct": 0, "explanation": "They are exploring a traditional handicrafts bazaar."}, {"question": "What gift does Lina purchase for her mother's birthday?", "options": ["A delicate handmade turquoise ceramic vase", "A plastic watch", "A smartphone charger", "A pair of sunglasses"], "correct": 0, "explanation": "She selects a handcrafted turquoise ceramic vase."}, {"question": "How long has the potter's family been practicing their craft?", "options": ["For four consecutive generations", "Since last week", "For one year", "Only for a month"], "correct": 0, "explanation": "The shopkeeper's family has made pottery for four generations."}, {"question": "What products are sold in the adjacent artisan stall?", "options": ["Genuine leather bags and calligraphy bookmarks", "Fresh vegetables and fruit", "Fizzy sodas and crisps", "Computer laptops"], "correct": 0, "explanation": "The stall sells leather goods and calligraphy bookmarks."}, {"question": "Which indefinite pronoun does Lina use to refer to the shop's items?", "options": ["Everything: 'Everything in this shop is crafted...'", "Nobody", "Nowhere", "Nothing"], "correct": 0, "explanation": "She remarks: 'Everything in this shop is crafted with artistic excellence.'"}]};
+    const pastExamsData = null;
+    const examData = [{"question": "Choose the correct word: \"Ancient Egyptian architecture is an invaluable global _______.\"", "options": ["tradition", "calligraphy", "carpentry", "heritage"], "correct": 3, "explanation": "Target vocabulary: 'heritage' (تراث وطني)."}, {"question": "Choose the correct word: \"Baking kahk for Eid is a cherished Egyptian holiday _______.\"", "options": ["hospitality", "tradition", "custom", "legend"], "correct": 1, "explanation": "Target vocabulary: 'tradition' (تقليد متوارث)."}, {"question": "Choose the correct word: \"Our grandmother recounted enchanting tales of Egyptian _______.\"", "options": ["costume", "symbol", "folklore", "carpentry"], "correct": 2, "explanation": "Target vocabulary: 'folklore' (فلكلور / مأثورات شعبية)."}, {"question": "Choose the correct word: \"The annual international film _______ was hosted in Cairo.\"", "options": ["festival", "generous", "hospitality", "identity"], "correct": 0, "explanation": "Target vocabulary: 'festival' (مهرجان ثقافي / احتفال)."}, {"question": "Choose the correct word: \"Dancers wore elaborate traditional folk _______s.\"", "options": ["monument", "exhibition", "costume", "custom"], "correct": 2, "explanation": "Target vocabulary: 'costume' (زي تراثي / ملابس احتفالية)."}, {"question": "Choose the correct word: \"The Sphinx is a timeless _______ guarding the Giza plateau.\"", "options": ["handicrafts", "monument", "identity", "costume"], "correct": 1, "explanation": "Target vocabulary: 'monument' (صرح / أثر تاريخي)."}, {"question": "Choose the correct word: \"Nubian villages are world-famous for vibrant woven _______.\"", "options": ["handicrafts", "custom", "festival", "legend"], "correct": 0, "explanation": "Target vocabulary: 'handicrafts' (مشغولات يدوية)."}, {"question": "Choose the correct word: \"Artisans in Qena shape moist clay into beautiful _______.\"", "options": ["custom", "exhibition", "museum", "pottery"], "correct": 3, "explanation": "Target vocabulary: 'pottery' (صناعة الفخار)."}, {"question": "Choose the correct word: \"Damietta is internationally famous for master _______ and furniture.\"", "options": ["custom", "generous", "hospitality", "carpentry"], "correct": 3, "explanation": "Target vocabulary: 'carpentry' (أعمال النجارة)."}, {"question": "Choose the correct word: \"Traditional weavers produce ornate wool tapestries in Akhmim.\"", "options": ["exhibition", "heritage", "weaving", "hospitality"], "correct": 2, "explanation": "Target vocabulary: 'weaving' (صناعة النسيج والغزل)."}, {"question": "Everyone in the classroom _______ listening attentively to the teacher.", "options": ["are", "be", "were", "is"], "correct": 3, "explanation": "Indefinite pronoun 'Everyone' takes singular verb 'is'."}, {"question": "Is there _______ who can speak fluent French in this hall?", "options": ["everyone", "someone", "no one", "anyone"], "correct": 3, "explanation": "Questions asking about identity use 'anyone'."}, {"question": "There is _______ at the door; please open it to welcome our guest.", "options": ["anyone", "anything", "someone", "anywhere"], "correct": 2, "explanation": "Affirmative sentence indicating a person uses 'someone'."}, {"question": "I searched for my lost passport, but I couldn't find it _______.", "options": ["nowhere", "anywhere", "everywhere", "somewhere"], "correct": 1, "explanation": "Negative sentence indicating location uses 'anywhere'."}, {"question": "There was _______ in the ancient tomb; grave robbers had taken all treasures.", "options": ["something", "everything", "nothing", "anything"], "correct": 2, "explanation": "Negative meaning in affirmative verb structure uses 'nothing'."}, {"question": "We have got _______ coins in our wallet, but enough to buy bus tickets.", "options": ["a little", "little", "few", "a few"], "correct": 3, "explanation": "Countable noun with sufficient quantity uses 'a few'."}, {"question": "Hurry up! There is _______ time left before the museum closes its doors.", "options": ["few", "a little", "a few", "little"], "correct": 3, "explanation": "Uncountable noun 'time' with insufficient scarce amount uses 'little'."}, {"question": "Nobody _______ the secret formula for deciphering the manuscript.", "options": ["knows", "knowing", "are knowing", "know"], "correct": 0, "explanation": "Indefinite pronoun 'Nobody' takes singular verb + -s (knows)."}, {"question": "Would you like _______ sweet to eat with your tea?", "options": ["something", "nothing", "anything", "nowhere"], "correct": 0, "explanation": "Polite offer question uses 'something'."}, {"question": "Did you visit _______ interesting during your holiday in Luxor?", "options": ["anywhere", "someone", "somewhere", "nowhere"], "correct": 0, "explanation": "Question asking about places uses 'anywhere'."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello Plus (Advanced) for Prep 1 (First Preparatory), Unit 6: Culture and Heritage. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>
