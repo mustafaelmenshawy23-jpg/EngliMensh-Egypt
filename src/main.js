@@ -2682,18 +2682,21 @@ function render() {
       const pageHeight = 210 * 1600 / 1189;
       const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [210, pageHeight], compress: true });
       pdf.addImage(canvas.toDataURL('image/jpeg', 0.96), 'JPEG', 0, 0, 210, pageHeight, undefined, 'FAST');
-      const dataUrl = pdf.output('datauristring');
-      const base64Data = dataUrl.slice(dataUrl.indexOf(',') + 1);
+      const pdfDataUrl = pdf.output('datauristring');
+      if (!pdfDataUrl.startsWith('data:application/pdf;base64,')) {
+        throw new Error('PDF_DATA_URL_INVALID');
+      }
       await FileSharer.save({
         filename: safeName + '.pdf',
         contentType: 'application/pdf',
-        base64Data,
-        android: { saveDirectory: 'downloads', relativePath: 'EngliMensh' }
+        base64Data: pdfDataUrl,
+        android: { saveDirectory: 'downloads', relativePath: 'Download/EngliMensh' }
       });
       window.alert('تم حفظ الشهادة كملف PDF في مجلد Downloads داخل EngliMensh.');
     } catch (error) {
       console.error('Certificate PDF export failed:', error);
-      window.alert('تعذر حفظ ملف PDF. لم يتم فتح نافذة طباعة أو مشاركة. حاول مرة أخرى.');
+      const failureCode = String(error?.code || error?.message || 'UNKNOWN_ERROR').slice(0, 180);
+      window.alert('تعذر حفظ ملف PDF. رمز الخطأ: ' + failureCode + '. لم يتم فتح نافذة طباعة أو مشاركة.');
     } finally {
       exportCard?.remove();
       button.disabled = false;
