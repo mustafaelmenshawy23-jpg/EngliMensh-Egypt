@@ -13,7 +13,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate-preparatory:
+    if: github.ref == 'refs/heads/feature/preparatory-native-curriculum'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout preparatory curriculum sources
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Run application tests and preparatory source audit
+        run: npm test
+
   build-debug-apk:
+    if: github.ref != 'refs/heads/feature/preparatory-native-curriculum'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
