@@ -31,13 +31,61 @@ function readBalanced(source, start) {
   }
   return '';
 }
+function parseJsString(source, start) {
+  const quote = source[start];
+  let value = '';
+  for (let i = start + 1; i < source.length; i += 1) {
+    const c = source[i];
+    if (c === quote) return { value, next: i + 1 };
+    if (c === '\\' && i + 1 < source.length) {
+      const next = source[++i];
+      value += next === 'n' ? '\n' : next === 'r' ? '\r' : next === 't' ? '\t' : next;
+    } else value += c;
+  }
+  return { value, next: source.length };
+}
+function parseJsVocabArray(source, start) {
+  const items = [];
+  let i = start + 1;
+  const skip = () => { while (i < source.length && /[\s,]/.test(source[i])) i += 1; };
+  while (i < source.length) {
+    skip();
+    if (source[i] === ']') break;
+    if (source[i] !== '{') { i += 1; continue; }
+    i += 1;
+    const item = {};
+    while (i < source.length) {
+      skip();
+      if (source[i] === '}') { i += 1; break; }
+      let key = '';
+      if (source[i] === "'" || source[i] === '"' || source[i] === '\x60') {
+        const parsed = parseJsString(source, i); key = parsed.value; i = parsed.next;
+      } else {
+        const match = source.slice(i).match(/^([A-Za-z_$][\w$]*)/);
+        if (!match) { i += 1; continue; }
+        key = match[1]; i += key.length;
+      }
+      skip();
+      if (source[i] !== ':') { i += 1; continue; }
+      i += 1; skip();
+      if (source[i] === "'" || source[i] === '"' || source[i] === '\x60') {
+        const parsed = parseJsString(source, i); item[key] = parsed.value; i = parsed.next;
+      } else {
+        while (i < source.length && source[i] !== ',' && source[i] !== '}') i += 1;
+      }
+    }
+    if (item.word || item.w) items.push(item);
+  }
+  return items;
+}
 function parseVocabArray(source) {
   const marker = 'const vocabData =';
   const at = source.indexOf(marker);
   if (at < 0) return [];
   const start = source.indexOf('[', at + marker.length);
   if (start < 0) return [];
-  try { return JSON.parse(readBalanced(source, start)); } catch { return []; }
+  try { return JSON.parse(readBalanced(source, start)); }
+  catch { return parseJsVocabArray(source, start); }
 }
 function parseStaticCards(source) {
   const cards = [];
@@ -78,6 +126,7 @@ function identify(file) {
 }
 function safeSvg(svg = '') {
   if (!svg.includes('<svg') || /<script|foreignObject|javascript:/i.test(svg)) return '';
+  if (/<text\\b/i.test(svg) && !/<(path|polygon|rect|ellipse|image)\\b/i.test(svg)) return '';
   return svg.includes('xmlns=') ? svg : svg.replace(/<svg\b/, '<svg xmlns="http://www.w3.org/2000/svg"');
 }
 async function findOpenverseImage(word) {
@@ -151,6 +200,10 @@ for (const file of files) {
     definition: decodeHtml(item.def || ''), example: decodeHtml(item.example || item.ex || ''), svg: safeSvg(item.svg || item.icon || '')
   })).filter((item) => item.word) };
 }
+const expectedUnitKeys = [];
+for (const grade of [1, 2, 3]) for (const pathway of ['general', 'advanced']) for (let unit = 1; unit <= 6; unit += 1) expectedUnitKeys.push(grade + ':' + pathway + ':' + unit);
+const missingUnitKeys = expectedUnitKeys.filter((key) => !registry[key]);
+if (missingUnitKeys.length) throw new Error('Preparatory vocabulary extraction is incomplete. Missing unit keys: ' + missingUnitKeys.join(', '));
 for (const unit of Object.values(registry)) for (const item of unit.words) if (!item.svg && !pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
 const imageWords = [...pendingImages.values()];
 let downloaded = 0, missing = 0;
