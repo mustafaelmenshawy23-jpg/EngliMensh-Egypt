@@ -96,7 +96,7 @@ assert(main.includes('Choose the correct meaning of') && main.includes('meaningM
 assert(main.includes('function getPrimaryGameWords') && main.includes('gameRegistry.primary.high') && main.includes('data-reset-game'), 'Primary grades 1–6 have four unit-specific interactive games');
 assert(main.includes('function playFeedbackSound') && main.includes('questionCorrect') && main.includes('questionWrong'), 'Ordinary quiz answers have distinct correct and incorrect audio feedback');
 assert(main.includes('matchCorrect') && main.includes('builderCorrect') && main.includes('listenCorrect') && main.includes('challengeCorrect'), 'Each primary game has its own distinct feedback sound pattern');
-assert(main.includes("playFeedbackSound(isCorrect, 'match')") && main.includes("playFeedbackSound(isCorrect, 'builder')") && main.includes("playFeedbackSound(isCorrect, 'listen')") && main.includes("playFeedbackSound(isCorrect, 'challenge')"), 'All four primary games trigger feedback sounds after player actions');
+assert(main.includes("playFeedbackSound(true, 'match')") && main.includes("playFeedbackSound(false, 'match')") && main.includes("playFeedbackSound(isCorrect, 'builder')") && main.includes("playFeedbackSound(isCorrect, 'listen')") && main.includes("playFeedbackSound(isCorrect, 'challenge')"), 'All four primary games trigger feedback sounds after player actions');
 for (const track of data.tracks) {
   for (const grade of track.grades) {
     for (const unit of grade.units) {
