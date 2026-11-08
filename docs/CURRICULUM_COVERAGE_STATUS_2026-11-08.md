@@ -24,6 +24,25 @@
 
 The 34 source PDFs remain original Git LFS files. The index includes the previously unindexed Prep 2 performance-tasks PDF as an assessment source. Assessment books and the reader are catalogued separately; the current lesson-generation batch selects student books and commercial supplements, not assessment PDFs or reader chapters.
 
+Books currently present in the index but without unit records are: Connect Plus Primary 5 and Hello Plus Preparatory 2 (their contents/unit pages still need indexing), the Baccalaureate Year 1 reader (chapters not yet indexed), and all nine assessment books (book-level exam sources, not lesson units).
+
+### Unit-page blockers
+
+**19 units with no verified start page**
+- Secondary 2 student book: Units 1–6.
+- Baccalaureate Year 2 First Language Part 1: Units 2–3.
+- Baccalaureate Year 2 First Language Part 2: Units 7–8.
+- Primary 3 student book: Unit 3.
+- Primary 6 student book: Units 4 and 6.
+- Hello Plus Preparatory 3 supplement: Units 1–6.
+
+**Five units with an ambiguous end boundary because the next unit start is unknown**
+- Baccalaureate Year 2 First Language Part 1: Unit 1.
+- Baccalaureate Year 2 First Language Part 2: Unit 6.
+- Primary 3 student book: Unit 2.
+- Primary 6 student book: Units 3 and 5.
+
+
 ## 2. Unit structure and content state
 
 - `src/data/lessons/unit-modules.draft.json` contains 118 unit records across 34 books.
