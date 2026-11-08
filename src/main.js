@@ -1,5 +1,6 @@
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
+import { detectSpeakerGender, chooseSpeakerVoice } from './lib/tts-voice-selection.mjs';
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import reviewCandidates from './data/extracted/manual-recovery-candidates.json';
@@ -64,6 +65,9 @@ const state = {
   vocabViewMode: 'card', // 'card' or 'grid'
   testQuestionIndex: 0, // 0 to 9 for 1-question-at-a-time test
   listeningSpeed: 1.0, // 0.75, 1.0, 1.25
+  ttsVoicePrefs: { male: '', female: '' },
+  availableTtsVoices: [],
+  ttsVoiceStatus: 'loading',
   quizAnswers: {},
   shuffledOptions: {},
   game1: { selectedWord: null, selectedPic: null, matches: [], score: 0 },
@@ -146,6 +150,7 @@ function loadProgressFromStorage() {
       if (parsed.vocabViewMode === 'card' || parsed.vocabViewMode === 'grid') state.vocabViewMode = parsed.vocabViewMode;
       if (typeof parsed.testQuestionIndex === 'number' && parsed.testQuestionIndex >= 0 && parsed.testQuestionIndex < 10) state.testQuestionIndex = parsed.testQuestionIndex;
       if (typeof parsed.listeningSpeed === 'number') state.listeningSpeed = parsed.listeningSpeed;
+      if (isPlainObject(parsed.ttsVoicePrefs)) state.ttsVoicePrefs = { ...state.ttsVoicePrefs, ...parsed.ttsVoicePrefs };
       if (isPlainObject(parsed.game1)) state.game1 = { ...state.game1, ...parsed.game1 };
       if (isPlainObject(parsed.game2)) {
         state.game2 = { ...state.game2, ...parsed.game2 };
@@ -184,6 +189,7 @@ function saveProgressToStorage() {
       vocabViewMode: state.vocabViewMode,
       testQuestionIndex: state.testQuestionIndex,
       listeningSpeed: state.listeningSpeed,
+      ttsVoicePrefs: state.ttsVoicePrefs,
       game1: state.game1,
       game2: state.game2,
       game3: state.game3,
@@ -210,24 +216,99 @@ function escapeHtml(value) {
   })[char]);
 }
 
-// Use Android's native TextToSpeech engine inside the APK; keep browser TTS for web.
-async function speakText(text, rate = null) {
+// Discover platform voices instead of assuming that speakerGender metadata proves a matching voice exists.
+let ttsVoiceDiscoveryStarted = false;
+
+function normalizeTtsVoices(voices, nativePlatform) {
+  return (Array.isArray(voices) ? voices : []).map((voice, index) => {
+    const name = String(voice?.name || `Voice ${index + 1}`);
+    const lang = String(voice?.lang || 'und');
+    const voiceURI = String(voice?.voiceURI || '');
+    const id = [voiceURI || name, lang].join('|');
+    return {
+      id,
+      name,
+      lang,
+      voiceURI,
+      gender: detectSpeakerGender(voice),
+      nativeIndex: nativePlatform ? index : null,
+      raw: nativePlatform ? null : voice
+    };
+  });
+}
+
+async function loadAvailableTtsVoices() {
+  if (ttsVoiceDiscoveryStarted) return;
+  ttsVoiceDiscoveryStarted = true;
+  try {
+    let voices = [];
+    if (Capacitor.isNativePlatform()) {
+      const result = await TextToSpeech.getSupportedVoices();
+      voices = normalizeTtsVoices(result?.voices || [], true);
+    } else if (typeof window !== 'undefined' && window.speechSynthesis) {
+      voices = normalizeTtsVoices(window.speechSynthesis.getVoices(), false);
+      if (!voices.length) {
+        window.speechSynthesis.addEventListener('voiceschanged', () => {
+          state.availableTtsVoices = normalizeTtsVoices(window.speechSynthesis.getVoices(), false);
+          state.ttsVoiceStatus = state.availableTtsVoices.length ? 'ready' : 'unavailable';
+          render();
+        }, { once: true });
+      }
+    }
+    state.availableTtsVoices = voices;
+    state.ttsVoiceStatus = voices.length ? 'ready' : 'unavailable';
+  } catch (error) {
+    state.availableTtsVoices = [];
+    state.ttsVoiceStatus = 'unavailable';
+    console.warn('TTS voice discovery is unavailable on this platform:', error);
+  }
+  render();
+}
+
+function renderSpeakerVoiceSettings() {
+  const voices = state.availableTtsVoices || [];
+  if (!voices.length) {
+    return '<div class="speaker-voice-settings"><p class="speaking-practice-note">Voice list unavailable. Playback uses the platform default English voice; male/female matching is not verified on this device.</p></div>';
+  }
+  const renderSelect = (gender, label) => {
+    const selected = state.ttsVoicePrefs?.[gender] || '';
+    const options = voices.map((voice) => {
+      const detail = [voice.lang, voice.gender !== 'unknown' ? voice.gender : 'gender not identified'].filter(Boolean).join(' · ');
+      return `<option value="${escapeHtml(voice.id)}" ${selected === voice.id ? 'selected' : ''}>${escapeHtml(voice.name)} — ${escapeHtml(detail)}</option>`;
+    }).join('');
+    const automaticLabel = voices.some((voice) => voice.gender === gender)
+      ? 'Automatic · use a voice explicitly marked ' + gender
+      : 'Automatic · no ' + gender + ' voice identified';
+    return `<label class="speaker-voice-choice"><span>${label}</span><select data-tts-voice="${gender}"><option value="">${escapeHtml(automaticLabel)}</option>${options}</select></label>`;
+  };
+  return `<div class="speaker-voice-settings"><strong>Dialogue voice settings</strong><div class="speaker-voice-controls">${renderSelect('male', 'Male speaker voice')}${renderSelect('female', 'Female speaker voice')}</div><small>Choose a voice for each role. Automatic matching is used only when the platform voice name explicitly identifies its gender; otherwise the system default is used.</small></div>`;
+}
+
+function getSpeakerVoice(gender) {
+  return chooseSpeakerVoice(state.availableTtsVoices || [], state.ttsVoicePrefs || {}, gender);
+}
+
+// Use the selected native/browser voice when one is available; otherwise disclose and use the system default.
+async function speakText(text, rate = null, speakerGender = null) {
   const phrase = String(text || '').trim();
   if (!phrase) return;
   const speechRate = Number(rate || state.listeningSpeed || 0.85);
+  const voice = ['male', 'female'].includes(speakerGender) ? getSpeakerVoice(speakerGender) : null;
 
   if (Capacitor.isNativePlatform()) {
     try {
-      if ('speechSynthesis' in window && window.speechSynthesis) window.speechSynthesis.cancel();
+      if (typeof window !== 'undefined' && window.speechSynthesis) window.speechSynthesis.cancel();
       await TextToSpeech.stop().catch(() => {});
-      await TextToSpeech.speak({
+      const options = {
         text: phrase,
         lang: 'en-US',
         rate: speechRate,
         pitch: 1,
         volume: 1,
-        queueStrategy: 1
-      });
+        queueStrategy: 0
+      };
+      if (Number.isInteger(voice?.nativeIndex)) options.voice = voice.nativeIndex;
+      await TextToSpeech.speak(options);
       return;
     } catch (nativeError) {
       console.warn('Native Android TTS unavailable; trying browser speech:', nativeError);
@@ -241,13 +322,28 @@ async function speakText(text, rate = null) {
       utterance.lang = 'en-US';
       utterance.rate = speechRate;
       utterance.volume = 1;
-      utterance.onerror = (event) => console.warn('Browser speech playback error:', event.error);
-      window.speechSynthesis.speak(utterance);
+      if (voice?.raw) utterance.voice = voice.raw;
+      await new Promise((resolve) => {
+        utterance.onend = resolve;
+        utterance.onerror = (event) => {
+          console.warn('Browser speech playback error:', event.error);
+          resolve();
+        };
+        window.speechSynthesis.speak(utterance);
+      });
     } catch (error) {
       console.warn('Audio playback error:', error);
     }
   } else {
     console.warn('No supported text-to-speech engine is available.');
+  }
+}
+
+async function playDialogue(dialogue) {
+  if (!Array.isArray(dialogue) || !dialogue.length) return;
+  await stopAudio();
+  for (const turn of dialogue) {
+    if (turn?.text) await speakText(turn.text, null, turn.speakerGender || null);
   }
 }
 
@@ -870,6 +966,7 @@ function renderUnitWorkspace() {
         const dialogues = speaking.filter((item) => Array.isArray(item.content?.dialogue));
         bodyHtml = `
           <div class="speaking-practice-card">
+            ${dialogues.length ? renderSpeakerVoiceSettings() : ''}
             ${dialogues.map((item) => {
               const data = item.content || {};
               return `<article class="speaking-dialogue-block">
@@ -880,13 +977,14 @@ function renderUnitWorkspace() {
                     return `<article class="speaking-line-card">
                       <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
                       <p dir="ltr">${escapeHtml(line.text || '')}</p>
-                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
                     </article>`;
                   }).join('')}
                 </div>
+                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}">🔊 Play full dialogue</button>
               </article>`;
             }).join('')}
-            ${dialogues.length ? '<p class="speaking-practice-note">The current player uses the platform default English TTS voice. Gender-matched voices have not been tested on a device.</p>' : '<div class="empty-state">No source dialogue or supplementary role-play is available yet.</div>'}
+            ${dialogues.length ? '<p class="speaking-practice-note">Each line uses the selected male/female voice when the platform exposes or the user assigns one. Unmatched roles fall back to the system default.</p>' : '<div class="empty-state">No source dialogue or supplementary role-play is available yet.</div>'}
           </div>
         `;
       } else if (state.activeModule === 'comprehensive_test') {
@@ -1278,18 +1376,21 @@ function renderUnitWorkspace() {
         bodyHtml = rolePlay.length ? `
           <div class="speaking-practice-card">
             <p class="speaking-instruction">Take turns with a partner. Listen to each line, then say it aloud.</p>
+            ${renderSpeakerVoiceSettings()}
             <div class="speaking-dialogue-list">
-              ${rolePlay.map((line, index) => `
-                <article class="speaking-line-card">
-                  <span class="speaking-line-speaker">${escapeHtml(line.speaker || `Speaker ${index + 1}`)}</span>
-                  <p>${escapeHtml(line.text || '')}</p>
-                  <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
-                </article>
-              `).join('')}
+              ${rolePlay.map((line, index) => {
+                const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                return `
+                  <article class="speaking-line-card">
+                    <span class="speaking-line-speaker">${escapeHtml(line.speaker || `Speaker ${index + 1}`)} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
+                    <p>${escapeHtml(line.text || '')}</p>
+                    <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
+                  </article>
+                `;
+              }).join('')}
             </div>
             <p class="speaking-practice-note">Now practise the full dialogue with a classmate.</p>
-            <p class="speaking-practice-note">Playback currently uses the platform default English TTS voice. Male/female voice matching has not been verified.</p>
-            <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(rolePlay.map((line) => `${line.speaker}: ${line.text}`).join('. '))}">🔊 Listen to Full Dialogue</button>
+            <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(rolePlay))}">🔊 Listen to Full Dialogue</button>
           </div>
         ` : '<div class="empty-state"><strong>Speaking practice is being prepared.</strong></div>';
       } else if (state.activeModule === 'games') {
@@ -1445,6 +1546,7 @@ function renderUnitWorkspace() {
         const rolePlays = getItems('speaking').filter((item) => Array.isArray(item.content?.dialogue));
         bodyHtml = `
           <div class="speaking-practice-card">
+            ${rolePlays.length ? renderSpeakerVoiceSettings() : ''}
             ${rolePlays.map((item) => {
               const data = item.content || {};
               return `<article class="speaking-dialogue-block">
@@ -1457,13 +1559,14 @@ function renderUnitWorkspace() {
                     return `<article class="speaking-line-card">
                       <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${escapeHtml(roleLabel)}</span>
                       <p dir="ltr">${escapeHtml(line.text || '')}</p>
-                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}">🔊 Listen</button>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
                     </article>`;
                   }).join('')}
                 </div>
+                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}">🔊 Play full dialogue</button>
               </article>`;
             }).join('')}
-            ${rolePlays.length ? '<p class="speaking-practice-note">Playback currently uses the platform default English TTS voice; gender-matched voice selection has not been verified.</p>' : '<div class="empty-state">No source dialogue or reviewed supplementary role-play is available yet.</div>'}
+            ${rolePlays.length ? '<p class="speaking-practice-note">Each line uses the selected male/female voice when the platform exposes or the user assigns one. Unmatched roles fall back to the system default.</p>' : '<div class="empty-state">No source dialogue or reviewed supplementary role-play is available yet.</div>'}
           </div>
         `;
       } else if (state.activeModule === 'games') {
@@ -1924,10 +2027,25 @@ function render() {
   app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
   app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
 
-  // TTS Listeners
+  // TTS and speaker-role voice listeners
   app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
     e.stopPropagation();
-    speakText(button.dataset.ttsText);
+    speakText(button.dataset.ttsText, null, button.dataset.ttsGender || null);
+  }));
+  app.querySelectorAll('[data-tts-voice]').forEach((select) => select.addEventListener('change', () => {
+    const gender = select.dataset.ttsVoice;
+    if (!['male', 'female'].includes(gender)) return;
+    state.ttsVoicePrefs[gender] = select.value;
+    saveProgressToStorage();
+    render();
+  }));
+  app.querySelectorAll('[data-play-dialogue]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    try {
+      playDialogue(JSON.parse(button.dataset.playDialogue || '[]'));
+    } catch (error) {
+      console.warn('Could not replay dialogue:', error);
+    }
   }));
 
   // Self Intro Listeners
@@ -2083,3 +2201,4 @@ function render() {
 // Initial storage load and render
 loadProgressFromStorage();
 render();
+void loadAvailableTtsVoices();
