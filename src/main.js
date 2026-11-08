@@ -1,4 +1,6 @@
-import { Printer } from '@capgo/capacitor-printer';
+import { FileSharer } from '@capgo/capacitor-file-sharer';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import curriculum from './data/curriculum/structure.json';
@@ -2651,7 +2653,53 @@ function render() {
     if (profile) { profile.theme = event.target.value; saveStudentProfiles(); }
     document.documentElement.dataset.studentTheme = event.target.value;
   });
-  app.querySelectorAll('[data-save-certificate]').forEach((button) => button.addEventListener('click', async () => { const card = button.closest('.certificate-card'); if (!card) return; card.classList.add('printing-target'); document.body.classList.add('printing-certificate'); try { if (Capacitor.isNativePlatform()) { await Printer.printWebView({ name: 'EngliMensh Certificate' }); } else { window.print(); } } catch (error) { console.error('Certificate print failed:', error); window.alert('تعذر فتح نافذة الطباعة. حاول مرة أخرى أو استخدم خدمة الطباعة من إعدادات الهاتف.'); } finally { window.setTimeout(() => { document.body.classList.remove('printing-certificate'); card.classList.remove('printing-target'); }, 1200); } }));
+  app.querySelectorAll('[data-save-certificate]').forEach((button) => button.addEventListener('click', async () => {
+    const card = button.closest('.certificate-card');
+    if (!card || button.disabled) return;
+    const studentName = card.querySelector('.certificate-text h2')?.textContent?.trim() || 'Student';
+    const unitName = card.querySelector('.certificate-text .certificate-unit')?.textContent?.trim() || 'Certificate';
+    const safeName = (studentName + '_' + unitName).replace(/[^\\p{L}\\p{N}_-]+/gu, '_').replace(/^_+|_+$/g, '').slice(0, 90) || 'EngliMensh_Certificate';
+    const originalLabel = button.textContent;
+    let exportCard = null;
+    button.disabled = true;
+    button.textContent = 'Preparing PDF…';
+    try {
+      await document.fonts?.ready;
+      exportCard = card.cloneNode(true);
+      exportCard.querySelectorAll('[data-save-certificate]').forEach((item) => item.remove());
+      Object.assign(exportCard.style, {
+        position: 'fixed', left: '-10000px', top: '0', width: '680px',
+        maxWidth: 'none', margin: '0', aspectRatio: '1189 / 1600',
+        boxShadow: 'none', transform: 'none', zIndex: '-1'
+      });
+      document.body.appendChild(exportCard);
+      const canvas = await html2canvas(exportCard, {
+        backgroundColor: '#ffffff', scale: 2, useCORS: true,
+        logging: false, width: 680, height: Math.round(680 * 1600 / 1189),
+        windowWidth: 720, windowHeight: 1000
+      });
+      if (!canvas.width || !canvas.height) throw new Error('Certificate image could not be rendered.');
+      const pageHeight = 210 * 1600 / 1189;
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [210, pageHeight], compress: true });
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.96), 'JPEG', 0, 0, 210, pageHeight, undefined, 'FAST');
+      const dataUrl = pdf.output('datauristring');
+      const base64Data = dataUrl.slice(dataUrl.indexOf(',') + 1);
+      await FileSharer.save({
+        filename: safeName + '.pdf',
+        contentType: 'application/pdf',
+        base64Data,
+        android: { saveDirectory: 'downloads', relativePath: 'EngliMensh' }
+      });
+      window.alert('تم حفظ الشهادة كملف PDF في مجلد Downloads داخل EngliMensh.');
+    } catch (error) {
+      console.error('Certificate PDF export failed:', error);
+      window.alert('تعذر حفظ ملف PDF. لم يتم فتح نافذة طباعة أو مشاركة. حاول مرة أخرى.');
+    } finally {
+      exportCard?.remove();
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  }));
   const editProfileForm = app.querySelector('[data-edit-student-profile]');
   editProfileForm?.elements.editStudentStage?.addEventListener('change', () => {
     const stageInfo = curriculum.stages.find((item) => item.id === editProfileForm.elements.editStudentStage.value);
