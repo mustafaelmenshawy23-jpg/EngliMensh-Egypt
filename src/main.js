@@ -2084,6 +2084,10 @@ function render() {
         comprehensive_test: ['exam', 'sec-exam']
       };
       const targets = moduleMap[state.htmlModuleSelection] || [];
+      const selectedPreparatoryUnit = getSelectedPreparatoryUnit();
+      if (state.grade === 3 && state.path === 'general' && selectedPreparatoryUnit?.number) {
+        doc.getElementById('unit-tab-' + selectedPreparatoryUnit.number)?.click();
+      }
       if (typeof win.switchTab === 'function' && targets[0]) win.switchTab(targets[0]);
       else if (doc) {
         doc.querySelectorAll('.section-view, .subtab-content').forEach((node) => {
