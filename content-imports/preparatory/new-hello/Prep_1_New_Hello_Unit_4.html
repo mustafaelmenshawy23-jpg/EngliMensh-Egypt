@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello (General)) - Unit 4: We're Using Technology | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello (General) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 4: We're Using Technology</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">We're Using Technology</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Egyptian Ministry of Education Official Curriculum 2026 / 2027 Standards</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello (General)</span>
+          <span class="meta-tag">Unit: 4</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Complete context-rich ministerial sentences and verify mastery with 100% curriculum-authentic choices.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 4: The Present Continuous Tense & The Imperative</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">1. The Present Continuous Tense (زمن المضارع المستمر)</h3>
+  <p><strong>Usage:</strong> Actions happening right now at the moment of speaking (<em>now, look, listen, at the moment, at present</em>).</p>
+  <table class="grammar-table">
+    <thead><tr><th>Subject</th><th>Affirmative (am/is/are + v-ing)</th><th>Negative</th><th>Question Form</th></tr></thead>
+    <tbody>
+      <tr><td>I</td><td>I <strong>am ('m) sending</strong> a text.</td><td>I <strong>am not sending</strong></td><td><strong>Am</strong> I doing this right?</td></tr>
+      <tr><td>He / She / It</td><td>She <strong>is ('s) taking</strong> a selfie.</td><td>He <strong>isn't clicking</strong></td><td><strong>Is</strong> he using his laptop?</td></tr>
+      <tr><td>We / You / They</td><td>They <strong>are ('re) charging</strong> phones.</td><td>We <strong>aren't calling</strong></td><td><strong>Are</strong> you reading online?</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Spelling Rules for -ing:</strong> drop silent -e (take &rarr; taking), double consonant after short vowel (tap &rarr; tapping, run &rarr; running).</p>
+</div>
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">2. The Imperative (صيغة الأمر والتعليمات)</h3>
+  <p>&bull; <strong>Affirmative Imperative:</strong> Base verb without subject &rarr; <em><strong>Click</strong> on this icon. <strong>Keep</strong> your password secret.</em></p>
+  <p>&bull; <strong>Negative Imperative:</strong> <code>Don't + Infinitive</code> &rarr; <em><strong>Don't send</strong> photos to strangers. <strong>Don't make</strong> friends with bad people online.</em></p>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 4: The Present Continuous Tense & The Imperative without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Full ministerial standard assessment covering all four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word": "laptop", "pos": "noun", "arabic": "كمبيوتر محمول", "def": "A small portable personal computer that you can carry.", "example": "He uses his laptop to type homework assignments.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><rect x=\"22\" y=\"25\" width=\"56\" height=\"40\" rx=\"3\" fill=\"#1e293b\"/><rect x=\"26\" y=\"29\" width=\"48\" height=\"32\" fill=\"#38bdf8\"/><polygon points=\"12,74 88,74 80,65 20,65\" fill=\"#94a3b8\"/></svg>"}, {"word": "tablet", "pos": "noun", "arabic": "كمبيوتر لوحي / تابلت", "def": "A flat mobile computer with a touch screen.", "example": "Students read digital textbooks on their tablets.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><rect x=\"24\" y=\"15\" width=\"52\" height=\"70\" rx=\"8\" fill=\"#1e293b\"/><rect x=\"28\" y=\"22\" width=\"44\" height=\"54\" rx=\"2\" fill=\"#bae6fd\"/><circle cx=\"50\" cy=\"80\" r=\"3\" fill=\"#94a3b8\"/></svg>"}, {"word": "smartphone", "pos": "noun", "arabic": "هاتف ذكي", "def": "A mobile phone that performs many computer functions.", "example": "She took photos with her smartphone during the trip.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SM</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "mouse", "pos": "noun", "arabic": "فأرة الكمبيوتر", "def": "A small handheld device used to control a screen cursor.", "example": "Click the left button of the computer mouse to select.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "charger", "pos": "noun", "arabic": "شاحن", "def": "A device used to connect a battery to electricity to recharge.", "example": "Can I borrow your phone charger? My battery is flat.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CH</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "selfie", "pos": "noun", "arabic": "صورة سيلفي", "def": "A photograph that you take of yourself using a smartphone.", "example": "We took a cheerful selfie in front of the pyramids.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "video call", "pos": "noun", "arabic": "مكالمة فيديو", "def": "A telephone call where you can see the person on screen.", "example": "My father makes a video call to us from London every day.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">VI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "text message", "pos": "noun", "arabic": "رسالة نصية", "def": "A short written electronic message sent between phones.", "example": "I received a friendly text message from my classmate.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "password", "pos": "noun", "arabic": "كلمة سر / مرور", "def": "A secret word or phrase used to log in and protect files.", "example": "Never share your private password with unfamiliar strangers.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><rect x=\"25\" y=\"44\" width=\"50\" height=\"40\" rx=\"8\" fill=\"#f59e0b\"/><path d=\"M36 44 v-12 a14 14 0 0 1 28 0 v12\" stroke=\"#d97706\" stroke-width=\"6\" fill=\"none\"/><circle cx=\"50\" cy=\"62\" r=\"5\" fill=\"#78350f\"/></svg>"}, {"word": "website", "pos": "noun", "arabic": "موقع إلكتروني", "def": "A set of related pages on the World Wide Web.", "example": "The ministry launched a website for interactive quizzes.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "icon", "pos": "noun", "arabic": "أيقونة / رمز", "def": "A small symbol or picture on a computer screen.", "example": "Tap the green icon on your screen to start the video.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">IC</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "click", "pos": "verb", "arabic": "ينقر بالفأرة", "def": "To press a button on a computer mouse.", "example": "Click on the hyperlink to open the new lesson page.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "tap", "pos": "verb", "arabic": "يلمس / ينقر على شاشة", "def": "To touch a screen lightly with your finger on a tablet.", "example": "Tap the touch screen twice to zoom in on the picture.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "send", "pos": "verb", "arabic": "يرسل", "def": "To cause an electronic message or letter to go to someone.", "example": "Don't forget to send the email before five o'clock.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "nature", "pos": "noun", "arabic": "الطبيعة", "def": "The physical world including plants, animals, and landscapes.", "example": "We enjoy walking in nature and watching birds in the trees.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">NA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "kettle", "pos": "noun", "arabic": "غلاية ماء", "def": "A metal or plastic container with a lid used for boiling water.", "example": "Fill the kettle with water before making a hot cup of tea.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><path d=\"M30 40 c0 -12 12 -16 26 -16 s26 4 26 16 v28 h-52 z\" fill=\"#94a3b8\"/><rect x=\"26\" y=\"68\" width=\"60\" height=\"8\" rx=\"2\" fill=\"#1e293b\"/><path d=\"M78 36 c12 0 16 10 16 20 s-4 20 -14 20\" stroke=\"#1e293b\" stroke-width=\"5\" fill=\"none\"/></svg>"}, {"word": "teapot", "pos": "noun", "arabic": "إبريق شاي", "def": "A container with a spout and handle used for brewing tea.", "example": "Grandmother poured delicious herbal tea from the teapot.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "plastic", "pos": "noun", "arabic": "بلاستيك", "def": "A synthetic material that can be shaped into objects.", "example": "Water bottles are commonly manufactured from light plastic.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "printer", "pos": "noun", "arabic": "طابعة", "def": "A machine that prints text or pictures onto paper sheets.", "example": "Our school purchased a high-speed color printer.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "online", "pos": "adjective", "arabic": "متصل بالإنترنت", "def": "Controlled by or connected to another computer or the web.", "example": "We practice solving interactive exams while online.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ON</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "mp3 player", "pos": "noun", "arabic": "مشغل موسيقى", "def": "A portable electronic device used to listen to digital music.", "example": "He listened to English audio dialogues on his mp3 player.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MP</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "safe", "pos": "adjective", "arabic": "آمن", "def": "Protected from danger, risk, or harm on the internet.", "example": "Follow internet safety guidelines to stay completely safe.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question": "Which vocabulary word is defined as: 'A small portable personal computer that you can carry.'?", "options": ["mp3 player", "nature", "online", "laptop"], "correct": 3, "explanation": "'laptop' (كمبيوتر محمول) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A flat mobile computer with a touch screen.'?", "options": ["selfie", "tablet", "website", "icon"], "correct": 1, "explanation": "'tablet' (كمبيوتر لوحي / تابلت) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A mobile phone that performs many computer functions.'?", "options": ["smartphone", "tap", "online", "tablet"], "correct": 0, "explanation": "'smartphone' (هاتف ذكي) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A small handheld device used to control a screen cursor.'?", "options": ["mouse", "selfie", "laptop", "video call"], "correct": 0, "explanation": "'mouse' (فأرة الكمبيوتر) is the official curriculum definition."}, {"question": "Which vocabulary word is defined as: 'A device used to connect a battery to electricity to recharge.'?", "options": ["charger", "send", "teapot", "website"], "correct": 0, "explanation": "'charger' (شاحن) is the official curriculum definition."}, {"question": "Complete the context: \"We took a cheerful _______ in front of the pyramids.\"", "options": ["icon", "online", "mouse", "selfie"], "correct": 3, "explanation": "'selfie' (صورة سيلفي) correctly completes the sentence."}, {"question": "Complete the context: \"My father makes a _______ to us from London every day.\"", "options": ["smartphone", "tablet", "charger", "video call"], "correct": 3, "explanation": "'video call' (مكالمة فيديو) correctly completes the sentence."}, {"question": "Complete the context: \"I received a friendly _______ from my classmate.\"", "options": ["text message", "mouse", "selfie", "teapot"], "correct": 0, "explanation": "'text message' (رسالة نصية) correctly completes the sentence."}, {"question": "Complete the context: \"Never share your private _______ with unfamiliar strangers.\"", "options": ["charger", "password", "online", "click"], "correct": 1, "explanation": "'password' (كلمة سر / مرور) correctly completes the sentence."}, {"question": "Complete the context: \"The ministry launched a _______ for interactive quizzes.\"", "options": ["charger", "text message", "video call", "website"], "correct": 3, "explanation": "'website' (موقع إلكتروني) correctly completes the sentence."}, {"question": "Complete the context: \"Tap the green _______ on your screen to start the video.\"", "options": ["printer", "tap", "icon", "kettle"], "correct": 2, "explanation": "'icon' (أيقونة / رمز) correctly completes the sentence."}, {"question": "Complete the context: \"_______ on the hyperlink to open the new lesson page.\"", "options": ["printer", "teapot", "click", "smartphone"], "correct": 2, "explanation": "'click' (ينقر بالفأرة) correctly completes the sentence."}, {"question": "Complete the context: \"_______ the touch screen twice to zoom in on the picture.\"", "options": ["online", "nature", "teapot", "tap"], "correct": 3, "explanation": "'tap' (يلمس / ينقر على شاشة) correctly completes the sentence."}, {"question": "Complete the context: \"Don't forget to _______ the email before five o'clock.\"", "options": ["safe", "laptop", "website", "send"], "correct": 3, "explanation": "'send' (يرسل) correctly completes the sentence."}, {"question": "Complete the context: \"We enjoy walking in _______ and watching birds in the trees.\"", "options": ["password", "mp3 player", "selfie", "nature"], "correct": 3, "explanation": "'nature' (الطبيعة) correctly completes the sentence."}, {"question": "Complete the context: \"Fill the _______ with water before making a hot cup of tea.\"", "options": ["teapot", "text message", "kettle", "tap"], "correct": 2, "explanation": "'kettle' (غلاية ماء) correctly completes the sentence."}, {"question": "Complete the context: \"Grandmother poured delicious herbal tea from the _______.\"", "options": ["teapot", "send", "website", "tablet"], "correct": 0, "explanation": "'teapot' (إبريق شاي) correctly completes the sentence."}, {"question": "Complete the context: \"Water bottles are commonly manufactured from light _______.\"", "options": ["plastic", "text message", "charger", "password"], "correct": 0, "explanation": "'plastic' (بلاستيك) correctly completes the sentence."}, {"question": "Complete the context: \"Our school purchased a high-speed color _______.\"", "options": ["safe", "website", "mp3 player", "printer"], "correct": 3, "explanation": "'printer' (طابعة) correctly completes the sentence."}, {"question": "Complete the context: \"We practice solving interactive exams while _______.\"", "options": ["tablet", "password", "website", "online"], "correct": 3, "explanation": "'online' (متصل بالإنترنت) correctly completes the sentence."}, {"question": "Complete the context: \"He listened to English audio dialogues on his _______.\"", "options": ["tablet", "video call", "mouse", "mp3 player"], "correct": 3, "explanation": "'mp3 player' (مشغل موسيقى) correctly completes the sentence."}, {"question": "Complete the context: \"Follow internet _______ty guidelines to stay completely safe.\"", "options": ["click", "laptop", "safe", "charger"], "correct": 2, "explanation": "'safe' (آمن) correctly completes the sentence."}, {"question": "Complete the context: \"He uses his _______ to type homework assignments.\"", "options": ["charger", "laptop", "plastic", "kettle"], "correct": 1, "explanation": "'laptop' (كمبيوتر محمول) correctly completes the sentence."}, {"question": "Complete the context: \"Students read digital textbooks on their _______s.\"", "options": ["teapot", "tablet", "safe", "click"], "correct": 1, "explanation": "'tablet' (كمبيوتر لوحي / تابلت) correctly completes the sentence."}, {"question": "Complete the context: \"She took photos with her _______ during the trip.\"", "options": ["teapot", "laptop", "click", "smartphone"], "correct": 3, "explanation": "'smartphone' (هاتف ذكي) correctly completes the sentence."}, {"question": "Complete the context: \"Click the left button of the computer _______ to select.\"", "options": ["online", "printer", "mouse", "website"], "correct": 2, "explanation": "'mouse' (فأرة الكمبيوتر) correctly completes the sentence."}, {"question": "Complete the context: \"Can I borrow your phone _______? My battery is flat.\"", "options": ["selfie", "teapot", "tablet", "charger"], "correct": 3, "explanation": "'charger' (شاحن) correctly completes the sentence."}, {"question": "Complete the context: \"We took a cheerful _______ in front of the pyramids.\"", "options": ["kettle", "selfie", "website", "tap"], "correct": 1, "explanation": "'selfie' (صورة سيلفي) correctly completes the sentence."}, {"question": "Complete the context: \"My father makes a _______ to us from London every day.\"", "options": ["selfie", "icon", "video call", "teapot"], "correct": 2, "explanation": "'video call' (مكالمة فيديو) correctly completes the sentence."}, {"question": "Complete the context: \"I received a friendly _______ from my classmate.\"", "options": ["charger", "text message", "teapot", "plastic"], "correct": 1, "explanation": "'text message' (رسالة نصية) correctly completes the sentence."}];
+    const grammarQuizData = [{"question": "Look! The girls _______ selfies in the school garden.", "options": ["are taking", "takes", "took", "take"], "correct": 0, "explanation": "Action happening right now with keyword 'Look!' takes are + v-ing."}, {"question": "Listen! Someone _______ on the computer keyboard.", "options": ["types", "is typing", "type", "typed"], "correct": 1, "explanation": "Keyword 'Listen!' indicates Present Continuous with singular subject (is typing)."}, {"question": "My father _______ a video call with his colleagues at the moment.", "options": ["make", "is making", "made", "makes"], "correct": 1, "explanation": "Time marker 'at the moment' requires is + making."}, {"question": "They _______ their tablets right now because the batteries are full.", "options": ["isn't charging", "aren't charging", "don't charge", "not charge"], "correct": 1, "explanation": "Negative continuous for plural 'They' is 'aren't charging'."}, {"question": "_______ you sending an email to your teacher now?", "options": ["Do", "Are", "Is", "Does"], "correct": 1, "explanation": "Continuous question with subject 'you' begins with 'Are'."}, {"question": "_______ he designing a new website at present?", "options": ["Is", "Does", "Are", "Do"], "correct": 0, "explanation": "Singular subject 'he' requires auxiliary 'Is'."}, {"question": "_______ on this blue icon to download the application.", "options": ["Clicked", "Clicks", "Clicking", "Click"], "correct": 3, "explanation": "Affirmative imperative starts with base infinitive 'Click'."}, {"question": "_______ your password to anyone you meet online.", "options": ["No telling", "Not tell", "Don't tell", "Doesn't tell"], "correct": 2, "explanation": "Negative imperative uses 'Don't + infinitive'."}, {"question": "_______ careful when you browse unknown websites.", "options": ["Are", "Is", "Be", "Being"], "correct": 2, "explanation": "Affirmative imperative of verb to be is 'Be'."}, {"question": "What are you _______ on your laptop right now?", "options": ["doing", "do", "does", "did"], "correct": 0, "explanation": "After 'are you', use verb + -ing (doing)."}, {"question": "Huda is _______ a text message to her mother at this moment.", "options": ["sends", "send", "sent", "sending"], "correct": 3, "explanation": "Continuous tense with 'is' takes verb + -ing (sending)."}, {"question": "The students _______ listening to an mp3 recording now.", "options": ["are", "is", "be", "am"], "correct": 0, "explanation": "Plural 'The students' takes auxiliary 'are'."}, {"question": "I am _______ on the touch screen with my index finger.", "options": ["tapped", "tap", "taps", "tapping"], "correct": 3, "explanation": "Continuous verb 'tap' doubles the 'p' (tapping)."}, {"question": "_______ make friends with bad people on social media.", "options": ["Aren't", "Not", "Doesn't", "Don't"], "correct": 3, "explanation": "Negative imperative warning uses 'Don't'."}, {"question": "Why is your brother _______ behind the oak tree?", "options": ["stand", "stood", "standing", "stands"], "correct": 2, "explanation": "After 'is your brother', use verb + -ing (standing)."}, {"question": "Amr _______ playing mobile games; he is doing homework.", "options": ["isn't", "aren't", "don't", "doesn't"], "correct": 0, "explanation": "Negative continuous for singular Amr is 'isn't'."}, {"question": "The battery is flat. Please, _______ the phone immediately.", "options": ["charged", "charge", "charging", "charges"], "correct": 1, "explanation": "Affirmative imperative takes base form 'charge'."}, {"question": "Are your friends studying in the library now? — Yes, they _______.", "options": ["do", "have", "are", "is"], "correct": 2, "explanation": "Affirmative short answer: 'Yes, they are.'"}, {"question": "Is she writing an article? — No, she _______.", "options": ["doesn't", "hasn't", "isn't", "aren't"], "correct": 2, "explanation": "Negative short answer: 'No, she isn't.'"}, {"question": "_______ touch the boiling kettle; it is dangerous!", "options": ["Don't", "Not", "Doesn't", "No"], "correct": 0, "explanation": "Negative imperative uses 'Don't + base verb'."}, {"question": "Look! The girls _______ selfies in the school garden.", "options": ["are taking", "takes", "took", "take"], "correct": 0, "explanation": "Action happening right now with keyword 'Look!' takes are + v-ing."}, {"question": "Listen! Someone _______ on the computer keyboard.", "options": ["types", "is typing", "type", "typed"], "correct": 1, "explanation": "Keyword 'Listen!' indicates Present Continuous with singular subject (is typing)."}, {"question": "My father _______ a video call with his colleagues at the moment.", "options": ["make", "is making", "made", "makes"], "correct": 1, "explanation": "Time marker 'at the moment' requires is + making."}, {"question": "They _______ their tablets right now because the batteries are full.", "options": ["isn't charging", "aren't charging", "don't charge", "not charge"], "correct": 1, "explanation": "Negative continuous for plural 'They' is 'aren't charging'."}, {"question": "_______ you sending an email to your teacher now?", "options": ["Do", "Are", "Is", "Does"], "correct": 1, "explanation": "Continuous question with subject 'you' begins with 'Are'."}, {"question": "_______ he designing a new website at present?", "options": ["Is", "Does", "Are", "Do"], "correct": 0, "explanation": "Singular subject 'he' requires auxiliary 'Is'."}, {"question": "_______ on this blue icon to download the application.", "options": ["Clicked", "Clicks", "Clicking", "Click"], "correct": 3, "explanation": "Affirmative imperative starts with base infinitive 'Click'."}, {"question": "_______ your password to anyone you meet online.", "options": ["No telling", "Not tell", "Don't tell", "Doesn't tell"], "correct": 2, "explanation": "Negative imperative uses 'Don't + infinitive'."}, {"question": "_______ careful when you browse unknown websites.", "options": ["Are", "Is", "Be", "Being"], "correct": 2, "explanation": "Affirmative imperative of verb to be is 'Be'."}, {"question": "What are you _______ on your laptop right now?", "options": ["doing", "do", "does", "did"], "correct": 0, "explanation": "After 'are you', use verb + -ing (doing)."}];
+    const readingData = {"title": "Modern Technology in the Classroom", "paragraphs": ["Technology is completely transforming modern education in Egyptian preparatory schools. Right now, students in Class 1/A are using digital tablets to read interactive e-books and solve grammar challenges. Some students are designing colorful slide presentations on their laptops, while others are researching scientific topics online.", "Our teacher is demonstrating a 3D diagram on the interactive smartboard. He is explaining how electrical circuits work in nature and modern machines. Meanwhile, Mariam is sending an electronic document to her teacher via the school portal.", "To stay protected in the digital world, the teacher always reminds us: 'Keep your passwords secret, never share personal contact details with strangers, and click only on verified learning links.' Following these imperative rules keeps students safe while enjoying the boundless benefits of digital technology."], "questions": [{"question": "What are students in Class 1/A doing right now?", "options": ["Using digital tablets and laptops for learning", "Playing football on the grass", "Cooking food in the kitchen", "Sleeping in the dormitories"], "correct": 0, "explanation": "They are using tablets and laptops for interactive lessons."}, {"question": "What is the teacher displaying on the smartboard at present?", "options": ["A 3D diagram explaining electrical circuits", "A foreign horror movie", "A video game match", "A blank white screen"], "correct": 0, "explanation": "The teacher is showing a 3D diagram of electrical circuits."}, {"question": "How is Mariam submitting her school assignment?", "options": ["Sending an electronic document via the portal", "Writing on parchment with ink", "Sending a letter by carrier pigeon", "Calling on a landline phone"], "correct": 0, "explanation": "She is sending an electronic document via the school portal."}, {"question": "Which imperative rule ensures online safety according to the teacher?", "options": ["Keep your passwords secret and avoid unknown links", "Share your home address publicly", "Never charge your smartphone", "Send selfies to strangers"], "correct": 0, "explanation": "Keeping passwords private is vital for internet safety."}, {"question": "What is the primary benefit of classroom technology mentioned?", "options": ["Making learning interactive, flexible, and engaging", "Eliminating teachers from schools", "Stopping students from reading", "Replacing electricity with candles"], "correct": 0, "explanation": "Technology enhances interactive and collaborative student engagement."}]};
+    const listeningData = {"title": "A Phone Call About Technology", "dialogue": [{"speaker": "Nader", "text": "Hello, Hatem! Are you playing computer games right now?"}, {"speaker": "Hatem", "text": "No, I am not playing games. I am charging my tablet and searching for information for our science project."}, {"speaker": "Nader", "text": "Is your brother Waleed helping you?"}, {"speaker": "Hatem", "text": "No, Waleed is sitting in the living room. He is making a video call to our cousin in Aswan."}, {"speaker": "Nader", "text": "Don't forget to send me the website link when you finish!"}, {"speaker": "Hatem", "text": "Sure, I am copying the hyperlink right now."}], "questions": [{"question": "What is Hatem doing when Nader calls him?", "options": ["Charging his tablet and researching his science project", "Watching a comedy movie", "Playing football outside", "Fixing a broken kettle"], "correct": 0, "explanation": "Hatem is charging his tablet and researching his project."}, {"question": "What is Waleed doing at this moment?", "options": ["Making a video call to his cousin in Aswan", "Typing an essay on his laptop", "Taking a selfie in the garden", "Playing the drums"], "correct": 0, "explanation": "He is on a video call with his cousin in Aswan."}, {"question": "Where does Hatem's cousin live?", "options": ["In Aswan", "In Alexandria", "In Cairo", "In Paris"], "correct": 0, "explanation": "Hatem says his cousin is in Aswan."}, {"question": "What imperative instruction does Nader give to Hatem?", "options": ["Don't forget to send me the website link", "Turn off your computer now", "Buy a new charger", "Call the teacher"], "correct": 0, "explanation": "Nader asks him not to forget sending the website link."}, {"question": "Is Hatem playing video games during the conversation?", "options": ["No, he is working on school research", "Yes, he is playing football games", "Yes, he is playing chess online", "He is sleeping"], "correct": 0, "explanation": "He clearly states: 'No, I am not playing games.'"}]};
+    const pastExamsData = null;
+    const examData = [{"question": "Choose the correct word: \"He uses his _______ to type homework assignments.\"", "options": ["teapot", "video call", "selfie", "laptop"], "correct": 3, "explanation": "Target vocabulary: 'laptop' (كمبيوتر محمول)."}, {"question": "Choose the correct word: \"Students read digital textbooks on their _______s.\"", "options": ["plastic", "tablet", "send", "online"], "correct": 1, "explanation": "Target vocabulary: 'tablet' (كمبيوتر لوحي / تابلت)."}, {"question": "Choose the correct word: \"She took photos with her _______ during the trip.\"", "options": ["smartphone", "plastic", "tap", "mouse"], "correct": 0, "explanation": "Target vocabulary: 'smartphone' (هاتف ذكي)."}, {"question": "Choose the correct word: \"Click the left button of the computer _______ to select.\"", "options": ["tap", "text message", "mouse", "selfie"], "correct": 2, "explanation": "Target vocabulary: 'mouse' (فأرة الكمبيوتر)."}, {"question": "Choose the correct word: \"Can I borrow your phone _______? My battery is flat.\"", "options": ["printer", "video call", "click", "charger"], "correct": 3, "explanation": "Target vocabulary: 'charger' (شاحن)."}, {"question": "Choose the correct word: \"We took a cheerful _______ in front of the pyramids.\"", "options": ["tablet", "selfie", "printer", "mp3 player"], "correct": 1, "explanation": "Target vocabulary: 'selfie' (صورة سيلفي)."}, {"question": "Choose the correct word: \"My father makes a _______ to us from London every day.\"", "options": ["kettle", "icon", "video call", "teapot"], "correct": 2, "explanation": "Target vocabulary: 'video call' (مكالمة فيديو)."}, {"question": "Choose the correct word: \"I received a friendly _______ from my classmate.\"", "options": ["plastic", "text message", "charger", "mp3 player"], "correct": 1, "explanation": "Target vocabulary: 'text message' (رسالة نصية)."}, {"question": "Choose the correct word: \"Never share your private _______ with unfamiliar strangers.\"", "options": ["plastic", "icon", "laptop", "password"], "correct": 3, "explanation": "Target vocabulary: 'password' (كلمة سر / مرور)."}, {"question": "Choose the correct word: \"The ministry launched a _______ for interactive quizzes.\"", "options": ["online", "website", "plastic", "send"], "correct": 1, "explanation": "Target vocabulary: 'website' (موقع إلكتروني)."}, {"question": "Look! The girls _______ selfies in the school garden.", "options": ["are taking", "takes", "took", "take"], "correct": 0, "explanation": "Action happening right now with keyword 'Look!' takes are + v-ing."}, {"question": "Listen! Someone _______ on the computer keyboard.", "options": ["types", "is typing", "type", "typed"], "correct": 1, "explanation": "Keyword 'Listen!' indicates Present Continuous with singular subject (is typing)."}, {"question": "My father _______ a video call with his colleagues at the moment.", "options": ["make", "is making", "made", "makes"], "correct": 1, "explanation": "Time marker 'at the moment' requires is + making."}, {"question": "They _______ their tablets right now because the batteries are full.", "options": ["isn't charging", "aren't charging", "don't charge", "not charge"], "correct": 1, "explanation": "Negative continuous for plural 'They' is 'aren't charging'."}, {"question": "_______ you sending an email to your teacher now?", "options": ["Do", "Are", "Is", "Does"], "correct": 1, "explanation": "Continuous question with subject 'you' begins with 'Are'."}, {"question": "_______ he designing a new website at present?", "options": ["Is", "Does", "Are", "Do"], "correct": 0, "explanation": "Singular subject 'he' requires auxiliary 'Is'."}, {"question": "_______ on this blue icon to download the application.", "options": ["Clicked", "Clicks", "Clicking", "Click"], "correct": 3, "explanation": "Affirmative imperative starts with base infinitive 'Click'."}, {"question": "_______ your password to anyone you meet online.", "options": ["No telling", "Not tell", "Don't tell", "Doesn't tell"], "correct": 2, "explanation": "Negative imperative uses 'Don't + infinitive'."}, {"question": "_______ careful when you browse unknown websites.", "options": ["Are", "Is", "Be", "Being"], "correct": 2, "explanation": "Affirmative imperative of verb to be is 'Be'."}, {"question": "What are you _______ on your laptop right now?", "options": ["doing", "do", "does", "did"], "correct": 0, "explanation": "After 'are you', use verb + -ing (doing)."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello (General) for Prep 1 (First Preparatory), Unit 4: We're Using Technology. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>
