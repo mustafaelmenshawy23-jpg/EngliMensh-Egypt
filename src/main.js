@@ -1880,7 +1880,7 @@ function render() {
         ${renderUnitWorkspace()}
         ${renderPreparatoryHtmlLibrary()}
         ${renderPreview()}
-        <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
+        <div class="book-library">${(state.stage === 'preparatory' && !books.length && getPreparatoryHtmlCourse(state.grade, state.path)?.units?.length) ? '' : (selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books))}</div>
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
       </section>
       <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
@@ -2096,8 +2096,8 @@ function render() {
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
   app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.activeModule = null; render(); }));
 
   // TTS and speaker-role voice listeners
   app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
