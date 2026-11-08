@@ -138,11 +138,10 @@ function safeSvg(svg = '') {
 }
 async function findOpenverseImage(word) {
   const params = new URLSearchParams({
-    q: word,
+    q: word + ' photograph',
     page_size: '5',
     license_type: 'commercial',
-    extension: 'jpg,jpeg,png,webp',
-    category: 'photograph'
+    extension: 'jpg,jpeg,png,webp'
   });
   const endpoint = 'https://api.openverse.org/v1/images/?' + params.toString();
   let response;
