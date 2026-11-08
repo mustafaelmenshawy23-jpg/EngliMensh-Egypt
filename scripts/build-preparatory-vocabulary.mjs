@@ -60,7 +60,7 @@ function parseCombinedUnits(source) {
     const unitNo = Number(unitStarts[i][1]);
     const block = body.slice(unitStarts[i].index, unitStarts[i + 1]?.index ?? body.length);
     const items = [];
-    const re = /{\s*w:\s*"([^"]+)",\s*pos:\s*"([^"]*)",\s*ar:\s*"([^"]*)",\s*def:\s*"([^"]*)",\s*ex:\s*"([^"]*)",\s*icon:\s*[\x60]([\s\S]*?)[\x60]\s*}/g;
+    const re = /{\s*["']?w["']?\s*:\s*"([^"]+)",\s*["']?pos["']?\s*:\s*"([^"]*)",\s*["']?ar["']?\s*:\s*"([^"]*)",\s*["']?def["']?\s*:\s*"([^"]*)",\s*["']?ex["']?\s*:\s*"([^"]*)",\s*["']?icon["']?\s*:\s*[\x60]([\s\S]*?)[\x60]\s*}/g;
     let m;
     while ((m = re.exec(block))) items.push({ word: m[1], pos: m[2], arabic: m[3], def: m[4], example: m[5], svg: m[6] });
     if (items.length) out[unitNo] = items;
