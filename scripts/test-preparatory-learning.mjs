@@ -6,6 +6,7 @@ const root = process.cwd();
 const main = await readFile(path.join(root, 'src/main.js'), 'utf8');
 const registry = await readFile(path.join(root, 'src/data/preparatory-html-registry.js'), 'utf8');
 const builder = await readFile(path.join(root, 'scripts/build-preparatory-vocabulary.mjs'), 'utf8');
+const viewerRegistry = await readFile(path.join(root, 'src/data/preparatory-html-registry.js'), 'utf8');
 const sourceRoot = path.join(root, 'content-imports/preparatory');
 
 async function htmlFiles(dir) {
@@ -33,5 +34,6 @@ for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest',
 assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-match-image'), 'Picture matching controls are not wired.');
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
 assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
+assert.ok(builder.includes('buildSectionViewers') && viewerRegistry.includes('preparatory-viewers/'), 'Lesson modules must open in section-aware viewer copies.');
 assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
 console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections, 6 game modes, image attribution.');
