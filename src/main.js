@@ -5,6 +5,7 @@ import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
+import { getPreparatoryHtmlCourse } from './data/preparatory-html-registry.js';
 
 const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
 function isApprovedUnitDraft(draft) {
@@ -65,6 +66,7 @@ const state = {
   path: 'general',
   search: '',
   preview: null,
+  htmlUnitSelection: null,
   unitSelection: null,
   activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
   activeVocabSubtab: 'words', // 'words' or 'practice'
@@ -406,6 +408,60 @@ function renderBookLibrary(books) {
         : book.documentType === 'reader' ? 'Reader' : 'Supplementary reference';
     return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}</article>`;
   }).join('');
+}
+
+function renderPreparatoryHtmlLibrary() {
+  if (state.stage !== 'preparatory') return '';
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  if (!course?.units?.length) return '';
+
+  const selectedUnit = state.htmlUnitSelection
+    ? course.units.find((unit) => unit.id === state.htmlUnitSelection.unitId)
+    : null;
+  const formatLabel = course.format === 'static-html'
+    ? 'Static HTML source · interaction upgrade required'
+    : course.format === 'combined-html'
+      ? 'Combined curriculum · Units 1–6'
+      : 'Interactive HTML lessons';
+
+  return `
+    <section class="imported-curriculum panel">
+      <div class="imported-curriculum-heading">
+        <div>
+          <p class="eyebrow">IMPORTED CURRICULUM · 2026/2027</p>
+          <h2>${escapeHtml(course.series)} · Preparatory ${state.grade}</h2>
+          <p class="library-intro">${escapeHtml(formatLabel)}</p>
+        </div>
+        <span class="book-count">${course.units.length} lesson file${course.units.length === 1 ? '' : 's'}</span>
+      </div>
+      <div class="imported-unit-grid">
+        ${course.units.map((unit) => `
+          <button type="button" class="imported-unit-card ${selectedUnit?.id === unit.id ? 'active' : ''}" data-html-unit="${escapeHtml(unit.id)}">
+            <span class="imported-unit-icon">▤</span>
+            <strong>${escapeHtml(unit.title)}</strong>
+            <small>${escapeHtml(unit.fileName)}</small>
+            <span class="imported-unit-open">Open lesson ↗</span>
+          </button>
+        `).join('')}
+      </div>
+      ${selectedUnit ? `
+        <div class="imported-html-viewer">
+          <div class="imported-html-viewer-head">
+            <div><strong>${escapeHtml(selectedUnit.title)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade}</span></div>
+            <button type="button" class="close-imported-html" data-close-html-unit>Close lesson</button>
+          </div>
+          <iframe
+            class="imported-html-frame"
+            title="${escapeHtml(course.series)} Preparatory ${state.grade} ${escapeHtml(selectedUnit.title)}"
+            src="${escapeHtml(selectedUnit.url)}"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts allow-forms"
+          ></iframe>
+        </div>
+      ` : ''}
+    </section>
+  `;
 }
 
 // Digital Visual Activity 1: Self-Introduction Widget (Page 9)
@@ -1822,6 +1878,7 @@ function render() {
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
         ${renderUnitWorkspace()}
+        ${renderPreparatoryHtmlLibrary()}
         ${renderPreview()}
         <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
@@ -1846,6 +1903,26 @@ function render() {
     applySearch();
   });
   applySearch();
+
+  app.querySelectorAll('[data-html-unit]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = {
+      grade: state.grade,
+      path: state.path,
+      unitId: button.dataset.htmlUnit
+    };
+    state.unitSelection = null;
+    state.activeModule = null;
+    state.preview = null;
+    render();
+    app.querySelector('.imported-html-viewer')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  app.querySelector('[data-close-html-unit]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = null;
+    render();
+  });
 
   // Navigation & Workspace Listeners (Preserves student progress permanently)
   app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', (e) => {
@@ -2018,7 +2095,7 @@ function render() {
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
-  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.activeModule = null; render(); }));
   app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
   app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
 
