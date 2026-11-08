@@ -113,6 +113,25 @@ function buildUnitCertificate(unit, track, grade, questions, prefix) {
   return '<section class="certificate-card" aria-label="Certificate of Excellence"><div class="certificate-teacher-photo"><img src="/assets/teacher-portrait.jpeg" alt="Your Teacher"></div><div class="certificate-student-photo">' + (profile.photo ? '<img src="' + profile.photo + '" alt="Student portrait">' : '<span>Student Photo</span>') + '</div><div class="certificate-text"><p class="certificate-kicker">ENG L I M E N S H · EGYPT</p><h3>Certificate of Excellence</h3><p>This certificate is proudly presented to</p><h2>' + escapeHtml(certificate.studentName) + '</h2><p>For successfully completing</p><h3 class="certificate-unit">' + escapeHtml(certificate.unit) + '</h3><p>' + escapeHtml(certificate.stage) + ' · Grade ' + certificate.grade + ' · ' + escapeHtml(certificate.curriculum) + '</p><strong class="certificate-score">' + certificate.score + '%</strong><p class="certificate-message">Excellent work! Keep learning, keep growing, and believe in yourself.</p><small>Completed: ' + date + '</small></div></section>'
 }
 
+function renderStudentHub() {
+ const profile = getActiveStudentProfile();
+ if (!profile) return '';
+ const certificates = Object.values(profile.certificates || {});
+ const answers = Object.values(state.quizAnswers || {});
+ const correct = answers.filter((item) => item && item.isCorrect).length;
+ const mistakes = answers.reduce((sum,item) => sum + (Array.isArray(item?.wrongChoices) ? item.wrongChoices.length : 0),0);
+ const tab = state.studentTool || 'overview';
+ const tabs = [['overview','My Progress'],['certificates','My Certificates'],['mistakes','Mistake Review'],['favorites','Favorites'],['settings','Settings'],['creator','Meet the App Creator']];
+ let content = '';
+ if (tab === 'overview') content = '<div class="student-hub-stats"><article><strong>' + correct + '</strong><span>Correct answers</span></article><article><strong>' + mistakes + '</strong><span>Practice retries</span></article><article><strong>' + certificates.length + '</strong><span>Certificates</span></article></div><p class="unit-source-note">Your learning record is saved in this profile and kept separate from other students.</p>';
+ if (tab === 'certificates') content = certificates.length ? certificates.map((c) => '<article class="student-certificate-row"><strong>' + escapeHtml(c.unit || 'Completed unit') + '</strong><span>' + escapeHtml(c.stage || '') + ' · Grade ' + c.grade + ' · ' + escapeHtml(c.curriculum || '') + '</span><b>' + Number(c.score || 0) + '%</b></article>').join('') : '<p class="unit-source-note">Your certificates will appear here after you complete a unit assessment with 90% or more.</p>';
+ if (tab === 'mistakes') content = '<p class="unit-source-note">Review questions you have tried more than once. Your wrong answers are saved so you can practise again.</p><strong>' + mistakes + ' recorded retry attempts in the current grade and curriculum.</strong>';
+ if (tab === 'favorites') content = '<p class="unit-source-note">Save units to your Favorites from the unit list. Your saved units will be kept in this student profile.</p><div class="student-favorite-list">' + (profile.favorites || []).map(x => '<span>★ ' + escapeHtml(x) + '</span>').join('') + '</div>';
+ if (tab === 'settings') content = '<label class="student-setting-row">Learning theme <select data-student-theme><option value="classic">Classic navy and gold</option><option value="light">Light classroom</option></select></label><p class="unit-source-note">Your selected theme is saved with this profile.</p>';
+ if (tab === 'creator') content = '<div class="creator-card"><img src="/assets/teacher-portrait.jpeg" alt="App creator"><div><strong>Your Teacher</strong><p>Welcome to EngliMensh-Egypt. Keep learning, practising and achieving!</p></div></div>';
+ return '<section class="student-hub panel"><div class="student-hub-heading"><div><p class="eyebrow">STUDENT SPACE</p><h2>' + escapeHtml(profile.name) + ' · My Learning</h2></div>' + (profile.photo ? '<img class="student-hub-avatar" src="' + profile.photo + '" alt="">' : '') + '</div><nav class="student-hub-tabs">' + tabs.map(([id,label]) => '<button type="button" data-student-hub="' + id + '" class="' + (tab === id ? 'active' : '') + '">' + label + '</button>').join('') + '</nav><div class="student-hub-content">' + content + '</div></section>';
+}
+
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
   if (!val) return { choice: null, isCorrect: false, wrongChoices: [] };
@@ -2388,6 +2407,7 @@ function render() {
         <h1>Learn. Practice. Achieve.</h1>
         <p class="intro">Welcome back! Your selected grade is ready. Explore other stages only when you need them.</p><button type="button" class="explore-stages-btn" data-explore-stages>Explore Other Stages</button>
       </section>
+      ${importedUnitView ? '' : renderStudentHub()}
       <section class="panel selection-panel" style="display:none">
         <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your stage</h2></div></div>
         <div class="stage-grid">
