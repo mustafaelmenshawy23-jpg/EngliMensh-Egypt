@@ -215,6 +215,42 @@ async function findOpenverseImage(word) {
     sourceUrl: item.foreign_landing_url || item.detail_url || item.url
   };
 }
+async function findWikimediaImage(word) {
+  const params = new URLSearchParams({
+    action: 'query', generator: 'search', gsrsearch: 'filetype:bitmap ' + word,
+    gsrnamespace: '6', gsrwhat: 'title', gsrlimit: '5',
+    prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: '420', format: 'json'
+  });
+  const response = await fetch('https://commons.wikimedia.org/w/api.php?' + params.toString(), {
+    headers: { 'User-Agent': 'EngliMenshEgypt/1.0 (educational vocabulary image sourcing)' },
+    signal: AbortSignal.timeout(8000)
+  });
+  if (!response.ok) throw new Error('Wikimedia Commons HTTP ' + response.status);
+  const json = await response.json();
+  const pages = Object.values(json.query?.pages || {});
+  const page = pages.find((entry) => entry.imageinfo?.[0]?.thumburl && !/logo|icon|diagram/i.test(entry.title || ''));
+  if (!page) return null;
+  const info = page.imageinfo[0];
+  const image = await fetch(info.thumburl, { signal: AbortSignal.timeout(8000) });
+  if (!image.ok) return null;
+  const bytes = Buffer.from(await image.arrayBuffer());
+  if (bytes.length < 3000 || bytes.length > 1500000) return null;
+  const extension = (info.thumburl.match(/\\.(jpe?g|png|webp)(?:[?#]|$)/i)?.[1] || 'jpg').toLowerCase();
+  const file = slug(word) + '.' + extension;
+  await fs.mkdir(ASSET_ROOT, { recursive: true });
+  await fs.writeFile(path.join(ASSET_ROOT, file), bytes);
+  const meta = info.extmetadata || {};
+  const plain = (key) => decodeHtml(String(meta[key]?.value || '').replace(/<[^>]+>/g, ' '));
+  return {
+    image: '/assets/preparatory-vocabulary/' + file,
+    imageSource: 'Wikimedia Commons',
+    attribution: plain('Artist') || page.title,
+    creator: plain('Artist'),
+    license: plain('LicenseShortName') || 'See source license',
+    licenseUrl: meta.LicenseUrl?.value || '',
+    sourceUrl: info.descriptionurl || info.url
+  };
+}
 async function mapLimit(items, limit, worker) {
   let cursor = 0;
   await Promise.all(Array.from({ length: limit }, async () => {
@@ -253,16 +289,20 @@ let downloaded = 0, missing = 0;
 if (process.env.SKIP_PREPARATORY_IMAGE_FETCH === '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
-} else await mapLimit(imageWords, 1, async (word) => {
+} else await mapLimit(imageWords, 2, async (word) => {
+  let result = null;
   try {
-    const result = await findOpenverseImage(word);
-    pendingImages.set(word.toLowerCase(), result);
-    if (result) downloaded += 1; else missing += 1;
-  } catch (error) {
-    pendingImages.set(word.toLowerCase(), null);
-    missing += 1;
-    console.warn('Image lookup failed for', word, error.message);
+    result = await findOpenverseImage(word);
+  } catch (openverseError) {
+    console.warn('Openverse unavailable for', word, '- trying Wikimedia Commons:', openverseError.message);
+    try {
+      result = await findWikimediaImage(word);
+    } catch (wikimediaError) {
+      console.warn('Image lookup failed for', word, 'Openverse:', openverseError.message, '| Wikimedia:', wikimediaError.message);
+    }
   }
+  pendingImages.set(word.toLowerCase(), result);
+  if (result) downloaded += 1; else missing += 1;
 });
 for (const unit of Object.values(registry)) unit.words = unit.words.map((item) => {
   if (item.svg) return { ...item, imageType: 'svg-illustration' };
