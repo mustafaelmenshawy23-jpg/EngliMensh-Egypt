@@ -2408,6 +2408,7 @@ function render() {
         <h1>Learn. Practice. Achieve.</h1>
         <p class="intro">Welcome back! Your selected grade is ready. Explore other stages only when you need them.</p><button type="button" class="explore-stages-btn" data-explore-stages>Explore Other Stages</button>
       </section>
+      ${!importedUnitView && state.stage === 'primary' ? '<section class="curriculum-switcher" aria-label="Choose your curriculum"><p class="eyebrow">YOUR TWO PRIMARY CURRICULA</p><div class="curriculum-switcher-buttons">' + paths.map((path) => '<button type="button" class="curriculum-switcher-button ' + (path.id === state.path ? 'active' : '') + '" data-path="' + escapeHtml(path.id) + '"><strong>' + escapeHtml(path.series || path.name) + '</strong><small>' + (path.id === 'general' ? 'Connect' : 'Connect Plus') + '</small></button>').join('') + '</div></section>' : ''}
       ${importedUnitView ? '' : renderStudentHub()}
       <section class="panel selection-panel" style="display:none">
         <div class="section-heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your stage</h2></div></div>
