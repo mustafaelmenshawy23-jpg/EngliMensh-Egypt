@@ -126,7 +126,7 @@ function identify(file) {
 }
 function safeSvg(svg = '') {
   if (!svg.includes('<svg') || /<script|foreignObject|javascript:/i.test(svg)) return '';
-  if (/<text\\b/i.test(svg) && !/<(path|polygon|rect|ellipse|image)\\b/i.test(svg)) return '';
+  if (/<text\b/i.test(svg) && !/<(path|polygon|rect|ellipse|image)\\b/i.test(svg)) return '';
   return svg.includes('xmlns=') ? svg : svg.replace(/<svg\b/, '<svg xmlns="http://www.w3.org/2000/svg"');
 }
 async function findOpenverseImage(word) {
