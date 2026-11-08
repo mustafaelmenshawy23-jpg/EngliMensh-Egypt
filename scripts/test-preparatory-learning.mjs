@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import { readFile, readdir } from 'node:fs/promises';
+import path from 'node:path';
+
+const root = process.cwd();
+const main = await readFile(path.join(root, 'src/main.js'), 'utf8');
+const registry = await readFile(path.join(root, 'src/data/preparatory-html-registry.js'), 'utf8');
+const builder = await readFile(path.join(root, 'scripts/build-preparatory-vocabulary.mjs'), 'utf8');
+const sourceRoot = path.join(root, 'content-imports/preparatory');
+
+async function htmlFiles(dir) {
+  const files = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...await htmlFiles(full));
+    else if (entry.isFile() && full.endsWith('.html')) files.push(full);
+  }
+  return files;
+}
+const files = await htmlFiles(sourceRoot);
+assert.equal(files.length, 31, 'Expected all 31 imported preparatory HTML source files.');
+for (const grade of [1, 2, 3]) {
+  assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Unit_'), 'Missing New Hello registry for grade ' + grade);
+  assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Plus_Unit_'), 'Missing New Hello Plus registry for grade ' + grade);
+}
+for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'speaking', 'games', 'comprehensive_test']) {
+  assert.ok(main.includes("['" + section + "'") || main.includes(section + ': ['), 'Missing preparatory learning section: ' + section);
+}
+for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest', 'open-box', 'flashcards']) {
+  assert.ok(main.includes("'" + game + "'"), 'Missing interactive game: ' + game);
+}
+assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-match-image'), 'Picture matching controls are not wired.');
+assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
+assert.ok(builder.includes('Wikimedia Commons') && builder.includes('LicenseShortName'), 'Image sourcing must retain licensing and attribution.');
+assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
+console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections, 6 game modes, image attribution.');
