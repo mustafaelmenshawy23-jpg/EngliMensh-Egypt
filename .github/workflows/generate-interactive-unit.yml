@@ -48,7 +48,7 @@ jobs:
       - name: Checkout only the EngliMensh-Egypt repository and hydrate source PDFs
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -58,10 +58,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Restore reusable source extraction cache
+        id: source_cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          key: englimensh-source-extraction-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}
+
       - name: Hydrate original source PDFs
+        if: steps.source_cache.outputs.cache-hit != 'true'
         run: git lfs pull
 
       - name: Extract source pages and OCR scans for this batch
+        if: steps.source_cache.outputs.cache-hit != 'true'
         run: |
           npm run extract:books
           sudo apt-get update
@@ -69,6 +80,15 @@ jobs:
           python3 -m venv .venv
           .venv/bin/pip install pymupdf
           OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+
+      - name: Save reusable source extraction cache
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
+          key: ${{ steps.source_cache.outputs.cache-primary-key }}
 
       - name: Generate resumable ordered unit batch
         env:
@@ -102,6 +122,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: interactive-curriculum-batch-${{ github.run_number }}
-          path: artifacts/unit-drafts/*.json
+          path: |
+            artifacts/unit-drafts/*.json
+            src/data/extracted/pages.jsonl
+            src/data/extracted/manifest.json
           if-no-files-found: warn
           retention-days: 30
