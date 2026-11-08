@@ -429,7 +429,7 @@ function getPreparatoryUnitWords(unit = getSelectedPreparatoryUnit()) {
 
 function prepImageMarkup(item, className = 'prep-vocab-image') {
   if (item.image) {
-    const imageSrc = `${import.meta.env.BASE_URL}${item.image.replace(/^\\/+/, '')}`;
+    const imageSrc = `${import.meta.env.BASE_URL}${item.image.replace(/^\/+/, '')}`;
     return `<img class="${className}" src="${escapeHtml(imageSrc)}" alt="${escapeHtml(item.word)}" title="${escapeHtml([item.attribution, item.license].filter(Boolean).join(' · '))}" loading="lazy" />`;
   }
   if (item.svg) return `<img class="${className}" src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(item.svg)}" alt="${escapeHtml(item.word)}" loading="lazy" />`;
