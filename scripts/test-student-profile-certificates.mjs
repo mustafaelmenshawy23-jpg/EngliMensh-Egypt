@@ -13,7 +13,7 @@ assert.match(main, /data-path=/);
 assert.match(main, /attempted === questions\.length && score >= 90/);
 assert.doesNotMatch(main, /certificate-teacher-photo/, 'teacher portrait is already embedded in certificate artwork');
 assert.match(main, /certificate-student-photo/);
-assert.equal((main.match(/<h3>Certificate of Excellence<\\/h3>/g) || []).length, 0, 'certificate title is already part of the artwork and must not be repeated');
+assert.equal(main.split('<h3>Certificate of Excellence</h3>').length - 1, 0, 'certificate title is already part of the artwork and must not be repeated');
 assert.match(main, /data-student-hub/);
 assert.match(main, /data-favorite-current/);
 assert.match(main, /data-student-theme/);
