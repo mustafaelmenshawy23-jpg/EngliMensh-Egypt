@@ -64,7 +64,7 @@ The application build verifies compilation, not that all 118 units contain lesso
 - The project code has not been tested on a physical Android device for actual voice inventory or male/female playback. No claim of gender-matched audio playback is made.
 - No `getUserMedia` or `MediaRecorder` microphone-recording implementation is present in `src/main.js`. Dialogue TTS is sequential and stop-aware, but speaking recording/assessment is not implemented.
 - Generated game challenges are currently multiple-choice interactions. More varied mechanics and real listening/speaking game behavior have not been verified.
-- The generator requires a 10-question unit comprehensive test. Book/term-level review exams from assessment PDFs still need a separate extraction, indexing, and integration path.
+- The generator prompt requests exactly 10 unit comprehensive-test questions, while the current automated validator enforces a minimum of 10 (it does not yet reject counts above 10). Book/term-level review exams from assessment PDFs still need a separate extraction, indexing, and integration path.
 
 ## 5. Workflow and build evidence
 
