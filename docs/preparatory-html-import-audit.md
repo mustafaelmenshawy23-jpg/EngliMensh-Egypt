@@ -18,6 +18,15 @@ The original imported HTML files are retained unchanged in this import area. Thi
 4. HTML pages are source documents, not yet integrated into the native app navigation or its structured lesson/question registry. Uploading these files does not make them visible in the app.
 5. The imported pages use external font/CDN references. Offline behavior must be tested; external resources should be removed, bundled, or given safe local fallbacks before claiming offline readiness.
 
+## Concrete content QA findings
+
+The six Prep 2 New Hello (General) files were counted by section:
+- Units 1–5 each contain 25 vocabulary questions, 30 grammar questions, 5 reading questions, and 5 listening questions (65 total).
+- Unit 6 contains 29 grammar questions despite its heading claiming 30 (64 total).
+- Prep 2 New Hello Unit 1 repeats the vocabulary item **Success** twice in its 25-word bank.
+
+These are source-package defects to resolve against the intended lesson content before marking this pathway academically complete. The imported source HTML remains unchanged; do not silently invent a replacement question or vocabulary item.
+
 ## Safe integration plan
 
 - Map New Hello to Preparatory → General and New Hello Plus to Preparatory → Advanced.
