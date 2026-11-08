@@ -8,13 +8,14 @@ import unitModules from './data/lessons/unit-modules.draft.json';
 import p1u1Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-1.json';
 import p1u2Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-2.json';
 import p1u3Draft from '../artifacts/unit-drafts/primary1-student-term1-unit-3.json';
+import './style.css';
+
 const generatedDraftModules = import.meta.glob('../artifacts/unit-drafts/*.json', { eager: true, import: 'default' });
 const unitDraftRegistry = new Map(
   Object.values(generatedDraftModules)
     .filter((draft) => draft && typeof draft.bookId === 'string' && Number.isInteger(draft.unitNumber) && Array.isArray(draft.sections))
     .map((draft) => [`${draft.bookId}-unit-${draft.unitNumber}`, draft])
 );
-import './style.css';
 
 const app = document.querySelector('#app');
 
@@ -831,10 +832,10 @@ function renderUnitWorkspace() {
         `;
       } else if (state.activeModule === 'reading' || state.activeModule === 'speaking' || state.activeModule === 'listening') {
         const passage = reading[0]?.content?.passage || '';
-        const lines = passage.split(/\\r?\\n/).filter(Boolean);
+        const lines = passage.split(/\r?\n/).filter(Boolean);
         bodyHtml = `
           <article class="reading-passage-card"><div class="reading-card-head"><span class="reading-badge">OFFICIAL BOOK DIALOGUE · PDF PAGE ${reading[0]?.content?.sourcePdfPage || '—'}</span><h4>${escapeHtml(activeUnitDraft.unitTitle)}</h4><p class="reading-subtitle">Read each line, then listen and practise with a partner.</p></div>
-          <div class="chat-dialogue-thread">${lines.map((line, idx) => { const split = line.match(/^([^:]+):\\s*(.*)$/); const speaker = split?.[1] || `Line ${idx + 1}`; const words = split?.[2] || line; return `<div class="chat-bubble ${idx % 2 ? 'hana' : 'maya'}"><div class="chat-avatar">${idx % 2 ? '👧' : '👦'}</div><div class="chat-body"><span class="chat-sender">${escapeHtml(speaker)}</span><p class="chat-text" dir="ltr">${escapeHtml(words)}</p></div><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(words)}">🔊</button></div>`; }).join('')}</div>
+          <div class="chat-dialogue-thread">${lines.map((line, idx) => { const split = line.match(/^([^:]+):\s*(.*)$/); const speaker = split?.[1] || `Line ${idx + 1}`; const words = split?.[2] || line; return `<div class="chat-bubble ${idx % 2 ? 'hana' : 'maya'}"><div class="chat-avatar">${idx % 2 ? '👧' : '👦'}</div><div class="chat-body"><span class="chat-sender">${escapeHtml(speaker)}</span><p class="chat-text" dir="ltr">${escapeHtml(words)}</p></div><button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(words)}">🔊</button></div>`; }).join('')}</div>
           <button type="button" class="big-audio-btn secondary" data-tts-text="${escapeHtml(lines.join('. '))}">🔊 Listen to full dialogue</button></article>
           <p class="speaking-practice-note">Practise the dialogue aloud with a partner.</p>
         `;
