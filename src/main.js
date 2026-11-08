@@ -2682,16 +2682,20 @@ function render() {
       const pageHeight = 210 * 1600 / 1189;
       const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [210, pageHeight], compress: true });
       pdf.addImage(canvas.toDataURL('image/jpeg', 0.96), 'JPEG', 0, 0, 210, pageHeight, undefined, 'FAST');
+      // jsPDF may include a filename parameter in the data URL header.
+      // Strip the complete header and pass only the base64 payload to Android MediaStore.
       const pdfDataUrl = pdf.output('datauristring');
-      if (!pdfDataUrl.startsWith('data:application/pdf;base64,')) {
-        throw new Error('PDF_DATA_URL_INVALID');
+      const pdfBase64 = pdfDataUrl.slice(pdfDataUrl.indexOf(',') + 1);
+      if (!pdfDataUrl.startsWith('data:application/pdf') || !pdfBase64 || !/^[A-Za-z0-9+/=]+$/.test(pdfBase64)) {
+        throw new Error('PDF_BASE64_INVALID');
       }
-      await FileSharer.save({
+      const savedFile = await FileSharer.save({
         filename: safeName + '.pdf',
         contentType: 'application/pdf',
-        base64Data: pdfDataUrl,
+        base64Data: pdfBase64,
         android: { saveDirectory: 'downloads', relativePath: 'Download/EngliMensh' }
       });
+      if (!savedFile?.uri) console.warn('Certificate saved; Android did not return a content URI.');
       window.alert('تم حفظ الشهادة كملف PDF في مجلد Downloads داخل EngliMensh.');
     } catch (error) {
       console.error('Certificate PDF export failed:', error);
