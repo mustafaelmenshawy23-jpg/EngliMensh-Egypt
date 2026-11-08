@@ -66,6 +66,11 @@ export function validateVocabularyItem(item, unitRange) {
     }
   }
 
+  const example = typeof c.example === 'string' ? c.example.trim() : '';
+  if (!example || example.length < 8) {
+    issues.push(`${item?.itemId || 'Item'}: missing or incomplete English example sentence`);
+  }
+
   // Provenance validation
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${item?.itemId || 'Item'}: invalid origin (must be 'source' or 'supplementary')`);
@@ -159,6 +164,8 @@ export function validateGrammarItem(item, unitRange) {
 
   const explanation = typeof c.explanation === 'string' ? c.explanation.trim() : '';
   if (!explanation || explanation.length < 10) issues.push(`${id}: missing or incomplete grammar explanation`);
+  const example = typeof c.example === 'string' ? c.example.trim() : '';
+  if (!example || example.length < 8) issues.push(`${id}: missing or incomplete grammar example`);
 
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
@@ -243,6 +250,24 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
   for (const reqType of REQUIRED_MODULE_TYPES) {
     if (!sectionsByType.has(reqType)) {
       criticalFailures.push(`Missing required section: ${reqType}`);
+    }
+  }
+
+  const minimumItemsBySection = {
+    vocabulary: 1,
+    vocabulary_questions: 3,
+    grammar: 1,
+    grammar_questions: 3,
+    reading: 2,
+    listening: 2,
+    speaking: 1,
+    games: 2,
+    comprehensive_test: 10
+  };
+  for (const [sectionType, minimum] of Object.entries(minimumItemsBySection)) {
+    const count = sectionsByType.get(sectionType)?.items?.length || 0;
+    if (count < minimum) {
+      criticalFailures.push(`Section ${sectionType} requires at least ${minimum} item(s); found ${count}`);
     }
   }
 
@@ -332,6 +357,8 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
           const qResult = validateQuestionItem(item, expectedRange);
           if (!qResult.isValid) criticalFailures.push(...qResult.issues);
           else sectionReports[sectionType].validItems++;
+        } else {
+          criticalFailures.push(`${item.itemId || sectionType}: reading/listening item must contain a passage/script or a validated question`);
         }
       } else if (sectionType === 'speaking') {
         const c = item.content || {};
@@ -341,43 +368,82 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
               criticalFailures.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} is missing speaker or text`);
             }
             if (!['male', 'female', 'unknown'].includes(turn.speakerGender)) {
-              warnings.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} has no verified speakerGender metadata`);
+              criticalFailures.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} must declare speakerGender as male, female, or unknown`);
             } else if (turn.speakerGender === 'unknown') {
               warnings.push(`Speaking item ${item.itemId} turn ${turnIndex + 1} gender is unknown; no gender-matched TTS voice can be assumed`);
             }
           }
+          if (!['source', 'supplementary'].includes(c.origin)) {
+            criticalFailures.push(`Speaking item ${item.itemId} has invalid or missing origin`);
+          }
+          if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+            criticalFailures.push(`Speaking item ${item.itemId} has an invalid sourcePdfPage`);
+          }
           sectionReports[sectionType].validItems++;
         } else if (c.instruction) {
+          if (!['source', 'supplementary'].includes(c.origin) ||
+              !Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+            criticalFailures.push(`Speaking instruction ${item.itemId} must include valid origin and sourcePdfPage`);
+          }
           sectionReports[sectionType].validItems++;
         } else {
-          warnings.push(`Speaking item ${item.itemId} has minimal dialogue structure`);
+          criticalFailures.push(`Speaking item ${item.itemId} must contain a dialogue or a sourced speaking instruction`);
         }
       } else if (sectionType === 'games') {
         const c = item.content || {};
+        let gameValid = true;
         if (!c.gameName || !c.description) {
           criticalFailures.push(`Game item ${item.itemId} is missing gameName or description`);
+          gameValid = false;
         }
         if (c.origin !== 'supplementary') {
           criticalFailures.push(`Game item ${item.itemId} must be labelled supplementary`);
-        }
-        if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
-          criticalFailures.push(`Game item ${item.itemId} has an invalid supporting PDF page`);
+          gameValid = false;
         }
         if (!['vocabulary', 'grammar', 'reading', 'listening', 'speaking'].includes(c.skill)) {
-          warnings.push(`Game item ${item.itemId} has no supported skill classification`);
+          criticalFailures.push(`Game item ${item.itemId} has no supported skill classification`);
+          gameValid = false;
         }
         if (!['easy', 'medium', 'challenging'].includes(c.difficulty)) {
-          warnings.push(`Game item ${item.itemId} has no supported difficulty classification`);
+          criticalFailures.push(`Game item ${item.itemId} has no supported difficulty classification`);
+          gameValid = false;
         }
-        if (!['matching', 'multiple_choice', 'ordering', 'listening_choice', 'role_play', 'word_builder'].includes(c.gameMode)) {
-          warnings.push(`Game item ${item.itemId} has no supported game mode`);
+        if (c.gameMode !== 'multiple_choice') {
+          criticalFailures.push(`Game item ${item.itemId} must use the currently supported playable gameMode multiple_choice`);
+          gameValid = false;
         }
-        sectionReports[sectionType].validItems++;
+        const gameQuestionAudit = validateQuestionItem(item, expectedRange);
+        if (!gameQuestionAudit.isValid) {
+          criticalFailures.push(...gameQuestionAudit.issues);
+          gameValid = false;
+        }
+        if (gameValid) sectionReports[sectionType].validItems++;
       }
     }
   }
 
-  // 4. Source Check for Empty Sections
+  // 4. Verify passage/script plus comprehension question and actual role-play coverage.
+  for (const sectionType of ['reading', 'listening']) {
+    const items = sectionsByType.get(sectionType)?.items || [];
+    const field = sectionType === 'reading' ? 'passage' : 'script';
+    if (!items.some((item) => typeof item.content?.[field] === 'string' && item.content[field].trim().length >= 20)) {
+      criticalFailures.push(`Section ${sectionType} must include a complete passage/script; use origin=supplementary if none is printed in the book.`);
+    }
+    if (!items.some((item) => typeof item.content?.question === 'string')) {
+      criticalFailures.push(`Section ${sectionType} must include at least one comprehension question with an answer key.`);
+    }
+  }
+  const speakingItems = sectionsByType.get('speaking')?.items || [];
+  if (!speakingItems.some((item) => Array.isArray(item.content?.dialogue) && item.content.dialogue.length >= 2)) {
+    criticalFailures.push('Speaking section must include at least one dialogue with two or more speaker turns.');
+  }
+  const gameItems = sectionsByType.get('games')?.items || [];
+  const gameSkills = new Set(gameItems.map((item) => item.content?.skill).filter(Boolean));
+  if (gameSkills.size < 2) {
+    criticalFailures.push('Games section must vary across at least two supported skills.');
+  }
+
+  // 5. Source Check for Empty Sections
   // If source pages had readable text, but the draft produced zero questions/items across all practice sections
   const questionsTotal = (sectionsByType.get('vocabulary_questions')?.items?.length || 0) +
     (sectionsByType.get('grammar_questions')?.items?.length || 0) +

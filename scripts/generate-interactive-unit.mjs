@@ -117,7 +117,7 @@ const contentSchema = {
     description: { type: 'STRING' },
     skill: { type: 'STRING', enum: ['vocabulary', 'grammar', 'reading', 'listening', 'speaking'] },
     difficulty: { type: 'STRING', enum: ['easy', 'medium', 'challenging'] },
-    gameMode: { type: 'STRING', enum: ['matching', 'multiple_choice', 'ordering', 'listening_choice', 'role_play', 'word_builder'] },
+    gameMode: { type: 'STRING', enum: ['multiple_choice'] },
     targetWords: { type: 'ARRAY', items: { type: 'STRING' } },
     targetCommands: { type: 'ARRAY', items: { type: 'STRING' } },
     durationMinutes: { type: 'INTEGER' },
@@ -182,20 +182,32 @@ CRITICAL ACCURACY & QUALITY RULES:
    - Transcribe each complete reading passage and its printed questions from the source pages; do not shorten a source passage.
    - If no reading passage exists, leave source reading empty or add a clearly labelled supplementary passage with origin="supplementary".
 7. Listening:
+   - Include one complete listening script plus at least one comprehension question with a correct answer and reason.
    - Transcribe a listening script as origin="source" only when the printed source pages actually contain that script/transcript.
-   - If the book only gives an audio activity without a transcript, do not invent a source transcript. You may add a clearly labelled supplementary script with origin="supplementary"; state that its playback is generated TTS, not original book audio.
+   - If the book only gives an audio activity without a transcript, do not invent a source transcript. Add a clearly labelled supplementary script with origin="supplementary"; state that its playback is generated TTS, not original book audio.
    - Include printed listening questions and their answer evidence when present.
 8. Speaking:
-   - Preserve source dialogues and role-play instructions accurately. Any newly written role-play must use origin="supplementary".
+   - Include at least one dialogue with two or more speaker turns, preserving source dialogues accurately. Any newly written role-play must use origin="supplementary".
    - Each dialogue turn must contain speaker, text, and speakerGender: "male", "female", or "unknown".
    - Set male/female only when the source text or explicit context establishes the speaker gender; otherwise use "unknown" rather than guessing from a name.
    - speakerGender is metadata only; do not claim a matching device voice is available or selected.
 9. Games:
-   - Provide 2–4 age-appropriate supplementary game cards, each with gameName, description, skill, difficulty, and gameMode. Use targetWords/targetCommands when relevant.
+   - Provide 2–4 playable supplementary multiple-choice game challenges, each with gameName, description, skill, difficulty, gameMode="multiple_choice", question, 3–4 options, correctAnswer, and reason.
    - Games must be origin="supplementary"; never describe a generated game as a printed textbook activity.
-   - Vary game skill across vocabulary, grammar, reading, listening, and speaking when the unit content supports it.
+   - Vary skills across at least two of vocabulary, grammar, reading, listening, and speaking. Do not claim unsupported drag/drop or matching mechanics.
 10. Comprehensive Unit Test:
-   - Provide a balanced test reflecting unit vocabulary, grammar, and comprehension. All generated questions must be labelled origin="supplementary"; printed questions may be origin="source".
+   - Provide exactly 10 balanced questions reflecting unit vocabulary, grammar, and comprehension. All generated questions must be labelled origin="supplementary"; printed questions may be origin="source".
+11. Minimum nine-section coverage:
+   - vocabulary: at least 1 complete word/expression with Arabic meaning and English example.
+   - vocabulary_questions: at least 3 answered questions.
+   - grammar: at least 1 rule/explanation/example. If no explicit grammar is taught, add a clearly labelled supplementary functional-language note rather than inventing a source rule.
+   - grammar_questions: at least 3 answered questions.
+   - reading: at least one complete passage and at least one comprehension question.
+   - listening: at least one complete script and at least one comprehension question.
+   - speaking: at least one dialogue with 2+ turns.
+   - games: at least 2 playable challenges across 2+ skills.
+   - comprehensive_test: exactly 10 questions.
+   If the PDF lacks a source passage, listening transcript, or dialogue, create supplementary material and label it supplementary; never leave a required section empty.
 
 Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
 

@@ -399,6 +399,65 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
     ]
   };
 
+  const makeSupplementaryQuestion = (itemId, question, correctAnswer, sourcePdfPage = 103) => ({
+    itemId,
+    content: {
+      question,
+      options: [correctAnswer, 'not the correct choice', 'another distractor'],
+      correctAnswer,
+      reason: 'The answer matches the unit information and language rule.',
+      origin: 'supplementary',
+      sourcePdfPage
+    }
+  });
+  const byType = new Map(validDraft.sections.map((section) => [section.type, section]));
+  byType.get('vocabulary_questions').items.push(
+    makeSupplementaryQuestion('u4-vq-2', 'Which word means a person who buys goods?', 'consumer', 102),
+    makeSupplementaryQuestion('u4-vq-3', 'Which word describes protecting resources for the future?', 'sustainable', 103)
+  );
+  byType.get('grammar_questions').items.push(
+    makeSupplementaryQuestion('u4-gq-2', 'Which verb form follows if in the first conditional?', 'present simple', 103),
+    makeSupplementaryQuestion('u4-gq-3', 'Choose the correct advice form for a possible future situation.', 'should compare', 103)
+  );
+  byType.get('listening').items.push(makeSupplementaryQuestion(
+    'u4-ls-q1', 'What topic does the radio host introduce in the listening script?', 'smart shopping habits', 102
+  ));
+  const firstGame = byType.get('games').items[0].content;
+  Object.assign(firstGame, {
+    skill: 'vocabulary',
+    difficulty: 'easy',
+    gameMode: 'multiple_choice',
+    question: 'Which word describes a person who buys goods?',
+    options: ['consumer', 'producer', 'distributor'],
+    correctAnswer: 'consumer',
+    reason: 'A consumer buys goods or services for personal use.'
+  });
+  byType.get('games').items.push({
+    itemId: 'u4-game-2',
+    content: {
+      gameName: 'First Conditional Challenge',
+      description: 'Choose the correct verb form to complete a first conditional sentence.',
+      skill: 'grammar',
+      difficulty: 'medium',
+      gameMode: 'multiple_choice',
+      question: 'If you want to save money, you ______ prices before buying.',
+      options: ['compare', 'compared', 'will compared'],
+      correctAnswer: 'compare',
+      reason: 'The if-clause uses present simple in the first conditional.',
+      origin: 'supplementary',
+      sourcePdfPage: 103
+    }
+  });
+  const finalTest = byType.get('comprehensive_test').items;
+  for (let n = 2; n <= 10; n++) {
+    finalTest.push(makeSupplementaryQuestion(
+      `u4-test-${n}`,
+      `Which unit skill is practised in comprehensive test question ${n}?`,
+      'reading and language use',
+      103
+    ));
+  }
+
   const audit = validateUnitDraftQuality(validDraft, { start: 102, end: 104 });
   assert(audit.isValid, 'High-quality valid draft passes validation');
   assert(audit.criticalFailures.length === 0, 'No critical failures for valid draft');
