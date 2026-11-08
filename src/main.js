@@ -998,7 +998,8 @@ function renderImportedPrimaryCurriculum() {
       const j = Math.floor((seed / 2147483647) * (i + 1));
       [distractors[i], distractors[j]] = [distractors[j], distractors[i]];
     }
-    // Question-specific seeded randomization prevents the predictable A/B/C/D cycle.\n     const correctPosition = seed % 4;
+    // Question-specific seeded randomization prevents the predictable A/B/C/D cycle.
+    const correctPosition = seed % 4;
     const shuffled = [...distractors];
     shuffled.splice(correctPosition, 0, correctOption);
     const correct = correctPosition;
