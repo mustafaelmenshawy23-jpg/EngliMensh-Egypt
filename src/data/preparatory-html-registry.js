@@ -64,9 +64,9 @@ export const preparatoryHtmlRegistry = {
         'Around Town',
         "Let's Go Shopping",
         'My Community',
-        'Have You Ever Flown in a Plane?',
-        'Life Accomplishments',
-        "What's the Matter?"
+        'Have You Ever Travelled by Plane',
+        'Young Role Models',
+        "What's Wrong"
       ].map((title, index) => ({
         id: String(index + 1),
         number: index + 1,
