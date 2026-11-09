@@ -2,7 +2,6 @@ function normalizeShortText(text) {
   return String(text || '')
     .toLowerCase()
     .replace(/https?:\/\/\S+/g, '<url>')
-    .replace(/\b\d+\b/g, '<number>')
     .replace(/[^a-z0-9\u0600-\u06ff<>]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
