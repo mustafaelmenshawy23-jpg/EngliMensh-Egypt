@@ -1718,6 +1718,19 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
     // RENDER GENERIC QUIZ QUESTIONS
     function renderQuizQuestions(containerId, questions, quizType) {
       const container = document.getElementById(containerId);
+      // A quiz is rebuilt when the learner returns to its tab. Clear stale
+      // answer locks and score for this quiz so the newly rendered controls
+      // can be answered again instead of appearing active but ignoring taps.
+      const quizPrefix = `${currentUnit}-${quizType}-`;
+      for (const key of answeredQuestions) {
+        if (key.startsWith(quizPrefix)) answeredQuestions.delete(key);
+      }
+      if (Object.prototype.hasOwnProperty.call(userScores, quizType)) {
+        userScores[quizType] = 0;
+        const scoreIds = { vocab: 'vocab-score-display', grammar: 'grammar-score-display', exam: 'exam-score-display' };
+        const scoreElement = document.getElementById(scoreIds[quizType]);
+        if (scoreElement) scoreElement.innerText = quizType === 'exam' ? 'نتيجة الاختبار: 0 / ' + questions.length : 'النتيجة: 0 / ' + questions.length;
+      }
       container.innerHTML = questions.map((qObj, qIdx) => {
         // Shuffle displayed choices while preserving the source answer index.
         const shuffledOptions = qObj.opts.map((text, originalIndex) => ({ text, originalIndex }));
