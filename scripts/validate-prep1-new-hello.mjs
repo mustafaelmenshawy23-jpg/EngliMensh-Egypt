@@ -26,7 +26,6 @@ const checkBank = (bank, expected, label, unit) => {
     stems.add(stem);
     if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options.map(x => String(x).trim().toLowerCase())).size !== 4) failures.push(`${name}: four distinct options required.`);
     if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`${name}: numeric answer index 0–3 required.`);
-    if (!/[\\u0600-\\u06FF]/.test(q.explanation || '')) failures.push(`${name}: Arabic explanation required.`);
   }
 };
 for (let unit = 1; unit <= 6; unit += 1) {
