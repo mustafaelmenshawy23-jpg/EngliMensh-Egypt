@@ -49,6 +49,15 @@ These features exist in the repository's parallel development branch, but they a
 - Extended the profile-store test to assert preservation of a preparatory Plus pathway ID. The test is included in `npm test`, but no fresh CI run exists for the current PR head yet.
 - This remains storage-layer groundwork only; it does not activate profiles or certificates in the learner UI.
 
+
+### 4C. Student profile runtime integration — 9 November 2026
+- The preparatory app entry point now imports the isolated student profile store and uses per-student progress keys scoped by stage, grade, pathway and term. Legacy progress is migrated only for a single first profile; a second profile starts with its own empty progress and cannot inherit the first student's data.
+- The active student ID persists across restarts, and the active student's last stage/grade/path is restored at launch. Switching profiles saves the current profile and reloads into the selected student's context.
+- Added learner-facing controls to create and switch student profiles, edit the active student's name, select a profile photo from the device picker/camera capture flow, and choose one of four theme palettes. Photos are resized to a maximum 512-pixel edge and stored locally as JPEG data URLs.
+- Theme variables are applied at the document root and the profile toolbar has responsive styling.
+- Automated tests now cover active-profile restoration, one-profile legacy migration and protection against legacy-progress leakage to a second profile.
+- **Not yet verified:** no fresh GitHub Actions run is confirmed for the current head after these UI/storage changes. No physical Android WebView test has been run. Certificate UI, assessment-completion tracking, and PDF export remain unintegrated; the isolated certificate eligibility logic alone does not satisfy the full certificate requirement.
+
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
 - The successful #637 CI build did **not** run external image discovery: `scripts/build-preparatory-vocabulary.mjs` only calls Openverse/Wikimedia when `FETCH_PREPARATORY_IMAGES=1`, and the workflow does not set that opt-in variable. The 630 figure is the number of unique vocabulary headwords eligible for image enrichment, not 630 completed network lookups. The generated artifact therefore contained 0 fetched photos, 80 existing SVG illustrations, and 766 records classified without an image. It also reported 100 placeholder Arabic meanings, 150 placeholder definitions, and 250 placeholder examples across 36 unit records. These are real output gaps, but the CI result does not establish that Openverse/Wikimedia searches failed.
