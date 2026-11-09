@@ -16,7 +16,7 @@ const stems = new Set();
 for (let unit = 1; unit <= 6; unit += 1) {
   const file = path.join(base, `Prep_2_New_Hello_Plus_Unit_${unit}.html`);
   const html = await readFile(file, 'utf8');
-  const match = html.match(/const grammarQuizData = (\\[[\\s\\S]*?\\]);/);
+  const match = html.match(/const grammarQuizData = (\[[\s\\S]*?\\]);/);
   if (!match) {
     failures.push(`Unit ${unit}: grammarQuizData is missing or not a JSON-compatible array.`);
     continue;
