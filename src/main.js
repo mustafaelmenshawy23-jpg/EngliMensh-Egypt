@@ -2696,6 +2696,31 @@ function render() {
   });
 }
 
+window.addEventListener('message', (event) => {
+  const frame = app.querySelector('#prep-html-frame');
+  if (!frame || event.source !== frame.contentWindow) return;
+  const report = event.data;
+  if (!report || report.type !== 'englimensh:prep-assessment-progress' ||
+      state.stage !== 'preparatory' || state.htmlModuleSelection !== 'comprehensive_test') return;
+  const unit = getSelectedPreparatoryUnit();
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  if (!unit || !course || Number(report.grade) !== state.grade ||
+      report.path !== state.path || Number(report.unitNumber) !== Number(unit.number)) return;
+  const total = Number(report.total), attempted = Number(report.attempted), correct = Number(report.correct);
+  if (!Number.isInteger(total) || total < 1 || total > 100 ||
+      !Number.isInteger(attempted) || attempted < 0 || attempted > total ||
+      !Number.isInteger(correct) || correct < 0 || correct > attempted) return;
+  const profile = activeStudent();
+  if (!profile) return;
+  const certificate = studentProfiles.issueCertificate(profile.id, {
+    term: 'first', stage: state.stage, stageLabel: stageNames[state.stage],
+    grade: state.grade, path: state.path, curriculum: course.series,
+    unitId: 'prep-' + state.grade + '-' + state.path + '-unit-' + unit.number,
+    unitTitle: unit.title
+  }, { total, attempted, correct });
+  if (certificate) render();
+});
+
 // Initial storage load and render
 loadProgressFromStorage();
 render();
