@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const builder = await readFile(new URL('./build-preparatory-vocabulary.mjs', import.meta.url), 'utf8');
+assert.match(builder, /if \(!result\) \{[\s\S]*?result = await findWikimediaImage\(word\)/, 'Wikimedia Commons must be tried when Openverse returns no suitable result, not only when its request throws.');
 const app = await readFile(new URL('../src/main.js', import.meta.url), 'utf8');
 const reviewLayer = JSON.parse(await readFile(new URL('../src/data/prep2-new-hello-reviewed-layer.json', import.meta.url), 'utf8'));
 const prep2 = await readFile(new URL('./prep2-interactive-enhancement.js', import.meta.url), 'utf8');
