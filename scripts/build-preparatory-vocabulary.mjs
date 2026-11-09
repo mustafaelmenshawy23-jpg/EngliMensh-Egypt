@@ -266,7 +266,9 @@ for (const file of files) {
   if (id.grade === 2 && id.path === 'general') {
     const reviewed = prep2ReviewLayer.units?.[String(id.unit)];
     const translations = reviewed?.vocabularyArabic || {};
+    const definitionFixes = reviewed?.definitionFixes || {};
     for (const item of unitWords) {
+      if (definitionFixes[item.word]) item.definition = definitionFixes[item.word];
       const key = item.word.toLowerCase();
       const translation = Object.entries(translations).find(([word]) => word.toLowerCase() === key)?.[1];
       if (!item.arabic && translation) item.arabic = translation;
