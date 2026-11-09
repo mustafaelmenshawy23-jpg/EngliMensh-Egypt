@@ -66,7 +66,7 @@ if (layer.units['2']?.answerKeyOverrides?.grammar?.['4']?.correctOption !== 'a')
 if (!layer.units['1']?.excludedItems?.vocabulary?.['20']) failures.push('Unit 1 ambiguous vocabulary Q20 must be excluded from scoring.');
 if (!layer.units['2']?.excludedItems?.vocabulary?.['17']) failures.push('Unit 2 duplicate-choice vocabulary Q17 must be excluded from scoring.');
 if (!layer.units['5']?.questionTextFixes?.vocabulary?.['9'] || layer.units['5']?.optionTextFixes?.vocabulary?.['9']?.b !== 'respect') failures.push('Unit 5 vocabulary Q9 must align its prompt and answer with the taught headword respect.');
-if (!layer.units['5']?.definitionFixes?.Disabled?.includes('disability')) failures.push('Unit 5 Disabled definition must use respectful, accurate wording.');
+if (!layer.units['5']?.definitionFixes?.Disabled?.includes('disabilities')) failures.push('Unit 5 Disabled definition must use respectful, accurate wording.');
 if (!layer.units['6']?.questionTextFixes?.vocabulary?.['1'] || layer.units['6']?.optionTextFixes?.vocabulary?.['1']?.b !== 'climate') failures.push('Unit 6 vocabulary Q1 must test the bank headword climate.');
 if (!layer.units['6']?.questionTextFixes?.vocabulary?.['15'] || layer.units['6']?.optionTextFixes?.vocabulary?.['15']?.b !== 'mountain') failures.push('Unit 6 vocabulary Q15 must contain a blank and a normalized answer.');
 if (!layer.units['6']?.definitionFixes?.Renewable?.includes('naturally replaced')) failures.push('Unit 6 Renewable definition must be an adjective definition.');
