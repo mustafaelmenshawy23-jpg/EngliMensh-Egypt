@@ -44,7 +44,7 @@ jobs:
             '',
             '- Units parsed: ' + report.units,
             '- Vocabulary records: ' + report.words,
-            '- New licensed photos downloaded: ' + report.openversePhotosDownloaded,
+            '- New licensed photos downloaded: ' + report.photosDownloaded,\n            '- From Openverse: ' + report.openversePhotosDownloaded,\n            '- From Wikimedia Commons: ' + report.wikimediaPhotosDownloaded,
             '- Words still without a photo: ' + report.imagesMissing,
             '- Scope: image retrieval and vocabulary image mapping only; no tests, app build, or APK build.',
             '',
