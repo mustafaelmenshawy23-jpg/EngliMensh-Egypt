@@ -2,47 +2,46 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const base = path.join(process.cwd(), 'content-imports/preparatory/hello-plus');
-const balancedJsonFixture = '[{"svg":"literal ]; inside a quoted value","options":["a","b"]}]';
-if (JSON.parse(balancedJsonFixture)[0].svg !== 'literal ]; inside a quoted value') throw new Error('Balanced JSON parser fixture failed.');
+function extractJsonValue(source, marker, label) {
+  const markerAt = source.indexOf(marker);
+  if (markerAt < 0) throw new Error(`${label}: data declaration is missing`);
+  const valueStart = markerAt + marker.length;
+  const opening = source[valueStart];
+  if (opening !== '[' && opening !== '{') throw new Error(`${label}: expected a JSON array or object`);
+  const closing = opening === '[' ? ']' : '}';
+  let depth = 0, quoted = false, escaped = false;
+  for (let index = valueStart; index < source.length; index += 1) {
+    const char = source[index];
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (char === '\\\\') escaped = true;
+      else if (char === '"') quoted = false;
+      continue;
+    }
+    if (char === '"') quoted = true;
+    else if (char === opening) depth += 1;
+    else if (char === closing && --depth === 0) {
+      return JSON.parse(source.slice(valueStart, index + 1));
+    }
+  }
+  throw new Error(`${label}: JSON value is not terminated`);
+}
+
+const balancedJsonFixture = extractJsonValue(
+  'const sample = [{"svg":"literal ]; inside a quoted value","options":["a","b"]}];',
+  'const sample = ',
+  'balanced parser self-test'
+);
+if (balancedJsonFixture[0].svg !== 'literal ]; inside a quoted value' || balancedJsonFixture[0].options.length !== 2) {
+  throw new Error('Balanced JSON parser self-test failed.');
+}
 const failures = [];
 let totalWords = 0;
 let totalQuestions = 0;
 for (let unit = 1; unit <= 6; unit += 1) {
   const file = path.join(base, `Prep_3_New_Hello_Plus_Unit_${unit}.html`);
   const html = await readFile(file, 'utf8');
-  const parse = (name) => {
-    const marker = `const ${name} = `;
-    const markerAt = html.indexOf(marker);
-    if (markerAt < 0) throw new Error(`Unit ${unit}: ${name} missing`);
-    const valueStart = markerAt + marker.length;
-    const first = html[valueStart];
-    if (first !== '[' && first !== '{') throw new Error(`Unit ${unit}: ${name} must start with an array or object`);
-    // Find the matching closing bracket while respecting quoted JSON strings.
-    // A raw indexOf('];') is unsafe because SVG/text values may contain those characters.
-    const opening = first;
-    const closing = opening === '[' ? ']' : '}';
-    let depth = 0;
-    let quoted = false;
-    let escaped = false;
-    let end = -1;
-    for (let index = valueStart; index < html.length; index += 1) {
-      const char = html[index];
-      if (quoted) {
-        if (escaped) escaped = false;
-        else if (char === '\\\\') escaped = true;
-        else if (char === '"') quoted = false;
-        continue;
-      }
-      if (char === '"') quoted = true;
-      else if (char === opening) depth += 1;
-      else if (char === closing) {
-        depth -= 1;
-        if (depth === 0) { end = index + 1; break; }
-      }
-    }
-    if (end < 0) throw new Error(`Unit ${unit}: ${name} data is not terminated`);
-    return JSON.parse(html.slice(valueStart, end));
-  };
+  const parse = (name) => extractJsonValue(html, `const ${name} = `, `Unit ${unit}: ${name}`);
   let words, questions, reading, listening, grammar, exam;
   try {
     words = parse('vocabData');
