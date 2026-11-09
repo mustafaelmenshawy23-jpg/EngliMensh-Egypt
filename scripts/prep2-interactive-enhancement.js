@@ -38,11 +38,7 @@
     target.after(wrapper);
     target = wrapper;
   }
-  // Repair the malformed Unit 6 Q6 wrapper before finding nested questions.
-  if (sectionType === 'grammar' && unit.markupRepairs?.grammar?.['6']) {
-    const malformedQ6 = [...target.querySelectorAll('.question-item')].find((item) => /^\s*6\s*[.、)]/.test(item.textContent));
-    if (malformedQ6) malformedQ6.classList.replace('question-item', 'question');
-  }
+  // Unit 6 grammar Q6 remains a source-level question-item and is intentionally excluded from active scoring.
   target.querySelectorAll('.question .question').forEach((nested) => {
     nested.parentNode.insertBefore(nested, nested.parentNode.nextSibling);
   });
