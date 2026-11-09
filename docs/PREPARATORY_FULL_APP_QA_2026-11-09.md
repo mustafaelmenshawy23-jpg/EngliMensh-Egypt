@@ -42,6 +42,13 @@ These features exist in the repository's parallel development branch, but they a
 - **Integration status: groundwork only.** The module is not yet imported by `src/main.js`; no profile picker, photo picker, student hub, theme controls, or PDF export is active on this branch as a result of this commit. The existing PR #1 implementation still requires careful UI/dependency porting and end-to-end compatibility work.
 - The test has been added to the test command but has not yet been executed by a fresh CI run on this branch head. Do not count this as passed until a real run confirms it.
 
+
+### 4B. Profile-store compatibility correction — 9 November 2026
+- Corrected profile normalization so it preserves valid pathway identifiers such as `new-hello-plus` instead of coercing every non-`advanced` pathway to `general`.
+- Progress-key components are now URL-safe encoded to prevent pathway/profile IDs containing separators from colliding in local storage.
+- Extended the profile-store test to assert preservation of a preparatory Plus pathway ID. The test is included in `npm test`, but no fresh CI run exists for the current PR head yet.
+- This remains storage-layer groundwork only; it does not activate profiles or certificates in the learner UI.
+
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
 - The successful #637 CI build did **not** run external image discovery: `scripts/build-preparatory-vocabulary.mjs` only calls Openverse/Wikimedia when `FETCH_PREPARATORY_IMAGES=1`, and the workflow does not set that opt-in variable. The 630 figure is the number of unique vocabulary headwords eligible for image enrichment, not 630 completed network lookups. The generated artifact therefore contained 0 fetched photos, 80 existing SVG illustrations, and 766 records classified without an image. It also reported 100 placeholder Arabic meanings, 150 placeholder definitions, and 250 placeholder examples across 36 unit records. These are real output gaps, but the CI result does not establish that Openverse/Wikimedia searches failed.
