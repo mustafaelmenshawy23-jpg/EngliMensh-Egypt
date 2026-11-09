@@ -156,7 +156,7 @@ function loadProgressFromStorage() {
   if (typeof window === 'undefined' || !window.localStorage) return;
   try {
     const savedProgress = studentProfiles.loadProgress(getProfileContext());
-    const raw = savedProgress === null ? window.localStorage.getItem(STORAGE_KEY) : JSON.stringify(savedProgress);
+    const raw = activeStudent() ? (savedProgress === null ? null : JSON.stringify(savedProgress)) : window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     const isPlainObject = (val) => Boolean(val && typeof val === 'object' && !Array.isArray(val));
