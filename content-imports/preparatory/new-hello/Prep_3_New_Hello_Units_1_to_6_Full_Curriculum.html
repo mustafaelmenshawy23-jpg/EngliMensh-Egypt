@@ -1047,7 +1047,7 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
           q: `Exam Question ${i+1} (Unit 2 Standards):`,
           opts: ["Neither my brother nor I was late.", "Option B", "Option C", "Option D"],
           c: 0,
-          exp: "إجابة نموذجية معتمدة وفقاً لمواصفات وزارة التربية والتعليم."
+          exp: "إجابة تدريبية مقترحة، وليست اعتماداً رسمياً من وزارة التربية والتعليم."
         }))
       },
 
@@ -1064,7 +1064,7 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
         w: w,
         pos: idx % 2 === 0 ? "noun" : "verb/adj",
         ar: `مفردة دراسية (${w})`,
-        def: `Official target vocabulary term for Prep 3 unit: ${unitTitle}.`,
+        def: `Supplementary vocabulary for the topic: ${unitTitle}. Verify against the student's textbook before teaching.`,
         ex: `We learned the word '${w}' in Mr. Mohammad El-Menshawy's class.`,
         icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="40" fill="#eff6ff" stroke="#3b82f6" stroke-width="4"/><text x="50" y="58" font-size="22" font-weight="bold" fill="#1e3a8a" text-anchor="middle">${w.substring(0,2).toUpperCase()}</text></svg>`
       }));
@@ -1075,7 +1075,7 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
         q: `${tag} Question ${i+1}: Complete the sentence with the correct choice:`,
         opts: ["Correct Ministerial Option", "Incorrect Distractor 1", "Incorrect Distractor 2", "Incorrect Distractor 3"],
         c: 0,
-        exp: "هذه الإجابة هي الصحيحة وفقاً لدليل المعلم والمواصفات الوزارية لعام 2026/2027."
+        exp: "هذه إجابة تدريبية مقترحة، وتحتاج إلى مراجعة مع مصدر المنهج قبل اعتمادها."
       }));
     }
 
