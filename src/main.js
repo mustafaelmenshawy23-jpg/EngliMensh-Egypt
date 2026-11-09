@@ -2093,6 +2093,7 @@ function render() {
             <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
             <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
           </select>
+          ${activeStudent() && Object.values(activeStudent().certificates || {}).length ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.values(activeStudent().certificates || {}).map((certificate) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span></p>').join('') + '</div></details>' : ''}
         </div>
         <span class="country-tag">EGYPTIAN CURRICULUM</span>
       </div>
