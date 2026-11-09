@@ -5,13 +5,20 @@ export const GEMINI_KEY_ENV_NAMES = Object.freeze([
   'GEMINI_API_KEY_BACKUP_3'
 ]);
 
+export const DEFAULT_GEMINI_MODEL = 'gemini-3.8-flash';
+
 export function getConfiguredGeminiKeys(env = process.env) {
   return GEMINI_KEY_ENV_NAMES
     .map((name) => [name, typeof env[name] === 'string' ? env[name].trim() : ''])
     .filter(([, value]) => value.length > 0);
 }
 
-export function getSupportedGeminiModels(preferredModel = 'gemini-2.5-flash') {
+export function getSupportedGeminiModels(preferredModel = DEFAULT_GEMINI_MODEL) {
   const preferred = typeof preferredModel === 'string' ? preferredModel.trim() : '';
-  return [...new Set([preferred || 'gemini-2.5-flash', 'gemini-2.5-flash', 'gemini-2.0-flash'])];
+  return [...new Set([preferred || DEFAULT_GEMINI_MODEL, DEFAULT_GEMINI_MODEL])];
+}
+
+export function isGeminiModelUnavailable(status, detail = '') {
+  return Number(status) === 404 &&
+    /model.*(?:no longer available|not available|not found|does not exist)/i.test(String(detail));
 }
