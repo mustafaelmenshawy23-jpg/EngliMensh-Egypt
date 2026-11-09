@@ -305,7 +305,24 @@
       : 'Your result: ' + correct + ' / ' + activeQuestions.length + ' (' + Math.round(correct / activeQuestions.length * 100) + '%).';
     if (unanswered) {
       activeQuestions.filter((question) => !question.dataset.selected).forEach((question) => { question.dataset.checked = 'false'; });
-    } else { check.hidden = true; retry.hidden = false; }
+    } else {
+      check.hidden = true;
+      retry.hidden = false;
+      if (window.parent !== window && ['vocabulary', 'grammar', 'reading', 'listening'].includes(sectionType)) {
+        try {
+          window.parent.postMessage({
+            type: 'englimensh:prep-assessment-section-progress',
+            grade: 2,
+            path: 'general',
+            unitNumber: Number(unitNumber),
+            sectionId: sectionType,
+            total: activeQuestions.length,
+            attempted: answered,
+            correct
+          }, '*');
+        } catch (error) { console.warn('Unit assessment progress could not be reported.', error); }
+      }
+    }
   });
   retry.addEventListener('click', () => {
     activeQuestions.forEach((question) => {
