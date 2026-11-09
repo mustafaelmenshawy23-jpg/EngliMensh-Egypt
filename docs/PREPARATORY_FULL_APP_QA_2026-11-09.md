@@ -38,8 +38,8 @@ These features exist in the repository's parallel development branch, but they a
 
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
-- The successful #637 build processed 630 Openverse image lookups but obtained **0 usable photos**. Its final vocabulary-output validation found 846 words, 0 photos, 80 SVG illustrations, and 766 records without an image. It also reported 100 placeholder Arabic meanings, 150 placeholder definitions, and 250 placeholder examples across 36 unit records. This is a major unresolved content/media blocker; the build being green does not mean the vocabulary/media layer is complete.
-- A normal build skips external photo enrichment unless explicitly enabled; therefore successful packaging does not imply complete real-photo coverage.
+- The successful #637 CI build did **not** run external image discovery: `scripts/build-preparatory-vocabulary.mjs` only calls Openverse/Wikimedia when `FETCH_PREPARATORY_IMAGES=1`, and the workflow does not set that opt-in variable. The 630 figure is the number of unique vocabulary headwords eligible for image enrichment, not 630 completed network lookups. The generated artifact therefore contained 0 fetched photos, 80 existing SVG illustrations, and 766 records classified without an image. It also reported 100 placeholder Arabic meanings, 150 placeholder definitions, and 250 placeholder examples across 36 unit records. These are real output gaps, but the CI result does not establish that Openverse/Wikimedia searches failed.
+- Normal builds intentionally skip external photo enrichment to remain deterministic/offline. A separate controlled enrichment pass must be run, audited for licensing/attribution and local asset availability, then followed by the output validator; successful packaging alone does not imply real-photo coverage.
 - All external image assets must have verified source/creator/license metadata and be included locally for offline use. SVGs and generic placeholders must not be counted as real photos.
 
 ## 6. Source-verification and runtime limits
