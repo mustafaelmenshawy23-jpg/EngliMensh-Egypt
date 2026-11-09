@@ -18,12 +18,12 @@ for (let unit = 1; unit <= 6; unit += 1) {
     if (end <= 0) throw new Error(`Unit ${unit}: ${name} data is not terminated`);
     return JSON.parse(html.slice(valueStart, end));
   };
-  let words, questions, reading, listening;
+  let words, questions, reading, listening, grammar, exam;
   try {
     words = parse('vocabData');
     questions = parse('vocabQuizData');
     reading = parse('readingData');
-    listening = parse('listeningData');
+    listening = parse('listeningData');\n    grammar = parse('grammarQuizData');\n    exam = parse('examData');
   } catch (error) {
     failures.push(error.message);
     continue;
@@ -36,6 +36,14 @@ for (let unit = 1; unit <= 6; unit += 1) {
       if (!/[\\u0600-\\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
     }
   }
+  if (grammar.length !== 10 || new Set(grammar.map(q => q.question)).size !== 10) failures.push(`Unit ${unit}: grammar practice must contain 10 unique MCQs.`);
+  if (exam.length !== 20 || new Set(exam.map(q => q.question)).size !== 20) failures.push(`Unit ${unit}: mixed practice test must contain 20 unique MCQs.`);
+  for (const [section, bank] of [['grammar', grammar], ['exam', exam]]) for (const [index, q] of bank.entries()) {
+    if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options).size !== 4) failures.push(`Unit ${unit} ${section} Q${index + 1}: four distinct options required.`);
+    if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`Unit ${unit} ${section} Q${index + 1}: invalid answer key.`);
+    if (/distractor term|false choice|unrelated word|incorrect choice|false term|essential curriculum term/i.test([q.question, ...(q.options || [])].join(' '))) failures.push(`Unit ${unit} ${section} Q${index + 1}: placeholder content remains.`);
+  }
+  if (!html.includes('Score: 0 / 10') || !html.includes('Exam Score: 0 / 20')) failures.push(`Unit ${unit}: grammar or exam score maximum does not match the bank.`);
   if (!Array.isArray(reading.paragraphs) || reading.paragraphs.length < 2) failures.push(`Unit ${unit}: reading passage is missing.`);
   if (!Array.isArray(listening.dialogue) || listening.dialogue.length < 4) failures.push(`Unit ${unit}: listening dialogue is missing.`);
   if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}`);
