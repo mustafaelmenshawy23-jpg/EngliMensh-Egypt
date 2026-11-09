@@ -49,6 +49,12 @@ for (let unit = 1; unit <= 6; unit += 1) {
     6: /is spoken|was built|are made|were sent|past participle/
   };
   if (!unitTopics[unit].test(combined)) failures.push(`Unit ${unit}: questions do not show expected unit grammar signals.`);
+  if (/incorrect_\\d+|distractor term|false choice|unrelated word|essential curriculum term/i.test(html)) failures.push(`Unit ${unit}: vocabulary or exam distractor placeholders remain.`);
+  for (const [index, match] of [...html.matchAll(/options': \\[([^\\]]*)\\]/g)].entries()) {
+    const values = [...match[1].matchAll(/'((?:\\\\'|[^'])*)'/g)].map(item => item[1].trim().toLowerCase());
+    if (values.length !== 4) failures.push(`Unit ${unit}: options block ${index + 1} must contain exactly four choices.`);
+    if (new Set(values).size !== values.length) failures.push(`Unit ${unit}: options block ${index + 1} contains duplicate choices.`);
+  }
   const navHas12 = html.includes('Grammar Quiz (12)');
   const scoreHas12 = html.includes('Score: 0 / 12');
   if (!navHas12 || !scoreHas12) failures.push(`Unit ${unit}: quiz labels and score maximum must both show 12.`);
