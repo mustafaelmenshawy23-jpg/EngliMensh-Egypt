@@ -118,7 +118,7 @@ const unit6RepairAt = enhancer.indexOf("const malformedQ6 = [...target.querySele
 const nestedHoistAt = enhancer.indexOf("target.querySelectorAll('.question .question')");
 if (unit6RepairAt < 0 || nestedHoistAt < 0 || unit6RepairAt > nestedHoistAt || !enhancer.includes("malformedQ6.classList.replace('question-item', 'question')")) failures.push('Only Unit 6 Q6 must be repaired before nested questions are hoisted and scored.');
 if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
-if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
+if (!enhancer.includes("const selected = question.dataset.selected") || !enhancer.includes("const key = question.dataset.correct")) failures.push('Reading/listening multiple-choice scoring must compare the selected option with the hidden correct key.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
 if (!enhancer.includes('scriptNode.hidden = true') || !enhancer.includes('Show transcript')) failures.push('Listening transcript must stay hidden until learner requests it.');
 if (!enhancer.includes('const shortAnswerBank = questions.map') || !enhancer.includes('const choicesData = [answer, ...distractors]') || !enhancer.includes("question.classList.add('prep-interactive-question');")) failures.push('All reading/listening questions must be converted to interactive multiple-choice options.');
