@@ -27,7 +27,8 @@
     "approve:unit": "node scripts/approve-unit-draft.mjs",
     "validate:approved-units": "node scripts/validate-approved-unit-drafts.mjs",
     "prebuild": "node scripts/build-preparatory-vocabulary.mjs",
-    "validate:prep2-new-hello": "node scripts/validate-prep2-new-hello-review-layer.mjs"
+    "validate:prep2-new-hello": "node scripts/validate-prep2-new-hello-review-layer.mjs",
+    "postbuild": "node scripts/validate-preparatory-vocabulary-output.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
