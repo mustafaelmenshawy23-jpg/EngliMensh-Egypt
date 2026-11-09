@@ -1465,6 +1465,122 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       ]
     };
 
+    // Unit 6 teacher-authored draft; supportive school-life language, not medical advice or an official textbook transcription.
+    unitsData[6] = {
+      title:"What's the Matter?", badge:"Unit 6",
+      vocab:[
+        ["cyberbullying","noun","التنمّر الإلكتروني","Using digital messages or online posts to hurt or threaten someone.","Schools should teach students how to report cyberbullying."],
+        ["anxious","adjective","قلق","Worried or nervous about something that may happen.","I feel anxious before an important exam."],
+        ["embarrassed","adjective","محرَج","Feeling shy or uncomfortable because of something.","He felt embarrassed after making a mistake."],
+        ["upset","adjective","منزعج / حزين","Unhappy or worried because something unpleasant happened.","She was upset when her friend moved away."],
+        ["breathe","verb","يتنفس","To take air into and out of your lungs.","Take a slow breath and try to relax."],
+        ["relax","verb","يسترخي","To become calm and less worried.","Listening to quiet music helps me relax."],
+        ["mindfulness","noun","اليقظة الذهنية / التركيز الواعي","Paying calm attention to the present moment.","Mindfulness can help students focus on the task."],
+        ["lonely","adjective","يشعر بالوحدة","Unhappy because you are alone or feel disconnected.","A new student may feel lonely at first."],
+        ["sympathetic","adjective","متعاطف","Showing that you understand and care about someone's feelings.","Our teacher was sympathetic when I explained the problem."],
+        ["supportive","adjective","مساند / داعم","Giving help, encouragement or understanding.","A supportive friend listens without laughing."],
+        ["mental health","noun phrase","الصحة النفسية","A person's emotional and psychological wellbeing.","Talking to a trusted adult can support mental health."],
+        ["advice","noun","نصيحة","An opinion about what someone should do.","My older sister gave me useful advice."],
+        ["secret","noun","سر","Information that is not known by other people.","You should not keep an unsafe secret from a trusted adult."],
+        ["share","verb","يشارك / يتقاسم","To tell someone information or let others use something.","Share your worries with someone you trust."],
+        ["problem","noun","مشكلة","A situation that needs to be solved.","We discussed the problem calmly."],
+        ["trust","verb/noun","يثق / ثقة","To believe that someone is honest and will help you.","I trust my parents and teachers."],
+        ["counselor","noun","مرشد / أخصائي إرشاد","A trained person who listens and gives guidance.","The school counselor can listen to students."],
+        ["calm","adjective/verb","هادئ / يهدأ","Peaceful and not worried or excited.","Take a moment to stay calm."],
+        ["peer pressure","noun phrase","ضغط الأقران","Influence from people of the same age to behave in a certain way.","Good friends do not use peer pressure to make you do wrong things."],
+        ["empathy","noun","التعاطف","The ability to understand how another person feels.","Empathy helps us treat others kindly."],
+        ["wellbeing","noun","العافية / الرفاه","The state of being comfortable, healthy and happy.","Sleep and friendship are important for wellbeing."],
+        ["stress","noun","ضغط نفسي / توتر","A feeling of worry caused by difficult situations.","Too much stress can make studying difficult."],
+        ["negative","adjective","سلبي","Bad or harmful; showing a lack of hope.","Negative comments can hurt other people."],
+        ["positive","adjective","إيجابي","Good, helpful or hopeful.","A positive message can encourage a friend."],
+        ["solution","noun","حل","An answer to a problem.","We worked together to find a solution."]
+      ].map(([w,pos,ar,def,ex])=>({w,pos,ar,def,ex,icon:`<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="38" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/><path d="M28 52 Q50 75 72 52" fill="none" stroke="#15803d" stroke-width="5" stroke-linecap="round"/><circle cx="38" cy="40" r="4" fill="#15803d"/><circle cx="62" cy="40" r="4" fill="#15803d"/></svg>`})),
+      vocabQuiz:[
+        {q:"Using online messages to hurt someone is ______.",opts:["cyberbullying","mindfulness","wellbeing","volunteering"],c:0,exp:"Cyberbullying هو التنمر الإلكتروني."},
+        {q:"Feeling worried or nervous means ______.",opts:["anxious","supportive","proud","peaceful"],c:0,exp:"Anxious تعني قلق."},
+        {q:"A person who gives guidance at school may be a ______.",opts:["counselor","spectator","pilot","inventor"],c:0,exp:"Counselor هو المرشد."},
+        {q:"Understanding another person's feelings is ______.",opts:["empathy","pressure","competition","pollution"],c:0,exp:"Empathy تعني التعاطف."},
+        {q:"The opposite of positive is ______.",opts:["negative","supportive","calm","helpful"],c:0,exp:"Negative عكس positive."},
+        {q:"A person who gives help and encouragement is ______.",opts:["supportive","lonely","embarrassed","anxious"],c:0,exp:"Supportive تعني داعم أو مساند."},
+        {q:"An answer to a problem is a ______.",opts:["solution","secret","stress","feeling"],c:0,exp:"Solution تعني حل."},
+        {q:"Influence from people of the same age is ______.",opts:["peer pressure","street lighting","sign language","free time"],c:0,exp:"Peer pressure تعني ضغط الأقران."},
+        {q:"To become calm and less worried means to ______.",opts:["relax","upset","share","embarrass"],c:0,exp:"Relax تعني يسترخي."},
+        {q:"The state of being comfortable and healthy is ______.",opts:["wellbeing","cyberbullying","problem","advice"],c:0,exp:"Wellbeing تعني العافية والرفاه."}
+      ],
+      grammarGuide:`
+        <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة السادسة: Giving Advice و Must / Mustn't و Might</h3>
+        <div class="space-y-4">
+          <section class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-brand-800 mb-2">1) Should / Shouldn't للنصيحة</h4>
+            <p class="text-sm text-slate-700 mb-2">Should + المصدر لتقديم نصيحة، وShouldn't + المصدر للنصيحة بعدم فعل شيء.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">You should talk to a trusted adult. / You shouldn't share your password.</p>
+          </section>
+          <section class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+            <h4 class="font-bold text-amber-900 mb-2">2) Must / Mustn't للضرورة والمنع</h4>
+            <p class="text-sm text-slate-700 mb-2">Must + المصدر للتعبير عن ضرورة أو التزام قوي. Mustn't + المصدر تعني ممنوع أو يجب ألا تفعل.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">You must respect others. / You mustn't bully your classmates.</p>
+          </section>
+          <section class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+            <h4 class="font-bold text-emerald-800 mb-2">3) Might للاحتمال</h4>
+            <p class="text-sm text-slate-700 mb-2">Might + المصدر للتعبير عن احتمال، وليس تأكيداً.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">A kind message might make your friend feel better.</p>
+            <p class="text-sm text-slate-700 mt-2">تذكّر: بعد should / shouldn't / must / mustn't / might يأتي الفعل في المصدر دون to ودون s.</p>
+          </section>
+        </div>`,
+      grammarQuiz:[
+        {q:"You ______ talk to a trusted adult if someone bullies you online.",opts:["should","shouldn't","mustn't","might not"],c:0,exp:"Should تستخدم لتقديم نصيحة مناسبة."},
+        {q:"You ______ share your password with strangers.",opts:["mustn't","should","might","can"],c:0,exp:"Mustn't تعبر عن المنع."},
+        {q:"A kind message ______ help your friend feel better.",opts:["might","mustn't","shouldn't to","are"],c:0,exp:"Might + المصدر للتعبير عن احتمال."},
+        {q:"Students ______ respect one another at school.",opts:["must","mustn't","might to","shouldn't to"],c:0,exp:"Must تعبر عن التزام قوي."},
+        {q:"You shouldn't ______ unkind comments online.",opts:["write","writes","wrote","writing"],c:0,exp:"بعد shouldn't يأتي المصدر write."},
+        {q:"Which sentence gives advice?",opts:["You should take a short break.","You mustn't enter.","It might rain.","She is a student."],c:0,exp:"Should تقدم نصيحة."},
+        {q:"He must ______ the school rules.",opts:["follow","follows","followed","following"],c:0,exp:"بعد must نستخدم المصدر."},
+        {q:"This plan might ______ the problem.",opts:["solve","solves","solved","solving"],c:0,exp:"بعد might يأتي المصدر solve."},
+        {q:"You ______ laugh at someone who feels embarrassed.",opts:["shouldn't","should","must","might"],c:0,exp:"Shouldn't نصيحة بعدم إيذاء مشاعر الآخرين."},
+        {q:"Mustn't means ______.",opts:["it is not allowed","it is a good idea","it is possible","it happened yesterday"],c:0,exp:"Mustn't تعني ممنوع أو يجب ألا."}
+      ],
+      reading:{
+        title:"Reading: Being a Supportive Friend",
+        body:"Omar noticed that his classmate Samir had become quiet and did not join group activities. Instead of making jokes, Omar listened and asked if Samir wanted to talk. Samir explained that some students had posted unkind comments in a class group online. Omar advised him not to reply angrily and suggested saving the messages and speaking to a trusted teacher. They also talked to the school counselor, who explained how to report cyberbullying safely. The teacher reminded the class that everyone must respect others and mustn't share hurtful posts. Omar's kindness helped Samir feel supported. The students agreed to send positive messages and include everyone in their activities.",
+        questions:[
+          {q:"What change did Omar notice in Samir?",opts:["He became quiet.","He won a medal.","He moved to another country.","He became the class leader."],c:0,exp:"لاحظ أنه أصبح هادئاً ولا يشارك في الأنشطة."},
+          {q:"What had some students posted?",opts:["Unkind comments online.","A science project.","A concert invitation.","A travel plan."],c:0,exp:"نشروا تعليقات غير لطيفة في مجموعة الصف."},
+          {q:"Who did they speak to for guidance?",opts:["The school counselor.","A pilot.","A shop owner.","A spectator."],c:0,exp:"تحدثوا إلى المرشد المدرسي."},
+          {q:"What did the counselor explain?",opts:["How to report cyberbullying safely.","How to fly a plane.","How to win a tournament.","How to write a song."],c:0,exp:"شرح كيفية الإبلاغ عن التنمر الإلكتروني بأمان."},
+          {q:"What did the students agree to do?",opts:["Send positive messages and include everyone.","Share hurtful posts.","Ignore all classmates.","Make fun of Samir."],c:0,exp:"اتفقوا على الرسائل الإيجابية وإشراك الجميع."}
+        ]
+      },
+      listening:{
+        title:"Listening: Asking for Advice",
+        script:[
+          {s:"Laila",t:"I feel nervous because I have to speak in front of the class."},
+          {s:"Mona",t:"You should practise with a friend before the lesson."},
+          {s:"Laila",t:"What if I forget my words?"},
+          {s:"Mona",t:"You might feel more confident if you prepare short notes."},
+          {s:"Laila",t:"That's helpful. I must remember to breathe slowly and speak clearly."}
+        ],
+        questions:[
+          {q:"Why does Laila feel nervous?",opts:["She has to speak in front of the class.","She is travelling abroad.","She has lost her bag.","She is joining an orchestra."],c:0,exp:"لأن عليها التحدث أمام الفصل."},
+          {q:"What does Mona advise her to do?",opts:["Practise with a friend.","Avoid the lesson.","Stop speaking to everyone.","Write a long story."],c:0,exp:"نصحتها بالتدرب مع صديقة."},
+          {q:"What might help Laila feel more confident?",opts:["Preparing short notes.","Sharing passwords.","Missing the lesson.","Arguing with classmates."],c:0,exp:"إعداد ملاحظات قصيرة قد يساعدها."},
+          {q:"What must Laila remember to do?",opts:["Breathe slowly and speak clearly.","Speak as fast as possible.","Forget her notes.","Leave the classroom."],c:0,exp:"تتذكر أن تتنفس ببطء وتتحدث بوضوح."},
+          {q:"Which modal verb expresses possibility?",opts:["might","mustn't","shouldn't","must"],c:0,exp:"Might تعبر عن الاحتمال."}
+        ]
+      },
+      exam:[
+        {q:"You ______ be kind to new students.",opts:["should","shouldn't","mustn't","mightn't to"],c:0,exp:"Should تقدم نصيحة أو توجيهاً."},
+        {q:"You ______ post another person's private information.",opts:["mustn't","should","might","can"],c:0,exp:"Mustn't تعبر عن المنع."},
+        {q:"This advice might ______ you feel calmer.",opts:["help","helps","helped","helping"],c:0,exp:"بعد might يأتي المصدر."},
+        {q:"A person who understands others' feelings shows ______.",opts:["empathy","stress","pressure","anger"],c:0,exp:"Empathy تعني التعاطف."},
+        {q:"The opposite of calm is ______.",opts:["upset","supportive","positive","helpful"],c:0,exp:"Upset قد تعبر عن الانزعاج عكس الهدوء في السياق."},
+        {q:"You should ______ to someone you trust.",opts:["talk","talks","talked","talking"],c:0,exp:"بعد should نستخدم المصدر."},
+        {q:"A school ______ can listen and give guidance.",opts:["counselor","spectator","pilot","inventor"],c:0,exp:"Counselor هو المرشد."},
+        {q:"Which phrase means ضغط الأقران؟",opts:["peer pressure","mental health","sign language","street lighting"],c:0,exp:"Peer pressure تعني ضغط الأقران."},
+        {q:"Students must ______ each other's privacy.",opts:["respect","respects","respected","respecting"],c:0,exp:"بعد must يأتي المصدر."},
+        {q:"The word solution means ______.",opts:["حل","سر","توتر","وحدة"],c:0,exp:"Solution تعني حل."}
+      ]
+    };
+
     // STATE VARIABLES
     let currentUnit = 1;
     let currentSubTab = 'vocab';
