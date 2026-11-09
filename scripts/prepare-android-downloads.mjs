@@ -89,16 +89,16 @@ if (!(await fs.stat(androidRoot).catch(() => null))) {
 const mainActivity = await walk(androidRoot);
 if (!mainActivity) throw new Error('Generated MainActivity.java was not found; Android project layout is unsupported.');
 const source = await fs.readFile(mainActivity, 'utf8');
-const packageMatch = source.match(/^package\\s+([A-Za-z0-9_.]+);/m);
+const packageMatch = source.match(/^package\s+([A-Za-z0-9_.]+);/m);
 if (!packageMatch) throw new Error('Could not determine the generated Android package name.');
 const packageName = packageMatch[1];
 const pluginPath = path.join(path.dirname(mainActivity), 'DownloadsPlugin.java');
-await fs.writeFile(pluginPath, 'package ' + packageName + ';\\n\\n' + javaSource, 'utf8');
+await fs.writeFile(pluginPath, 'package ' + packageName + ';\n\n' + javaSource, 'utf8');
 const importLine = 'import ' + packageName + '.DownloadsPlugin;';
 let updated = source;
-if (!updated.includes(importLine)) updated = updated.replace(/(package\\s+[A-Za-z0-9_.]+;\\s*)/, '$1\\n' + importLine + '\\nimport android.os.Bundle;');
+if (!updated.includes(importLine)) updated = updated.replace(/(package\s+[A-Za-z0-9_.]+;\s*)/, '$1\n' + importLine + '\nimport android.os.Bundle;');
 if (!updated.includes('registerPlugin(DownloadsPlugin.class)')) {
-  updated = updated.replace(/public class MainActivity extends BridgeActivity\\s*\\{\\s*\\}/, 'public class MainActivity extends BridgeActivity {\\n    @Override\\n    public void onCreate(Bundle savedInstanceState) {\\n        registerPlugin(DownloadsPlugin.class);\\n        super.onCreate(savedInstanceState);\\n    }\\n}');
+  updated = updated.replace(/public class MainActivity extends BridgeActivity\s*\{\s*\}/, 'public class MainActivity extends BridgeActivity {\n    @Override\n    public void onCreate(Bundle savedInstanceState) {\n        registerPlugin(DownloadsPlugin.class);\n        super.onCreate(savedInstanceState);\n    }\n}');
 }
 if (!updated.includes('registerPlugin(DownloadsPlugin.class)')) throw new Error('Could not safely register the Downloads plugin in MainActivity.');
 await fs.writeFile(mainActivity, updated, 'utf8');
