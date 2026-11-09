@@ -3,20 +3,18 @@
 ## Verified source
 `content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_6_Complete.html`
 
-A fresh recount of the actual question containers in the imported HTML corrects the previous inventory correction. The earlier correction incorrectly counted 30 grammar questions. The source contains **29 grammar question containers**, numbered 1–5 and 7–30; **Grammar Quiz question 6 is absent**.
+A fresh recount found 29 normal grammar question containers, numbered 1–5 and 7–30. The source also contains a malformed `question-item` for Q6. It is intentionally **excluded from the learner-facing assessment** until it can be checked against an authoritative source. No replacement question is written.
 
-| Section | Expected | Counted |
+| Section | Expected source count | Active learner-facing count |
 |---|---:|---:|
 | Vocabulary Quiz | 25 | 25 |
-| Grammar Quiz | 30 | 29 |
+| Grammar Quiz | 30 | 29 (Q6 excluded) |
 | Reading Comprehension | 5 | 5 |
 | Listening Comprehension | 5 | 5 |
 | **Total** | **65** | **64** |
 
-## Official-source requirement
-The repository copy of the official Prep 2 textbook PDF is currently a Git LFS pointer, not readable PDF content. Therefore the missing Grammar Quiz Q6 cannot yet be reconstructed or verified against the official student book or teacher guide. **Do not invent a replacement question, options, answer key, translation, or explanation.**
-
-The next required action is to obtain the readable official source page containing Unit 6 Comparative and Superlative Adjectives, transcribe the exact question and four choices, and independently verify the keyed answer and age/unit-appropriate explanation before adding it to the app-facing review layer. Keep the imported HTML unchanged and record the source page/section used.
+## App behavior
+The review layer no longer repairs Q6's malformed wrapper into a scored question. The section quiz counts only the 29 valid grammar questions, and the score denominator is derived from the active questions. The assessment bridge reports the actual active question count, so the learner is not penalized for the excluded item.
 
 ## Scope note
-This report verifies the imported HTML inventory only. It does not certify the academic correctness of the other 64 questions, answer keys, translations, or grammar explanations. Those still require official-source/teacher-guide review.
+This is an explicit content exclusion, not academic approval of the remaining 64 questions, answer keys, translations, or grammar explanations. Those still require the separate curriculum audit.
