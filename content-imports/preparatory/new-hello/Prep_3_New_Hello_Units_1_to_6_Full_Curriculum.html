@@ -1108,6 +1108,127 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       };
     }
 
+    // Reviewed teacher-authored draft content for Unit 3.
+    // It is topic-aligned practice, not a verbatim/official Ministry transcription.
+    unitsData[3] = {
+      title: "My Community", badge: "Unit 3",
+      vocab: [
+        ["community","noun","مجتمع","A group of people who live in the same area or share interests.","Our community works together to keep the streets clean."],
+        ["neighborhood","noun","حيّ / منطقة سكنية","The area around the place where someone lives.","There is a small park in my neighborhood."],
+        ["facility","noun","مرفق / خدمة","A place or service provided for people to use.","The sports facility is open to all young people."],
+        ["leisure","noun","وقت الفراغ","Time when you are not working and can relax or enjoy activities.","I read books in my leisure time."],
+        ["pavement","noun","رصيف المشاة","A path at the side of a road for people to walk on.","Please walk on the pavement, not in the road."],
+        ["disabled","adjective","ذو إعاقة","Having a condition that makes some activities more difficult.","The centre has a special entrance for disabled visitors."],
+        ["accessible","adjective","سهل الوصول إليه / مهيأ","Easy to reach, enter, or use.","The library is accessible to wheelchair users."],
+        ["initiative","noun","مبادرة","A new plan or action intended to solve a problem.","Students started an initiative to plant trees."],
+        ["Decent Life","proper noun","حياة كريمة","An Egyptian national initiative to improve services in villages.","Decent Life helps improve services in rural communities."],
+        ["equal opportunities","noun phrase","فرص متكافئة","The same chances for everyone to succeed.","Every child should have equal opportunities to learn."],
+        ["encourage","verb","يشجّع","To give someone support or confidence to do something.","Our teacher encourages us to help others."],
+        ["improve","verb","يحسّن / يطوّر","To make something better.","New street lights can improve safety."],
+        ["street lighting","noun phrase","إنارة الشوارع","Lights placed along streets after dark.","Street lighting makes the road safer at night."],
+        ["public services","noun phrase","خدمات عامة","Services provided for everyone, often by the government.","Clean water and transport are important public services."],
+        ["social networking","noun phrase","التواصل عبر الشبكات الاجتماعية","Using online platforms to communicate with people.","Social networking can help neighbours share useful news."],
+        ["volunteer","noun / verb","متطوّع / يتطوّع","A person who works willingly without being paid; or to do such work.","Many students volunteer to clean the local park."],
+        ["survey","noun","استطلاع / استبيان","A set of questions used to collect people's opinions.","We did a survey about the needs of our neighborhood."],
+        ["resident","noun","مقيم / ساكن","A person who lives in a particular place.","Each resident can help keep the area tidy."],
+        ["clean-up","noun","حملة تنظيف","An activity in which people remove rubbish from an area.","The school organised a beach clean-up."],
+        ["local","adjective","محلي / قريب","Connected with a particular area or town.","We buy vegetables from the local market."],
+        ["proud","adjective","فخور","Feeling pleased because of something good you or others have done.","We are proud of our community project."],
+        ["elderly","adjective","كبير السن","Used to describe people who are old.","Volunteers helped elderly people cross the street."],
+        ["project","noun","مشروع","A planned piece of work with a particular aim.","Our class project is to paint the school wall."],
+        ["bench","noun","مقعد","A long seat for two or more people.","My grandfather rests on a bench in the garden."],
+        ["shelter","noun","مأوى / مكان للحماية","A place that protects people from danger or bad weather.","The bus shelter protects passengers from the sun."]
+      ].map(([w,pos,ar,def,ex]) => ({w,pos,ar,def,ex,icon:`<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/><path d="M25 58 L50 35 L75 58 V78 H25Z" fill="#60a5fa" stroke="#1e40af" stroke-width="3"/><rect x="44" y="60" width="12" height="18" fill="#fff"/></svg>`})),
+      vocabQuiz: [
+        {q:"A group of people living in the same area is a ______.",opts:["community","competition","passenger","instrument"],c:0,exp:"Community تعني مجتمعاً أو مجموعة سكان منطقة واحدة."},
+        {q:"The area where you live is your ______.",opts:["neighborhood","orchestra","shelter","survey"],c:0,exp:"Neighborhood تعني الحي أو المنطقة السكنية."},
+        {q:"A path beside a road for people to walk on is a ______.",opts:["pavement","ceiling","platform","bridge"],c:0,exp:"Pavement هو رصيف المشاة."},
+        {q:"A new plan to solve a problem is an ______.",opts:["initiative","instrument","invention","invitation"],c:0,exp:"Initiative تعني مبادرة."},
+        {q:"A person who lives in a place is a ______.",opts:["resident","visitor","pilot","spectator"],c:0,exp:"Resident هو الشخص المقيم في المكان."},
+        {q:"People who work willingly without pay ______.",opts:["volunteer","complain","borrow","compete"],c:0,exp:"Volunteer تعني يتطوع أو متطوع."},
+        {q:"A set of questions used to collect opinions is a ______.",opts:["survey","shelter","project","facility"],c:0,exp:"Survey هو استطلاع أو استبيان."},
+        {q:"Street ______ helps people see roads at night.",opts:["lighting","networking","leisure","rubbish"],c:0,exp:"Street lighting تعني إنارة الشوارع."},
+        {q:"Easy to reach or use means ______.",opts:["accessible","elderly","crowded","proud"],c:0,exp:"Accessible تعني سهل الوصول إليه أو استخدامه."},
+        {q:"The opposite of improve is ______.",opts:["make worse","encourage","support","develop"],c:0,exp:"Make worse تعني يجعل الشيء أسوأ."}
+      ],
+      grammarGuide: `
+        <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الثالثة: الترتيبات المستقبلية والخطط</h3>
+        <div class="space-y-4">
+          <section class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-brand-800 mb-2">1) Present Continuous للمواعيد والترتيبات المتفق عليها</h4>
+            <p class="text-sm text-slate-700 mb-2">نستخدم am / is / are + verb-ing للحديث عن ترتيب مستقبلي محدد، وغالباً نذكر وقتاً أو موعداً.</p>
+            <p class="en-text text-sm bg-white p-3 rounded-lg">We are meeting the volunteers tomorrow. / She is visiting the community centre on Friday.</p>
+            <p class="text-sm text-slate-700 mt-2">النفي: am not / isn't / aren't + verb-ing. السؤال: Am / Is / Are + subject + verb-ing?</p>
+          </section>
+          <section class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+            <h4 class="font-bold text-amber-900 mb-2">2) Be going to للنوايا والخطط والنتائج المتوقعة بدليل</h4>
+            <p class="text-sm text-slate-700 mb-2">نستخدم am / is / are going to + infinitive عندما تكون لدينا نية أو خطة، أو دليل واضح على شيء سيحدث.</p>
+            <p class="en-text text-sm bg-white p-3 rounded-lg">We are going to plant trees next week. / Look at those dark clouds! It is going to rain.</p>
+          </section>
+          <section class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+            <h4 class="font-bold text-emerald-800 mb-2">3) الفرق السريع</h4>
+            <ul class="list-disc pr-5 text-sm text-slate-700 space-y-1">
+              <li>ترتيب مؤكد مع شخص أو موعد: Present Continuous.</li>
+              <li>نية أو خطة شخصية: be going to.</li>
+              <li>بعد going to يأتي الفعل في المصدر دون to إضافية.</li>
+            </ul>
+            <p class="en-text text-sm bg-white p-3 rounded-lg mt-2">I'm meeting Ali at 5. (arrangement) / I'm going to help my neighbours. (intention)</p>
+          </section>
+        </div>`,
+      grammarQuiz: [
+        {q:"We ______ the community centre at 10 tomorrow. (arrangement)",opts:["are visiting","visit","visited","visits"],c:0,exp:"ترتيب محدد في المستقبل؛ نستخدم are + visiting."},
+        {q:"Mona is ______ to plant flowers this weekend.",opts:["going","go","goes","gone"],c:0,exp:"التركيب الصحيح is going to + مصدر."},
+        {q:"Look at the dark clouds! It ______ rain.",opts:["is going to","are going to","going to","is go to"],c:0,exp:"وجود دليل واضح يجعل going to مناسباً، والفاعل It مفرد."},
+        {q:"They ______ the elderly tomorrow afternoon. (arranged)",opts:["are helping","helps","helped","is helping"],c:0,exp:"They تأخذ are، ومع الترتيب نستخدم helping."},
+        {q:"I ______ a survey next week; I have already planned it.",opts:["am going to do","does","did","am do"],c:0,exp:"خطة مستقبلية؛ am going to + do."},
+        {q:"Choose the correct question.",opts:["Are you meeting the volunteers?","Do you meeting the volunteers?","Are you meet the volunteers?","Is you meeting the volunteers?"],c:0,exp:"السؤال في المضارع المستمر يبدأ بـ Are مع you."},
+        {q:"She ______ visit her grandmother on Friday. (intention)",opts:["is going to","are going to","going","is go"],c:0,exp:"She + is going to + المصدر."},
+        {q:"We aren't ______ a clean-up today.",opts:["organising","organise","organised","organises"],c:0,exp:"بعد aren't نستخدم الفعل + ing."},
+        {q:"Which sentence describes a fixed arrangement?",opts:["I'm meeting the team at 4 p.m.","I want to meet the team.","I may meet the team.","I met the team yesterday."],c:0,exp:"موعد محدد متفق عليه؛ Present Continuous."},
+        {q:"He is going to ______ the local park.",opts:["improve","improves","improved","improving"],c:0,exp:"بعد going to نستخدم المصدر improve."}
+      ],
+      reading: {
+        title:"Reading: A Better Neighbourhood",
+        body:"Last month, students at Al-Nour Preparatory School noticed that the small park in their neighborhood was full of litter. They spoke to local residents and completed a short survey. Most residents wanted more rubbish bins, better street lighting and a safe place for elderly people to sit. The students shared their results with the community centre. On Friday, volunteers are meeting at the park for a clean-up. The school is going to provide gloves and rubbish bags. A local shop has also promised to donate two benches. The students believe that small actions can improve public spaces when people work together.",
+        questions:[
+          {q:"What problem did the students notice?",opts:["The park was full of litter.","The school had no books.","The road was closed.","The shop was far away."],c:0,exp:"ذكر النص أن الحديقة كانت مليئة بالمخلفات."},
+          {q:"How did the students collect residents' opinions?",opts:["They completed a survey.","They watched a film.","They sent an exam.","They read a novel."],c:0,exp:"استخدم الطلاب استبياناً قصيراً."},
+          {q:"What did residents want for elderly people?",opts:["A safe place to sit.","A new swimming pool.","A bigger classroom.","A train station."],c:0,exp:"طلب السكان مكاناً آمناً يجلس فيه كبار السن."},
+          {q:"When are volunteers meeting at the park?",opts:["On Friday.","Last month.","Every Sunday.","Next year."],c:0,exp:"ورد في النص: On Friday."},
+          {q:"What will the local shop donate?",opts:["Two benches.","Gloves and bags.","Rubbish bins.","Street lights."],c:0,exp:"المتجر المحلي وعد بالتبرع بمقعدين."}
+        ]
+      },
+      listening: {
+        title:"Listening: Planning a Community Clean-up",
+        script:[
+          {s:"Mariam",t:"Our neighborhood park needs cleaning. There is litter near the benches."},
+          {s:"Omar",t:"I agree. We are meeting the youth group on Saturday at nine."},
+          {s:"Mariam",t:"Good idea. I'm going to bring rubbish bags and gloves."},
+          {s:"Omar",t:"I'll ask the local shop to provide drinking water."},
+          {s:"Mariam",t:"Let's invite our neighbours and help elderly residents too."}
+        ],
+        questions:[
+          {q:"What needs cleaning?",opts:["The neighborhood park.","The school library.","The sports hall.","The bus station."],c:0,exp:"مريم قالت إن حديقة الحي تحتاج إلى تنظيف."},
+          {q:"When are they meeting?",opts:["Saturday at nine.","Friday at six.","Sunday at ten.","Monday at eight."],c:0,exp:"موعد اللقاء Saturday at nine."},
+          {q:"What is Mariam going to bring?",opts:["Rubbish bags and gloves.","Books and pens.","Food and chairs.","Paint and brushes."],c:0,exp:"ستحضر أكياس المخلفات والقفازات."},
+          {q:"Who will Omar ask for drinking water?",opts:["The local shop.","The school doctor.","The bus driver.","The librarian."],c:0,exp:"سيسأل المتجر المحلي عن مياه الشرب."},
+          {q:"Who do they also want to help?",opts:["Elderly residents.","Tourists only.","New teachers.","Drivers."],c:0,exp:"اتفقا على مساعدة السكان كبار السن أيضاً."}
+        ]
+      },
+      exam:[
+        {q:"A person who lives in a particular area is a ______.",opts:["resident","spectator","pilot","inventor"],c:0,exp:"Resident تعني ساكناً أو مقيماً."},
+        {q:"The school ______ a clean-up next Saturday. (arrangement)",opts:["is organising","organise","organised","organises yesterday"],c:0,exp:"ترتيب مستقبلي محدد؛ is organising."},
+        {q:"The new ramp makes the building ______ for wheelchair users.",opts:["accessible","anxious","crowded","ordinary"],c:0,exp:"Accessible تعني مهيأ وسهل الوصول."},
+        {q:"We are going to ______ the playground.",opts:["repair","repairs","repaired","repairing"],c:0,exp:"بعد going to نستخدم المصدر."},
+        {q:"A ______ is used to collect people's opinions.",opts:["survey","bench","shelter","pavement"],c:0,exp:"Survey هو الاستبيان."},
+        {q:"Which phrase means وقت الفراغ؟",opts:["leisure time","street lighting","public service","equal chance"],c:0,exp:"Leisure time تعني وقت الفراغ."},
+        {q:"Look! The boys ______ the trees now.",opts:["are watering","is watering","watered tomorrow","waters"],c:0,exp:"الفاعل جمع؛ are watering."},
+        {q:"The opposite of local is ______.",opts:["international","nearby","community","public"],c:0,exp:"International تعني دولي، وهي عكس local في هذا السياق."},
+        {q:"Volunteers work ______ they want to help.",opts:["because","although","unless","but"],c:0,exp:"Because تربط السبب."},
+        {q:"The word elderly describes people who are ______.",opts:["old","very young","careless","angry"],c:0,exp:"Elderly تعني كبار السن."}
+      ]
+    };
+
     // STATE VARIABLES
     let currentUnit = 1;
     let currentSubTab = 'vocab';
