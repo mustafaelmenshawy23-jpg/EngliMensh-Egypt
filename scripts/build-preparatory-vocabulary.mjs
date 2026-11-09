@@ -396,7 +396,7 @@ if (process.env.FETCH_PREPARATORY_IMAGES !== '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
   console.log('Skipped external image lookups. Set FETCH_PREPARATORY_IMAGES=1 to run the optional image-enrichment pass.');
-} else await mapLimit(imageWords, 1, async (word) => {
+} else await mapLimit(imageWords, 3, async (word) => {
   let result = null;
   try {
     result = await findOpenverseImage(word);
