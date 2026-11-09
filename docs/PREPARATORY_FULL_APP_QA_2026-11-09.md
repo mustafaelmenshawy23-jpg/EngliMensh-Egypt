@@ -56,7 +56,9 @@ These features exist in the repository's parallel development branch, but they a
 - Added learner-facing controls to create and switch student profiles, edit the active student's name, select a profile photo from the device picker/camera capture flow, and choose one of four theme palettes. Photos are resized to a maximum 512-pixel edge and stored locally as JPEG data URLs.
 - Theme variables are applied at the document root and the profile toolbar has responsive styling.
 - Automated tests now cover active-profile restoration, one-profile legacy migration and protection against legacy-progress leakage to a second profile.
-- **Not yet verified:** no fresh GitHub Actions run is confirmed for the current head after these UI/storage changes. No physical Android WebView test has been run. Certificate UI, assessment-completion tracking, and PDF export remain unintegrated; the isolated certificate eligibility logic alone does not satisfy the full certificate requirement.
+- Unit-certificate issuance is now connected to the reviewed interactive unit-assessment screens that use the parent app's question state. It counts every answered question, awards only at 90% or above, stores the student's name/photo and curriculum/unit details, displays the certificate in the assessment view, and lists earned certificates in that student's profile menu.
+- **Scope limit:** imported preparatory HTML lessons currently run in sandboxed iframes and do not yet report their assessment state to the parent app. Certificate issuance is therefore not yet wired to all 31 imported preparatory units. PDF export to Android Downloads is also not yet integrated.
+- **Not yet verified:** no fresh GitHub Actions run is confirmed for the current head after these UI/storage changes. No physical Android WebView test has been run.
 
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
