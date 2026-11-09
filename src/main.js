@@ -113,6 +113,39 @@ if (savedStudentContext) {
   }
 }
 
+
+function renderStudentCertificateStatus(draft, book, unit, questions) {
+  const profile = activeStudent();
+  if (!profile || !Array.isArray(questions) || !questions.length) {
+    return '<p class="unit-source-note">A student profile and a complete unit assessment are required for a certificate.</p>';
+  }
+  const answers = questions.map((question) => getQuestionState(question.itemId));
+  const attempted = answers.filter((answer) => typeof answer.choice === 'string' && answer.choice.length > 0).length;
+  const correct = answers.filter((answer) => answer.isCorrect).length;
+  const score = Math.round(correct / questions.length * 100);
+  const certificate = studentProfiles.issueCertificate(profile.id, {
+    term: 'first',
+    stage: state.stage,
+    stageLabel: stageNames[state.stage] || state.stage,
+    grade: state.grade,
+    path: state.path,
+    curriculum: book.series || book.title || book.id,
+    unitId: book.id + '-unit-' + unit.number,
+    unitTitle: unit.title
+  }, { total: questions.length, attempted, correct });
+  if (!certificate) {
+    return '<section class="certificate-progress-card"><h3>Certificate progress</h3><p>Answered: ' + attempted + ' / ' + questions.length + '</p><p>Current score: ' + correct + ' / ' + questions.length + ' (' + score + '%)</p><p>Answer every question and earn at least 90% to unlock your certificate.</p></section>';
+  }
+  return '<section class="certificate-card" aria-label="Certificate of Excellence"><div class="certificate-student-photo">' +
+    (certificate.studentPhoto ? '<img src="' + escapeHtml(certificate.studentPhoto) + '" alt="Student portrait">' : '<span>Student Photo</span>') +
+    '</div><div class="certificate-text"><p class="certificate-kicker">ENGLIMENSH · EGYPT</p><p>This certificate is proudly presented to</p><h2>' +
+    escapeHtml(certificate.studentName) + '</h2><p>For successfully completing</p><h3 class="certificate-unit">' +
+    escapeHtml(certificate.unit) + '</h3><p>' + escapeHtml(certificate.stage) + ' · Grade ' + certificate.grade + ' · ' +
+    escapeHtml(certificate.curriculum) + '</p><strong class="certificate-score">' + certificate.score +
+    '%</strong><p class="certificate-message">Excellent work! Keep learning, keep growing, and believe in yourself.</p><small>Completed: ' +
+    new Date(certificate.completedAt).toLocaleDateString('en-GB') + '</small></div></section>';
+}
+
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
   if (!val) return { choice: null, isCorrect: false, wrongChoices: [] };
@@ -1216,7 +1249,7 @@ function renderUnitWorkspace() {
           </div>
         `;
       } else if (state.activeModule === 'comprehensive_test') {
-        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}`;
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}${renderStudentCertificateStatus(activeUnitDraft, book, unit, tests)}`;
       } else if (state.activeModule === 'games') {
         bodyHtml = `
           <div class="games-grid">
@@ -1834,7 +1867,7 @@ function renderUnitWorkspace() {
         `;
       } else if (state.activeModule === 'comprehensive_test') {
         const tests = getItems('comprehensive_test');
-        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test', 'Question')}`;
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test', 'Question')}${renderStudentCertificateStatus(activeUnitDraft, book, unit, tests)}`;
       }
     } else {
       bodyHtml = `
