@@ -149,6 +149,7 @@ async function buildSectionViewers(files) {
     const lessonPath = lessonMatch?.[2] ? 'advanced' : 'general';
     const lessonUnitNumber = Number(lessonMatch?.[3] || 0);
     const hasLegacyAssessment = Boolean(lessonMatch && /function\s+handleQuizAnswer/.test(source) && /const\s+examData\s*=/.test(source) && /const\s+answered\s*=/.test(source));
+    const isPrep3Combined = path.basename(file) === 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html';
     const prep1Route = isPrep1General ? `<script>
 (() => {
   const moduleTabs = {
@@ -198,8 +199,37 @@ async function buildSectionViewers(files) {
   };
 })();
 </script>\n\` : '';
+    const prep3AssessmentBridge = isPrep3Combined ? \`<script>
+(() => {
+  const original = window.checkAnswer;
+  if (typeof original !== 'function' || window.__ENGLIMENSH_PREP3_CERTIFICATE_BRIDGE__) return;
+  window.__ENGLIMENSH_PREP3_CERTIFICATE_BRIDGE__ = true;
+  window.checkAnswer = function(quizType, questionIndex, chosenIndex, correctIndex, explanation) {
+    const result = original.apply(this, arguments);
+    if (quizType === 'exam' && window.parent !== window) {
+      try {
+        const prefix = String(currentUnit) + '-exam-';
+        const attempted = [...answeredQuestions].filter((key) => key.startsWith(prefix)).length;
+        const total = unitsData[currentUnit].exam.length;
+        if (total > 0 && attempted === total) {
+          window.parent.postMessage({
+            type: 'englimensh:prep-assessment-progress',
+            grade: 3,
+            path: 'general',
+            unitNumber: currentUnit,
+            total,
+            attempted,
+            correct: userScores.exam
+          }, '*');
+        }
+      } catch (error) { console.warn('Prep 3 assessment progress could not be reported.', error); }
+    }
+    return result;
+  };
+})();
+</script>\\n\` : '';
     const marker = /<\\/body>/i;
-    const injected = prep1Route + prep1AssessmentBridge + enhancement;
+    const injected = prep1Route + prep1AssessmentBridge + prep3AssessmentBridge + enhancement;
     const output = marker.test(source) ? source.replace(marker, injected + '\n</body>') : source + injected;
     await fs.writeFile(path.join(outputDir, path.basename(file)), output);
   }
