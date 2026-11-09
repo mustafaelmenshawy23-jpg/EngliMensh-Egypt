@@ -38,6 +38,15 @@ for (let unit = 1; unit <= 6; unit += 1) {
   totalWords += sourceWords.length;
 }
 if (layer.status !== 'translation-draft-needs-official-source-review') failures.push('Review layer must remain marked as draft pending official-source verification.');
+if (layer.units['1']?.answerKeyOverrides?.grammar?.['17']?.correctOption !== 'a') failures.push('Unit 1 Q17 must use option a (arrive).');
+if (layer.units['1']?.answerKeyOverrides?.grammar?.['23']?.correctOption !== 'a') failures.push('Unit 1 Q23 must use option a (make).');
+if (layer.units['1']?.questionTextFixes?.grammar?.['12'] !== 'My father always .......... to work.') failures.push('Unit 1 Q12 must remove the editorial residue.');
+if (layer.units['2']?.answerKeyOverrides?.grammar?.['4']?.correctOption !== 'a') failures.push('Unit 2 Q4 must have one unique correct option.');
+for (let question = 20; question <= 30; question += 1) {
+  if (layer.units['3']?.answerKeyOverrides?.grammar?.[String(question)]?.correctOption !== 'a') failures.push(`Unit 3 Q${question} must override the incorrect source key to option a.`);
+}
+if (!layer.units['6']?.markupRepairs?.grammar?.['6']) failures.push('Unit 6 Q6 markup repair is missing.');
+
 if (failures.length) {
   console.error('Prep 2 New Hello review-layer validation failed:');
   for (const failure of failures) console.error(' - ' + failure);
