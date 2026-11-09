@@ -38,26 +38,29 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           const data = JSON.parse(fs.readFileSync('src/data/preparatory-vocabulary.json', 'utf8'));
-          const report = data.imageReport;
+          const report = data.imageReport ?? {};
           const lines = [
             '# Preparatory vocabulary image enrichment report',
             '',
-            '- Units parsed: ' + report.units,
-            '- Vocabulary records: ' + report.words,
-            '- New licensed photos downloaded: ' + report.photosDownloaded,\n            '- From Openverse: ' + report.openversePhotosDownloaded,\n            '- From Wikimedia Commons: ' + report.wikimediaPhotosDownloaded,
-            '- Words still without a photo: ' + report.imagesMissing,
+            '- Units parsed: ' + (report.units ?? Object.keys(data.units ?? {}).length),
+            '- Vocabulary records: ' + (report.words ?? 0),
+            '- New licensed photos downloaded: ' + (report.photosDownloaded ?? 0),
+            '- From Openverse: ' + (report.openversePhotosDownloaded ?? 0),
+            '- From Wikimedia Commons: ' + (report.wikimediaPhotosDownloaded ?? 0),
+            '- Words still without a photo: ' + (report.imagesMissing ?? 'not reported'),
             '- Scope: image retrieval and vocabulary image mapping only; no tests, app build, or APK build.',
             '',
             '## Unit-level image inventory',
             ''
           ];
-          for (const [key, unit] of Object.entries(data.units)) {
-            const photos = unit.words.filter(x => x.imageType === 'photo').length;
-            const svg = unit.words.filter(x => x.imageType === 'svg-illustration').length;
-            const missing = unit.words.filter(x => x.imageType === 'missing').length;
-            lines.push('- ' + key + ': ' + unit.words.length + ' words; ' + photos + ' photos; ' + svg + ' SVG illustrations; ' + missing + ' missing.');
+          for (const [key, unit] of Object.entries(data.units ?? {})) {
+            const words = unit.words ?? [];
+            const photos = words.filter(x => x.imageType === 'photo').length;
+            const svg = words.filter(x => x.imageType === 'svg-illustration').length;
+            const missing = words.filter(x => x.imageType === 'missing').length;
+            lines.push('- ' + key + ': ' + words.length + ' words; ' + photos + ' photos; ' + svg + ' SVG illustrations; ' + missing + ' missing.');
           }
-          fs.writeFileSync('vocabulary-image-report.md', lines.join('\n') + '\n');
+          fs.writeFileSync('vocabulary-image-report.md', lines.join('\\n') + '\\n');
           NODE
 
       - name: Commit only vocabulary photos and their data map
@@ -69,7 +72,8 @@ jobs:
             echo "No vocabulary image assets or mapping changes to commit."
           else
             git commit -m "Add licensed preparatory vocabulary photos"
-            git push origin HEAD:${{ github.ref_name }}
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin HEAD:"${{ github.ref_name }}"
           fi
 
       - name: Upload image report
