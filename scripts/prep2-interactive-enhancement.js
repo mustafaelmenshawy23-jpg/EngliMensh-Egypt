@@ -40,7 +40,8 @@
   }
   // Repair the malformed Unit 6 Q6 wrapper before finding nested questions.
   if (sectionType === 'grammar' && unit.markupRepairs?.grammar?.['6']) {
-    target.querySelectorAll('.question-item').forEach((item) => item.classList.replace('question-item', 'question'));
+    const malformedQ6 = [...target.querySelectorAll('.question-item')].find((item) => /^\s*6\s*[.、)]/.test(item.textContent));
+    if (malformedQ6) malformedQ6.classList.replace('question-item', 'question');
   }
   target.querySelectorAll('.question .question').forEach((nested) => {
     nested.parentNode.insertBefore(nested, nested.parentNode.nextSibling);
