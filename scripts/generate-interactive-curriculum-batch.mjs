@@ -18,7 +18,7 @@ try {
 
 const requestedStart = process.env.START_INDEX?.trim();
 const batchSize = Number(process.env.BATCH_SIZE || 5);
-const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
 const configuredGeminiKeys = getConfiguredGeminiKeys();
 if (!configuredGeminiKeys.length) {
