@@ -68,7 +68,7 @@
     .prep-quiz-option.selected { border:2px solid #2563eb; background:#eff6ff; }
     .prep-quiz-option.correct { border:2px solid #15803d; background:#f0fdf4; }
     .prep-quiz-option.incorrect { border:2px solid #b91c1c; background:#fef2f2; }
-    .prep-quiz-option:disabled { cursor:default; opacity:1; }\n    .prep-answer-input { width:100%; max-width:520px; padding:12px; border:1px solid #94a3b8; border-radius:9px; font:inherit; }\n    .prep-answer-input:disabled { background:#f1f5f9; color:#172033; }
+    .prep-quiz-option:disabled { cursor:default; opacity:1; }\n    .prep-answer-input { width:100%; max-width:520px; padding:12px; border:1px solid #94a3b8; border-radius:9px; font:inherit; }\n    .prep-answer-input:disabled { background:#f1f5f9; color:#172033; }\n    .answer-correct { border-color:#15803d !important; background:#f0fdf4 !important; }\n    .answer-incorrect { border-color:#b91c1c !important; background:#fef2f2 !important; }
     .prep-quiz-status { margin:16px 0; padding:12px; border-radius:9px; background:#f1f5f9; font-weight:600; }
     .prep-quiz-check,.prep-quiz-retry { margin:6px 8px 12px 0; padding:11px 18px; border:0; border-radius:9px; background:#1d4ed8; color:white; font-weight:700; cursor:pointer; }
   `;
@@ -97,7 +97,7 @@
     }
     if (sectionType === 'reading' || sectionType === 'listening') {
       const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
-      if (!answerNode) return;
+      if (answerNode) {
       const answer = answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim();
       const original = question.cloneNode(true);
       original.querySelectorAll('strong,b').forEach((node) => node.remove());
@@ -113,6 +113,7 @@
       question.dataset.checked = 'false';
       question.classList.add('prep-interactive-question','prep-short-answer');
       return;
+      }
     }
     const optionsBox = question.querySelector('.options');
     if (!optionsBox) return;
