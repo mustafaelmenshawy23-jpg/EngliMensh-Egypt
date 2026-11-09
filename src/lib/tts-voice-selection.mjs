@@ -10,7 +10,7 @@ export function chooseSpeakerVoice(voices, preferences, gender) {
   const preferredId = preferences?.[gender];
   if (preferredId) {
     const preferred = voices.find((voice) => voice.id === preferredId);
-    if (preferred) return preferred;
+    if (preferred?.gender === gender) return preferred;
   }
   return voices.find((voice) => voice.gender === gender) || null;
 }
