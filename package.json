@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "lint": "vite build",
-    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs && node scripts/test-gemini-config.mjs && node scripts/test-tts-voice-selection.mjs && node scripts/validate-approved-unit-drafts.mjs && node scripts/test-preparatory-learning.mjs && node --check scripts/prep2-interactive-enhancement.js && node scripts/validate-prep2-new-hello-review-layer.mjs && node scripts/validate-prep2-plus-grammar.mjs && node scripts/validate-prep3-plus-vocabulary.mjs && node scripts/validate-prep1-plus-grammar.mjs && node scripts/validate-prep1-new-hello.mjs",
+    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs && node scripts/test-gemini-config.mjs && node scripts/test-tts-voice-selection.mjs && node scripts/validate-approved-unit-drafts.mjs && node scripts/test-preparatory-learning.mjs && node --check scripts/prep2-interactive-enhancement.js && node scripts/validate-prep2-new-hello-review-layer.mjs && node scripts/validate-prep2-plus-grammar.mjs && node scripts/validate-prep3-plus-vocabulary.mjs && node scripts/validate-prep1-plus-grammar.mjs && node scripts/validate-prep1-new-hello.mjs && node scripts/validate-prep3-new-hello-security.mjs",
     "test:nav": "node scripts/test-navigation-and-launch.mjs",
     "test:storage": "node scripts/test-storage-hardening.mjs",
     "validate:unit-quality": "node scripts/test-unit-quality.mjs",
