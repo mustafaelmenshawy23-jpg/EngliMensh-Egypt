@@ -2021,6 +2021,7 @@ function render() {
       <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
       <div class="topbar-tools">
         <div class="student-profile-control">
+          ${activeStudent()?.photo ? '<img class="student-profile-avatar" src="' + escapeHtml(activeStudent().photo) + '" alt="Student photo">': '<span class="student-profile-avatar student-profile-placeholder" aria-hidden="true">👤</span>'}
           <label class="sr-only" for="student-profile-select">Student profile</label>
           <select id="student-profile-select" aria-label="Student profile">
             <option value="">Choose student</option>
