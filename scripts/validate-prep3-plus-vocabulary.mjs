@@ -16,14 +16,26 @@ for (let unit = 1; unit <= 6; unit += 1) {
     if (end <= 0) throw new Error(`Unit ${unit}: ${name} array is not terminated`);
     return JSON.parse(html.slice(start + marker.length, end));
   };
-  let words, questions;
+  let words, questions, reading, listening;
   try {
     words = parse('vocabData');
     questions = parse('vocabQuizData');
+    reading = parse('readingData');
+    listening = parse('listeningData');
   } catch (error) {
     failures.push(error.message);
     continue;
   }
+  for (const [section, data] of [['reading', reading], ['listening', listening]]) {
+    if (!Array.isArray(data.questions) || data.questions.length !== 5) failures.push(`Unit ${unit}: ${section} must contain five MCQs.`);
+    else for (const [index, q] of data.questions.entries()) {
+      if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options).size !== 4) failures.push(`Unit ${unit} ${section} Q${index + 1}: four distinct options required.`);
+      if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`Unit ${unit} ${section} Q${index + 1}: invalid answer key.`);
+      if (!/[\\u0600-\\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
+    }
+  }
+  if (!Array.isArray(reading.paragraphs) || reading.paragraphs.length < 2) failures.push(`Unit ${unit}: reading passage is missing.`);
+  if (!Array.isArray(listening.dialogue) || listening.dialogue.length < 4) failures.push(`Unit ${unit}: listening dialogue is missing.`);
   if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}`);
   if (questions.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary MCQs, found ${questions.length}`);
   const wordSet = new Set(words.map(item => String(item.word).trim().toLowerCase()));
