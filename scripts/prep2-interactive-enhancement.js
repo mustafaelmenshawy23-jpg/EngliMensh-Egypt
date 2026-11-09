@@ -189,6 +189,8 @@
     prompt.textContent = number + '. ' + promptText;
     const choices = document.createElement('div');
     choices.className = 'prep-quiz-choices';
+    choices.setAttribute('role', 'group');
+    choices.setAttribute('aria-label', 'Question ' + number + ' answer choices');
     const groupName = 'prep-' + sectionType + '-' + unitNumber + '-' + id;
     rawOptions.forEach((node, optionIndex) => {
       const letter = optionLetter(node, optionIndex);
@@ -200,10 +202,12 @@
       const button = document.createElement('button');
       button.type = 'button'; button.className = 'prep-quiz-option'; button.textContent = letter.toUpperCase() + ') ' + label;
       button.dataset.letter = letter;
+      button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => {
         if (question.dataset.checked === 'true') return;
-        choices.querySelectorAll('button').forEach((item) => item.classList.remove('selected'));
+        choices.querySelectorAll('button').forEach((item) => { item.classList.remove('selected'); item.setAttribute('aria-pressed', 'false'); });
         button.classList.add('selected');
+        button.setAttribute('aria-pressed', 'true');
         question.dataset.selected = letter;
       });
       choices.append(button);
@@ -264,7 +268,7 @@
       question.classList.remove('answer-correct','answer-incorrect');
       const input = question.querySelector('.prep-answer-input');
       if (input) { input.disabled = false; input.value = ''; }
-      question.querySelectorAll('button').forEach((button) => { button.disabled = false; button.classList.remove('selected','correct','incorrect'); });
+      question.querySelectorAll('button').forEach((button) => { button.disabled = false; button.classList.remove('selected','correct','incorrect'); button.setAttribute('aria-pressed', 'false'); });
     });
     status.textContent = 'Choose an answer for each question. Your score appears after checking.';
     retry.hidden = true; check.hidden = false;
