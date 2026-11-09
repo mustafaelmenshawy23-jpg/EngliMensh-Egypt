@@ -24,6 +24,7 @@ assert.match(prep3Source, /let currentUnit = 1/);
 assert.match(prep3Source, /currentSubTab === 'exam'/);
 assert.ok((prep3Source.match(/exam\s*:\s*\[/g) || []).length >= 6, 'combined Prep 3 source must retain all six unit exam banks');
 
+assert.match(builder, /const prep1Route = hasLegacyAssessment \?/);
 assert.match(builder, /const hasLegacyAssessment = Boolean\(lessonMatch && \/function\\s\+handleQuizAnswer\//);
 assert.match(builder, /type: 'englimensh:prep-assessment-progress'/);
 assert.match(builder, /grade: \$\{lessonGrade\}/);
