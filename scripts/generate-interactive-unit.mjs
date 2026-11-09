@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
-import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
+import { getConfiguredGeminiKeys, getSupportedGeminiModels, isGeminiModelUnavailable } from './lib/gemini-config.mjs';
 
 const required = REQUIRED_MODULE_TYPES;
 const bookId = process.env.BOOK_ID;
@@ -10,7 +10,7 @@ const unitNumber = Number(process.env.UNIT_NUMBER);
 const apiKeys = getConfiguredGeminiKeys();
 
 // Supported standard models - prefer the configured model, then stable Flash fallback.
-let model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+let model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 const supportedModels = getSupportedGeminiModels(model);
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
@@ -949,6 +949,12 @@ if (isOfflineFallbackAllowed) {
               rejectedKeys.add(keyName);
               lastFailure = new Error(`Gemini rejected configured secret ${keyName}; check that GitHub Secret.`);
               console.warn(`${keyName} was rejected; trying the next configured key.`);
+              break;
+            }
+            if (isGeminiModelUnavailable(response.status, detail)) {
+              modelUnavailable = true;
+              lastFailure = error;
+              console.warn(`Gemini model ${model} is no longer available; trying the next supported model.`);
               break;
             }
             if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
