@@ -95,9 +95,9 @@ if (!builder.includes('window.__PREP2_REVIEW_LAYER__=') || !builder.includes('wi
 if (!builder.includes('prepareOfflineLessonCopy(originalSource)')) failures.push('Generated preparatory viewers must remove remote Google Fonts dependencies for offline readability.');
 if (!builder.includes('text-to-speech voice') || !builder.includes('Play listening script')) failures.push('Generated Plus viewers must identify listening playback as device text-to-speech, not recorded audio.');
 if (!enhancer.includes("document.querySelectorAll('.section')") || !enhancer.includes('section.hidden = section !== target;')) failures.push('Preparatory HTML viewer must show only the section selected by the app module.');
-const unit6RepairAt = enhancer.indexOf("classList.replace('question-item', 'question')");
+const unit6RepairAt = enhancer.indexOf("const malformedQ6 = [...target.querySelectorAll('.question-item')].find");
 const nestedHoistAt = enhancer.indexOf("target.querySelectorAll('.question .question')");
-if (unit6RepairAt < 0 || nestedHoistAt < 0 || unit6RepairAt > nestedHoistAt) failures.push('Unit 6 Q6 wrapper must be repaired before nested questions are hoisted and scored.');
+if (unit6RepairAt < 0 || nestedHoistAt < 0 || unit6RepairAt > nestedHoistAt || !enhancer.includes("malformedQ6.classList.replace('question-item', 'question')")) failures.push('Only Unit 6 Q6 must be repaired before nested questions are hoisted and scored.');
 if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
 if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
@@ -136,7 +136,9 @@ for (let question = 20; question <= 30; question += 1) {
 if (!layer.units['6']?.markupRepairs?.grammar?.['6']) failures.push('Unit 6 Q6 markup repair is missing.');
 const unit6Html = await readFile(path.join(sourceDir, 'Prep_2_New_Hello_Unit_6_Complete.html'), 'utf8');
 if (!unit6Html.includes('class="question-item">6.')) failures.push('Unit 6 source Q6 markup finding changed; re-audit before changing the repair.');
-if (!enhancer.includes("classList.replace('question-item', 'question')")) failures.push('Unit 6 Q6 is not normalized into an independently scored question.');
+if (!enhancer.includes("malformedQ6.classList.replace('question-item', 'question')")) failures.push('Unit 6 Q6 is not normalized into an independently scored question.');
+if (!enhancer.includes("const choicesData = [answer, ...distractors]") || !enhancer.includes(".slice(0, 3)")) failures.push('Short-answer reading/listening items must receive up to three same-passage distractors plus the correct answer.');
+if (enhancer.includes("input.placeholder = 'Type your answer'") || enhancer.includes("prep-short-answer")) failures.push('Free-text answer mode must not remain in the student quiz.');
 
 
 if (failures.length) {
