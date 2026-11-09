@@ -13,7 +13,11 @@ const supported = [
 ];
 for (const file of supported) assert.ok(lessonPattern.test(file), `Expected standalone assessment lesson: ${file}`);
 assert.equal(lessonPattern.test('Prep_2_New_Hello_Unit_1_Complete.html'), true, 'Prep 2 general lessons are recognized and use their separate four-section reporting protocol');
-assert.equal(lessonPattern.test('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'), false, 'combined Prep 3 general file must not be mistaken for a standalone unit');
+assert.equal(lessonPattern.test('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'), false, 'combined Prep 3 general file uses its own assessment bridge');
+assert.match(builder, /const isPrep3Combined = path\.basename\(file\) === 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum\.html'/);
+assert.match(builder, /window\.checkAnswer = function\(quizType/);
+assert.match(builder, /grade: 3,/);
+assert.match(builder, /correct: userScores\.exam/);
 
 assert.match(builder, /const hasLegacyAssessment = Boolean\(lessonMatch && \/function\\s\+handleQuizAnswer\//);
 assert.match(builder, /type: 'englimensh:prep-assessment-progress'/);
@@ -29,4 +33,4 @@ assert.match(prep2, /sectionId: sectionType/);
 assert.match(app, /studentProfiles\.recordAssessmentSection\(profile\.id/);
 assert.match(app, /if \(result\.sectionCount < 4\)/);
 assert.match(store, /recordAssessmentSection\(id, context, sectionId, result\)/);
-console.log('Preparatory assessment bridge contract checks passed (30 of 31 preparatory units have certificate reporting paths; Prep 3 general combined source remains outstanding).');
+console.log('Preparatory assessment bridge contract checks passed (all 31 preparatory units now have an assessment-reporting route (Prep 3 general uses its combined source's unit-specific exam)).');
