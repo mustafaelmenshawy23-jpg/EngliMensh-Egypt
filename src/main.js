@@ -2048,7 +2048,8 @@ function render() {
             ${studentProfiles.list().map((profile) => '<option value="' + escapeHtml(profile.id) + '" ' + (profile.id === activeStudent()?.id ? 'selected' : '') + '>' + escapeHtml(profile.name) + '</option>').join('')}
           </select>
           <input id="new-student-name" type="text" maxlength="40" placeholder="New student name" aria-label="New student name">
-          <input id="student-photo-file" type="file" accept="image/*" capture="user" aria-label="Choose student photo">
+          <input id="student-photo-gallery" type="file" accept="image/*" aria-label="Choose student photo from gallery">
+          <input id="student-photo-file" type="file" accept="image/*" capture="user" aria-label="Take student photo with camera">
           <input id="rename-student" type="text" maxlength="40" placeholder="Edit active name" aria-label="Edit active student name">
           <button type="button" id="save-student-name">Save name</button>
           <button type="button" id="create-student-profile">Add student</button>
@@ -2137,7 +2138,7 @@ function render() {
     try { studentProfiles.update(profile.id, { name }); render(); }
     catch (error) { console.warn('Could not update student name:', error); }
   });
-  app.querySelector('#student-photo-file')?.addEventListener('change', async (event) => {
+  const handleStudentPhotoChange = async (event) => {
     const profile = activeStudent();
     const file = event.target.files?.[0];
     if (!profile || !file) return;
@@ -2153,6 +2154,7 @@ function render() {
       canvas.width = Math.max(1, Math.round(bitmap.width * scale));
       canvas.height = Math.max(1, Math.round(bitmap.height * scale));
       const context = canvas.getContext('2d');
+      if (!context) throw new Error('Image canvas is unavailable.');
       context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
       bitmap.close?.();
       const photo = canvas.toDataURL('image/jpeg', 0.78);
@@ -2162,7 +2164,9 @@ function render() {
       console.warn('Could not save student photo:', error);
       window.alert('The photo could not be processed on this device.');
     } finally { event.target.value = ''; }
-  });
+  };
+  app.querySelector('#student-photo-file')?.addEventListener('change', handleStudentPhotoChange);
+  app.querySelector('#student-photo-gallery')?.addEventListener('change', handleStudentPhotoChange);
 
   app.querySelector('#student-theme-select')?.addEventListener('change', (event) => {
     const profile = activeStudent();
