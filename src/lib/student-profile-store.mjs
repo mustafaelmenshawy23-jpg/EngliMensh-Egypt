@@ -131,7 +131,12 @@ export function createStudentProfileStore(storage, { legacyKey = LEGACY_PROGRESS
       sections[sectionId] = { total, attempted, correct, completedAt: new Date().toISOString() };
       profile.assessmentProgress[key] = sections;
       persistProfiles();
-      const values = Object.values(sections);
+      const requiredSections = ['vocabulary', 'grammar', 'reading', 'listening'];
+      const values = requiredSections.map((key) => sections[key]).filter((item) =>
+        isRecord(item) && Number.isInteger(item.total) && item.total > 0 &&
+        item.attempted === item.total && Number.isInteger(item.correct) &&
+        item.correct >= 0 && item.correct <= item.total
+      );
       return {
         sectionCount: values.length,
         total: values.reduce((sum, item) => sum + item.total, 0),
