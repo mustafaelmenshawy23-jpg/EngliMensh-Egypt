@@ -65,10 +65,10 @@ for (let unit = 1; unit <= 6; unit += 1) {
     auditMultipleChoice(listeningHtml, 'listening');
   } else {
     for (const [sectionName, sectionHtml] of [['reading', readingHtml], ['listening', listeningHtml]]) {
-      const answers = [...sectionHtml.matchAll(/<strong>\\s*Answer:\\s*([^<]+)<\\/strong>/gi)]
+      const answers = [...sectionHtml.matchAll(/<strong>\s*Answer:\s*([^<]+)<\/strong>/gi)]
         .slice(0, 5)
         .map((match, index) => review.answerTextFixes?.[sectionName]?.[String(index + 1)] || match[1].trim());
-      const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+      const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
       if (answers.length !== 5) failures.push(`Unit ${unit} ${sectionName}: expected five source answer keys to generate multiple-choice options.`);
       if (new Set(answers.map(normalized)).size !== 5) failures.push(`Unit ${unit} ${sectionName}: answer bank must contain five distinct answers to build four unique choices per question.`);
       for (const answer of answers) {
