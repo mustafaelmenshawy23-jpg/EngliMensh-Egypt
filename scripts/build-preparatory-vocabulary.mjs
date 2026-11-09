@@ -169,8 +169,32 @@ async function buildSectionViewers(files) {
   window.addEventListener('hashchange', applyViewerRoute);
 })();
 </script>\n` : '';
-    const marker = /<\/body>/i;
-    const injected = prep1Route + enhancement;
+    const prep1AssessmentBridge = isPrep1General ? \`<script>
+(() => {
+  const original = window.handleQuizAnswer;
+  if (typeof original !== 'function' || window.__ENGLIMENSH_CERTIFICATE_BRIDGE__) return;
+  window.__ENGLIMENSH_CERTIFICATE_BRIDGE__ = true;
+  window.handleQuizAnswer = function(prefix, questionIndex, chosenIndex, correctIndex) {
+    const result = original.apply(this, arguments);
+    if (prefix === 'exam' && window.parent !== window) {
+      try {
+        window.parent.postMessage({
+          type: 'englimensh:prep-assessment-progress',
+          grade: 1,
+          path: 'general',
+          unitNumber: \${prep1UnitNumber},
+          total: examData.length,
+          attempted: answered.exam.size,
+          correct: scores.exam
+        }, '*');
+      } catch (error) { console.warn('Assessment progress could not be reported to the student profile.', error); }
+    }
+    return result;
+  };
+})();
+</script>\\n\` : '';
+    const marker = /<\\/body>/i;
+    const injected = prep1Route + prep1AssessmentBridge + enhancement;
     const output = marker.test(source) ? source.replace(marker, injected + '\n</body>') : source + injected;
     await fs.writeFile(path.join(outputDir, path.basename(file)), output);
   }
