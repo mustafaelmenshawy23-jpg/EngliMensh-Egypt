@@ -19,8 +19,10 @@ let placeholderArabic = 0;
 let placeholderDefinitions = 0;
 let placeholderExamples = 0;
 const issues = [];
+const unitsWithContentGaps = [];
 for (const [unitKey, unit] of Object.entries(data.units)) {
   assert.ok(Array.isArray(unit.words) && unit.words.length > 0, 'Unit has no generated vocabulary: ' + unitKey);
+  let unitGapCounts = { arabic: 0, definitions: 0, examples: 0, missingImages: 0 };
   for (const item of unit.words) {
     words += 1;
     assert.ok(typeof item.word === 'string' && item.word.trim(), 'Blank vocabulary headword in ' + unitKey);
@@ -35,14 +37,16 @@ for (const [unitKey, unit] of Object.entries(data.units)) {
       assert.ok(typeof item.svg === 'string' && item.svg.includes('<svg'), 'SVG classification has no SVG data: ' + item.word);
     } else {
       missingImages += 1;
+      unitGapCounts.missingImages += 1;
       if (item.image) issues.push('Missing image incorrectly has image path: ' + item.word);
     }
-    if (!item.arabic || item.arabic === 'مفردة دراسية') placeholderArabic += 1;
-    if (!item.definition || /essential curriculum term relating to/i.test(item.definition)) placeholderDefinitions += 1;
-    if (!item.example || /is essential when studying/i.test(item.example)) placeholderExamples += 1;
+    if (!item.arabic || /^مفردة دراسية(?:\s*\(|$)/.test(item.arabic)) { placeholderArabic += 1; unitGapCounts.arabic += 1; }
+    if (!item.definition || /essential curriculum term relating to|supplementary vocabulary for the topic|verify against the student's textbook/i.test(item.definition)) { placeholderDefinitions += 1; unitGapCounts.definitions += 1; }
+    if (!item.example || /is essential when studying|we learned the word/i.test(item.example)) { placeholderExamples += 1; unitGapCounts.examples += 1; }
   }
+  if (Object.values(unitGapCounts).some((count) => count > 0)) unitsWithContentGaps.push({ unitKey, ...unitGapCounts });
 }
 assert.equal(issues.length, 0, issues.join('\\n'));
-const report = { units: actualKeys.length, words, photos, illustrations, missingImages, placeholderArabic, placeholderDefinitions, placeholderExamples };
+const report = { units: actualKeys.length, words, photos, illustrations, missingImages, placeholderArabic, placeholderDefinitions, placeholderExamples, unitsWithContentGaps };
 console.log('Preparatory vocabulary/media output validation:', JSON.stringify(report));
 if (missingImages || placeholderArabic || placeholderDefinitions || placeholderExamples) console.warn('Content/media gaps remain; counts above are not academic approval.');
