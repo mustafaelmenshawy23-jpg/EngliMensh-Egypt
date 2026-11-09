@@ -5,6 +5,7 @@ const builder = await readFile(new URL('./build-preparatory-vocabulary.mjs', imp
 const app = await readFile(new URL('../src/main.js', import.meta.url), 'utf8');
 const prep2 = await readFile(new URL('./prep2-interactive-enhancement.js', import.meta.url), 'utf8');
 const store = await readFile(new URL('../src/lib/student-profile-store.mjs', import.meta.url), 'utf8');
+const prep3Source = await readFile(new URL('../content-imports/preparatory/new-hello/Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html', import.meta.url), 'utf8');
 const lessonPattern = /^Prep_(1|2|3)_New_Hello(_Plus)?_Unit_(\d+)(?:_Complete)?\.html$/i;
 const supported = [
   ...Array.from({ length: 6 }, (_, i) => `Prep_1_New_Hello_Unit_${i + 1}.html`),
@@ -18,6 +19,10 @@ assert.match(builder, /const isPrep3Combined = path\.basename\(file\) === 'Prep_
 assert.match(builder, /window\.checkAnswer = function\(quizType/);
 assert.match(builder, /grade: 3,/);
 assert.match(builder, /correct: userScores\.exam/);
+assert.match(prep3Source, /function checkAnswer\(quizType/);
+assert.match(prep3Source, /let currentUnit = 1/);
+assert.match(prep3Source, /currentSubTab === 'exam'/);
+assert.ok((prep3Source.match(/exam\s*:\s*\[/g) || []).length >= 6, 'combined Prep 3 source must retain all six unit exam banks');
 
 assert.match(builder, /const hasLegacyAssessment = Boolean\(lessonMatch && \/function\\s\+handleQuizAnswer\//);
 assert.match(builder, /type: 'englimensh:prep-assessment-progress'/);
