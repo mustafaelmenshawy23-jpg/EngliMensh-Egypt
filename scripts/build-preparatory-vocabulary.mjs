@@ -227,7 +227,7 @@ async function buildSectionViewers(files) {
     return result;
   };
 })();
-</script>\\n` : '';
+</script>\n` : '';
     const marker = /<\\/body>/i;
     const injected = prep1Route + prep1AssessmentBridge + prep3AssessmentBridge + enhancement;
     const output = marker.test(source) ? source.replace(marker, injected + '\n</body>') : source + injected;
