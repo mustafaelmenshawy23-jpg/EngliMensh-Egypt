@@ -127,7 +127,7 @@ function removeRemoteFontDependencies(source) {
   // The imported pages declare system sans-serif fallbacks. Remove Google Fonts
   // stylesheet/preconnect tags from generated copies so lesson text remains
   // readable offline; preserve every original HTML source file unchanged.
-  return source.replace(/<link\\b(?=[^>]*href=["']https?:\\/\\/fonts\\.(?:googleapis|gstatic)\\.com)[^>]*>\\s*/gi, '');
+  return source.replace(/<link\b(?=[^>]*href=["']https?:\/\/fonts\.(?:googleapis|gstatic)\.com)[^>]*>\s*/gi, '');
 }
 
 async function buildSectionViewers(files) {
