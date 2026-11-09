@@ -143,9 +143,12 @@ async function buildSectionViewers(files) {
   for (const file of files) {
     const originalSource = await fs.readFile(file, 'utf8');
     const source = prepareOfflineLessonCopy(originalSource);
-    const prep1Match = path.basename(file).match(/^Prep_1_New_Hello_Unit_([1-6])\.html$/i);
-    const isPrep1General = Boolean(prep1Match);
-    const prep1UnitNumber = Number(prep1Match?.[1] || 0);
+    const lessonMatch = path.basename(file).match(/^Prep_(1|2|3)_New_Hello(_Plus)?_Unit_(\\d+)(?:_Complete)?\\.html$/i);
+    const isPrep1General = Boolean(lessonMatch && lessonMatch[1] === '1' && !lessonMatch[2]);
+    const lessonGrade = Number(lessonMatch?.[1] || 0);
+    const lessonPath = lessonMatch?.[2] ? 'advanced' : 'general';
+    const lessonUnitNumber = Number(lessonMatch?.[3] || 0);
+    const hasLegacyAssessment = Boolean(lessonMatch && /function\\s+handleQuizAnswer/.test(source) && /const\\s+examData\\s*=/.test(source) && /const\\s+answered\\s*=/.test(source));
     const prep1Route = isPrep1General ? `<script>
 (() => {
   const moduleTabs = {
@@ -171,7 +174,7 @@ async function buildSectionViewers(files) {
   window.addEventListener('hashchange', applyViewerRoute);
 })();
 </script>\n` : '';
-    const prep1AssessmentBridge = isPrep1General ? `<script>
+    const prep1AssessmentBridge = hasLegacyAssessment ? `<script>
 (() => {
   const original = window.handleQuizAnswer;
   if (typeof original !== 'function' || window.__ENGLIMENSH_CERTIFICATE_BRIDGE__) return;
@@ -182,9 +185,9 @@ async function buildSectionViewers(files) {
       try {
         window.parent.postMessage({
           type: 'englimensh:prep-assessment-progress',
-          grade: 1,
-          path: 'general',
-          unitNumber: ${prep1UnitNumber},
+          grade: ${lessonGrade},
+          path: '${lessonPath}',
+          unitNumber: ${lessonUnitNumber},
           total: examData.length,
           attempted: answered.exam.size,
           correct: scores.exam
