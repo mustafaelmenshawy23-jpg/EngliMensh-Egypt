@@ -110,6 +110,35 @@ export function createStudentProfileStore(storage, { legacyKey = LEGACY_PROGRESS
       if (!THEMES.has(theme)) throw new TypeError('Unsupported student theme.');
       return this.update(id, { theme });
     },
+    recordAssessmentSection(id, context, sectionId, result) {
+      const profile = find(id);
+      if (!profile) throw new Error('Student profile not found.');
+      if (!['vocabulary', 'grammar', 'reading', 'listening'].includes(sectionId)) {
+        throw new TypeError('Unsupported assessment section.');
+      }
+      const total = Number(result?.total);
+      const attempted = Number(result?.attempted);
+      const correct = Number(result?.correct);
+      if (!Number.isInteger(total) || total < 1 || attempted !== total ||
+          !Number.isInteger(correct) || correct < 0 || correct > total) {
+        throw new TypeError('A complete, valid section result is required.');
+      }
+      const key = [context?.term || 'first', context?.stage || profile.stage,
+        Number(context?.grade || profile.grade), context?.path || profile.path,
+        String(context?.unitId || '')].join(':');
+      profile.assessmentProgress = isRecord(profile.assessmentProgress) ? profile.assessmentProgress : {};
+      const sections = isRecord(profile.assessmentProgress[key]) ? profile.assessmentProgress[key] : {};
+      sections[sectionId] = { total, attempted, correct, completedAt: new Date().toISOString() };
+      profile.assessmentProgress[key] = sections;
+      persistProfiles();
+      const values = Object.values(sections);
+      return {
+        sectionCount: values.length,
+        total: values.reduce((sum, item) => sum + item.total, 0),
+        attempted: values.reduce((sum, item) => sum + item.attempted, 0),
+        correct: values.reduce((sum, item) => sum + item.correct, 0)
+      };
+    },
     issueCertificate(id, context, result) {
       const profile = find(id);
       if (!profile) throw new Error('Student profile not found.');
