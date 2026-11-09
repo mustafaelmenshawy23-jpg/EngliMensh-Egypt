@@ -5,6 +5,9 @@ const root = process.cwd();
 const layer = JSON.parse(await readFile(path.join(root, 'src/data/prep2-new-hello-reviewed-layer.json'), 'utf8'));
 const grammarGuides = JSON.parse(await readFile(path.join(root, 'src/data/prep2-new-hello-grammar-guides.json'), 'utf8'));
 const sourceDir = path.join(root, 'content-imports/preparatory/new-hello');
+const enhancer = await readFile(path.join(root, 'scripts/prep2-interactive-enhancement.js'), 'utf8');
+const builder = await readFile(path.join(root, 'scripts/build-preparatory-vocabulary.mjs'), 'utf8');
+const registry = await readFile(path.join(root, 'src/data/preparatory-html-registry.js'), 'utf8');
 const decode = (value = '') => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').trim();
 const failures = [];
 let totalWords = 0;
@@ -40,6 +43,12 @@ for (let unit = 1; unit <= 6; unit += 1) {
 }
 if (layer.status !== 'translation-draft-needs-official-source-review') failures.push('Review layer must remain marked as draft pending official-source verification.');
 if (grammarGuides.status !== 'teacher-review-draft') failures.push('Grammar guides must remain drafts pending teacher review.');
+if (!registry.includes('viewerUrl: viewerUrl(fileName)')) failures.push('Generated reviewed viewer URLs are not connected to the student lesson registry.');
+if (!builder.includes('window.__PREP2_REVIEW_LAYER__=') || !builder.includes('window.__PREP2_GRAMMAR_GUIDES__=')) failures.push('Generated viewers are missing review-layer or grammar-guide injection.');
+if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
+if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
+if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
+if (!enhancer.includes("classList.add('prep-interactive-question','prep-short-answer')")) failures.push('Reading/listening short-answer controls are missing.');
 for (let unit = 1; unit <= 6; unit += 1) {
   const guide = grammarGuides.units?.[String(unit)];
   if (!guide) { failures.push(`Unit ${unit}: detailed grammar guide is missing.`); continue; }
