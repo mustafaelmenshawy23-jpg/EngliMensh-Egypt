@@ -1,5 +1,7 @@
 name: Build EngliMensh Android preview APK
 
+# APK builds are intentionally deferred until the preparatory curriculum is complete.
+# Keep release builds on main or an explicit manual request; PR updates run validation only.
 on:
   push:
     branches: [main]
@@ -45,17 +47,28 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: Prepare official PWA icons from the selected source artwork
+        run: |
+          python -m pip install --disable-pip-version-check Pillow
+          python -m py_compile scripts/prepare-app-icons.py
+          python scripts/prepare-app-icons.py --web
 
       - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
         run: rm -rf public/books
 
-      - name: Build web application with remote original source PDFs
+      - name: Build web application with remote original source PDFs and vocabulary images
         env:
+          FETCH_PREPARATORY_IMAGES: '1'
           VITE_BOOKS_BASE_URL: https://media.githubusercontent.com/media/mustafaelmenshawy23-jpg/EngliMensh-Egypt/main/public/books/
         run: npm run build
 
       - name: Generate Android project
         run: npx cap add android
+      - name: Register native certificate Downloads bridge
+        run: node scripts/prepare-android-downloads.mjs
+
+      - name: Apply official Android launcher and adaptive icons
+        run: python scripts/prepare-app-icons.py --android
 
       - name: Sync web application into Android project
         run: npx cap sync android

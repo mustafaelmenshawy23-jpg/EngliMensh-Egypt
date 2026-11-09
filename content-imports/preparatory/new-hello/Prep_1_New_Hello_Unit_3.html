@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello (General)) - Unit 3: Different People | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello (General) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 3: Different People</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (20)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Different People</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Teacher-prepared learning material • 2026/2027 review draft</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello (General)</span>
+          <span class="meta-tag">Unit: 3</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Practice context-rich sentences and check vocabulary understanding with multiple-choice questions.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 3: Have got / Has got & Describing Appearance / Personality</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">1. Have got / Has got (فعل يملك / لديه)</h3>
+  <table class="grammar-table">
+    <thead><tr><th>Subject</th><th>Affirmative (يملك)</th><th>Negative (لا يملك)</th><th>Question Form (هل يملك؟)</th></tr></thead>
+    <tbody>
+      <tr><td>I / We / You / They / Plural</td><td><strong>have got ('ve got)</strong><br><em>They have got dark hair.</em></td><td><strong>haven't got</strong><br><em>I haven't got glasses.</em></td><td><strong>Have</strong> you got a car?<br>&rarr; Yes, I have. / No, I haven't.</td></tr>
+      <tr><td>He / She / It / Singular</td><td><strong>has got ('s got)</strong><br><em>He has got a beard.</em></td><td><strong>hasn't got</strong><br><em>She hasn't got curly hair.</em></td><td><strong>Has</strong> he got a moustache?<br>&rarr; Yes, he has. / No, he hasn't.</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Wh- Question:</strong> <code>What has / have + Subject + got?</code> &rarr; <em>What has Salah got? &rarr; He has got curly hair and a beard.</em></p>
+</div>
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">2. Physical Appearance vs. Personality Adjectives</h3>
+  <p>&bull; <strong>Appearance:</strong> tall, short, curly hair, straight hair, dark hair, blonde hair, beard, moustache, glasses.</p>
+  <p>&bull; <strong>Personality & Character:</strong> kind, friendly, clever, funny, brave, helpful.</p>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 3: Have got / Has got & Describing Appearance / Personality without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 20</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Reading Practice</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the reading passage with clear English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Unit practice assessment covering the four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Teacher-prepared practice material • 2026/2027 review draft</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word":"straight hair","pos":"noun","arabic":"شعر أملس / مفرود","def":"Hair that has no curls or waves.","example":"Mona has got long straight hair.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ST</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"curly hair","pos":"noun","arabic":"شعر مجعد","def":"Hair that grows in small tight curls.","example":"Salma has got short curly hair and brown eyes.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"dark hair","pos":"noun","arabic":"شعر داكن","def":"Hair that is black or dark brown in color.","example":"Most people in Egypt have got dark hair.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"blonde hair","pos":"noun","arabic":"شعر أشقر","def":"Hair of a light yellow or golden color.","example":"Some European tourists have got natural blonde hair.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">BL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"beard","pos":"noun","arabic":"لحية","def":"Hair that grows on the chin and cheeks of a man.","example":"My grandfather has got a neat grey beard.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">BE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"moustache","pos":"noun","arabic":"شارب / شنب","def":"Hair that grows on a man's upper lip.","example":"My uncle has got a thick black moustache.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"glasses","pos":"noun","arabic":"نظارة طبية","def":"Lenses set in a frame worn on the face to aid sight.","example":"Ahmed wears glasses because he is short-sighted.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">GL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"friendly","pos":"adjective","arabic":"ودود / طيب","def":"Kind, pleasant, and easy to talk to.","example":"Our new English teacher is very friendly and supportive.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"kind","pos":"adjective","arabic":"عطوف / طيب القلب","def":"Helpful, generous, and caring about others.","example":"She is very kind to street cats and stray animals.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">KI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"funny","pos":"adjective","arabic":"مضحك / مرح","def":"Making people laugh or smile with humor.","example":"Adel Imam is a famous and funny comedy actor.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"brave","pos":"adjective","arabic":"شجاع","def":"Ready to face danger or pain without fear.","example":"Firefighters are extremely brave public heroes.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">BR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"clever","pos":"adjective","arabic":"ذكي / ماهر","def":"Quick at learning, understanding, and solving problems.","example":"Ziad is clever and always scores full marks in maths.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CL</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"short","pos":"adjective","arabic":"قصير القامة","def":"Having less height than most people or things of the same kind.","example":"The little boy is short, but he can run very fast.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SH</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"tall","pos":"adjective","arabic":"طويل القامة","def":"Having a greater than average height.","example":"Basketball players are usually very tall and athletic.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"fast","pos":"adjective","arabic":"سريع","def":"Moving or capable of moving at high speed.","example":"Cheetahs are fast animals that sprint across plains.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"score","pos":"verb","arabic":"يسجل هدفاً أو نقطة","def":"To get a point or goal in a game or competition.","example":"Mo Salah can score fantastic goals in football.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SC</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"fans","pos":"noun","arabic":"مشجعون / جماهير","def":"People who strongly admire a sports team or celebrity.","example":"Millions of enthusiastic fans cheered in Cairo Stadium.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"give money","pos":"verb phrase","arabic":"يتبرع بالمال","def":"To donate financial resources to help poor people.","example":"Generous citizens give money to build local hospitals.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">GI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"feature","pos":"noun","arabic":"سمة / ملمح وجه","def":"A distinctive part of the face such as eyes or nose.","example":"Dark eyes are a common physical feature in our family.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"appearance","pos":"noun","arabic":"المظهر الخارجي","def":"The way that someone looks on the outside.","example":"She takes good care of her neat appearance and clothes.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AP</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"character","pos":"noun","arabic":"شخصية الإنسان","def":"The combination of qualities that make up personality.","example":"Honesty and loyalty are the core of a noble character.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CH</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"star","pos":"noun","arabic":"نجم رياضي أو سينمائي","def":"A famous, highly successful performer or athlete.","example":"Mohamed Salah is a legendary Egyptian football star.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ST</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question":"Which vocabulary word is defined as: 'Hair that has no curls or waves.'?","options":["brave","score","glasses","straight hair"],"correct":3,"explanation":"'straight hair' means 'شعر أملس / مفرود': Hair that has no curls or waves."},{"question":"Which vocabulary word is defined as: 'Hair that grows in small tight curls.'?","options":["curly hair","brave","feature","clever"],"correct":0,"explanation":"'curly hair' means 'شعر مجعد': Hair that grows in small tight curls."},{"question":"Which vocabulary word is defined as: 'Hair that is black or dark brown in color.'?","options":["give money","dark hair","glasses","brave"],"correct":1,"explanation":"'dark hair' means 'شعر داكن': Hair that is black or dark brown in color."},{"question":"Which vocabulary word is defined as: 'Hair of a light yellow or golden color.'?","options":["short","glasses","blonde hair","funny"],"correct":2,"explanation":"'blonde hair' means 'شعر أشقر': Hair of a light yellow or golden color."},{"question":"Which vocabulary word is defined as: 'Hair that grows on the chin and cheeks of a man.'?","options":["feature","character","glasses","beard"],"correct":3,"explanation":"'beard' means 'لحية / ذقن': Hair that grows on the chin and cheeks of a man."},{"question":"Complete the context: \"My uncle has got a thick black _______.\"","options":["moustache","short","feature","fans"],"correct":0,"explanation":"'moustache' (شارب / شنب) correctly completes the sentence."},{"question":"Complete the context: \"Ahmed wears _______ because he is short-sighted.\"","options":["star","glasses","appearance","friendly"],"correct":1,"explanation":"'glasses' (نظارة طبية) correctly completes the sentence."},{"question":"Complete the context: \"Our new English teacher is very _______ and supportive.\"","options":["feature","fast","friendly","star"],"correct":2,"explanation":"'friendly' (ودود / طيب) correctly completes the sentence."},{"question":"Complete the context: \"She is very _______ to street cats and stray animals.\"","options":["tall","score","dark hair","kind"],"correct":3,"explanation":"'kind' (عطوف / طيب القلب) correctly completes the sentence."},{"question":"Complete the context: \"Adel Imam is a famous and _______ comedy actor.\"","options":["funny","curly hair","dark hair","short"],"correct":0,"explanation":"'funny' (مضحك / مرح) correctly completes the sentence."},{"question":"Complete the context: \"Firefighters are extremely _______ public heroes.\"","options":["blonde hair","brave","moustache","funny"],"correct":1,"explanation":"'brave' (شجاع) correctly completes the sentence."},{"question":"Complete the context: \"Ziad is _______ and always scores full marks in maths.\"","options":["dark hair","beard","clever","fans"],"correct":2,"explanation":"'clever' (ذكي / ماهر) correctly completes the sentence."},{"question":"Complete the context: \"The little boy is _______, but he can run very fast.\"","options":["straight hair","funny","give money","short"],"correct":3,"explanation":"'short' means 'قصير القامة': Having less height than most people or things of the same kind."},{"question":"Complete the context: \"Basketball players are usually very _______ and athletic.\"","options":["tall","funny","dark hair","straight hair"],"correct":0,"explanation":"'tall' (طويل القامة) correctly completes the sentence."},{"question":"Complete the context: \"Cheetahs are _______ animals that sprint across plains.\"","options":["appearance","fast","beard","straight hair"],"correct":1,"explanation":"'fast' (سريع) correctly completes the sentence."},{"question":"Complete the context: \"Mo Salah can _______ fantastic goals in football.\"","options":["character","moustache","score","fast"],"correct":2,"explanation":"'score' means 'يسجل هدفاً أو نقطة': To get a point or goal in a game or competition."},{"question":"Complete the context: \"Millions of enthusiastic _______ cheered in Cairo Stadium.\"","options":["moustache","score","give money","fans"],"correct":3,"explanation":"'fans' (مشجعون / جماهير) correctly completes the sentence."},{"question":"Complete the context: \"Generous citizens _______ to build local hospitals.\"","options":["give money","score","kind","star"],"correct":0,"explanation":"'give money' (يتبرع بالمال) correctly completes the sentence."},{"question":"Complete the context: \"Dark eyes are a common physical _______ in our family.\"","options":["friendly","feature","funny","beard"],"correct":1,"explanation":"'feature' (سمة / ملمح وجه) correctly completes the sentence."},{"question":"Complete the context: \"She takes good care of her neat _______ and clothes.\"","options":["dark hair","short","appearance","fast"],"correct":2,"explanation":"'appearance' (المظهر الخارجي) correctly completes the sentence."},{"question":"Complete the context: \"Honesty and loyalty are the core of a noble _______.\"","options":["short","blonde hair","fast","character"],"correct":3,"explanation":"'character' (شخصية الإنسان) correctly completes the sentence."},{"question":"Complete the context: \"Mohamed Salah is a legendary Egyptian football _______.\"","options":["star","beard","glasses","kind"],"correct":0,"explanation":"'star' (نجم رياضي أو سينمائي) correctly completes the sentence."},{"question":"Complete the context: \"Mona has got long _______.\"","options":["curly hair","straight hair","star","fans"],"correct":1,"explanation":"'straight hair' (شعر أملس / مفرود) correctly completes the sentence."},{"question":"Complete the context: \"Salma has got short _______ and brown eyes.\"","options":["dark hair","fans","curly hair","moustache"],"correct":2,"explanation":"'curly hair' (شعر مجعد) correctly completes the sentence."},{"question":"Complete the context: \"Most people in Egypt have got _______.\"","options":["moustache","score","friendly","dark hair"],"correct":3,"explanation":"'dark hair' (شعر داكن) correctly completes the sentence."},{"question":"Complete the context: \"Some European tourists have got natural _______.\"","options":["blonde hair","brave","feature","character"],"correct":0,"explanation":"'blonde hair' (شعر أشقر) correctly completes the sentence."},{"question":"Complete the context: \"My grandfather has got a neat grey _______.\"","options":["clever","beard","brave","character"],"correct":1,"explanation":"'beard' (لحية / ذقن) correctly completes the sentence."},{"question":"Which word means hair that grows above a man's upper lip?","options":["beard","appearance","moustache","glasses"],"correct":2,"explanation":"moustache تعني الشارب، وهو الشعر الذي ينمو فوق الشفة العليا."},{"question":"Which item helps a person who cannot see clearly?","options":["fans","character","feature","glasses"],"correct":3,"explanation":"glasses تعني نظارة تساعد على تحسين الرؤية."},{"question":"Which adjective describes someone who is kind and pleasant to others?","options":["friendly","clever","short","fast"],"correct":0,"explanation":"friendly تعني ودودًا ولطيفًا في التعامل."}];
+    const grammarQuizData = [{"question":"He _______ got curly hair and a neat beard.","options":["is","have","does","has"],"correct":3,"explanation":"Singular third person (he) takes 'has got'."},{"question":"They _______ got a big house near the Red Sea.","options":["have","has","are","do"],"correct":0,"explanation":"Plural subject 'They' takes 'have got'."},{"question":"She _______ got blonde hair; her hair is dark brown.","options":["doesn't","hasn't","isn't","haven't"],"correct":1,"explanation":"Singular negative is 'hasn't got'."},{"question":"I haven't _______ my school bag with me today.","options":["gets","get","got","getting"],"correct":2,"explanation":"'haven't' pairs with past participle 'got'."},{"question":"_______ you got a brother living in Alexandria?","options":["Has","Do","Are","Have"],"correct":3,"explanation":"Subject 'you' takes auxiliary 'Have you got?'."},{"question":"_______ your father got a moustache?","options":["Has","Have","Does","Is"],"correct":0,"explanation":"Subject 'your father' (he) takes 'Has ... got?'."},{"question":"Has your sister got long hair? — Yes, she _______.","options":["does","has","have","is"],"correct":1,"explanation":"Affirmative short answer with 'Has' is 'Yes, she has.'"},{"question":"Have they got bicycles? — No, they _______.","options":["hasn't","don't","haven't","aren't"],"correct":2,"explanation":"Negative short answer with 'Have' is 'No, they haven't.'"},{"question":"My uncle has _______ a warm and friendly smile.","options":["get","gets","getting","got"],"correct":3,"explanation":"Fixed structure: 'has got'."},{"question":"What _______ she got in her pencil case?","options":["has","is","have","does"],"correct":0,"explanation":"Singular subject 'she' requires 'has' in question."},{"question":"We _______ got any homework for tomorrow's classes.","options":["don't","haven't","aren't","hasn't"],"correct":1,"explanation":"Subject 'We' takes negative 'haven't got'."},{"question":"Ali has got glasses, but his brother _______ got glasses.","options":["doesn't","isn't","hasn't","haven't"],"correct":2,"explanation":"Singular contrast takes 'hasn't got'."},{"question":"Mohamed Salah _______ got dark curly hair.","options":["is","are","have","has"],"correct":3,"explanation":"Singular Salah takes 'has got'."},{"question":"How many sisters _______ you got?","options":["have","do","are","has"],"correct":0,"explanation":"Subject 'you' requires 'have you got'."},{"question":"The cat _______ got blue eyes and white fur.","options":["is","has","have","are"],"correct":1,"explanation":"Singular animal subject takes 'has got'."},{"question":"Children in that village haven't _______ modern computers.","options":["get","getting","got","gets"],"correct":2,"explanation":"Negative plural 'haven't got'."},{"question":"_______ he got a beard? — No, he hasn't.","options":["Have","Does","Is","Has"],"correct":3,"explanation":"Question matching short answer 'No, he hasn't' begins with 'Has'."},{"question":"I _______ got a camera, but I want to buy one.","options":["haven't","am not","not","hasn't"],"correct":0,"explanation":"Subject 'I' takes 'haven't got'."},{"question":"Mona _______ got straight hair; it is completely curly.","options":["isn't","hasn't","haven't","doesn't"],"correct":1,"explanation":"Singular subject takes 'hasn't got'."},{"question":"Have you got a ruler? — Yes, I _______.","options":["do","has","have","am"],"correct":2,"explanation":"Affirmative short answer: 'Yes, I have.'"}];
+    const readingData = {"title": "Mohamed Salah: A True Egyptian Hero", "paragraphs": ["Mohamed Salah is one of the most famous and talented Egyptian football stars in the world. He has got dark, curly hair, brown eyes, and a neat beard. He is not very tall, but he is extremely fast and agile, which allows him to run past defenders with ease.", "Salah has got a very kind, humble, and generous character. He gives money to charities, builds schools, and funds modern medical equipment for youth in his hometown of Basyoun in Gharbia. He is also very friendly and always stops to sign autographs and smile for photos with his loyal fans.", "His brilliant skills have earned him prestigious awards in international championships. Football fans throughout Egypt and across the world love him not only for the goals he scores, but also for his exemplary personality and dedication to helping others."], "questions": [{"question": "What does Mohamed Salah look like?", "options": ["He has got dark, curly hair and a beard", "He has got straight blonde hair", "He is very tall with red hair", "He wears thick dark glasses"], "correct": 0, "explanation": "The text describes him with dark, curly hair and a neat beard."}, {"question": "Why is Mohamed Salah capable of running past defenders easily?", "options": ["He is very fast and agile", "He is taller than all other players", "He drives an electric cart", "He only plays in defense"], "correct": 0, "explanation": "His remarkable speed and agility give him an advantage."}, {"question": "How does Mohamed Salah show his kind character?", "options": ["He donates money to charities and builds schools", "He travels only in luxury airplanes", "He lives away from everyone", "He stops playing sports"], "correct": 0, "explanation": "He gives financial support to charities, hospitals, and schools."}, {"question": "Where is Mohamed Salah's hometown located in Egypt?", "options": ["In Basyoun, Gharbia Governorate", "In Luxor", "In Aswan", "In Port Said"], "correct": 0, "explanation": "The text mentions Basyoun in Gharbia."}, {"question": "Why do millions of global fans admire Mohamed Salah?", "options": ["For his goals and his humble, helpful personality", "Because he is a basketball champion", "Because he acts in movies", "Because he never speaks to people"], "correct": 0, "explanation": "He is admired for both his athletic excellence and his humanitarian generosity."}]};
+    const listeningData = {"title": "Describing Best Friends", "dialogue": [{"speaker": "Kareem", "text": "Who is your best friend at school, Tamer?"}, {"speaker": "Tamer", "text": "My best friend is Basel. He has got short straight hair and wears glasses."}, {"speaker": "Kareem", "text": "What is his personality like?"}, {"speaker": "Tamer", "text": "He is very clever and kind. He always helps me when I don't understand my maths homework."}, {"speaker": "Kareem", "text": "Has he got any interesting hobbies?"}, {"speaker": "Tamer", "text": "Yes, he loves reading science fiction stories and playing video games on weekends."}], "questions": [{"question": "What does Basel look like?", "options": ["He has got short straight hair and wears glasses", "He has got long blonde hair", "He has got a thick beard", "He is very tall and bald"], "correct": 0, "explanation": "Tamer describes Basel with short straight hair and glasses."}, {"question": "How does Basel show his helpful personality?", "options": ["He helps Tamer with maths homework", "He buys him expensive presents", "He does all his exams for him", "He drives him to school"], "correct": 0, "explanation": "He helps Tamer understand difficult maths homework."}, {"question": "Which adjectives best describe Basel's character?", "options": ["Clever and kind", "Lazy and noisy", "Selfish and angry", "Cruel and shy"], "correct": 0, "explanation": "Tamer says he is very clever and kind."}, {"question": "What is one of Basel's favorite weekend hobbies?", "options": ["Reading science fiction stories", "Playing the drums in a band", "Riding camels in the desert", "Camping by the lake"], "correct": 0, "explanation": "He loves reading science fiction stories."}, {"question": "Who is asking questions in the dialogue?", "options": ["Kareem", "Tamer", "Basel", "Mr. Mohammad"], "correct": 0, "explanation": "Kareem is asking Tamer about his best friend."}]};
+    const pastExamsData = null;
+    const examData = [{"question":"Choose the correct word: \"Mona has got long _______.\"","options":["fans","beard","short","straight hair"],"correct":3,"explanation":"Target vocabulary: 'straight hair' (شعر أملس / مفرود)."},{"question":"Choose the correct word: \"Salma has got short _______ and brown eyes.\"","options":["curly hair","dark hair","fast","score"],"correct":0,"explanation":"Target vocabulary: 'curly hair' (شعر مجعد)."},{"question":"Choose the correct word: \"Most people in Egypt have got _______.\"","options":["tall","dark hair","give money","friendly"],"correct":1,"explanation":"Target vocabulary: 'dark hair' (شعر داكن)."},{"question":"Choose the correct word: \"Some European tourists have got natural _______.\"","options":["glasses","short","blonde hair","fast"],"correct":2,"explanation":"Target vocabulary: 'blonde hair' (شعر أشقر)."},{"question":"Choose the correct word: \"My grandfather has got a neat grey _______.\"","options":["friendly","glasses","moustache","beard"],"correct":3,"explanation":"Target vocabulary: 'beard' (لحية / ذقن)."},{"question":"Choose the correct word: \"My uncle has got a thick black _______.\"","options":["moustache","blonde hair","fans","brave"],"correct":0,"explanation":"Target vocabulary: 'moustache' (شارب / شنب)."},{"question":"Choose the correct word: \"Ahmed wears _______ because he is short-sighted.\"","options":["fast","glasses","straight hair","fans"],"correct":1,"explanation":"Target vocabulary: 'glasses' (نظارة طبية)."},{"question":"Choose the correct word: \"Our new English teacher is very _______ and supportive.\"","options":["character","appearance","friendly","brave"],"correct":2,"explanation":"Target vocabulary: 'friendly' (ودود / طيب)."},{"question":"Choose the correct word: \"She is very _______ to street cats and stray animals.\"","options":["fans","appearance","feature","kind"],"correct":3,"explanation":"Target vocabulary: 'kind' (عطوف / طيب القلب)."},{"question":"Choose the correct word: \"Adel Imam is a famous and _______ comedy actor.\"","options":["funny","feature","appearance","kind"],"correct":0,"explanation":"Target vocabulary: 'funny' (مضحك / مرح)."},{"question":"He _______ got curly hair and a neat beard.","options":["does","has","is","have"],"correct":1,"explanation":"Singular third person (he) takes 'has got'."},{"question":"They _______ got a big house near the Red Sea.","options":["are","do","have","has"],"correct":2,"explanation":"Plural subject 'They' takes 'have got'."},{"question":"She _______ got blonde hair; her hair is dark brown.","options":["isn't","haven't","doesn't","hasn't"],"correct":3,"explanation":"Singular negative is 'hasn't got'."},{"question":"I haven't _______ my school bag with me today.","options":["got","getting","gets","get"],"correct":0,"explanation":"'haven't' pairs with past participle 'got'."},{"question":"_______ you got a brother living in Alexandria?","options":["Are","Have","Has","Do"],"correct":1,"explanation":"Subject 'you' takes auxiliary 'Have you got?'."},{"question":"_______ your father got a moustache?","options":["Does","Is","Has","Have"],"correct":2,"explanation":"Subject 'your father' (he) takes 'Has ... got?'."},{"question":"Has your sister got long hair? — Yes, she _______.","options":["have","is","does","has"],"correct":3,"explanation":"Affirmative short answer with 'Has' is 'Yes, she has.'"},{"question":"Have they got bicycles? — No, they _______.","options":["haven't","aren't","hasn't","don't"],"correct":0,"explanation":"Negative short answer with 'Have' is 'No, they haven't.'"},{"question":"My uncle has _______ a warm and friendly smile.","options":["getting","got","get","gets"],"correct":1,"explanation":"Fixed structure: 'has got'."},{"question":"What _______ she got in her pencil case?","options":["have","does","has","is"],"correct":2,"explanation":"Singular subject 'she' requires 'has' in question."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello (General) for Prep 1 (First Preparatory), Unit 3: Different People. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          This is teacher-prepared practice material for ${document.title}; it is not an official or accredited Ministry examination.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 2 New Hello Plus — Unit 6: Science, Invention & The Future | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 99px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .grammar-content { background: white; border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.15rem; border-radius: 0 9px 9px 0; margin: 1.15rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.15rem 0; font-size: 0.88rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 9px 11px; text-align: left; }
+    .grammar-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced/Language) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 2 New Hello Plus — Unit 6: Science, Invention & The Future</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (25)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (25)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (12)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Unit 6: Science, Invention & The Future</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Practice draft aligned to this unit's recorded grammar focus — pending official-source review</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 2 New Hello Plus</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced/Language)</span>
+          <span class="meta-tag">Unit: 6</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Audio Speech</span>
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 25 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">20 Fill in the Gap questions + 5 Definition questions.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 25</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <div class='grammar-rule-box'>
+          <h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Passive Voice: Present & Past Simple</h3>
+          <p class="arabic" style="margin-bottom: 1rem; color: #334155;">يُستخدم المبني للمجهول عندما يكون التركيز على الفعل أو المفعول به وليس الفاعل الذي قام بالفعل.</p>
+          <table class='grammar-table'>
+            <thead><tr><th>Structure / الصيغة</th><th>Usage Rule / الاستخدام</th><th>Ministerial Example / مثال وزاري</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Present Simple Passive: Object + am/is/are + P.P.</strong></td><td>أفعال مبنية للمجهول في الحاضر والعادات</td><td><code>English is spoken all over the world.</code></td></tr><tr><td><strong>Past Simple Passive: Object + was/were + P.P.</strong></td><td>أفعال مبنية للمجهول حدثت وانتهت في الماضي</td><td><code>The Great Pyramid was built thousands of years ago.</code></td></tr><tr><td><strong>Negative Passive: Object + am/is/are/was/were + not + P.P.</strong></td><td>نفي المبني للمجهول</td><td><code>The car was not repaired yesterday.</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Grammar Mastery Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">12 focused multiple-choice questions for this unit's grammar focus. Draft for teacher review.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 12</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions (5 Questions)</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions (5 Questions)</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Ministerial exam modeled after official past papers (20 Questions).</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027 — Prep 2 New Hello Plus</div>
+  </footer>
+
+  <script>
+    const vocabData = [{'word': 'breakthrough', 'pos': 'noun', 'arabic': 'إنجاز هائل / اكتشاف', 'def': 'A sudden, dramatic, and important discovery.', 'example': 'Scientists made a major medical breakthrough.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">BR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'discovery', 'pos': 'noun', 'arabic': 'اكتشاف', 'def': 'The action or process of discovering.', 'example': 'The discovery of penicillin saved millions.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">DI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'laboratory', 'pos': 'noun', 'arabic': 'معمل / مختبر', 'def': 'A room for scientific experiments.', 'example': 'Research is conducted in the laboratory.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">LA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'nanotechnology', 'pos': 'noun', 'arabic': 'تكنولوجيا النانو', 'def': 'Technology on an atomic or molecular scale.', 'example': 'Nanotechnology is used in modern medicine.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">NA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'patent', 'pos': 'noun', 'arabic': 'براءة اختراع', 'def': 'A government authority securing an invention.', 'example': 'He secured a patent for his new device.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'inventor', 'pos': 'noun', 'arabic': 'مخترع', 'def': 'A person who invented a particular process.', 'example': 'Thomas Edison was a prolific inventor.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'experiment', 'pos': 'noun', 'arabic': 'تجربة علمية', 'def': 'A scientific procedure to make a discovery.', 'example': 'Students perform chemistry experiments.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EX</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'prototype', 'pos': 'noun', 'arabic': 'نموذج أولي', 'def': 'A first or preliminary model of something.', 'example': 'Engineers built a prototype of the car.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'ingenious', 'pos': 'adj', 'arabic': 'عبقري / مبتكر', 'def': 'Clever, original, and inventive.', 'example': 'She came up with an ingenious solution.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'astronomy', 'pos': 'noun', 'arabic': 'علم الفلك', 'def': 'The branch of science dealing with space.', 'example': 'Astronomy studies stars and planets.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">AS</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'vaccine', 'pos': 'noun', 'arabic': 'لقاح / تطعيم', 'def': 'A substance used to stimulate immunity.', 'example': 'The new vaccine prevents the disease.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">VA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'biotechnology', 'pos': 'noun', 'arabic': 'تكنولوجيا حيوية', 'def': 'The exploitation of biological processes.', 'example': 'Biotechnology advances medicine.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">BI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'computation', 'pos': 'noun', 'arabic': 'حساب آلي / معالجة', 'def': 'The action of mathematical calculation.', 'example': 'Quantum computing revolutionizes computation.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'quantum', 'pos': 'noun', 'arabic': 'كمّي / فيزياء الكم', 'def': 'A discrete quantity of energy.', 'example': 'Quantum physics studies subatomic particles.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">QU</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'telecommunications', 'pos': 'noun', 'arabic': 'اتصالات سلكية ولاسلكية', 'def': 'Communication over distance by cable or satellite.', 'example': 'Telecommunications connect the world.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">TE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'robotics', 'pos': 'noun', 'arabic': 'علم الروبوتات', 'def': 'The branch of technology dealing with robots.', 'example': 'Robotics automates modern factories.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'mechanics', 'pos': 'noun', 'arabic': 'ميكانيكا', 'def': 'The branch of applied mathematics concerning motion.', 'example': 'He studied quantum mechanics.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">ME</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'hypothesis', 'pos': 'noun', 'arabic': 'فرضية علمية', 'def': 'A proposed explanation made on limited evidence.', 'example': 'Scientists tested the hypothesis.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">HY</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'revolutionize', 'pos': 'verb', 'arabic': 'حدث ثورة في', 'def': 'Change something radically or fundamentally.', 'example': 'AI will revolutionize industries.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'scientific', 'pos': 'adj', 'arabic': 'علمي', 'def': 'Based on or characterized by science.', 'example': 'We need scientific proof.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">SC</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'investigation', 'pos': 'noun', 'arabic': 'تحقيق / بحث', 'def': 'The action of investigating something.', 'example': 'Further investigation is needed.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'device', 'pos': 'noun', 'arabic': 'جهاز / أداة', 'def': 'A piece of equipment made for a purpose.', 'example': 'A smartphone is a versatile device.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">DE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'artificial intelligence', 'pos': 'noun', 'arabic': 'ذكاء اصطناعي', 'def': 'Computer systems able to perform human tasks.', 'example': 'Artificial intelligence is changing the future.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">AR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'innovation', 'pos': 'noun', 'arabic': 'ابتكار', 'def': 'A new method, idea, or product.', 'example': 'Continuous innovation drives growth.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'virtual reality', 'pos': 'noun', 'arabic': 'واقع افتراضي', 'def': 'Computer-generated simulation of 3D image.', 'example': 'Virtual reality is used in gaming.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">VI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}];
+    const vocabQuizData = [{'question': 'Complete the sentence: "Scientists made a major medical _______."', 'options': ['breakthrough', 'discovery', 'laboratory', 'nanotechnology'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'breakthrough' والتي تعني (إنجاز هائل / اكتشاف)."}, {'question': 'Complete the sentence: "The _______ of penicillin saved millions."', 'options': ['discovery', 'breakthrough', 'laboratory', 'nanotechnology'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'discovery' والتي تعني (اكتشاف)."}, {'question': 'Complete the sentence: "Research is conducted in the _______."', 'options': ['laboratory', 'breakthrough', 'discovery', 'nanotechnology'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'laboratory' والتي تعني (معمل / مختبر)."}, {'question': 'Complete the sentence: "_______ is used in modern medicine."', 'options': ['nanotechnology', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'nanotechnology' والتي تعني (تكنولوجيا النانو)."}, {'question': 'Complete the sentence: "He secured a _______ for his new device."', 'options': ['patent', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'patent' والتي تعني (براءة اختراع)."}, {'question': 'Complete the sentence: "Thomas Edison was a prolific _______."', 'options': ['inventor', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'inventor' والتي تعني (مخترع)."}, {'question': 'Complete the sentence: "Students perform chemistry _______s."', 'options': ['experiment', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'experiment' والتي تعني (تجربة علمية)."}, {'question': 'Complete the sentence: "Engineers built a _______ of the car."', 'options': ['prototype', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'prototype' والتي تعني (نموذج أولي)."}, {'question': 'Complete the sentence: "She came up with an _______ solution."', 'options': ['ingenious', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'ingenious' والتي تعني (عبقري / مبتكر)."}, {'question': 'Complete the sentence: "_______ studies stars and planets."', 'options': ['astronomy', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'astronomy' والتي تعني (علم الفلك)."}, {'question': 'Complete the sentence: "The new _______ prevents the disease."', 'options': ['vaccine', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'vaccine' والتي تعني (لقاح / تطعيم)."}, {'question': 'Complete the sentence: "_______ advances medicine."', 'options': ['biotechnology', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'biotechnology' والتي تعني (تكنولوجيا حيوية)."}, {'question': 'Complete the sentence: "Quantum computing revolutionizes _______."', 'options': ['computation', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'computation' والتي تعني (حساب آلي / معالجة)."}, {'question': 'Complete the sentence: "_______ physics studies subatomic particles."', 'options': ['quantum', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'quantum' والتي تعني (كمّي / فيزياء الكم)."}, {'question': 'Complete the sentence: "_______ connect the world."', 'options': ['telecommunications', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'telecommunications' والتي تعني (اتصالات سلكية ولاسلكية)."}, {'question': 'Complete the sentence: "_______ automates modern factories."', 'options': ['robotics', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'robotics' والتي تعني (علم الروبوتات)."}, {'question': 'Complete the sentence: "He studied quantum _______."', 'options': ['mechanics', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'mechanics' والتي تعني (ميكانيكا)."}, {'question': 'Complete the sentence: "Scientists tested the _______."', 'options': ['hypothesis', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'hypothesis' والتي تعني (فرضية علمية)."}, {'question': 'Complete the sentence: "AI will _______ industries."', 'options': ['revolutionize', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'revolutionize' والتي تعني (حدث ثورة في)."}, {'question': 'Complete the sentence: "We need _______ proof."', 'options': ['scientific', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'scientific' والتي تعني (علمي)."}, {'question': "Definition Question: What word means 'The action of investigating something.'?", 'options': ['investigation', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'investigation' وتعني (تحقيق / بحث)."}, {'question': "Definition Question: What word means 'A piece of equipment made for a purpose.'?", 'options': ['device', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'device' وتعني (جهاز / أداة)."}, {'question': "Definition Question: What word means 'Computer systems able to perform human tasks.'?", 'options': ['artificial intelligence', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'artificial intelligence' وتعني (ذكاء اصطناعي)."}, {'question': "Definition Question: What word means 'A new method, idea, or product.'?", 'options': ['innovation', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'innovation' وتعني (ابتكار)."}, {'question': "Definition Question: What word means 'Computer-generated simulation of 3D image.'?", 'options': ['virtual reality', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'virtual reality' وتعني (واقع افتراضي)."}];
+    const grammarQuizData = [{"question":"English ______ in many countries.","options":["is spoken","speaks","was spoken","is speaking"],"correct":0,"explanation":"المضارع المبني للمجهول: am/is/are + past participle."},{"question":"The old bridge ______ in 1950.","options":["was built","is built","built","was building"],"correct":0,"explanation":"الماضي المبني للمجهول: was/were + past participle."},{"question":"These cars ______ in Japan.","options":["are made","make","were making","is made"],"correct":0,"explanation":"فاعل جمع في المضارع المبني للمجهول: are made."},{"question":"The classroom ______ every day.","options":["is cleaned","cleans","was cleaning","clean"],"correct":0,"explanation":"عادة حالية؛ is + past participle."},{"question":"The letters ______ yesterday.","options":["were sent","are sent","sent","were sending"],"correct":0,"explanation":"yesterday يدل على الماضي؛ were sent."},{"question":"This book ______ by a famous writer.","options":["was written","wrote","is writing","was wrote"],"correct":0,"explanation":"الماضي المبني للمجهول يستخدم التصريف الثالث written."},{"question":"Many mobile phones ______ every year.","options":["are produced","produced","is produced","were producing"],"correct":0,"explanation":"فاعل جمع وزمن عام؛ are produced."},{"question":"The windows ______ last night.","options":["were broken","are broken","broke","were breaking"],"correct":0,"explanation":"last night يدل على الماضي؛ were broken."},{"question":"Rice ______ in this area.","options":["is grown","grows","was growing","are grown"],"correct":0,"explanation":"المضارع المبني للمجهول مع rice المفرد غير المعدود: is grown."},{"question":"The match ______ because of the rain yesterday.","options":["was cancelled","is cancelled","cancelled","was cancelling"],"correct":0,"explanation":"حدث ماضٍ مبني للمجهول: was cancelled."},{"question":"The rooms ______ twice a week.","options":["are cleaned","clean","is cleaned","were cleaning"],"correct":0,"explanation":"rooms جمع؛ are + past participle."},{"question":"The first computer ______ many years ago.","options":["was invented","is invented","invented","was inventing"],"correct":0,"explanation":"many years ago يدل على الماضي المبني للمجهول."}];
+    const readingData = {"title":"Unit 6: Science, Invention & The Future — Supplementary Reading Practice","paragraphs":["Scientists use observation and experiments to answer questions about the world. An invention often begins with a simple problem. Engineers then design, test and improve a device until it works safely and effectively.","At a school science fair, a group of students presented a small solar-powered model car. They explained how sunlight could be changed into electrical energy. Their project showed that creative ideas and teamwork can help us find cleaner ways to use energy."],"questions":[{"question":"How do scientists answer questions?","options":["Through observation and experiments","By avoiding evidence","By copying guesses","By ignoring results"],"correct":0,"explanation":"العلماء يستخدمون الملاحظة والتجارب."},{"question":"How does an invention often begin?","options":["With a simple problem","With a finished factory","With a sports match","With a holiday plan"],"correct":0,"explanation":"الاختراع غالبًا يبدأ بمشكلة بسيطة."},{"question":"What did students present at the science fair?","options":["A solar-powered model car","A wooden sailing boat","A new school uniform","A paper bridge"],"correct":0,"explanation":"قدم الطلاب نموذج سيارة تعمل بالطاقة الشمسية."},{"question":"What can sunlight be changed into?","options":["Electrical energy","Plastic","Fresh water","Sound only"],"correct":0,"explanation":"يمكن تحويل ضوء الشمس إلى طاقة كهربائية."},{"question":"What did the project demonstrate?","options":["Creativity and teamwork can support cleaner energy","Experiments are unnecessary","Cars cannot use solar power","Teamwork prevents inventions"],"correct":0,"explanation":"المشروع أظهر أهمية الإبداع والعمل الجماعي للطاقة النظيفة."}]};
+    const listeningData = {"title":"Unit 6: Science, Invention & The Future — Supplementary Listening Dialogue","dialogue":[{"speaker":"Teacher","text":"What are you testing, Youssef?"},{"speaker":"Youssef","text":"A small sensor that switches on a lamp when the room becomes dark."},{"speaker":"Teacher","text":"How does it work?"},{"speaker":"Youssef","text":"The sensor detects low light and sends a signal to the circuit."},{"speaker":"Teacher","text":"Good work. Remember to test it safely and record your results."}],"questions":[{"question":"What is Youssef testing?","options":["A light sensor","A water filter","A model plane","A loudspeaker"],"correct":0,"explanation":"يوسف يختبر مستشعرًا للضوء."},{"question":"When does the lamp switch on?","options":["When the room becomes dark","When the room is very hot","When someone opens a book","When music starts"],"correct":0,"explanation":"المصباح يعمل عندما تصبح الغرفة مظلمة."},{"question":"What does the sensor detect?","options":["Low light","High sound","Fast movement","Water pressure"],"correct":0,"explanation":"المستشعر يكتشف انخفاض الإضاءة."},{"question":"What does the sensor send?","options":["A signal to the circuit","A message to a phone","Water to a tank","Heat to a battery"],"correct":0,"explanation":"يرسل إشارة إلى الدائرة الكهربائية."},{"question":"What does the teacher remind Youssef to do?","options":["Test safely and record results","Stop the experiment","Hide the model","Skip all measurements"],"correct":0,"explanation":"المعلم طلب الاختبار بأمان وتسجيل النتائج."}]};
+    const examData = [{'question': '[Vocab Assessment] Choose the correct option: A sudden, dramatic, and important discovery.', 'options': ['breakthrough', 'discovery', 'laboratory', 'nanotechnology'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي breakthrough (إنجاز هائل / اكتشاف).'}, {'question': '[Vocab Assessment] Choose the correct option: The action or process of discovering.', 'options': ['discovery', 'breakthrough', 'laboratory', 'nanotechnology'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي discovery (اكتشاف).'}, {'question': '[Vocab Assessment] Choose the correct option: A room for scientific experiments.', 'options': ['laboratory', 'breakthrough', 'discovery', 'nanotechnology'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي laboratory (معمل / مختبر).'}, {'question': '[Vocab Assessment] Choose the correct option: Technology on an atomic or molecular scale.', 'options': ['nanotechnology', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي nanotechnology (تكنولوجيا النانو).'}, {'question': '[Vocab Assessment] Choose the correct option: A government authority securing an invention.', 'options': ['patent', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي patent (براءة اختراع).'}, {'question': '[Vocab Assessment] Choose the correct option: A person who invented a particular process.', 'options': ['inventor', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي inventor (مخترع).'}, {'question': '[Vocab Assessment] Choose the correct option: A scientific procedure to make a discovery.', 'options': ['experiment', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي experiment (تجربة علمية).'}, {'question': '[Vocab Assessment] Choose the correct option: A first or preliminary model of something.', 'options': ['prototype', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي prototype (نموذج أولي).'}, {'question': '[Vocab Assessment] Choose the correct option: Clever, original, and inventive.', 'options': ['ingenious', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي ingenious (عبقري / مبتكر).'}, {'question': '[Vocab Assessment] Choose the correct option: The branch of science dealing with space.', 'options': ['astronomy', 'breakthrough', 'discovery', 'laboratory'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي astronomy (علم الفلك).'}, {'question': '[Grammar Assessment] While I _______ for the bus, it started to rain.', 'options': ['was waiting', 'waited', 'wait', 'am waiting'], 'correct': 0, 'explanation': 'قاعدة While يليه ماضي مستمر.'}, {'question': '[Grammar Assessment] When the phone rang, she _______ dinner.', 'options': ['was cooking', 'cooked', 'cooks', 'is cooking'], 'correct': 0, 'explanation': 'الحدث الذي كان مستمراً يأتي في الماضي المستمر.'}, {'question': '[Grammar Assessment] Look at those heavy dark clouds! It _______ rain.', 'options': ['is going to', 'will', 'rains', 'is raining'], 'correct': 0, 'explanation': 'التنبؤ بدليل يتطلب is going to.'}, {'question': '[Grammar Assessment] He _______ be rich; he lives in a huge palace and drives a Ferrari.', 'options': ['must', "can't", 'might', "shouldn't"], 'correct': 0, 'explanation': 'استنتاج مؤكد في الحاضر بـ must.'}, {'question': '[Grammar Assessment] She _______ be at home because I saw her at school a minute ago.', 'options': ["can't", 'must', 'might', 'could'], 'correct': 0, 'explanation': "استنتاج منفي مؤكد بـ can't."}, {'question': '[Grammar Assessment] If I saved enough money, I _______ a new smartphone.', 'options': ['would buy', 'will buy', 'bought', 'buy'], 'correct': 0, 'explanation': 'الحالة الشرطية الثانية: Past Simple -> would + Inf.'}, {'question': '[Grammar Assessment] If I were you, I _______ consult a doctor immediately.', 'options': ['would', 'will', 'can', 'may'], 'correct': 0, 'explanation': 'صيغة النصيحة في الحالة الشرطية الثانية.'}, {'question': '[Grammar Assessment] He stopped _______ a newspaper on his way to work.', 'options': ['to buy', 'buying', 'buy', 'bought'], 'correct': 0, 'explanation': 'Stop to + inf يعني توقف لكي يفعل شيئاً آخر.'}, {'question': '[Grammar Assessment] She stopped _______ sugar because her doctor advised her to.', 'options': ['eating', 'to eat', 'eat', 'ate'], 'correct': 0, 'explanation': 'Stop + V-ing يعني إقلاع وتوقف تام عن الفعل.'}, {'question': '[Grammar Assessment] Remember _______ your homework before going out.', 'options': ['to do', 'doing', 'do', 'did'], 'correct': 0, 'explanation': 'Remember + to + inf يعني التذكر قبل فعل الشيء.'}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to Prep 2 New Hello Plus, Unit 6: Science, Invention & The Future. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for Prep 2 New Hello Plus.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

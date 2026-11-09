@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 2 New Hello Plus — Unit 2: Career Pathways | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 99px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .grammar-content { background: white; border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.15rem; border-radius: 0 9px 9px 0; margin: 1.15rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.15rem 0; font-size: 0.88rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 9px 11px; text-align: left; }
+    .grammar-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced/Language) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 2 New Hello Plus — Unit 2: Career Pathways</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (25)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (25)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (12)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Unit 2: Career Pathways</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Practice draft aligned to this unit's recorded grammar focus — pending official-source review</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 2 New Hello Plus</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced/Language)</span>
+          <span class="meta-tag">Unit: 2</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Audio Speech</span>
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 25 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">20 Fill in the Gap questions + 5 Definition questions.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 25</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <div class='grammar-rule-box'>
+          <h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Modals of Deduction & Obligation (must, can't, might, have to)</h3>
+          <p class="arabic" style="margin-bottom: 1rem; color: #334155;">تُستخدم أفعال الناقصة للتعبير عن الاستنتاج المؤكد أو الاحتمالي في الحاضر والماضي، بالإضافة إلى التعبير عن الإلزام والضرورة.</p>
+          <table class='grammar-table'>
+            <thead><tr><th>Structure / الصيغة</th><th>Usage Rule / الاستخدام</th><th>Ministerial Example / مثال وزاري</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Must + Inf</strong></td><td>استنتاج مثبت مؤكد في الحاضر</td><td><code>He has 3 cars; he must be rich.</code></td></tr><tr><td><strong>Can't + Inf</strong></td><td>استنتاج منفي مؤكد في الحاضر</td><td><code>He just ate; he can't be hungry.</code></td></tr><tr><td><strong>Might / May + Inf</strong></td><td>استنتاج احتمالي غير مؤكد</td><td><code>She isn't here; she might be ill.</code></td></tr><tr><td><strong>Have to / Must + Inf</strong></td><td>الضرورة والإلزام في الحاضر</td><td><code>Students have to wear uniforms.</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Grammar Mastery Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">12 focused multiple-choice questions for this unit's grammar focus. Draft for teacher review.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 12</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions (5 Questions)</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions (5 Questions)</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Ministerial exam modeled after official past papers (20 Questions).</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027 — Prep 2 New Hello Plus</div>
+  </footer>
+
+  <script>
+    const vocabData = [{'word': 'profession', 'pos': 'noun', 'arabic': 'مهنة', 'def': 'A paid occupation requiring training.', 'example': 'Medicine is a noble profession.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'entrepreneur', 'pos': 'noun', 'arabic': 'رائد أعمال', 'def': 'A person who sets up a business.', 'example': 'The entrepreneur launched a startup.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'qualification', 'pos': 'noun', 'arabic': 'مؤهل دراسي', 'def': 'A pass of an examination or course.', 'example': 'She has impressive qualifications.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">QU</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'vocation', 'pos': 'noun', 'arabic': 'مهنة / نداء طبيعي', 'def': 'A strong feeling of suitability for a career.', 'example': 'Teaching is her true vocation.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">VO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'internship', 'pos': 'noun', 'arabic': 'فترة تدريب', 'def': 'The position of a student or trainee.', 'example': 'He landed a summer internship.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'employment', 'pos': 'noun', 'arabic': 'توظيف / عمل', 'def': 'The state of having paid work.', 'example': 'Employment rates are rising.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EM</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'colleague', 'pos': 'noun', 'arabic': 'زميل عمل', 'def': 'A person with whom one works.', 'example': 'She helps her colleagues daily.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'specialist', 'pos': 'noun', 'arabic': 'متخصص', 'def': 'A person who concentrates on a subject.', 'example': 'He is a heart specialist.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">SP</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'technician', 'pos': 'noun', 'arabic': 'فني', 'def': 'A person skilled in technical equipment.', 'example': 'The technician fixed the computer.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">TE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'consultant', 'pos': 'noun', 'arabic': 'مستشار', 'def': 'A person who provides expert advice.', 'example': 'They hired a financial consultant.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'executive', 'pos': 'noun', 'arabic': 'تنفيذي / مدير', 'def': 'A person with senior managerial responsibility.', 'example': 'The executive made a major decision.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EX</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'workplace', 'pos': 'noun', 'arabic': 'مكان العمل', 'def': 'A place where people work.', 'example': 'Safety in the workplace is essential.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">WO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'recruitment', 'pos': 'noun', 'arabic': 'توظيف واستقطاب', 'def': 'The action of finding new staff.', 'example': 'The recruitment process was thorough.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'salary', 'pos': 'noun', 'arabic': 'راتب شهري', 'def': 'A fixed regular payment.', 'example': 'He earns a competitive salary.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">SA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'expertise', 'pos': 'noun', 'arabic': 'خبرة متميزة', 'def': 'Expert skill or knowledge.', 'example': 'Her expertise saved the project.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EX</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'promotion', 'pos': 'noun', 'arabic': 'ترقية', 'def': 'The advancement of an employee.', 'example': 'She earned a promotion to manager.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'competence', 'pos': 'noun', 'arabic': 'كفاءة', 'def': 'The ability to do something successfully.', 'example': 'He demonstrated high competence.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'leadership', 'pos': 'noun', 'arabic': 'قيادة', 'def': 'The action of leading a group.', 'example': 'Strong leadership inspires the team.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">LE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'freelancer', 'pos': 'noun', 'arabic': 'عامل حر', 'def': 'Self-employed person working for various companies.', 'example': 'The freelancer designs logos.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">FR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'enterprise', 'pos': 'noun', 'arabic': 'مشروع / شركة', 'def': 'A business or company.', 'example': 'They started a joint enterprise.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'career', 'pos': 'noun', 'arabic': 'مسيرة مهنية', 'def': 'An occupation undertaken for a period.', 'example': 'He pursued a career in law.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'interview', 'pos': 'noun', 'arabic': 'مقابلة شخصية', 'def': 'A formal meeting for assessment.', 'example': 'She aced her job interview.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">IN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'applicant', 'pos': 'noun', 'arabic': 'متقدم لوظيفة', 'def': 'A person who applies for a job.', 'example': 'Ten applicants were interviewed.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">AP</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'resume', 'pos': 'noun', 'arabic': 'سيرة ذاتية', 'def': 'A formal document of background.', 'example': 'Update your resume regularly.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'occupation', 'pos': 'noun', 'arabic': 'وظيفة', 'def': 'A job or profession.', 'example': 'State your name and occupation.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">OC</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}];
+    const vocabQuizData = [{'question': 'Complete the sentence: "Medicine is a noble _______."', 'options': ['profession', 'entrepreneur', 'qualification', 'vocation'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'profession' والتي تعني (مهنة)."}, {'question': 'Complete the sentence: "The _______ launched a startup."', 'options': ['entrepreneur', 'profession', 'qualification', 'vocation'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'entrepreneur' والتي تعني (رائد أعمال)."}, {'question': 'Complete the sentence: "She has impressive _______s."', 'options': ['qualification', 'profession', 'entrepreneur', 'vocation'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'qualification' والتي تعني (مؤهل دراسي)."}, {'question': 'Complete the sentence: "Teaching is her true _______."', 'options': ['vocation', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'vocation' والتي تعني (مهنة / نداء طبيعي)."}, {'question': 'Complete the sentence: "He landed a summer _______."', 'options': ['internship', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'internship' والتي تعني (فترة تدريب)."}, {'question': 'Complete the sentence: "_______ rates are rising."', 'options': ['employment', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'employment' والتي تعني (توظيف / عمل)."}, {'question': 'Complete the sentence: "She helps her _______s daily."', 'options': ['colleague', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'colleague' والتي تعني (زميل عمل)."}, {'question': 'Complete the sentence: "He is a heart _______."', 'options': ['specialist', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'specialist' والتي تعني (متخصص)."}, {'question': 'Complete the sentence: "The _______ fixed the computer."', 'options': ['technician', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'technician' والتي تعني (فني)."}, {'question': 'Complete the sentence: "They hired a financial _______."', 'options': ['consultant', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'consultant' والتي تعني (مستشار)."}, {'question': 'Complete the sentence: "The _______ made a major decision."', 'options': ['executive', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'executive' والتي تعني (تنفيذي / مدير)."}, {'question': 'Complete the sentence: "Safety in the _______ is essential."', 'options': ['workplace', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'workplace' والتي تعني (مكان العمل)."}, {'question': 'Complete the sentence: "The _______ process was thorough."', 'options': ['recruitment', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'recruitment' والتي تعني (توظيف واستقطاب)."}, {'question': 'Complete the sentence: "He earns a competitive _______."', 'options': ['salary', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'salary' والتي تعني (راتب شهري)."}, {'question': 'Complete the sentence: "Her _______ saved the project."', 'options': ['expertise', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'expertise' والتي تعني (خبرة متميزة)."}, {'question': 'Complete the sentence: "She earned a _______ to manager."', 'options': ['promotion', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'promotion' والتي تعني (ترقية)."}, {'question': 'Complete the sentence: "He demonstrated high _______."', 'options': ['competence', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'competence' والتي تعني (كفاءة)."}, {'question': 'Complete the sentence: "Strong _______ inspires the team."', 'options': ['leadership', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'leadership' والتي تعني (قيادة)."}, {'question': 'Complete the sentence: "The _______ designs logos."', 'options': ['freelancer', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'freelancer' والتي تعني (عامل حر)."}, {'question': 'Complete the sentence: "They started a joint _______."', 'options': ['enterprise', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'enterprise' والتي تعني (مشروع / شركة)."}, {'question': "Definition Question: What word means 'An occupation undertaken for a period.'?", 'options': ['career', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'career' وتعني (مسيرة مهنية)."}, {'question': "Definition Question: What word means 'A formal meeting for assessment.'?", 'options': ['interview', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'interview' وتعني (مقابلة شخصية)."}, {'question': "Definition Question: What word means 'A person who applies for a job.'?", 'options': ['applicant', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'applicant' وتعني (متقدم لوظيفة)."}, {'question': "Definition Question: What word means 'A formal document of background.'?", 'options': ['resume', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'resume' وتعني (سيرة ذاتية)."}, {'question': "Definition Question: What word means 'A job or profession.'?", 'options': ['occupation', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'occupation' وتعني (وظيفة)."}];
+    const grammarQuizData = [{"question":"You ______ wear a seat belt in a car. It is the law.","options":["must","might","can't","would"],"correct":0,"explanation":"must للتعبير عن الإلزام القوي."},{"question":"The lights are off and nobody answers. They ______ be asleep.","options":["might","mustn't","can't","have to"],"correct":0,"explanation":"might تعبر عن احتمال وليس يقينًا."},{"question":"That ______ be Ahmed; he is abroad this week.","options":["can't","must","has to","should"],"correct":0,"explanation":"can't للاستنتاج بأن الأمر مستحيل أو غير مرجح."},{"question":"She has a high fever. She ______ see a doctor.","options":["should","can't","might","mustn't"],"correct":0,"explanation":"should للنصيحة."},{"question":"Students ______ use their phones during the exam. It is forbidden.","options":["mustn't","don't have to","might","should"],"correct":0,"explanation":"mustn't تعبر عن المنع."},{"question":"You ______ bring food; lunch is provided, so it isn't necessary.","options":["don't have to","mustn't","can't","shouldn't"],"correct":0,"explanation":"don't have to تعني عدم وجود ضرورة."},{"question":"He has trained for years. He ______ be an experienced swimmer.","options":["must","can't","might not","mustn't"],"correct":0,"explanation":"must للاستنتاج القوي المبني على دليل."},{"question":"Take an umbrella. It ______ rain later, but I'm not sure.","options":["might","mustn't","can't","has to"],"correct":0,"explanation":"might للاحتمال."},{"question":"You ______ park here. This sign says NO PARKING.","options":["mustn't","don't have to","might","would"],"correct":0,"explanation":"اللافتة تدل على المنع."},{"question":"We ______ be quiet in the library.","options":["have to","might","can't","would"],"correct":0,"explanation":"have to للتعبير عن ضرورة أو التزام."},{"question":"The door is locked and the room is empty. They ______ be inside.","options":["can't","must","should","have to"],"correct":0,"explanation":"الأدلة تجعل وجودهم بالداخل مستبعدًا."},{"question":"You look tired. You ______ get some rest.","options":["should","mustn't","can't","might not"],"correct":0,"explanation":"should للنصيحة."}];
+    const readingData = {"title":"Unit 2: Career Pathways — Supplementary Reading Practice","paragraphs":["Choosing a career takes time and careful thought. Some students enjoy solving problems, while others prefer helping people or creating new designs. A good career choice should match a person's interests, abilities and values.","Students can explore different professions by reading, asking questions and speaking to people at work. Training and practical experience are important too. No job is successful without effort, responsibility and a willingness to keep learning."],"questions":[{"question":"What should a good career choice match?","options":["Interests, abilities and values","Only a friend's opinion","The colour of a uniform","The distance to a shop"],"correct":0,"explanation":"الاختيار المناسب يتوافق مع الاهتمامات والقدرات والقيم."},{"question":"How can students explore professions?","options":["By speaking to people at work","By avoiding questions","By guessing every job","By stopping their studies"],"correct":0,"explanation":"يمكنهم التحدث إلى أشخاص يعملون في المهن المختلفة."},{"question":"What is important besides training?","options":["Practical experience","Expensive clothes","Long holidays","A large office"],"correct":0,"explanation":"الخبرة العملية مهمة إلى جانب التدريب."},{"question":"What helps people succeed at work?","options":["Effort and responsibility","Avoiding new skills","Working without a plan","Ignoring other people"],"correct":0,"explanation":"الجهد والمسؤولية والتعلم المستمر عوامل للنجاح."},{"question":"What is the passage mainly about?","options":["Thinking carefully about a career","How to travel abroad","The history of schools","How to repair machines"],"correct":0,"explanation":"النص يشرح كيفية التفكير في اختيار المهنة."}]};
+    const listeningData = {"title":"Unit 2: Career Pathways — Supplementary Listening Dialogue","dialogue":[{"speaker":"Teacher","text":"Have you thought about your future career, Salma?"},{"speaker":"Salma","text":"I am interested in medicine because I like helping people."},{"speaker":"Teacher","text":"That is a good reason. What skills will you need?"},{"speaker":"Salma","text":"I will need patience, careful listening and a strong knowledge of science."},{"speaker":"Teacher","text":"Excellent. You can learn more by reading and talking to doctors."}],"questions":[{"question":"Which career interests Salma?","options":["Medicine","Engineering","Journalism","Architecture"],"correct":0,"explanation":"سلمى مهتمة بالطب."},{"question":"Why does she like it?","options":["She likes helping people","She wants to travel daily","She enjoys repairing cars","She likes designing clothes"],"correct":0,"explanation":"تحب مساعدة الناس."},{"question":"Which skill does Salma mention?","options":["Patience","Speed in running","Painting","Driving"],"correct":0,"explanation":"ذكرت الصبر والاستماع الجيد."},{"question":"Who does the teacher suggest she talks to?","options":["Doctors","Pilots","Chefs","Farmers"],"correct":0,"explanation":"نصحها المعلم بالتحدث إلى الأطباء."},{"question":"What is the conversation about?","options":["Planning a future career","Preparing for a sports match","Buying a computer","Organising a school trip"],"correct":0,"explanation":"المحادثة عن التخطيط للمستقبل المهني."}]};
+    const examData = [{'question': '[Vocab Assessment] Choose the correct option: A paid occupation requiring training.', 'options': ['profession', 'entrepreneur', 'qualification', 'vocation'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي profession (مهنة).'}, {'question': '[Vocab Assessment] Choose the correct option: A person who sets up a business.', 'options': ['entrepreneur', 'profession', 'qualification', 'vocation'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي entrepreneur (رائد أعمال).'}, {'question': '[Vocab Assessment] Choose the correct option: A pass of an examination or course.', 'options': ['qualification', 'profession', 'entrepreneur', 'vocation'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي qualification (مؤهل دراسي).'}, {'question': '[Vocab Assessment] Choose the correct option: A strong feeling of suitability for a career.', 'options': ['vocation', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي vocation (مهنة / نداء طبيعي).'}, {'question': '[Vocab Assessment] Choose the correct option: The position of a student or trainee.', 'options': ['internship', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي internship (فترة تدريب).'}, {'question': '[Vocab Assessment] Choose the correct option: The state of having paid work.', 'options': ['employment', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي employment (توظيف / عمل).'}, {'question': '[Vocab Assessment] Choose the correct option: A person with whom one works.', 'options': ['colleague', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي colleague (زميل عمل).'}, {'question': '[Vocab Assessment] Choose the correct option: A person who concentrates on a subject.', 'options': ['specialist', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي specialist (متخصص).'}, {'question': '[Vocab Assessment] Choose the correct option: A person skilled in technical equipment.', 'options': ['technician', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي technician (فني).'}, {'question': '[Vocab Assessment] Choose the correct option: A person who provides expert advice.', 'options': ['consultant', 'profession', 'entrepreneur', 'qualification'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي consultant (مستشار).'}, {'question': '[Grammar Assessment] While I _______ for the bus, it started to rain.', 'options': ['was waiting', 'waited', 'wait', 'am waiting'], 'correct': 0, 'explanation': 'قاعدة While يليه ماضي مستمر.'}, {'question': '[Grammar Assessment] When the phone rang, she _______ dinner.', 'options': ['was cooking', 'cooked', 'cooks', 'is cooking'], 'correct': 0, 'explanation': 'الحدث الذي كان مستمراً يأتي في الماضي المستمر.'}, {'question': '[Grammar Assessment] Look at those heavy dark clouds! It _______ rain.', 'options': ['is going to', 'will', 'rains', 'is raining'], 'correct': 0, 'explanation': 'التنبؤ بدليل يتطلب is going to.'}, {'question': '[Grammar Assessment] He _______ be rich; he lives in a huge palace and drives a Ferrari.', 'options': ['must', "can't", 'might', "shouldn't"], 'correct': 0, 'explanation': 'استنتاج مؤكد في الحاضر بـ must.'}, {'question': '[Grammar Assessment] She _______ be at home because I saw her at school a minute ago.', 'options': ["can't", 'must', 'might', 'could'], 'correct': 0, 'explanation': "استنتاج منفي مؤكد بـ can't."}, {'question': '[Grammar Assessment] If I saved enough money, I _______ a new smartphone.', 'options': ['would buy', 'will buy', 'bought', 'buy'], 'correct': 0, 'explanation': 'الحالة الشرطية الثانية: Past Simple -> would + Inf.'}, {'question': '[Grammar Assessment] If I were you, I _______ consult a doctor immediately.', 'options': ['would', 'will', 'can', 'may'], 'correct': 0, 'explanation': 'صيغة النصيحة في الحالة الشرطية الثانية.'}, {'question': '[Grammar Assessment] He stopped _______ a newspaper on his way to work.', 'options': ['to buy', 'buying', 'buy', 'bought'], 'correct': 0, 'explanation': 'Stop to + inf يعني توقف لكي يفعل شيئاً آخر.'}, {'question': '[Grammar Assessment] She stopped _______ sugar because her doctor advised her to.', 'options': ['eating', 'to eat', 'eat', 'ate'], 'correct': 0, 'explanation': 'Stop + V-ing يعني إقلاع وتوقف تام عن الفعل.'}, {'question': '[Grammar Assessment] Remember _______ your homework before going out.', 'options': ['to do', 'doing', 'do', 'did'], 'correct': 0, 'explanation': 'Remember + to + inf يعني التذكر قبل فعل الشيء.'}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to Prep 2 New Hello Plus, Unit 2: Career Pathways. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for Prep 2 New Hello Plus.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

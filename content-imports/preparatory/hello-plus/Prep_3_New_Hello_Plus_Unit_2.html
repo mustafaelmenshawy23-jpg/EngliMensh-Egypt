@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 3 New Hello Plus (New Hello Plus (Advanced/Language)) - Unit 2: Modern Consumerism & Smart Living | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .grammar-content { background: white; border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.15rem; border-radius: 0 9px 9px 0; margin: 1.15rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.15rem 0; font-size: 0.88rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 9px 11px; text-align: left; }
+    .grammar-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced/Language) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 3 New Hello Plus — Unit 2: Modern Consumerism & Smart Living</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (12)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Modern Consumerism & Smart Living</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Supplementary practice draft — pending official textbook review</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 3 New Hello Plus</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced/Language)</span>
+          <span class="meta-tag">Unit: 2</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Audio Speech</span>
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Choose the word that matches the definition in each supplementary practice question.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 22</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <div class='grammar-rule-box'><h3>Relative Clauses: Defining vs. Non-Defining</h3>
+        <p>Comprehensive grammatical structure and usage rules according to official Egyptian supplementary practice specifications.</p>
+        <table class='grammar-table'>
+          <thead><tr><th>Structure</th><th>Usage Rule</th><th>Ministerial Example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Affirmative</strong></td><td>Standard sentence construction</td><td>Regular subject-verb agreement</td></tr>
+            <tr><td><strong>Negative</strong></td><td>Auxiliary negation</td><td>Correct auxiliary usage with base infinitive</td></tr>
+            <tr><td><strong>Interrogative</strong></td><td>Question formulation (Yes/No & Wh-)</td><td>Auxiliary inversion with subject</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Grammar Mastery Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">12 focused MCQs for Defining vs Non-defining Relative Clauses. Supplementary practice pending textbook review.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 12</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Supplementary Mixed Practice Test</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">20-question mixed practice: 10 vocabulary questions and 10 general grammar questions. Not an official exam.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word":"consumerism","pos":"noun","arabic":"النزعة الاستهلاكية","def":"الميل إلى شراء السلع والخدمات واستهلاكها بكثرة","example":"Advertising can encourage consumerism.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"e-commerce","pos":"noun","arabic":"التجارة الإلكترونية","def":"شراء السلع وبيعها عبر الإنترنت","example":"Many shops use e-commerce to reach more customers.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">E-</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"retail","pos":"noun","arabic":"البيع بالتجزئة","def":"بيع السلع مباشرة للمستهلك بكميات صغيرة","example":"The shop is part of a large retail chain.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"sustainable","pos":"adjective","arabic":"مستدام","def":"يمكن الاستمرار فيه دون استنزاف الموارد أو الإضرار بالبيئة","example":"We need sustainable ways to use energy.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"appliance","pos":"noun","arabic":"جهاز منزلي","def":"آلة كهربائية تُستخدم في المنزل مثل الثلاجة أو الغسالة","example":"This appliance saves water and electricity.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AP</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"guarantee","pos":"noun","arabic":"ضمان / يضمن","def":"تعهد بإصلاح المنتج أو استبداله إذا ظهرت مشكلة خلال مدة محددة","example":"The phone comes with a two-year guarantee.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">GU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"transaction","pos":"noun","arabic":"معاملة / عملية تجارية","def":"عملية دفع أو شراء أو بيع أو تحويل أموال","example":"The online transaction was completed safely.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"gadget","pos":"noun","arabic":"أداة إلكترونية صغيرة","def":"جهاز صغير ذكي يؤدي وظيفة معينة","example":"This gadget helps me organise my desk.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">GA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"cybersecurity","pos":"noun","arabic":"الأمن السيبراني","def":"حماية الأجهزة والشبكات والبيانات من الهجمات الرقمية","example":"Cybersecurity keeps personal information safer.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CY</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"warranty","pos":"noun","arabic":"كفالة / ضمان","def":"اتفاق يحدد إصلاح المنتج أو استبداله عند وجود عيب","example":"Keep the receipt and warranty for the laptop.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"deliverables","pos":"noun","arabic":"المخرجات المطلوبة","def":"الأشياء أو النتائج التي يجب تسليمها في نهاية عمل أو مشروع","example":"The project deliverables are due on Monday.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"complaint","pos":"noun","arabic":"شكوى","def":"تعبير رسمي عن عدم الرضا عن منتج أو خدمة","example":"The customer made a complaint about the late delivery.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"feedback","pos":"noun","arabic":"ملاحظات / تغذية راجعة","def":"آراء تُقدَّم لمساعدة شخص أو جهة على التحسين","example":"The shop asked customers for feedback.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"merchandise","pos":"noun","arabic":"بضائع / سلع","def":"المنتجات المعروضة للبيع في متجر","example":"The store displays its merchandise near the entrance.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ME</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"digital wallet","pos":"noun","arabic":"محفظة رقمية","def":"تطبيق أو خدمة إلكترونية لحفظ بيانات الدفع وإجراء المدفوعات","example":"I used a digital wallet to pay for the ticket.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"marketplace","pos":"noun","arabic":"سوق / منصة بيع","def":"مكان أو منصة يلتقي فيها البائعون والمشترون","example":"The online marketplace offers products from many sellers.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">MA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"satisfaction","pos":"noun","arabic":"رضا","def":"شعور بالقبول أو السرور نتيجة تلبية حاجة أو توقع","example":"Good service can increase customer satisfaction.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"invoice","pos":"noun","arabic":"فاتورة","def":"مستند يوضح السلع أو الخدمات والمبلغ المطلوب دفعه","example":"The company sent an invoice by email.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">IN</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"refund","pos":"noun","arabic":"استرداد المبلغ","def":"إعادة المال إلى المشتري بعد إرجاع منتج أو إلغاء خدمة","example":"The shop gave me a refund for the damaged item.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"convenience","pos":"noun","arabic":"سهولة / ملاءمة","def":"صفة تجعل الأمر أسهل أو أوفر للوقت والجهد","example":"Online shopping offers convenience to busy families.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"consumption","pos":"noun","arabic":"استهلاك","def":"استخدام السلع أو الطاقة أو الموارد","example":"Reducing electricity consumption saves money.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"},{"word":"promotional","pos":"adjective","arabic":"ترويجي","def":"يهدف إلى الإعلان عن منتج أو تشجيع الناس على شرائه","example":"The shop sent a promotional offer to its customers.","svg":"<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];;
+    const vocabQuizData = [{"question":"Which word means: \"الميل إلى شراء السلع والخدمات واستهلاكها بكثرة\"?","options":["consumerism","guarantee","complaint","invoice"],"correct":0,"explanation":"consumerism تعني: النزعة الاستهلاكية."},{"question":"Which word means: \"شراء السلع وبيعها عبر الإنترنت\"?","options":["transaction","feedback","refund","e-commerce"],"correct":3,"explanation":"e-commerce تعني: التجارة الإلكترونية."},{"question":"Which word means: \"بيع السلع مباشرة للمستهلك بكميات صغيرة\"?","options":["merchandise","convenience","retail","gadget"],"correct":2,"explanation":"retail تعني: البيع بالتجزئة."},{"question":"Which word means: \"يمكن الاستمرار فيه دون استنزاف الموارد أو الإضرار بالبيئة\"?","options":["consumption","sustainable","cybersecurity","digital wallet"],"correct":1,"explanation":"sustainable تعني: مستدام."},{"question":"Which word means: \"آلة كهربائية تُستخدم في المنزل مثل الثلاجة أو الغسالة\"?","options":["appliance","warranty","marketplace","promotional"],"correct":0,"explanation":"appliance تعني: جهاز منزلي."},{"question":"Which word means: \"تعهد بإصلاح المنتج أو استبداله إذا ظهرت مشكلة خلال مدة محددة\"?","options":["deliverables","satisfaction","consumerism","guarantee"],"correct":3,"explanation":"guarantee تعني: ضمان / يضمن."},{"question":"Which word means: \"عملية دفع أو شراء أو بيع أو تحويل أموال\"?","options":["invoice","e-commerce","transaction","complaint"],"correct":2,"explanation":"transaction تعني: معاملة / عملية تجارية."},{"question":"Which word means: \"جهاز صغير ذكي يؤدي وظيفة معينة\"?","options":["retail","gadget","feedback","refund"],"correct":1,"explanation":"gadget تعني: أداة إلكترونية صغيرة."},{"question":"Which word means: \"حماية الأجهزة والشبكات والبيانات من الهجمات الرقمية\"?","options":["cybersecurity","merchandise","convenience","sustainable"],"correct":0,"explanation":"cybersecurity تعني: الأمن السيبراني."},{"question":"Which word means: \"اتفاق يحدد إصلاح المنتج أو استبداله عند وجود عيب\"?","options":["digital wallet","consumption","appliance","warranty"],"correct":3,"explanation":"warranty تعني: كفالة / ضمان."},{"question":"Which word means: \"الأشياء أو النتائج التي يجب تسليمها في نهاية عمل أو مشروع\"?","options":["promotional","guarantee","deliverables","marketplace"],"correct":2,"explanation":"deliverables تعني: المخرجات المطلوبة."},{"question":"Which word means: \"تعبير رسمي عن عدم الرضا عن منتج أو خدمة\"?","options":["transaction","complaint","satisfaction","consumerism"],"correct":1,"explanation":"complaint هي تعبير رسمي عن عدم الرضا عن سلعة أو خدمة أو تجربة."},{"question":"Which word means: \"آراء تُقدَّم لمساعدة شخص أو جهة على التحسين\"?","options":["feedback","invoice","e-commerce","gadget"],"correct":0,"explanation":"feedback تعني: ملاحظات / تغذية راجعة."},{"question":"Which word means: \"المنتجات المعروضة للبيع في متجر\"?","options":["refund","retail","cybersecurity","merchandise"],"correct":3,"explanation":"merchandise تعني: بضائع / سلع."},{"question":"Which word means: \"تطبيق أو خدمة إلكترونية لحفظ بيانات الدفع وإجراء المدفوعات\"?","options":["sustainable","warranty","digital wallet","convenience"],"correct":2,"explanation":"digital wallet تعني: محفظة رقمية."},{"question":"Which word means: \"مكان أو منصة يلتقي فيها البائعون والمشترون\"?","options":["deliverables","marketplace","consumption","appliance"],"correct":1,"explanation":"marketplace تعني: سوق / منصة بيع."},{"question":"Which word means: \"شعور بالقبول أو السرور نتيجة تلبية حاجة أو توقع\"?","options":["satisfaction","promotional","guarantee","complaint"],"correct":0,"explanation":"satisfaction هي شعور بالقبول أو السرور عندما تُلبّى حاجة أو يتحقق توقع."},{"question":"Which word means: \"مستند يوضح السلع أو الخدمات والمبلغ المطلوب دفعه\"?","options":["consumerism","transaction","feedback","invoice"],"correct":3,"explanation":"invoice مستند يوضح السلع أو الخدمات المقدمة والمبلغ المستحق دفعه."},{"question":"Which word means: \"إعادة المال إلى المشتري بعد إرجاع منتج أو إلغاء خدمة\"?","options":["gadget","merchandise","refund","e-commerce"],"correct":2,"explanation":"refund تعني: استرداد المبلغ."},{"question":"Which word means: \"صفة تجعل الأمر أسهل أو أوفر للوقت والجهد\"?","options":["digital wallet","convenience","retail","cybersecurity"],"correct":1,"explanation":"convenience تعني: سهولة / ملاءمة."},{"question":"Which word means: \"استخدام السلع أو الطاقة أو الموارد\"?","options":["consumption","sustainable","warranty","marketplace"],"correct":0,"explanation":"consumption تعني: استهلاك."},{"question":"Which word means: \"يهدف إلى الإعلان عن منتج أو تشجيع الناس على شرائه\"?","options":["appliance","deliverables","satisfaction","promotional"],"correct":3,"explanation":"promotional تعني: ترويجي."}];;
+    const grammarQuizData = [{"question":"The student ______ won the prize is my cousin.","options":["where","which","who","when"],"correct":2,"explanation":"who تُستخدم للعاقل في جملة الوصل."},{"question":"This is the museum ______ we saw the ancient tools.","options":["who","whose","which","where"],"correct":3,"explanation":"نستخدم where للإشارة إلى مكان؛ فهي تربط museum بالمكان الذي شاهدنا فيه الأدوات القديمة."},{"question":"The book ______ you lent me was interesting.","options":["which","who","where","whose"],"correct":0,"explanation":"which تُستخدم لغير العاقل."},{"question":"My uncle, ______ lives in Aswan, is a doctor.","options":["that","who","where","which"],"correct":1,"explanation":"جملة الوصل غير المحددة بين فاصلتين، ونستخدم who للعاقل."},{"question":"The girl ______ father is a pilot speaks French.","options":["who","which","whose","where"],"correct":2,"explanation":"نستخدم whose للتعبير عن الملكية؛ فـ whose father تعني والد الفتاة."},{"question":"The laptop, ______ I bought last year, still works well.","options":["that","who","where","which"],"correct":3,"explanation":"في الجملة غير المحددة نستخدم which ولا نستخدم that."},{"question":"The village ______ my grandparents were born is near the sea.","options":["where","who","whose","when"],"correct":0,"explanation":"نستخدم where بعد اسم المكان لتوضيح المكان الذي حدثت فيه الولادة."},{"question":"A dentist is someone ______ looks after people's teeth.","options":["which","who","where","when"],"correct":1,"explanation":"نستخدم who للإشارة إلى شخص؛ dentist شخص يعتني بأسنان الناس."},{"question":"The film, ______ was made in Egypt, won an award.","options":["that","who","which","whose"],"correct":2,"explanation":"which لغير العاقل في جملة غير محددة."},{"question":"The reason ______ she left early was clear.","options":["who","where","whose","why"],"correct":3,"explanation":"why تُستخدم بعد reason لذكر السبب."},{"question":"The woman ______ bag was lost called the police.","options":["whose","who","which","where"],"correct":0,"explanation":"نستخدم whose لبيان صاحب الشيء؛ whose bag تعني الحقيبة التي تخص المرأة."},{"question":"The school ______ my mother works is very old.","options":["who","where","which","whose"],"correct":1,"explanation":"where تشير إلى المكان الذي تعمل فيه."}];;;
+    const readingData = {"title":"Shopping with a Smart Plan — Supplementary Reading Practice","paragraphs":["Omar needed a new pair of headphones, so he compared products on two online marketplaces before buying anything. He checked the price, delivery time, customer feedback, and warranty. One seller offered a lower price, but the product had no clear guarantee.","Omar chose a trusted retailer and paid through a digital wallet. He saved the invoice and order number in case he needed to contact customer service. When the package arrived, he checked the item and found that it matched the description.","Omar learned that convenient e-commerce still requires careful decisions. Reading the details and protecting payment information can reduce problems and make consumer satisfaction more likely."],"questions":[{"question":"What did Omar compare before buying?","options":["Only the colour","The weather in two cities","Price, delivery time, feedback, and warranty","School timetables"],"correct":2,"explanation":"قارن السعر وموعد التوصيل وآراء العملاء والضمان."},{"question":"Why did Omar avoid the cheaper seller?","options":["The seller was near his home","The headphones were too colourful","The delivery was free","There was no clear guarantee"],"correct":3,"explanation":"لم يكن هناك ضمان واضح."},{"question":"How did Omar pay?","options":["Through a digital wallet","With a paper cheque","By sending cash in the post","With a gift card"],"correct":0,"explanation":"استخدم محفظة رقمية."},{"question":"Why did he save the invoice and order number?","options":["To advertise the shop","To contact customer service if needed","To change the product's colour","To avoid checking the package"],"correct":1,"explanation":"احتفظ بهما للتواصل مع خدمة العملاء عند الحاجة."},{"question":"What is the main message of the passage?","options":["The lowest price is always best","Invoices are never useful","Online shopping is convenient but needs careful decisions","Customer feedback should be ignored"],"correct":2,"explanation":"التجارة الإلكترونية مريحة لكنها تحتاج إلى قرارات واعية."}]};
+    const listeningData = {"title":"A Customer Service Call — Supplementary Listening Practice","dialogue":[{"speaker":"Agent","text":"Good afternoon. How can I help you?"},{"speaker":"Omar","text":"I received my order, but one item is missing from the package."},{"speaker":"Agent","text":"I'm sorry about that. Could you give me the invoice number?"},{"speaker":"Omar","text":"Certainly. I saved the invoice after the online transaction."},{"speaker":"Agent","text":"Thank you. We will check the order and arrange delivery of the missing item."}],"questions":[{"question":"Why did Omar call customer service?","options":["He wanted a new password","The shop was closed","An item was missing","He forgot his address"],"correct":2,"explanation":"اتصل لأن أحد المنتجات كان مفقودًا."},{"question":"What information did the agent request?","options":["His school grade","The weather forecast","A bank password","The invoice number"],"correct":3,"explanation":"طلب الموظف رقم الفاتورة."},{"question":"When did Omar save the invoice?","options":["After the online transaction","Before choosing a product","After a year","He did not save it"],"correct":0,"explanation":"حفظ الفاتورة بعد المعاملة الإلكترونية."},{"question":"What did the agent promise to do?","options":["Cancel every order","Check the order and deliver the missing item","Close the marketplace","Charge him twice"],"correct":1,"explanation":"وعد بمراجعة الطلب وإرسال المنتج الناقص."},{"question":"What helped Omar during the call?","options":["Deleting the order number","Ignoring the package","Keeping the invoice details","Using an unknown seller"],"correct":2,"explanation":"ساعده الاحتفاظ بتفاصيل الفاتورة."}]};
+    const examData = [{"question":"Which word means: \"الميل إلى شراء السلع والخدمات واستهلاكها بكثرة\"?","options":["guarantee","complaint","consumerism","invoice"],"correct":2,"explanation":"consumerism تعني: النزعة الاستهلاكية."},{"question":"Which word means: \"شراء السلع وبيعها عبر الإنترنت\"?","options":["transaction","feedback","refund","e-commerce"],"correct":3,"explanation":"e-commerce تعني: التجارة الإلكترونية."},{"question":"Which word means: \"بيع السلع مباشرة للمستهلك بكميات صغيرة\"?","options":["retail","merchandise","convenience","gadget"],"correct":0,"explanation":"retail تعني: البيع بالتجزئة."},{"question":"Which word means: \"يمكن الاستمرار فيه دون استنزاف الموارد أو الإضرار بالبيئة\"?","options":["consumption","sustainable","cybersecurity","digital wallet"],"correct":1,"explanation":"sustainable تعني: مستدام."},{"question":"Which word means: \"آلة كهربائية تُستخدم في المنزل مثل الثلاجة أو الغسالة\"?","options":["warranty","marketplace","appliance","promotional"],"correct":2,"explanation":"appliance تعني: جهاز منزلي."},{"question":"Which word means: \"تعهد بإصلاح المنتج أو استبداله إذا ظهرت مشكلة خلال مدة محددة\"?","options":["deliverables","satisfaction","consumerism","guarantee"],"correct":3,"explanation":"guarantee تعني: ضمان / يضمن."},{"question":"Which word means: \"عملية دفع أو شراء أو بيع أو تحويل أموال\"?","options":["transaction","invoice","e-commerce","complaint"],"correct":0,"explanation":"transaction تعني: معاملة / عملية تجارية."},{"question":"Which word means: \"جهاز صغير ذكي يؤدي وظيفة معينة\"?","options":["retail","gadget","feedback","refund"],"correct":1,"explanation":"gadget تعني: أداة إلكترونية صغيرة."},{"question":"Which word means: \"حماية الأجهزة والشبكات والبيانات من الهجمات الرقمية\"?","options":["merchandise","convenience","cybersecurity","sustainable"],"correct":2,"explanation":"cybersecurity تعني: الأمن السيبراني."},{"question":"Which word means: \"اتفاق يحدد إصلاح المنتج أو استبداله عند وجود عيب\"?","options":["digital wallet","consumption","appliance","warranty"],"correct":3,"explanation":"warranty تعني: كفالة / ضمان."},{"question":"The student ______ won the prize is my cousin.","options":["who","where","which","when"],"correct":0,"explanation":"who تُستخدم للعاقل في جملة الوصل."},{"question":"This is the museum ______ we saw the ancient tools.","options":["who","where","whose","which"],"correct":1,"explanation":"نستخدم where للإشارة إلى مكان؛ فهي تربط museum بالمكان الذي شاهدنا فيه الأدوات القديمة."},{"question":"The book ______ you lent me was interesting.","options":["who","where","which","whose"],"correct":2,"explanation":"which تُستخدم لغير العاقل."},{"question":"My uncle, ______ lives in Aswan, is a doctor.","options":["that","where","which","who"],"correct":3,"explanation":"جملة الوصل غير المحددة بين فاصلتين، ونستخدم who للعاقل."},{"question":"The girl ______ father is a pilot speaks French.","options":["whose","who","which","where"],"correct":0,"explanation":"نستخدم whose للتعبير عن الملكية؛ فـ whose father تعني والد الفتاة."},{"question":"The laptop, ______ I bought last year, still works well.","options":["that","which","who","where"],"correct":1,"explanation":"في الجملة غير المحددة نستخدم which ولا نستخدم that."},{"question":"The village ______ my grandparents were born is near the sea.","options":["who","whose","where","when"],"correct":2,"explanation":"نستخدم where بعد اسم المكان لتوضيح المكان الذي حدثت فيه الولادة."},{"question":"A dentist is someone ______ looks after people's teeth.","options":["which","where","when","who"],"correct":3,"explanation":"نستخدم who للإشارة إلى شخص؛ dentist شخص يعتني بأسنان الناس."},{"question":"The film, ______ was made in Egypt, won an award.","options":["which","that","who","whose"],"correct":0,"explanation":"which لغير العاقل في جملة غير محددة."},{"question":"The reason ______ she left early was clear.","options":["who","why","where","whose"],"correct":1,"explanation":"why تُستخدم بعد reason لذكر السبب."}];;;
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello Plus (Advanced/Language) for Prep 3 New Hello Plus, Unit 2: Modern Consumerism & Smart Living. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

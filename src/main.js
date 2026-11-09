@@ -1,10 +1,15 @@
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { detectSpeakerGender, chooseSpeakerVoice } from './lib/tts-voice-selection.mjs';
 import curriculum from './data/curriculum/structure.json';
 import sourceIndex from '../data/curriculum/source-book-index.draft.json';
 import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
+import { getPreparatoryHtmlCourse } from './data/preparatory-html-registry.js';
+import preparatoryVocabulary from './data/preparatory-vocabulary.json';
+import { createStudentProfileStore } from './lib/student-profile-store.mjs';
 
 const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
 function isApprovedUnitDraft(draft) {
@@ -28,9 +33,15 @@ const unitDraftRegistry = new Map(
 const p1u1Draft = unitDraftRegistry.get('primary1-student-term1-unit-1') || null;
 
 const app = document.querySelector('#app');
+const AndroidDownloads = registerPlugin('Downloads');
 
 // Student App State (Preserves all progress across back-and-forth navigation and reloads)
 const STORAGE_KEY = 'englimensh_p1u1_progress';
+const studentProfiles = createStudentProfileStore(window.localStorage);
+const getProfileContext = () => ({ stage: state.stage, grade: state.grade, path: state.path, term: 'first' });
+const activeStudent = () => studentProfiles.active();
+const applyStudentTheme = () => { document.documentElement.dataset.theme = activeStudent()?.theme || 'classic'; };
+applyStudentTheme();
 
 const vocabVisualMap = {
   hello: { icon: '👋', tag: 'Greeting', phonetic: '/həˈləʊ/' },
@@ -65,6 +76,9 @@ const state = {
   path: 'general',
   search: '',
   preview: null,
+  htmlUnitSelection: null,
+  htmlModuleSelection: null,
+  htmlGame: { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' },
   unitSelection: null,
   activeModule: null, // 'vocabulary', 'grammar', 'reading', 'listening', 'games', 'comprehensive_test'
   activeVocabSubtab: 'words', // 'words' or 'practice'
@@ -86,6 +100,78 @@ const state = {
   selfIntro: { name: 'Omar', avatar: '👧' },
   politeness: { answers: {} }
 };
+const savedStudentContext = activeStudent();
+if (savedStudentContext) {
+  const savedStage = curriculum.stages.find((item) => item.id === savedStudentContext.stage);
+  if (savedStage) {
+    state.stage = savedStage.id;
+    if (Array.isArray(savedStage.grades) && savedStage.grades.includes(Number(savedStudentContext.grade))) {
+      state.grade = Number(savedStudentContext.grade);
+    }
+    if (state.stage === 'egyptian-baccalaureate') {
+      if (['first-language', 'second-language'].includes(savedStudentContext.path)) state.path = savedStudentContext.path;
+    } else if (savedStage.paths?.some((path) => path.id === savedStudentContext.path)) {
+      state.path = savedStudentContext.path;
+    }
+  }
+}
+
+
+async function exportStudentCertificatePdf(certificate) {
+  if (!certificate || typeof certificate.studentName !== 'string') throw new TypeError('Certificate data is unavailable.');
+  const safeName = (certificate.studentName || 'student').normalize('NFKD').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 32) || 'student';
+  const unitName = String(certificate.unit || 'unit').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 36) || 'unit';
+  const fileName = 'EngliMensh-' + safeName + '-' + unitName + '.pdf';
+  const page = document.createElement('section');
+  page.setAttribute('aria-hidden', 'true');
+  page.style.cssText = 'position:fixed;left:-10000px;top:0;width:1200px;height:800px;padding:54px;box-sizing:border-box;background:#fffdf6;color:#24334a;font-family:Arial,sans-serif;text-align:center;border:18px double #c6a45b;z-index:-1;';
+  const photo = certificate.studentPhoto ? '<img src="' + escapeHtml(certificate.studentPhoto) + '" alt="" style="width:150px;height:150px;object-fit:cover;border-radius:50%;border:5px solid #c6a45b;">' : '<div style="width:150px;height:150px;border-radius:50%;border:2px solid #c6a45b;margin:auto;display:grid;place-items:center;">Student</div>';
+  page.innerHTML = '<div style="font-size:24px;letter-spacing:5px;color:#8a6b2f;font-weight:bold;">ENGLIMENSH · EGYPT</div><div style="font-size:48px;font-family:Georgia,serif;margin:28px 0 14px;">Certificate of Excellence</div><div style="font-size:25px;margin-bottom:24px;">This certificate is proudly presented to</div>' + photo + '<div style="font-size:54px;font-weight:bold;margin:22px 0;color:#24334a;">' + escapeHtml(certificate.studentName) + '</div><div style="font-size:26px;">For successfully completing</div><div style="font-size:38px;font-weight:bold;margin:18px 0;color:#8a6b2f;">' + escapeHtml(certificate.unit) + '</div><div style="font-size:22px;">' + escapeHtml(certificate.stage) + ' · Grade ' + Number(certificate.grade || 0) + ' · ' + escapeHtml(certificate.curriculum || '') + '</div><div style="font-size:42px;font-weight:bold;margin:16px;color:#8a6b2f;">' + Number(certificate.score || 0) + '%</div><div style="font-size:23px;font-style:italic;">Excellent work! Keep learning, keep growing, and believe in yourself.</div><div style="font-size:17px;margin-top:24px;">Completed: ' + escapeHtml(new Date(certificate.completedAt).toLocaleDateString('en-GB')) + '</div>';
+  document.body.appendChild(page);
+  try {
+    const canvas = await html2canvas(page, { scale: 2, backgroundColor: '#fffdf6', useCORS: true, logging: false });
+    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4', compress: true });
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.94), 'JPEG', 0, 0, 297, 210, undefined, 'FAST');
+    if (Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android') {
+      const dataUri = pdf.output('datauristring');
+      const base64 = dataUri.slice(dataUri.indexOf(',') + 1);
+      return await AndroidDownloads.savePdf({ fileName, base64 });
+    }
+    pdf.save(fileName);
+    return { fileName, downloaded: true };
+  } finally { page.remove(); }
+}
+function renderStudentCertificateStatus(draft, book, unit, questions) {
+  const profile = activeStudent();
+  if (!profile || !Array.isArray(questions) || !questions.length) {
+    return '<p class="unit-source-note">A student profile and a complete unit assessment are required for a certificate.</p>';
+  }
+  const answers = questions.map((question) => getQuestionState(question.itemId));
+  const attempted = answers.filter((answer) => typeof answer.choice === 'string' && answer.choice.length > 0).length;
+  const correct = answers.filter((answer) => answer.isCorrect).length;
+  const score = Math.round(correct / questions.length * 100);
+  const certificate = studentProfiles.issueCertificate(profile.id, {
+    term: 'first',
+    stage: state.stage,
+    stageLabel: stageNames[state.stage] || state.stage,
+    grade: state.grade,
+    path: state.path,
+    curriculum: book.series || book.title || book.id,
+    unitId: book.id + '-unit-' + unit.number,
+    unitTitle: unit.title
+  }, { total: questions.length, attempted, correct });
+  if (!certificate) {
+    return '<section class="certificate-progress-card"><h3>Certificate progress</h3><p>Answered: ' + attempted + ' / ' + questions.length + '</p><p>Current score: ' + correct + ' / ' + questions.length + ' (' + score + '%)</p><p>Answer every question and earn at least 90% to unlock your certificate.</p></section>';
+  }
+  return '<section class="certificate-card" aria-label="Certificate of Excellence"><div class="certificate-student-photo">' +
+    (certificate.studentPhoto ? '<img src="' + escapeHtml(certificate.studentPhoto) + '" alt="Student portrait">' : '<span>Student Photo</span>') +
+    '</div><div class="certificate-text"><p class="certificate-kicker">ENGLIMENSH · EGYPT</p><p>This certificate is proudly presented to</p><h2>' +
+    escapeHtml(certificate.studentName) + '</h2><p>For successfully completing</p><h3 class="certificate-unit">' +
+    escapeHtml(certificate.unit) + '</h3><p>' + escapeHtml(certificate.stage) + ' · Grade ' + certificate.grade + ' · ' +
+    escapeHtml(certificate.curriculum) + '</p><strong class="certificate-score">' + certificate.score +
+    '%</strong><p class="certificate-message">Excellent work! Keep learning, keep growing, and believe in yourself.</p><small>Completed: ' +
+    new Date(certificate.completedAt).toLocaleDateString('en-GB') + '</small></div></section>';
+}
 
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
@@ -144,7 +230,8 @@ function resetListeningProgress() {
 function loadProgressFromStorage() {
   if (typeof window === 'undefined' || !window.localStorage) return;
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const savedProgress = studentProfiles.loadProgress(getProfileContext());
+    const raw = activeStudent() ? (savedProgress === null ? null : JSON.stringify(savedProgress)) : window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     const isPlainObject = (val) => Boolean(val && typeof val === 'object' && !Array.isArray(val));
@@ -206,7 +293,8 @@ function saveProgressToStorage() {
       selfIntro: state.selfIntro,
       politeness: state.politeness
     };
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+    if (activeStudent()) studentProfiles.saveProgress(dataToSave, getProfileContext());
+    else window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
   } catch (err) {
     console.warn('LocalStorage save warning:', err);
   }
@@ -415,6 +503,228 @@ function renderBookLibrary(books) {
         : book.documentType === 'reader' ? 'Reader' : 'Supplementary reference';
     return `<article class="book-card"><div class="book-card-head"><div><span class="book-type">${typeLabel}</span><h3>${escapeHtml(book.grade)} · ${book.term ? `Term ${book.term}` : 'Course book'}</h3><p>${escapeHtml(book.sourceFile)}</p></div><button class="source-open" type="button" data-preview-file="${escapeHtml(book.sourceFile)}" data-preview-page="1">Preview full PDF ↗</button></div>${units ? `<div class="unit-list">${units}</div>` : '<p class="no-units">No unit list is indexed for this document yet. The original PDF is available in the preview above.</p>'}</article>`;
   }).join('');
+}
+
+function getSelectedPreparatoryUnit() {
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  return state.htmlUnitSelection ? course?.units?.find((unit) => unit.id === state.htmlUnitSelection.unitId) || null : null;
+}
+
+function getPreparatoryUnitWords(unit = getSelectedPreparatoryUnit()) {
+  if (!unit) return [];
+  const registry = preparatoryVocabulary.units || {};
+  if (unit.id === 'all' && state.grade === 3 && state.path === 'general') {
+    return [1, 2, 3, 4, 5, 6].flatMap((number) => registry[`3:general:${number}`]?.words || []);
+  }
+  return registry[`${state.grade}:${state.path}:${unit.number || unit.id}`]?.words || [];
+}
+
+function prepImageMarkup(item, className = 'prep-vocab-image') {
+  if (item.image) {
+    const imageSrc = `${import.meta.env.BASE_URL}${item.image.replace(/^\/+/, '')}`;
+    return `<img class="${className}" src="${escapeHtml(imageSrc)}" alt="${escapeHtml(item.word)}" title="${escapeHtml([item.attribution, item.license].filter(Boolean).join(' · '))}" loading="lazy" />`;
+  }
+  if (item.svg) return `<img class="${className}" src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(item.svg)}" alt="${escapeHtml(item.word)}" loading="lazy" />`;
+  return `<div class="${className} prep-image-missing" role="img" aria-label="Picture not available for ${escapeHtml(item.word)}">Picture pending</div>`;
+}
+
+function renderPreparatoryVocabulary(words) {
+  if (!words.length) return '<div class="prep-game-empty">Vocabulary content is not available in the source package for this unit yet.</div>';
+  return `
+    <section class="prep-vocabulary-section">
+      <div class="prep-vocabulary-heading"><div><p class="eyebrow">UNIT WORD BANK</p><h3>Learn the words with pictures</h3><p>Look, read, listen and remember.</p></div><span>${words.length} words</span></div>
+      <div class="prep-vocabulary-grid">
+        ${words.map((item, index) => `
+          <article class="prep-vocabulary-card">
+            <div class="prep-vocabulary-image-wrap">${prepImageMarkup(item, 'prep-vocabulary-image')}</div>
+            <div class="prep-vocabulary-number">WORD ${index + 1}</div>
+            <h4 dir="ltr">${escapeHtml(item.word)}</h4>
+            ${item.arabic ? `<strong class="prep-vocabulary-arabic" dir="rtl">${escapeHtml(item.arabic)}</strong>` : ''}
+            ${item.definition ? `<p>${escapeHtml(item.definition)}</p>` : ''}
+            ${item.example ? `<div class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</div>` : ''}
+            <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Listen</button>
+            ${item.imageSource && item.sourceUrl ? `<a class="prep-vocabulary-credit" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.creator || item.attribution || 'Creator credit on source page')} · ${escapeHtml(item.imageSource)} · ${escapeHtml(item.license || '')}</a>${item.licenseUrl ? ` <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License</a>` : ''}` : ''}
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderPreparatorySpeaking(words) {
+  if (!words.length) return '<div class="prep-game-empty">Speaking practice will appear when verified unit vocabulary is available. The original lesson remains accessible.</div>';
+  const practiceWords = words.slice(0, 12);
+  return `
+    <section class="prep-vocabulary-section prep-speaking-section">
+      <div class="prep-vocabulary-heading"><div><p class="eyebrow">OPTIONAL ORAL PRACTICE</p><h3>Say the words aloud</h3><p>Listen to the model if you want, then repeat each word clearly. You can also make your own sentence using it.</p></div><span>${practiceWords.length} prompts</span></div>
+      <p class="speaking-practice-note">This is self-practice only. The app does not record your voice or score pronunciation.</p>
+      <div class="prep-vocabulary-grid">
+        ${practiceWords.map((item, index) => `
+          <article class="prep-vocabulary-card">
+            <div class="prep-vocabulary-number">SPEAKING ${index + 1}</div>
+            <h4 dir="ltr">${escapeHtml(item.word)}</h4>
+            ${item.arabic ? `<strong class="prep-vocabulary-arabic" dir="rtl">${escapeHtml(item.arabic)}</strong>` : ''}
+            ${item.example && !/essential curriculum term|word .* is essential when studying/i.test(item.example) ? `<p class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</p>` : ''}
+            <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Hear model</button>
+            <p class="speaking-practice-note">Now say it aloud in your own voice.</p>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderPreparatoryGame(words) {
+  const games = [
+    { id: 'picture-match', title: 'Picture Match', desc: 'Match each word to its picture', icon: '🧩' },
+    { id: 'picture-quiz', title: 'Picture Quiz', desc: 'Choose the word that names the picture', icon: '🖼️' },
+    { id: 'anagram', title: 'Word Jumble', desc: 'Rebuild the word from mixed letters', icon: '🔤' },
+    { id: 'meaning-quest', title: 'Meaning Quest', desc: 'Find the word from its meaning', icon: '🔎' },
+    { id: 'open-box', title: 'Open the Box', desc: 'Open a mystery box and solve its clue', icon: '🎁' },
+    { id: 'flashcards', title: 'Flashcard Flip', desc: 'Reveal, learn and remember each word', icon: '🃏' }
+  ];
+  const game = state.htmlGame || {};
+  const current = words[game.index % Math.max(words.length, 1)];
+  const shuffled = (items) => {
+    const result = [...items];
+    for (let index = result.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+    }
+    return result;
+  };
+  // Cache randomized content for the current round. Rendering after each tap must
+  // never reshuffle choices or move a picture/box underneath the learner.
+  const optionsFor = (target) => {
+    if (!target) return [];
+    if (!game.optionSets || typeof game.optionSets !== 'object') game.optionSets = {};
+    if (!Array.isArray(game.optionSets[target.word])) {
+      const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);
+      game.optionSets[target.word] = shuffled([target, ...distractors]);
+    }
+    return game.optionSets[target.word];
+  };
+  let body = '<div class="prep-game-empty">This unit has no verified vocabulary records yet. The original lesson is still available in its learning sections.</div>';
+  if (words.length && current) {
+    if (game.id === 'picture-match') {
+      if (!Array.isArray(game.roundWords) || game.roundWords.length === 0) {
+        game.roundWords = shuffled(words).slice(0, Math.min(4, words.length));
+      }
+      const round = game.roundWords;
+      const matched = game.matched || [];
+      body = `
+        <div class="prep-game-instruction">Choose a word, then choose its matching picture.</div>
+        <div class="prep-match-layout">
+          <div class="prep-match-column"><h4>Words</h4>${round.map((item) => `<button class="prep-match-word ${matched.includes(item.word) ? 'is-matched' : ''} ${game.selectedWord === item.word ? 'is-selected' : ''}" data-prep-match-word="${escapeHtml(item.word)}" ${matched.includes(item.word) ? 'disabled' : ''}>${escapeHtml(item.word)}<small dir="rtl">${escapeHtml(item.arabic || '')}</small></button>`).join('')}</div>
+          <div class="prep-match-column"><h4>Pictures</h4>${[...round].reverse().map((item) => `<button class="prep-match-picture ${matched.includes(item.word) ? 'is-matched' : ''} ${game.selectedImage === item.word ? 'is-selected' : ''}" data-prep-match-image="${escapeHtml(item.word)}" ${matched.includes(item.word) ? 'disabled' : ''}>${prepImageMarkup(item, 'prep-game-picture')}<span>${matched.includes(item.word) ? 'Matched ✓' : 'Choose picture'}</span></button>`).join('')}</div>
+        </div>
+        <div class="prep-game-progress">Matched ${matched.length} / ${round.length} · Score ${game.score || 0}</div>
+        ${matched.length === round.length ? '<div class="prep-game-feedback success">Excellent! All pairs matched.</div>' : ''}
+        <button class="prep-game-secondary" data-prep-game-reset>New round</button>
+      `;
+    } else if (game.id === 'picture-quiz') {
+      const options = optionsFor(current);
+      body = `
+        <div class="prep-game-progress">Question ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-picture-question">${prepImageMarkup(current, 'prep-question-picture')}<p>Which word matches this picture?</p></div>
+        <div class="prep-game-options">${options.map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === current.word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'Correct answer! Great job.' : 'Not quite. The correct word is ' + escapeHtml(current.word) + '.'}<button data-prep-game-next>Next</button></div>` : ''}
+      `;
+    } else if (game.id === 'anagram') {
+      const letters = current.word.toLowerCase().replace(/[^a-z]/g, '').split('').sort((a, b) => b.localeCompare(a));
+      body = `
+        <div class="prep-game-progress">Word ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-anagram-card">${prepImageMarkup(current, 'prep-question-picture')}<p dir="rtl">${escapeHtml(current.arabic || current.definition || 'Build the word')}</p><div class="prep-letter-slots">${letters.map((_, i) => `<span>${escapeHtml(Number.isInteger((game.placed || [])[i]) ? letters[(game.placed || [])[i]] : '＿')}</span>`).join('')}</div><div class="prep-letter-bank">${letters.map((letter, i) => `<button data-prep-letter="${i}" ${(game.placed || []).filter((x) => x.index === i).length ? 'disabled' : ''}>${letter}</button>`).join('')}</div><button class="prep-game-secondary" data-prep-word-clear>Clear</button><button class="prep-game-primary" data-prep-word-check>Check word</button></div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'Correct spelling!' : 'Try again.'}<button data-prep-game-next>Next word</button></div>` : ''}
+      `;
+    } else if (game.id === 'meaning-quest') {
+      const options = optionsFor(current);
+      body = `
+        <div class="prep-game-progress">Challenge ${game.index + 1} / ${words.length} · Score ${game.score || 0}</div>
+        <div class="prep-meaning-card"><span>WORD DETECTIVE</span>${current.definition || current.arabic ? `<h3>Which word means…?</h3><p>${escapeHtml(current.definition || current.arabic)}</p>` : `<h3>Which word matches this picture?</h3>${prepImageMarkup(current, 'prep-game-picture')}`}</div>
+        <div class="prep-game-options">${options.map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === current.word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>
+        ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'That is right!' : 'Correct word: ' + escapeHtml(current.word)}<button data-prep-game-next>Continue</button></div>` : ''}
+      `;
+    } else if (game.id === 'open-box') {
+      if (!Array.isArray(game.boxWords) || game.boxWords.length === 0) {
+        game.boxWords = shuffled(words).slice(0, Math.min(6, words.length));
+      }
+      const boxes = game.boxWords;
+      body = `
+        <div class="prep-game-instruction">Choose a mystery box. Read its clue and identify the word.</div>
+        <div class="prep-box-grid">${boxes.map((item, i) => `<button data-prep-open-box="${i}" class="${game.opened === i ? 'opened' : ''}">${game.opened === i ? '🔓' : '🎁'}<small>Box ${i + 1}</small></button>`).join('')}</div>
+        ${Number.isInteger(game.opened) ? `<div class="prep-meaning-card"><span>MYSTERY CLUE</span>${boxes[game.opened]?.definition || boxes[game.opened]?.arabic ? `<p>${escapeHtml(boxes[game.opened]?.definition || boxes[game.opened]?.arabic)}</p>` : `<p>Find the word shown in this picture.</p>${prepImageMarkup(boxes[game.opened], 'prep-game-picture')}`}<div class="prep-game-options">${optionsFor(boxes[game.opened]).map((item) => `<button data-prep-game-option="${escapeHtml(item.word)}" class="${game.selectedOption ? (item.word === boxes[game.opened].word ? 'is-correct' : item.word === game.selectedOption ? 'is-wrong' : '') : ''}" ${game.selectedOption ? 'disabled' : ''}>${escapeHtml(item.word)}</button>`).join('')}</div>${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'You opened the right box!' : 'The answer is ' + escapeHtml(boxes[game.opened].word)}<button data-prep-game-next>Next box</button></div>` : ''}</div>` : ''}
+      `;
+    } else {
+      body = `
+        <div class="prep-game-progress">Card ${game.index + 1} / ${words.length}</div>
+        <button class="prep-flashcard ${game.flipped ? 'flipped' : ''}" data-prep-flip>
+          ${game.flipped ? `<span class="prep-flashcard-label">MEANING</span><strong dir="rtl">${escapeHtml(current.arabic || current.definition || 'Meaning not provided in the source')}</strong><small>${escapeHtml(current.definition || '')}</small>` : `<span class="prep-flashcard-label">VOCABULARY</span>${prepImageMarkup(current, 'prep-flashcard-picture')}<strong>${escapeHtml(current.word)}</strong><small>Tap to reveal meaning</small>`}
+        </button>
+        <button class="prep-game-primary" data-prep-game-next>Next card</button>
+      `;
+    }
+  }
+  return `
+    <section class="prep-games">
+      <div class="prep-games-heading"><div><p class="eyebrow">WORDWALL-INSPIRED GAME STUDIO</p><h3>Choose a learning game</h3><p>Original interactive activities built from this unit's vocabulary.</p></div><span class="prep-game-count">${words.length} words</span></div>
+      <div class="prep-game-launch-grid">${games.map((item) => `<button data-prep-game="${item.id}" class="${game.id === item.id ? 'active' : ''}"><span>${item.icon}</span><strong>${item.title}</strong><small>${item.desc}</small></button>`).join('')}</div>
+      <article class="prep-game-stage"><div class="prep-game-stage-title"><h3>${games.find((item) => item.id === game.id)?.title || 'Learning game'}</h3><span>Interactive practice</span></div>${body}</article>
+      <div class="prep-image-credit">Images are embedded illustrations from the supplied lessons or openly licensed Openverse photographs. ${[...new Map(words.filter((item) => item.imageSource && item.sourceUrl).map((item) => [item.sourceUrl, item])).values()].map((item) => `<div><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.word)} · ${escapeHtml(item.imageSource)}</a> · ${escapeHtml(item.license || '')} · ${escapeHtml(item.attribution || 'Creator credit on source page')}${item.licenseUrl ? ` · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">License terms</a>` : ''}</div>`).join('')}</div>
+    </section>
+  `;
+}
+
+function renderPreparatoryHtmlLibrary() {
+  if (state.stage !== 'preparatory') return '';
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  if (!course?.units?.length) return '';
+  const selectedUnit = getSelectedPreparatoryUnit();
+  const module = state.htmlModuleSelection;
+  const modules = [
+    ['vocabulary', 'Vocabulary', 'Words, meanings, pictures and pronunciation', 'Aa'],
+    ['vocabulary_questions', 'Vocabulary Questions', 'Practise the unit words', '✎'],
+    ['grammar', 'Grammar', 'Rules and examples', '文'],
+    ['grammar_questions', 'Grammar Questions', 'Grammar practice', '✓'],
+    ['reading', 'Reading', 'Read and understand', '▤'],
+    ['listening', 'Listening', 'Listen and answer', '♫'],
+    ['speaking', 'Speaking', 'Practise saying unit words aloud', '🗣️'],
+    ['games', 'Games', 'Play and learn with six game types', '★'],
+    ['comprehensive_test', 'Comprehensive Test', 'Check your unit mastery', '🏆']
+  ];
+  const selectedWords = getPreparatoryUnitWords(selectedUnit);
+  const availableModules = modules.filter((item) => !(state.grade === 2 && state.path === 'general' && item[0] === 'comprehensive_test'));
+  const moduleLabel = modules.find((item) => item[0] === module)?.[1] || '';
+  const formatLabel = course.format === 'static-html'
+    ? 'Static source lesson · app sections and games are provided separately'
+    : course.format === 'combined-html'
+      ? 'Combined curriculum · Units 1–6'
+      : 'Interactive HTML lessons';
+
+  return `
+    <section class="imported-curriculum panel">
+      <div class="imported-curriculum-heading">
+        <div><p class="eyebrow">IMPORTED CURRICULUM · 2026/2027</p><h2>${escapeHtml(course.series)} · Preparatory ${state.grade}</h2><p class="library-intro">${escapeHtml(formatLabel)}</p></div>
+        <span class="book-count">${course.units.length} unit file${course.units.length === 1 ? '' : 's'}</span>
+      </div>
+      ${!selectedUnit ? `
+        <div class="imported-unit-grid">${course.units.map((unit) => `
+          <button type="button" class="imported-unit-card" data-html-unit="${escapeHtml(unit.id)}"><span class="imported-unit-icon">▤</span><strong>${escapeHtml(unit.title)}</strong><small>${escapeHtml(unit.fileName)}</small><span class="imported-unit-open">Open unit ↗</span></button>
+        `).join('')}</div>
+      ` : !module ? `
+        <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-units>← All units</button><div><span class="eyebrow">${escapeHtml(course.series)} · PREPARATORY ${state.grade}</span><h3>${escapeHtml(selectedUnit.title)}</h3></div><span class="prep-word-count">${selectedWords.length} vocabulary words</span></div>
+        <div class="prep-module-grid">${availableModules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
+      ` : `
+        <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-modules>← ${escapeHtml(selectedUnit.title)}</button><div><span class="eyebrow">${escapeHtml(course.series)} · UNIT ${escapeHtml(selectedUnit.number || '1–6')}</span><h3>${escapeHtml(moduleLabel)}</h3></div></div>
+        ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : module === 'speaking' ? renderPreparatorySpeaking(selectedWords) : `
+          <div class="imported-html-viewer">
+            <div class="imported-html-viewer-head"><div><strong>${escapeHtml(moduleLabel)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade} · ${escapeHtml(selectedUnit.title)}</span></div></div>
+            <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml((selectedUnit.viewerUrl || selectedUnit.url) + "#" + module + ":" + (selectedUnit.number || 1))}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
+          </div>
+        `}
+      `}
+    </section>
+  `;
 }
 
 // Digital Visual Activity 1: Self-Introduction Widget (Page 9)
@@ -975,7 +1285,7 @@ function renderUnitWorkspace() {
           </div>
         `;
       } else if (state.activeModule === 'comprehensive_test') {
-        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}`;
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test')}${renderStudentCertificateStatus(activeUnitDraft, book, unit, tests)}`;
       } else if (state.activeModule === 'games') {
         bodyHtml = `
           <div class="games-grid">
@@ -1593,7 +1903,7 @@ function renderUnitWorkspace() {
         `;
       } else if (state.activeModule === 'comprehensive_test') {
         const tests = getItems('comprehensive_test');
-        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test', 'Question')}`;
+        bodyHtml = `<div class="quiz-summary-pill">Unit assessment · ${tests.length} questions</div>${renderQuestionGroup(tests, 'comprehensive_test', 'Question')}${renderStudentCertificateStatus(activeUnitDraft, book, unit, tests)}`;
       }
     } else {
       bodyHtml = `
@@ -1774,6 +2084,11 @@ function renderPreview() {
 }
 
 function render() {
+  const profile = activeStudent();
+  if (profile) {
+    try { studentProfiles.update(profile.id, { stage: state.stage, grade: state.grade || 1, path: state.path || 'general' }); }
+    catch (error) { console.warn('Could not persist student curriculum selection:', error); }
+  }
   const stage = currentStage();
   if (!stage) {
     app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1></main>';
@@ -1793,7 +2108,31 @@ function render() {
   app.innerHTML = `
     <header class="topbar">
       <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
-      <span class="country-tag">EGYPTIAN CURRICULUM</span>
+      <div class="topbar-tools">
+        <div class="student-profile-control">
+          ${activeStudent()?.photo ? '<img class="student-profile-avatar" src="' + escapeHtml(activeStudent().photo) + '" alt="Student photo">': '<span class="student-profile-avatar student-profile-placeholder" aria-hidden="true">👤</span>'}
+          <label class="sr-only" for="student-profile-select">Student profile</label>
+          <select id="student-profile-select" aria-label="Student profile">
+            <option value="">Choose student</option>
+            ${studentProfiles.list().map((profile) => '<option value="' + escapeHtml(profile.id) + '" ' + (profile.id === activeStudent()?.id ? 'selected' : '') + '>' + escapeHtml(profile.name) + '</option>').join('')}
+          </select>
+          <input id="new-student-name" type="text" maxlength="40" placeholder="New student name" aria-label="New student name">
+          <input id="student-photo-gallery" type="file" accept="image/*" aria-label="Choose student photo from gallery">
+          <input id="student-photo-file" type="file" accept="image/*" capture="user" aria-label="Take student photo with camera">
+          <input id="rename-student" type="text" maxlength="40" placeholder="Edit active name" aria-label="Edit active student name">
+          <button type="button" id="save-student-name">Save name</button>
+          <button type="button" id="create-student-profile">Add student</button>
+          <label class="sr-only" for="student-theme-select">Student theme</label>
+          <select id="student-theme-select" aria-label="Student theme">
+            <option value="classic" ${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Classic</option>
+            <option value="ocean" ${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Ocean</option>
+            <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
+            <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
+          </select>
+          ${activeStudent() ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.entries(activeStudent().certificates || {}).map(([certificateKey, certificate]) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span><button type="button" class="certificate-export-button" data-export-certificate="' + escapeHtml(certificateKey) + '">Export PDF</button></p>').join('') + '</div></details>' : ''}
+        </div>
+        <span class="country-tag">EGYPTIAN CURRICULUM</span>
+      </div>
     </header>
     <main class="shell stage-${state.stage}">
       <section class="welcome">
@@ -1831,12 +2170,97 @@ function render() {
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
         ${renderUnitWorkspace()}
+        ${renderPreparatoryHtmlLibrary()}
         ${renderPreview()}
-        <div class="book-library">${selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books)}</div>
+        <div class="book-library">${(state.stage === 'preparatory' && !books.length && getPreparatoryHtmlCourse(state.grade, state.path)?.units?.length) ? '' : (selectedPath.status === 'reserved_empty' ? '<div class="empty-state"><div class="book-icon">▤</div><strong>This pathway is reserved</strong><span>No source book is indexed for it yet</span></div>' : renderBookLibrary(books))}</div>
         <p class="search-empty" hidden>No books or units match your search in this selection.</p>
       </section>
       <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
     </main>`;
+
+  app.querySelector('#student-profile-select')?.addEventListener('change', (event) => {
+    const nextId = event.target.value;
+    if (!nextId) return;
+    saveProgressToStorage();
+    studentProfiles.activate(nextId);
+    window.location.reload();
+  });
+  app.querySelector('#create-student-profile')?.addEventListener('click', () => {
+    const field = app.querySelector('#new-student-name');
+    const name = field?.value?.trim();
+    if (!name) { field?.focus(); return; }
+    try {
+      saveProgressToStorage();
+      const profile = studentProfiles.create({ name, stage: state.stage, grade: state.grade || 1, path: state.path || 'general', theme: 'classic' });
+      studentProfiles.activate(profile.id);
+      window.location.reload();
+    } catch (error) {
+      console.warn('Could not create student profile:', error);
+      field?.setCustomValidity(error.message || 'Could not create profile.');
+      field?.reportValidity();
+    }
+  });
+  app.querySelector('#save-student-name')?.addEventListener('click', () => {
+    const profile = activeStudent();
+    const field = app.querySelector('#rename-student');
+    const name = field?.value?.trim();
+    if (!profile || !name) { field?.focus(); return; }
+    try { studentProfiles.update(profile.id, { name }); render(); }
+    catch (error) { console.warn('Could not update student name:', error); }
+  });
+  const handleStudentPhotoChange = async (event) => {
+    const profile = activeStudent();
+    const file = event.target.files?.[0];
+    if (!profile || !file) return;
+    if (!file.type.startsWith('image/') || file.size > 10 * 1024 * 1024) {
+      window.alert('Choose an image smaller than 10 MB.');
+      event.target.value = '';
+      return;
+    }
+    try {
+      const bitmap = await createImageBitmap(file);
+      const scale = Math.min(1, 512 / Math.max(bitmap.width, bitmap.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+      canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+      const context = canvas.getContext('2d');
+      if (!context) throw new Error('Image canvas is unavailable.');
+      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+      bitmap.close?.();
+      const photo = canvas.toDataURL('image/jpeg', 0.78);
+      studentProfiles.update(profile.id, { photo });
+      render();
+    } catch (error) {
+      console.warn('Could not save student photo:', error);
+      window.alert('The photo could not be processed on this device.');
+    } finally { event.target.value = ''; }
+  };
+  app.querySelector('#student-photo-file')?.addEventListener('change', handleStudentPhotoChange);
+  app.querySelector('#student-photo-gallery')?.addEventListener('change', handleStudentPhotoChange);
+
+  app.querySelectorAll('[data-export-certificate]').forEach((button) => button.addEventListener('click', async () => {
+    const profile = activeStudent();
+    const certificate = profile?.certificates?.[button.dataset.exportCertificate];
+    if (!certificate) { window.alert('This certificate is no longer available in the active student profile.'); return; }
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = 'Preparing PDF…';
+    try {
+      const result = await exportStudentCertificatePdf(certificate);
+      window.alert(Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android' ? 'Certificate saved to Downloads/EngliMensh. ' + (result?.displayName || '') : 'Certificate PDF download started.');
+    } catch (error) {
+      console.error('Certificate PDF export failed:', error);
+      window.alert('The certificate PDF could not be saved. ' + (error?.message || 'Please try again.'));
+    } finally { button.disabled = false; button.textContent = originalText; }
+  }));
+  app.querySelector('#student-theme-select')?.addEventListener('change', (event) => {
+    const profile = activeStudent();
+    if (!profile) return;
+    try {
+      studentProfiles.setTheme(profile.id, event.target.value);
+      applyStudentTheme();
+    } catch (error) { console.warn('Could not apply student theme:', error); }
+  });
 
   const applySearch = () => {
     const query = state.search.trim().toLocaleLowerCase();
@@ -1855,6 +2279,127 @@ function render() {
     applySearch();
   });
   applySearch();
+
+  app.querySelectorAll('[data-html-unit]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = { grade: state.grade, path: state.path, unitId: button.dataset.htmlUnit };
+    state.htmlModuleSelection = null;
+    state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    state.unitSelection = null;
+    state.activeModule = null;
+    state.preview = null;
+    render();
+    app.querySelector('.imported-curriculum')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  app.querySelector('[data-close-html-unit]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = null;
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelector('[data-html-back-units]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlUnitSelection = null;
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelector('[data-html-back-modules]')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlModuleSelection = null;
+    render();
+  });
+
+  app.querySelectorAll('[data-html-module]').forEach((button) => button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.htmlModuleSelection = button.dataset.htmlModule;
+    state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    render();
+    app.querySelector('.prep-learning-toolbar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  const prepWords = getPreparatoryUnitWords();
+  app.querySelectorAll('[data-prep-game]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame = { id: button.dataset.prepGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    render();
+  }));
+  app.querySelectorAll('[data-prep-match-word]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.selectedWord = button.dataset.prepMatchWord;
+    if (state.htmlGame.selectedImage) {
+      if (state.htmlGame.selectedImage === state.htmlGame.selectedWord) {
+        state.htmlGame.matched = [...state.htmlGame.matched, state.htmlGame.selectedWord];
+        state.htmlGame.score += 1;
+      }
+      state.htmlGame.selectedImage = null;
+      state.htmlGame.selectedWord = null;
+    }
+    render();
+  }));
+  app.querySelectorAll('[data-prep-match-image]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.selectedImage = button.dataset.prepMatchImage;
+    if (state.htmlGame.selectedWord) {
+      if (state.htmlGame.selectedImage === state.htmlGame.selectedWord) {
+        state.htmlGame.matched = [...state.htmlGame.matched, state.htmlGame.selectedWord];
+        state.htmlGame.score += 1;
+      }
+      state.htmlGame.selectedImage = null;
+      state.htmlGame.selectedWord = null;
+    }
+    render();
+  }));
+  app.querySelectorAll('[data-prep-game-option]').forEach((button) => button.addEventListener('click', () => {
+    const current = state.htmlGame.openTarget || prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)]?.word;
+    state.htmlGame.selectedOption = button.dataset.prepGameOption;
+    state.htmlGame.feedback = state.htmlGame.selectedOption === current ? 'correct' : 'wrong';
+    if (state.htmlGame.feedback === 'correct') state.htmlGame.score += 1;
+    render();
+  }));
+  app.querySelectorAll('[data-prep-letter]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.placed = [...(state.htmlGame.placed || []), Number(button.dataset.prepLetter)];
+    render();
+  }));
+  app.querySelector('[data-prep-word-clear]')?.addEventListener('click', () => {
+    state.htmlGame.placed = [];
+    state.htmlGame.feedback = '';
+    render();
+  });
+  app.querySelector('[data-prep-word-check]')?.addEventListener('click', () => {
+    const current = prepWords[state.htmlGame.index % Math.max(prepWords.length, 1)];
+    const letters = (current?.word.toLowerCase().replace(/[^a-z]/g, '').split('') || []).sort((a, b) => b.localeCompare(a));
+    const answer = (state.htmlGame.placed || []).map((index) => letters[index]).join('');
+    const target = current?.word.toLowerCase().replace(/[^a-z]/g, '');
+    state.htmlGame.feedback = answer === target ? 'correct' : 'wrong';
+    if (state.htmlGame.feedback === 'correct') state.htmlGame.score += 1;
+    render();
+  });
+  app.querySelectorAll('[data-prep-game-next]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.index = (state.htmlGame.index + 1) % Math.max(prepWords.length, 1);
+    state.htmlGame.selectedOption = null;
+    state.htmlGame.placed = [];
+    state.htmlGame.flipped = false;
+    state.htmlGame.opened = null;
+    state.htmlGame.openTarget = null;
+    state.htmlGame.feedback = '';
+    render();
+  }));
+  app.querySelector('[data-prep-flip]')?.addEventListener('click', () => {
+    state.htmlGame.flipped = !state.htmlGame.flipped;
+    render();
+  });
+  app.querySelectorAll('[data-prep-open-box]').forEach((button) => button.addEventListener('click', () => {
+    state.htmlGame.opened = Number(button.dataset.prepOpenBox);
+    const openWords = Array.isArray(state.htmlGame.boxWords) ? state.htmlGame.boxWords : [];
+    state.htmlGame.openTarget = openWords[state.htmlGame.opened]?.word || null;
+    state.htmlGame.selectedOption = null;
+    state.htmlGame.feedback = '';
+    render();
+  }));
+  app.querySelector('[data-prep-game-reset]')?.addEventListener('click', () => {
+    state.htmlGame = { ...state.htmlGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, openTarget: null, roundWords: null, boxWords: null, optionSets: {}, feedback: '' };
+    render();
+  });
 
   // Navigation & Workspace Listeners (Preserves student progress permanently)
   app.querySelectorAll('[data-unit-book]').forEach((button) => button.addEventListener('click', (e) => {
@@ -2027,9 +2572,9 @@ function render() {
   app.querySelectorAll('[data-unit-preview]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.unitPreview, page: Number(button.dataset.unitPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
-  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
-  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.activeModule = null; render(); }));
+  app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
+  app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
+  app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
 
   // TTS and speaker-role voice listeners
   app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
@@ -2201,6 +2746,72 @@ function render() {
     render();
   });
 }
+
+window.addEventListener('message', (event) => {
+  const frame = app.querySelector('#prep-html-frame');
+  if (!frame || event.source !== frame.contentWindow) return;
+  const report = event.data;
+  if (!report || state.stage !== 'preparatory') return;
+
+  const isLegacyExam = report.type === 'englimensh:prep-assessment-progress' &&
+    state.htmlModuleSelection === 'comprehensive_test';
+  const sectionForModule = {
+    vocabulary_questions: 'vocabulary',
+    grammar_questions: 'grammar',
+    reading: 'reading',
+    listening: 'listening'
+  };
+  const expectedSection = sectionForModule[state.htmlModuleSelection];
+  const isPrep2Section = report.type === 'englimensh:prep-assessment-section-progress' &&
+    state.grade === 2 && state.path === 'general' &&
+    expectedSection && report.sectionId === expectedSection;
+  if (!isLegacyExam && !isPrep2Section) return;
+
+  const unit = getSelectedPreparatoryUnit();
+  const course = getPreparatoryHtmlCourse(state.grade, state.path);
+  if (!unit || !course || Number(report.grade) !== state.grade ||
+      report.path !== state.path || Number(report.unitNumber) !== Number(unit.number)) return;
+
+  const total = Number(report.total), attempted = Number(report.attempted), correct = Number(report.correct);
+  if (!Number.isInteger(total) || total < 1 || total > 100 ||
+      !Number.isInteger(attempted) || attempted !== total ||
+      !Number.isInteger(correct) || correct < 0 || correct > attempted) return;
+  const profile = activeStudent();
+  if (!profile) return;
+  const certificateUnitId = 'prep-' + state.grade + '-' + state.path + '-unit-' + unit.number;
+  let result = { total, attempted, correct };
+  if (isPrep2Section) {
+    result = studentProfiles.recordAssessmentSection(profile.id, {
+      term: 'first', stage: state.stage, stageLabel: stageNames[state.stage],
+      grade: state.grade, path: state.path, unitId: certificateUnitId
+    }, report.sectionId, result);
+    if (result.sectionCount < 4) {
+      const progress = frame.parentElement?.querySelector('.certificate-earned-banner');
+      if (progress) progress.remove();
+      return;
+    }
+  }
+
+  const alreadyEarned = Object.values(profile.certificates || {}).some((item) => item.unitId === certificateUnitId);
+  const certificate = studentProfiles.issueCertificate(profile.id, {
+    term: 'first', stage: state.stage, stageLabel: stageNames[state.stage],
+    grade: state.grade, path: state.path, curriculum: course.series,
+    unitId: certificateUnitId, unitTitle: unit.title
+  }, result);
+  if (certificate && !alreadyEarned) {
+    const menu = app.querySelector('.student-certificates-control');
+    const summary = menu?.querySelector('summary');
+    const list = menu?.querySelector('div');
+    const certificates = Object.values(activeStudent()?.certificates || {});
+    if (summary) summary.textContent = 'My certificates (' + certificates.length + ')';
+    if (list) list.innerHTML = certificates.map((item) => '<p><strong>' + escapeHtml(item.unit || 'Completed unit') + '</strong><span>' + Number(item.score || 0) + '% · ' + escapeHtml(item.stage || '') + '</span></p>').join('');
+    const notice = document.createElement('div');
+    notice.className = 'certificate-earned-banner';
+    notice.setAttribute('role', 'status');
+    notice.textContent = 'Congratulations! You earned a unit certificate. Open “My certificates” in your student profile.';
+    frame.parentElement?.appendChild(notice);
+  }
+});
 
 // Initial storage load and render
 loadProgressFromStorage();
