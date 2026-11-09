@@ -150,7 +150,7 @@ async function buildSectionViewers(files) {
     const lessonUnitNumber = Number(lessonMatch?.[3] || 0);
     const hasLegacyAssessment = Boolean(lessonMatch && /function\s+handleQuizAnswer/.test(source) && /const\s+examData\s*=/.test(source) && /const\s+answered\s*=/.test(source));
     const isPrep3Combined = path.basename(file) === 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html';
-    const prep1Route = isPrep1General ? `<script>
+    const prep1Route = hasLegacyAssessment ? `<script>
 (() => {
   const moduleTabs = {
     vocabulary: 'vocab',
