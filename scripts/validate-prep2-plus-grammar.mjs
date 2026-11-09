@@ -50,6 +50,24 @@ for (let unit = 1; unit <= 6; unit += 1) {
   };
   if (!unitTopics[unit].test(combined)) failures.push(`Unit ${unit}: questions do not show expected unit grammar signals.`);
   if (/incorrect_\d+|distractor term|false choice|unrelated word|essential curriculum term/i.test(html)) failures.push(`Unit ${unit}: vocabulary or exam distractor placeholders remain.`);
+  const readingMatch = html.match(/const readingData = (\{[\s\S]*?\});\s*const listeningData/);
+  const listeningMatch = html.match(/const listeningData = (\{[\s\S]*?\});\s*const examData/);
+  let readingData, listeningData;
+  try {
+    readingData = readingMatch ? JSON.parse(readingMatch[1]) : null;
+    listeningData = listeningMatch ? JSON.parse(listeningMatch[1]) : null;
+  } catch { failures.push(`Unit ${unit}: reading/listening data must be valid JSON objects.`); }
+  if (!readingData || !Array.isArray(readingData.paragraphs) || readingData.paragraphs.length < 2) failures.push(`Unit ${unit}: two reading paragraphs are required.`);
+  if (!listeningData || !Array.isArray(listeningData.dialogue) || listeningData.dialogue.length < 5) failures.push(`Unit ${unit}: a five-turn listening dialogue is required.`);
+  for (const [section, bank] of [['reading', readingData?.questions], ['listening', listeningData?.questions]]) {
+    if (!Array.isArray(bank) || bank.length !== 5) failures.push(`Unit ${unit}: ${section} must contain five MCQs.`);
+    else for (const [index, q] of bank.entries()) {
+      if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options).size !== 4) failures.push(`Unit ${unit} ${section} Q${index + 1}: four distinct options required.`);
+      if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`Unit ${unit} ${section} Q${index + 1}: invalid answer key.`);
+      if (!/[\u0600-\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
+    }
+  }
+
   for (const [index, match] of [...html.matchAll(/options': \[([^\]]*)\]/g)].entries()) {
     const values = [...match[1].matchAll(/'([^']*)'|"([^"]*)"/g)].map(item => (item[1] ?? item[2]).trim().toLowerCase());
     if (values.length !== 4) failures.push(`Unit ${unit}: options block ${index + 1} must contain exactly four choices.`);
