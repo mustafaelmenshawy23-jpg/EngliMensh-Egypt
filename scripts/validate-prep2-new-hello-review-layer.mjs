@@ -57,7 +57,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
     if (Array.isArray(value) ? value.length === 0 : typeof value !== 'string' || !value.trim()) failures.push(`Unit ${unit}: grammar guide field "${field}" is incomplete.`);
   }
   const arabicText = JSON.stringify(guide);
-  if (!/[\\u0600-\\u06FF]/.test(arabicText)) failures.push(`Unit ${unit}: grammar guide has no Arabic explanation.`);
+  if (!/[\u0600-\u06FF]/.test(arabicText)) failures.push(`Unit ${unit}: grammar guide has no Arabic explanation.`);
 }
 if (layer.units['1']?.answerKeyOverrides?.grammar?.['17']?.correctOption !== 'a') failures.push('Unit 1 Q17 must use option a (arrive).');
 if (layer.units['1']?.answerKeyOverrides?.grammar?.['23']?.correctOption !== 'a') failures.push('Unit 1 Q23 must use option a (make).');
