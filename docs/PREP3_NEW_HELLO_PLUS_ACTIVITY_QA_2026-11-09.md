@@ -3,18 +3,34 @@ Date: 9 November 2026
 Branch: `content-import/prep-new-hello-hello-plus`
 
 ## Scope
-Inspected all six source files registered for Preparatory 3 New Hello Plus:
-`Prep_3_New_Hello_Plus_Unit_1.html` through `Unit_6.html`.
+Six original source files: `Prep_3_New_Hello_Plus_Unit_1.html` through `Unit_6.html`.
 
-## Results
-- All six files contain the expected data declarations for `vocabData`, `vocabQuizData`, `grammarQuizData`, `readingData`, `listeningData`, and `examData`.
-- The visible section headings include vocabulary bank, vocabulary practice, grammar mastery, listening comprehension, and comprehensive unit evaluation. The sampled headings do not expose a distinct speaking-task section or a game section.
-- None of the six files contains a native `<audio>` element, `getUserMedia`, or `MediaRecorder`. Their speech controls use browser speech synthesis. This is TTS/read-aloud, not a recording or listening-audio asset.
-- In Unit 1, the vocabulary quiz prompt is generic (“Which term best matches the visual illustration…”) while the options contain one curriculum word and placeholder distractors such as “distractor term”, “false choice”, and “unrelated word”. The unit exam similarly uses a generic “Identify the word illustrated…” prompt with placeholder choices. This confirms that the repeated-prompt issue is not merely cosmetic duplication: the question stem and distractors do not provide a reliable assessment of a specific target word.
-- The listening dialogue in Unit 1 is a short teacher/student exchange about looking at illustrations and completing quizzes; it is not evidence of a recorded listening passage or a distinct oral production task.
+## Original-source findings (preserved)
+- The six original HTML files contain declarations for vocabulary, vocabulary quiz, grammar quiz, reading, listening and exam data.
+- The original Unit 1 vocabulary/exam questions contained generic prompts and placeholder distractors (for example, “distractor term” and “unrelated word”).
+- Original listening dialogue is not evidence of recorded listening audio or a distinct speaking activity.
+- The original source files are preserved unchanged; their raw placeholder findings remain relevant when auditing the imported source itself.
 
-## Required action
-Do not convert these placeholder questions into “approved” practice by simply shuffling options or changing their wording. Replace them only after the official unit vocabulary, grammar scope, reading/listening material, and answer keys are available for source checking. Keep all learner questions multiple-choice. Add a real unit-linked speaking prompt/task and a game mapped to the unit learning objectives; do not count TTS playback or a generic quiz as either.
+## Later learner-facing remediation (supersedes the earlier “required action” for active app content)
+The later remediation recorded in `docs/PREP3_NEW_HELLO_PLUS_VOCAB_REMEDIATION_2026-11-09.md` reports that the active app-facing layer was rebuilt with:
+- 22 vocabulary entries and 22 definition-based vocabulary MCQs per unit (132 total);
+- 12 unit-focused grammar MCQs per unit (72 total);
+- original supplementary reading and listening passages/dialogues with five MCQs each per skill;
+- 20-question mixed practice tests per unit, composed of 10 vocabulary and 10 grammar questions;
+- unique options, numeric answer keys and Arabic explanations checked by automated validators.
+
+These are teacher-prepared supplementary drafts based on the recorded headwords and grammar headings. They are not official textbook transcriptions or Ministry-approved assessments. The remediation report and validators must be rechecked at the current branch head before claiming all checks pass.
+
+## Speaking and games
+- Browser/device speech synthesis is TTS playback, not learner speech recording, speech recognition or pronunciation scoring.
+- The original Plus files do not establish a distinct unit-linked speaking production task or unit-specific game. The preparatory app has a separate speaking-practice module and vocabulary game pathway, but this does not prove every Plus unit has a mapped speaking task/game.
+
+## Required remaining action
+1. Re-run the Prep 3 Plus validator against all six active data sets and inspect the generated viewer output.
+2. Teacher-review every vocabulary translation, definition/example, grammar explanation, question, distractor and answer key against readable official source pages.
+3. Confirm that the active viewer does not expose the original placeholder questions to learners.
+4. Audit the unit-to-speaking and unit-to-game mapping; do not count TTS as recorded listening or speaking assessment.
+5. Test all sections and games in Android WebView, including offline behavior and persistence.
 
 ## Status
-This is a source-structure QA note, not academic approval. The original six HTML files remain unchanged. No APK was built or shared, and no merge to `main` was performed.
+Original HTML remains unchanged. Active learner-facing remediation is a supplementary draft, not academic approval. No APK release or merge to `main` is authorized.
