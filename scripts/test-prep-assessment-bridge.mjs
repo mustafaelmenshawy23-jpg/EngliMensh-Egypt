@@ -15,6 +15,7 @@ const supported = [
 for (const file of supported) assert.ok(lessonPattern.test(file), `Expected standalone assessment lesson: ${file}`);
 assert.equal(lessonPattern.test('Prep_2_New_Hello_Unit_1_Complete.html'), true, 'Prep 2 general lessons are recognized and use their separate four-section reporting protocol');
 assert.equal(lessonPattern.test('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html'), false, 'combined Prep 3 general file uses its own assessment bridge');
+assert.ok(builder.includes("const marker = /<\\/body>/i;"), "viewer builder must inject bridge scripts before the HTML body closes");
 assert.match(builder, /const isPrep3Combined = path\.basename\(file\) === 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum\.html'/);
 assert.match(builder, /window\.checkAnswer = function\(quizType/);
 assert.match(builder, /grade: 3,/);
