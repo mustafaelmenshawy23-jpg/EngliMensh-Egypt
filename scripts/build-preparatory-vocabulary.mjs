@@ -143,7 +143,9 @@ async function buildSectionViewers(files) {
   for (const file of files) {
     const originalSource = await fs.readFile(file, 'utf8');
     const source = prepareOfflineLessonCopy(originalSource);
-    const isPrep1General = /^Prep_1_New_Hello_Unit_[1-6]\.html$/i.test(path.basename(file));
+    const prep1Match = path.basename(file).match(/^Prep_1_New_Hello_Unit_([1-6])\.html$/i);
+    const isPrep1General = Boolean(prep1Match);
+    const prep1UnitNumber = Number(prep1Match?.[1] || 0);
     const prep1Route = isPrep1General ? `<script>
 (() => {
   const moduleTabs = {
