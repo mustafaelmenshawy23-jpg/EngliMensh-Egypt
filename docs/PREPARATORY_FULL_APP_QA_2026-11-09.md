@@ -33,7 +33,7 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 - The two branches have diverged substantially (PR #1 is 199 commits ahead and 462 behind PR #3 in the current comparison). A wholesale merge would risk replacing the preparatory curriculum work. Port these approved features selectively and reconcile dependencies/tests; do not merge either PR wholesale.
 - Full-stage game coverage beyond the separate preparatory game pathway is also still a separate integration concern.
 
-These features exist in the repository's parallel development branch, but they are not yet integrated and verified together with the preparatory branch. Do not describe the combined app as complete until selective porting and regression tests pass.
+These features exist in the repository's parallel development branch, but they are not yet integrated and verified together with the preparatory branch. The approved certificate-template and teacher-portrait JPEG assets have now been copied into PR #3; the profile manager, certificate logic/PDF export, theme controls/CSS, dependencies and tests still need selective porting. Do not describe the combined app as complete until selective porting and regression tests pass.
 
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
