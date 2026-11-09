@@ -83,7 +83,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
   for (const [section, bank] of [['grammar', grammar], ['exam', exam]]) for (const [index, q] of bank.entries()) {
     if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options).size !== 4) failures.push(`Unit ${unit} ${section} Q${index + 1}: four distinct options required.`);
     if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`Unit ${unit} ${section} Q${index + 1}: invalid answer key.`);
-    if (!/[\\u0600-\\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
+    if (!/[\u0600-\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
     if (/distractor term|false choice|unrelated word|incorrect choice|false term|essential curriculum term/i.test([q.question, ...(q.options || [])].join(' '))) failures.push(`Unit ${unit} ${section} Q${index + 1}: placeholder content remains.`);
   }
   if (!html.includes('Score: 0 / 12') || !html.includes('Exam Score: 0 / 20')) failures.push(`Unit ${unit}: grammar or exam score maximum does not match the bank.`);
