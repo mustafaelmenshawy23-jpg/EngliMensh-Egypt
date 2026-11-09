@@ -2138,7 +2138,9 @@ function render() {
   const books = selectedBooks();
   const visiblePathways = state.stage === 'egyptian-baccalaureate'
     ? sourceIndex.pathways.filter((item) => item.id.startsWith('egypt-baccalaureate'))
-    : paths;
+    : state.stage === 'primary'
+      ? paths.filter((item) => ['general', 'advanced'].includes(item.id))
+      : paths;
 
   app.innerHTML = `
     <header class="topbar">
@@ -2195,13 +2197,14 @@ function render() {
                 : path.id === state.path;
               const id = state.stage === 'egyptian-baccalaureate'
                 ? (path.id === 'egypt-baccalaureate' ? 'first-language' : 'second-language') : path.id;
-              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(path.label || path.name)}</strong><span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span></button>`;
+              const primaryLabel = state.stage === 'primary' ? (path.series || path.name) : (path.label || path.name);
+              return `<button class="path-button ${active ? 'active' : ''}" data-path="${id}"><strong>${escapeHtml(primaryLabel)}</strong><span>${escapeHtml(path.officialSeries || path.series || 'Reserved pathway')}</span></button>`;
             }).join('')}
           </div>
         </div>
       </section>
       <section class="library-section">
-        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${books.length} source file${books.length === 1 ? '' : 's'}</span></div>
+        <div class="library-heading"><div><p class="eyebrow">YOUR LEARNING CONTENT</p><h2>${escapeHtml(selectedPath.series || selectedPath.officialSeries || selectedPath.name || selectedPath.label || 'Curriculum pathway')}</h2><p class="library-intro">Source books are preserved unchanged. Search the selected grade or preview a book and jump to indexed unit pages.</p></div><span class="book-count">${state.stage === 'primary' ? (primaryHtmlCurriculum.tracks.find((item) => item.id === state.path)?.grades.find((item) => Number(item.grade) === Number(state.grade))?.units.length || 0) + ' units' : books.length + ' source files'}</span></div>
         <label class="library-search-label" for="library-search">Search books and units</label>
         <input id="library-search" class="library-search" type="search" placeholder="Type a book title, unit, or topic…" value="${escapeHtml(state.search)}" autocomplete="off">
         ${renderUnitWorkspace()}
