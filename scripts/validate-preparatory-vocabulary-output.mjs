@@ -28,7 +28,7 @@ for (const [unitKey, unit] of Object.entries(data.units)) {
     if (item.imageType === 'photo') {
       photos += 1;
       assert.ok(item.image && item.imageSource && item.sourceUrl && item.attribution && item.license, 'Photo lacks source, attribution, or license metadata: ' + item.word);
-      const relative = item.image.replace(/^\\//, '');
+      const relative = item.image.startsWith('/') ? item.image.slice(1) : item.image;
       await access(path.join(root, 'public', relative));
     } else if (item.imageType === 'svg-illustration') {
       illustrations += 1;
