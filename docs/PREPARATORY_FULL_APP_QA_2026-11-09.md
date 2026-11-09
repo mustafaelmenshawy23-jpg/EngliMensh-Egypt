@@ -29,12 +29,11 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 - PWA/app icon preparation and production web build configuration.
 
 ### Still missing from current runtime source
-- Student profile creation/editing, per-student photo selection via camera/gallery, and per-student progress separation.
-- Per-student certificates generated after scoring at least 90% on a completed unit, including the student's name/photo, unit and grade/stage, and simple encouraging English wording.
-- Four selectable, persistent visual themes.
-- Full-stage game coverage beyond the separate preparatory game pathway.
+- These features are **not yet present on PR #3's preparatory branch**, but they are implemented on the separate PR #1 branch (`feature/primary-connect-connect-plus-2026-2027`): student profile creation/editing, camera/gallery photo selection, profile-specific progress storage, 90% per-unit certificates, direct PDF saving to Downloads, and four persistent themes (Classic Cream, Ocean Blue, Forest Green, Lavender).
+- The two branches have diverged substantially (PR #1 is 199 commits ahead and 462 behind PR #3 in the current comparison). A wholesale merge would risk replacing the preparatory curriculum work. Port these approved features selectively and reconcile dependencies/tests; do not merge either PR wholesale.
+- Full-stage game coverage beyond the separate preparatory game pathway is also still a separate integration concern.
 
-These are implementation gaps, not passing test cases. Do not describe them as complete until implemented and tested.
+These features exist in the repository's parallel development branch, but they are not yet integrated and verified together with the preparatory branch. Do not describe the combined app as complete until selective porting and regression tests pass.
 
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
