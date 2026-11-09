@@ -41,6 +41,8 @@
     if (!guide || target.querySelector('.prep-grammar-expanded')) return;
     const panel = document.createElement('section');
     panel.className = 'prep-grammar-expanded';
+    panel.dir = 'rtl';
+    panel.lang = 'ar';
     const heading = document.createElement('h3');
     heading.textContent = guide.title;
     panel.append(heading);
@@ -74,7 +76,7 @@
       panel.append(section);
     }
     const style = document.createElement('style');
-    style.textContent = '.prep-grammar-expanded{margin:18px 0;padding:18px;border:1px solid #d8c8a8;border-radius:14px;background:#fffaf0;color:#332b20;line-height:1.8}.prep-grammar-expanded h3{margin-top:0}.prep-grammar-topic{margin:14px 0}.prep-grammar-topic h4{margin-bottom:5px;color:#76552b}.prep-grammar-topic ul{padding-inline-start:24px}.prep-grammar-topic li{margin:6px 0}';
+    style.textContent = '.prep-grammar-expanded{direction:rtl;text-align:right;margin:18px 0;padding:18px;border:1px solid #d8c8a8;border-radius:14px;background:#fffaf0;color:#332b20;line-height:1.8}.prep-grammar-expanded h3{margin-top:0}.prep-grammar-topic{margin:14px 0}.prep-grammar-topic h4{margin-bottom:5px;color:#76552b}.prep-grammar-topic ul{padding-inline-start:24px}.prep-grammar-topic li{margin:6px 0}';
     document.head.append(style);
     const title = target.querySelector('h2');
     (title || target).after(panel);
