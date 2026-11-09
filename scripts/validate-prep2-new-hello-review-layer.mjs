@@ -58,6 +58,25 @@ for (let unit = 1; unit <= 6; unit += 1) {
   };
   auditMultipleChoice(html.slice(vocabStart, grammarHeadingStart), 'vocabulary');
   auditMultipleChoice(grammarHtml, 'grammar');
+  const readingHtml = html.slice(readingStart, listeningStart);
+  const listeningHtml = html.slice(listeningStart);
+  if (unit >= 4) {
+    auditMultipleChoice(readingHtml, 'reading');
+    auditMultipleChoice(listeningHtml, 'listening');
+  } else {
+    for (const [sectionName, sectionHtml] of [['reading', readingHtml], ['listening', listeningHtml]]) {
+      const answers = [...sectionHtml.matchAll(/<strong>\\s*Answer:\\s*([^<]+)<\\/strong>/gi)]
+        .slice(0, 5)
+        .map((match, index) => review.answerTextFixes?.[sectionName]?.[String(index + 1)] || match[1].trim());
+      const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+      if (answers.length !== 5) failures.push(`Unit ${unit} ${sectionName}: expected five source answer keys to generate multiple-choice options.`);
+      if (new Set(answers.map(normalized)).size !== 5) failures.push(`Unit ${unit} ${sectionName}: answer bank must contain five distinct answers to build four unique choices per question.`);
+      for (const answer of answers) {
+        const distractors = answers.filter((candidate) => normalized(candidate) !== normalized(answer)).filter((candidate, index, all) => all.findIndex((other) => normalized(other) === normalized(candidate)) === index).slice(0, 3);
+        if (distractors.length !== 3) failures.push(`Unit ${unit} ${sectionName}: could not produce three distinct distractors for "${answer}".`);
+      }
+    }
+  }
   const boldKeys = (grammarHtml.match(/<strong>/g) || []).length;
   const expectedBoldKeys = unit === 1 ? 29 : 30;
   if (boldKeys !== expectedBoldKeys) failures.push(`Unit ${unit}: expected ${expectedBoldKeys} bold grammar answer markers before applying explicit overrides/exclusions; found ${boldKeys}.`);
