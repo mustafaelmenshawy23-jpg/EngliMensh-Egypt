@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  if (!/Prep_2_New_Hello_Unit_\\d+_Complete\\.html$/i.test(location.pathname)) return;
+  if (!/Prep_2_New_Hello_Unit_\d+_Complete\.html$/i.test(location.pathname)) return;
   const layer = window.__PREP2_REVIEW_LAYER__ || {};
   const params = decodeURIComponent(location.hash.slice(1)).split(':');
   const moduleName = params[0] || 'vocabulary';
@@ -53,10 +53,10 @@
     .prep-quiz-check,.prep-quiz-retry { margin:6px 8px 12px 0; padding:11px 18px; border:0; border-radius:9px; background:#1d4ed8; color:white; font-weight:700; cursor:pointer; }
   `;
   document.head.append(style);
-  const normalize = (value) => String(value || '').replace(/^[a-d][)\\.]\\s*/i, '').replace(/\\s+/g, ' ').trim();
+  const normalize = (value) => String(value || '').replace(/^[a-d][)\.]\s*/i, '').replace(/\s+/g, ' ').trim();
   const optionLetter = (node, index) => {
     const text = normalize(node.textContent);
-    const match = node.textContent.match(/^\\s*([a-d])[)\\.]/i);
+    const match = node.textContent.match(/^\s*([a-d])[)\.]/i);
     return (match?.[1] || 'abcd'[index] || '').toLowerCase();
   };
   const status = document.createElement('div');
@@ -69,7 +69,7 @@
   retry.type = 'button'; retry.className = 'prep-quiz-retry'; retry.textContent = 'Try again'; retry.hidden = true;
   let answered = 0, correct = 0;
   questions.forEach((question, index) => {
-    const number = Number((question.textContent.match(/^\\s*(\\d+)\\s*[.、)]/) || [])[1] || index + 1);
+    const number = Number((question.textContent.match(/^\s*(\d+)\s*[.、)]/) || [])[1] || index + 1);
     const id = String(number);
     if (excluded[id]) {
       question.hidden = true;
@@ -79,7 +79,7 @@
     if (!optionsBox) return;
     const rawOptions = optionsBox.querySelectorAll('.option-item').length
       ? [...optionsBox.querySelectorAll('.option-item')]
-      : optionsBox.innerHTML.split(/<br\\s*\\/?\\s*>/i).map((html) => {
+      : optionsBox.innerHTML.split(/<br\s*\/?\s*>/i).map((html) => {
           const wrapper = document.createElement('span');
           wrapper.innerHTML = html;
           return wrapper;
@@ -95,7 +95,7 @@
     prompt.className = 'prep-quiz-prompt';
     const original = question.cloneNode(true);
     original.querySelector('.options')?.remove();
-    let promptText = original.textContent.replace(/^\\s*\\d+\\s*[.、)]\\s*/, '').trim();
+    let promptText = original.textContent.replace(/^\s*\d+\s*[.、)]\s*/, '').trim();
     if (questionFixes[id]) promptText = questionFixes[id];
     prompt.textContent = number + '. ' + promptText;
     const choices = document.createElement('div');
