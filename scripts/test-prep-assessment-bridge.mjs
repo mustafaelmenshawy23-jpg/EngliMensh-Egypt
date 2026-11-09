@@ -45,8 +45,8 @@ assert.match(reviewLayer.units['6'].questionRepairs.grammar['6'], /Intentionally
 const unit6GrammarStart = prep2Unit6.indexOf('4. Grammar Quiz');
 const unit6ReadingStart = prep2Unit6.indexOf('5. Reading Comprehension', unit6GrammarStart);
 const unit6GrammarHtml = prep2Unit6.slice(unit6GrammarStart, unit6ReadingStart);
-assert.match(unit6GrammarHtml, /<div class=\"question-item\">6\\./, 'Source Q6 remains malformed and is intentionally not normalized into a scored item.');
-assert.doesNotMatch(unit6GrammarHtml, /<div class=\"question\">\\s*6\\./, 'Q6 must not be included among active grammar question containers.');
+assert.match(unit6GrammarHtml, /<div class=\"question-item\">6\./, 'Source Q6 remains malformed and is intentionally not normalized into a scored item.');
+assert.doesNotMatch(unit6GrammarHtml, /<div class=\"question\">\s*6\./, 'Q6 must not be included among active grammar question containers.');
 assert.equal((unit6GrammarHtml.match(/class=\"question\"/g) || []).length, 29, 'Unit 6 grammar score denominator must remain 29 active questions.');
 assert.match(prep2, /total: activeQuestions\.length/, 'Assessment reporting must use active questions, not the nominal source count.');
 assert.match(prep2, /sectionId: sectionType/);
