@@ -13,12 +13,12 @@
 | Official student books | 15 |
 | Official student-book unit records | 81 |
 | Commercial supplementary books | 9 |
-| Commercial-supplement unit records | 40 |
+| Commercial-supplement unit records | 44 |
 | Assessment PDFs | 9 |
 | Reader PDFs | 1 |
-| **Indexed lesson units after this update** | **121** |
+| **Indexed lesson units after this update** | **125** |
 | Independent sections per unit | 9 |
-| Empty section slots | 1,089 |
+| Empty section slots | 1,125 |
 | Teacher-approved units | 0 |
 
 All source PDFs remain unchanged. The index is a catalog, not a claim that every book has been populated.
@@ -38,7 +38,7 @@ Restored the following units using the page-level OCR from the original PDF extr
 | 5 | On the Farm | 84 |
 | 6 | Animals Around Me | 103 |
 
-The new index and unit-module manifest now agree on all six units. Unit 3 is consequently delimited at PDF page 64; Units 4 and 5 are delimited by the following unit openings. Unit 6 extends to the end of the 128-page source PDF. These page locations are source-index evidence only: every unit and every item remains `needs_review`.
+The new index and unit-module manifest now agree on all six units. Connect Plus Primary 5 adds four commercial-guide units, raising the current indexed total to 125. Unit 3 is consequently delimited at PDF page 64; Units 4 and 5 are delimited by the following unit openings. Unit 6 extends to the end of the 128-page source PDF. These page locations are source-index evidence only: every unit and every item remains `needs_review`.
 
 ## Generation pipeline failure found and corrected
 
@@ -66,8 +66,7 @@ No API keys or secrets were added to the repository. Existing GitHub Secrets are
 
 ## Books that still need their own indexing path
 
-The following sources are catalogued but do not yet have unit/chapter records:
-- Connect Plus Primary 5 commercial guide.
+The following sources are catalogued but do not yet have unit/chapter records. Connect Plus Primary 5 has now been indexed as four units (PDF pages 8, 46, 89, 130), but its content remains unpopulated and needs review:
 - Hello Plus Preparatory 2 commercial guide.
 - Baccalaureate Year 1 reader: chapter/section indexing is still required.
 - Nine assessment PDFs: these need a separate book/term exam-bank extraction path, not lesson-unit generation.

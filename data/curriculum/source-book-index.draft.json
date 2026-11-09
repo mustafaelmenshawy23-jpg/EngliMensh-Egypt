@@ -707,7 +707,57 @@
       "contentsPdfPage": 6,
       "status": "needs_review",
       "notes": [
-        "Commercial El-Moasser guide; exact unit names and numbering unresolved."
+        "Four unit openings were recovered from page-level OCR of the original PDF: Unit 1 p.8, Unit 2 p.46, Unit 3 p.89, Unit 4 p.130.",
+        "The guide contents page is physical PDF page 6. OCR-derived titles and page boundaries remain needs_review until visual review."
+      ],
+      "units": [
+        {
+          "number": 1,
+          "title": "Life in my world",
+          "startPdfPage": 8,
+          "topics": [
+            "marine ecosystems",
+            "relative clauses",
+            "abstract nouns",
+            "linking words",
+            "health and well-being"
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Look around you",
+          "startPdfPage": 46,
+          "topics": [
+            "geography",
+            "geological features",
+            "extreme weather",
+            "past simple",
+            "present perfect"
+          ]
+        },
+        {
+          "number": 3,
+          "title": "How we use our world",
+          "startPdfPage": 89,
+          "topics": [
+            "natural resources",
+            "renewable and non-renewable resources",
+            "conditionals",
+            "reported speech"
+          ]
+        },
+        {
+          "number": 4,
+          "title": "We're on the move",
+          "startPdfPage": 130,
+          "topics": [
+            "forces and movement",
+            "question tags",
+            "instructions and sequencing",
+            "gravity and flight",
+            "science careers"
+          ]
+        }
       ]
     },
     {
