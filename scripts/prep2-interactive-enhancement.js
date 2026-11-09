@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  if (!/Prep_2_New_Hello_Unit_\\d+_Complete\\.html$/i.test(location.pathname)) return;
   const layer = window.__PREP2_REVIEW_LAYER__ || {};
   const params = decodeURIComponent(location.hash.slice(1)).split(':');
   const moduleName = params[0] || 'vocabulary';
@@ -47,7 +48,13 @@
     }
     const optionsBox = question.querySelector('.options');
     if (!optionsBox) return;
-    const rawOptions = [...optionsBox.children].filter((node) => node.textContent.trim());
+    const rawOptions = optionsBox.querySelectorAll('.option-item').length
+      ? [...optionsBox.querySelectorAll('.option-item')]
+      : optionsBox.innerHTML.split(/<br\\s*\\/?\\s*>/i).map((html) => {
+          const wrapper = document.createElement('span');
+          wrapper.innerHTML = html;
+          return wrapper;
+        }).filter((node) => node.textContent.trim());
     if (!rawOptions.length) return;
     let correctLetter = overrides[id]?.correctOption || '';
     if (!correctLetter) {
@@ -65,7 +72,7 @@
     const choices = document.createElement('div');
     choices.className = 'prep-quiz-choices';
     const groupName = 'prep-' + sectionType + '-' + unitNumber + '-' + id;
-    const buttons = rawOptions.map((node, optionIndex) => {
+    rawOptions.forEach((node, optionIndex) => {
       const letter = optionLetter(node, optionIndex);
       let label = normalize(node.textContent.replace(/<[^>]*>/g, ' '));
       const plain = node.cloneNode(true);
@@ -82,7 +89,6 @@
         question.dataset.selected = letter;
       });
       choices.append(button);
-      return button;
     });
     question.replaceChildren(prompt, choices);
     question.dataset.correct = correctLetter;
