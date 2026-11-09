@@ -1349,6 +1349,122 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       ]
     };
 
+    // Unit 5 teacher-authored draft; topic-aligned practice, not an official textbook transcription.
+    unitsData[5] = {
+      title:"Life Accomplishments", badge:"Unit 5",
+      vocab:[
+        ["role model","noun","قدوة","A person whose behaviour people admire and want to copy.","My mother is a role model for me."],
+        ["champion","noun","بطل / فائز","A person or team that wins a competition.","The young champion trained every day."],
+        ["tournament","noun","بطولة","A series of games or matches to decide a winner.","Our school held a chess tournament."],
+        ["spectator","noun","مشاهد / متفرج","A person who watches an event.","Every spectator cheered for the players."],
+        ["inventor","noun","مخترع","A person who creates something new.","The inventor designed a useful machine."],
+        ["app creator","noun phrase","مصمم تطبيق","A person who develops a mobile or computer application.","The app creator made a tool for learning English."],
+        ["mathematics","noun","الرياضيات","The study of numbers, shapes and calculations.","Mathematics helps us solve problems."],
+        ["scientist","noun","عالِم","A person who studies science or carries out scientific research.","The scientist tested the new idea."],
+        ["award","noun","جائزة / تكريم","A prize given for achievement.","She received an award for her project."],
+        ["prize","noun","جائزة","Something given to a winner.","The first prize was a gold medal."],
+        ["university","noun","جامعة","An institution where students study for degrees.","He hopes to study medicine at university."],
+        ["degree","noun","درجة علمية","A qualification awarded after completing a university course.","She earned a degree in engineering."],
+        ["challenge","noun","تحدٍّ","A difficult task that tests someone's ability.","Learning a new language can be a challenge."],
+        ["determination","noun","إصرار / عزيمة","The quality of continuing to try to achieve something.","Her determination helped her finish the race."],
+        ["success","noun","نجاح","The achievement of something you have tried to do.","Hard work can lead to success."],
+        ["achieve","verb","يحقّق / ينجز","To succeed in doing or getting something.","You can achieve your goal with practice."],
+        ["inspire","verb","يُلهم","To make someone feel they want to do something good.","Great stories inspire young people."],
+        ["enterprise","noun","مشروع / مؤسسة","A business or a project that involves effort and initiative.","The students started a small enterprise."],
+        ["programming","noun","البرمجة","The activity of writing instructions for a computer.","Programming teaches logical thinking."],
+        ["innovative","adjective","مبتكر","Using new ideas or methods.","They found an innovative way to save water."],
+        ["leader","noun","قائد","A person who guides or directs a group.","A good leader listens to the team."],
+        ["hero","noun","بطل","A person admired for courage or great actions.","The firefighter was a local hero."],
+        ["scholarship","noun","منحة دراسية","Money given to help a student pay for education.","She won a scholarship to study abroad."],
+        ["medal","noun","ميدالية","A small metal award given for achievement.","The runner won a silver medal."],
+        ["Olympics","proper noun","الألعاب الأولمبية","An international sports event held every four years.","Many athletes dream of competing in the Olympics."]
+      ].map(([w,pos,ar,def,ex])=>({w,pos,ar,def,ex,icon:`<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="38" fill="#fef3c7" stroke="#d97706" stroke-width="4"/><path d="M50 22 L58 40 L78 42 L63 56 L67 77 L50 66 L33 77 L37 56 L22 42 L42 40Z" fill="#f59e0b" stroke="#92400e" stroke-width="2"/></svg>`})),
+      vocabQuiz:[
+        {q:"A person whose actions you admire is a ______.",opts:["role model","spectator","inventor","passenger"],c:0,exp:"Role model تعني قدوة."},
+        {q:"A person who creates something new is an ______.",opts:["inventor","athlete","audience","leaderboard"],c:0,exp:"Inventor تعني مخترع."},
+        {q:"A series of matches to find a winner is a ______.",opts:["tournament","scholarship","university","degree"],c:0,exp:"Tournament تعني بطولة."},
+        {q:"Money given to help a student study is a ______.",opts:["scholarship","medal","spectator","challenge"],c:0,exp:"Scholarship تعني منحة دراسية."},
+        {q:"The quality of not giving up is ______.",opts:["determination","pollution","competition","permission"],c:0,exp:"Determination تعني الإصرار والعزيمة."},
+        {q:"A person who watches a match is a ______.",opts:["spectator","champion","inventor","scientist"],c:0,exp:"Spectator هو المتفرج."},
+        {q:"A prize made of metal for a winner is a ______.",opts:["medal","degree","project","university"],c:0,exp:"Medal تعني ميدالية."},
+        {q:"To make someone want to do something good means to ______.",opts:["inspire","refuse","forget","damage"],c:0,exp:"Inspire تعني يلهم."},
+        {q:"The study of numbers and calculations is ______.",opts:["mathematics","programming","music","history"],c:0,exp:"Mathematics هي الرياضيات."},
+        {q:"A person who guides a group is a ______.",opts:["leader","spectator","visitor","passenger"],c:0,exp:"Leader تعني قائد."}
+      ],
+      grammarGuide:`
+        <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الخامسة: just / already / yet وطرق التعبير عن القدرة</h3>
+        <div class="space-y-4">
+          <section class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-brand-800 mb-2">1) Present Perfect مع just / already / yet</h4>
+            <p class="text-sm text-slate-700 mb-2">التكوين: have / has + التصريف الثالث. Just تعني للتو وتأتي غالباً بين have/has والتصريف الثالث. Already تعني بالفعل، وتأتي غالباً في الجملة المثبتة. Yet تعني حتى الآن، وتأتي غالباً في نهاية السؤال أو النفي.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">She has just won a medal. / We have already finished. / Have you finished yet? / I haven't finished yet.</p>
+          </section>
+          <section class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+            <h4 class="font-bold text-amber-900 mb-2">2) Can / Could / Be able to</h4>
+            <ul class="list-disc pr-5 text-sm text-slate-700 space-y-1">
+              <li>Can + المصدر: قدرة في الحاضر أو المستقبل القريب.</li>
+              <li>Could + المصدر: قدرة عامة في الماضي، ويستخدم أيضاً للطلب المهذب.</li>
+              <li>Was / were able to + المصدر: نجاح في إنجاز موقف محدد في الماضي.</li>
+              <li>Will be able to + المصدر: قدرة في المستقبل.</li>
+            </ul>
+            <p class="en-text bg-white p-3 rounded-lg text-sm mt-2">I can code. / She could swim at six. / They were able to solve the problem. / He will be able to join us.</p>
+          </section>
+        </div>`,
+      grammarQuiz:[
+        {q:"She has ______ won the science prize.",opts:["just","yesterday","ago","last"],c:0,exp:"Just تأتي مع المضارع التام بمعنى للتو."},
+        {q:"Have you finished your project ______?",opts:["yet","already","just now yesterday","since"],c:0,exp:"Yet تأتي غالباً في نهاية السؤال."},
+        {q:"They haven't received the award ______.",opts:["yet","already","just","ever"],c:0,exp:"Yet تستخدم في نهاية النفي."},
+        {q:"I ______ speak English when I was six.",opts:["could","can","will","am"],c:0,exp:"Could تعبر عن قدرة عامة في الماضي."},
+        {q:"He can ______ computer programs.",opts:["write","writes","wrote","writing"],c:0,exp:"بعد can يأتي المصدر دون s أو ing."},
+        {q:"We ______ able to finish the task yesterday.",opts:["were","are","will","is"],c:0,exp:"We في الماضي تأخذ were able to."},
+        {q:"She has ______ completed the first level.",opts:["already","last week","ago","yesterday"],c:0,exp:"Already تناسب المضارع التام."},
+        {q:"I will be able ______ you tomorrow.",opts:["to help","help","helped","helping"],c:0,exp:"التركيب will be able to + مصدر."},
+        {q:"The students have just ______ the competition.",opts:["started","start","starts","starting"],c:0,exp:"بعد have just نستخدم التصريف الثالث started."},
+        {q:"Which sentence is correct?",opts:["He could ride a bike at five.","He could rides a bike at five.","He can rode a bike at five.","He could riding a bike at five."],c:0,exp:"بعد could نستخدم المصدر ride."}
+      ],
+      reading:{
+        title:"Reading: A Young Inventor",
+        body:"Nour is a student who loves science and programming. She has always been interested in finding solutions to everyday problems. Last year, she joined a school competition and designed a simple app that reminds people to save water. Her team worked hard and tested the app with their teachers. They have just received an award for their innovative idea. Nour has already shared the app with other students, but she hasn't decided whether to study engineering or computer science at university yet. Her teacher says that determination and teamwork are important parts of success. Nour hopes her project will inspire other young people.",
+        questions:[
+          {q:"What does Nour love?",opts:["Science and programming.","Music and painting.","Football and swimming.","Travel and camping."],c:0,exp:"النص يذكر حبها للعلوم والبرمجة."},
+          {q:"What does her app remind people to do?",opts:["Save water.","Buy books.","Play music.","Travel abroad."],c:0,exp:"التطبيق يذكّر الناس بتوفير المياه."},
+          {q:"What has the team just received?",opts:["An award.","A scholarship abroad.","A new school.","A gold watch."],c:0,exp:"حصل الفريق للتو على جائزة."},
+          {q:"Has Nour decided what to study at university?",opts:["No, she hasn't.","Yes, engineering.","Yes, medicine.","She has left school."],c:0,exp:"لم تقرر بعد بين الهندسة وعلوم الحاسب."},
+          {q:"According to the teacher, what is important for success?",opts:["Determination and teamwork.","Luck only.","Expensive equipment.","Travelling alone."],c:0,exp:"المعلم أكد أهمية الإصرار والعمل الجماعي."}
+        ]
+      },
+      listening:{
+        title:"Listening: An Interview with a Young Scientist",
+        script:[
+          {s:"Interviewer",t:"Have you won any awards for your science project?"},
+          {s:"Karim",t:"Yes, I have just won first prize in our school competition."},
+          {s:"Interviewer",t:"What can your project do?"},
+          {s:"Karim",t:"It can measure how much water a plant needs."},
+          {s:"Interviewer",t:"Could you work on it alone?"},
+          {s:"Karim",t:"I could design the first model, but my friends were able to improve it."}
+        ],
+        questions:[
+          {q:"What has Karim just won?",opts:["First prize.","A scholarship.","A university degree.","A football match."],c:0,exp:"فاز بالمركز الأول في مسابقة المدرسة."},
+          {q:"What can the project measure?",opts:["How much water a plant needs.","The speed of a plane.","The sound of music.","The age of a tree."],c:0,exp:"يقيس كمية المياه التي يحتاجها النبات."},
+          {q:"Could Karim design the first model?",opts:["Yes, he could.","No, he couldn't.","He has not tried.","The interviewer did it."],c:0,exp:"قال إنه استطاع تصميم النموذج الأول."},
+          {q:"Who improved the model?",opts:["His friends.","The interviewer.","His parents.","The pilot."],c:0,exp:"أصدقاؤه استطاعوا تحسين النموذج."},
+          {q:"Which word means للتو?",opts:["just","yet","could","award"],c:0,exp:"Just تعني للتو."}
+        ]
+      },
+      exam:[
+        {q:"The team has ______ finished the project.",opts:["already","last week","ago","yesterday"],c:0,exp:"Already مع المضارع التام."},
+        {q:"Have you received the results ______?",opts:["yet","just","already yesterday","since"],c:0,exp:"Yet في نهاية السؤال."},
+        {q:"My grandfather ______ run very fast when he was young.",opts:["could","can","will","is"],c:0,exp:"Could للقدرة في الماضي."},
+        {q:"A person who creates new things is an ______.",opts:["inventor","spectator","passenger","audience"],c:0,exp:"Inventor تعني مخترع."},
+        {q:"She will be able ______ a university course next year.",opts:["to start","start","started","starting"],c:0,exp:"Will be able to + مصدر."},
+        {q:"A prize for a student to support education is a ______.",opts:["scholarship","spectator","tournament","challenge"],c:0,exp:"Scholarship منحة دراسية."},
+        {q:"The scientist has just ______ a new method.",opts:["discovered","discover","discovers","discovering"],c:0,exp:"بعد has just يأتي التصريف الثالث."},
+        {q:"We ______ able to solve the problem yesterday.",opts:["were","are","will","be"],c:0,exp:"We were able to."},
+        {q:"The word innovative means ______.",opts:["مبتكر","قديم","متردد","متأخر"],c:0,exp:"Innovative تعني مبتكر."},
+        {q:"A person who watches a competition is a ______.",opts:["spectator","champion","inventor","leader"],c:0,exp:"Spectator هو المتفرج."}
+      ]
+    };
+
     // STATE VARIABLES
     let currentUnit = 1;
     let currentSubTab = 'vocab';
