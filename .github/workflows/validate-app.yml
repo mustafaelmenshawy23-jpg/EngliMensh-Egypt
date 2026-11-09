@@ -58,9 +58,9 @@ jobs:
       - name: Run automated application and unit tests
         run: npm test
 
-      - name: Build application
+      - name: Build application and enrich vocabulary with openly licensed photos
         env:
-          SKIP_PREPARATORY_IMAGE_FETCH: '1'
+          FETCH_PREPARATORY_IMAGES: '1'
         run: npm run build
 
       - name: Upload production build
