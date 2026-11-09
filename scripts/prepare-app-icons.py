@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import io
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -18,10 +20,37 @@ SOURCE_PATH = PUBLIC_ICONS / "englimensh-icon-source.jpg"
 def download_source() -> Image.Image:
     request = urllib.request.Request(
         SOURCE_URL,
-        headers={"User-Agent": "EngliMensh-Egypt-AppIconBuilder/1.0"},
+        headers={
+            "User-Agent": "EngliMensh-Egypt-AppIconBuilder/1.0",
+            "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+            "Cache-Control": "no-cache",
+        },
     )
-    with urllib.request.urlopen(request, timeout=45) as response:
-        data = response.read()
+    data = None
+    last_error: Exception | None = None
+    # GitHub user-attachment delivery can intermittently return 502/503/504.
+    # Retry transient delivery failures without ever substituting another image.
+    for attempt, delay in enumerate((0, 5, 15, 30, 45), start=1):
+        if delay:
+            time.sleep(delay)
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response:
+                data = response.read()
+            break
+        except urllib.error.HTTPError as error:
+            last_error = error
+            if error.code not in {408, 425, 429, 500, 502, 503, 504}:
+                raise RuntimeError(
+                    f"The selected GitHub icon attachment returned HTTP {error.code}; "
+                    "the original artwork was not replaced."
+                ) from error
+        except (urllib.error.URLError, TimeoutError, OSError) as error:
+            last_error = error
+    if data is None:
+        raise RuntimeError(
+            "Could not retrieve the exact selected GitHub icon attachment after 5 attempts. "
+            "No substitute artwork was used."
+        ) from last_error
     if len(data) < 10_000:
         raise RuntimeError(
             f"The selected GitHub attachment is unexpectedly small ({len(data)} bytes)."
