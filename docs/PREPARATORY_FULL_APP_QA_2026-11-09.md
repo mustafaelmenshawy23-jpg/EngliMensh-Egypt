@@ -6,7 +6,8 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 ## 1. Automated validation status
 - Earlier validation run `42572086234` passed on an earlier branch head, including the production Vite build and listed Node tests.
 - The Prep 3 general validator was subsequently strengthened in commit `9b460a1fba617e620934d080f43d9d887f614b14`, then the current Prep 3 audit was refreshed in `a9662897897b8b7ae63a9b62396e8ac9765e806a`.
-- No GitHub Actions run has yet been confirmed for these two latest commits. The strengthened validator was separately exercised against the current source text and returned zero structural failures; this is not a substitute for CI.
+- GitHub Actions run **#637** (`42579271042`) completed successfully on commit `28db57ea2fc5daeb5dbf6095ac12efe6516c8c9e`: the full automated test script passed, the production Vite build passed, and the production build artifact was uploaded. The latest subsequent commits in the current branch are documentation-only QA reconciliations; no new CI run is currently confirmed for the exact latest head.
+- Three earlier runs (#634–#636) failed in Prep 3 Plus vocabulary parsing. The subsequent #637 success confirms that failure was corrected on its tested commit.
 - A web/PWA build does not prove Android APK packaging or physical-device runtime behavior.
 
 ## 2. New Hello general — three preparatory grades
@@ -37,7 +38,7 @@ These features exist in the repository's parallel development branch, but they a
 
 ## 5. Media and offline gaps
 - The generated vocabulary build was previously verified at 36 unit records and 846 vocabulary records.
-- That generated report found 0 licensed photos, 80 SVG illustrations, and 766 records without an image. It also found missing/placeholder Arabic fields, definitions and examples.
+- The successful #637 build processed 630 Openverse image lookups but obtained **0 usable photos**. Its final vocabulary-output validation found 846 words, 0 photos, 80 SVG illustrations, and 766 records without an image. It also reported 100 placeholder Arabic meanings, 150 placeholder definitions, and 250 placeholder examples across 36 unit records. This is a major unresolved content/media blocker; the build being green does not mean the vocabulary/media layer is complete.
 - A normal build skips external photo enrichment unless explicitly enabled; therefore successful packaging does not imply complete real-photo coverage.
 - All external image assets must have verified source/creator/license metadata and be included locally for offline use. SVGs and generic placeholders must not be counted as real photos.
 
@@ -52,5 +53,5 @@ These features exist in the repository's parallel development branch, but they a
 1. Continue detailed academic review across all three preparatory grades and both pathways; correct only verified defects and keep generated material labelled as draft until source review.
 2. Complete the profile, photo, per-student data, 90% certificate, and four-theme features.
 3. Verify vocabulary/media coverage, offline behavior, games, speaking/TTS, navigation, persistence, and no regressions.
-4. Run Android WebView/device QA, then build and inspect a fresh real debug APK.
+4. Resolve the media/data gap (licensed offline photos plus missing Arabic meanings, definitions and examples), then run Android WebView/device QA and build/inspect a fresh real debug APK.
 5. Keep PR #3 open and unmerged. Do not merge to `main` or distribute an APK before all gates pass and the owner explicitly approves.
