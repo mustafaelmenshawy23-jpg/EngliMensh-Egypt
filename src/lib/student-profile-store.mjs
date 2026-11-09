@@ -1,4 +1,5 @@
 const PROFILE_KEY = 'englimensh_student_profiles_v1';
+const ACTIVE_PROFILE_KEY = 'englimensh_active_student_profile_v1';
 const LEGACY_PROGRESS_KEY = 'englimensh_p1u1_progress';
 const THEMES = new Set(['classic', 'ocean', 'forest', 'lavender']);
 
@@ -42,7 +43,8 @@ export function createStudentProfileStore(storage, { legacyKey = LEGACY_PROGRESS
 
   let profiles = readJson(storage, PROFILE_KEY, []);
   profiles = Array.isArray(profiles) ? profiles.map(normalizeProfile).filter(Boolean) : [];
-  let activeId = null;
+  const savedActiveId = storage.getItem(ACTIVE_PROFILE_KEY);
+  let activeId = profiles.some((profile) => profile.id === savedActiveId) ? savedActiveId : null;
 
   const persistProfiles = () => writeJson(storage, PROFILE_KEY, profiles);
   const find = (id) => profiles.find((profile) => profile.id === id) || null;
@@ -83,9 +85,10 @@ export function createStudentProfileStore(storage, { legacyKey = LEGACY_PROGRESS
     activate(id) {
       if (!find(id)) throw new Error('Student profile not found.');
       activeId = id;
+      storage.setItem(ACTIVE_PROFILE_KEY, id);
       return this.active();
     },
-    clearActive() { activeId = null; },
+    clearActive() { activeId = null; storage.removeItem(ACTIVE_PROFILE_KEY); },
     progressKey,
     loadProgress(context = {}) {
       const profile = find(activeId);
