@@ -39,6 +39,26 @@
   const questionFixes = unit.questionTextFixes?.[sectionType] || {};
   const excluded = unit.excludedItems?.[sectionType] || {};
   const questions = [...target.querySelectorAll('.question')];
+  if (sectionType === 'listening') {
+    const scriptNode = [...target.querySelectorAll('p')].find((node) => /listening script/i.test(node.textContent));
+    if (scriptNode && !scriptNode.querySelector('[data-listening-play]')) {
+      const scriptText = scriptNode.textContent.replace(/^\\s*Listening Script:\\s*/i, '').replace(/^["“]|["”]$/g, '').trim();
+      const play = document.createElement('button');
+      play.type = 'button'; play.dataset.listeningPlay = 'true'; play.className = 'prep-quiz-check';
+      play.textContent = '▶ Play listening text';
+      play.addEventListener('click', () => {
+        if (!('speechSynthesis' in window)) { status.textContent = 'Audio playback is not supported on this device.'; return; }
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(scriptText);
+        utterance.lang = 'en-GB'; utterance.rate = 0.88;
+        window.speechSynthesis.speak(utterance);
+      });
+      const stop = document.createElement('button');
+      stop.type = 'button'; stop.className = 'prep-quiz-retry'; stop.textContent = '■ Stop audio';
+      stop.addEventListener('click', () => window.speechSynthesis?.cancel());
+      scriptNode.after(play, stop);
+    }
+  }
   const style = document.createElement('style');
   style.textContent = `
     .prep-interactive-question { padding:16px; margin:14px 0; border:1px solid #d8e2ec; border-radius:12px; background:#fff; }
@@ -48,7 +68,7 @@
     .prep-quiz-option.selected { border:2px solid #2563eb; background:#eff6ff; }
     .prep-quiz-option.correct { border:2px solid #15803d; background:#f0fdf4; }
     .prep-quiz-option.incorrect { border:2px solid #b91c1c; background:#fef2f2; }
-    .prep-quiz-option:disabled { cursor:default; opacity:1; }
+    .prep-quiz-option:disabled { cursor:default; opacity:1; }\n    .prep-answer-input { width:100%; max-width:520px; padding:12px; border:1px solid #94a3b8; border-radius:9px; font:inherit; }\n    .prep-answer-input:disabled { background:#f1f5f9; color:#172033; }
     .prep-quiz-status { margin:16px 0; padding:12px; border-radius:9px; background:#f1f5f9; font-weight:600; }
     .prep-quiz-check,.prep-quiz-retry { margin:6px 8px 12px 0; padding:11px 18px; border:0; border-radius:9px; background:#1d4ed8; color:white; font-weight:700; cursor:pointer; }
   `;
@@ -73,6 +93,25 @@
     const id = String(number);
     if (excluded[id]) {
       question.hidden = true;
+      return;
+    }
+    if (sectionType === 'reading' || sectionType === 'listening') {
+      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
+      if (!answerNode) return;
+      const answer = answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim();
+      const original = question.cloneNode(true);
+      original.querySelectorAll('strong,b').forEach((node) => node.remove());
+      const prompt = document.createElement('div');
+      prompt.className = 'prep-quiz-prompt';
+      prompt.textContent = number + '. ' + original.textContent.replace(/^\\s*\\d+\\s*[.、)]\\s*/, '').trim();
+      const input = document.createElement('input');
+      input.type = 'text'; input.className = 'prep-answer-input';
+      input.autocomplete = 'off'; input.setAttribute('aria-label', 'Your answer for question ' + number);
+      input.placeholder = 'Type your answer';
+      question.replaceChildren(prompt, input);
+      question.dataset.answer = answer;
+      question.dataset.checked = 'false';
+      question.classList.add('prep-interactive-question','prep-short-answer');
       return;
     }
     const optionsBox = question.querySelector('.options');
@@ -130,6 +169,21 @@
   check.addEventListener('click', () => {
     answered = 0; correct = 0;
     activeQuestions.forEach((question) => {
+      if (question.classList.contains('prep-short-answer')) {
+        const input = question.querySelector('.prep-answer-input');
+        const value = input?.value?.trim();
+        if (!value) return;
+        answered++;
+        const normalizeAnswer = (text) => String(text || '').toLocaleLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+        const expected = normalizeAnswer(question.dataset.answer);
+        const actual = normalizeAnswer(value);
+        const isCorrect = actual === expected || (expected.length > 8 && expected.includes(actual) && actual.length >= Math.min(8, expected.length * 0.55));
+        if (isCorrect) { correct++; question.classList.add('answer-correct'); }
+        else question.classList.add('answer-incorrect');
+        input.disabled = true;
+        question.dataset.checked = 'true';
+        return;
+      }
       const selected = question.dataset.selected;
       const key = question.dataset.correct;
       if (!selected) return;
@@ -145,13 +199,16 @@
     status.textContent = unanswered ? 'You answered ' + answered + ' of ' + activeQuestions.length + '. Complete the remaining questions, then check again.' :
       'Your result: ' + correct + ' / ' + activeQuestions.length + ' (' + Math.round(correct / activeQuestions.length * 100) + '%).';
     if (unanswered) {
-      activeQuestions.filter((question) => !question.dataset.selected).forEach((question) => { question.dataset.checked = 'false'; });
-      activeQuestions.forEach((question) => question.querySelectorAll('button').forEach((button) => { button.disabled = false; }));
+      activeQuestions.filter((question) => question.classList.contains('prep-short-answer') ? !question.querySelector('.prep-answer-input')?.value.trim() : !question.dataset.selected).forEach((question) => { question.dataset.checked = 'false'; });
+      activeQuestions.forEach((question) => { question.querySelectorAll('button').forEach((button) => { button.disabled = false; }); const input = question.querySelector('.prep-answer-input'); if (input && !input.value.trim()) input.disabled = false; });
     } else { check.hidden = true; retry.hidden = false; }
   });
   retry.addEventListener('click', () => {
     activeQuestions.forEach((question) => {
       delete question.dataset.selected; question.dataset.checked = 'false';
+      question.classList.remove('answer-correct','answer-incorrect');
+      const input = question.querySelector('.prep-answer-input');
+      if (input) { input.disabled = false; input.value = ''; }
       question.querySelectorAll('button').forEach((button) => { button.disabled = false; button.classList.remove('selected','correct','incorrect'); });
     });
     status.textContent = 'Choose an answer for each question. Your score appears after checking.';
