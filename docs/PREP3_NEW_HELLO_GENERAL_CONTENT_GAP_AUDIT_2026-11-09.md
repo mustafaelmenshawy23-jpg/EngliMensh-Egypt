@@ -26,3 +26,10 @@ Unit 1 and Unit 2 have authored vocabulary/reading/listening content, but their 
 
 ## Security note
 The removed browser-injected script contained temporary authentication material. The file in the current branch no longer contains those markers. Because credentials/tokens may remain in Git history, the project owner should review the originating Firebase/Gemini session and revoke or rotate any exposed temporary credential where applicable. Do not reuse that token.
+
+
+## Follow-up correction — 9 November 2026
+- Removed unsupported wording that described the generated vocabulary, reading and exam practice as official or ministry-accredited. The generated reading is now labelled supplementary and pending textbook verification; the exam subtitle no longer claims alignment with ministry specifications.
+- Reworded the generated vocabulary description and answer explanation so they do not imply official approval.
+- **This is a wording/safety correction only. It does not resolve the curriculum-content blocker above.** Units 3–6 still use generic generated MCQs, reading and listening material; the vocabulary meanings/examples still require proper authored replacement. Units 1–2 still require item-level grammar/exam repair.
+- Latest validation workflow for the follow-up source wording commit: run `42564641679` is in progress at the time of this report update. Do not treat it as passed until its conclusion is success.
