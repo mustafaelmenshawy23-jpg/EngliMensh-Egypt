@@ -3,6 +3,7 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const SOURCE_ROOT = path.join(ROOT, 'content-imports', 'preparatory');
 const OUTPUT = path.join(ROOT, 'src', 'data', 'preparatory-vocabulary.json');
+const PREP2_REVIEW_LAYER = path.join(ROOT, 'src', 'data', 'prep2-new-hello-reviewed-layer.json');
 const ASSET_ROOT = path.join(ROOT, 'public', 'assets', 'preparatory-vocabulary');
 function decodeHtml(value = '') { return value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').trim(); }
 function slug(value) { return value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70) || 'word'; }
@@ -257,6 +258,7 @@ async function mapLimit(items, limit, worker) {
     while (cursor < items.length) { const index = cursor++; await worker(items[index], index); }
   }));
 }
+const prep2ReviewLayer = JSON.parse(await fs.readFile(PREP2_REVIEW_LAYER, 'utf8'));
 const files = await walk(SOURCE_ROOT);
 await buildSectionViewers(files);
 const registry = {};
@@ -274,10 +276,24 @@ for (const file of files) {
   if (!words.length && id.path === 'general' && id.grade === 2) words = parseStaticCards(source);
   if (!words.length) { console.warn('No vocabulary parsed from source:', path.basename(file)); continue; }
   console.log('Parsed vocabulary:', path.basename(file), words.length, 'words');
-  registry[id.grade + ':' + id.path + ':' + id.unit] = { words: words.map((item) => ({
+  const unitWords = words.map((item) => ({
     word: decodeHtml(item.word || item.w || ''), pos: decodeHtml(item.pos || ''), arabic: decodeHtml(item.arabic || item.ar || ''),
     definition: decodeHtml(item.def || ''), example: decodeHtml(item.example || item.ex || ''), svg: safeSvg(item.svg || item.icon || '')
-  })).filter((item) => item.word) };
+  })).filter((item) => item.word);
+  if (id.grade === 2 && id.path === 'general') {
+    const reviewed = prep2ReviewLayer.units?.[String(id.unit)];
+    const translations = reviewed?.vocabularyArabic || {};
+    for (const item of unitWords) {
+      const key = item.word.toLowerCase();
+      const translation = Object.entries(translations).find(([word]) => word.toLowerCase() === key)?.[1];
+      if (!item.arabic && translation) item.arabic = translation;
+      if (!item.arabic) item.translationStatus = 'missing';
+      else item.translationStatus = 'draft-needs-source-review';
+    }
+    const duplicates = new Set((reviewed?.knownDuplicateHeadwords || []).map((word) => word.toLowerCase()));
+    for (const item of unitWords) if (duplicates.has(item.word.toLowerCase())) item.sourceReviewFlag = 'duplicate-headword-in-source';
+  }
+  registry[id.grade + ':' + id.path + ':' + id.unit] = { words: unitWords, ...(id.grade === 2 && id.path === 'general' ? { reviewStatus: prep2ReviewLayer.status } : {}) };
 }
 const expectedUnitKeys = [];
 for (const grade of [1, 2, 3]) for (const pathway of ['general', 'advanced']) for (let unit = 1; unit <= 6; unit += 1) expectedUnitKeys.push(grade + ':' + pathway + ':' + unit);
