@@ -51,4 +51,16 @@ assert.deepEqual(isolatedStore.loadProgress(), { belongsToLegacy: true }, 'a sin
 isolatedStore.create({ id: 'two', name: 'Two', stage: 'preparatory', grade: 1, path: 'general' });
 isolatedStore.activate('two');
 assert.equal(isolatedStore.loadProgress(), null, 'a second profile must never inherit another profile or legacy progress');
+
+const sectionContext = { term: 'first', stage: 'preparatory', grade: 2, path: 'general', unitId: 'prep-2-general-unit-1' };
+const aggregate1 = store.recordAssessmentSection('s1', sectionContext, 'vocabulary', { total: 10, attempted: 10, correct: 9 });
+assert.deepEqual(aggregate1, { sectionCount: 1, total: 10, attempted: 10, correct: 9 });
+const aggregate2 = store.recordAssessmentSection('s1', sectionContext, 'grammar', { total: 10, attempted: 10, correct: 9 });
+const aggregate3 = store.recordAssessmentSection('s1', sectionContext, 'reading', { total: 10, attempted: 10, correct: 8 });
+const aggregate4 = store.recordAssessmentSection('s1', sectionContext, 'listening', { total: 10, attempted: 10, correct: 10 });
+assert.deepEqual(aggregate4, { sectionCount: 4, total: 40, attempted: 40, correct: 36 });
+assert.equal(store.issueCertificate('s1', sectionContext, aggregate4).score, 90, 'aggregated section results may issue a certificate only after all sections are complete and the score is at least 90%');
+assert.throws(() => store.recordAssessmentSection('s1', sectionContext, 'speaking', { total: 1, attempted: 1, correct: 1 }), /Unsupported/);
+assert.throws(() => store.recordAssessmentSection('s1', sectionContext, 'reading', { total: 2, attempted: 1, correct: 1 }), /complete/);
+
 console.log('Student profile store checks passed: CRUD, isolated progress, theme validation, full-completion 90% certificates.');
