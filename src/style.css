@@ -2850,3 +2850,8 @@ button:disabled{opacity:.55;cursor:not-allowed}
  .student-profile-control { justify-content:flex-start; }
  .student-profile-control input { max-width:130px; }
 }
+
+.student-profile-avatar { width:34px; height:34px; flex:0 0 34px; border-radius:50%; object-fit:cover; border:2px solid var(--brand-teal-border); }
+.student-profile-placeholder { display:grid; place-items:center; background:var(--brand-teal-light); font-size:18px; }
+.student-profile-control input[type="file"] { width:160px; max-width:160px; padding:4px; font-size:10px; }
+@media(max-width:760px) { .student-profile-control input[type="file"] { width:140px; max-width:140px; } }
