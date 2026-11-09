@@ -2,7 +2,7 @@ name: Build EngliMensh Android preview APK
 
 on:
   push:
-    branches: [main, feature/primary-connect-connect-plus-2026-2027]
+    branches: [main, feature/primary-connect-connect-plus-2026-2027, feature/official-app-icon-setup-2026-11-09]
   workflow_dispatch:
 
 permissions:
@@ -49,6 +49,9 @@ jobs:
       - name: Run automated application and unit tests
         run: npm test
 
+      - name: Install image tooling for approved app icon
+        run: python3 -m pip install --user Pillow
+
       - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
         run: rm -rf public/books
 
@@ -59,6 +62,9 @@ jobs:
 
       - name: Generate Android project
         run: npx cap add android
+
+      - name: Generate official Android and PWA icons
+        run: python3 scripts/prepare-official-app-icons.py
 
       - name: Sync web application into Android project
         run: npx cap sync android
