@@ -182,7 +182,7 @@ async function buildSectionViewers(files) {
           type: 'englimensh:prep-assessment-progress',
           grade: 1,
           path: 'general',
-          unitNumber: \${prep1UnitNumber},
+          unitNumber: ${prep1UnitNumber},
           total: examData.length,
           attempted: answered.exam.size,
           correct: scores.exam
