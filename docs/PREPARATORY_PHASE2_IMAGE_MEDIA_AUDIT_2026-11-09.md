@@ -26,3 +26,28 @@ This GitHub file interface can inspect and commit UTF-8 text, but it cannot crea
 
 ## Status
 Phase 2 image/media audit started. No original HTML was changed. No APK was built/shared and no merge to `main` was performed.
+
+
+## Actual generated build output (verified 9 Nov 2026)
+The production build's new postbuild validator ran successfully on commit `72703846eb735305b893566e433c28d5998c3ff6` and inspected the generated JSON after the prebuild extraction step.
+
+| Measure | Verified count |
+|---|---:|
+| Unit records | 36 |
+| Vocabulary records | 846 |
+| Licensed photos downloaded in normal offline build | 0 |
+| Safe SVG illustrations | 80 |
+| Records with no image | 766 |
+| Arabic fields still placeholder/missing | 231 |
+| Definitions still generic/missing | 281 |
+| Examples still generic/missing | 382 |
+
+Interpretation:
+- The generator successfully produces all 36 expected grade/pathway/unit records.
+- Normal CI build intentionally skips external photo lookup, so zero photos is expected and no online image lookup was claimed.
+- 766/846 vocabulary records have no image in the generated output. This is a release blocker for any requirement that every vocabulary item have a real image.
+- Arabic/definition/example counts confirm that source placeholder text survives into the generated data. Those fields must be corrected from trustworthy source material, not filled with invented translations or examples.
+- The 80 SVGs are classified separately from photographs; their presence does not imply photo coverage.
+- These are automated content/media counts, not teacher approval or curriculum completion.
+
+The validator is wired to run after every `npm run build` via `postbuild`, checks all 36 unit keys, verifies that every claimed photo has source/attribution/license metadata and an actual local file, classifies image coverage, and reports placeholder text. It warns about content gaps without falsely treating a structurally complete build as academically approved.
