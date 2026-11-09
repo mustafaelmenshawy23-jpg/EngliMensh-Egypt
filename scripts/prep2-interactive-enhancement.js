@@ -11,7 +11,7 @@
     moduleName === 'reading' ? 'reading' : moduleName === 'listening' ? 'listening' : null;
   if (!sectionType) return;
   const sectionHeadings = [...document.querySelectorAll('.section, body > h2, .container > h2')];
-  const target = sectionHeadings.find((section) => {
+  let target = sectionHeadings.find((section) => {
     const heading = section.matches('h2') ? section : section.querySelector('h2');
     const text = (heading?.textContent || '').toLowerCase();
     return sectionType === 'vocabulary' ? /vocabulary quiz/.test(text) :
@@ -19,11 +19,40 @@
       sectionType === 'reading' ? /reading/.test(text) : /listening/.test(text);
   });
   if (!target) return;
+  if (target.matches('h2')) {
+    const wrapper = document.createElement('section');
+    wrapper.className = 'prep-generated-quiz-section';
+    let sibling = target.nextElementSibling;
+    while (sibling && !sibling.matches('h2')) {
+      const next = sibling.nextElementSibling;
+      wrapper.append(sibling);
+      sibling = next;
+    }
+    target.after(wrapper);
+    target = wrapper;
+  }
+  target.querySelectorAll('.question .question').forEach((nested) => {
+    nested.parentNode.insertBefore(nested, nested.parentNode.nextSibling);
+  });
   const overrides = unit.answerKeyOverrides?.[sectionType] || {};
   const optionFixes = unit.optionTextFixes?.[sectionType] || {};
   const questionFixes = unit.questionTextFixes?.[sectionType] || {};
   const excluded = unit.excludedItems?.[sectionType] || {};
   const questions = [...target.querySelectorAll('.question')];
+  const style = document.createElement('style');
+  style.textContent = `
+    .prep-interactive-question { padding:16px; margin:14px 0; border:1px solid #d8e2ec; border-radius:12px; background:#fff; }
+    .prep-quiz-prompt { font-weight:700; margin-bottom:12px; line-height:1.6; }
+    .prep-quiz-choices { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:9px; }
+    .prep-quiz-option { text-align:left; padding:11px 13px; border:1px solid #cbd5e1; border-radius:9px; background:#f8fafc; color:#172033; cursor:pointer; }
+    .prep-quiz-option.selected { border:2px solid #2563eb; background:#eff6ff; }
+    .prep-quiz-option.correct { border:2px solid #15803d; background:#f0fdf4; }
+    .prep-quiz-option.incorrect { border:2px solid #b91c1c; background:#fef2f2; }
+    .prep-quiz-option:disabled { cursor:default; opacity:1; }
+    .prep-quiz-status { margin:16px 0; padding:12px; border-radius:9px; background:#f1f5f9; font-weight:600; }
+    .prep-quiz-check,.prep-quiz-retry { margin:6px 8px 12px 0; padding:11px 18px; border:0; border-radius:9px; background:#1d4ed8; color:white; font-weight:700; cursor:pointer; }
+  `;
+  document.head.append(style);
   const normalize = (value) => String(value || '').replace(/^[a-d][)\\.]\\s*/i, '').replace(/\\s+/g, ' ').trim();
   const optionLetter = (node, index) => {
     const text = normalize(node.textContent);
