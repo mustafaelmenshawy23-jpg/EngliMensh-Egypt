@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 
 const builder = await readFile(new URL('./build-preparatory-vocabulary.mjs', import.meta.url), 'utf8');
 const app = await readFile(new URL('../src/main.js', import.meta.url), 'utf8');
+const reviewLayer = JSON.parse(await readFile(new URL('../src/data/prep2-new-hello-reviewed-layer.json', import.meta.url), 'utf8'));
 const prep2 = await readFile(new URL('./prep2-interactive-enhancement.js', import.meta.url), 'utf8');
 const store = await readFile(new URL('../src/lib/student-profile-store.mjs', import.meta.url), 'utf8');
 const prep3Source = await readFile(new URL('../content-imports/preparatory/new-hello/Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html', import.meta.url), 'utf8');
@@ -38,6 +39,8 @@ assert.match(builder, /correct: scores\.exam/);
 assert.match(app, /event\.source !== frame\.contentWindow/);
 assert.match(app, /studentProfiles\.issueCertificate\(profile\.id/);
 assert.match(prep2, /englimensh:prep-assessment-section-progress/);
+assert.equal(reviewLayer.units['6'].markupRepairs?.grammar?.['6'], undefined, 'Unit 6 grammar Q6 must remain excluded, not be restored as a scored question.');
+assert.match(reviewLayer.units['6'].questionRepairs.grammar['6'], /Intentionally excluded/);
 assert.match(prep2, /sectionId: sectionType/);
 assert.match(app, /studentProfiles\.recordAssessmentSection\(profile\.id/);
 assert.match(app, /if \(result\.sectionCount < 4\)/);
