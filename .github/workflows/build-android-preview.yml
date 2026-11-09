@@ -63,6 +63,9 @@ jobs:
 
       - name: Generate Android project
         run: npx cap add android
+      - name: Register native certificate Downloads bridge
+        run: node scripts/prepare-android-downloads.mjs
+
       - name: Apply official Android launcher and adaptive icons
         run: python scripts/prepare-app-icons.py --android
 
