@@ -18,7 +18,7 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 ## 3. New Hello Plus — three preparatory grades
 - Prep 1 Plus: repeated vocabulary and grammar prompts were removed; current validators check distinct stems, options, answer-key shape and score labels. Semantic correctness and unit-scope alignment still require teacher/source verification.
 - Prep 2 Plus: the identical grammar bank was replaced with six separate 12-question unit-focused banks (72 total). Six supplementary reading passages and listening dialogues with MCQs were added. Structural validators exist; every distractor/key and grammar scope still needs teacher/source verification.
-- Prep 3 Plus: all six units received 22 vocabulary records each with Arabic meanings, definitions and contextual examples; 22 vocabulary MCQs per unit; 12 unit-focused grammar MCQs per unit; supplementary reading/listening passages with five MCQs each; and 20-question mixed practice tests. Structural validation exists; official-source alignment remains unverified.
+- Prep 3 Plus: all six units received 22 vocabulary records each with Arabic meanings, definitions and contextual examples; 22 vocabulary MCQs per unit; 12 unit-focused grammar MCQs per unit; supplementary reading/listening passages with five MCQs each; and 20-question mixed practice tests. The validator was hardened to extract balanced JSON arrays safely (including escaped quotes and embedded SVG text); direct current-source parsing confirmed the full six-unit inventory. Official-source alignment remains unverified.
 
 ## 4. App functionality — current source findings
 ### Implemented in the preparatory flow
