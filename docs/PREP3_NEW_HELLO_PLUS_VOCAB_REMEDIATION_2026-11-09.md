@@ -28,3 +28,10 @@ These are carefully written learning aids based on the actual headwords already 
 - Original source PDFs are currently stored as Git LFS pointers in the repository workflow, so exact page verification is not available from the present checkout.
 
 No APK release or merge to `main` is authorized by this work.
+
+
+## Follow-up parser hardening — 9 November 2026
+- Replaced the validator's fragile `indexOf('];')` array terminator with balanced-bracket extraction that respects escaped quotes inside JSON strings and embedded SVG markup.
+- Added a parser fixture containing the literal characters `];` inside a quoted SVG value and an escaped quote.
+- Exercised the same balanced extraction against all six current Prep 3 Plus HTML source files. Each parsed successfully with the expected inventory: 22 vocabulary entries, 22 vocabulary MCQs, five reading MCQs, five listening MCQs, 12 grammar MCQs, and 20 mixed-test MCQs per unit.
+- This direct structural exercise is not a GitHub Actions run or teacher approval. The latest validator commit still requires CI confirmation.
