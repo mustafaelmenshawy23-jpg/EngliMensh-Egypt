@@ -1,0 +1,30 @@
+name: Retrieve Secondary 1 Ministry Book for Audit
+
+on:
+  push:
+    branches:
+      - audit/retrieve-secondary1-ministry-pdf
+
+permissions:
+  contents: read
+
+jobs:
+  retrieve-book:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository with Git LFS objects
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify the Ministry PDF
+        run: |
+          test -s "public/books/English_1sec_t1 (1).pdf"
+          file "public/books/English_1sec_t1 (1).pdf"
+          pdfinfo "public/books/English_1sec_t1 (1).pdf" | head -20
+      - name: Upload the original PDF for curriculum comparison
+        uses: actions/upload-artifact@v4
+        with:
+          name: secondary1-ministry-book-audit
+          path: public/books/English_1sec_t1 (1).pdf
+          if-no-files-found: error
+          retention-days: 1
