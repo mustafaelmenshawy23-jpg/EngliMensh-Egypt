@@ -1,52 +1,62 @@
-name: Enrich preparatory vocabulary images
+name: Validate EngliMensh app
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
 permissions:
-  contents: write
-
-concurrency:
-  group: preparatory-vocabulary-images-${{ github.event.pull_request.head.ref || github.ref_name }}
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  enrich-images:
-    # This workflow is deliberately image-only for the current work phase.
-    # Do not run curriculum tests, academic checks, WebView checks, or APK builds here.
-    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main')
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
     steps:
-      - name: Check out the PR branch (or manually selected working branch)
+      - name: Checkout repository and validate Git LFS pointers without downloading the PDFs
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
-          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          lfs: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: ''
 
-      - name: Download openly licensed vocabulary images
-        env:
-          FETCH_PREPARATORY_IMAGES: '1'
-        run: node scripts/build-preparatory-vocabulary.mjs
+      - name: Install dependencies
+        run: npm install
 
-      - name: Save downloaded images and vocabulary image metadata to the branch
-        env:
-          TARGET_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      - name: Validate source-book index and original PDFs
+        run: npm run validate:source-index
+
+      - name: Validate source-linked review candidates
+        run: npm run validate:review-candidates
+
+      - name: Validate Pass 22 high-resolution visual observations
+        run: npm run validate:visual-recoveries-pass22
+
+      - name: Validate source-linked lesson content
+        run: npm run validate:lesson-content
+
+      - name: Validate independent unit module scaffolds
+        run: npm run validate:unit-modules
+
+      - name: Check JavaScript generator syntax
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/assets/preparatory-vocabulary src/data/preparatory-vocabulary.json
-          if git diff --cached --quiet; then
-            echo "No new vocabulary image files or metadata changes to save."
-          else
-            git commit -m "Add openly licensed preparatory vocabulary images"
-            git push origin "HEAD:${TARGET_BRANCH}"
-          fi
+          node --check scripts/generate-interactive-unit.mjs
+          node --check scripts/generate-interactive-curriculum-batch.mjs
+
+      - name: Run automated application and unit tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: englimensh-egypt-web-build
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
