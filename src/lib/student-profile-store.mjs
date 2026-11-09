@@ -29,7 +29,7 @@ function normalizeProfile(profile) {
     name: profile.name.trim().slice(0, 40),
     stage: typeof profile.stage === 'string' ? profile.stage : 'primary',
     grade: Number.isInteger(grade) && grade > 0 ? grade : 1,
-    path: profile.path === 'advanced' ? 'advanced' : 'general',
+    path: typeof profile.path === 'string' && profile.path.trim() ? profile.path.trim().slice(0, 80) : 'general',
     theme: THEMES.has(profile.theme) ? profile.theme : 'classic',
     photo: typeof profile.photo === 'string' && profile.photo.startsWith('data:image/') ? profile.photo : ''
   };
@@ -54,7 +54,8 @@ export function createStudentProfileStore(storage, { legacyKey = LEGACY_PROGRESS
     const grade = Number(context.grade || profile.grade);
     const path = context.path || profile.path;
     const term = context.term || 'first';
-    const base = ['englimensh_progress', profile.id, stage, grade, path].join('_');
+    const safePart = (value) => encodeURIComponent(String(value ?? '')).replace(/%/g, '~');
+    const base = ['englimensh_progress', profile.id, stage, grade, path].map(safePart).join('_');
     return term === 'second' ? base + '_term_second' : base;
   }
 
