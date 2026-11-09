@@ -1875,10 +1875,27 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       });
     }
 
-    // RUN ON LOAD
-    window.addEventListener('DOMContentLoaded', () => {
-      selectUnit(1);
-    });
+    // Read the route supplied by the app's section-aware HTML viewer.
+    // Format: #<module>:<unit>, e.g. #grammar_questions:4
+    function applyViewerRoute() {
+      const route = window.location.hash.match(/^#([a-z_]+):([1-6])$/i);
+      const moduleTabs = {
+        vocabulary_questions: 'vocab-quiz',
+        grammar: 'grammar',
+        grammar_questions: 'grammar-quiz',
+        reading: 'reading',
+        listening: 'listening',
+        comprehensive_test: 'exam'
+      };
+      const unitNumber = route ? Number(route[2]) : 1;
+      selectUnit(Number.isInteger(unitNumber) && unitsData[unitNumber] ? unitNumber : 1);
+      const tab = route ? moduleTabs[route[1].toLowerCase()] : null;
+      if (tab) switchSubTab(tab);
+    }
+
+    // RUN ON LOAD and when the parent viewer changes the selected section/unit.
+    window.addEventListener('DOMContentLoaded', applyViewerRoute);
+    window.addEventListener('hashchange', applyViewerRoute);
   </script>
 
 </body></html>
