@@ -2161,10 +2161,10 @@ function render() {
           <button type="button" id="create-student-profile">Add student</button>
           <label class="sr-only" for="student-theme-select">Student theme</label>
           <select id="student-theme-select" aria-label="Student theme">
-            <option value="classic" ${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Classic</option>
-            <option value="ocean" ${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Ocean</option>
-            <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
-            <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
+            <option value="classic" ${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Cream</option>
+            <option value="ocean" ${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Blue</option>
+            <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Green</option>
+            <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Purple</option>
           </select>
           ${activeStudent() ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.entries(activeStudent().certificates || {}).map(([certificateKey, certificate]) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span><button type="button" class="certificate-export-button" data-export-certificate="' + escapeHtml(certificateKey) + '">Export PDF</button></p>').join('') + '</div></details>' : ''}
         </div>
@@ -2858,3 +2858,12 @@ window.addEventListener('message', (event) => {
 loadProgressFromStorage();
 render();
 void loadAvailableTtsVoices();
+
+// Branded startup screen using the teacher portrait already supplied for this app.
+const appSplash = document.createElement('section');
+appSplash.className = 'app-splash';
+appSplash.setAttribute('aria-label', 'EngliMensh-Egypt startup screen');
+appSplash.innerHTML = '<div class="app-splash-card"><img src="/assets/teacher-portrait.jpeg" alt="EngliMensh teacher" class="app-splash-teacher"><div class="app-splash-brand"><span class="app-splash-mark">E</span><div><strong>EngliMensh-Egypt</strong><small>Learn · Practice · Achieve</small></div></div><p>Welcome to your English learning space</p><span class="app-splash-loader" aria-hidden="true"></span></div>';
+document.body.appendChild(appSplash);
+window.setTimeout(() => appSplash.classList.add('is-hidden'), 1700);
+window.setTimeout(() => appSplash.remove(), 2200);
