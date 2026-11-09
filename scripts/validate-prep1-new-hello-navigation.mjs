@@ -18,11 +18,11 @@ if (!builder.includes('isPrep1General') || !builder.includes('window.switchTab(t
 }
 if (!builder.includes('englimensh:prep-assessment-progress') ||
     !builder.includes('answered.exam.size') || !builder.includes('scores.exam') ||
-    !builder.includes('unitNumber: ${prep1UnitNumber}')) {
+    !builder.includes('unitNumber: ${lessonUnitNumber}')) {
   failures.push('Prep 1 viewer copies must report full-exam progress to the parent app for certificate eligibility.');
 }
 if (!app.includes("event.source !== frame.contentWindow") ||
-    !app.includes("report.type !== 'englimensh:prep-assessment-progress'") ||
+    !app.includes("report.type === 'englimensh:prep-assessment-progress'") || !app.includes('if (!isLegacyExam && !isPrep2Section) return;') ||
     !app.includes('studentProfiles.issueCertificate')) {
   failures.push('The parent app must validate the reporting iframe and issue certificates only through the profile store.');
 }
