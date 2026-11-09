@@ -42,6 +42,8 @@ if (layer.units['1']?.answerKeyOverrides?.grammar?.['17']?.correctOption !== 'a'
 if (layer.units['1']?.answerKeyOverrides?.grammar?.['23']?.correctOption !== 'a') failures.push('Unit 1 Q23 must use option a (make).');
 if (layer.units['1']?.questionTextFixes?.grammar?.['12'] !== 'My father always .......... to work.') failures.push('Unit 1 Q12 must remove the editorial residue.');
 if (layer.units['2']?.answerKeyOverrides?.grammar?.['4']?.correctOption !== 'a') failures.push('Unit 2 Q4 must have one unique correct option.');
+if (!layer.units['1']?.excludedItems?.vocabulary?.['20']) failures.push('Unit 1 ambiguous vocabulary Q20 must be excluded from scoring.');
+if (!layer.units['2']?.excludedItems?.vocabulary?.['17']) failures.push('Unit 2 duplicate-choice vocabulary Q17 must be excluded from scoring.');
 for (let question = 20; question <= 30; question += 1) {
   if (layer.units['3']?.answerKeyOverrides?.grammar?.[String(question)]?.correctOption !== 'a') failures.push(`Unit 3 Q${question} must override the incorrect source key to option a.`);
 }
