@@ -1229,6 +1229,126 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       ]
     };
 
+    // Unit 4 teacher-authored draft; topic-aligned practice, not an official textbook transcription.
+    unitsData[4] = {
+      title:"Have You Ever Flown in a Plane?", badge:"Unit 4",
+      vocab:[
+        ["snorkel","noun/verb","أنبوب تنفّس للسباحة / يستخدمه","A tube that lets a swimmer breathe while looking underwater.","We used a snorkel to watch the fish."],
+        ["windsurfing","noun","ركوب الأمواج الشراعي","A water sport using a board and a sail.","Windsurfing is popular on windy beaches."],
+        ["scuba diving","noun","الغوص باستخدام جهاز تنفس","Swimming underwater using special breathing equipment.","Scuba diving lets people explore coral reefs."],
+        ["canoe","noun","زورق صغير / قارب تجديف","A narrow light boat moved with a paddle.","They crossed the lake in a canoe."],
+        ["orphanage","noun","دار أيتام","A place that provides a home for children without parents.","The students visited an orphanage and donated books."],
+        ["concert","noun","حفل موسيقي","A public performance of music.","We went to a concert last night."],
+        ["orchestra","noun","فرقة موسيقية","A large group of musicians playing instruments together.","The orchestra played classical music."],
+        ["instrument","noun","آلة موسيقية","An object used to make music.","The guitar is my favourite instrument."],
+        ["violin","noun","كمان","A small string instrument played with a bow.","She practises the violin every day."],
+        ["experience","noun/verb","تجربة / يختبر","Something that happens to you; or to live through an event.","Travelling alone was a useful experience."],
+        ["adventure","noun","مغامرة","An exciting or unusual experience.","The trip to the desert was a great adventure."],
+        ["plane","noun","طائرة","A vehicle that flies and carries people or goods.","The plane landed safely."],
+        ["hearing problem","noun phrase","مشكلة في السمع","Difficulty hearing sounds clearly.","People with a hearing problem may use sign language."],
+        ["sign language","noun phrase","لغة الإشارة","A language that uses hand movements and facial expressions.","Sign language helps people communicate."],
+        ["achievement","noun","إنجاز","Something important that someone succeeds in doing.","Winning the competition was a great achievement."],
+        ["competition","noun","مسابقة / منافسة","An event in which people try to be better than others.","Our school held an English competition."],
+        ["abroad","adverb","في الخارج / خارج البلاد","In or to another country.","My uncle works abroad."],
+        ["participate","verb","يشارك","To take part in an activity or event.","All students can participate in the race."],
+        ["talented","adjective","موهوب","Having a natural ability to do something well.","The talented musician played beautifully."],
+        ["travel","verb/noun","يسافر / سفر","To go from one place to another.","We travel to Alexandria by train."],
+        ["flight","noun","رحلة جوية","A journey made by an aircraft.","Our flight leaves at noon."],
+        ["pilot","noun","طيّار","A person trained to fly an aircraft.","The pilot welcomed the passengers."],
+        ["camping","noun","التخييم","Staying outdoors in a tent for a short time.","We went camping near the mountains."],
+        ["tent","noun","خيمة","A shelter made of cloth that people can sleep in outdoors.","They put up a tent beside the lake."],
+        ["sleeping bag","noun phrase","كيس نوم","A warm bag used for sleeping outdoors.","Take a sleeping bag on the camping trip."]
+      ].map(([w,pos,ar,def,ex])=>({w,pos,ar,def,ex,icon:`<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/><path d="M18 65 Q35 48 50 65 T82 65" fill="none" stroke="#0284c7" stroke-width="5"/><path d="M50 25 L50 62 L72 62Z" fill="#f59e0b" stroke="#92400e" stroke-width="2"/></svg>`})),
+      vocabQuiz:[
+        {q:"A group of musicians playing together is an ______.",opts:["orchestra","orphanage","adventure","instrument"],c:0,exp:"Orchestra تعني فرقة موسيقية."},
+        {q:"A person who flies an aircraft is a ______.",opts:["pilot","passenger","spectator","volunteer"],c:0,exp:"Pilot تعني طيار."},
+        {q:"A narrow boat moved with a paddle is a ______.",opts:["canoe","plane","tent","violin"],c:0,exp:"Canoe هو زورق صغير."},
+        {q:"A public performance of music is a ______.",opts:["concert","competition","flight","journey"],c:0,exp:"Concert تعني حفلاً موسيقياً."},
+        {q:"The language that uses hand movements is ______.",opts:["sign language","body exercise","foreign language","street language"],c:0,exp:"Sign language هي لغة الإشارة."},
+        {q:"A journey by aircraft is a ______.",opts:["flight","camping","concert","survey"],c:0,exp:"Flight تعني رحلة جوية."},
+        {q:"To take part in an activity means to ______.",opts:["participate","refuse","forget","arrive"],c:0,exp:"Participate تعني يشارك."},
+        {q:"A person with a natural ability is ______.",opts:["talented","crowded","nervous","ordinary"],c:0,exp:"Talented تعني موهوب."},
+        {q:"A warm bag for sleeping outdoors is a ______.",opts:["sleeping bag","school bag","handbag","shopping bag"],c:0,exp:"Sleeping bag هو كيس النوم."},
+        {q:"The opposite of arrive is ______.",opts:["leave","travel","land","visit"],c:0,exp:"Leave تعني يغادر، وهي عكس arrive."}
+      ],
+      grammarGuide:`
+        <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الرابعة: Present Perfect (ever / never) والفرق بينه وبين Past Simple</h3>
+        <div class="space-y-4">
+          <section class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-brand-800 mb-2">1) تكوين المضارع التام</h4>
+            <p class="text-sm text-slate-700 mb-2">have / has + التصريف الثالث للفعل. نستخدمه لخبرة أو حدث وقع في وقت غير محدد وله صلة بالحاضر.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">I have visited Luxor. / She has flown in a plane.</p>
+            <p class="text-sm text-slate-700 mt-2">النفي: haven't / hasn't + التصريف الثالث. السؤال: Have / Has + الفاعل + التصريف الثالث؟</p>
+          </section>
+          <section class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+            <h4 class="font-bold text-amber-900 mb-2">2) Ever و Never</h4>
+            <p class="text-sm text-slate-700 mb-2">Ever غالباً في السؤال عن الخبرات: هل سبق لك؟ Never تعني لم يحدث مطلقاً، وتأتي بعدها صيغة المضارع التام المثبتة.</p>
+            <p class="en-text bg-white p-3 rounded-lg text-sm">Have you ever travelled abroad? / I have never tried scuba diving.</p>
+          </section>
+          <section class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+            <h4 class="font-bold text-emerald-800 mb-2">3) Past Simple أم Present Perfect؟</h4>
+            <ul class="list-disc pr-5 text-sm text-slate-700 space-y-1">
+              <li>Past Simple مع وقت ماضٍ محدد ومنتهٍ: yesterday, last year, in 2022, ago.</li>
+              <li>Present Perfect دون تحديد وقت ماضٍ، أو مع خبرة حتى الآن.</li>
+              <li>لا نستخدم yesterday أو last week مع Present Perfect في هذا المعنى.</li>
+            </ul>
+            <p class="en-text bg-white p-3 rounded-lg text-sm mt-2">I visited Aswan last year. / I have visited Aswan twice.</p>
+          </section>
+        </div>`,
+      grammarQuiz:[
+        {q:"Have you ever ______ in a plane?",opts:["flown","fly","flew","flying"],c:0,exp:"بعد have نستخدم التصريف الثالث flown."},
+        {q:"Mona has ______ visited London.",opts:["never","yesterday","last","ago"],c:0,exp:"Never تستخدم مع المضارع التام للتعبير عن عدم حدوث الخبرة."},
+        {q:"We ______ the museum last Friday.",opts:["visited","have visited","has visited","visiting"],c:0,exp:"Last Friday وقت ماضٍ محدد؛ نستخدم Past Simple."},
+        {q:"______ you ever tried windsurfing?",opts:["Have","Has","Did","Are"],c:0,exp:"السؤال مع you في المضارع التام يبدأ بـ Have."},
+        {q:"Ali has never ______ abroad.",opts:["travelled","travel","travels","travelling"],c:0,exp:"بعد has never نستخدم التصريف الثالث."},
+        {q:"I ______ my grandparents two days ago.",opts:["visited","have visited","has visited","visit"],c:0,exp:"Two days ago يدل على الماضي البسيط."},
+        {q:"She ______ won three competitions so far.",opts:["has","have","did","is"],c:0,exp:"She مفرد؛ نستخدم has."},
+        {q:"Which sentence is correct?",opts:["Have you ever played the violin?","Did you ever played the violin?","Have you ever play the violin?","Has you ever played the violin?"],c:0,exp:"Have + you + التصريف الثالث played."},
+        {q:"They have ______ the concert already.",opts:["seen","saw","see","seeing"],c:0,exp:"بعد have نستخدم التصريف الثالث seen."},
+        {q:"I ______ a canoe when I was ten.",opts:["used","have used","has used","using"],c:0,exp:"When I was ten يحدد وقتاً ماضياً؛ Past Simple."}
+      ],
+      reading:{
+        title:"Reading: A Memorable First Flight",
+        body:"Last summer, Salma travelled with her family from Cairo to Aswan. It was her first flight. She had always wanted to see the Nile from the sky. The pilot explained the safety rules before take-off, and the flight attendants helped the passengers. Salma was nervous at first, but she soon enjoyed looking at the clouds and the river below. She has kept her boarding pass as a reminder of the experience. Since that trip, she has become interested in travelling to new places. She has never travelled abroad, but she hopes to visit another country one day.",
+        questions:[
+          {q:"Where did Salma travel last summer?",opts:["From Cairo to Aswan.","From Cairo to London.","From Aswan to Paris.","From Alexandria to Cairo."],c:0,exp:"النص يذكر أنها سافرت من القاهرة إلى أسوان."},
+          {q:"Why was the flight special?",opts:["It was her first flight.","She was the pilot.","It was a school competition.","She travelled alone."],c:0,exp:"كانت أول رحلة طيران لها."},
+          {q:"Who explained the safety rules?",opts:["The pilot.","The passengers.","Her teacher.","The shop assistant."],c:0,exp:"الطيار شرح قواعد السلامة."},
+          {q:"What has Salma kept?",opts:["Her boarding pass.","A violin.","A sleeping bag.","A map of London."],c:0,exp:"احتفظت ببطاقة صعود الطائرة."},
+          {q:"Has Salma travelled abroad?",opts:["No, she hasn't.","Yes, many times.","Yes, last week.","The text doesn't say."],c:0,exp:"قالت إنها لم تسافر إلى الخارج مطلقاً."}
+        ]
+      },
+      listening:{
+        title:"Listening: Talking about Experiences",
+        script:[
+          {s:"Hany",t:"Have you ever been camping, Dina?"},
+          {s:"Dina",t:"Yes, I have. I went camping near Fayoum last spring."},
+          {s:"Hany",t:"Did you sleep in a tent?"},
+          {s:"Dina",t:"Yes. I used a sleeping bag, and we watched the stars."},
+          {s:"Hany",t:"That sounds exciting. I have never tried camping, but I want to."}
+        ],
+        questions:[
+          {q:"Where did Dina go camping?",opts:["Near Fayoum.","In London.","Near the school.","In Alexandria."],c:0,exp:"قالت إنها خيمت بالقرب من الفيوم."},
+          {q:"When did she go camping?",opts:["Last spring.","Yesterday morning.","Last winter.","Two years ago."],c:0,exp:"ذكرت last spring."},
+          {q:"What did Dina use for sleeping?",opts:["A sleeping bag.","A sofa.","A plane seat.","A violin case."],c:0,exp:"استخدمت كيس نوم."},
+          {q:"What did they watch?",opts:["The stars.","A concert.","A football match.","A film."],c:0,exp:"شاهدا النجوم."},
+          {q:"Has Hany tried camping?",opts:["No, he hasn't.","Yes, many times.","Yes, last spring.","He is a pilot."],c:0,exp:"قال إنه لم يجرب التخييم من قبل."}
+        ]
+      },
+      exam:[
+        {q:"The third form of fly is ______.",opts:["flown","flew","flies","flying"],c:0,exp:"Fly – flew – flown."},
+        {q:"I have ______ eaten sushi.",opts:["never","yesterday","last week","ago"],c:0,exp:"Never مناسبة مع المضارع التام."},
+        {q:"We ______ a concert in 2024.",opts:["attended","have attended","has attended","attending"],c:0,exp:"In 2024 وقت ماضٍ محدد؛ Past Simple."},
+        {q:"A person who plays music in a group may be in an ______.",opts:["orchestra","orphanage","airport","adventure"],c:0,exp:"Orchestra فرقة موسيقية."},
+        {q:"Have they ever ______ scuba diving?",opts:["tried","try","tries","trying"],c:0,exp:"بعد have نستخدم التصريف الثالث tried."},
+        {q:"My sister has ______ won a medal.",opts:["already","ago","yesterday","last"],c:0,exp:"Already تستخدم مع المضارع التام."},
+        {q:"A person who flies a plane is a ______.",opts:["pilot","violinist","resident","spectator"],c:0,exp:"Pilot تعني طيار."},
+        {q:"He ______ to Aswan last month.",opts:["travelled","has travelled","have travelled","travelling"],c:0,exp:"Last month يحدد وقتاً ماضياً."},
+        {q:"The word achievement means ______.",opts:["إنجاز","مشكلة","مأوى","منافسة"],c:0,exp:"Achievement تعني إنجاز."},
+        {q:"Which question asks about life experience?",opts:["Have you ever flown in a plane?","Where did you fly yesterday?","Are you flying now?","Do you fly every day?"],c:0,exp:"Have you ever يسأل عن خبرة في الحياة."}
+      ]
+    };
+
     // STATE VARIABLES
     let currentUnit = 1;
     let currentSubTab = 'vocab';
