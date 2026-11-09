@@ -387,16 +387,16 @@ const expectedUnitKeys = [];
 for (const grade of [1, 2, 3]) for (const pathway of ['general', 'advanced']) for (let unit = 1; unit <= 6; unit += 1) expectedUnitKeys.push(grade + ':' + pathway + ':' + unit);
 const missingUnitKeys = expectedUnitKeys.filter((key) => !registry[key]);
 if (missingUnitKeys.length) throw new Error('Preparatory vocabulary extraction is incomplete. Missing unit keys: ' + missingUnitKeys.join(', '));
-for (const unit of Object.values(registry)) for (const item of unit.words) if (!item.svg && !pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
+for (const unit of Object.values(registry)) for (const item of unit.words) if (!pendingImages.has(item.word.toLowerCase())) pendingImages.set(item.word.toLowerCase(), item.word);
 const imageWords = [...pendingImages.values()];
-let downloaded = 0, missing = 0;
+let downloaded = 0, missing = 0, openverseDownloaded = 0, wikimediaDownloaded = 0;
 // Keep normal builds deterministic and offline. Image discovery is an optional
 // enrichment step; it must never hold up curriculum extraction or APK builds.
 if (process.env.FETCH_PREPARATORY_IMAGES !== '1') {
   for (const word of imageWords) pendingImages.set(word.toLowerCase(), null);
   missing = imageWords.length;
   console.log('Skipped external image lookups. Set FETCH_PREPARATORY_IMAGES=1 to run the optional image-enrichment pass.');
-} else await mapLimit(imageWords, 3, async (word) => {
+} else await mapLimit(imageWords, 1, async (word) => {
   let result = null;
   let openverseError = null;
   try {
@@ -424,13 +424,13 @@ if (process.env.FETCH_PREPARATORY_IMAGES !== '1') {
 for (const unit of Object.values(registry)) unit.words = unit.words.map((item) => {
   if (item.svg) return { ...item, imageType: 'svg-illustration' };
   const found = pendingImages.get(item.word.toLowerCase());
-  return { ...item, ...(found || {}), imageType: found ? 'photo' : 'missing' };
+  return { ...item, ...(found || {}), imageType: found ? 'photo' : item.svg ? 'svg-illustration' : 'missing' };
 });
 await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
 await fs.writeFile(OUTPUT, JSON.stringify({
   schemaVersion: 1, source: 'Owner-supplied preparatory HTML; original source files remain unchanged.',
   imageCredits: 'Openly licensed Openverse image attribution and license are included on each photo record.',
   units: registry,
-  imageReport: { units: Object.keys(registry).length, words: Object.values(registry).reduce((sum, unit) => sum + unit.words.length, 0), openversePhotosDownloaded: downloaded, imagesMissing: missing }
+  imageReport: { units: Object.keys(registry).length, words: Object.values(registry).reduce((sum, unit) => sum + unit.words.length, 0), photosDownloaded: downloaded, openversePhotosDownloaded: openverseDownloaded, wikimediaPhotosDownloaded: wikimediaDownloaded, imagesMissing: missing }
 }, null, 2) + '\n');
-console.log('Preparatory vocabulary built:', Object.keys(registry).length, 'units;', imageWords.length, 'Openverse lookups;', downloaded, 'photos;', missing, 'without a photo.');
+console.log('Preparatory vocabulary built:', Object.keys(registry).length, 'units;', imageWords.length, 'photo lookups;', downloaded, 'photos (' + openverseDownloaded + ' Openverse, ' + wikimediaDownloaded + ' Wikimedia);', missing, 'without a photo.');
