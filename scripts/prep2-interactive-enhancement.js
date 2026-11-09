@@ -21,6 +21,11 @@
       sectionType === 'reading' ? /reading/.test(text) : /listening/.test(text);
   });
   if (!target) return;
+  // The source document contains every lesson section. Show only the section
+  // requested by the app module so learners do not see the whole unit at once.
+  document.querySelectorAll('.section').forEach((section) => {
+    section.hidden = section !== target;
+  });
   if (target.matches('h2')) {
     const wrapper = document.createElement('section');
     wrapper.className = 'prep-generated-quiz-section';
@@ -32,6 +37,10 @@
     }
     target.after(wrapper);
     target = wrapper;
+  }
+  // Repair the malformed Unit 6 Q6 wrapper before finding nested questions.
+  if (sectionType === 'grammar' && unit.markupRepairs?.grammar?.['6']) {
+    target.querySelectorAll('.question-item').forEach((item) => item.classList.replace('question-item', 'question'));
   }
   target.querySelectorAll('.question .question').forEach((nested) => {
     nested.parentNode.insertBefore(nested, nested.parentNode.nextSibling);
@@ -81,9 +90,6 @@
     const title = target.querySelector('h2');
     (title || target).after(panel);
     return;
-  }
-  if (sectionType === 'grammar' && unit.markupRepairs?.grammar?.['6']) {
-    target.querySelectorAll('.question-item').forEach((item) => item.classList.replace('question-item', 'question'));
   }
   const overrides = unit.answerKeyOverrides?.[sectionType] || {};
   const optionFixes = unit.optionTextFixes?.[sectionType] || {};
