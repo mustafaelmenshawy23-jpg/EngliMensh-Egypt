@@ -123,11 +123,14 @@ function parseCombinedUnits(source) {
   }
   return out;
 }
-function removeRemoteFontDependencies(source) {
-  // The imported pages declare system sans-serif fallbacks. Remove Google Fonts
-  // stylesheet/preconnect tags from generated copies so lesson text remains
-  // readable offline; preserve every original HTML source file unchanged.
-  return source.replace(/<link\b(?=[^>]*href=["']https?:\/\/fonts\.(?:googleapis|gstatic)\.com)[^>]*>\s*/gi, '');
+function prepareOfflineLessonCopy(source) {
+  // Preserve original files. Generated copies use system font fallbacks and
+  // describe speechSynthesis accurately as device TTS, not recorded audio.
+  return source
+    .replace(/<link\b(?=[^>]*href=["']https?:\/\/fonts\.(?:googleapis|gstatic)\.com)[^>]*>\s*/gi, '')
+    .replace(/Listen to the authentic passage read with native English pronunciation\\./gi, "Listen to the passage using your device's available English text-to-speech voice.")
+    .replace(/▶ Play Listening Audio/g, '▶ Play listening script')
+    .replace(/▶ Play Audio/g, '▶ Play read-aloud');
 }
 
 async function buildSectionViewers(files) {
@@ -139,7 +142,7 @@ async function buildSectionViewers(files) {
   const enhancement = '<script>window.__PREP2_REVIEW_LAYER__=' + JSON.stringify(reviewLayer).replace(/</g, '\\u003c') + ';window.__PREP2_GRAMMAR_GUIDES__=' + JSON.stringify(grammarGuides).replace(/</g, '\\u003c') + ';</script>\n<script>\n' + enhancementSource + '\n</script>';
   for (const file of files) {
     const originalSource = await fs.readFile(file, 'utf8');
-    const source = removeRemoteFontDependencies(originalSource);
+    const source = prepareOfflineLessonCopy(originalSource);
     const marker = /<\/body>/i;
     const output = marker.test(source) ? source.replace(marker, enhancement + '\n</body>') : source + enhancement;
     await fs.writeFile(path.join(outputDir, path.basename(file)), output);
