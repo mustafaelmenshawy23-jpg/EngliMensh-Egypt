@@ -97,6 +97,21 @@ const state = {
   selfIntro: { name: 'Omar', avatar: '👧' },
   politeness: { answers: {} }
 };
+const savedStudentContext = activeStudent();
+if (savedStudentContext) {
+  const savedStage = curriculum.stages.find((item) => item.id === savedStudentContext.stage);
+  if (savedStage) {
+    state.stage = savedStage.id;
+    if (Array.isArray(savedStage.grades) && savedStage.grades.includes(Number(savedStudentContext.grade))) {
+      state.grade = Number(savedStudentContext.grade);
+    }
+    if (state.stage === 'egyptian-baccalaureate') {
+      if (['first-language', 'second-language'].includes(savedStudentContext.path)) state.path = savedStudentContext.path;
+    } else if (savedStage.paths?.some((path) => path.id === savedStudentContext.path)) {
+      state.path = savedStudentContext.path;
+    }
+  }
+}
 
 function getQuestionState(qId) {
   const val = state.quizAnswers[qId];
@@ -2000,6 +2015,11 @@ function renderPreview() {
 }
 
 function render() {
+  const profile = activeStudent();
+  if (profile) {
+    try { studentProfiles.update(profile.id, { stage: state.stage, grade: state.grade || 1, path: state.path || 'general' }); }
+    catch (error) { console.warn('Could not persist student curriculum selection:', error); }
+  }
   const stage = currentStage();
   if (!stage) {
     app.innerHTML = '<main class="fatal-state"><h1>Curriculum selection unavailable</h1></main>';
