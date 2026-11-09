@@ -39,4 +39,4 @@ assert.match(prep2, /sectionId: sectionType/);
 assert.match(app, /studentProfiles\.recordAssessmentSection\(profile\.id/);
 assert.match(app, /if \(result\.sectionCount < 4\)/);
 assert.match(store, /recordAssessmentSection\(id, context, sectionId, result\)/);
-console.log('Preparatory assessment bridge contract checks passed (all 31 preparatory units now have an assessment-reporting route (Prep 3 general uses its combined source's unit-specific exam)).');
+console.log('Preparatory assessment bridge contract checks passed (all 36 preparatory units across 31 source files have an assessment-reporting route).');
