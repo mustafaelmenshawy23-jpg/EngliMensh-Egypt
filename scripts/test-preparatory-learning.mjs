@@ -35,6 +35,10 @@ assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-matc
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
 assert.ok(main.includes('function renderPreparatorySpeaking') && main.includes('data-tts-text=') && main.includes('OPTIONAL ORAL PRACTICE'), 'Speaking practice module is missing its oral prompts or optional model playback.');
 assert.ok(main.includes('The app does not record your voice or score pronunciation.'), 'Speaking practice must disclose that it does not record or score pronunciation.');
+assert.ok(main.includes('const swapIndex = Math.floor(Math.random() * (index + 1));'), 'Preparatory game rounds must use Fisher-Yates randomization.');
+assert.ok(main.includes('const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);'), 'Game distractors must be selected from a shuffled set.');
+assert.ok(main.includes('return shuffled([target, ...distractors]);'), 'Correct answer position must be randomized among options.');
+assert.ok(!main.includes('sort((a, b) => a.word.localeCompare(b.word))'), 'Preparatory games must not use alphabetical ordering as fake randomization.');
 assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
 assert.ok(builder.includes('buildSectionViewers') && viewerRegistry.includes('preparatory-viewers/'), 'Lesson modules must open in section-aware viewer copies.');
 assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
