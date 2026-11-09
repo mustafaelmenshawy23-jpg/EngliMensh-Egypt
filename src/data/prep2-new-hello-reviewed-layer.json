@@ -384,12 +384,8 @@
           "15": "Insert a blank; current sentence has no answer slot."
         },
         "grammar": {
-          "5": "Repair malformed HTML boundary so Q5 and Q6 are separate question blocks."
-        }
-      },
-      "markupRepairs": {
-        "grammar": {
-          "6": "Restore the legacy question-item wrapper so the runtime normalizer can repair it before scoring."
+          "5": "Repair malformed HTML boundary so Q5 and Q6 are separate question blocks.",
+          "6": "Intentionally excluded from the app assessment until its malformed source markup and official source text can be verified; do not score or display this item."
         }
       },
       "answerKeyOverrides": {
