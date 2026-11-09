@@ -398,14 +398,24 @@ if (process.env.FETCH_PREPARATORY_IMAGES !== '1') {
   console.log('Skipped external image lookups. Set FETCH_PREPARATORY_IMAGES=1 to run the optional image-enrichment pass.');
 } else await mapLimit(imageWords, 3, async (word) => {
   let result = null;
+  let openverseError = null;
   try {
     result = await findOpenverseImage(word);
-  } catch (openverseError) {
-    console.warn('Openverse unavailable for', word, '- trying Wikimedia Commons:', openverseError.message);
+  } catch (error) {
+    openverseError = error;
+    console.warn('Openverse unavailable for', word, '- trying Wikimedia Commons:', error.message);
+  }
+  // A valid "no results" response is also a miss: always try the fallback
+  // provider before marking a vocabulary word as having no photograph.
+  if (!result) {
     try {
       result = await findWikimediaImage(word);
     } catch (wikimediaError) {
-      console.warn('Image lookup failed for', word, 'Openverse:', openverseError.message, '| Wikimedia:', wikimediaError.message);
+      console.warn(
+        'Image lookup failed for', word,
+        'Openverse:', openverseError?.message || 'no suitable result',
+        '| Wikimedia:', wikimediaError.message
+      );
     }
   }
   pendingImages.set(word.toLowerCase(), result);
