@@ -63,6 +63,7 @@ if (!builder.includes('window.__PREP2_REVIEW_LAYER__=') || !builder.includes('wi
 if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
 if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
+if (!enhancer.includes('scriptNode.hidden = true') || !enhancer.includes('Show transcript')) failures.push('Listening transcript must stay hidden until learner requests it.');
 if (!enhancer.includes("classList.add('prep-interactive-question','prep-short-answer')")) failures.push('Reading/listening short-answer controls are missing.');
 for (let unit = 1; unit <= 6; unit += 1) {
   const guide = grammarGuides.units?.[String(unit)];
