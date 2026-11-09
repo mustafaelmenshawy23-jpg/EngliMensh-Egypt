@@ -56,9 +56,8 @@ jobs:
       - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
         run: rm -rf public/books
 
-      - name: Build web application with remote original source PDFs and vocabulary images
+      - name: Build web application with remote original source PDFs (image enrichment runs separately)
         env:
-          FETCH_PREPARATORY_IMAGES: '1'
           VITE_BOOKS_BASE_URL: https://media.githubusercontent.com/media/mustafaelmenshawy23-jpg/EngliMensh-Egypt/main/public/books/
         run: npm run build
 
