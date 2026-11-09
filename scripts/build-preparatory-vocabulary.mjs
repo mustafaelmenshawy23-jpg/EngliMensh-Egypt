@@ -143,8 +143,35 @@ async function buildSectionViewers(files) {
   for (const file of files) {
     const originalSource = await fs.readFile(file, 'utf8');
     const source = prepareOfflineLessonCopy(originalSource);
+    const isPrep1General = /^Prep_1_New_Hello_Unit_[1-6]\.html$/i.test(path.basename(file));
+    const prep1Route = isPrep1General ? `<script>
+(() => {
+  const moduleTabs = {
+    vocabulary: 'vocab',
+    vocabulary_questions: 'vocab-quiz',
+    grammar: 'grammar',
+    grammar_questions: 'grammar-quiz',
+    reading: 'reading',
+    listening: 'listening',
+    comprehensive_test: 'exam'
+  };
+  function applyViewerRoute() {
+    const route = window.location.hash.match(/^#([a-z_]+):([1-6])$/i);
+    if (!route) return;
+    const tab = moduleTabs[route[1].toLowerCase()];
+    if (tab && typeof window.switchTab === 'function') window.switchTab(tab);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyViewerRoute, { once: true });
+  } else {
+    applyViewerRoute();
+  }
+  window.addEventListener('hashchange', applyViewerRoute);
+})();
+</script>\n` : '';
     const marker = /<\/body>/i;
-    const output = marker.test(source) ? source.replace(marker, enhancement + '\n</body>') : source + enhancement;
+    const injected = prep1Route + enhancement;
+    const output = marker.test(source) ? source.replace(marker, injected + '\n</body>') : source + injected;
     await fs.writeFile(path.join(outputDir, path.basename(file)), output);
   }
   console.log('Built section-aware lesson viewer copies:', files.length);
