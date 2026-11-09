@@ -15,6 +15,8 @@ assert.equal(first.path, 'general');
 assert.equal(store.list().length, 1);
 assert.throws(() => store.create({ id: 's1', name: 'Duplicate' }), /already exists/);
 store.activate('s1');
+const restoredStore = createStudentProfileStore(storage);
+assert.equal(restoredStore.active()?.id, 's1', 'active student must persist across app restarts');
 const key = store.progressKey(store.active(), { term: 'first' });
 store.saveProgress({ quizAnswers: { q1: { isCorrect: true } } });
 assert.deepEqual(store.loadProgress(), { quizAnswers: { q1: { isCorrect: true } } });
