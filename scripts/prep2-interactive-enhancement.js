@@ -80,6 +80,9 @@
     (title || target).after(panel);
     return;
   }
+  if (sectionType === 'grammar' && unit.markupRepairs?.grammar?.['6']) {
+    target.querySelectorAll('.question-item').forEach((item) => item.classList.replace('question-item', 'question'));
+  }
   const overrides = unit.answerKeyOverrides?.[sectionType] || {};
   const optionFixes = unit.optionTextFixes?.[sectionType] || {};
   const questionFixes = unit.questionTextFixes?.[sectionType] || {};
