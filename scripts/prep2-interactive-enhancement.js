@@ -92,6 +92,7 @@
     const scriptNode = [...target.querySelectorAll('p')].find((node) => /listening script/i.test(node.textContent));
     if (scriptNode && !scriptNode.querySelector('[data-listening-play]')) {
       const scriptText = scriptNode.textContent.replace(/^\s*Listening Script:\s*/i, '').replace(/^["“]|["”]$/g, '').trim();
+      scriptNode.hidden = true;
       const play = document.createElement('button');
       play.type = 'button'; play.dataset.listeningPlay = 'true'; play.className = 'prep-quiz-check';
       play.textContent = '▶ Play listening text';
@@ -105,7 +106,15 @@
       const stop = document.createElement('button');
       stop.type = 'button'; stop.className = 'prep-quiz-retry'; stop.textContent = '■ Stop audio';
       stop.addEventListener('click', () => window.speechSynthesis?.cancel());
-      scriptNode.after(play, stop);
+      const transcript = document.createElement('button');
+      transcript.type = 'button'; transcript.className = 'prep-quiz-retry'; transcript.textContent = 'Show transcript';
+      transcript.setAttribute('aria-expanded', 'false');
+      transcript.addEventListener('click', () => {
+        scriptNode.hidden = !scriptNode.hidden;
+        transcript.textContent = scriptNode.hidden ? 'Show transcript' : 'Hide transcript';
+        transcript.setAttribute('aria-expanded', String(!scriptNode.hidden));
+      });
+      scriptNode.after(play, stop, transcript);
     }
   }
   const style = document.createElement('style');
