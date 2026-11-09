@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
-import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
+import {
+  getConfiguredGeminiKeys,
+  getSupportedGeminiModels,
+  isGeminiModelUnavailable
+} from './lib/gemini-config.mjs';
 
 assert.deepEqual(getConfiguredGeminiKeys({
   GEMINI_API_KEY: 'primary',
@@ -18,6 +22,11 @@ assert.deepEqual(getConfiguredGeminiKeys({
   GEMINI_API_KEY_BACKUP_2: ' backup-2 '
 }), [['GEMINI_API_KEY_BACKUP_2', 'backup-2']]);
 assert.deepEqual(getConfiguredGeminiKeys({}), []);
-assert.deepEqual(getSupportedGeminiModels('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-2.0-flash']);
-assert.deepEqual(getSupportedGeminiModels('custom-model'), ['custom-model', 'gemini-2.5-flash', 'gemini-2.0-flash']);
-console.log('Gemini credential and model fallback tests passed.');
+assert.deepEqual(getSupportedGeminiModels(), ['gemini-3.8-flash']);
+assert.deepEqual(getSupportedGeminiModels('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.8-flash']);
+assert.deepEqual(getSupportedGeminiModels('custom-model'), ['custom-model', 'gemini-3.8-flash']);
+assert.equal(isGeminiModelUnavailable(404, 'This model models/gemini-2.5-flash is no longer available to new users.'), true);
+assert.equal(isGeminiModelUnavailable(404, 'File not found'), false);
+assert.equal(isGeminiModelUnavailable(500, 'Model is not available'), false);
+
+console.log('Gemini credential, model fallback, and model-retirement tests passed.');
