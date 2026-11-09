@@ -33,3 +33,11 @@ The removed browser-injected script contained temporary authentication material.
 - Reworded the generated vocabulary description and answer explanation so they do not imply official approval.
 - **This is a wording/safety correction only. It does not resolve the curriculum-content blocker above.** Units 3–6 still use generic generated MCQs, reading and listening material; the vocabulary meanings/examples still require proper authored replacement. Units 1–2 still require item-level grammar/exam repair.
 - Latest validation workflow for the follow-up source wording commit: run `42564641679` is in progress at the time of this report update. Do not treat it as passed until its conclusion is success.
+
+## Current-head verification — 9 November 2026
+- Re-read the registered combined HTML file at the current branch head after commit `9c8bb0f04ac91b1020e5c4c8c927f7094ab26bc7`.
+- Confirmed the blocker remains in executable source: Units 3–6 call `generateUnitVocab`, `generateQuiz`, `generateReading`, and `generateListening`; the generator bodies still emit placeholder Arabic meanings, generic definitions/examples, repeated quiz stems/options, filler reading, and a two-line generic listening script.
+- Confirmed the same file still contains six visible unit tabs; this is navigation coverage, not proof of lesson-content completeness.
+- Verified the latest current-head workflow run: GitHub Actions run `42564767677`, commit `9c8bb0f04ac91b1020e5c4c8c927f7094ab26bc7`, completed with conclusion `success`. All 16 listed job steps, including automated tests and production build, succeeded.
+- The successful workflow does not clear the content blocker: current automated tests do not yet reject these generic Prep 3 New Hello generators.
+- PR #3 remains open, draft, and unmerged. No APK is being issued before the preparatory curriculum is complete and reviewed.
