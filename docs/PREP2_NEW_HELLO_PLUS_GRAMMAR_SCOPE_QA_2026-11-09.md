@@ -1,28 +1,36 @@
-# Prep 2 New Hello Plus — grammar scope and answer-key QA
+# Prep 2 New Hello Plus — grammar remediation and QA
 Date: 9 November 2026
 Branch: `content-import/prep-new-hello-hello-plus`
 
-## Scope
-Compared the grammar quiz bank in all six `Prep_2_New_Hello_Plus_Unit_1.html` through `Unit_6.html` files and inspected the full 30-item bank in Unit 1.
+## Updated inspection
+The six unit HTML files now contain separate `grammarQuizData` banks rather than the formerly shared 30-question bank.
 
-## Confirmed findings
-- The 30-question `grammarQuizData` array is byte-for-byte identical in all six units.
-- The official topic map recorded for Prep 2 Plus assigns a different primary focus to each unit:
-  1. Past Continuous vs Past Simple
-  2. Modals of deduction and obligation
-  3. Used to vs Would for past habits and states
-  4. Second Conditional
-  5. Gerunds vs Infinitives
-  6. Present and Past Passive Voice
-- Unit 1's repeated shared bank includes questions on Past Continuous, but also future prediction with “going to”, modal deduction, Second Conditional, gerunds/infinitives, passive voice, used to, Present Simple, Present Perfect, and superlatives. Thus most of the shared bank does not test Unit 1's stated grammar focus.
-- The source data contains 30 MCQs with four options per question. One answer key is encoded as string `"0"` while the others are numeric zero; this type inconsistency should be normalized and validated by the renderer/validator, without changing the intended key.
-- The identical shared bank is not evidence that six units have six unit-specific grammar assessments.
+| Unit | Recorded grammar focus | Current bank |
+|---|---|---:|
+| 1 | Past Continuous vs Past Simple | 12 MCQs |
+| 2 | Modals of deduction and obligation | 12 MCQs |
+| 3 | Used to vs Would (past habits and states) | 12 MCQs |
+| 4 | Second Conditional | 12 MCQs |
+| 5 | Gerunds vs Infinitives | 12 MCQs |
+| 6 | Present and Past Passive Voice | 12 MCQs |
 
-## Required remediation
-- Build six separate grammar banks from the corresponding official unit grammar scope and examples.
-- Keep every question MCQ with exactly one defensible correct answer.
-- Validate answer-key types and correctness, not just whether an index exists.
-- Retain the source page references for each rule and assessment item once official pages are available.
+## Manual sample review
+- Unit 1 distinguishes ongoing past actions from completed interrupting events, including while/when, negatives and questions.
+- Unit 2 covers obligation, prohibition, lack of necessity, advice and degrees of deduction.
+- Unit 3 distinguishes repeated past actions (would/used to) from past states, and includes negative and interrogative forms.
+- Unit 4 tests both clauses of the Second Conditional, advice with “If I were you”, and negative forms.
+- Unit 5 tests common verb patterns and gerunds after prepositions.
+- Unit 6 tests present and past passive forms, agreement, and past participles.
 
-## Status
-No original HTML was changed. The grammar assessment for this pathway is not accepted as complete. Official-source checking remains blocked pending readable book pages.
+## Automated quality controls
+The validator `scripts/validate-prep2-plus-grammar.mjs` is included in `npm test`. It checks:
+- six separate unit files and 12 questions in each bank;
+- unique question stems within each unit;
+- exactly four distinct options and numeric answer indices (0–3);
+- Arabic explanations;
+- no free-text answer properties;
+- unit-specific grammar signals;
+- matching “Grammar Quiz (12)” and “Score: 0 / 12” labels.
+
+## Limitations / acceptance status
+This confirms structural and topic-focused practice-bank remediation, not official textbook approval. The source book pages are not currently available in readable form for line-by-line verification, so the content remains a supplementary practice draft pending teacher/official-source review. This report does not certify the vocabulary, reading, listening, image, or full-unit content in these six files.
