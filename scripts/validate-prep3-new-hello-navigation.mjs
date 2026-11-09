@@ -30,7 +30,7 @@ if (!html.includes("window.addEventListener('DOMContentLoaded', applyViewerRoute
 for (const [route, tab] of Object.entries(requiredRoutes)) {
   if (!html.includes(`${route}: '${tab}'`)) failures.push(`Route ${route} is not mapped to lesson tab ${tab}.`);
 }
-if (!main.includes("selectedUnit.number || 1") || !main.includes("`#${module}:${selectedUnit.number || 1}`")) {
+if (!main.includes('selectedUnit.number || 1') || !main.includes(' + "#" + module + ":" + (selectedUnit.number || 1)')) {
   failures.push('Parent app no longer passes selected module and unit number to the combined HTML viewer.');
 }
 if (failures.length) {
