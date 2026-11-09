@@ -74,6 +74,10 @@ for (let question = 20; question <= 30; question += 1) {
   if (layer.units['3']?.answerKeyOverrides?.grammar?.[String(question)]?.correctOption !== 'a') failures.push(`Unit 3 Q${question} must override the incorrect source key to option a.`);
 }
 if (!layer.units['6']?.markupRepairs?.grammar?.['6']) failures.push('Unit 6 Q6 markup repair is missing.');
+const unit6Html = await readFile(path.join(sourceDir, 'Prep_2_New_Hello_Unit_6_Complete.html'), 'utf8');
+if (!unit6Html.includes('class="question-item">6.')) failures.push('Unit 6 source Q6 markup finding changed; re-audit before changing the repair.');
+if (!enhancer.includes("classList.replace('question-item', 'question')")) failures.push('Unit 6 Q6 is not normalized into an independently scored question.');
+
 
 if (failures.length) {
   console.error('Prep 2 New Hello review-layer validation failed:');
