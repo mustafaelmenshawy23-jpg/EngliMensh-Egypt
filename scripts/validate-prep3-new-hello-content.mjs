@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 const file = 'content-imports/preparatory/new-hello/Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.html';
 const html = await readFile(file, 'utf8');
 const failures = [];
-const questions = [...html.matchAll(/\{q:"([^"]+)",opts:\[([^\]]+)\],c:(\d+),exp:"([^"]*)"\}/g)];
+const questions = [...html.matchAll(/\{\s*q\s*:\s*"([^"]+)"\s*,\s*opts\s*:\s*\[([^\]]+)\]\s*,\s*c\s*:\s*(\d+)\s*,\s*exp\s*:\s*"([^"]*)"\s*\}/g)];
 if (questions.length !== 305) failures.push(`Expected 305 authored MCQs across six units; found ${questions.length}.`);
 const answerDistribution = {};
 for (const [index, match] of questions.entries()) {
