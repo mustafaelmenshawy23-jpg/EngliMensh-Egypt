@@ -96,6 +96,15 @@
   const questionFixes = unit.questionTextFixes?.[sectionType] || {};
   const excluded = unit.excludedItems?.[sectionType] || {};
   const questions = [...target.querySelectorAll('.question')];
+  // Short-answer distractors come only from other answers in this same passage/script.
+  const shortAnswerBank = questions.map((question, index) => {
+    const number = Number((question.textContent.match(/^\\s*(\\d+)\\s*[.、)]/) || [])[1] || index + 1);
+    const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
+    return answerNode ? {
+      id: String(number),
+      answer: unit.answerTextFixes?.[sectionType]?.[String(number)] || answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim()
+    } : null;
+  }).filter(Boolean);
   if (sectionType === 'listening') {
     const scriptNode = [...target.querySelectorAll('p')].find((node) => /listening script/i.test(node.textContent));
     if (scriptNode && !scriptNode.querySelector('[data-listening-play]')) {
@@ -162,23 +171,55 @@
       return;
     }
     if (sectionType === 'reading' || sectionType === 'listening') {
-      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\s*Answer:/i.test(node.textContent));
+      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
       if (answerNode) {
-      const answer = unit.answerTextFixes?.[sectionType]?.[id] || answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim();
-      const original = question.cloneNode(true);
-      original.querySelectorAll('strong,b').forEach((node) => node.remove());
-      const prompt = document.createElement('div');
-      prompt.className = 'prep-quiz-prompt';
-      prompt.textContent = number + '. ' + original.textContent.replace(/^\s*\d+\s*[.、)]\s*/, '').trim();
-      const input = document.createElement('input');
-      input.type = 'text'; input.className = 'prep-answer-input';
-      input.autocomplete = 'off'; input.setAttribute('aria-label', 'Your answer for question ' + number);
-      input.placeholder = 'Type your answer';
-      question.replaceChildren(prompt, input);
-      question.dataset.answer = answer;
-      question.dataset.checked = 'false';
-      question.classList.add('prep-interactive-question','prep-short-answer');
-      return;
+        const answer = unit.answerTextFixes?.[sectionType]?.[id] || answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim();
+        const original = question.cloneNode(true);
+        original.querySelectorAll('strong,b').forEach((node) => node.remove());
+        const prompt = document.createElement('div');
+        prompt.className = 'prep-quiz-prompt';
+        prompt.textContent = number + '. ' + original.textContent.replace(/^\\s*\\d+\\s*[.、)]\\s*/, '').trim();
+        const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+        const distractors = shortAnswerBank
+          .filter((item) => item.id !== id && normalized(item.answer) !== normalized(answer))
+          .map((item) => item.answer)
+          .filter((value, index, all) => normalized(value) && all.findIndex((other) => normalized(other) === normalized(value)) === index)
+          .slice(0, 3);
+        const choicesData = [answer, ...distractors];
+        for (let i = choicesData.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [choicesData[i], choicesData[j]] = [choicesData[j], choicesData[i]];
+        }
+        const choices = document.createElement('div');
+        choices.className = 'prep-quiz-choices';
+        choices.setAttribute('role', 'group');
+        choices.setAttribute('aria-label', 'Question ' + number + ' answer choices');
+        const correctIndex = choicesData.findIndex((value) => normalized(value) === normalized(answer));
+        choicesData.forEach((label, choiceIndex) => {
+          const letter = 'abcd'[choiceIndex];
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'prep-quiz-option';
+          button.textContent = letter.toUpperCase() + ') ' + label;
+          button.dataset.letter = letter;
+          button.setAttribute('aria-pressed', 'false');
+          button.addEventListener('click', () => {
+            if (question.dataset.checked === 'true') return;
+            choices.querySelectorAll('button').forEach((item) => {
+              item.classList.remove('selected');
+              item.setAttribute('aria-pressed', 'false');
+            });
+            button.classList.add('selected');
+            button.setAttribute('aria-pressed', 'true');
+            question.dataset.selected = letter;
+          });
+          choices.append(button);
+        });
+        question.replaceChildren(prompt, choices);
+        question.dataset.correct = 'abcd'[correctIndex] || '';
+        question.dataset.checked = 'false';
+        question.classList.add('prep-interactive-question');
+        return;
       }
     }
     const optionsBox = question.querySelector('.options');
