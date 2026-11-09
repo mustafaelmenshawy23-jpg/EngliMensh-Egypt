@@ -2873,3 +2873,5 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .certificate-message { color:#496276; font-style:italic; }
 .certificate-progress-card { max-width:650px; margin:20px auto; padding:18px; border:1px solid var(--brand-teal-border); border-radius:14px; background:var(--brand-teal-light); color:var(--brand-navy); text-align:center; }
 @media(max-width:600px) { .certificate-card { flex-direction:column; padding:18px 12px; } .certificate-student-photo { width:90px; height:105px; flex-basis:105px; } }
+
+.certificate-earned-banner { margin:14px 0; padding:14px 16px; border:1px solid var(--color-success-border); border-radius:12px; background:var(--color-success-bg); color:#166534; font-weight:800; text-align:center; }
