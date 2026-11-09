@@ -280,17 +280,23 @@ function renderSpeakerVoiceSettings() {
     return '<div class="speaker-voice-settings"><p class="speaking-practice-note">Voice list unavailable. Playback uses the platform default English voice; male/female matching is not verified on this device.</p></div>';
   }
   const renderSelect = (gender, label) => {
+    const matchingVoices = voices.filter((voice) => voice.gender === gender);
     const selected = state.ttsVoicePrefs?.[gender] || '';
-    const options = voices.map((voice) => {
-      const detail = [voice.lang, voice.gender !== 'unknown' ? voice.gender : 'gender not identified'].filter(Boolean).join(' · ');
+    const options = matchingVoices.map((voice) => {
+      const detail = [voice.lang, gender + ' identified'].filter(Boolean).join(' · ');
       return `<option value="${escapeHtml(voice.id)}" ${selected === voice.id ? 'selected' : ''}>${escapeHtml(voice.name)} — ${escapeHtml(detail)}</option>`;
     }).join('');
-    const automaticLabel = voices.some((voice) => voice.gender === gender)
-      ? 'Automatic · use a voice explicitly marked ' + gender
-      : 'Automatic · no ' + gender + ' voice identified';
-    return `<label class="speaker-voice-choice"><span>${label}</span><select data-tts-voice="${gender}"><option value="">${escapeHtml(automaticLabel)}</option>${options}</select></label>`;
+    const automaticLabel = matchingVoices.length
+      ? 'Automatic · use a verified ' + gender + ' voice'
+      : 'No verified ' + gender + ' voice available';
+    const disabled = matchingVoices.length ? '' : 'disabled';
+    return `<label class="speaker-voice-choice"><span>${label}</span><select data-tts-voice="${gender}" ${disabled}><option value="">${escapeHtml(automaticLabel)}</option>${options}</select></label>`;
   };
-  return `<div class="speaker-voice-settings"><strong>Dialogue voice settings</strong><div class="speaker-voice-controls">${renderSelect('male', 'Male speaker voice')}${renderSelect('female', 'Female speaker voice')}</div><small>Choose a voice for each role. Automatic matching is used only when the platform voice name explicitly identifies its gender; otherwise the system default is used.</small></div>`;
+  const missingGenders = ['male', 'female'].filter((gender) => !voices.some((voice) => voice.gender === gender));
+  const availabilityNote = missingGenders.length
+    ? 'No verified ' + missingGenders.join(' or ') + ' voice is exposed by this platform. Those dialogue roles may use the platform default; gender matching is not verified.'
+    : 'Choose among voices explicitly identified as male or female. A voice is never assigned to a role with a different or unknown gender.';
+  return `<div class="speaker-voice-settings"><strong>Dialogue voice settings</strong><div class="speaker-voice-controls">${renderSelect('male', 'Male speaker voice')}${renderSelect('female', 'Female speaker voice')}</div><small>${escapeHtml(availabilityNote)}</small></div>`;
 }
 
 function getSpeakerVoice(gender) {
@@ -303,6 +309,9 @@ async function speakText(text, rate = null, speakerGender = null) {
   if (!phrase) return;
   const speechRate = Number(rate || state.listeningSpeed || 0.85);
   const voice = ['male', 'female'].includes(speakerGender) ? getSpeakerVoice(speakerGender) : null;
+  if (['male', 'female'].includes(speakerGender) && !voice) {
+    console.warn(`No verified ${speakerGender} TTS voice is available. Playback will use the platform default; gender matching is not verified.`);
+  }
 
   if (Capacitor.isNativePlatform()) {
     try {
