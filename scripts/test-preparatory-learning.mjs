@@ -38,6 +38,10 @@ assert.ok(main.includes('The app does not record your voice or score pronunciati
 assert.ok(main.includes('const swapIndex = Math.floor(Math.random() * (index + 1));'), 'Preparatory game rounds must use Fisher-Yates randomization.');
 assert.ok(main.includes('const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);'), 'Game distractors must be selected from a shuffled set.');
 assert.ok(main.includes('return shuffled([target, ...distractors]);'), 'Correct answer position must be randomized among options.');
+assert.ok(main.includes('game.optionSets[target.word]'), 'Game answer options must stay fixed while the learner interacts with a round.');
+assert.ok(main.includes('game.roundWords = shuffled(words)'), 'Picture-match words must be cached so taps do not reshuffle the round.');
+assert.ok(main.includes('game.boxWords = shuffled(words)'), 'Mystery-box clues must be cached so boxes do not change after each render.');
+assert.ok(main.includes('state.htmlGame.boxWords : []'), 'Opening a mystery box must use the exact displayed box order.');
 assert.ok(!main.includes('sort((a, b) => a.word.localeCompare(b.word))'), 'Preparatory games must not use alphabetical ordering as fake randomization.');
 assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
 assert.ok(builder.includes('buildSectionViewers') && viewerRegistry.includes('preparatory-viewers/'), 'Lesson modules must open in section-aware viewer copies.');
