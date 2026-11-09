@@ -22,6 +22,13 @@ The six unit HTML files now contain separate `grammarQuizData` banks rather than
 - Unit 5 tests common verb patterns and gerunds after prepositions.
 - Unit 6 tests present and past passive forms, agreement, and past participles.
 
+## Additional content cleanup completed
+- Replaced 30 placeholder distractors in each of the six unit files (180 total) with other vocabulary headwords from the same unit.
+- Replaced generic, repeated reading passages with six original, unit-themed supplementary passages (two paragraphs each) and five MCQs per unit (30 reading MCQs total).
+- Replaced generic listening scripts with six unit-themed dialogues (five turns each) and five MCQs per unit (30 listening MCQs total).
+- All new reading/listening questions have four distinct options, numeric answer keys and Arabic explanations. A direct six-unit content check found zero malformed MCQs and zero remaining `incorrect_N` / generic distractor placeholders.
+- These are supplementary learning materials with text-to-speech playback, not official textbook passages or native audio recordings.
+
 ## Automated quality controls
 The validator `scripts/validate-prep2-plus-grammar.mjs` is included in `npm test`. It checks:
 - six separate unit files and 12 questions in each bank;
