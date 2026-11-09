@@ -39,7 +39,7 @@ for (const [unitKey, unit] of Object.entries(data.units)) {
     }
     if (!item.arabic || item.arabic === 'مفردة دراسية') placeholderArabic += 1;
     if (!item.definition || /essential curriculum term relating to/i.test(item.definition)) placeholderDefinitions += 1;
-    if (!item.example || /word .* is essential when studying/i.test(item.example)) placeholderExamples += 1;
+    if (!item.example || /is essential when studying/i.test(item.example)) placeholderExamples += 1;
   }
 }
 assert.equal(issues.length, 0, issues.join('\\n'));
