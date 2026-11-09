@@ -128,7 +128,7 @@ function prepareOfflineLessonCopy(source) {
   // describe speechSynthesis accurately as device TTS, not recorded audio.
   return source
     .replace(/<link\b(?=[^>]*href=["']https?:\/\/fonts\.(?:googleapis|gstatic)\.com)[^>]*>\s*/gi, '')
-    .replace(/Listen to the authentic passage read with native English pronunciation\\./gi, "Listen to the passage using your device's available English text-to-speech voice.")
+    .replace(/Listen to the authentic passage read with native English pronunciation\./gi, "Listen to the passage using your device's available English text-to-speech voice.")
     .replace(/▶ Play Listening Audio/g, '▶ Play listening script')
     .replace(/▶ Play Audio/g, '▶ Play read-aloud');
 }
