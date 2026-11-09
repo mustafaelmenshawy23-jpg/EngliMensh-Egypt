@@ -124,6 +124,10 @@ if (!layer.units['5']?.definitionFixes?.Disabled?.includes('disabilities')) fail
 if (!layer.units['6']?.questionTextFixes?.vocabulary?.['1'] || layer.units['6']?.optionTextFixes?.vocabulary?.['1']?.b !== 'climate') failures.push('Unit 6 vocabulary Q1 must test the bank headword climate.');
 if (!layer.units['6']?.questionTextFixes?.vocabulary?.['15'] || layer.units['6']?.optionTextFixes?.vocabulary?.['15']?.b !== 'mountain') failures.push('Unit 6 vocabulary Q15 must contain a blank and a normalized answer.');
 if (!layer.units['6']?.definitionFixes?.Renewable?.includes('naturally replaced')) failures.push('Unit 6 Renewable definition must be an adjective definition.');
+if (layer.units['3']?.answerTextFixes?.reading?.['4'] !== 'Coding and modern skills') failures.push('Unit 3 reading Q4 answer must cover both coding and modern skills stated in the passage.');
+if (layer.units['4']?.optionTextFixes?.reading?.['2']?.b !== 'Pyramids of Giza, temples of Luxor, and the Valley of the Kings') failures.push('Unit 4 reading Q2 must include all three iconic sites named in the passage.');
+if (!enhancer.includes('unit.answerTextFixes?.[sectionType]?.[id]')) failures.push('Reviewed short-answer corrections are not applied to interactive reading/listening questions.');
+
 for (let question = 20; question <= 30; question += 1) {
   if (layer.units['3']?.answerKeyOverrides?.grammar?.[String(question)]?.correctOption !== 'a') failures.push(`Unit 3 Q${question} must override the incorrect source key to option a.`);
 }
