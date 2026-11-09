@@ -22,13 +22,25 @@ def download_source() -> Image.Image:
     )
     with urllib.request.urlopen(request, timeout=45) as response:
         data = response.read()
-    if len(data) < 10_000 or not data.startswith(b"\xff\xd8\xff"):
-        raise RuntimeError("The selected GitHub attachment did not return the expected JPEG image.")
+    if len(data) < 10_000:
+        raise RuntimeError(
+            f"The selected GitHub attachment is unexpectedly small ({len(data)} bytes)."
+        )
     PUBLIC_ICONS.mkdir(parents=True, exist_ok=True)
-    SOURCE_PATH.write_bytes(data)
-    image = Image.open(io.BytesIO(data))
-    image.verify()
-    return Image.open(io.BytesIO(data)).convert("RGB")
+    try:
+        image = Image.open(io.BytesIO(data))
+        image_format = (image.format or "").upper()
+        if image_format not in {"JPEG", "PNG", "WEBP"}:
+            raise RuntimeError(f"Unsupported selected icon image format: {image_format or 'unknown'}.")
+        image.verify()
+        decoded = Image.open(io.BytesIO(data)).convert("RGB")
+    except Exception as error:
+        raise RuntimeError(
+            "The selected GitHub attachment could not be decoded as a valid JPEG, PNG, or WEBP image."
+        ) from error
+    extension = {"JPEG": ".jpg", "PNG": ".png", "WEBP": ".webp"}[image_format]
+    SOURCE_PATH.with_suffix(extension).write_bytes(data)
+    return decoded
 
 
 def save_web_icons(source: Image.Image) -> None:
