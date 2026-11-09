@@ -2093,7 +2093,7 @@ function render() {
             <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
             <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
           </select>
-          ${activeStudent() && Object.values(activeStudent().certificates || {}).length ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.values(activeStudent().certificates || {}).map((certificate) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span></p>').join('') + '</div></details>' : ''}
+          ${activeStudent() ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.values(activeStudent().certificates || {}).map((certificate) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span></p>').join('') + '</div></details>' : ''}
         </div>
         <span class="country-tag">EGYPTIAN CURRICULUM</span>
       </div>
@@ -2712,13 +2712,26 @@ window.addEventListener('message', (event) => {
       !Number.isInteger(correct) || correct < 0 || correct > attempted) return;
   const profile = activeStudent();
   if (!profile) return;
+  const certificateUnitId = 'prep-' + state.grade + '-' + state.path + '-unit-' + unit.number;
+  const alreadyEarned = Object.values(profile.certificates || {}).some((item) => item.unitId === certificateUnitId);
   const certificate = studentProfiles.issueCertificate(profile.id, {
     term: 'first', stage: state.stage, stageLabel: stageNames[state.stage],
     grade: state.grade, path: state.path, curriculum: course.series,
-    unitId: 'prep-' + state.grade + '-' + state.path + '-unit-' + unit.number,
-    unitTitle: unit.title
+    unitId: certificateUnitId, unitTitle: unit.title
   }, { total, attempted, correct });
-  if (certificate) render();
+  if (certificate && !alreadyEarned) {
+    const menu = app.querySelector('.student-certificates-control');
+    const summary = menu?.querySelector('summary');
+    const list = menu?.querySelector('div');
+    const certificates = Object.values(activeStudent()?.certificates || {});
+    if (summary) summary.textContent = 'My certificates (' + certificates.length + ')';
+    if (list) list.innerHTML = certificates.map((item) => '<p><strong>' + escapeHtml(item.unit || 'Completed unit') + '</strong><span>' + Number(item.score || 0) + '% · ' + escapeHtml(item.stage || '') + '</span></p>').join('');
+    const notice = document.createElement('div');
+    notice.className = 'certificate-earned-banner';
+    notice.setAttribute('role', 'status');
+    notice.textContent = 'Congratulations! You earned a unit certificate. Open “My certificates” in your student profile.';
+    frame.parentElement?.appendChild(notice);
+  }
 });
 
 // Initial storage load and render
