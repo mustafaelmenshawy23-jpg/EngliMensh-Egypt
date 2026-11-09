@@ -128,7 +128,7 @@ async function buildSectionViewers(files) {
   await fs.mkdir(outputDir, { recursive: true });
   const enhancementSource = await fs.readFile(path.join(ROOT, 'scripts', 'prep2-interactive-enhancement.js'), 'utf8');
   const reviewLayer = JSON.parse(await fs.readFile(PREP2_REVIEW_LAYER, 'utf8'));
-  const enhancement = '<script>window.__PREP2_REVIEW_LAYER__=' + JSON.stringify(reviewLayer).replace(/</g, '\\u003c') + ';</script>\\n<script>\\n' + enhancementSource + '\\n</script>';
+  const enhancement = '<script>window.__PREP2_REVIEW_LAYER__=' + JSON.stringify(reviewLayer).replace(/</g, '\\u003c') + ';</script>\n<script>\n' + enhancementSource + '\n</script>';
   for (const file of files) {
     const source = await fs.readFile(file, 'utf8');
     const marker = /<\/body>/i;
