@@ -164,7 +164,7 @@
     if (sectionType === 'reading' || sectionType === 'listening') {
       const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\s*Answer:/i.test(node.textContent));
       if (answerNode) {
-      const answer = answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim();
+      const answer = unit.answerTextFixes?.[sectionType]?.[id] || answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim();
       const original = question.cloneNode(true);
       original.querySelectorAll('strong,b').forEach((node) => node.remove());
       const prompt = document.createElement('div');
