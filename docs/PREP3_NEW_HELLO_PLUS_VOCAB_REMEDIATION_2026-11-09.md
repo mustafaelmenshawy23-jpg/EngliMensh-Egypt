@@ -8,7 +8,8 @@ Replaced generic placeholder vocabulary content in all six Prep 3 New Hello Plus
 - 132 vocabulary entries now have Arabic meanings, learner-friendly English definitions, and contextual example sentences.
 - Replaced the old generic vocabulary quiz banks with 132 definition-based multiple-choice questions (22 per unit).
 - Replaced generic reading and listening filler in all six units with original, theme-based supplementary passages/dialogues and five MCQs each per skill (60 reading/listening MCQs total).
-- Removed repeated grammar quiz copies: each unit now has 10 distinct general-grammar MCQs rather than 30 entries containing only 10 unique stems.
+- Replaced the repeated generic grammar banks with 12 distinct unit-focused MCQs per unit (72 total), using the grammar headings already present in the six HTML lessons: Present Perfect Simple/Continuous; Relative Clauses; Future Continuous/Future Perfect; Past Perfect/Past Simple; Causative have/get; and Reported Speech.
+- Rebuilt each 20-question mixed practice test from 10 vocabulary and 10 questions from that unit's grammar bank.
 - Rebuilt each 20-question mixed practice test from 10 vocabulary and 10 grammar MCQs, removing placeholder distractors and repeated stems.
 - Corrected displayed score maxima to match the actual question counts and removed unverified claims that these are official ministry assessments.
 - Extended the automated validator to check reading/listening, grammar, and mixed-test counts, unique options, answer keys, and placeholder strings.
@@ -20,7 +21,7 @@ Replaced generic placeholder vocabulary content in all six Prep 3 New Hello Plus
 These are carefully written learning aids based on the actual headwords already present in the six HTML files. They are not claimed to be a verbatim transcription or official ministry-approved translation set. A teacher/source-book review is still required before marking the unit content academically approved.
 
 ## Remaining Prep 3 Plus work
-- The 10 grammar questions are a general practice set, not yet a unit-specific grammar syllabus. They still require mapping to the official unit grammar points.
+- Grammar MCQs are now aligned to the grammar headings recorded in each HTML unit, but still require teacher/source verification against the official book.
 - The mixed practice test is a useful 10-vocabulary/10-general-grammar exercise, not a fully comprehensive exam across all skills.
 - Reading/listening are original supplementary practice, not official textbook passages/audio. They need teacher/source review.
 - Speaking and game activities require a dedicated unit-by-unit audit.
