@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate-interactive-curriculum-batch.mjs'
+      - 'scripts/extract-pdfs.mjs'
+      - 'scripts/ocr-scanned-pages.py'
+      - 'scripts/repair-watermark-pages.mjs'
+      - 'scripts/lib/extraction-quality.mjs'
       - 'scripts/generate-interactive-unit.mjs'
       - 'scripts/lib/curriculum-order.mjs'
       - 'scripts/lib/source-quality-gate.mjs'
@@ -65,21 +69,43 @@ jobs:
           path: |
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
-          key: englimensh-source-extraction-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}
+          key: englimensh-source-extraction-watermarkfix-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py', 'scripts/repair-watermark-pages.mjs') }}
+          restore-keys: |
+            englimensh-source-extraction-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py') }}
 
-      - name: Hydrate original source PDFs
-        if: steps.source_cache.outputs.cache-hit != 'true'
+      - name: Hydrate original source PDFs for a fresh extraction
+        if: steps.source_cache.outputs.cache-matched-key == ''
         run: git lfs pull
 
-      - name: Extract source pages and OCR scans for this batch
+      - name: Extract source pages for a fresh cache
+        if: steps.source_cache.outputs.cache-matched-key == ''
+        run: npm run extract:books
+
+      - name: Detect repeated watermark-only text pages
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        run: node scripts/repair-watermark-pages.mjs
+
+      - name: Hydrate only PDFs with watermark-only pages from a restored cache
+        if: steps.source_cache.outputs.cache-matched-key != '' && steps.source_cache.outputs.cache-hit != 'true'
+        run: |
+          if [ -s src/data/extracted/watermark-repair-sources.txt ]; then
+            include="$(paste -sd, src/data/extracted/watermark-repair-sources.txt)"
+            git lfs pull --include="$include"
+          else
+            echo "No additional source PDFs are required for watermark OCR."
+          fi
+
+      - name: Set up OCR tools for scanned and watermark-only pages
         if: steps.source_cache.outputs.cache-hit != 'true'
         run: |
-          npm run extract:books
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
           python3 -m venv .venv
           .venv/bin/pip install pymupdf
-          OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+
+      - name: OCR scanned and watermark-only pages
+        if: steps.source_cache.outputs.cache-hit != 'true'
+        run: OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
 
       - name: Save reusable source extraction cache
         if: steps.source_cache.outputs.cache-hit != 'true'
