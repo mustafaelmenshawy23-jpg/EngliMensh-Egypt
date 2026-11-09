@@ -29,12 +29,12 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 - Device/browser TTS playback and selectable speaker voices. Speaking practice is oral repetition with optional model playback; it does not record, recognize, or score pronunciation.
 - PWA/app icon preparation and production web build configuration.
 
-### Still missing from current runtime source
-- These features are **not yet present on PR #3's preparatory branch**, but they are implemented on the separate PR #1 branch (`feature/primary-connect-connect-plus-2026-2027`): student profile creation/editing, camera/gallery photo selection, profile-specific progress storage, 90% per-unit certificates, direct PDF saving to Downloads, and four persistent themes (Classic Cream, Ocean Blue, Forest Green, Lavender).
-- The two branches have diverged substantially (PR #1 is 199 commits ahead and 462 behind PR #3 in the current comparison). A wholesale merge would risk replacing the preparatory curriculum work. Port these approved features selectively and reconcile dependencies/tests; do not merge either PR wholesale.
-- Full-stage game coverage beyond the separate preparatory game pathway is also still a separate integration concern.
-
-These features exist in the repository's parallel development branch, but they are not yet integrated and verified together with the preparatory branch. The approved certificate-template and teacher-portrait JPEG assets have now been copied into PR #3; the profile manager, certificate logic/PDF export, theme controls/CSS, dependencies and tests still need selective porting. Do not describe the combined app as complete until selective porting and regression tests pass.
+### Remaining runtime and release work
+- Student profile creation/switching/editing, camera/gallery photo selection, per-student progress isolation, four persistent themes, and per-unit certificate eligibility/display are now integrated into this branch.
+- Certificate reporting is wired for all 36 preparatory units across 31 source HTML files. This is implementation coverage only; fresh CI and Android WebView/device verification remain outstanding.
+- PDF export directly to the Android Downloads collection is **not implemented yet** and remains a release blocker.
+- The parallel PR #1 branch remains substantially diverged. Do not merge either branch wholesale; continue only selective, reviewed ports where a specific missing feature is confirmed.
+- Full end-to-end game coverage beyond the preparatory pathway still needs explicit scope review and device testing.
 
 ## 4A. Student profile integration groundwork — 9 November 2026
 - Added `src/lib/student-profile-store.mjs` as an isolated, testable profile-storage core on the preparatory branch. It supports profile creation/update, active-profile selection, per-student grade/path/term progress keys, one-profile legacy progress migration, four validated themes, and immutable unit certificates issued only after every assessment question is attempted and the score is at least 90%.
@@ -71,15 +71,16 @@ These features exist in the repository's parallel development branch, but they a
 - All external image assets must have verified source/creator/license metadata and be included locally for offline use. SVGs and generic placeholders must not be counted as real photos.
 
 ## 6. Source-verification and runtime limits
-- The official source PDFs are Git LFS pointers in the repository checkout, so the current GitHub file endpoint cannot read the source pages for line-by-line textbook comparison.
-- Existing navigation/storage/game/TTS tests are primarily source/Node checks. They do not replace full end-to-end Android WebView testing on a device.
+- The official source PDFs are Git LFS pointers in the repository checkout, so the current GitHub file endpoint cannot read the source pages for line-by-line textbook comparison. The unresolved Prep 2 New Hello Unit 6 question must not be invented; it requires the official page/source.
+- Existing navigation/storage/game/TTS/profile/certificate tests are primarily source/Node checks. They do not replace full end-to-end Android WebView testing on a device.
 - TTS voice-selection tests do not establish natural pronunciation quality on all Android devices.
 - Game source checks do not prove full device play-through, accessibility, score persistence, or empty-data behavior.
-- Profile, certificate and theme regression tests remain to be added after implementation.
+- Profile, theme, and certificate eligibility/storage have automated source-level tests, but combined learner-flow runtime verification is still outstanding.
+- PDF export to Android Downloads has not yet been implemented or tested.
 
 ## 7. Release decision and next sequence
 1. Continue detailed academic review across all three preparatory grades and both pathways; correct only verified defects and keep generated material labelled as draft until source review.
-2. Complete the profile, photo, per-student data, 90% certificate, and four-theme features.
-3. Verify vocabulary/media coverage, offline behavior, games, speaking/TTS, navigation, persistence, and no regressions.
-4. Resolve the media/data gap (licensed offline photos plus missing Arabic meanings, definitions and examples), then run Android WebView/device QA and build/inspect a fresh real debug APK.
+2. Finish Android Downloads PDF export and test the complete profile/photo/per-student progress/90% certificate/four-theme flow together.
+3. Complete vocabulary/media remediation (licensed offline photos plus missing Arabic meanings, definitions and examples); do not count placeholders or generic SVGs as real photos.
+4. Verify offline behavior, games, speaking/TTS, navigation, persistence, and no regressions; then run Android WebView/device QA and build/inspect a fresh real debug APK.
 5. Keep PR #3 open and unmerged. Do not merge to `main` or distribute an APK before all gates pass and the owner explicitly approves.
