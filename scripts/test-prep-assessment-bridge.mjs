@@ -43,6 +43,7 @@ assert.match(app, /studentProfiles\.issueCertificate\(profile\.id/);
 assert.match(prep2, /englimensh:prep-assessment-section-progress/);
 assert.equal(reviewLayer.units['6'].markupRepairs?.grammar?.['6'], undefined, 'Unit 6 grammar Q6 must remain excluded, not be restored as a scored question.');
 assert.match(reviewLayer.units['6'].questionRepairs.grammar['6'], /Intentionally excluded/);
+assert.equal(reviewLayer.units['1'].optionTextFixes.vocabulary['20'].a, 'tools', 'Prep 2 Unit 1 vocabulary Q20 must use plural tools with the plural subject.');
 const unit6GrammarStart = prep2Unit6.indexOf('4. Grammar Quiz');
 const unit6ReadingStart = prep2Unit6.indexOf('5. Reading Comprehension', unit6GrammarStart);
 const unit6GrammarHtml = prep2Unit6.slice(unit6GrammarStart, unit6ReadingStart);
