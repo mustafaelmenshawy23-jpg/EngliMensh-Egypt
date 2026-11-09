@@ -14,6 +14,20 @@ let totalWords = 0;
 for (let unit = 1; unit <= 6; unit += 1) {
   const file = path.join(sourceDir, `Prep_2_New_Hello_Unit_${unit}_Complete.html`);
   const html = await readFile(file, 'utf8');
+  const vocabStart = html.indexOf('2. Vocabulary Quiz');
+  const grammarStart = html.indexOf('3. Grammar', vocabStart);
+  const readingStart = html.indexOf('5. Reading Comprehension');
+  const listeningStart = html.indexOf('6. Listening Comprehension');
+  const grammarEnd = readingStart;
+  const countQuestions = (text) => (text.match(/class="question(?:-item)?"/g) || []).length;
+  if (vocabStart < 0 || grammarStart < 0 || countQuestions(html.slice(vocabStart, grammarStart)) !== 25) failures.push(`Unit ${unit}: expected 25 vocabulary questions.`);
+  if (grammarStart < 0 || grammarEnd < grammarStart || countQuestions(html.slice(grammarStart, grammarEnd)) !== 30) failures.push(`Unit ${unit}: expected 30 grammar questions, including any explicitly repaired legacy wrapper.`);
+  if (readingStart < 0 || listeningStart < readingStart || countQuestions(html.slice(readingStart, listeningStart)) !== 5) failures.push(`Unit ${unit}: expected five reading questions.`);
+  if (listeningStart < 0 || countQuestions(html.slice(listeningStart)) !== 5) failures.push(`Unit ${unit}: expected five listening questions.`);
+  const grammarHtml = html.slice(grammarStart, grammarEnd);
+  const boldKeys = (grammarHtml.match(/<strong>/g) || []).length;
+  const expectedBoldKeys = unit === 1 ? 29 : 30;
+  if (boldKeys !== expectedBoldKeys) failures.push(`Unit ${unit}: expected ${expectedBoldKeys} bold grammar answer markers before applying explicit overrides/exclusions; found ${boldKeys}.`);
   const start = html.indexOf('1. Vocabulary');
   const end = html.indexOf('2. Vocabulary Quiz', start);
   if (start < 0 || end < 0) {
