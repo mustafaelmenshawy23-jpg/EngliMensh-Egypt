@@ -23,7 +23,6 @@
         "Activity": "نشاط",
         "Organize": "ينظّم",
         "Focus": "يركّز",
-        "Success": "نجاح",
         "Effort": "مجهود",
         "Skill": "مهارة",
         "Challenge": "تحدٍّ",
@@ -38,16 +37,14 @@
         "Confident": "واثق",
         "Active": "نشيط",
         "Energy": "طاقة",
-        "Future": "مستقبل"
+        "Future": "مستقبل",
+        "Achievement": "إنجاز"
       },
-      "knownDuplicateHeadwords": [
-        "Success"
-      ],
+      "knownDuplicateHeadwords": [],
       "questionRepairs": {
         "grammar": {
           "12": "Remove editorial residue and confirm intended Present Simple sentence.",
           "17": "Remove embedded correction note and correct answer option.",
-          "18": "Review passive construction against the unit's stated grammar scope.",
           "23": "Correct key: option a) make (plural subject)."
         }
       },
@@ -77,9 +74,7 @@
         }
       },
       "excludedItems": {
-        "grammar": {
-          "18": "Passive construction requires editorial confirmation against the intended Present Simple scope; do not score this item until reviewed."
-        },
+        "grammar": {},
         "vocabulary": {
           "20": "Ambiguous combined answer 'tool / skill' is not a single approved word-bank headword; exclude until the item is editorially corrected."
         }
