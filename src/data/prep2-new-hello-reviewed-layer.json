@@ -48,7 +48,37 @@
           "12": "Remove editorial residue and confirm intended Present Simple sentence.",
           "17": "Remove embedded correction note and correct answer option.",
           "18": "Review passive construction against the unit's stated grammar scope.",
-          "23": "Correct plural-subject agreement: Bees make honey."
+          "23": "Correct key: option a) make (plural subject)."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "17": {
+            "correctOption": "a",
+            "reason": "I is the subject; the correct form is arrive."
+          },
+          "23": {
+            "correctOption": "a",
+            "reason": "Bees is plural; use make."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {
+          "17": {
+            "b": "arrives",
+            "removeEditorialResidue": true
+          }
+        }
+      },
+      "questionTextFixes": {
+        "grammar": {
+          "12": "My father always .......... to work."
+        }
+      },
+      "excludedItems": {
+        "grammar": {
+          "18": "Passive construction requires editorial confirmation against the intended Present Simple scope; do not score this item until reviewed."
         }
       }
     },
@@ -87,6 +117,21 @@
         },
         "grammar": {
           "4": "Remove duplicate didn't options and ensure one unique correct answer."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "4": {
+            "correctOption": "a",
+            "reason": "Both source options a and b say didn't; retain a as the intended correct answer."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {
+          "4": {
+            "b": "doesn't"
+          }
         }
       }
     },
@@ -137,6 +182,73 @@
           "28": "Correct key: is.",
           "29": "Correct key: is.",
           "30": "Correct key: is."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "20": {
+            "correctOption": "a",
+            "reason": "What is she cooking right now? Correct auxiliary: is."
+          },
+          "21": {
+            "correctOption": "a",
+            "reason": "We is plural; correct auxiliary: are."
+          },
+          "22": {
+            "correctOption": "a",
+            "reason": "He is singular; correct auxiliary: is."
+          },
+          "23": {
+            "correctOption": "a",
+            "reason": "The train is singular; correct auxiliary: is."
+          },
+          "24": {
+            "correctOption": "a",
+            "reason": "I takes am."
+          },
+          "25": {
+            "correctOption": "a",
+            "reason": "They is plural; correct auxiliary: are."
+          },
+          "26": {
+            "correctOption": "a",
+            "reason": "The teacher is singular; correct auxiliary: is."
+          },
+          "27": {
+            "correctOption": "a",
+            "reason": "You takes are."
+          },
+          "28": {
+            "correctOption": "a",
+            "reason": "The phone is singular; correct auxiliary: is."
+          },
+          "29": {
+            "correctOption": "a",
+            "reason": "She is singular; correct auxiliary: is."
+          },
+          "30": {
+            "correctOption": "a",
+            "reason": "The cat is singular; correct auxiliary: is."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {
+          "6": {
+            "b": "isn't watching"
+          },
+          "13": {
+            "b": "am"
+          },
+          "15": {
+            "b": "are"
+          },
+          "16": {
+            "b": "am"
+          },
+          "19": {
+            "b": "am"
+          }
         }
       }
     },
@@ -243,6 +355,14 @@
         "grammar": {
           "5": "Repair malformed HTML boundary so Q5 and Q6 are separate question blocks."
         }
+      },
+      "markupRepairs": {
+        "grammar": {
+          "6": "Change the malformed question-item wrapper to a question block so Q6 is independent of Q5."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {}
       }
     }
   },
