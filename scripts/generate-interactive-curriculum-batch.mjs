@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
-import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
+import { validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
 import { getConfiguredGeminiKeys } from './lib/gemini-config.mjs';
@@ -114,14 +114,14 @@ for (let i = 0; i < orderedCandidates.length; i++) {
   const priorAttempt = batchState.attempts[unitId];
 
   if (gate.status === 'blocked') {
+    const diagnostics = summarizeUnitSourceGate(gate);
     const blocker = {
       unitId,
       bookId: unit.bookId,
       unitNumber: unit.unitNumber,
       title: unit.title,
       expectedRange: { start: unit.start, end: unit.end },
-      coveragePercentage: gate.coveragePercentage,
-      issues: gate.issues,
+      ...diagnostics,
       sourceSignature
     };
     blockedCandidates.push(blocker);
@@ -130,7 +130,10 @@ for (let i = 0; i < orderedCandidates.length; i++) {
         status: 'blocked_source_review',
         sourceSignature,
         lastAttemptAt: new Date().toISOString(),
-        issues: gate.issues
+        issues: diagnostics.issues,
+        blockedPageCount: diagnostics.blockedPageCount,
+        needsReviewPageCount: diagnostics.needsReviewPageCount,
+        missingPages: diagnostics.missingPages
       };
     }
     sourceCache.set(unitId, { ...unit, unitId, rows, gate, sourceSignature, file, index: i, eligible: false });
