@@ -459,6 +459,29 @@ function renderPreparatoryVocabulary(words) {
   `;
 }
 
+function renderPreparatorySpeaking(words) {
+  if (!words.length) return '<div class="prep-game-empty">Speaking practice will appear when verified unit vocabulary is available. The original lesson remains accessible.</div>';
+  const practiceWords = words.slice(0, 12);
+  return `
+    <section class="prep-vocabulary-section prep-speaking-section">
+      <div class="prep-vocabulary-heading"><div><p class="eyebrow">OPTIONAL ORAL PRACTICE</p><h3>Say the words aloud</h3><p>Listen to the model if you want, then repeat each word clearly. You can also make your own sentence using it.</p></div><span>${practiceWords.length} prompts</span></div>
+      <p class="speaking-practice-note">This is self-practice only. The app does not record your voice or score pronunciation.</p>
+      <div class="prep-vocabulary-grid">
+        ${practiceWords.map((item, index) => `
+          <article class="prep-vocabulary-card">
+            <div class="prep-vocabulary-number">SPEAKING ${index + 1}</div>
+            <h4 dir="ltr">${escapeHtml(item.word)}</h4>
+            ${item.arabic ? `<strong class="prep-vocabulary-arabic" dir="rtl">${escapeHtml(item.arabic)}</strong>` : ''}
+            ${item.example && !/essential curriculum term|word .* is essential when studying/i.test(item.example) ? `<p class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</p>` : ''}
+            <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Hear model</button>
+            <p class="speaking-practice-note">Now say it aloud in your own voice.</p>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
 function renderPreparatoryGame(words) {
   const games = [
     { id: 'picture-match', title: 'Picture Match', desc: 'Match each word to its picture', icon: '🧩' },
@@ -553,6 +576,7 @@ function renderPreparatoryHtmlLibrary() {
     ['grammar_questions', 'Grammar Questions', 'Grammar practice', '✓'],
     ['reading', 'Reading', 'Read and understand', '▤'],
     ['listening', 'Listening', 'Listen and answer', '♫'],
+    ['speaking', 'Speaking', 'Practise saying unit words aloud', '🗣️'],
     ['games', 'Games', 'Play and learn with six game types', '★'],
     ['comprehensive_test', 'Comprehensive Test', 'Check your unit mastery', '🏆']
   ];
@@ -580,7 +604,7 @@ function renderPreparatoryHtmlLibrary() {
         <div class="prep-module-grid">${availableModules.map((item) => `<button type="button" class="prep-module-card" data-html-module="${item[0]}"><span>${item[3]}</span><strong>${item[1]}</strong><small>${item[2]}</small><b>Open section ↗</b></button>`).join('')}</div>
       ` : `
         <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-html-back-modules>← ${escapeHtml(selectedUnit.title)}</button><div><span class="eyebrow">${escapeHtml(course.series)} · UNIT ${escapeHtml(selectedUnit.number || '1–6')}</span><h3>${escapeHtml(moduleLabel)}</h3></div></div>
-        ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : `
+        ${module === 'games' ? renderPreparatoryGame(selectedWords) : module === 'vocabulary' ? renderPreparatoryVocabulary(selectedWords) : module === 'speaking' ? renderPreparatorySpeaking(selectedWords) : `
           <div class="imported-html-viewer">
             <div class="imported-html-viewer-head"><div><strong>${escapeHtml(moduleLabel)}</strong><span>${escapeHtml(course.series)} · Preparatory ${state.grade} · ${escapeHtml(selectedUnit.title)}</span></div></div>
             <iframe id="prep-html-frame" class="imported-html-frame" title="${escapeHtml(moduleLabel)} · ${escapeHtml(selectedUnit.title)}" src="${escapeHtml((selectedUnit.viewerUrl || selectedUnit.url) + "#" + module + ":" + (selectedUnit.number || 1))}" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms"></iframe>
