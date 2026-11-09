@@ -2,6 +2,8 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const base = path.join(process.cwd(), 'content-imports/preparatory/hello-plus');
+const balancedJsonFixture = '[{"svg":"literal ]; inside a quoted value","options":["a","b"]}]';
+if (JSON.parse(balancedJsonFixture)[0].svg !== 'literal ]; inside a quoted value') throw new Error('Balanced JSON parser fixture failed.');
 const failures = [];
 let totalWords = 0;
 let totalQuestions = 0;
@@ -10,12 +12,35 @@ for (let unit = 1; unit <= 6; unit += 1) {
   const html = await readFile(file, 'utf8');
   const parse = (name) => {
     const marker = `const ${name} = `;
-    const start = html.indexOf(marker);
-    if (start < 0) throw new Error(`Unit ${unit}: ${name} missing`);
-    const valueStart = start + marker.length;
-    const objectValue = html[valueStart] === '{';
-    const end = objectValue ? html.indexOf('};', valueStart) + 1 : html.indexOf('];', valueStart) + 1;
-    if (end <= 0) throw new Error(`Unit ${unit}: ${name} data is not terminated`);
+    const markerAt = html.indexOf(marker);
+    if (markerAt < 0) throw new Error(`Unit ${unit}: ${name} missing`);
+    const valueStart = markerAt + marker.length;
+    const first = html[valueStart];
+    if (first !== '[' && first !== '{') throw new Error(`Unit ${unit}: ${name} must start with an array or object`);
+    // Find the matching closing bracket while respecting quoted JSON strings.
+    // A raw indexOf('];') is unsafe because SVG/text values may contain those characters.
+    const opening = first;
+    const closing = opening === '[' ? ']' : '}';
+    let depth = 0;
+    let quoted = false;
+    let escaped = false;
+    let end = -1;
+    for (let index = valueStart; index < html.length; index += 1) {
+      const char = html[index];
+      if (quoted) {
+        if (escaped) escaped = false;
+        else if (char === '\\\\') escaped = true;
+        else if (char === '"') quoted = false;
+        continue;
+      }
+      if (char === '"') quoted = true;
+      else if (char === opening) depth += 1;
+      else if (char === closing) {
+        depth -= 1;
+        if (depth === 0) { end = index + 1; break; }
+      }
+    }
+    if (end < 0) throw new Error(`Unit ${unit}: ${name} data is not terminated`);
     return JSON.parse(html.slice(valueStart, end));
   };
   let words, questions, reading, listening, grammar, exam;
