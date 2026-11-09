@@ -143,12 +143,12 @@ async function buildSectionViewers(files) {
   for (const file of files) {
     const originalSource = await fs.readFile(file, 'utf8');
     const source = prepareOfflineLessonCopy(originalSource);
-    const lessonMatch = path.basename(file).match(/^Prep_(1|2|3)_New_Hello(_Plus)?_Unit_(\\d+)(?:_Complete)?\\.html$/i);
+    const lessonMatch = path.basename(file).match(/^Prep_(1|2|3)_New_Hello(_Plus)?_Unit_(\d+)(?:_Complete)?\.html$/i);
     const isPrep1General = Boolean(lessonMatch && lessonMatch[1] === '1' && !lessonMatch[2]);
     const lessonGrade = Number(lessonMatch?.[1] || 0);
     const lessonPath = lessonMatch?.[2] ? 'advanced' : 'general';
     const lessonUnitNumber = Number(lessonMatch?.[3] || 0);
-    const hasLegacyAssessment = Boolean(lessonMatch && /function\\s+handleQuizAnswer/.test(source) && /const\\s+examData\\s*=/.test(source) && /const\\s+answered\\s*=/.test(source));
+    const hasLegacyAssessment = Boolean(lessonMatch && /function\s+handleQuizAnswer/.test(source) && /const\s+examData\s*=/.test(source) && /const\s+answered\s*=/.test(source));
     const prep1Route = isPrep1General ? `<script>
 (() => {
   const moduleTabs = {
@@ -286,7 +286,7 @@ async function findWikimediaImage(word) {
   if (!image.ok) return null;
   const bytes = Buffer.from(await image.arrayBuffer());
   if (bytes.length < 3000 || bytes.length > 1500000) return null;
-  const extension = (info.thumburl.match(/\\.(jpe?g|png|webp)(?:[?#]|$)/i)?.[1] || 'jpg').toLowerCase();
+  const extension = (info.thumburl.match(/\.(jpe?g|png|webp)(?:[?#]|$)/i)?.[1] || 'jpg').toLowerCase();
   const file = slug(word) + '.' + extension;
   await fs.mkdir(ASSET_ROOT, { recursive: true });
   await fs.writeFile(path.join(ASSET_ROOT, file), bytes);
