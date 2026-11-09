@@ -895,18 +895,28 @@
             </div>
           </div>
         `,
-        grammarQuiz: Array.from({length: 30}, (_, i) => {
-          const bank = [
-            { q: "The train to Alexandria _______ at 8:00 AM every day.", opts: ["leaves", "leave", "leaving", "left"], c: 0, exp: "مواعيد القطارات جدول ثابت نستخدم المضارع البسيط المفرد (leaves)." },
-            { q: "My English class begins _______ 9:30 AM in the morning.", opts: ["at", "on", "in", "by"], c: 0, exp: "نستخدم at قبل الساعات والتوقيتات المحددة." },
-            { q: "We usually go to the park _______ Fridays.", opts: ["on", "at", "in", "for"], c: 0, exp: "نستخدم on قبل أيام الأسبوع." },
-            { q: "The museum _______ open on Sunday mornings.", opts: ["doesn't", "don't", "isn't", "aren't"], "c": 0, exp: "النفي في المضارع البسيط للفعل العادي المفرد بـ doesn't." },
-            { q: "What time _______ the ferry arrive in Port Said?", opts: ["does", "do", "is", "are"], c: 0, exp: "السؤال في المضارع البسيط للمفرد بـ does." },
-            { q: "School starts _______ September in Egypt.", opts: ["in", "on", "at", "to"], c: 0, exp: "نستخدم in قبل أشهر السنة." }
-          ];
-          const item = bank[i % bank.length];
-          return { q: `${i+1}. ${item.q}`, opts: item.opts, c: item.c, exp: item.exp };
-        }),
+        grammarQuiz: [
+          {q:"The train ______ at 7:15 every morning.",opts:["leaves","leave","left","leaving"],c:0,exp:"مواعيد الجداول الثابتة تستخدم المضارع البسيط."},
+          {q:"The museum opens ______ 9 o'clock.",opts:["at","in","on","for"],c:0,exp:"At مع الساعة المحددة."},
+          {q:"We visit our grandparents ______ Fridays.",opts:["on","at","in","by"],c:0,exp:"On مع أيام الأسبوع."},
+          {q:"My family travels ______ summer.",opts:["in","on","at","from"],c:0,exp:"In مع فصول السنة."},
+          {q:"The bus ______ at the station at 6:30.",opts:["arrives","arrive","arriving","arrived"],c:0,exp:"فاعل مفرد؛ نضيف s للفعل في المضارع البسيط."},
+          {q:"The library ______ at 8 p.m. on Thursdays.",opts:["doesn't close","don't close","isn't close","not closes"],c:0,exp:"النفي مع المفرد: doesn't + المصدر."},
+          {q:"______ the train stop near the museum?",opts:["Does","Do","Is","Are"],c:0,exp:"السؤال للمفرد في المضارع البسيط يبدأ بـ Does."},
+          {q:"The shops ______ open on public holidays.",opts:["aren't","isn't","doesn't","don't be"],c:0,exp:"مع shops نستخدم are في النفي."},
+          {q:"The school bus ______ at 7:00 tomorrow.",opts:["leaves","leave","leaving","left"],c:0,exp:"المواعيد المجدولة قد يعبر عنها بالمضارع البسيط."},
+          {q:"My lesson starts ______ Monday.",opts:["on","at","in","to"],c:0,exp:"On مع أيام الأسبوع."},
+          {q:"The park is ______ the bank and the post office.",opts:["between","during","since","until"],c:0,exp:"Between تعني بين شيئين."},
+          {q:"The cinema is ______ the supermarket; they face each other.",opts:["opposite","through","under","among"],c:0,exp:"Opposite تعني مقابل."},
+          {q:"Walk ______ the bridge and turn left.",opts:["across","between","during","until"],c:0,exp:"Across تعني عبر/على الجانب الآخر."},
+          {q:"The pharmacy is ______ the hospital, not far from it.",opts:["near","inside","above","through"],c:0,exp:"Near تعني بالقرب من."},
+          {q:"Turn right ______ the traffic lights.",opts:["at","in","on","from"],c:0,exp:"At تستخدم مع نقطة مكانية محددة."},
+          {q:"The museum is ______ the end of this street.",opts:["at","on","in","by"],c:0,exp:"At the end تعبير صحيح."},
+          {q:"There ______ a bus every twenty minutes.",opts:["is","are","am","be"],c:0,exp:"Bus مفرد؛ There is."},
+          {q:"There ______ two cafés next to the station.",opts:["are","is","was","be"],c:0,exp:"Two cafés جمع؛ There are."},
+          {q:"How ______ does the train leave?",opts:["often","many","much","long ago"],c:0,exp:"How often للسؤال عن التكرار."},
+          {q:"What time ______ the museum close?",opts:["does","do","is","has"],c:0,exp:"المفرد museum؛ السؤال بـ does."}
+        ],
         reading: {
           title: "Reading Skill: Exploring Ismailia",
           body: `Ismailia is a beautiful and peaceful city located in Egypt between Port Said and Suez. The Suez Canal runs through the city before meeting Lake Timsah. Ismailia is famous for its large green spaces, gardens, and clean air. There is very little pollution here because the traffic is organized and not too heavy.
@@ -938,17 +948,28 @@ Visitors enjoy visiting the famous Lake Timsah, which is surrounded by attractiv
             { q: "Where is the aquarium located?", opts: ["Opposite botanical gardens next to sports centre", "Behind the hospital", "Inside the metro", "Far away"], c: 0, exp: "مذكور في آخر جملة في المحادثة." }
           ]
         },
-        exam: Array.from({length: 20}, (_, i) => ({
-          q: `Question ${i+1}: Choose the correct answer according to Ministry standards for Unit 1:`,
-          opts: [
-            i % 2 === 0 ? "The train leaves at 7:00 AM." : "Aquarium is a place for marine life.",
-            "Incorrect option 1",
-            "Incorrect option 2",
-            "Incorrect option 3"
-          ],
-          c: 0,
-          exp: "الإجابة الصحيحة طبقاً للمواصفات الوزارية لمادة اللغة الإنجليزية."
-        }))
+        exam: [
+          {q:"The train to Cairo ______ at 8:00 every day.",opts:["leaves","leave","leaving","left"],c:0,exp:"المواعيد الثابتة تستخدم المضارع البسيط."},
+          {q:"The lesson begins ______ 10:30.",opts:["at","in","on","by"],c:0,exp:"At مع الساعة."},
+          {q:"We usually go swimming ______ summer.",opts:["in","on","at","to"],c:0,exp:"In مع الفصول."},
+          {q:"The museum is ______ the bank and the hotel.",opts:["between","during","until","since"],c:0,exp:"Between بين شيئين."},
+          {q:"The post office is ______ the school; they are across the road.",opts:["opposite","inside","above","through"],c:0,exp:"Opposite تعني مقابل."},
+          {q:"______ the bus stop near the library?",opts:["Does","Do","Is","Are"],c:0,exp:"Does مع الفاعل المفرد."},
+          {q:"My father ______ work on Fridays.",opts:["doesn't","don't","isn't","aren't"],c:0,exp:"Doesn't + مصدر مع المفرد."},
+          {q:"There ______ three parks in our town.",opts:["are","is","am","be"],c:0,exp:"There are مع الجمع."},
+          {q:"Turn left ______ the traffic lights.",opts:["at","in","on","from"],c:0,exp:"At مع نقطة مكانية محددة."},
+          {q:"The bus travels ______ the bridge.",opts:["across","between","during","until"],c:0,exp:"Across تعني عبر."},
+          {q:"The aquarium ______ at 9 a.m. every day.",opts:["opens","open","opening","opened"],c:0,exp:"فاعل مفرد في المضارع البسيط."},
+          {q:"The shops ______ at midnight.",opts:["don't close","doesn't close","isn't close","not closing"],c:0,exp:"Shops جمع؛ don't + مصدر."},
+          {q:"The library is ______ the end of the road.",opts:["at","in","on","over"],c:0,exp:"At the end تعبير مكاني."},
+          {q:"How ______ do you visit the botanical gardens?",opts:["often","many","much","long"],c:0,exp:"How often للسؤال عن التكرار."},
+          {q:"The train leaves ______ Sunday morning.",opts:["on","at","in","from"],c:0,exp:"On مع الأيام."},
+          {q:"There ______ a monument in the town centre.",opts:["is","are","be","were"],c:0,exp:"There is مع المفرد."},
+          {q:"Which word means حدائق نباتية?",opts:["botanical gardens","aquarium","monument","lake"],c:0,exp:"Botanical gardens تعني حدائق نباتية."},
+          {q:"A place where sea animals are kept for visitors is an ______.",opts:["aquarium","station","library","stadium"],c:0,exp:"Aquarium مكان لمشاهدة الكائنات المائية."},
+          {q:"The opposite of near is ______.",opts:["far","close","next","beside"],c:0,exp:"Far عكس near."},
+          {q:"Choose the correct question.",opts:["What time does the train arrive?","What time do the train arrives?","What time is the train arrive?","What time does the train arrives?"],c:0,exp:"Does + الفاعل + المصدر."}
+        ]
       },
 
       2: {
@@ -982,17 +1003,28 @@ Visitors enjoy visiting the famous Lake Timsah, which is surrounded by attractiv
           { w: "leather", pos: "noun", ar: "جلد طبيعي", def: "Material made from animal skin used for shoes and bags.", ex: "These boots are made of genuine Egyptian leather.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="30" y="30" width="40" height="40" rx="6" fill="#78350f"/></svg>` },
           { w: "carpet", pos: "noun", ar: "سجادة", def: "A thick woven fabric covering for floors.", ex: "We bought a handmade wool carpet in Giza.", icon: `<svg viewBox="0 0 100 100" class="w-full h-full"><rect x="20" y="30" width="60" height="40" fill="#b91c1c"/><line x1="15" y1="50" x2="85" y2="50" stroke="#f59e0b" stroke-width="2"/></svg>` }
         ],
-        vocabQuiz: Array.from({length: 25}, (_, i) => {
-          const bank = [
-            { q: "Put water into the electric _______ to boil it quickly for tea.", opts: ["kettle", "toaster", "microwave", "speakers"], c: 0, exp: "Kettle هي الغلاية الكهربائية." },
-            { q: "This store has a 30% _______ on modern smart TVs.", opts: ["discount", "complaint", "order", "delivery"], c: 0, exp: "Discount يعني تخفيض أو خصم." },
-            { q: "The customer sent a formal _______ because the laptop arrived damaged.", opts: ["complaint", "discount", "kettle", "deal"], c: 0, exp: "Complaint تعني شكوى." },
-            { q: "Online shopping saves time because home _______ takes items to your house.", opts: ["delivery", "kettle", "toaster", "quality"], c: 0, exp: "Delivery تعني خدمة التوصيل." },
-            { q: "Definition: 'A container used for boiling water' is a _______.", opts: ["kettle", "microwave", "carpet", "advert"], c: 0, exp: "تعريف الغلاية Kettle." }
-          ];
-          const item = bank[i % bank.length];
-          return { q: `${i+1}. ${item.q}`, opts: item.opts, c: item.c, exp: item.exp };
-        }),
+        vocabQuiz: [
+          {q:"Put water in the electric ______ to boil it.",opts:["kettle","toaster","speaker","carpet"],c:0,exp:"Kettle تعني غلاية."},
+          {q:"A lower price is called a ______.",opts:["discount","complaint","receipt","delivery"],c:0,exp:"Discount تعني خصم."},
+          {q:"A customer may make a ______ about a damaged product.",opts:["complaint","discount","purchase","bargain"],c:0,exp:"Complaint تعني شكوى."},
+          {q:"Taking an item to a customer's home is ______.",opts:["delivery","refund","quality","advertising"],c:0,exp:"Delivery تعني التوصيل."},
+          {q:"Money returned to a customer is a ______.",opts:["refund","discount","order","brand"],c:0,exp:"Refund تعني استرداد المال."},
+          {q:"A written record of what you paid is a ______.",opts:["receipt","kettle","warranty","basket"],c:0,exp:"Receipt تعني إيصال."},
+          {q:"A promise to repair or replace a product is a ______.",opts:["warranty","discount","complaint","delivery"],c:0,exp:"Warranty تعني ضمان."},
+          {q:"A person who buys goods is a ______.",opts:["customer","cashier","designer","manufacturer"],c:0,exp:"Customer تعني عميل."},
+          {q:"A person who pays for goods at a shop is a ______.",opts:["cashier","customer","driver","inventor"],c:0,exp:"Cashier هو أمين الصندوق."},
+          {q:"A special reduction in price is a ______.",opts:["bargain","complaint","refund","receipt"],c:0,exp:"Bargain قد تعني صفقة بسعر جيد."},
+          {q:"A machine that heats food quickly is a ______.",opts:["microwave","toaster","kettle","fan"],c:0,exp:"Microwave تعني ميكروويف."},
+          {q:"A machine that makes bread brown and crisp is a ______.",opts:["toaster","kettle","freezer","printer"],c:0,exp:"Toaster تعني محمصة خبز."},
+          {q:"A list of things a customer wants to buy is an ______.",opts:["order","apology","exchange","advert"],c:0,exp:"Order تعني طلب شراء."},
+          {q:"The standard of a product is its ______.",opts:["quality","delivery","complaint","price tag"],c:0,exp:"Quality تعني الجودة."},
+          {q:"Buying goods on a website is ______ shopping.",opts:["online","outdoor","local","manual"],c:0,exp:"Online تعني عبر الإنترنت."},
+          {q:"A person who makes or produces goods is a ______.",opts:["manufacturer","customer","cashier","spectator"],c:0,exp:"Manufacturer تعني مُصنّع."},
+          {q:"A paper showing the price of an item is a ______.",opts:["price tag","warranty","refund","delivery"],c:0,exp:"Price tag بطاقة السعر."},
+          {q:"To change an item for another one is to ______ it.",opts:["exchange","complain","deliver","discount"],c:0,exp:"Exchange تعني يستبدل."},
+          {q:"A shop assistant should be polite and ______.",opts:["helpful","damaged","expensive","broken"],c:0,exp:"Helpful تعني متعاون أو مفيد."},
+          {q:"A product that does not work is ______.",opts:["faulty","discounted","delivered","popular"],c:0,exp:"Faulty تعني به عيب."}
+        ],
         grammarGuide: `
           <h3 class="text-xl font-extrabold text-brand-900 mb-3">📐 جرامر الوحدة الثانية: Distributives (Both, Either, Neither, None) & Comparative / Superlative</h3>
           <div class="space-y-4 text-xs leading-relaxed">
@@ -1007,12 +1039,28 @@ Visitors enjoy visiting the famous Lake Timsah, which is surrounded by attractiv
             </div>
           </div>
         `,
-        grammarQuiz: Array.from({length: 30}, (_, i) => ({
-          q: `${i+1}. Both the coffee machine _______ the kettle are modern.`,
-          opts: ["and", "or", "nor", "with"],
-          c: 0,
-          exp: "التركيب الصحيح هو Both ... and."
-        })),
+        grammarQuiz: [
+          {q:"Both the kettle ______ the toaster are useful.",opts:["and","or","nor","but"],c:0,exp:"Both ... and."},
+          {q:"You can choose ______ tea or coffee.",opts:["either","both","neither","none"],c:0,exp:"Either ... or للاختيار بين اثنين."},
+          {q:"______ my brother nor I like online scams.",opts:["Neither","Both","Either","All"],c:0,exp:"Neither ... nor للنفي."},
+          {q:"______ of the two products is suitable; they are both broken.",opts:["Neither","Both","Either","All"],c:0,exp:"Neither of للنفي عن الاثنين."},
+          {q:"______ of the students received a receipt; not one did.",opts:["None","Both","Either","Every"],c:0,exp:"None تعني لا أحد/لا شيء من المجموعة."},
+          {q:"This phone is ______ than that one.",opts:["cheaper","cheap","cheapest","the cheap"],c:0,exp:"Comparative الصفة القصيرة + er."},
+          {q:"It is the ______ shop in our area.",opts:["best","better","good","more good"],c:0,exp:"Best صيغة التفضيل من good."},
+          {q:"This is ______ expensive than the laptop.",opts:["less","least","little","few"],c:0,exp:"Less + adjective + than."},
+          {q:"The red kettle is as ______ as the blue one.",opts:["useful","more useful","most useful","usefully"],c:0,exp:"As + adjective + as."},
+          {q:"My new bag is ______ than my old bag.",opts:["more modern","most modern","modernest","the modern"],c:0,exp:"More مع الصفات الطويلة للمقارنة."},
+          {q:"Both the cashier and the manager ______ helpful.",opts:["are","is","was","be"],c:0,exp:"Both ... and يأخذ فعل جمع."},
+          {q:"Neither the shop assistant nor the customers ______ ready.",opts:["are","is","was","be"],c:0,exp:"مع neither...nor يتبع الفعل أقرب فاعل؛ customers جمع."},
+          {q:"Either my parents or my brother ______ the online order.",opts:["checks","check","checking","are check"],c:0,exp:"الفعل يتبع أقرب فاعل؛ brother مفرد."},
+          {q:"This is the ______ price we could find.",opts:["lowest","lower","low","more low"],c:0,exp:"Lowest صيغة التفضيل من low."},
+          {q:"A tablet is usually ______ than a desktop computer.",opts:["lighter","lightest","light","more lightest"],c:0,exp:"Lighter مقارنة الصفة القصيرة."},
+          {q:"The service was ______ than we expected.",opts:["better","best","good","well"],c:0,exp:"Better صيغة المقارنة من good."},
+          {q:"No product is ______ than this one in the shop.",opts:["cheaper","cheapest","cheap","the cheaper"],c:0,exp:"Cheaper + than للمقارنة."},
+          {q:"______ the price nor the quality was acceptable.",opts:["Neither","Both","Either","All"],c:0,exp:"Neither ... nor."},
+          {q:"Which sentence is correct?",opts:["Both the kettle and the toaster are new.","Both the kettle or the toaster are new.","Both the kettle and the toaster is new.","Either the kettle and toaster are new."],c:0,exp:"Both ... and مع الفعل الجمع."},
+          {q:"This is the ______ interesting advert of the three.",opts:["most","more","much","many"],c:0,exp:"Most + صفة طويلة في التفضيل."}
+        ],
         reading: {
           title: "Reading Skill: Shopping Online vs Traditional Markets",
           body: `Online shopping has grown rapidly in Egypt over recent years. Customers can easily order electronic items such as laptops, smart TVs, and headphones using their smartphones. Many websites offer free home delivery and special discounts during sale events.
@@ -1043,12 +1091,28 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
             { q: "How was the customer service assistant's tone?", opts: ["Polite and helpful", "Rude and angry", "Careless", "Silent"], c: 0, exp: "كان متفهماً واعتذر للعميل." }
           ]
         },
-        exam: Array.from({length: 20}, (_, i) => ({
-          q: `Exam Question ${i+1} (Unit 2 Standards):`,
-          opts: ["Neither my brother nor I was late.", "Option B", "Option C", "Option D"],
-          c: 0,
-          exp: "إجابة تدريبية مقترحة، وليست اعتماداً رسمياً من وزارة التربية والتعليم."
-        }))
+        exam: [
+          {q:"A customer asks for money back. They want a ______.",opts:["refund","discount","receipt","delivery"],c:0,exp:"Refund استرداد المال."},
+          {q:"Both my sister ______ my brother shop online.",opts:["and","or","nor","but"],c:0,exp:"Both ... and."},
+          {q:"This shop is ______ than the one near my house.",opts:["cheaper","cheapest","cheap","the cheap"],c:0,exp:"Cheaper للمقارنة."},
+          {q:"Neither the manager nor the assistants ______ available.",opts:["are","is","was","be"],c:0,exp:"الفعل يتبع أقرب فاعل assistants."},
+          {q:"A written proof of payment is a ______.",opts:["receipt","kettle","discount","warranty"],c:0,exp:"Receipt تعني إيصال."},
+          {q:"The ______ product in the store is this laptop.",opts:["most expensive","more expensive","expensive","expensiver"],c:0,exp:"Most expensive صيغة التفضيل."},
+          {q:"You can pay by cash ______ by card.",opts:["or","nor","both","neither"],c:0,exp:"Either/or أو الاختيار باستخدام or."},
+          {q:"The shop assistant was polite and ______.",opts:["helpful","faulty","broken","damaged"],c:0,exp:"Helpful تعني متعاون."},
+          {q:"A promise to repair a product is a ______.",opts:["warranty","refund","discount","complaint"],c:0,exp:"Warranty تعني ضمان."},
+          {q:"______ of the two kettles works; both are faulty.",opts:["Neither","Both","Either","All"],c:0,exp:"Neither of للنفي عن الاثنين."},
+          {q:"The blue bag is as ______ as the black one.",opts:["strong","stronger","strongest","more strong"],c:0,exp:"As + adjective + as."},
+          {q:"A person who buys goods is a ______.",opts:["customer","cashier","manufacturer","driver"],c:0,exp:"Customer تعني عميل."},
+          {q:"The shop ______ the order yesterday.",opts:["delivered","deliver","delivers","delivering"],c:0,exp:"Yesterday يدل على الماضي البسيط."},
+          {q:"The opposite of expensive is ______.",opts:["cheap","faulty","modern","useful"],c:0,exp:"Cheap عكس expensive."},
+          {q:"Either the cashier or the manager ______ the receipt.",opts:["has","have","are","were"],c:0,exp:"الفعل يتبع أقرب فاعل manager مفرد."},
+          {q:"Online shopping allows customers to buy things ______.",opts:["on the internet","at the airport","in a hospital","under the sea"],c:0,exp:"Online تعني عبر الإنترنت."},
+          {q:"This is the ______ deal in the market.",opts:["best","better","good","well"],c:0,exp:"Best صيغة التفضيل من good."},
+          {q:"A product that has a problem is ______.",opts:["faulty","helpful","popular","careful"],c:0,exp:"Faulty تعني معيب."},
+          {q:"Which sentence is correct?",opts:["Neither the price nor the quality is good.","Neither the price or the quality are good.","Both the price nor quality is good.","Either the price and quality are good."],c:0,exp:"Neither ... nor."},
+          {q:"A special reduction in the price is a ______.",opts:["discount","complaint","receipt","refund"],c:0,exp:"Discount تعني خصم."}
+        ]
       },
 
       // Template Data for Units 3 to 6
