@@ -7,6 +7,7 @@ import unitModules from './data/lessons/unit-modules.draft.json';
 import './style.css';
 import { getPreparatoryHtmlCourse } from './data/preparatory-html-registry.js';
 import preparatoryVocabulary from './data/preparatory-vocabulary.json';
+import { createStudentProfileStore } from './lib/student-profile-store.mjs';
 
 const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
 function isApprovedUnitDraft(draft) {
@@ -33,6 +34,11 @@ const app = document.querySelector('#app');
 
 // Student App State (Preserves all progress across back-and-forth navigation and reloads)
 const STORAGE_KEY = 'englimensh_p1u1_progress';
+const studentProfiles = createStudentProfileStore(window.localStorage);
+const getProfileContext = () => ({ stage: state.stage, grade: state.grade, path: state.path, term: 'first' });
+const activeStudent = () => studentProfiles.active();
+const applyStudentTheme = () => { document.documentElement.dataset.theme = activeStudent()?.theme || 'classic'; };
+applyStudentTheme();
 
 const vocabVisualMap = {
   hello: { icon: '👋', tag: 'Greeting', phonetic: '/həˈləʊ/' },
@@ -149,7 +155,8 @@ function resetListeningProgress() {
 function loadProgressFromStorage() {
   if (typeof window === 'undefined' || !window.localStorage) return;
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const savedProgress = studentProfiles.loadProgress(getProfileContext());
+    const raw = savedProgress === null ? window.localStorage.getItem(STORAGE_KEY) : JSON.stringify(savedProgress);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     const isPlainObject = (val) => Boolean(val && typeof val === 'object' && !Array.isArray(val));
@@ -211,7 +218,8 @@ function saveProgressToStorage() {
       selfIntro: state.selfIntro,
       politeness: state.politeness
     };
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+    if (activeStudent()) studentProfiles.saveProgress(dataToSave, getProfileContext());
+    else window.localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
   } catch (err) {
     console.warn('LocalStorage save warning:', err);
   }
@@ -2011,7 +2019,25 @@ function render() {
   app.innerHTML = `
     <header class="topbar">
       <a class="brand" href="#" aria-label="EngliMensh home"><span class="brand-mark">E</span><span>EngliMensh</span></a>
-      <span class="country-tag">EGYPTIAN CURRICULUM</span>
+      <div class="topbar-tools">
+        <div class="student-profile-control">
+          <label class="sr-only" for="student-profile-select">Student profile</label>
+          <select id="student-profile-select" aria-label="Student profile">
+            <option value="">Choose student</option>
+            \${studentProfiles.list().map((profile) => \`<option value="\${escapeHtml(profile.id)}" \${profile.id === activeStudent()?.id ? 'selected' : ''}>\${escapeHtml(profile.name)}</option>\`).join('')}
+          </select>
+          <input id="new-student-name" type="text" maxlength="40" placeholder="New student name" aria-label="New student name">
+          <button type="button" id="create-student-profile">Add student</button>
+          <label class="sr-only" for="student-theme-select">Student theme</label>
+          <select id="student-theme-select" aria-label="Student theme">
+            <option value="classic" \${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Classic</option>
+            <option value="ocean" \${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Ocean</option>
+            <option value="forest" \${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
+            <option value="lavender" \${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
+          </select>
+        </div>
+        <span class="country-tag">EGYPTIAN CURRICULUM</span>
+      </div>
     </header>
     <main class="shell stage-${state.stage}">
       <section class="welcome">
@@ -2056,6 +2082,37 @@ function render() {
       </section>
       <footer>EngliMensh <span>•</span> Egyptian Curriculum <span>•</span> Source-based learning</footer>
     </main>`;
+
+  app.querySelector('#student-profile-select')?.addEventListener('change', (event) => {
+    const nextId = event.target.value;
+    if (!nextId) return;
+    saveProgressToStorage();
+    studentProfiles.activate(nextId);
+    window.location.reload();
+  });
+  app.querySelector('#create-student-profile')?.addEventListener('click', () => {
+    const field = app.querySelector('#new-student-name');
+    const name = field?.value?.trim();
+    if (!name) { field?.focus(); return; }
+    try {
+      saveProgressToStorage();
+      const profile = studentProfiles.create({ name, stage: state.stage, grade: state.grade || 1, path: state.path || 'general', theme: 'classic' });
+      studentProfiles.activate(profile.id);
+      window.location.reload();
+    } catch (error) {
+      console.warn('Could not create student profile:', error);
+      field?.setCustomValidity(error.message || 'Could not create profile.');
+      field?.reportValidity();
+    }
+  });
+  app.querySelector('#student-theme-select')?.addEventListener('change', (event) => {
+    const profile = activeStudent();
+    if (!profile) return;
+    try {
+      studentProfiles.setTheme(profile.id, event.target.value);
+      applyStudentTheme();
+    } catch (error) { console.warn('Could not apply student theme:', error); }
+  });
 
   const applySearch = () => {
     const query = state.search.trim().toLocaleLowerCase();
