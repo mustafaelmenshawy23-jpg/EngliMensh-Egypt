@@ -84,3 +84,13 @@ Updated through audit commit: `a9662897897b8b7ae63a9b62396e8ac9765e806a`
 3. Complete vocabulary/media remediation (licensed offline photos plus missing Arabic meanings, definitions and examples); do not count placeholders or generic SVGs as real photos.
 4. Verify offline behavior, games, speaking/TTS, navigation, persistence, and no regressions; then run Android WebView/device QA and build/inspect a fresh real debug APK.
 5. Keep PR #3 open and unmerged. Do not merge to `main` or distribute an APK before all gates pass and the owner explicitly approves.
+
+
+## Certificate PDF export implementation — 2026-11-09
+
+- Added an Export PDF action for each earned certificate in the active student's own profile.
+- The PDF is rendered from the certificate layout at A4 landscape size, preserving the student's saved photo, name, unit, grade, score and completion date.
+- Added a small native Capacitor Android plugin generated after `npx cap add android`. It writes the PDF through Android `MediaStore.Downloads` into the public `Downloads/EngliMensh` folder, publishes the file after the write completes, and removes incomplete entries on failure.
+- The native direct-save path explicitly requires Android 10 (API 29) or later; older Android versions return a clear unsupported-version error rather than claiming a save succeeded. Web builds use the browser download flow.
+- Added a regression test for the JS/native wiring and added a syntax check for the Android plugin generator to validation CI.
+- **Verification status:** implementation is committed to the PR branch, but the latest CI has not yet run and the native plugin has not been compiled or exercised on an Android device/WebView. Do not mark Downloads export as runtime-verified until the Android build and a real file-open check in Downloads pass.
