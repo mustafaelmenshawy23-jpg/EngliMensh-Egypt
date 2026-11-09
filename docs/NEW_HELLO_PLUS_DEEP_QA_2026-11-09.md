@@ -22,7 +22,7 @@ Counts above were read from the embedded data arrays in each of the 18 HTML file
 4. **No dedicated game activity was identified in any of the 18 files.** The source inventory should not claim that games are supplied by these files. App-level game templates may be separate, but they must be connected to unit-specific learning objectives and tested.
 5. **No native recorded audio was found.** None of the 18 files contains an `<audio>` element. The pages use browser/device speech synthesis for reading/listening playback. There is no `getUserMedia` or `MediaRecorder` implementation in these HTML sources. Do not label synthesized playback as native/recorded listening audio or speaking assessment.
 6. **All 18 files reference Google Fonts over the network.** The generated viewer copy removes remote font links, but the original HTML remains network-dependent if opened directly. Offline checks must include every other external asset/script as well.
-7. **Official-source alignment remains unverified.** The files contain Ministry/official curriculum wording, but this audit did not verify each word, translation, grammar explanation, passage, question, answer key, or assessment against the corresponding official student book/teacher guide. Do not infer official approval from labels inside the HTML.
+7. **Official-source alignment remains unverified, and the repository PDFs are currently Git LFS pointers rather than readable PDFs through the repository file endpoint.** The relevant stored objects are large: Prep 1 Hello Plus 64.8 MB, Prep 2 Hello Plus 109.6 MB, Prep 3 Hello Plus 379.1 MB; the general Prep 1/2/3 English books are also LFS pointers (about 86.7/92.7/87.8 MB). The GitHub file fetch returns only the LFS pointer metadata, not the book pages. The HTML files contain Ministry/official curriculum wording, but that does not substitute for checking every word, translation, grammar explanation, passage, question, answer key, or assessment against the corresponding official student book/teacher guide. Do not infer official approval from labels inside the HTML.
 
 ## Required remediation before this pathway can be marked complete
 
@@ -31,9 +31,9 @@ Counts above were read from the embedded data arrays in each of the 18 HTML file
 - Add unit-linked game activities or connect the app's existing game templates to each unit's actual vocabulary/grammar; test scoring and answer feedback.
 - Verify whether recorded listening audio is required by the official materials. If no authorized audio is supplied, label TTS as a playback aid and keep transcripts optional.
 - Audit all options for exactly one defensible correct answer; all learner questions must remain multiple-choice as requested.
-- Cross-check the full content against official source pages and retain source-page references for each approved unit.
+- Make the actual LFS PDF objects available to the review workflow (or provide accessible source page exports), then cross-check the full content against official source pages and retain source-page references for each approved unit.
 - Run Android WebView and offline tests for all 18 units before release.
 
 ## Status
 
-The 18 files are present and their assessment-array counts have been inventoried. **New Hello Plus is not academically complete or release-ready.** The duplicated grammar banks in Prep 2 Plus and Prep 3 Plus, absent dedicated speaking and game content, and unverified source alignment are explicit blockers. Original imported HTML files were not modified by this audit.
+The 18 HTML files are present and their assessment-array counts have been inventoried. The corresponding official PDFs are tracked as Git LFS objects and were not readable from the repository content endpoint in this audit. **New Hello Plus is not academically complete or release-ready.** The duplicated grammar banks in Prep 2 Plus and Prep 3 Plus, absent dedicated speaking and game content, and unverified source alignment are explicit blockers. Original imported HTML files were not modified by this audit.
