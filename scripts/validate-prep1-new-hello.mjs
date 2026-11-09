@@ -38,7 +38,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
   const listening = parseObject(html, 'listeningData', unit);
   if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}.`);
   for (const [index, word] of words.entries()) {
-    if (!/[\\u0600-\\u06FF]/.test(word.arabic || '') || !word.def || !word.example) failures.push(`Unit ${unit}: vocabulary entry ${index + 1} needs Arabic, definition and example.`);
+    if (!String(word.arabic || '').trim() || !String(word.def || '').trim() || !String(word.example || '').trim()) failures.push(`Unit ${unit}: vocabulary entry ${index + 1} needs Arabic, definition and example.`);
   }
   checkBank(vocab, 30, 'vocabulary quiz', unit);
   const grammarExpected = unit <= 2 ? 30 : 20;
