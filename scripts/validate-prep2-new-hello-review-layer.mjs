@@ -92,6 +92,7 @@ if (layer.status !== 'translation-draft-needs-official-source-review') failures.
 if (grammarGuides.status !== 'teacher-review-draft') failures.push('Grammar guides must remain drafts pending teacher review.');
 if (!registry.includes('viewerUrl: viewerUrl(fileName)')) failures.push('Generated reviewed viewer URLs are not connected to the student lesson registry.');
 if (!builder.includes('window.__PREP2_REVIEW_LAYER__=') || !builder.includes('window.__PREP2_GRAMMAR_GUIDES__=')) failures.push('Generated viewers are missing review-layer or grammar-guide injection.');
+if (!builder.includes('removeRemoteFontDependencies(originalSource)')) failures.push('Generated preparatory viewers must remove remote Google Fonts dependencies for offline readability.');
 if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
 if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
