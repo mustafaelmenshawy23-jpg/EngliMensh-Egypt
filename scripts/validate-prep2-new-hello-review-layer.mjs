@@ -102,7 +102,9 @@ if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.p
 if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
 if (!enhancer.includes('scriptNode.hidden = true') || !enhancer.includes('Show transcript')) failures.push('Listening transcript must stay hidden until learner requests it.');
-if (!enhancer.includes("classList.add('prep-interactive-question','prep-short-answer')")) failures.push('Reading/listening short-answer controls are missing.');
+if (!enhancer.includes('const shortAnswerBank = questions.map') || !enhancer.includes('const choicesData = [answer, ...distractors]') || !enhancer.includes("question.classList.add('prep-interactive-question');")) failures.push('All reading/listening questions must be converted to interactive multiple-choice options.');
+if (enhancer.includes("input.placeholder = 'Type your answer'")) failures.push('Reading/listening questions must not leave any free-text answer inputs.');
+if (!enhancer.includes("button.textContent = letter.toUpperCase() + ') ' + label")) failures.push('Generated reading/listening choices must display labeled answer options.');
 for (let unit = 1; unit <= 6; unit += 1) {
   const guide = grammarGuides.units?.[String(unit)];
   if (!guide) { failures.push(`Unit ${unit}: detailed grammar guide is missing.`); continue; }
