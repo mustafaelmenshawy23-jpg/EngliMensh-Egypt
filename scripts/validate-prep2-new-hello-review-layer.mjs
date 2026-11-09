@@ -94,6 +94,10 @@ if (!registry.includes('viewerUrl: viewerUrl(fileName)')) failures.push('Generat
 if (!builder.includes('window.__PREP2_REVIEW_LAYER__=') || !builder.includes('window.__PREP2_GRAMMAR_GUIDES__=')) failures.push('Generated viewers are missing review-layer or grammar-guide injection.');
 if (!builder.includes('prepareOfflineLessonCopy(originalSource)')) failures.push('Generated preparatory viewers must remove remote Google Fonts dependencies for offline readability.');
 if (!builder.includes('text-to-speech voice') || !builder.includes('Play listening script')) failures.push('Generated Plus viewers must identify listening playback as device text-to-speech, not recorded audio.');
+if (!enhancer.includes("document.querySelectorAll('.section')") || !enhancer.includes('section.hidden = section !== target;')) failures.push('Preparatory HTML viewer must show only the section selected by the app module.');
+const unit6RepairAt = enhancer.indexOf("classList.replace('question-item', 'question')");
+const nestedHoistAt = enhancer.indexOf("target.querySelectorAll('.question .question')");
+if (unit6RepairAt < 0 || nestedHoistAt < 0 || unit6RepairAt > nestedHoistAt) failures.push('Unit 6 Q6 wrapper must be repaired before nested questions are hoisted and scored.');
 if (!enhancer.includes("moduleName === 'grammar' ? 'grammar_guide'")) failures.push('Grammar guide rendering is not connected to the Grammar module.');
 if (!enhancer.includes('const isCorrect = actual === expected;')) failures.push('Short-answer scoring must use exact normalized answers, not partial substring matches.');
 if (!enhancer.includes('speechSynthesis.speak(utterance)')) failures.push('Listening playback is missing.');
