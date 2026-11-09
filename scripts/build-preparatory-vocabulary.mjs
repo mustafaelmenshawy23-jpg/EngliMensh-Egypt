@@ -201,6 +201,12 @@ async function buildSectionViewers(files) {
 </script>\n` : '';
     const prep3AssessmentBridge = isPrep3Combined ? `<script>
 (() => {
+  const route = window.location.hash.match(/^#comprehensive_test:([1-6])$/i);
+  if (route && typeof window.selectUnit === 'function' && typeof window.switchSubTab === 'function') {
+    const unitNumber = Number(route[1]);
+    window.selectUnit(unitNumber);
+    window.switchSubTab('exam');
+  }
   const original = window.checkAnswer;
   if (typeof original !== 'function' || window.__ENGLIMENSH_PREP3_CERTIFICATE_BRIDGE__) return;
   window.__ENGLIMENSH_PREP3_CERTIFICATE_BRIDGE__ = true;
