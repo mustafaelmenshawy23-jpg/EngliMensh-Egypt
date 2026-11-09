@@ -250,7 +250,12 @@
       'Your result: ' + correct + ' / ' + activeQuestions.length + ' (' + Math.round(correct / activeQuestions.length * 100) + '%).';
     if (unanswered) {
       activeQuestions.filter((question) => question.classList.contains('prep-short-answer') ? !question.querySelector('.prep-answer-input')?.value.trim() : !question.dataset.selected).forEach((question) => { question.dataset.checked = 'false'; });
-      activeQuestions.forEach((question) => { question.querySelectorAll('button').forEach((button) => { button.disabled = false; }); const input = question.querySelector('.prep-answer-input'); if (input && !input.value.trim()) input.disabled = false; });
+      activeQuestions.forEach((question) => {
+        const input = question.querySelector('.prep-answer-input');
+        if (input) input.disabled = Boolean(input.value.trim());
+        const isAnswered = question.classList.contains('prep-short-answer') ? Boolean(input?.value.trim()) : Boolean(question.dataset.selected);
+        question.querySelectorAll('button').forEach((button) => { button.disabled = isAnswered; });
+      });
     } else { check.hidden = true; retry.hidden = false; }
   });
   retry.addEventListener('click', () => {
