@@ -99,11 +99,11 @@
   const questions = [...target.querySelectorAll('.question')];
   // Short-answer distractors come only from other answers in this same passage/script.
   const shortAnswerBank = questions.map((question, index) => {
-    const number = Number((question.textContent.match(/^\\s*(\\d+)\\s*[.、)]/) || [])[1] || index + 1);
-    const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
+    const number = Number((question.textContent.match(/^\s*(\d+)\s*[.、)]/) || [])[1] || index + 1);
+    const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\s*Answer:/i.test(node.textContent));
     return answerNode ? {
       id: String(number),
-      answer: unit.answerTextFixes?.[sectionType]?.[String(number)] || answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim()
+      answer: unit.answerTextFixes?.[sectionType]?.[String(number)] || answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim()
     } : null;
   }).filter(Boolean);
   if (sectionType === 'listening') {
@@ -172,15 +172,15 @@
       return;
     }
     if (sectionType === 'reading' || sectionType === 'listening') {
-      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
+      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\s*Answer:/i.test(node.textContent));
       if (answerNode) {
-        const answer = unit.answerTextFixes?.[sectionType]?.[id] || answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim();
+        const answer = unit.answerTextFixes?.[sectionType]?.[id] || answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim();
         const original = question.cloneNode(true);
         original.querySelectorAll('strong,b').forEach((node) => node.remove());
         const prompt = document.createElement('div');
         prompt.className = 'prep-quiz-prompt';
-        prompt.textContent = number + '. ' + original.textContent.replace(/^\\s*\\d+\\s*[.、)]\\s*/, '').trim();
-        const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+        prompt.textContent = number + '. ' + original.textContent.replace(/^\s*\d+\s*[.、)]\s*/, '').trim();
+        const normalized = (value) => String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
         const distractors = shortAnswerBank
           .filter((item) => item.id !== id && normalized(item.answer) !== normalized(answer))
           .map((item) => item.answer)
