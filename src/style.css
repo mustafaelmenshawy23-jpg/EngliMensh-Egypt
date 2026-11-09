@@ -2877,3 +2877,30 @@ button:disabled{opacity:.55;cursor:not-allowed}
 @media(max-width:600px) { .certificate-card { flex-direction:column; padding:18px 12px; } .certificate-student-photo { width:90px; height:105px; flex-basis:105px; } }
 
 .certificate-earned-banner { margin:14px 0; padding:14px 16px; border:1px solid var(--color-success-border); border-radius:12px; background:var(--color-success-bg); color:#166534; font-weight:800; text-align:center; }
+
+
+/* Primary curriculum cards: native app presentation, not a raw HTML document. */
+.primary-imported { margin: 1.25rem 0; padding: 1.25rem; }
+.primary-source-note { margin: .75rem 0 1rem; padding: .75rem 1rem; border-inline-start: 3px solid var(--brand-teal); border-radius: 8px; background: var(--bg-subtle); color: var(--text-secondary); font-size: .85rem; line-height: 1.6; }
+.primary-unit-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.8rem; margin-top:1rem; }
+.primary-unit-card { display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; min-height:128px; padding:1rem; border:1px solid var(--border-line); border-radius:14px; background:var(--bg-card); color:var(--text-primary); text-align:left; cursor:pointer; transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease; }
+.primary-unit-card:hover { transform:translateY(-2px); border-color:var(--brand-teal); box-shadow:var(--shadow-md); }
+.primary-unit-card span { color:var(--brand-teal); font-size:.72rem; font-weight:800; letter-spacing:.08em; }
+.primary-unit-card strong { font-size:1rem; line-height:1.35; }
+.primary-unit-card small { margin-top:auto; color:var(--text-secondary); }
+.primary-content-section { margin:1.35rem 0; }
+.primary-content-section h3 { margin:0 0 .8rem; color:var(--brand-navy); font-size:1.05rem; }
+.primary-vocab-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:.65rem; }
+.primary-vocab-card { display:flex; flex-direction:column; gap:.35rem; padding:.8rem; border:1px solid var(--border-line-subtle); border-radius:12px; background:var(--bg-card); }
+.primary-vocab-card>span { font-size:1.5rem; }
+.primary-vocab-card strong { color:var(--text-primary); }
+.primary-vocab-card b { color:var(--brand-teal); }
+.primary-vocab-card small,.primary-question-card { color:var(--text-secondary); line-height:1.5; }
+.primary-question-list { display:grid; gap:.65rem; }
+.primary-question-card { padding:.85rem; border:1px solid var(--border-line-subtle); border-radius:10px; background:var(--bg-card); }
+.primary-question-card>div { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.55rem; }
+.primary-option { display:inline-flex; padding:.35rem .6rem; border:1px solid var(--border-line); border-radius:8px; color:var(--text-primary); font-size:.85rem; }
+.primary-example { margin:.45rem 0; padding:.45rem .7rem; border-inline-start:2px solid var(--brand-teal); background:var(--bg-subtle); }
+.primary-reading { padding:1rem; border-radius:12px; background:var(--bg-subtle); color:var(--text-primary); line-height:1.8; }
+.primary-empty,.primary-source-note { color:var(--text-secondary); }
+@media(max-width:600px) { .primary-imported { padding:.9rem; } .primary-unit-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .primary-unit-card { min-height:116px; padding:.75rem; } }
