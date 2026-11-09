@@ -493,10 +493,17 @@ function renderPreparatoryGame(words) {
   ];
   const game = state.htmlGame || {};
   const current = words[game.index % Math.max(words.length, 1)];
-  const shuffled = (items) => [...items].sort((a, b) => a.word.localeCompare(b.word));
+  const shuffled = (items) => {
+    const result = [...items];
+    for (let index = result.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+    }
+    return result;
+  };
   const optionsFor = (target) => {
-    const distractors = words.filter((item) => item.word !== target.word).sort((a, b) => a.word.localeCompare(b.word)).slice(0, 3);
-    return [target, ...distractors].sort((a, b) => (a.word + state.grade).localeCompare(b.word + state.grade));
+    const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);
+    return shuffled([target, ...distractors]);
   };
   let body = '<div class="prep-game-empty">This unit has no verified vocabulary records yet. The original lesson is still available in its learning sections.</div>';
   if (words.length && current) {
