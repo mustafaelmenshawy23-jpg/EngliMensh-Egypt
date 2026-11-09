@@ -63,7 +63,7 @@
         "vocabulary": {
           "20": {
             "correctOption": "a",
-            "reason": "The plural subject 'Computers and the internet' needs the plural noun 'tools'."
+            "reason": "The plural subject 'Computers and the internet' requires the plural noun 'tools'."
           }
         }
       },
@@ -409,6 +409,11 @@
       },
       "definitionFixes": {
         "Renewable": "An adjective describing a resource that is naturally replaced or replenished."
+      },
+      "markupRepairs": {
+        "grammar": {
+          "6": "Normalize the source question-item wrapper to question before quiz parsing; retain the original prompt and marked key."
+        }
       }
     }
   },
