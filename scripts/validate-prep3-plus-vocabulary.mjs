@@ -23,7 +23,8 @@ for (let unit = 1; unit <= 6; unit += 1) {
     words = parse('vocabData');
     questions = parse('vocabQuizData');
     reading = parse('readingData');
-    listening = parse('listeningData');\n    grammar = parse('grammarQuizData');\n    exam = parse('examData');
+    listening = parse('listeningData');
+    grammar = parse('grammarQuizData');\n    exam = parse('examData');
   } catch (error) {
     failures.push(error.message);
     continue;
