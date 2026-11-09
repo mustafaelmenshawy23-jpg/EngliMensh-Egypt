@@ -119,8 +119,8 @@ if (savedStudentContext) {
 
 async function exportStudentCertificatePdf(certificate) {
   if (!certificate || typeof certificate.studentName !== 'string') throw new TypeError('Certificate data is unavailable.');
-  const safeName = (certificate.studentName || 'student').normalize('NFKD').replace(/[^\\w-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 32) || 'student';
-  const unitName = String(certificate.unit || 'unit').replace(/[^\\w-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 36) || 'unit';
+  const safeName = (certificate.studentName || 'student').normalize('NFKD').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 32) || 'student';
+  const unitName = String(certificate.unit || 'unit').replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 36) || 'unit';
   const fileName = 'EngliMensh-' + safeName + '-' + unitName + '.pdf';
   const page = document.createElement('section');
   page.setAttribute('aria-hidden', 'true');
