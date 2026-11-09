@@ -35,11 +35,11 @@ for (let unit = 1; unit <= 6; unit += 1) {
     if (!Array.isArray(q.options) || q.options.length !== 4) failures.push(`${label}: exactly four options are required.`);
     else if (new Set(q.options.map(v => String(v).trim().toLowerCase())).size !== 4) failures.push(`${label}: answer options are duplicated.`);
     if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`${label}: correct answer must be a numeric option index from 0 to 3.`);
-    if (!q.explanation || !/[\\u0600-\\u06FF]/.test(q.explanation)) failures.push(`${label}: Arabic explanation is required.`);
+    if (!q.explanation || !/[\u0600-\u06FF]/.test(q.explanation)) failures.push(`${label}: Arabic explanation is required.`);
     if ('answer' in q || 'textAnswer' in q || 'typedAnswer' in q) failures.push(`${label}: free-text answer fields are not allowed.`);
   }
   if (local.size !== 12) failures.push(`Unit ${unit}: expected 12 distinct question stems.`);
-  const combined = questions.map(q => q.question).join(' ').toLowerCase();
+  const combined = questions.map(q => [q.question, ...(q.options || [])].join(' ')).join(' ').toLowerCase();
   const unitTopics = {
     1: /while|when|rang|was|were/,
     2: /must|might|can't|should|have to|forbidden/,
