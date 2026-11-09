@@ -25,6 +25,7 @@ function sixUnits(filePattern) {
       title: `Unit ${number}`,
       fileName,
       url: assetUrl(fileName),
+      viewerUrl: viewerUrl(fileName),
       format: 'unit'
     };
   });
