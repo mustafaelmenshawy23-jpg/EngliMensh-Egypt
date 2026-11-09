@@ -9,8 +9,8 @@ const parseArray = (html, name, unit) => {
   try { return JSON.parse(match[1]); }
   catch { failures.push(`Unit ${unit}: ${name} is invalid JSON.`); return []; }
 };
-const parseObject = (html, name, nextName, unit) => {
-  const match = html.match(new RegExp(`const ${name} = (\\{[\\s\\S]*?\\});\\s*const ${nextName}`));
+const parseObject = (html, name, unit) => {
+  const match = html.match(new RegExp(`const ${name} = (\\{[\\s\\S]*?\\});`));
   if (!match) { failures.push(`Unit ${unit}: ${name} is missing.`); return null; }
   try { return JSON.parse(match[1]); }
   catch { failures.push(`Unit ${unit}: ${name} is invalid JSON.`); return null; }
@@ -35,8 +35,8 @@ for (let unit = 1; unit <= 6; unit += 1) {
   const vocab = parseArray(html, 'vocabQuizData', unit);
   const grammar = parseArray(html, 'grammarQuizData', unit);
   const exam = parseArray(html, 'examData', unit);
-  const reading = parseObject(html, 'readingData', 'listeningData', unit);
-  const listening = parseObject(html, 'listeningData', 'examData', unit);
+  const reading = parseObject(html, 'readingData', unit);
+  const listening = parseObject(html, 'listeningData', unit);
   if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}.`);
   for (const [index, word] of words.entries()) {
     if (!/[\\u0600-\\u06FF]/.test(word.arabic || '') || !word.def || !word.example) failures.push(`Unit ${unit}: vocabulary entry ${index + 1} needs Arabic, definition and example.`);
