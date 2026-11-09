@@ -52,6 +52,17 @@ jobs:
           python -m pip install --disable-pip-version-check Pillow
           python -m py_compile scripts/prepare-app-icons.py
           python scripts/prepare-app-icons.py --web
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          icons = Path("public/icons")
+          for size in (192, 512):
+              path = icons / f"englimensh-icon-{size}.png"
+              assert path.is_file() and path.stat().st_size > 0, f"Missing generated PWA icon: {path}"
+              with Image.open(path) as image:
+                  assert image.format == "PNG" and image.size == (size, size), f"Invalid PWA icon dimensions: {path}"
+          print("Verified exact-source PWA icons at 192px and 512px.")
+          PY
 
       - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
         run: rm -rf public/books
@@ -68,6 +79,18 @@ jobs:
 
       - name: Apply official Android launcher and adaptive icons
         run: python scripts/prepare-app-icons.py --android
+      - name: Verify Android launcher and adaptive icon assets
+        run: |
+          test -s android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+          test -s android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+          test -s android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+          test -s android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+          test -s android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+          test -s android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+          test -s android/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png
+          test -s android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+          test -s android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+          echo "Verified Android launcher, round and adaptive icon assets."
 
       - name: Sync web application into Android project
         run: npx cap sync android
