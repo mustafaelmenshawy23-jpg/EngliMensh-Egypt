@@ -17,9 +17,9 @@ for (let unit = 1; unit <= 6; unit += 1) {
     continue;
   }
   const section = html.slice(start, end);
-  const sourceWords = [...section.matchAll(/<div class="vocab-card">([\\s\\S]*?)<\\/div>/g)]
+  const sourceWords = [...section.matchAll(/<div class="vocab-card">([\s\S]*?)<\/div>/g)]
     .map((match) => {
-      const strong = match[1].match(/<strong>\\s*\\d+\\.\\s*([^<]+)<\\/strong>/i);
+      const strong = match[1].match(/<strong>\s*\d+\.\s*([^<]+)<\/strong>/i);
       return strong ? decode(strong[1]) : '';
     }).filter(Boolean);
   const unique = [...new Set(sourceWords.map((word) => word.toLowerCase()))];
@@ -27,7 +27,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
   const translated = new Set(Object.keys(translations).map((word) => word.toLowerCase()));
   for (const word of unique) {
     if (!translated.has(word)) failures.push(`Unit ${unit}: missing Arabic translation for "${word}"`);
-    else if (!/[\\u0600-\\u06FF]/.test(translations[Object.keys(translations).find((key) => key.toLowerCase() === word)] || '')) failures.push(`Unit ${unit}: translation for "${word}" is not Arabic text`);
+    else if (!/[\u0600-\u06FF]/.test(translations[Object.keys(translations).find((key) => key.toLowerCase() === word)] || '')) failures.push(`Unit ${unit}: translation for "${word}" is not Arabic text`);
   }
   const extra = [...translated].filter((word) => !unique.includes(word));
   if (extra.length) failures.push(`Unit ${unit}: translation map has unknown headwords: ${extra.join(', ')}`);
