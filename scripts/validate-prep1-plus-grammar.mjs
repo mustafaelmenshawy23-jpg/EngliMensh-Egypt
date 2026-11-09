@@ -6,13 +6,15 @@ const failures = [];
 for (let unit = 1; unit <= 6; unit += 1) {
   const file = path.join(base, `Prep_1_New_Hello_Plus_Unit_${unit}.html`);
   const html = await readFile(file, 'utf8');
-  const vocabMatch = html.match(/const vocabData = (\\[[\\s\\S]*?\\]);/);
-  const vocabQuizMatch = html.match(/const vocabQuizData = (\\[[\\s\\S]*?\\]);/);
-  let words = [], vocabQuestions = [];
-  try {
-    words = vocabMatch ? JSON.parse(vocabMatch[1]) : [];
-    vocabQuestions = vocabQuizMatch ? JSON.parse(vocabQuizMatch[1]) : [];
-  } catch { failures.push(`Unit ${unit}: vocabulary data is invalid JSON.`); }
+  const parseArray = (name) => {
+    const marker = `const ${name} = `;
+    const start = html.indexOf(marker);
+    const end = html.indexOf('];', start) + 1;
+    if (start < 0 || end <= 0) return [];
+    try { return JSON.parse(html.slice(start + marker.length, end)); } catch { return []; }
+  };
+  const words = parseArray('vocabData');
+  const vocabQuestions = parseArray('vocabQuizData');
   if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}.`);
   for (const [index, word] of words.entries()) if (!word.arabic || !word.def || !word.example) failures.push(`Unit ${unit} word ${index + 1}: Arabic meaning, definition and example required.`);
   if (vocabQuestions.length !== 30) failures.push(`Unit ${unit}: expected 30 vocabulary MCQs, found ${vocabQuestions.length}.`);
