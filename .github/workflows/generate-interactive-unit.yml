@@ -30,7 +30,7 @@ on:
       gemini_model:
         description: Gemini model
         required: true
-        default: gemini-2.5-flash
+        default: gemini-3.8-flash
         type: string
 
 permissions:
@@ -96,7 +96,7 @@ jobs:
           GEMINI_API_KEY_BACKUP: ${{ secrets.GEMINI_API_KEY_BACKUP }}
           GEMINI_API_KEY_BACKUP_2: ${{ secrets.GEMINI_API_KEY_BACKUP_2 }}
           GEMINI_API_KEY_BACKUP_3: ${{ secrets.GEMINI_API_KEY_BACKUP_3 }}
-          GEMINI_MODEL: ${{ github.event.inputs.gemini_model || 'gemini-2.5-flash' }}
+          GEMINI_MODEL: ${{ github.event.inputs.gemini_model || 'gemini-3.8-flash' }}
           START_INDEX: ${{ github.event.inputs.start_index || '' }}
           BATCH_SIZE: ${{ github.event.inputs.batch_size || '5' }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
@@ -104,6 +104,23 @@ jobs:
       - name: Persist unapproved drafts and resumable queue state
         if: always()
         run: |
+          set -e
+          EXTRACTION_BACKUP="$RUNNER_TEMP/englimensh-extracted"
+          restore_extraction() {
+            if [ -d "$EXTRACTION_BACKUP" ]; then
+              mkdir -p src/data/extracted
+              cp -a "$EXTRACTION_BACKUP/." src/data/extracted/
+            fi
+          }
+          trap restore_extraction EXIT
+
+          if [ -d src/data/extracted ]; then
+            rm -rf "$EXTRACTION_BACKUP"
+            mkdir -p "$EXTRACTION_BACKUP"
+            cp -a src/data/extracted/. "$EXTRACTION_BACKUP/"
+            rm -rf src/data/extracted
+          fi
+
           if [ -d artifacts/unit-drafts ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+users.noreply.github.com"
