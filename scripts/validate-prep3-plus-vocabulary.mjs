@@ -36,6 +36,7 @@ if (balancedJsonFixture[0].svg !== 'literal ]; inside a quoted value' || balance
   throw new Error('Balanced JSON parser self-test failed.');
 }
 const failures = [];
+const unit5ExpectedPartsOfSpeech = { ingenious: 'adjective', scientific: 'adjective', revolutionize: 'verb' };
 let totalWords = 0;
 let totalQuestions = 0;
 for (let unit = 1; unit <= 6; unit += 1) {
@@ -78,6 +79,9 @@ for (let unit = 1; unit <= 6; unit += 1) {
   if (wordSet.size !== words.length) failures.push(`Unit ${unit}: duplicate vocabulary headwords`);
   for (const [index, item] of words.entries()) {
     const label = `Unit ${unit} word ${index + 1} (${item.word})`;
+    if (unit === 5 && unit5ExpectedPartsOfSpeech[item.word]) {
+      if (item.pos !== unit5ExpectedPartsOfSpeech[item.word]) failures.push(`${label}: expected part of speech ${unit5ExpectedPartsOfSpeech[item.word]}, found ${item.pos}`);
+    }
     if (!/[\u0600-\u06FF]/.test(item.arabic || '') || /مفردة دراسية|translation pending/i.test(item.arabic || '')) failures.push(`${label}: Arabic meaning is missing or a placeholder`);
     if (!item.def || /essential curriculum term|relating to .*unit|curriculum term/i.test(item.def)) failures.push(`${label}: generic definition remains`);
     if (!item.example || /is essential when studying|essential curriculum term/i.test(item.example)) failures.push(`${label}: generic example remains`);
