@@ -1,9 +1,9 @@
 name: Build EngliMensh Android preview APK
 
+# APK builds are intentionally deferred until the preparatory curriculum is complete.
+# Keep release builds on main or an explicit manual request; PR updates run validation only.
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
   workflow_dispatch:
 
