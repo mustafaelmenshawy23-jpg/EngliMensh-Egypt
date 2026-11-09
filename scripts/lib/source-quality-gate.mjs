@@ -283,3 +283,40 @@ export function validateUnitSourceCoverage(pageRows, expectedStart, expectedEnd,
     pageEvaluations
   };
 }
+
+
+/**
+ * Produces actionable per-page diagnostics for a blocked unit source range.
+ * Keeps unit-level status while exposing the exact PDF pages that need OCR
+ * recovery or manual visual review.
+ */
+export function summarizeUnitSourceGate(gate) {
+  const evaluations = Array.isArray(gate?.pageEvaluations) ? gate.pageEvaluations : [];
+  const nonValidPages = evaluations
+    .filter((page) => page.status !== 'valid')
+    .map((page) => ({
+      pdfPage: page.pdfPage,
+      status: page.status || 'unknown',
+      score: Number.isFinite(page.score) ? page.score : null,
+      issues: Array.isArray(page.issues) ? page.issues : []
+    }));
+  const issueMessages = [
+    ...(Array.isArray(gate?.issues) ? gate.issues : []),
+    ...nonValidPages.flatMap((page) => page.issues.length
+      ? page.issues.map((issue) => `PDF p.${page.pdfPage}: ${issue}`)
+      : [`PDF p.${page.pdfPage}: page status is ${page.status}`])
+  ];
+
+  return {
+    status: gate?.status || 'blocked',
+    coveragePercentage: Number.isFinite(gate?.coveragePercentage) ? gate.coveragePercentage : 0,
+    expectedRange: gate?.expectedRange || null,
+    actualRange: gate?.actualRange || null,
+    missingPages: Array.isArray(gate?.missingPages) ? gate.missingPages : [],
+    duplicatePages: Array.isArray(gate?.duplicatePages) ? gate.duplicatePages : [],
+    blockedPageCount: nonValidPages.filter((page) => page.status === 'blocked').length,
+    needsReviewPageCount: nonValidPages.filter((page) => page.status === 'needs_review').length,
+    pageEvaluations: nonValidPages,
+    issues: [...new Set(issueMessages)]
+  };
+}
