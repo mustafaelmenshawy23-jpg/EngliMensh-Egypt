@@ -38,7 +38,8 @@
         "Active": "نشيط",
         "Energy": "طاقة",
         "Future": "مستقبل",
-        "Achievement": "إنجاز"
+        "Achievement": "إنجاز",
+        "Success": "نجاح"
       },
       "knownDuplicateHeadwords": [],
       "questionRepairs": {
@@ -372,7 +373,7 @@
       },
       "markupRepairs": {
         "grammar": {
-          "6": "Change the malformed question-item wrapper to a question block so Q6 is independent of Q5."
+          "6": "Restore the legacy question-item wrapper so the runtime normalizer can repair it before scoring."
         }
       },
       "answerKeyOverrides": {
