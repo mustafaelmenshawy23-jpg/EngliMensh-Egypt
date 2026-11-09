@@ -171,7 +171,7 @@ async function buildSectionViewers(files) {
   window.addEventListener('hashchange', applyViewerRoute);
 })();
 </script>\n` : '';
-    const prep1AssessmentBridge = isPrep1General ? \`<script>
+    const prep1AssessmentBridge = isPrep1General ? `<script>
 (() => {
   const original = window.handleQuizAnswer;
   if (typeof original !== 'function' || window.__ENGLIMENSH_CERTIFICATE_BRIDGE__) return;
