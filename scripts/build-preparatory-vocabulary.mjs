@@ -198,8 +198,8 @@ async function buildSectionViewers(files) {
     return result;
   };
 })();
-</script>\n\` : '';
-    const prep3AssessmentBridge = isPrep3Combined ? \`<script>
+</script>\n` : '';
+    const prep3AssessmentBridge = isPrep3Combined ? `<script>
 (() => {
   const original = window.checkAnswer;
   if (typeof original !== 'function' || window.__ENGLIMENSH_PREP3_CERTIFICATE_BRIDGE__) return;
@@ -227,7 +227,7 @@ async function buildSectionViewers(files) {
     return result;
   };
 })();
-</script>\\n\` : '';
+</script>\\n` : '';
     const marker = /<\\/body>/i;
     const injected = prep1Route + prep1AssessmentBridge + prep3AssessmentBridge + enhancement;
     const output = marker.test(source) ? source.replace(marker, injected + '\n</body>') : source + injected;
