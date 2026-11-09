@@ -41,3 +41,11 @@ The validator `scripts/validate-prep2-plus-grammar.mjs` is included in `npm test
 
 ## Limitations / acceptance status
 This confirms structural and topic-focused practice-bank remediation, not official textbook approval. The source book pages are not currently available in readable form for line-by-line verification, so the content remains a supplementary practice draft pending teacher/official-source review. This report does not certify the vocabulary, reading, listening, image, or full-unit content in these six files.
+
+
+## Follow-up six-file verification — 9 November 2026
+The six Prep 2 New Hello Plus source files were re-read from the active branch after the grammar remediation:
+- Each unit has 12 grammar MCQs (72 total); all 12 stems are distinct within each unit.
+- All grammar questions parsed as valid JSON and passed checks for a non-empty question, four distinct options, and a numeric correct-answer index from 0 to 3.
+- Each unit has 25 vocabulary MCQ entries (150 total), and all 25 entries expose an options array.
+- This verification confirms structure and answer-key shape; it does not prove official textbook alignment or validate every vocabulary distractor semantically. Teacher/source review remains required.
