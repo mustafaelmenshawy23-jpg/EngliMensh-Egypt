@@ -2855,3 +2855,21 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .student-profile-placeholder { display:grid; place-items:center; background:var(--brand-teal-light); font-size:18px; }
 .student-profile-control input[type="file"] { width:160px; max-width:160px; padding:4px; font-size:10px; }
 @media(max-width:760px) { .student-profile-control input[type="file"] { width:140px; max-width:140px; } }
+
+.student-certificates-control { position:relative; font-size:11px; color:var(--text-primary); }
+.student-certificates-control summary { cursor:pointer; border:1px solid var(--brand-teal-border); border-radius:9px; padding:8px 10px; background:var(--brand-teal-light); color:var(--brand-navy); font-weight:800; white-space:nowrap; }
+.student-certificates-control>div { position:absolute; right:0; top:calc(100% + 6px); z-index:80; width:min(280px,85vw); max-height:260px; overflow:auto; padding:8px 12px; background:var(--bg-surface); border:1px solid var(--border-line); border-radius:12px; box-shadow:var(--shadow-md); }
+.student-certificates-control p { display:flex; flex-direction:column; gap:3px; padding:7px 0; margin:0; border-bottom:1px solid var(--border-line-subtle); }
+.student-certificates-control p span { color:var(--text-secondary); font-size:10px; }
+.certificate-card { display:flex; align-items:center; gap:20px; max-width:760px; margin:22px auto; padding:28px; border:7px double var(--brand-teal); border-radius:18px; background:#fff; color:#17324f; box-shadow:var(--shadow-md); }
+.certificate-student-photo { flex:0 0 110px; width:110px; height:130px; display:grid; place-items:center; overflow:hidden; border:2px solid #d5b56b; background:#f8f5ec; color:#64748b; font-size:11px; text-align:center; }
+.certificate-student-photo img { width:100%; height:100%; object-fit:cover; }
+.certificate-text { flex:1; text-align:center; }
+.certificate-text p { margin:7px 0; line-height:1.5; }
+.certificate-kicker { color:#9a7736; font-size:11px; font-weight:900; letter-spacing:2px; }
+.certificate-text h2 { margin:8px 0; color:#17324f; font-family:var(--font-arabic); font-size:28px; }
+.certificate-unit { margin:8px 0; color:#197c78; font-size:21px; }
+.certificate-score { display:inline-block; margin:8px; color:#9a7736; font-size:24px; }
+.certificate-message { color:#496276; font-style:italic; }
+.certificate-progress-card { max-width:650px; margin:20px auto; padding:18px; border:1px solid var(--brand-teal-border); border-radius:14px; background:var(--brand-teal-light); color:var(--brand-navy); text-align:center; }
+@media(max-width:600px) { .certificate-card { flex-direction:column; padding:18px 12px; } .certificate-student-photo { width:90px; height:105px; flex-basis:105px; } }
