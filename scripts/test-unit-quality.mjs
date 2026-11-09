@@ -11,7 +11,7 @@
  * 7. Source quality gate correctly classifies clean, noisy, and corrupted page text.
  */
 
-import { validatePageText, validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
+import { validatePageText, validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
 
 let passed = 0;
@@ -72,6 +72,25 @@ console.log('\n--- TEST 2: Source Quality Gate (Unit Coverage Range) ---');
   assert(incompleteCoverageResult.status === 'blocked', 'Incomplete range (stopping at 131 instead of 139) is blocked');
   assert(incompleteCoverageResult.missingPages.length === 8, 'Accurately reports 8 missing pages (132-139)');
   assert(incompleteCoverageResult.issues.some((i) => i.includes('Missing 8 expected page(s)')), 'Issue message specifies missing pages');
+
+  const blockerSummary = summarizeUnitSourceGate({
+    status: 'blocked',
+    coveragePercentage: 100,
+    expectedRange: { start: 10, end: 11 },
+    actualRange: { foundPages: 2, validPages: 1, needsReviewPages: 0, blockedPages: 1 },
+    missingPages: [],
+    duplicatePages: [],
+    issues: [],
+    pageEvaluations: [
+      { pdfPage: 10, status: 'valid', score: 100, issues: [] },
+      { pdfPage: 11, status: 'blocked', score: 0, issues: ['Page is empty (zero extractable characters)'] }
+    ]
+  });
+  assert(blockerSummary.blockedPageCount === 1, 'Blocker report counts blocked PDF pages');
+  assert(blockerSummary.pageEvaluations.length === 1 && blockerSummary.pageEvaluations[0].pdfPage === 11,
+    'Blocker report identifies the exact non-valid PDF page');
+  assert(blockerSummary.issues.some((issue) => issue.includes('PDF p.11: Page is empty')),
+    'Blocker report carries page-level OCR failure reasons');
 
   // Duplicate pages
   const duplicatePages = [...fullPages, { pdfPage: 110, text: 'duplicate' }];
