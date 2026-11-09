@@ -8,8 +8,8 @@ Scope: the six Grade 2 general-path New Hello HTML units. Imported source HTML r
 - The build generator injects the review overlay, grammar guides, and interactive enhancement into generated viewer copies.
 - The student registry now routes six-unit lesson sections to those generated viewer copies.
 - Vocabulary and grammar multiple-choice sections are converted to selectable choices. Keys are taken from source bolding unless an explicit reviewed override exists; known ambiguous items are excluded.
-- Reading and listening questions that exposed inline `Answer:` text are converted to short-answer inputs. Multiple-choice comprehension sections are converted to selectable choices.
-- Scoring uses exact normalized text matching for short answers; unanswered items remain available, submitted items stay locked, and retry resets the activity.
+- Reading and listening questions that exposed inline `Answer:` text are converted by the current runtime enhancer into selectable MCQs. It builds up to three distinct distractors from other answers in the same passage/script, randomizes the four choices, and preserves the correct answer key. Existing multiple-choice comprehension sections remain selectable MCQs.
+- Scoring compares the selected option key with the preserved correct key; unanswered items remain available, submitted items stay locked, the correct option is revealed after submission, and retry resets the activity.
 - Listening script text can be played using device/browser speech synthesis (English voice). This is TTS, not a recorded listening track.
 - Grammar module receives an expanded Arabic guide with affirmative, negative, question/short-answer forms, spelling rules, signal words, examples, and common-error notes.
 - Unit 6 grammar Q6's malformed `question-item` class is normalized to a separate question before quiz parsing.
