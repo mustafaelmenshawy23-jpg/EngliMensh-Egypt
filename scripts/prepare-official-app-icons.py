@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
-"""Generate Android launcher and web app icons from the approved source artwork.
-
-Expected input: public/assets/englimensh-app-icon-source.png
-Run after `npx cap add android` and before `npx cap sync android`.
-The source artwork is never redrawn or text-overlaid; only square resizing/cropping
-and Android adaptive-icon safe-area placement are performed.
-"""
+"""Generate Android launcher and PWA icons from the approved source artwork."""
 from pathlib import Path
-from PIL import Image, ImageOps, ImageDraw
+from PIL import Image, ImageOps
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +14,6 @@ if not SOURCE.is_file():
 
 im = Image.open(SOURCE).convert("RGBA")
 if im.width != im.height:
-    # Preserve the complete supplied square artwork; pad only if the source is not square.
     side = max(im.size)
     canvas = Image.new("RGBA", (side, side), (13, 39, 83, 255))
     canvas.alpha_composite(im, ((side-im.width)//2, (side-im.height)//2))
@@ -30,17 +23,16 @@ def save_png(image, path):
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path, "PNG", optimize=True)
 
-# Legacy launcher assets.
+# Legacy Android launcher icons.
 for folder, size in {
     "mipmap-mdpi": 48, "mipmap-hdpi": 72, "mipmap-xhdpi": 96,
     "mipmap-xxhdpi": 144, "mipmap-xxxhdpi": 192,
 }.items():
-    save_png(ImageOps.fit(im, (size, size), method=Image.Resampling.LANCZOS),
-             ANDROID / folder / "ic_launcher.png")
-    save_png(ImageOps.fit(im, (size, size), method=Image.Resampling.LANCZOS),
-             ANDROID / folder / "ic_launcher_round.png")
+    icon = ImageOps.fit(im, (size, size), method=Image.Resampling.LANCZOS)
+    save_png(icon, ANDROID / folder / "ic_launcher.png")
+    save_png(icon, ANDROID / folder / "ic_launcher_round.png")
 
-# Adaptive foreground: artwork centered in the Android 66% safe zone.
+# Adaptive foreground, centered within the 66% Android safe zone.
 for folder, size in {
     "mipmap-mdpi": 108, "mipmap-hdpi": 162, "mipmap-xhdpi": 216,
     "mipmap-xxhdpi": 324, "mipmap-xxxhdpi": 432,
@@ -54,27 +46,22 @@ for folder, size in {
 values = ANDROID / "values"
 values.mkdir(parents=True, exist_ok=True)
 (values / "ic_launcher_background.xml").write_text(
-    '<?xml version="1.0" encoding="utf-8"?>\\n'
-    '<resources><color name="ic_launcher_background">#0D2753</color></resources>\\n',
+    '<?xml version="1.0" encoding="utf-8"?>\n'
+    '<resources><color name="ic_launcher_background">#0D2753</color></resources>\n',
     encoding="utf-8")
-for folder in ["mipmap-anydpi-v26"]:
-    p = ANDROID / folder
-    p.mkdir(parents=True, exist_ok=True)
-    (p / "ic_launcher.xml").write_text(
-        '<?xml version="1.0" encoding="utf-8"?>\\n'
-        '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\\n'
-        '  <background android:drawable="@color/ic_launcher_background"/>\\n'
-        '  <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\\n'
-        '</adaptive-icon>\\n', encoding="utf-8")
-    (p / "ic_launcher_round.xml").write_text(
-        '<?xml version="1.0" encoding="utf-8"?>\\n'
-        '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\\n'
-        '  <background android:drawable="@color/ic_launcher_background"/>\\n'
-        '  <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\\n'
-        '</adaptive-icon>\\n', encoding="utf-8")
+adaptive = ANDROID / "mipmap-anydpi-v26"
+adaptive.mkdir(parents=True, exist_ok=True)
+xml = (
+    '<?xml version="1.0" encoding="utf-8"?>\n'
+    '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
+    '  <background android:drawable="@color/ic_launcher_background"/>\n'
+    '  <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\n'
+    '</adaptive-icon>\n'
+)
+(adaptive / "ic_launcher.xml").write_text(xml, encoding="utf-8")
+(adaptive / "ic_launcher_round.xml").write_text(xml, encoding="utf-8")
 
-# PWA icon sizes.
 for size in (192, 512):
     save_png(ImageOps.fit(im, (size, size), method=Image.Resampling.LANCZOS),
              WEB / f"icon-{size}.png")
-print("Generated Android launcher/adaptive icons and PWA icons from approved source.")
+print("Generated Android launcher/adaptive icons and PWA icons.")
