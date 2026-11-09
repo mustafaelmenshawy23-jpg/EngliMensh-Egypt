@@ -2833,3 +2833,20 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .prep-vocabulary-example { width:100%; border-left:3px solid var(--brand-teal); background:#f8fafc; border-radius:0 8px 8px 0; padding:8px; color:#334155; font-size:12px; line-height:1.5; }
 .prep-vocabulary-credit { color:#64748b; font-size:10px; text-decoration:underline; }
 @media(max-width:760px) { .prep-vocabulary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; } .prep-vocabulary-card { padding:11px; } .prep-vocabulary-image-wrap { min-height:120px; } .prep-vocabulary-image { height:110px; } }
+
+
+/* Student profiles and per-student themes */
+.topbar-tools { display:flex; align-items:center; justify-content:flex-end; gap:12px; min-width:0; }
+.student-profile-control { display:flex; align-items:center; gap:7px; flex-wrap:wrap; justify-content:flex-end; }
+.student-profile-control select,.student-profile-control input { min-height:36px; max-width:150px; border:1px solid var(--border-line); border-radius:9px; padding:6px 9px; background:var(--bg-surface); color:var(--text-primary); font:inherit; font-size:12px; }
+.student-profile-control button { min-height:36px; border:0; border-radius:9px; padding:7px 11px; background:var(--brand-navy); color:#fff; font-size:12px; font-weight:750; cursor:pointer; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+:root[data-theme="ocean"] { --brand-navy:#123B63; --brand-navy-light:#176B87; --brand-teal:#2C9FC1; --brand-teal-hover:#247F9B; --brand-teal-light:#E5F5FB; --brand-teal-border:#A8DCEC; --bg-app:#EDF7FB; --bg-subtle:#F3FAFD; --border-line:#CFE5EE; }
+:root[data-theme="forest"] { --brand-navy:#214B36; --brand-navy-light:#356B4A; --brand-teal:#4C956C; --brand-teal-hover:#3B7D58; --brand-teal-light:#EAF5ED; --brand-teal-border:#B9DCC4; --bg-app:#F1F7F1; --bg-subtle:#F7FBF7; --border-line:#D5E5D7; }
+:root[data-theme="lavender"] { --brand-navy:#493B70; --brand-navy-light:#6C5A9B; --brand-teal:#927BC4; --brand-teal-hover:#7964A9; --brand-teal-light:#F1EDFA; --brand-teal-border:#D5C9EF; --bg-app:#F7F4FC; --bg-subtle:#FBF9FE; --border-line:#E5DDF2; }
+@media(max-width:760px) {
+ .topbar { height:auto; min-height:76px; align-items:flex-start; gap:10px; padding:12px 14px; flex-wrap:wrap; }
+ .topbar-tools { flex:1 1 100%; justify-content:space-between; flex-wrap:wrap; }
+ .student-profile-control { justify-content:flex-start; }
+ .student-profile-control input { max-width:130px; }
+}
