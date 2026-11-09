@@ -288,8 +288,14 @@
       answered++;
       const selectedButton = question.querySelector('[data-letter="' + selected + '"]');
       if (selected === key) {
-        correct++; selectedButton?.classList.add('correct');
-      } else selectedButton?.classList.add('incorrect');
+        correct++;
+      } else {
+        selectedButton?.classList.add('incorrect');
+      }
+      // Always reveal the correct option after submission, including when the
+      // learner selected a distractor, so feedback supports learning.
+      const correctButton = question.querySelector('[data-letter="' + key + '"]');
+      correctButton?.classList.add('correct');
       question.dataset.checked = 'true';
       question.querySelectorAll('button').forEach((button) => { button.disabled = true; });
     });
