@@ -6,6 +6,25 @@ const failures = [];
 for (let unit = 1; unit <= 6; unit += 1) {
   const file = path.join(base, `Prep_1_New_Hello_Plus_Unit_${unit}.html`);
   const html = await readFile(file, 'utf8');
+  const vocabMatch = html.match(/const vocabData = (\\[[\\s\\S]*?\\]);/);
+  const vocabQuizMatch = html.match(/const vocabQuizData = (\\[[\\s\\S]*?\\]);/);
+  let words = [], vocabQuestions = [];
+  try {
+    words = vocabMatch ? JSON.parse(vocabMatch[1]) : [];
+    vocabQuestions = vocabQuizMatch ? JSON.parse(vocabQuizMatch[1]) : [];
+  } catch { failures.push(`Unit ${unit}: vocabulary data is invalid JSON.`); }
+  if (words.length !== 22) failures.push(`Unit ${unit}: expected 22 vocabulary entries, found ${words.length}.`);
+  for (const [index, word] of words.entries()) if (!word.arabic || !word.def || !word.example) failures.push(`Unit ${unit} word ${index + 1}: Arabic meaning, definition and example required.`);
+  if (vocabQuestions.length !== 30) failures.push(`Unit ${unit}: expected 30 vocabulary MCQs, found ${vocabQuestions.length}.`);
+  if (new Set(vocabQuestions.map(q => String(q.question).trim().toLowerCase())).size !== vocabQuestions.length) failures.push(`Unit ${unit}: repeated vocabulary question stems remain.`);
+  for (const [index, q] of vocabQuestions.entries()) {
+    const label = `Unit ${unit} vocabulary Q${index + 1}`;
+    if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options.map(x => String(x).trim().toLowerCase())).size !== 4) failures.push(`${label}: four distinct options required.`);
+    if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`${label}: correct answer index must be 0–3.`);
+    if (!q.explanation) failures.push(`${label}: explanation is required.`);
+  }
+  if (!html.includes('Vocab Quiz (30)') || !html.includes('id="vocabQuizScore">Score: 0 / 30')) failures.push(`Unit ${unit}: vocabulary quiz label/score mismatch.`);
+  if (/<input[^>]+type=["'](?:text|number)["']|<textarea|contenteditable=/i.test(html)) failures.push(`Unit ${unit}: free-text assessment inputs are not allowed.`);
   const marker = 'const grammarQuizData = ';
   const start = html.indexOf(marker);
   const end = html.indexOf('];', start) + 1;
