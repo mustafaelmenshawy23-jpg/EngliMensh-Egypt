@@ -501,14 +501,24 @@ function renderPreparatoryGame(words) {
     }
     return result;
   };
+  // Cache randomized content for the current round. Rendering after each tap must
+  // never reshuffle choices or move a picture/box underneath the learner.
   const optionsFor = (target) => {
-    const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);
-    return shuffled([target, ...distractors]);
+    if (!target) return [];
+    if (!game.optionSets || typeof game.optionSets !== 'object') game.optionSets = {};
+    if (!Array.isArray(game.optionSets[target.word])) {
+      const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);
+      game.optionSets[target.word] = shuffled([target, ...distractors]);
+    }
+    return game.optionSets[target.word];
   };
   let body = '<div class="prep-game-empty">This unit has no verified vocabulary records yet. The original lesson is still available in its learning sections.</div>';
   if (words.length && current) {
     if (game.id === 'picture-match') {
-      const round = shuffled(words).slice(0, Math.min(4, words.length));
+      if (!Array.isArray(game.roundWords) || game.roundWords.length === 0) {
+        game.roundWords = shuffled(words).slice(0, Math.min(4, words.length));
+      }
+      const round = game.roundWords;
       const matched = game.matched || [];
       body = `
         <div class="prep-game-instruction">Choose a word, then choose its matching picture.</div>
@@ -544,7 +554,10 @@ function renderPreparatoryGame(words) {
         ${game.feedback ? `<div class="prep-game-feedback ${game.feedback === 'correct' ? 'success' : 'error'}">${game.feedback === 'correct' ? 'That is right!' : 'Correct word: ' + escapeHtml(current.word)}<button data-prep-game-next>Continue</button></div>` : ''}
       `;
     } else if (game.id === 'open-box') {
-      const boxes = shuffled(words).slice(0, Math.min(6, words.length));
+      if (!Array.isArray(game.boxWords) || game.boxWords.length === 0) {
+        game.boxWords = shuffled(words).slice(0, Math.min(6, words.length));
+      }
+      const boxes = game.boxWords;
       body = `
         <div class="prep-game-instruction">Choose a mystery box. Read its clue and identify the word.</div>
         <div class="prep-box-grid">${boxes.map((item, i) => `<button data-prep-open-box="${i}" class="${game.opened === i ? 'opened' : ''}">${game.opened === i ? '🔓' : '🎁'}<small>Box ${i + 1}</small></button>`).join('')}</div>
@@ -2172,14 +2185,14 @@ function render() {
   });
   app.querySelectorAll('[data-prep-open-box]').forEach((button) => button.addEventListener('click', () => {
     state.htmlGame.opened = Number(button.dataset.prepOpenBox);
-    const openWords = [...prepWords].sort((a, b) => a.word.localeCompare(b.word)).slice(0, Math.min(6, prepWords.length));
+    const openWords = Array.isArray(state.htmlGame.boxWords) ? state.htmlGame.boxWords : [];
     state.htmlGame.openTarget = openWords[state.htmlGame.opened]?.word || null;
     state.htmlGame.selectedOption = null;
     state.htmlGame.feedback = '';
     render();
   }));
   app.querySelector('[data-prep-game-reset]')?.addEventListener('click', () => {
-    state.htmlGame = { ...state.htmlGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' };
+    state.htmlGame = { ...state.htmlGame, index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, openTarget: null, roundWords: null, boxWords: null, optionSets: {}, feedback: '' };
     render();
   });
 
