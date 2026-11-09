@@ -50,7 +50,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
       });
       const duplicates = normalized.filter((value, optionIndex) => normalized.indexOf(value) !== optionIndex);
       const marked = options.filter((value) => /<strong\b|<b\b/i.test(value)).length;
-      const expectedOptions = sectionName === 'grammar' && unit <= 3 ? 3 : 4;
+      const expectedOptions = 4;
       if (options.length !== expectedOptions) failures.push(`Unit ${unit} ${sectionName} Q${id}: expected ${expectedOptions} choices, found ${options.length}.`);
       if (!excluded && marked !== 1 && !(sectionName === 'grammar' && unit === 1 && id === '18')) failures.push(`Unit ${unit} ${sectionName} Q${id}: expected exactly one source-marked key, found ${marked}.`);
       if (duplicates.length && !excluded) failures.push(`Unit ${unit} ${sectionName} Q${id}: duplicate choices remain after reviewed option fixes.`);
@@ -77,7 +77,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
       }
     }
   }
-  const boldKeys = (grammarHtml.match(/<strong>/g) || []).length;
+  const boldKeys = (grammarHtml.match(/<strong>✓<\/strong>/g) || []).length;
   const expectedBoldKeys = unit === 1 ? 29 : 30;
   if (boldKeys !== expectedBoldKeys) failures.push(`Unit ${unit}: expected ${expectedBoldKeys} bold grammar answer markers before applying explicit overrides/exclusions; found ${boldKeys}.`);
   const start = html.indexOf('1. Vocabulary');
