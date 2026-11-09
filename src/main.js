@@ -2024,16 +2024,16 @@ function render() {
           <label class="sr-only" for="student-profile-select">Student profile</label>
           <select id="student-profile-select" aria-label="Student profile">
             <option value="">Choose student</option>
-            \${studentProfiles.list().map((profile) => \`<option value="\${escapeHtml(profile.id)}" \${profile.id === activeStudent()?.id ? 'selected' : ''}>\${escapeHtml(profile.name)}</option>\`).join('')}
+            ${studentProfiles.list().map((profile) => '<option value="' + escapeHtml(profile.id) + '" ' + (profile.id === activeStudent()?.id ? 'selected' : '') + '>' + escapeHtml(profile.name) + '</option>').join('')}
           </select>
           <input id="new-student-name" type="text" maxlength="40" placeholder="New student name" aria-label="New student name">
           <button type="button" id="create-student-profile">Add student</button>
           <label class="sr-only" for="student-theme-select">Student theme</label>
           <select id="student-theme-select" aria-label="Student theme">
-            <option value="classic" \${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Classic</option>
-            <option value="ocean" \${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Ocean</option>
-            <option value="forest" \${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
-            <option value="lavender" \${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
+            <option value="classic" ${activeStudent()?.theme === 'classic' ? 'selected' : ''}>Classic</option>
+            <option value="ocean" ${activeStudent()?.theme === 'ocean' ? 'selected' : ''}>Ocean</option>
+            <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
+            <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
           </select>
         </div>
         <span class="country-tag">EGYPTIAN CURRICULUM</span>
