@@ -37,7 +37,7 @@ assert.ok(main.includes('function renderPreparatorySpeaking') && main.includes('
 assert.ok(main.includes('The app does not record your voice or score pronunciation.'), 'Speaking practice must disclose that it does not record or score pronunciation.');
 assert.ok(main.includes('const swapIndex = Math.floor(Math.random() * (index + 1));'), 'Preparatory game rounds must use Fisher-Yates randomization.');
 assert.ok(main.includes('const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);'), 'Game distractors must be selected from a shuffled set.');
-assert.ok(main.includes('return shuffled([target, ...distractors]);'), 'Correct answer position must be randomized among options.');
+assert.ok(main.includes('game.optionSets[target.word] = shuffled([target, ...distractors]);'), 'Correct answer position must be randomized and cached for the current question.');
 assert.ok(main.includes('game.optionSets[target.word]'), 'Game answer options must stay fixed while the learner interacts with a round.');
 assert.ok(main.includes('game.roundWords = shuffled(words)'), 'Picture-match words must be cached so taps do not reshuffle the round.');
 assert.ok(main.includes('game.boxWords = shuffled(words)'), 'Mystery-box clues must be cached so boxes do not change after each render.');
