@@ -12,9 +12,11 @@ for (let unit = 1; unit <= 6; unit += 1) {
     const marker = `const ${name} = `;
     const start = html.indexOf(marker);
     if (start < 0) throw new Error(`Unit ${unit}: ${name} missing`);
-    const end = html.indexOf('];', start) + 1;
-    if (end <= 0) throw new Error(`Unit ${unit}: ${name} array is not terminated`);
-    return JSON.parse(html.slice(start + marker.length, end));
+    const valueStart = start + marker.length;
+    const objectValue = html[valueStart] === '{';
+    const end = objectValue ? html.indexOf('};', valueStart) + 1 : html.indexOf('];', valueStart) + 1;
+    if (end <= 0) throw new Error(`Unit ${unit}: ${name} data is not terminated`);
+    return JSON.parse(html.slice(valueStart, end));
   };
   let words, questions, reading, listening;
   try {
