@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 1 (First Preparatory) (New Hello Plus (Advanced)) - Unit 1: A World of Work | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    /* VISUAL VOCABULARY CARDS */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 9px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    
+    .grammar-content { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.25rem; border-radius: 0 10px 10px 0; margin: 1.25rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 10px 12px; text-align: left; }
+    .grammar-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    
+    .gov-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 1 (First Preparatory) — Unit 1: A World of Work</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (22)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (30)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (20)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">A World of Work</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Supplementary practice draft — pending official textbook review</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 1 (First Preparatory)</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced)</span>
+          <span class="meta-tag">Unit: 1</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Native Audio Speech</span>
+          
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 22 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Complete context-rich ministerial sentences and verify mastery with 100% curriculum-authentic choices.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 30</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Unit 1: Stative vs. Action Verbs & Present Simple vs. Present Continuous</h2>
+        
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">1. Stative Verbs vs. Action Verbs (أفعال الحالة وأفعال الحركة)</h3>
+  <p><strong>Action (Dynamic) Verbs:</strong> Describe physical actions. Can be used in both simple and continuous tenses (<em>run, write, fix, build</em> &rarr; <em>He is fixing the car now.</em>)</p>
+  <p><strong>Stative (State) Verbs:</strong> Describe emotions, thoughts, senses, and possession. <strong>NEVER used in continuous (-ing) forms</strong>, even with 'now' or 'at the moment'!</p>
+  <ul>
+    <li><strong>Emotions:</strong> love, like, hate, prefer, want, need. <em>(e.g., I <strong>want</strong> water now. NOT: I am wanting.)</em></li>
+    <li><strong>Thoughts & Mental States:</strong> know, understand, believe, remember, think (opinion), mean. <em>(e.g., She <strong>understands</strong> the rule now.)</em></li>
+    <li><strong>Possession:</strong> have, own, belong, possess. <em>(e.g., This pen <strong>belongs</strong> to me.)</em></li>
+    <li><strong>Senses:</strong> see, hear, smell, taste, seem, appear. <em>(e.g., The food <strong>tastes</strong> delicious.)</em></li>
+  </ul>
+</div>
+<div class="grammar-rule-box">
+  <h3 style="color:var(--primary); font-size:1.25rem; font-weight:800;">2. Present Simple vs. Present Continuous Contrast</h3>
+  <table class="grammar-table">
+    <thead><tr><th>Present Simple (Habits, Permanent States, Facts)</th><th>Present Continuous (Temporary Actions Right Now)</th></tr></thead>
+    <tbody>
+      <tr><td>The mechanic <strong>repairs</strong> cars every day.</td><td>He <strong>is repairing</strong> this car at the moment.</td></tr>
+      <tr><td>Veterinarians <strong>love</strong> animals. (Stative verb)</td><td>The vet <strong>is examining</strong> the puppy now. (Action verb)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Unit Grammar Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Targeted questions strictly examining Unit 1: Stative vs. Action Verbs & Present Simple vs. Present Continuous without out-of-scope rules.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 20</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Supplementary Reading Practice</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the passage using your device's speech voice.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Full ministerial standard assessment covering all four core language skills.</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027</div>
+  </footer>
+
+  <script>
+    const vocabData = [{"word": "veterinarian", "pos": "noun", "arabic": "طبيب بيطري", "def": "A doctor who specializes in treating diseased animals.", "example": "The veterinarian treated the injured dog at the clinic.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">VE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "architect", "pos": "noun", "arabic": "مهندس معماري", "def": "A professional person who designs buildings and houses.", "example": "The architect drew the blue-prints for our new school.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "journalist", "pos": "noun", "arabic": "صحفي / إعلامي", "def": "A person who writes news reports for newspapers and TV.", "example": "The investigative journalist interviewed the education minister.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">JO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "mechanic", "pos": "noun", "arabic": "ميكانيكي سيارات", "def": "A skilled worker who repairs engines and vehicles.", "example": "The mechanic fixed the car engine using specialized tools.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">ME</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "tour guide", "pos": "noun", "arabic": "مرشد سياحي", "def": "A person who leads tourists and explains historic monuments.", "example": "The knowledgeable tour guide showed visitors the Valley of the Kings.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">TO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "receptionist", "pos": "noun", "arabic": "موظف استقبال", "def": "A person employed to welcome visitors and answer calls.", "example": "The polite receptionist gave us our hotel room keys.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "firefighter", "pos": "noun", "arabic": "رجل إطفاء", "def": "A person whose job is to extinguish hazardous fires.", "example": "The brave firefighter rescued the cat from the burning house.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">FI</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "accountant", "pos": "noun", "arabic": "محاسب مالي", "def": "A professional who inspects and maintains financial records.", "example": "The company accountant calculated the annual budget carefully.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AC</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "career", "pos": "noun", "arabic": "مهنة / مسار وظيفي", "def": "An occupation undertaken for a significant period of life.", "example": "Teaching English is a noble and fulfilling lifelong career.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "salary", "pos": "noun", "arabic": "راتب شهري", "def": "A fixed regular payment earned for work or services.", "example": "Employees receive their monthly salary on the final day.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SA</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "skills", "pos": "noun", "arabic": "مهارات وقدرات", "def": "The ability to do something well through knowledge and practice.", "example": "Coding and public speaking are essential 21st-century skills.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">SK</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "qualifications", "pos": "noun", "arabic": "مؤهلات دراسية", "def": "Official academic passes or certificates needed for a job.", "example": "University degrees are mandatory qualifications for medicine.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">QU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "ambitious", "pos": "adjective", "arabic": "طموح", "def": "Having a strong desire for success, achievement, and distinction.", "example": "Ambitious learners study diligently to achieve their future goals.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">AM</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "creative", "pos": "adjective", "arabic": "مبتكر / مبدع", "def": "Having the ability to produce original and imaginative ideas.", "example": "The creative artist designed a breathtaking modern poster.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CR</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "punctual", "pos": "adjective", "arabic": "منضبط في المواعيد", "def": "Doing something or arriving at the exact agreed time.", "example": "Being punctual is an indispensable trait of a reliable teacher.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">PU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "responsible", "pos": "adjective", "arabic": "مسؤول ومعتمد عليه", "def": "Having an obligation to do something and being trustworthy.", "example": "Older brothers are responsible for taking care of younger siblings.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">RE</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "experience", "pos": "noun", "arabic": "خبرة عملية", "def": "Practical contact with and observation of facts or events.", "example": "She gained five years of practical teaching experience in Cairo.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">EX</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "colleague", "pos": "noun", "arabic": "زميل في العمل", "def": "A person with whom one works in a profession or business.", "example": "Mr. Mohammad collaborates warmly with his teaching colleagues.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">CO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "office", "pos": "noun", "arabic": "مكتب عمل", "def": "A room, set of rooms, or building used for commercial work.", "example": "The architect works inside a spacious, well-lit modern office.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">OF</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "interview", "pos": "noun", "arabic": "مقابلة توظيف", "def": "A formal oral consultation to evaluate a job applicant.", "example": "He dressed formally for his job interview at the school.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"32\" cy=\"42\" r=\"12\" fill=\"#3b82f6\"/><path d=\"M16 78 c0 -12 7 -18 16 -18 s16 6 16 18 z\" fill=\"#1d4ed8\"/><circle cx=\"68\" cy=\"42\" r=\"12\" fill=\"#10b981\"/><path d=\"M52 78 c0 -12 7 -18 16 -18 s16 6 16 18 z\" fill=\"#047857\"/><rect x=\"46\" y=\"48\" width=\"8\" height=\"18\" rx=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "duty", "pos": "noun", "arabic": "واجب وظيفي", "def": "A moral or legal obligation; a task required by one's job.", "example": "Grading homework and mentoring pupils is a teacher's duty.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">DU</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}, {"word": "workplace", "pos": "noun", "arabic": "مقر / بيئة العمل", "def": "A place where people work, such as an office or laboratory.", "example": "A peaceful workplace enhances focus, creativity, and productivity.", "svg": "<svg viewBox=\"0 0 100 100\" class=\"vocab-img\"><circle cx=\"50\" cy=\"50\" r=\"44\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"3\"/><text x=\"50\" y=\"58\" font-size=\"28\" font-weight=\"bold\" fill=\"#1e3a8a\" text-anchor=\"middle\" font-family=\"sans-serif\">WO</text><circle cx=\"50\" cy=\"22\" r=\"4\" fill=\"#f59e0b\"/></svg>"}];
+    const vocabQuizData = [{"question":"Which vocabulary word is defined as: 'A doctor who specializes in treating diseased animals.'?","options":["veterinarian","workplace","tour guide","creative"],"correct":0,"explanation":"'veterinarian' (طبيب بيطري) is the official curriculum definition."},{"question":"Which vocabulary word is defined as: 'A professional person who designs buildings and houses.'?","options":["interview","architect","receptionist","skills"],"correct":1,"explanation":"'architect' (مهندس معماري) is the official curriculum definition."},{"question":"Which vocabulary word is defined as: 'A person who writes news reports for newspapers and TV.'?","options":["mechanic","journalist","receptionist","firefighter"],"correct":1,"explanation":"'journalist' (صحفي / إعلامي) is the official curriculum definition."},{"question":"Which vocabulary word is defined as: 'A skilled worker who repairs engines and vehicles.'?","options":["responsible","mechanic","salary","duty"],"correct":1,"explanation":"'mechanic' (ميكانيكي سيارات) is the official curriculum definition."},{"question":"Which vocabulary word is defined as: 'A person who leads tourists and explains historic monuments.'?","options":["receptionist","accountant","tour guide","ambitious"],"correct":2,"explanation":"'tour guide' (مرشد سياحي) is the official curriculum definition."},{"question":"Complete the context: \"The polite _______ gave us our hotel room keys.\"","options":["experience","ambitious","accountant","receptionist"],"correct":3,"explanation":"'receptionist' (موظف استقبال) correctly completes the sentence."},{"question":"Complete the context: \"The brave _______ rescued the cat from the burning house.\"","options":["experience","firefighter","ambitious","duty"],"correct":1,"explanation":"'firefighter' (رجل إطفاء) correctly completes the sentence."},{"question":"Complete the context: \"The company _______ calculated the annual budget carefully.\"","options":["tour guide","veterinarian","accountant","qualifications"],"correct":2,"explanation":"'accountant' (محاسب مالي) correctly completes the sentence."},{"question":"Complete the context: \"Teaching English is a noble and fulfilling lifelong _______.\"","options":["accountant","office","salary","career"],"correct":3,"explanation":"'career' (مهنة / مسار وظيفي) correctly completes the sentence."},{"question":"Complete the context: \"Employees receive their monthly _______ on the final day.\"","options":["salary","accountant","tour guide","journalist"],"correct":0,"explanation":"'salary' (راتب شهري) correctly completes the sentence."},{"question":"Complete the context: \"Coding and public speaking are essential 21st-century _______.\"","options":["mechanic","skills","colleague","creative"],"correct":1,"explanation":"'skills' (مهارات وقدرات) correctly completes the sentence."},{"question":"Complete the context: \"University degrees are mandatory _______ for medicine.\"","options":["punctual","office","qualifications","journalist"],"correct":2,"explanation":"'qualifications' (مؤهلات دراسية) correctly completes the sentence."},{"question":"Complete the context: \"_______ learners study diligently to achieve their future goals.\"","options":["responsible","ambitious","office","skills"],"correct":1,"explanation":"'ambitious' (طموح) correctly completes the sentence."},{"question":"Complete the context: \"The _______ artist designed a breathtaking modern poster.\"","options":["experience","career","creative","qualifications"],"correct":2,"explanation":"'creative' (مبتكر / مبدع) correctly completes the sentence."},{"question":"Complete the context: \"Being _______ is an indispensable trait of a reliable teacher.\"","options":["interview","ambitious","punctual","mechanic"],"correct":2,"explanation":"'punctual' (منضبط في المواعيد) correctly completes the sentence."},{"question":"Complete the context: \"Older brothers are _______ for taking care of younger siblings.\"","options":["workplace","ambitious","responsible","receptionist"],"correct":2,"explanation":"'responsible' (مسؤول ومعتمد عليه) correctly completes the sentence."},{"question":"Complete the context: \"She gained five years of practical teaching _______ in Cairo.\"","options":["duty","veterinarian","experience","creative"],"correct":2,"explanation":"'experience' (خبرة عملية) correctly completes the sentence."},{"question":"Complete the context: \"Mr. Mohammad collaborates warmly with his teaching _______s.\"","options":["receptionist","mechanic","punctual","colleague"],"correct":3,"explanation":"'colleague' (زميل في العمل) correctly completes the sentence."},{"question":"Complete the context: \"The architect works inside a spacious, well-lit modern _______.\"","options":["office","qualifications","duty","journalist"],"correct":0,"explanation":"'office' (مكتب عمل) correctly completes the sentence."},{"question":"Complete the context: \"He dressed formally for his job _______ at the school.\"","options":["interview","receptionist","accountant","journalist"],"correct":0,"explanation":"'interview' (مقابلة توظيف) correctly completes the sentence."},{"question":"Complete the context: \"Grading homework and mentoring pupils is a teacher's _______.\"","options":["duty","receptionist","career","architect"],"correct":0,"explanation":"'duty' (واجب وظيفي) correctly completes the sentence."},{"question":"Complete the context: \"A peaceful _______ enhances focus, creativity, and productivity.\"","options":["journalist","office","workplace","punctual"],"correct":2,"explanation":"'workplace' (مقر / بيئة العمل) correctly completes the sentence."},{"question":"Complete the context: \"The _______ treated the injured dog at the clinic.\"","options":["tour guide","duty","colleague","veterinarian"],"correct":3,"explanation":"'veterinarian' (طبيب بيطري) correctly completes the sentence."},{"question":"Complete the context: \"The _______ drew the blue-prints for our new school.\"","options":["colleague","journalist","interview","architect"],"correct":3,"explanation":"'architect' (مهندس معماري) correctly completes the sentence."},{"question":"Complete the context: \"The investigative _______ interviewed the education minister.\"","options":["responsible","journalist","tour guide","salary"],"correct":1,"explanation":"'journalist' (صحفي / إعلامي) correctly completes the sentence."},{"question":"Complete the context: \"The _______ fixed the car engine using specialized tools.\"","options":["office","mechanic","salary","experience"],"correct":1,"explanation":"'mechanic' (ميكانيكي سيارات) correctly completes the sentence."},{"question":"Complete the context: \"The knowledgeable _______ showed visitors the Valley of the Kings.\"","options":["mechanic","tour guide","punctual","accountant"],"correct":1,"explanation":"'tour guide' (مرشد سياحي) correctly completes the sentence."},{"question":"Which person welcomes visitors and answers questions at the front desk of a hotel?","options":["receptionist","tour guide","journalist","accountant"],"correct":0,"explanation":"receptionist تعني موظف الاستقبال الذي يرحب بالزوار ويجيب عن استفساراتهم."},{"question":"Which person is trained to put out fires and rescue people?","options":["firefighter","mechanic","veterinarian","architect"],"correct":0,"explanation":"firefighter تعني رجل إطفاء مدربًا على إخماد الحرائق وإنقاذ الناس."},{"question":"Which professional prepares and checks financial records?","options":["accountant","receptionist","journalist","tour guide"],"correct":0,"explanation":"accountant تعني محاسبًا يتولى إعداد ومراجعة السجلات المالية."}];
+    const grammarQuizData = [{"question":"I _______ the difficult mathematics equation right now.","options":["understanding","understand","understands","am understanding"],"correct":1,"explanation":"Stative verb 'understand' cannot be used in continuous form."},{"question":"Listen! The architect _______ the new project to his client.","options":["explain","is explaining","explains","explained"],"correct":1,"explanation":"Action verb with keyword 'Listen!' takes Present Continuous (is explaining)."},{"question":"This luxurious sports car _______ to my uncle.","options":["are belonging","belong","belongs","is belonging"],"correct":2,"explanation":"Stative verb of possession 'belong' takes Present Simple with singular -s."},{"question":"She _______ to study medicine at Cairo University in the future.","options":["wants","want","are wanting","is wanting"],"correct":0,"explanation":"Stative verb of desire 'want' cannot take -ing form."},{"question":"The mechanic _______ the vehicle's engine at this moment.","options":["is repairing","repaired","repair","repairs"],"correct":0,"explanation":"Action verb happening 'at this moment' takes is + v-ing."},{"question":"Look! The brave firefighters _______ the blazing fire.","options":["are extinguishing","extinguished","extinguish","extinguishes"],"correct":0,"explanation":"Action verb with 'Look!' takes are + v-ing."},{"question":"Do you _______ this man standing near the reception desk?","options":["are knowing","knows","knowing","know"],"correct":3,"explanation":"Stative verb 'know' takes base form after auxiliary 'Do you'."},{"question":"The soup _______ wonderful; what ingredients did you use?","options":["smells","is smelling","are smelling","smell"],"correct":0,"explanation":"Sensory stative verb 'smell' takes singular -s (smells)."},{"question":"My father _______ three foreign languages fluently.","options":["are knowing","know","knows","is knowing"],"correct":2,"explanation":"Mental state verb 'know' takes Present Simple with singular -s."},{"question":"Why _______ you looking at me so inquisitively?","options":["are","does","is","do"],"correct":0,"explanation":"Continuous question with action verb 'looking' takes 'are you'."},{"question":"Hany _______ like eating junk food because he prioritizes fitness.","options":["aren't","doesn't","don't","isn't"],"correct":1,"explanation":"Stative verb 'like' in negative takes doesn't + like."},{"question":"They _______ their accountant in the conference room right now.","options":["meets","met","are meeting","meet"],"correct":2,"explanation":"'meet' here is an arranged physical action taking are + meeting."},{"question":"What _______ this difficult English word mean?","options":["is","do","does","are"],"correct":2,"explanation":"Stative verb 'mean' requires present simple auxiliary 'does'."},{"question":"I _______ my keys; can you help me find them?","options":["are needing","needs","need","am needing"],"correct":2,"explanation":"Stative verb 'need' cannot be used in continuous tense."},{"question":"The receptionist _______ a phone call to confirm a reservation now.","options":["make","made","is making","makes"],"correct":2,"explanation":"Action verb happening 'now' takes is + making."},{"question":"We _______ that education is the most powerful tool for progress.","options":["believed","believe","believes","are believing"],"correct":1,"explanation":"Stative verb 'believe' takes base form in Present Simple."},{"question":"Mr. Mohammad _______ English to preparatory students every morning.","options":["teach","teaching","is teaching","teaches"],"correct":3,"explanation":"Routine daily habit takes Present Simple (teaches)."},{"question":"At present, our school _______ a high-tech science laboratory.","options":["build","builds","built","is building"],"correct":3,"explanation":"Temporary progressive project takes is + building."},{"question":"She _______ happy today; did she pass her official exams?","options":["seems","seem","seeming","is seeming"],"correct":0,"explanation":"Stative verb 'seem' cannot take continuous form (seems)."},{"question":"How often _______ you check your business emails?","options":["have","do","is","are"],"correct":1,"explanation":"Habitual frequency question takes auxiliary 'do you check'."}];;
+    const readingData = {"title": "Inspiring Careers for the 21st Century", "paragraphs": ["Choosing an inspiring future career requires understanding your personal passions, creative talents, and core qualifications. In Egypt's expanding economy, diverse professional paths offer young generations rewarding opportunities. Architects design sustainable eco-friendly buildings, while software engineers develop innovative mobile apps that solve community challenges.", "Veterinarians care for domestic pets and agricultural livestock, ensuring public health and safety. Dedicated journalists report truthful news to educate citizens and foster democratic values. Regardless of the field, being punctual, responsible, and adaptable are essential workplace attributes.", "Modern career advisors emphasize that lifelong learning and acquiring multilingual communication skills open boundless international doors. By cultivating ambition and continuous curiosity, preparatory students can build flourishing careers that serve their nation and fulfill their potential."], "questions": [{"question": "What is essential when selecting a future career path?", "options": ["Understanding personal passions, skills, and qualifications", "Choosing only the easiest job", "Working without qualifications", "Avoiding all responsibilities"], "correct": 0, "explanation": "Career choice requires aligning passions, talents, and qualifications."}, {"question": "What role do sustainable architects play in modern Egypt?", "options": ["Designing eco-friendly, energy-efficient buildings", "Demolishing historical buildings", "Painting cars in garages", "Fixing electrical wires in streets"], "correct": 0, "explanation": "Architects design sustainable buildings and modern infrastructure."}, {"question": "Why is the role of veterinarians vital for society?", "options": ["They treat animals and safeguard public health", "They manage financial budgets", "They design clothing", "They direct traffic on roads"], "correct": 0, "explanation": "Veterinarians care for animals and protect health."}, {"question": "Which professional traits are highlighted as indispensable in any workplace?", "options": ["Being punctual, responsible, and adaptable", "Being late and disorganized", "Arriving without preparation", "Refusing teamwork"], "correct": 0, "explanation": "Punctuality, responsibility, and adaptability are critical."}, {"question": "How do multilingual communication skills benefit young professionals?", "options": ["They open boundless international and career opportunities", "They cause confusion in the office", "They reduce salary potential", "They stop people from traveling"], "correct": 0, "explanation": "Multilingual skills expand global career avenues."}]};
+    const listeningData = {"title": "A Job Interview Consultation", "dialogue": [{"speaker": "Hany", "text": "Good morning, Mr. Tarek. Are you interviewing candidates for the junior accountant position today?"}, {"speaker": "Mr. Tarek", "text": "Good morning, Hany. Yes, we are evaluating three highly qualified university graduates this morning."}, {"speaker": "Hany", "text": "What key qualifications is the firm looking for?"}, {"speaker": "Mr. Tarek", "text": "We need someone who understands financial software, speaks fluent English, and possesses exceptional organizational skills."}, {"speaker": "Hany", "text": "Is prior work experience mandatory for entry-level applicants?"}, {"speaker": "Mr. Tarek", "text": "Practical internship experience is desirable, but ambitious and punctual character matters most."}], "questions": [{"question": "Which professional vacancy is the firm interviewing for?", "options": ["Junior accountant", "Tour guide", "Civil engineer", "Veterinarian"], "correct": 0, "explanation": "They are interviewing for a junior accountant."}, {"question": "How many candidates are being evaluated this morning?", "options": ["Three graduates", "Ten applicants", "Only one person", "None"], "correct": 0, "explanation": "Mr. Tarek mentions evaluating three graduates."}, {"question": "What technical qualification is required for the position?", "options": ["Proficiency in financial software and fluent English", "Mechanical repair skills", "Cooking expertise", "Sports coaching skills"], "correct": 0, "explanation": "The position requires financial software knowledge and fluent English."}, {"question": "What personal character traits does Mr. Tarek value most?", "options": ["Being ambitious, reliable, and punctual", "Being stubborn and noisy", "Demanding an excessive salary", "Arriving late to work"], "correct": 0, "explanation": "Ambitious and punctual character is valued most."}, {"question": "Is extensive prior work experience strictly mandatory?", "options": ["No, internships are helpful but character matters more", "Yes, at least twenty years", "Yes, applicants must be retired", "Experience is forbidden"], "correct": 0, "explanation": "Internships are desirable, but not an absolute mandate."}]};
+    const pastExamsData = null;
+    const examData = [{"question": "Choose the correct word: \"The _______ treated the injured dog at the clinic.\"", "options": ["interview", "workplace", "veterinarian", "punctual"], "correct": 2, "explanation": "Target vocabulary: 'veterinarian' (طبيب بيطري)."}, {"question": "Choose the correct word: \"The _______ drew the blue-prints for our new school.\"", "options": ["colleague", "skills", "mechanic", "architect"], "correct": 3, "explanation": "Target vocabulary: 'architect' (مهندس معماري)."}, {"question": "Choose the correct word: \"The investigative _______ interviewed the education minister.\"", "options": ["duty", "accountant", "journalist", "interview"], "correct": 2, "explanation": "Target vocabulary: 'journalist' (صحفي / إعلامي)."}, {"question": "Choose the correct word: \"The _______ fixed the car engine using specialized tools.\"", "options": ["skills", "mechanic", "journalist", "qualifications"], "correct": 1, "explanation": "Target vocabulary: 'mechanic' (ميكانيكي سيارات)."}, {"question": "Choose the correct word: \"The knowledgeable _______ showed visitors the Valley of the Kings.\"", "options": ["punctual", "tour guide", "creative", "receptionist"], "correct": 1, "explanation": "Target vocabulary: 'tour guide' (مرشد سياحي)."}, {"question": "Choose the correct word: \"The polite _______ gave us our hotel room keys.\"", "options": ["duty", "journalist", "tour guide", "receptionist"], "correct": 3, "explanation": "Target vocabulary: 'receptionist' (موظف استقبال)."}, {"question": "Choose the correct word: \"The brave _______ rescued the cat from the burning house.\"", "options": ["skills", "firefighter", "experience", "duty"], "correct": 1, "explanation": "Target vocabulary: 'firefighter' (رجل إطفاء)."}, {"question": "Choose the correct word: \"The company _______ calculated the annual budget carefully.\"", "options": ["receptionist", "accountant", "responsible", "colleague"], "correct": 1, "explanation": "Target vocabulary: 'accountant' (محاسب مالي)."}, {"question": "Choose the correct word: \"Teaching English is a noble and fulfilling lifelong _______.\"", "options": ["duty", "experience", "creative", "career"], "correct": 3, "explanation": "Target vocabulary: 'career' (مهنة / مسار وظيفي)."}, {"question": "Choose the correct word: \"Employees receive their monthly _______ on the final day.\"", "options": ["duty", "salary", "qualifications", "receptionist"], "correct": 1, "explanation": "Target vocabulary: 'salary' (راتب شهري)."}, {"question": "I _______ the difficult mathematics equation right now.", "options": ["understanding", "understand", "understands", "am understanding"], "correct": 1, "explanation": "Stative verb 'understand' cannot be used in continuous form."}, {"question": "Listen! The architect _______ the new project to his client.", "options": ["explain", "is explaining", "explains", "explained"], "correct": 1, "explanation": "Action verb with keyword 'Listen!' takes Present Continuous (is explaining)."}, {"question": "This luxurious sports car _______ to my uncle.", "options": ["are belonging", "belong", "belongs", "is belonging"], "correct": 2, "explanation": "Stative verb of possession 'belong' takes Present Simple with singular -s."}, {"question": "She _______ to study medicine at Cairo University in the future.", "options": ["wants", "want", "are wanting", "is wanting"], "correct": 0, "explanation": "Stative verb of desire 'want' cannot take -ing form."}, {"question": "The mechanic _______ the vehicle's engine at this moment.", "options": ["is repairing", "repaired", "repair", "repairs"], "correct": 0, "explanation": "Action verb happening 'at this moment' takes is + v-ing."}, {"question": "Look! The brave firefighters _______ the blazing fire.", "options": ["are extinguishing", "extinguished", "extinguish", "extinguishes"], "correct": 0, "explanation": "Action verb with 'Look!' takes are + v-ing."}, {"question": "Do you _______ this man standing near the reception desk?", "options": ["are knowing", "knows", "knowing", "know"], "correct": 3, "explanation": "Stative verb 'know' takes base form after auxiliary 'Do you'."}, {"question": "The soup _______ wonderful; what ingredients did you use?", "options": ["smells", "is smelling", "are smelling", "smell"], "correct": 0, "explanation": "Sensory stative verb 'smell' takes singular -s (smells)."}, {"question": "My father _______ three foreign languages fluently.", "options": ["are knowing", "know", "knows", "is knowing"], "correct": 2, "explanation": "Mental state verb 'know' takes Present Simple with singular -s."}, {"question": "Why _______ you looking at me so inquisitively?", "options": ["are", "does", "is", "do"], "correct": 0, "explanation": "Continuous question with action verb 'looking' takes 'are you'."}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to New Hello Plus (Advanced) for Prep 1 (First Preparatory), Unit 1: A World of Work. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, past: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), past: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      if (!container || !quizData) return;
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.gov ? '<span class="gov-badge">' + q.gov + '</span>' : ''}${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'past') sourceList = pastExamsData;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'past') {
+        const b = document.getElementById('pastExamsScore');
+        if (b) b.innerText = `Score: ${scores.past} / ${pastExamsData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for ${document.title}.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      if (pastExamsData) {
+        renderQuiz('pastExamsContainer', pastExamsData, 'pastExamsScore', 'past');
+      }
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

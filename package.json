@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "lint": "vite build",
-    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs && node scripts/test-gemini-config.mjs && node scripts/test-tts-voice-selection.mjs && node scripts/test-extraction-quality.mjs && node scripts/validate-approved-unit-drafts.mjs",
+    "test": "node scripts/test-unit-quality.mjs && node scripts/test-storage-hardening.mjs && node scripts/test-navigation-and-launch.mjs && node scripts/test-student-profile-store.mjs && node scripts/test-prep-assessment-bridge.mjs && node --check scripts/build-preparatory-vocabulary.mjs && node scripts/test-gemini-config.mjs && node scripts/test-tts-voice-selection.mjs && node scripts/test-extraction-quality.mjs && node scripts/validate-approved-unit-drafts.mjs && node scripts/test-preparatory-learning.mjs && node --check scripts/prep2-interactive-enhancement.js && node scripts/validate-prep2-new-hello-review-layer.mjs && node scripts/validate-prep2-plus-grammar.mjs && node scripts/validate-prep3-plus-vocabulary.mjs && node scripts/validate-prep1-plus-grammar.mjs && node scripts/validate-prep1-new-hello.mjs && node scripts/validate-prep3-new-hello-security.mjs && node scripts/validate-prep3-new-hello-content.mjs && node scripts/validate-prep3-new-hello-navigation.mjs && node scripts/validate-prep1-new-hello-navigation.mjs && node scripts/test-android-downloads.mjs",
     "test:nav": "node scripts/test-navigation-and-launch.mjs",
     "test:storage": "node scripts/test-storage-hardening.mjs",
     "validate:unit-quality": "node scripts/test-unit-quality.mjs",
@@ -25,12 +25,17 @@
     "generate:unit": "node scripts/generate-interactive-unit.mjs",
     "generate:curriculum-batch": "node scripts/generate-interactive-curriculum-batch.mjs",
     "approve:unit": "node scripts/approve-unit-draft.mjs",
-    "validate:approved-units": "node scripts/validate-approved-unit-drafts.mjs"
+    "validate:approved-units": "node scripts/validate-approved-unit-drafts.mjs",
+    "prebuild": "node scripts/build-preparatory-vocabulary.mjs",
+    "validate:prep2-new-hello": "node scripts/validate-prep2-new-hello-review-layer.mjs",
+    "postbuild": "node scripts/validate-preparatory-vocabulary-output.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
     "@capacitor/core": "^7.4.3",
-    "@capacitor-community/text-to-speech": "^6.1.0"
+    "@capacitor-community/text-to-speech": "^6.1.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.3",

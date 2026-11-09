@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prep 2 New Hello Plus — Unit 4: Protecting Our Habitat | EngliMensh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a; --primary-light: #3b82f6; --primary-dark: #172554;
+      --accent: #f59e0b; --success: #10b981; --danger: #ef4444;
+      --bg: #f8fafc; --card-bg: #ffffff; --text: #0f172a; --text-muted: #64748b;
+      --border: #e2e8f0; --radius: 14px;
+      --shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    .arabic { font-family: 'Cairo', sans-serif; direction: rtl; }
+    header { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; padding: 1.25rem 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 18px rgba(0,0,0,0.12); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .brand-title { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .brand-badge { background: rgba(255,255,255,0.18); font-size: 0.72rem; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; font-weight: 700; color: #93c5fd; }
+    .header-sub { font-size: 0.85rem; color: #cbd5e1; margin-top: 3px; }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+    .tab-btn { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.15); padding: 7px 13px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.825rem; white-space: nowrap; transition: 0.2s; }
+    .tab-btn:hover { background: rgba(255,255,255,0.22); color: white; }
+    .tab-btn.active { background: var(--accent); color: #1e1b4b; border-color: var(--accent); font-weight: 700; }
+    main { max-width: 1200px; width: 100%; margin: 1.5rem auto; padding: 0 1.25rem; flex: 1; }
+    .section-view { display: none; animation: fadeIn 0.25s ease-in-out; }
+    .section-view.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-banner { background: white; border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .hero-title { font-size: 1.55rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.35rem; }
+    .hero-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+    .meta-tag { background: #eff6ff; color: var(--primary); padding: 4px 10px; border-radius: 7px; font-size: 0.8rem; font-weight: 600; border: 1px solid #bfdbfe; }
+    
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.25rem; }
+    .vocab-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.75rem; transition: all 0.25s ease; }
+    .vocab-card:hover { transform: translateY(-3px); box-shadow: 0 14px 22px -5px rgba(30, 58, 138, 0.12); border-color: #93c5fd; }
+    .vocab-top-card { display: flex; align-items: center; gap: 14px; }
+    .vocab-visual-box { width: 74px; height: 74px; min-width: 74px; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #dbeafe; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+    .vocab-img { width: 100%; height: 100%; object-fit: contain; }
+    .vocab-main-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .vocab-header-inline { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .vocab-word-title { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+    .vocab-badge-pos { font-size: 0.7rem; background: #e2e8f0; color: #334155; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; font-weight: 700; }
+    .vocab-arabic-highlight { font-size: 1.15rem; font-weight: 700; color: #047857; margin-top: 3px; }
+    .audio-btn { background: #f1f5f9; border: none; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--primary); font-size: 0.95rem; transition: 0.2s; }
+    .audio-btn:hover { background: var(--primary-light); color: white; transform: scale(1.1); }
+    .vocab-definition { font-size: 0.88rem; color: var(--text-muted); line-height: 1.45; }
+    .vocab-example { background: #f8fafc; border-left: 3px solid var(--primary-light); padding: 0.5rem 0.75rem; border-radius: 0 7px 7px 0; font-size: 0.83rem; color: #334155; font-style: italic; }
+    
+    .quiz-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .quiz-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding-bottom: 0.85rem; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+    .score-badge { font-size: 1rem; font-weight: 700; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 9px; border: 1px solid #bfdbfe; }
+    .question-item { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px dashed var(--border); }
+    .q-text { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; display: flex; gap: 8px; }
+    .q-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem; }
+    .option-btn { background: #f8fafc; border: 1.5px solid var(--border); padding: 8px 12px; border-radius: 99px; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #334155; transition: 0.15s; }
+    .option-btn:hover:not(:disabled) { background: #f1f5f9; border-color: #cbd5e1; }
+    .option-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; }
+    .option-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .q-feedback { margin-top: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.86rem; display: none; line-height: 1.4; }
+    .q-feedback.show { display: block; }
+    .q-feedback.correct { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .q-feedback.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .grammar-content { background: white; border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 1.75rem; }
+    .grammar-rule-box { background: #f8fafc; border-left: 4px solid var(--primary-light); padding: 1.15rem; border-radius: 0 9px 9px 0; margin: 1.15rem 0; }
+    .grammar-table { width: 100%; border-collapse: collapse; margin: 1.15rem 0; font-size: 0.88rem; }
+    .grammar-table th { background: var(--primary-dark); color: white; padding: 9px 11px; text-align: left; }
+    .grammar-table td { padding: 9px 11px; border-bottom: 1px solid var(--border); }
+    .grammar-table tr:nth-child(even) { background: #f8fafc; }
+    .audio-player-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-radius: var(--radius); padding: 1.15rem; margin-bottom: 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; }
+    .play-btn { background: var(--accent); color: #1e1b4b; border: none; padding: 8px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .play-btn:hover { background: #fbbf24; }
+    .stop-btn { background: rgba(255,255,255,0.15); color: white; border: none; padding: 8px 12px; border-radius: 9px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+    .speed-select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 6px 9px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 0.85rem; }
+    .passage-box { background: #fbfcfe; border: 1px solid #cbd5e1; border-radius: var(--radius); padding: 1.5rem; font-size: 0.96rem; line-height: 1.7; color: #1e293b; margin-bottom: 1.5rem; }
+    footer { background: white; border-top: 1px solid var(--border); padding: 1.5rem; margin-top: auto; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    .footer-teacher { font-weight: 700; color: var(--primary-dark); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div>
+        <div class="brand-title">
+          <span>EngliMensh Premium</span>
+          <span class="brand-badge">New Hello Plus (Advanced/Language) • 2026/2027</span>
+        </div>
+        <div class="header-sub">Prep 2 New Hello Plus — Unit 4: Protecting Our Habitat</div>
+      </div>
+      <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('vocab')">🖼️ Visual Vocabulary (25)</button>
+        <button class="tab-btn" onclick="switchTab('vocab-quiz')">✍️ Vocab Quiz (25)</button>
+        <button class="tab-btn" onclick="switchTab('grammar')">📐 Grammar Guide</button>
+        <button class="tab-btn" onclick="switchTab('grammar-quiz')">📝 Grammar Quiz (12)</button>
+        <button class="tab-btn" onclick="switchTab('reading')">📰 Reading Skill</button>
+        <button class="tab-btn" onclick="switchTab('listening')">🎧 Listening Lab</button>
+        <button class="tab-btn" onclick="switchTab('exam')">🏆 Unit Final Exam</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Unit 4: Protecting Our Habitat</h1>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Practice draft aligned to this unit's recorded grammar focus — pending official-source review</p>
+        <div class="hero-meta">
+          <span class="meta-tag">Grade: Prep 2 New Hello Plus</span>
+          <span class="meta-tag">Track: New Hello Plus (Advanced/Language)</span>
+          <span class="meta-tag">Unit: 4</span>
+          <span class="meta-tag">🖼️ Interactive Visual Illustrations</span>
+          <span class="meta-tag">🔊 Audio Speech</span>
+        </div>
+      </div>
+      <div>
+        <button onclick="speakFullSummary()" class="play-btn">🔊 Play Unit Audio Overview</button>
+      </div>
+    </div>
+
+    <!-- Section 1: Visual Vocabulary Bank -->
+    <section id="vocab" class="section-view active">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.15rem;">
+        <h2 style="color: var(--primary-dark); font-weight: 800;">Target Vocabulary Bank (With Visual Illustrations)</h2>
+        <span style="font-weight: 600; color: var(--text-muted);">Total: 25 Words</span>
+      </div>
+      <div class="vocab-grid" id="vocabGridContainer"></div>
+    </section>
+
+    <!-- Section 2: Vocabulary Interactive Quiz -->
+    <section id="vocab-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Vocabulary Practice Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">20 Fill in the Gap questions + 5 Definition questions.</p>
+          </div>
+          <div class="score-badge" id="vocabQuizScore">Score: 0 / 25</div>
+        </div>
+        <div id="vocabQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Guide -->
+    <section id="grammar" class="section-view">
+      <div class="grammar-content">
+        <div class='grammar-rule-box'>
+          <h3 style="color: var(--primary-dark); margin-bottom: 0.5rem;">Second Conditional (Unreal/Hypothetical Scenarios)</h3>
+          <p class="arabic" style="margin-bottom: 1rem; color: #334155;">تُستخدم الحالة الشرطية الثانية للتعبير عن مواقف خيالية أو غير واقعية أو مستحيلة الحدوث في الحاضر، بالإضافة إلى إعطاء النصيحة.</p>
+          <table class='grammar-table'>
+            <thead><tr><th>Structure / الصيغة</th><th>Usage Rule / الاستخدام</th><th>Ministerial Example / مثال وزاري</th></tr></thead>
+            <tbody>
+              <tr><td><strong>If + Past Simple, Subject + would/could + Inf</strong></td><td>التعبير عن موقف افتراضي في الحاضر</td><td><code>If I lived near the sea, I would swim daily.</code></td></tr><tr><td><strong>If I were you, I would + Inf</strong></td><td>إعطاء النصيحة</td><td><code>If I were you, I would study harder.</code></td></tr><tr><td><strong>What would you do if + Past Simple?</strong></td><td>السؤال في الحالة الشرطية الثانية</td><td><code>What would you do if you found a lost cat?</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Grammar Interactive Quiz -->
+    <section id="grammar-quiz" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Grammar Mastery Assessment</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">12 focused multiple-choice questions for this unit's grammar focus. Draft for teacher review.</p>
+          </div>
+          <div class="score-badge" id="grammarQuizScore">Score: 0 / 12</div>
+        </div>
+        <div id="grammarQuizContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: Reading Comprehension -->
+    <section id="reading" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#e0e7ff; color:#3730a3; margin-bottom:5px; display:inline-block;">Ministry Reading Text</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="readingTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Audio Reading Reader</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Listen to the authentic passage read with native English pronunciation.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playReadingAudio()">▶ Play Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="readingSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+              <option value="1.15">1.15x</option>
+            </select>
+          </div>
+        </div>
+        <div class="passage-box" id="readingPassageContent"></div>
+        <h3 style="color: var(--primary-dark); margin: 1.5rem 0 0.85rem; font-weight: 800;">Critical Thinking & Comprehension Questions (5 Questions)</h3>
+        <div id="readingQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Listening Lab -->
+    <section id="listening" class="section-view">
+      <div class="quiz-card">
+        <div style="margin-bottom: 1.15rem;">
+          <span class="meta-tag" style="background:#fef3c7; color:#92400e; margin-bottom:5px; display:inline-block;">Listening Audio Studio</span>
+          <h2 style="color: var(--primary-dark); font-weight: 800;" id="listeningTitle"></h2>
+        </div>
+        <div class="audio-player-card">
+          <div>
+            <strong>Interactive Listening Track</strong>
+            <p style="font-size: 0.8rem; color:#cbd5e1;">Train your auditory comprehension skills.</p>
+          </div>
+          <div class="player-controls">
+            <button class="play-btn" onclick="playListeningAudio()">▶ Play Listening Audio</button>
+            <button class="stop-btn" onclick="stopAudio()">⏹ Stop</button>
+            <select class="speed-select" id="listeningSpeedSelect">
+              <option value="0.85">0.85x</option>
+              <option value="1" selected>1.0x</option>
+            </select>
+          </div>
+        </div>
+        <div style="background: #f1f5f9; padding: 0.85rem 1.15rem; border-radius: 9px; margin-bottom: 1.15rem;">
+          <button style="background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer;" onclick="toggleTranscript()">
+            👁️ Click to Toggle Listening Script (Read / Hide)
+          </button>
+          <div id="listeningTranscript" style="display:none; margin-top: 0.75rem; font-style:italic; line-height: 1.55; color:#334155;"></div>
+        </div>
+        <h3 style="color: var(--primary-dark); margin: 1.25rem 0 0.85rem; font-weight: 800;">Listening Comprehension Questions (5 Questions)</h3>
+        <div id="listeningQuestionsContainer"></div>
+      </div>
+    </section>
+
+    <!-- Section 7: Full Comprehensive Unit Exam -->
+    <section id="exam" class="section-view">
+      <div class="quiz-card">
+        <div class="quiz-header-bar">
+          <div>
+            <h2 style="color: var(--primary-dark); font-weight: 800;">Comprehensive Unit Evaluation Exam</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">Ministerial exam modeled after official past papers (20 Questions).</p>
+          </div>
+          <div class="score-badge" id="examScore">Exam Score: 0 / 20</div>
+        </div>
+        <div id="examContainer"></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="play-btn" style="margin: 0 auto; padding: 11px 22px; font-size: 1rem;" onclick="evaluateExamScore()">
+            📊 View Full Performance Certificate & Report
+          </button>
+          <div id="examSummaryModal" style="display:none; margin-top: 1.25rem; background: #eff6ff; padding: 1.25rem; border-radius: 11px; border: 2px solid #bfdbfe;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-teacher">EngliMensh Academic Platform • Created by Mr. Mohammad El-Menshawy</div>
+    <div>Senior English Language Teacher • Al Koon Model Schools</div>
+    <div>Official Egyptian Ministry Curriculum Specifications 2026 / 2027 — Prep 2 New Hello Plus</div>
+  </footer>
+
+  <script>
+    const vocabData = [{'word': 'conservation', 'pos': 'noun', 'arabic': 'حماية البيئة', 'def': 'Prevention of wasteful use of resources.', 'example': 'Forest conservation protects wildlife.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'endangered', 'pos': 'adj', 'arabic': 'مهدد بالانقراض', 'def': 'Seriously at risk of extinction.', 'example': 'Pandas are endangered animals.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'sanctuary', 'pos': 'noun', 'arabic': 'محمية / ملاذ آمن', 'def': 'A nature reserve for birds or animals.', 'example': 'The birds live safely in the sanctuary.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">SA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'ecosystem', 'pos': 'noun', 'arabic': 'نظام بيئي', 'def': 'A biological community of interacting organisms.', 'example': 'Plastic pollution harms the ecosystem.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EC</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'poaching', 'pos': 'noun', 'arabic': 'صيد غير مشروع', 'def': 'Illegal hunting or capturing of wild animals.', 'example': 'Poaching threatens rhinos.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'deforestation', 'pos': 'noun', 'arabic': 'قطع الأشجار / الغابات', 'def': 'The action of clearing a wide area of trees.', 'example': 'Deforestation causes soil erosion.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">DE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'biodiversity', 'pos': 'noun', 'arabic': 'تنوع بيولوجي', 'def': 'The variety of plant and animal life.', 'example': 'Rainforests boast high biodiversity.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">BI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'extinction', 'pos': 'noun', 'arabic': 'انقراض', 'def': 'The state or process of a species becoming extinct.', 'example': 'Dinosaurs faced complete extinction.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EX</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'wildlife', 'pos': 'noun', 'arabic': 'الحياة البرية', 'def': 'Wild animals collectively.', 'example': 'National parks safeguard wildlife.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">WI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'marine life', 'pos': 'noun', 'arabic': 'الحياة البحرية', 'def': 'Plants and animals that live in the ocean.', 'example': 'Oil spills destroy marine life.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">MA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'coral reef', 'pos': 'noun', 'arabic': 'شعاب مرجانية', 'def': 'A ridge of rock in the sea formed by growth of coral.', 'example': 'Diving near the coral reef is amazing.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">CO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'reserve', 'pos': 'noun', 'arabic': 'محمية طبيعية', 'def': 'A protected area for flora and fauna.', 'example': 'Ras Mohamed is a marine reserve.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'pollution', 'pos': 'noun', 'arabic': 'تلوث', 'def': 'The presence of harmful substances in environment.', 'example': 'Air pollution harms health.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PO</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'rehabilitation', 'pos': 'noun', 'arabic': 'إعادة تأهيل', 'def': 'Restoring something to its former state.', 'example': 'Animal rehabilitation centers treat injured wildlife.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'biosphere', 'pos': 'noun', 'arabic': 'غلاف حيوي', 'def': 'The regions of the surface occupied by living organisms.', 'example': "Earth's biosphere is delicate.", 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">BI</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'environmental', 'pos': 'adj', 'arabic': 'بيئي', 'def': 'Relating to the natural world.', 'example': 'We must solve environmental problems.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EN</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'naturalist', 'pos': 'noun', 'arabic': 'عالم طبيعة', 'def': 'An expert in or student of natural history.', 'example': 'The naturalist studied rare plants.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">NA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'ecological', 'pos': 'adj', 'arabic': 'بيئي / متعلق بفرع البيئة', 'def': 'Relating to ecology.', 'example': 'Deforestation creates ecological imbalance.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">EC</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'threatened', 'pos': 'adj', 'arabic': 'مهدد', 'def': 'Likely to occur or endanger.', 'example': 'The habitat is threatened by climate change.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">TH</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'preservation', 'pos': 'noun', 'arabic': 'الحفاظ على البيئة', 'def': 'Maintaining something in its original state.', 'example': 'Nature preservation is our duty.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">PR</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'fauna', 'pos': 'noun', 'arabic': 'مجموعة الحيوانات', 'def': 'The animals of a particular region.', 'example': 'Egyptian desert fauna includes foxes.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">FA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'flora', 'pos': 'noun', 'arabic': 'مجموعة النباتات', 'def': 'The plants of a particular region.', 'example': 'The mountain flora is unique.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">FL</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'habitat', 'pos': 'noun', 'arabic': 'موطن طبيعي', 'def': 'The natural home of an animal or plant.', 'example': "The forest is the bear's habitat.", 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">HA</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'species', 'pos': 'noun', 'arabic': 'فصيلة / أنواع', 'def': 'A group of living organisms.', 'example': 'Many species face habitat loss.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">SP</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}, {'word': 'renewable', 'pos': 'adj', 'arabic': 'متجدد', 'def': 'Not depleted by use.', 'example': 'Solar energy is renewable energy.', 'svg': '<svg viewBox="0 0 100 100" class="vocab-img"><circle cx="50" cy="50" r="44" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/><text x="50" y="58" font-size="24" font-weight="bold" fill="#1e3a8a" text-anchor="middle" font-family="sans-serif">RE</text><circle cx="50" cy="22" r="4" fill="#f59e0b"/></svg>'}];
+    const vocabQuizData = [{'question': 'Complete the sentence: "Forest _______ protects wildlife."', 'options': ['conservation', 'endangered', 'sanctuary', 'ecosystem'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'conservation' والتي تعني (حماية البيئة)."}, {'question': 'Complete the sentence: "Pandas are _______ animals."', 'options': ['endangered', 'conservation', 'sanctuary', 'ecosystem'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'endangered' والتي تعني (مهدد بالانقراض)."}, {'question': 'Complete the sentence: "The birds live safely in the _______."', 'options': ['sanctuary', 'conservation', 'endangered', 'ecosystem'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'sanctuary' والتي تعني (محمية / ملاذ آمن)."}, {'question': 'Complete the sentence: "Plastic pollution harms the _______."', 'options': ['ecosystem', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'ecosystem' والتي تعني (نظام بيئي)."}, {'question': 'Complete the sentence: "_______ threatens rhinos."', 'options': ['poaching', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'poaching' والتي تعني (صيد غير مشروع)."}, {'question': 'Complete the sentence: "_______ causes soil erosion."', 'options': ['deforestation', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'deforestation' والتي تعني (قطع الأشجار / الغابات)."}, {'question': 'Complete the sentence: "Rainforests boast high _______."', 'options': ['biodiversity', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'biodiversity' والتي تعني (تنوع بيولوجي)."}, {'question': 'Complete the sentence: "Dinosaurs faced complete _______."', 'options': ['extinction', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'extinction' والتي تعني (انقراض)."}, {'question': 'Complete the sentence: "National parks safeguard _______."', 'options': ['wildlife', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'wildlife' والتي تعني (الحياة البرية)."}, {'question': 'Complete the sentence: "Oil spills destroy _______."', 'options': ['marine life', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'marine life' والتي تعني (الحياة البحرية)."}, {'question': 'Complete the sentence: "Diving near the _______ is amazing."', 'options': ['coral reef', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'coral reef' والتي تعني (شعاب مرجانية)."}, {'question': 'Complete the sentence: "Ras Mohamed is a marine _______."', 'options': ['reserve', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'reserve' والتي تعني (محمية طبيعية)."}, {'question': 'Complete the sentence: "Air _______ harms health."', 'options': ['pollution', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'pollution' والتي تعني (تلوث)."}, {'question': 'Complete the sentence: "Animal _______ centers treat injured wildlife."', 'options': ['rehabilitation', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'rehabilitation' والتي تعني (إعادة تأهيل)."}, {'question': 'Complete the sentence: "Earth\'s _______ is delicate."', 'options': ['biosphere', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'biosphere' والتي تعني (غلاف حيوي)."}, {'question': 'Complete the sentence: "We must solve _______ problems."', 'options': ['environmental', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'environmental' والتي تعني (بيئي)."}, {'question': 'Complete the sentence: "The _______ studied rare plants."', 'options': ['naturalist', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'naturalist' والتي تعني (عالم طبيعة)."}, {'question': 'Complete the sentence: "Deforestation creates _______ imbalance."', 'options': ['ecological', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'ecological' والتي تعني (بيئي / متعلق بفرع البيئة)."}, {'question': 'Complete the sentence: "The habitat is _______ by climate change."', 'options': ['threatened', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'threatened' والتي تعني (مهدد)."}, {'question': 'Complete the sentence: "Nature _______ is our duty."', 'options': ['preservation', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "المفردة الصحيحة هي 'preservation' والتي تعني (الحفاظ على البيئة)."}, {'question': "Definition Question: What word means 'The animals of a particular region.'?", 'options': ['fauna', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'fauna' وتعني (مجموعة الحيوانات)."}, {'question': "Definition Question: What word means 'The plants of a particular region.'?", 'options': ['flora', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'flora' وتعني (مجموعة النباتات)."}, {'question': "Definition Question: What word means 'The natural home of an animal or plant.'?", 'options': ['habitat', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'habitat' وتعني (موطن طبيعي)."}, {'question': "Definition Question: What word means 'A group of living organisms.'?", 'options': ['species', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'species' وتعني (فصيلة / أنواع)."}, {'question': "Definition Question: What word means 'Not depleted by use.'?", 'options': ['renewable', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': "التعريف يخص كلمة 'renewable' وتعني (متجدد)."}];
+    const grammarQuizData = [{"question":"If I had more free time, I ______ a new language.","options":["would learn","will learn","learned","would learned"],"correct":0,"explanation":"الحالة الشرطية الثانية: If + الماضي البسيط، ثم would + المصدر."},{"question":"If she ______ harder, she would get better marks.","options":["studied","studies","will study","would study"],"correct":0,"explanation":"بعد If في الحالة الثانية نستخدم الماضي البسيط."},{"question":"If I were you, I ______ apologise.","options":["would","will","am","did"],"correct":0,"explanation":"النصيحة: If I were you, I would + المصدر."},{"question":"They would travel more if they ______ enough money.","options":["had","have","will have","would have"],"correct":0,"explanation":"جملة If تأخذ الماضي البسيط."},{"question":"If he knew the answer, he ______ us.","options":["would tell","will tell","tells","would told"],"correct":0,"explanation":"النتيجة: would + المصدر."},{"question":"If we lived near the beach, we ______ swimming every day.","options":["would go","will go","went","would went"],"correct":0,"explanation":"نتيجة افتراضية في الحاضر."},{"question":"If I ______ a famous writer, I would write adventure stories.","options":["were","am","will be","would be"],"correct":0,"explanation":"مع be في الحالة الثانية يمكن استخدام were لكل الضمائر."},{"question":"She would buy that laptop if it ______ cheaper.","options":["were","is","will be","would be"],"correct":0,"explanation":"شرط افتراضي: were في جملة If."},{"question":"What would you do if you ______ a wallet in the street?","options":["found","find","will find","would find"],"correct":0,"explanation":"بعد if نستخدم past simple."},{"question":"If they invited me, I ______ to the celebration.","options":["would go","will go","went","would went"],"correct":0,"explanation":"would + infinitive في جملة النتيجة."},{"question":"I wouldn't feel so tired if I ______ earlier.","options":["went to bed","go to bed","will go to bed","would go to bed"],"correct":0,"explanation":"الشرط يأخذ الماضي البسيط."},{"question":"If it ______ so hot, we would play outside.","options":["weren't","isn't","won't be","wouldn't be"],"correct":0,"explanation":"النفي في الحالة الثانية: weren't + complement."}];
+    const readingData = {"title":"Unit 4: Protecting Our Habitat — Supplementary Reading Practice","paragraphs":["A healthy habitat provides food, water and shelter for plants and animals. However, pollution, cutting down trees and wasting water can damage natural environments. Even small actions can make a difference when many people take part.","Students at Green School started a recycling project. They put paper and plastic in separate bins, planted trees and reminded classmates to turn off taps. After a few months, the school used less water and produced less rubbish."],"questions":[{"question":"What does a healthy habitat provide?","options":["Food, water and shelter","Cars and roads","Phones and computers","Books and uniforms"],"correct":0,"explanation":"الموطن الصحي يوفر الغذاء والماء والمأوى."},{"question":"Which action can damage habitats?","options":["Cutting down trees","Planting trees","Saving water","Recycling paper"],"correct":0,"explanation":"قطع الأشجار يضر بالبيئات الطبيعية."},{"question":"What did Green School start?","options":["A recycling project","A music competition","A computer shop","A travel club"],"correct":0,"explanation":"بدأت المدرسة مشروعًا لإعادة التدوير."},{"question":"How did students sort rubbish?","options":["They used separate bins","They burned everything","They put it in rivers","They left it in classrooms"],"correct":0,"explanation":"استخدم الطلاب صناديق منفصلة للورق والبلاستيك."},{"question":"What happened after a few months?","options":["The school used less water","The school wasted more water","The trees disappeared","The project stopped immediately"],"correct":0,"explanation":"استهلاك المياه والقمامة انخفضا."}]};
+    const listeningData = {"title":"Unit 4: Protecting Our Habitat — Supplementary Listening Dialogue","dialogue":[{"speaker":"Adam","text":"Our class is planning an environmental day."},{"speaker":"Mona","text":"What will we do?"},{"speaker":"Adam","text":"We will plant trees, clean the garden and put recycling bins near the classrooms."},{"speaker":"Mona","text":"I can make posters asking students to save water and electricity."},{"speaker":"Adam","text":"Great! Everyone can help protect our environment."}],"questions":[{"question":"What is the class planning?","options":["An environmental day","A football final","A shopping trip","A history exam"],"correct":0,"explanation":"الفصل يخطط ليوم بيئي."},{"question":"What will students plant?","options":["Trees","Flowers made of paper","Vegetables in the classroom","Plastic plants"],"correct":0,"explanation":"سيزرع الطلاب أشجارًا."},{"question":"Where will recycling bins be placed?","options":["Near classrooms","Inside the library only","At the bus station","On the school roof"],"correct":0,"explanation":"ستكون صناديق التدوير قرب الفصول."},{"question":"What will Mona make?","options":["Posters","Wooden chairs","School uniforms","A science robot"],"correct":0,"explanation":"مونا ستصمم ملصقات للتوعية."},{"question":"What is the main message?","options":["Everyone can protect the environment","Only teachers can recycle","Water is unlimited","Trees are not useful"],"correct":0,"explanation":"كل فرد يستطيع المساهمة في حماية البيئة."}]};
+    const examData = [{'question': '[Vocab Assessment] Choose the correct option: Prevention of wasteful use of resources.', 'options': ['conservation', 'endangered', 'sanctuary', 'ecosystem'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي conservation (حماية البيئة).'}, {'question': '[Vocab Assessment] Choose the correct option: Seriously at risk of extinction.', 'options': ['endangered', 'conservation', 'sanctuary', 'ecosystem'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي endangered (مهدد بالانقراض).'}, {'question': '[Vocab Assessment] Choose the correct option: A nature reserve for birds or animals.', 'options': ['sanctuary', 'conservation', 'endangered', 'ecosystem'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي sanctuary (محمية / ملاذ آمن).'}, {'question': '[Vocab Assessment] Choose the correct option: A biological community of interacting organisms.', 'options': ['ecosystem', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي ecosystem (نظام بيئي).'}, {'question': '[Vocab Assessment] Choose the correct option: Illegal hunting or capturing of wild animals.', 'options': ['poaching', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي poaching (صيد غير مشروع).'}, {'question': '[Vocab Assessment] Choose the correct option: The action of clearing a wide area of trees.', 'options': ['deforestation', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي deforestation (قطع الأشجار / الغابات).'}, {'question': '[Vocab Assessment] Choose the correct option: The variety of plant and animal life.', 'options': ['biodiversity', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي biodiversity (تنوع بيولوجي).'}, {'question': '[Vocab Assessment] Choose the correct option: The state or process of a species becoming extinct.', 'options': ['extinction', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي extinction (انقراض).'}, {'question': '[Vocab Assessment] Choose the correct option: Wild animals collectively.', 'options': ['wildlife', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي wildlife (الحياة البرية).'}, {'question': '[Vocab Assessment] Choose the correct option: Plants and animals that live in the ocean.', 'options': ['marine life', 'conservation', 'endangered', 'sanctuary'], 'correct': 0, 'explanation': 'الإجابة الصحيحة هي marine life (الحياة البحرية).'}, {'question': '[Grammar Assessment] While I _______ for the bus, it started to rain.', 'options': ['was waiting', 'waited', 'wait', 'am waiting'], 'correct': 0, 'explanation': 'قاعدة While يليه ماضي مستمر.'}, {'question': '[Grammar Assessment] When the phone rang, she _______ dinner.', 'options': ['was cooking', 'cooked', 'cooks', 'is cooking'], 'correct': 0, 'explanation': 'الحدث الذي كان مستمراً يأتي في الماضي المستمر.'}, {'question': '[Grammar Assessment] Look at those heavy dark clouds! It _______ rain.', 'options': ['is going to', 'will', 'rains', 'is raining'], 'correct': 0, 'explanation': 'التنبؤ بدليل يتطلب is going to.'}, {'question': '[Grammar Assessment] He _______ be rich; he lives in a huge palace and drives a Ferrari.', 'options': ['must', "can't", 'might', "shouldn't"], 'correct': 0, 'explanation': 'استنتاج مؤكد في الحاضر بـ must.'}, {'question': '[Grammar Assessment] She _______ be at home because I saw her at school a minute ago.', 'options': ["can't", 'must', 'might', 'could'], 'correct': 0, 'explanation': "استنتاج منفي مؤكد بـ can't."}, {'question': '[Grammar Assessment] If I saved enough money, I _______ a new smartphone.', 'options': ['would buy', 'will buy', 'bought', 'buy'], 'correct': 0, 'explanation': 'الحالة الشرطية الثانية: Past Simple -> would + Inf.'}, {'question': '[Grammar Assessment] If I were you, I _______ consult a doctor immediately.', 'options': ['would', 'will', 'can', 'may'], 'correct': 0, 'explanation': 'صيغة النصيحة في الحالة الشرطية الثانية.'}, {'question': '[Grammar Assessment] He stopped _______ a newspaper on his way to work.', 'options': ['to buy', 'buying', 'buy', 'bought'], 'correct': 0, 'explanation': 'Stop to + inf يعني توقف لكي يفعل شيئاً آخر.'}, {'question': '[Grammar Assessment] She stopped _______ sugar because her doctor advised her to.', 'options': ['eating', 'to eat', 'eat', 'ate'], 'correct': 0, 'explanation': 'Stop + V-ing يعني إقلاع وتوقف تام عن الفعل.'}, {'question': '[Grammar Assessment] Remember _______ your homework before going out.', 'options': ['to do', 'doing', 'do', 'did'], 'correct': 0, 'explanation': 'Remember + to + inf يعني التذكر قبل فعل الشيء.'}];
+
+    let synth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.section-view').forEach(s => s.classList.remove('active'));
+      const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+      const targetSec = document.getElementById(tabId);
+      if (targetSec) targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function speakText(text, rate = 1) {
+      if (!synth) return;
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = rate;
+      synth.speak(currentUtterance);
+    }
+
+    function stopAudio() { if (synth) synth.cancel(); }
+
+    function speakFullSummary() {
+      speakText("Welcome to Prep 2 New Hello Plus, Unit 4: Protecting Our Habitat. Prepared by Teacher Mohammad El-Menshawy.");
+    }
+
+    function renderVocab() {
+      const container = document.getElementById('vocabGridContainer');
+      container.innerHTML = vocabData.map((item, idx) => `
+        <div class="vocab-card">
+          <div class="vocab-top-card">
+            <div class="vocab-visual-box">
+              ${item.svg || ''}
+            </div>
+            <div class="vocab-main-meta">
+              <div class="vocab-header-inline">
+                <div class="vocab-word-title">
+                  ${item.word}
+                  <span class="vocab-badge-pos">${item.pos}</span>
+                </div>
+                <button class="audio-btn" onclick="speakText('${item.word.replace(/'/g, "\'")}')" title="Listen to pronunciation">🔊</button>
+              </div>
+              <div class="vocab-arabic-highlight arabic">${item.arabic}</div>
+            </div>
+          </div>
+          <p class="vocab-definition">${item.def}</p>
+          <div class="vocab-example">
+            <strong>Ex:</strong> "${item.example}"
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const scores = { vocab: 0, grammar: 0, reading: 0, listening: 0, exam: 0 };
+    const answered = { vocab: new Set(), grammar: new Set(), reading: new Set(), listening: new Set(), exam: new Set() };
+
+    function renderQuiz(containerId, quizData, scoreBadgeId, prefix) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = quizData.map((q, qIndex) => `
+        <div class="question-item" id="${prefix}-q-${qIndex}">
+          <div class="q-text">
+            <span>${qIndex + 1}.</span>
+            <span>${q.question}</span>
+          </div>
+          <div class="q-options">
+            ${q.options.map((opt, oIdx) => `
+              <button class="option-btn" onclick="handleQuizAnswer('${prefix}', ${qIndex}, ${oIdx}, ${q.correct})">
+                <span>${['A','B','C','D'][oIdx]}.</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-feedback" id="${prefix}-feed-${qIndex}"></div>
+        </div>
+      `).join('');
+    }
+
+    function handleQuizAnswer(prefix, qIdx, chosenIdx, correctIdx) {
+      if (answered[prefix].has(qIdx)) return;
+      answered[prefix].add(qIdx);
+
+      const qBox = document.getElementById(`${prefix}-q-${qIdx}`);
+      const buttons = qBox.querySelectorAll('.option-btn');
+      const feed = document.getElementById(`${prefix}-feed-${qIdx}`);
+      
+      let sourceList;
+      if (prefix === 'vocab') sourceList = vocabQuizData;
+      else if (prefix === 'grammar') sourceList = grammarQuizData;
+      else if (prefix === 'reading') sourceList = readingData.questions;
+      else if (prefix === 'listening') sourceList = listeningData.questions;
+      else if (prefix === 'exam') sourceList = examData;
+
+      const qItem = sourceList[qIdx];
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === chosenIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      feed.classList.add('show');
+      if (chosenIdx === correctIdx) {
+        scores[prefix]++;
+        feed.classList.add('correct');
+        feed.innerHTML = `<strong>✓ Correct!</strong> ${qItem.explanation || 'Well done!'}`;
+      } else {
+        feed.classList.add('wrong');
+        feed.innerHTML = `<strong>✗ Incorrect.</strong> Correct answer is <strong>${qItem.options[correctIdx]}</strong>. ${qItem.explanation || ''}`;
+      }
+
+      if (prefix === 'vocab') {
+        document.getElementById('vocabQuizScore').innerText = `Score: ${scores.vocab} / ${vocabQuizData.length}`;
+      } else if (prefix === 'grammar') {
+        document.getElementById('grammarQuizScore').innerText = `Score: ${scores.grammar} / ${grammarQuizData.length}`;
+      } else if (prefix === 'exam') {
+        document.getElementById('examScore').innerText = `Exam Score: ${scores.exam} / ${examData.length}`;
+      }
+    }
+
+    function renderReading() {
+      document.getElementById('readingTitle').innerText = readingData.title;
+      document.getElementById('readingPassageContent').innerHTML = readingData.paragraphs.map(p => `<p>${p}</p>`).join('');
+      renderQuiz('readingQuestionsContainer', readingData.questions, null, 'reading');
+    }
+
+    function playReadingAudio() {
+      const text = readingData.paragraphs.join(' ');
+      const rate = parseFloat(document.getElementById('readingSpeedSelect').value);
+      speakText(text, rate);
+    }
+
+    function renderListening() {
+      document.getElementById('listeningTitle').innerText = listeningData.title;
+      document.getElementById('listeningTranscript').innerHTML = listeningData.dialogue.map(d => `<p><strong>${d.speaker}:</strong> "${d.text}"</p>`).join('');
+      renderQuiz('listeningQuestionsContainer', listeningData.questions, null, 'listening');
+    }
+
+    function toggleTranscript() {
+      const t = document.getElementById('listeningTranscript');
+      t.style.display = t.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function playListeningAudio() {
+      const script = listeningData.dialogue.map(d => `${d.speaker} says: ${d.text}`).join('. ');
+      const rate = parseFloat(document.getElementById('listeningSpeedSelect').value);
+      speakText(script, rate);
+    }
+
+    function evaluateExamScore() {
+      const total = examData.length;
+      const scored = scores.exam;
+      const pct = Math.round((scored / total) * 100);
+      const modal = document.getElementById('examSummaryModal');
+      
+      let badge = '⭐ Outstanding Performer';
+      if (pct < 60) badge = '📘 Needs Revision';
+      else if (pct < 85) badge = '🥈 Very Good Achievement';
+
+      modal.style.display = 'block';
+      modal.innerHTML = `
+        <h3 style="color: var(--primary-dark); font-size:1.35rem; margin-bottom: 0.4rem;">Unit Evaluation Certificate</h3>
+        <p style="font-size:1.05rem; margin-bottom: 0.4rem;">Total Score: <strong>${scored} / ${total} (${pct}%)</strong></p>
+        <div style="font-weight:700; color:var(--primary); font-size:1.15rem; margin-bottom:0.6rem;">Rating: ${badge}</div>
+        <p style="color:var(--text-muted); font-size:0.9rem;">
+          Verified and accredited under Egyptian Ministry of Education 2026/2027 specifications for Prep 2 New Hello Plus.
+        </p>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocab();
+      renderQuiz('vocabQuizContainer', vocabQuizData, 'vocabQuizScore', 'vocab');
+      renderQuiz('grammarQuizContainer', grammarQuizData, 'grammarQuizScore', 'grammar');
+      renderReading();
+      renderListening();
+      renderQuiz('examContainer', examData, 'examScore', 'exam');
+    });
+  </script>
+</body>
+</html>

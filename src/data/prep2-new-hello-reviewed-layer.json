@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "status": "translation-draft-needs-official-source-review",
+  "grade": 2,
+  "pathway": "general",
+  "series": "New Hello",
+  "sourceFiles": [
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_1_Complete.html",
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_2_Complete.html",
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_3_Complete.html",
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_4_Complete.html",
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_5_Complete.html",
+    "content-imports/preparatory/new-hello/Prep_2_New_Hello_Unit_6_Complete.html"
+  ],
+  "units": {
+    "1": {
+      "vocabularyArabic": {
+        "Routine": "روتين / نظام يومي",
+        "Schedule": "جدول",
+        "Habit": "عادة",
+        "Prepare": "يُحضّر / يستعد",
+        "Goal": "هدف",
+        "Activity": "نشاط",
+        "Organize": "ينظّم",
+        "Focus": "يركّز",
+        "Effort": "مجهود",
+        "Skill": "مهارة",
+        "Challenge": "تحدٍّ",
+        "Improve": "يُحسّن",
+        "Progress": "تقدّم",
+        "Task": "مهمة",
+        "Review": "يراجع",
+        "Achieve": "يحقّق",
+        "Plan": "خطة",
+        "Manage": "يدير / ينظّم",
+        "Practice": "يتدرّب / ممارسة",
+        "Confident": "واثق",
+        "Active": "نشيط",
+        "Energy": "طاقة",
+        "Future": "مستقبل",
+        "Achievement": "إنجاز",
+        "Success": "نجاح"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {
+        "grammar": {
+          "12": "Remove editorial residue and confirm intended Present Simple sentence.",
+          "17": "Remove embedded correction note and correct answer option.",
+          "23": "Correct key: option a) make (plural subject)."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "17": {
+            "correctOption": "a",
+            "reason": "I is the subject; the correct form is arrive."
+          },
+          "23": {
+            "correctOption": "a",
+            "reason": "Bees is plural; use make."
+          }
+        },
+        "vocabulary": {
+          "20": {
+            "correctOption": "a",
+            "reason": "The plural subject 'Computers and the internet' requires the plural noun 'tools'."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {
+          "17": {
+            "b": "arrives",
+            "removeEditorialResidue": true
+          }
+        },
+        "vocabulary": {
+          "20": {
+            "a": "tools",
+            "c": "achievement"
+          }
+        }
+      },
+      "questionTextFixes": {
+        "grammar": {
+          "12": "My father always .......... to work."
+        },
+        "vocabulary": {
+          "20": "Computers and the internet are useful .......... for learning."
+        }
+      },
+      "excludedItems": {
+        "grammar": {},
+        "vocabulary": {}
+      }
+    },
+    "2": {
+      "vocabularyArabic": {
+        "Community": "مجتمع",
+        "Volunteer": "متطوّع / يتطوّع",
+        "Charity": "جمعية خيرية",
+        "Support": "يدعم / مساندة",
+        "Campaign": "حملة",
+        "Project": "مشروع",
+        "Environment": "بيئة",
+        "Clean up": "ينظّف",
+        "Donate": "يتبرّع",
+        "Local": "محلّي",
+        "Society": "المجتمع",
+        "Helpful": "مفيد / متعاون",
+        "Kind": "طيب / عطوف",
+        "Citizen": "مواطن",
+        "Care": "رعاية",
+        "Protect": "يحمي",
+        "Improve": "يحسّن",
+        "Public": "عام / للجمهور",
+        "Service": "خدمة",
+        "Needy": "محتاج",
+        "Effort": "مجهود",
+        "Plant": "يزرع / نبات",
+        "Waste": "مخلّفات / يهدر",
+        "Recycle": "يعيد التدوير",
+        "Park": "حديقة عامة"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {
+        "vocabulary": {
+          "17": "Remove duplicate care options and ensure one unique correct answer."
+        },
+        "grammar": {
+          "4": "Remove duplicate didn't options and ensure one unique correct answer."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "4": {
+            "correctOption": "a",
+            "reason": "Both source options a and b say didn't; retain a as the intended correct answer."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {
+          "4": {
+            "b": "doesn't"
+          }
+        },
+        "vocabulary": {
+          "17": {
+            "a": "pride"
+          }
+        }
+      },
+      "excludedItems": {
+        "vocabulary": {}
+      }
+    },
+    "3": {
+      "vocabularyArabic": {
+        "Technology": "تكنولوجيا / تقنية",
+        "Invention": "اختراع",
+        "Smartphone": "هاتف ذكي",
+        "Internet": "الإنترنت",
+        "Screen": "شاشة",
+        "Machine": "آلة",
+        "Device": "جهاز",
+        "Digital": "رقمي",
+        "Robot": "روبوت",
+        "Experiment": "تجربة",
+        "Scientist": "عالِم",
+        "Discover": "يكتشف",
+        "Program": "برنامج",
+        "Connect": "يتصل / يربط",
+        "Website": "موقع إلكتروني",
+        "Email": "بريد إلكتروني",
+        "Message": "رسالة",
+        "Communication": "تواصل / اتصالات",
+        "Software": "برمجيات",
+        "Battery": "بطارية",
+        "Charge": "يشحن",
+        "Modern": "حديث / عصري",
+        "Efficient": "فعّال / كفء",
+        "Useful": "مفيد",
+        "Future": "مستقبل"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {
+        "grammar": {
+          "6": "Remove duplicate option.",
+          "13": "Remove duplicate option.",
+          "15": "Remove duplicate option.",
+          "16": "Remove duplicate option.",
+          "19": "Remove duplicate option.",
+          "20": "Correct key: is.",
+          "21": "Correct key: are.",
+          "22": "Correct key: is.",
+          "23": "Correct key: is.",
+          "24": "Correct key: am.",
+          "25": "Correct key: are.",
+          "26": "Correct key: is.",
+          "27": "Correct key: are.",
+          "28": "Correct key: is.",
+          "29": "Correct key: is.",
+          "30": "Correct key: is."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {
+          "20": {
+            "correctOption": "a",
+            "reason": "What is she cooking right now? Correct auxiliary: is."
+          },
+          "21": {
+            "correctOption": "a",
+            "reason": "We is plural; correct auxiliary: are."
+          },
+          "22": {
+            "correctOption": "a",
+            "reason": "He is singular; correct auxiliary: is."
+          },
+          "23": {
+            "correctOption": "a",
+            "reason": "The train is singular; correct auxiliary: is."
+          },
+          "24": {
+            "correctOption": "a",
+            "reason": "I takes am."
+          },
+          "25": {
+            "correctOption": "a",
+            "reason": "They is plural; correct auxiliary: are."
+          },
+          "26": {
+            "correctOption": "a",
+            "reason": "The teacher is singular; correct auxiliary: is."
+          },
+          "27": {
+            "correctOption": "a",
+            "reason": "You takes are."
+          },
+          "28": {
+            "correctOption": "a",
+            "reason": "The phone is singular; correct auxiliary: is."
+          },
+          "29": {
+            "correctOption": "a",
+            "reason": "She is singular; correct auxiliary: is."
+          },
+          "30": {
+            "correctOption": "a",
+            "reason": "The cat is singular; correct auxiliary: is."
+          }
+        }
+      },
+      "optionTextFixes": {
+        "grammar": {}
+      },
+      "answerTextFixes": {
+        "reading": {
+          "4": "Coding and modern skills"
+        }
+      }
+    },
+    "4": {
+      "vocabularyArabic": {
+        "Ruins": "أطلال",
+        "Temple": "معبد",
+        "Statue": "تمثال",
+        "Pyramid": "هرم",
+        "Mosque": "مسجد",
+        "Aqueduct": "قناة مائية",
+        "Stadium": "استاد / ملعب",
+        "Theatre": "مسرح",
+        "Archaeologist": "عالِم آثار",
+        "Historic": "تاريخي",
+        "Monument": "نُصب تذكاري / أثر",
+        "Castle": "قلعة",
+        "Protect": "يحمي",
+        "Damage": "تلف / يضرّ",
+        "Rule": "قاعدة / لائحة",
+        "Litter": "قمامة ملقاة",
+        "Guide": "مرشد",
+        "Ancient": "قديم / عتيق",
+        "Civilization": "حضارة",
+        "Stone": "حجر",
+        "Column": "عمود",
+        "Treasure": "كنز",
+        "Artifact": "قطعة أثرية",
+        "Museum": "متحف",
+        "History": "تاريخ"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {},
+      "optionTextFixes": {
+        "reading": {
+          "2": {
+            "b": "Pyramids of Giza, temples of Luxor, and the Valley of the Kings"
+          }
+        }
+      }
+    },
+    "5": {
+      "vocabularyArabic": {
+        "Charity": "جمعية خيرية",
+        "Donation": "تبرّع",
+        "Volunteer": "متطوّع",
+        "Homeless": "بلا مأوى",
+        "Disabled": "ذو إعاقة",
+        "Kindness": "لطف / طيبة",
+        "Neighbor": "جار",
+        "Community": "مجتمع",
+        "Random act of kindness": "عمل عشوائي من أعمال الخير",
+        "Boarding school": "مدرسة داخلية",
+        "Cruel": "قاسٍ",
+        "Polite": "مهذّب",
+        "Generous": "كريم",
+        "Respect": "احترام",
+        "Reward": "مكافأة",
+        "Support": "يدعم / مساندة",
+        "Collect": "يجمع",
+        "Deliver": "يوصّل / يسلّم",
+        "Organize": "ينظّم",
+        "Benefit": "يفيد / فائدة",
+        "Responsible": "مسؤول",
+        "Duty": "واجب",
+        "Care": "رعاية",
+        "Project": "مشروع",
+        "Society": "مجتمع"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {
+        "vocabulary": {
+          "9": "Align respectful with the taught headword polite, or explicitly teach respectful."
+        }
+      },
+      "questionTextFixes": {
+        "vocabulary": {
+          "9": "It is important to show .......... when talking to teachers."
+        }
+      },
+      "optionTextFixes": {
+        "vocabulary": {
+          "9": {
+            "b": "respect"
+          }
+        }
+      },
+      "definitionFixes": {
+        "Disabled": "A person who has a disability; disabilities can affect people in different ways."
+      }
+    },
+    "6": {
+      "vocabularyArabic": {
+        "Climate": "مناخ",
+        "Pollution": "تلوّث",
+        "Drought": "جفاف",
+        "Flood": "فيضان",
+        "Recycling": "إعادة التدوير",
+        "Canal": "قناة",
+        "Riverbank": "ضفة النهر",
+        "Greenhouse": "صوبة زراعية / بيت زجاجي",
+        "Dry": "جاف",
+        "Humid": "رطب",
+        "Temperature": "درجة الحرارة",
+        "Wildlife": "الحياة البرية",
+        "Coral reef": "شعاب مرجانية",
+        "Rainforest": "غابة مطيرة",
+        "Mountain": "جبل",
+        "Desert": "صحراء",
+        "Protect": "يحمي",
+        "Rubbish": "قمامة / مخلفات",
+        "Planet": "كوكب",
+        "Damage": "ضرر / تلف",
+        "Renewable": "متجدّد",
+        "Environment": "بيئة",
+        "Ecosystem": "نظام بيئي",
+        "Conservation": "الحفاظ على الموارد الطبيعية",
+        "Habitat": "موطن طبيعي"
+      },
+      "knownDuplicateHeadwords": [],
+      "questionRepairs": {
+        "vocabulary": {
+          "1": "Rewrite the sentence so climate is tested unambiguously.",
+          "15": "Insert a blank; current sentence has no answer slot."
+        },
+        "grammar": {
+          "5": "Repair malformed HTML boundary so Q5 and Q6 are separate question blocks.",
+          "6": "Intentionally excluded from the app assessment until its malformed source markup and official source text can be verified; do not score or display this item."
+        }
+      },
+      "answerKeyOverrides": {
+        "grammar": {}
+      },
+      "questionTextFixes": {
+        "vocabulary": {
+          "1": "The .......... describes the usual weather conditions of a place over a long period.",
+          "15": "Mount Sinai is a famous .......... in Egypt."
+        }
+      },
+      "optionTextFixes": {
+        "vocabulary": {
+          "1": {
+            "b": "climate"
+          },
+          "15": {
+            "b": "mountain"
+          }
+        }
+      },
+      "definitionFixes": {
+        "Renewable": "An adjective describing a resource that is naturally replaced or replenished."
+      }
+    }
+  },
+  "qualityNotes": [
+    "Arabic translations are editorial drafts, not verified against the official teacher's guide.",
+    "Keep source HTML unchanged; use this separate layer as the reviewed overlay.",
+    "Do not reveal answer keys to learners before submission.",
+    "Listening source scripts have no audio media; add approved playback/TTS before marking listening complete.",
+    "Reading/listening question sets require interactive answer controls and scoring."
+  ]
+}
