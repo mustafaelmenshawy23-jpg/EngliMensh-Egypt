@@ -1,4 +1,6 @@
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { detectSpeakerGender, chooseSpeakerVoice } from './lib/tts-voice-selection.mjs';
 import curriculum from './data/curriculum/structure.json';
@@ -31,6 +33,7 @@ const unitDraftRegistry = new Map(
 const p1u1Draft = unitDraftRegistry.get('primary1-student-term1-unit-1') || null;
 
 const app = document.querySelector('#app');
+const AndroidDownloads = registerPlugin('Downloads');
 
 // Student App State (Preserves all progress across back-and-forth navigation and reloads)
 const STORAGE_KEY = 'englimensh_p1u1_progress';
@@ -114,6 +117,30 @@ if (savedStudentContext) {
 }
 
 
+async function exportStudentCertificatePdf(certificate) {
+  if (!certificate || typeof certificate.studentName !== 'string') throw new TypeError('Certificate data is unavailable.');
+  const safeName = (certificate.studentName || 'student').normalize('NFKD').replace(/[^\\w-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 32) || 'student';
+  const unitName = String(certificate.unit || 'unit').replace(/[^\\w-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 36) || 'unit';
+  const fileName = 'EngliMensh-' + safeName + '-' + unitName + '.pdf';
+  const page = document.createElement('section');
+  page.setAttribute('aria-hidden', 'true');
+  page.style.cssText = 'position:fixed;left:-10000px;top:0;width:1200px;height:800px;padding:54px;box-sizing:border-box;background:#fffdf6;color:#24334a;font-family:Arial,sans-serif;text-align:center;border:18px double #c6a45b;z-index:-1;';
+  const photo = certificate.studentPhoto ? '<img src="' + escapeHtml(certificate.studentPhoto) + '" alt="" style="width:150px;height:150px;object-fit:cover;border-radius:50%;border:5px solid #c6a45b;">' : '<div style="width:150px;height:150px;border-radius:50%;border:2px solid #c6a45b;margin:auto;display:grid;place-items:center;">Student</div>';
+  page.innerHTML = '<div style="font-size:24px;letter-spacing:5px;color:#8a6b2f;font-weight:bold;">ENGLIMENSH · EGYPT</div><div style="font-size:48px;font-family:Georgia,serif;margin:28px 0 14px;">Certificate of Excellence</div><div style="font-size:25px;margin-bottom:24px;">This certificate is proudly presented to</div>' + photo + '<div style="font-size:54px;font-weight:bold;margin:22px 0;color:#24334a;">' + escapeHtml(certificate.studentName) + '</div><div style="font-size:26px;">For successfully completing</div><div style="font-size:38px;font-weight:bold;margin:18px 0;color:#8a6b2f;">' + escapeHtml(certificate.unit) + '</div><div style="font-size:22px;">' + escapeHtml(certificate.stage) + ' · Grade ' + Number(certificate.grade || 0) + ' · ' + escapeHtml(certificate.curriculum || '') + '</div><div style="font-size:42px;font-weight:bold;margin:16px;color:#8a6b2f;">' + Number(certificate.score || 0) + '%</div><div style="font-size:23px;font-style:italic;">Excellent work! Keep learning, keep growing, and believe in yourself.</div><div style="font-size:17px;margin-top:24px;">Completed: ' + escapeHtml(new Date(certificate.completedAt).toLocaleDateString('en-GB')) + '</div>';
+  document.body.appendChild(page);
+  try {
+    const canvas = await html2canvas(page, { scale: 2, backgroundColor: '#fffdf6', useCORS: true, logging: false });
+    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4', compress: true });
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.94), 'JPEG', 0, 0, 297, 210, undefined, 'FAST');
+    if (Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android') {
+      const dataUri = pdf.output('datauristring');
+      const base64 = dataUri.slice(dataUri.indexOf(',') + 1);
+      return await AndroidDownloads.savePdf({ fileName, base64 });
+    }
+    pdf.save(fileName);
+    return { fileName, downloaded: true };
+  } finally { page.remove(); }
+}
 function renderStudentCertificateStatus(draft, book, unit, questions) {
   const profile = activeStudent();
   if (!profile || !Array.isArray(questions) || !questions.length) {
@@ -2093,7 +2120,7 @@ function render() {
             <option value="forest" ${activeStudent()?.theme === 'forest' ? 'selected' : ''}>Forest</option>
             <option value="lavender" ${activeStudent()?.theme === 'lavender' ? 'selected' : ''}>Lavender</option>
           </select>
-          ${activeStudent() ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.values(activeStudent().certificates || {}).map((certificate) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span></p>').join('') + '</div></details>' : ''}
+          ${activeStudent() ? '<details class="student-certificates-control"><summary>My certificates (' + Object.values(activeStudent().certificates || {}).length + ')</summary><div>' + Object.entries(activeStudent().certificates || {}).map(([certificateKey, certificate]) => '<p><strong>' + escapeHtml(certificate.unit || 'Completed unit') + '</strong><span>' + Number(certificate.score || 0) + '% · ' + escapeHtml(certificate.stage || '') + '</span><button type="button" class="certificate-export-button" data-export-certificate="' + escapeHtml(certificateKey) + '">Export PDF</button></p>').join('') + '</div></details>' : ''}
         </div>
         <span class="country-tag">EGYPTIAN CURRICULUM</span>
       </div>
@@ -2202,6 +2229,21 @@ function render() {
   app.querySelector('#student-photo-file')?.addEventListener('change', handleStudentPhotoChange);
   app.querySelector('#student-photo-gallery')?.addEventListener('change', handleStudentPhotoChange);
 
+  app.querySelectorAll('[data-export-certificate]').forEach((button) => button.addEventListener('click', async () => {
+    const profile = activeStudent();
+    const certificate = profile?.certificates?.[button.dataset.exportCertificate];
+    if (!certificate) { window.alert('This certificate is no longer available in the active student profile.'); return; }
+    button.disabled = true;
+    const originalText = button.textContent;
+    button.textContent = 'Preparing PDF…';
+    try {
+      const result = await exportStudentCertificatePdf(certificate);
+      window.alert(Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android' ? 'Certificate saved to Downloads/EngliMensh. ' + (result?.displayName || '') : 'Certificate PDF download started.');
+    } catch (error) {
+      console.error('Certificate PDF export failed:', error);
+      window.alert('The certificate PDF could not be saved. ' + (error?.message || 'Please try again.'));
+    } finally { button.disabled = false; button.textContent = originalText; }
+  }));
   app.querySelector('#student-theme-select')?.addEventListener('change', (event) => {
     const profile = activeStudent();
     if (!profile) return;
