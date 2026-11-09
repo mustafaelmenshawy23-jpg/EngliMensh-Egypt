@@ -32,24 +32,24 @@ for (let unit = 1; unit <= 6; unit += 1) {
     for (let index = 0; index < starts.length; index += 1) {
       const id = String(index + 1);
       const question = source.slice(starts[index], starts[index + 1] ?? source.length);
-      let options = [...question.matchAll(/<div class="option-item">([\\s\\S]*?)<\\/div>/g)].map((match) => match[1]);
+      let options = [...question.matchAll(/<div class="option-item">([\s\S]*?)<\/div>/g)].map((match) => match[1]);
       if (!options.length) {
         const optionsStart = question.indexOf('<div class="options">');
         if (optionsStart >= 0) {
           const innerStart = optionsStart + '<div class="options">'.length;
           const innerEnd = question.indexOf('</div>', innerStart);
-          if (innerEnd >= 0) options = question.slice(innerStart, innerEnd).split(/<br\\s*\\/?\\s*>/i).filter((value) => value.trim());
+          if (innerEnd >= 0) options = question.slice(innerStart, innerEnd).split(/<br\s*\/?\s*>/i).filter((value) => value.trim());
         }
       }
       const excluded = Boolean(review.excludedItems?.[sectionName]?.[id]);
       const fix = review.optionTextFixes?.[sectionName]?.[id] || {};
       const normalized = options.map((value, optionIndex) => {
         const letter = String.fromCharCode(97 + optionIndex);
-        const withoutTags = value.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\\s+/g, ' ').trim();
-        return String(fix[letter] || withoutTags.replace(/^[a-d]\\)\\s*/i, '')).toLowerCase();
+        const withoutTags = value.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+        return String(fix[letter] || withoutTags.replace(/^[a-d]\)\s*/i, '')).toLowerCase();
       });
       const duplicates = normalized.filter((value, optionIndex) => normalized.indexOf(value) !== optionIndex);
-      const marked = options.filter((value) => /<strong\\b|<b\\b/i.test(value)).length;
+      const marked = options.filter((value) => /<strong\b|<b\b/i.test(value)).length;
       if (options.length !== 4) failures.push(`Unit ${unit} ${sectionName} Q${id}: expected four choices, found ${options.length}.`);
       if (!excluded && marked !== 1 && !(sectionName === 'grammar' && unit === 1 && id === '18')) failures.push(`Unit ${unit} ${sectionName} Q${id}: expected exactly one source-marked key, found ${marked}.`);
       if (duplicates.length && !excluded) failures.push(`Unit ${unit} ${sectionName} Q${id}: duplicate choices remain after reviewed option fixes.`);
