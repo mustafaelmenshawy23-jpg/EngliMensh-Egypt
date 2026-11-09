@@ -1720,9 +1720,12 @@ However, traditional shopping in historic markets like Khan El-Khalili remains v
       const container = document.getElementById(containerId);
       container.innerHTML = questions.map((qObj, qIdx) => {
         // Shuffle displayed choices while preserving the source answer index.
-        const shuffledOptions = qObj.opts
-          .map((text, originalIndex) => ({ text, originalIndex }))
-          .sort(() => Math.random() - 0.5);
+        const shuffledOptions = qObj.opts.map((text, originalIndex) => ({ text, originalIndex }));
+        // Fisher-Yates gives each answer position a fair chance.
+        for (let i = shuffledOptions.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+        }
         const correctDisplayIndex = shuffledOptions.findIndex(option => option.originalIndex === qObj.c);
         return `
         <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm" id="q-card-${quizType}-${qIdx}">
