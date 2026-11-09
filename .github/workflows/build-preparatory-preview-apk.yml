@@ -1,0 +1,80 @@
+name: Build EngliMensh preparatory preview APK
+
+on:
+  push:
+    branches: ['content-import/prep-new-hello-hello-plus']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-debug-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository and hydrate original source PDFs
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Android SDK command-line tools
+        uses: android-actions/setup-android@v3
+        with:
+          packages: ''
+
+      - name: Install required Android SDK platform and build tools
+        run: |
+          sdkmanager --install "platforms;android-35" "build-tools;35.0.0"
+          sdkmanager --list_installed
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Keep original PDFs remote to avoid embedding 1.6 GB in the APK
+        run: rm -rf public/books
+
+      - name: Build web application with remote original source PDFs
+        env:
+          VITE_BOOKS_BASE_URL: https://media.githubusercontent.com/media/mustafaelmenshawy23-jpg/EngliMensh-Egypt/main/public/books/
+        run: npm run build
+
+      - name: Generate Android project
+        run: npx cap add android
+
+      - name: Sync web application into Android project
+        run: npx cap sync android
+
+      - name: Build installable debug APK
+        working-directory: android
+        env:
+          GRADLE_OPTS: -Xmx4g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8
+        run: ./gradlew --no-daemon --max-workers=2 -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8" assembleDebug
+
+      - name: Verify APK output
+        run: |
+          test -s android/app/build/outputs/apk/debug/app-debug.apk
+          ls -lh android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload preview APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: EngliMensh-Egypt-preview-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
