@@ -42,7 +42,7 @@
   if (sectionType === 'listening') {
     const scriptNode = [...target.querySelectorAll('p')].find((node) => /listening script/i.test(node.textContent));
     if (scriptNode && !scriptNode.querySelector('[data-listening-play]')) {
-      const scriptText = scriptNode.textContent.replace(/^\\s*Listening Script:\\s*/i, '').replace(/^["“]|["”]$/g, '').trim();
+      const scriptText = scriptNode.textContent.replace(/^\s*Listening Script:\s*/i, '').replace(/^["“]|["”]$/g, '').trim();
       const play = document.createElement('button');
       play.type = 'button'; play.dataset.listeningPlay = 'true'; play.className = 'prep-quiz-check';
       play.textContent = '▶ Play listening text';
@@ -96,14 +96,14 @@
       return;
     }
     if (sectionType === 'reading' || sectionType === 'listening') {
-      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\\s*Answer:/i.test(node.textContent));
+      const answerNode = [...question.querySelectorAll('strong, b')].find((node) => /^\s*Answer:/i.test(node.textContent));
       if (answerNode) {
-      const answer = answerNode.textContent.replace(/^\\s*Answer:\\s*/i, '').trim();
+      const answer = answerNode.textContent.replace(/^\s*Answer:\s*/i, '').trim();
       const original = question.cloneNode(true);
       original.querySelectorAll('strong,b').forEach((node) => node.remove());
       const prompt = document.createElement('div');
       prompt.className = 'prep-quiz-prompt';
-      prompt.textContent = number + '. ' + original.textContent.replace(/^\\s*\\d+\\s*[.、)]\\s*/, '').trim();
+      prompt.textContent = number + '. ' + original.textContent.replace(/^\s*\d+\s*[.、)]\s*/, '').trim();
       const input = document.createElement('input');
       input.type = 'text'; input.className = 'prep-answer-input';
       input.autocomplete = 'off'; input.setAttribute('aria-label', 'Your answer for question ' + number);
@@ -175,10 +175,10 @@
         const value = input?.value?.trim();
         if (!value) return;
         answered++;
-        const normalizeAnswer = (text) => String(text || '').toLocaleLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\\s+/g, ' ').trim();
+        const normalizeAnswer = (text) => String(text || '').toLocaleLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
         const expected = normalizeAnswer(question.dataset.answer);
         const actual = normalizeAnswer(value);
-        const isCorrect = actual === expected || (expected.length > 8 && expected.includes(actual) && actual.length >= Math.min(8, expected.length * 0.55));
+        const isCorrect = actual === expected;
         if (isCorrect) { correct++; question.classList.add('answer-correct'); }
         else question.classList.add('answer-incorrect');
         input.disabled = true;
