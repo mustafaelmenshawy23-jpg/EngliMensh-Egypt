@@ -34,7 +34,7 @@ for (let unit = 1; unit <= 6; unit += 1) {
     else for (const [index, q] of data.questions.entries()) {
       if (!Array.isArray(q.options) || q.options.length !== 4 || new Set(q.options).size !== 4) failures.push(`Unit ${unit} ${section} Q${index + 1}: four distinct options required.`);
       if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct > 3) failures.push(`Unit ${unit} ${section} Q${index + 1}: invalid answer key.`);
-      if (!/[\\u0600-\\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
+      if (!/[\u0600-\u06FF]/.test(q.explanation || '')) failures.push(`Unit ${unit} ${section} Q${index + 1}: Arabic explanation required.`);
     }
   }
   if (grammar.length !== 10 || new Set(grammar.map(q => q.question)).size !== 10) failures.push(`Unit ${unit}: grammar practice must contain 10 unique MCQs.`);
