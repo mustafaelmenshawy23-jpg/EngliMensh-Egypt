@@ -59,6 +59,12 @@
             "correctOption": "a",
             "reason": "Bees is plural; use make."
           }
+        },
+        "vocabulary": {
+          "20": {
+            "correctOption": "a",
+            "reason": "Tool is the suitable word for something used to support learning."
+          }
         }
       },
       "optionTextFixes": {
@@ -67,18 +73,25 @@
             "b": "arrives",
             "removeEditorialResidue": true
           }
+        },
+        "vocabulary": {
+          "20": {
+            "a": "tool",
+            "c": "achievement"
+          }
         }
       },
       "questionTextFixes": {
         "grammar": {
           "12": "My father always .......... to work."
+        },
+        "vocabulary": {
+          "20": "Computers and the internet are useful .......... for learning."
         }
       },
       "excludedItems": {
         "grammar": {},
-        "vocabulary": {
-          "20": "Ambiguous combined answer 'tool / skill' is not a single approved word-bank headword; exclude until the item is editorially corrected."
-        }
+        "vocabulary": {}
       }
     },
     "2": {
@@ -131,12 +144,15 @@
           "4": {
             "b": "doesn't"
           }
+        },
+        "vocabulary": {
+          "17": {
+            "a": "pride"
+          }
         }
       },
       "excludedItems": {
-        "vocabulary": {
-          "17": "Duplicate answer choices a and b both say 'care'; exclude until a unique source-backed option is confirmed."
-        }
+        "vocabulary": {}
       }
     },
     "3": {
