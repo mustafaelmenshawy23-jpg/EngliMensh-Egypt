@@ -18,6 +18,8 @@ assert.equal(lessonPattern.test('Prep_3_New_Hello_Units_1_to_6_Full_Curriculum.h
 assert.ok(builder.includes("const marker = /<\\/body>/i;"), "viewer builder must inject bridge scripts before the HTML body closes");
 assert.match(builder, /const isPrep3Combined = path\.basename\(file\) === 'Prep_3_New_Hello_Units_1_to_6_Full_Curriculum\.html'/);
 assert.match(builder, /window\.checkAnswer = function\(quizType/);
+assert.match(builder, /window\.selectUnit\(unitNumber\)/);
+assert.match(builder, /window\.switchSubTab\('exam'\)/);
 assert.match(builder, /grade: 3,/);
 assert.match(builder, /correct: userScores\.exam/);
 assert.match(prep3Source, /function checkAnswer\(quizType/);
