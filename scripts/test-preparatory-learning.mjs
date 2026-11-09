@@ -25,7 +25,7 @@ for (const grade of [1, 2, 3]) {
   else assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Unit_'), 'Missing New Hello registry for grade ' + grade);
   assert.ok(registry.includes('Prep_' + grade + '_New_Hello_Plus_Unit_'), 'Missing New Hello Plus registry for grade ' + grade);
 }
-for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'games', 'comprehensive_test']) {
+for (const section of ['vocabulary', 'vocabulary_questions', 'grammar', 'grammar_questions', 'reading', 'listening', 'speaking', 'games', 'comprehensive_test']) {
   assert.ok(main.includes("['" + section + "'") || main.includes(section + ': ['), 'Missing preparatory learning section: ' + section);
 }
 for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest', 'open-box', 'flashcards']) {
@@ -33,7 +33,9 @@ for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest',
 }
 assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-match-image'), 'Picture matching controls are not wired.');
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
+assert.ok(main.includes('function renderPreparatorySpeaking') && main.includes('data-tts-text=') && main.includes('OPTIONAL ORAL PRACTICE'), 'Speaking practice module is missing its oral prompts or optional model playback.');
+assert.ok(main.includes('The app does not record your voice or score pronunciation.'), 'Speaking practice must disclose that it does not record or score pronunciation.');
 assert.ok(builder.includes('Openverse') && builder.includes('license_type') && builder.includes('licenseUrl'), 'Image sourcing must retain licensing and attribution.');
 assert.ok(builder.includes('buildSectionViewers') && viewerRegistry.includes('preparatory-viewers/'), 'Lesson modules must open in section-aware viewer copies.');
 assert.ok(builder.includes('original source files remain unchanged'), 'The vocabulary builder must preserve original HTML sources.');
-console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections, 6 game modes, image attribution.');
+console.log('Preparatory learning checks passed: 31 HTML files, 9 learning sections including speaking, 6 game modes, image attribution.');
