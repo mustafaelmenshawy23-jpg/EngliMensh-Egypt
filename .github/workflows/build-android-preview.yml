@@ -63,6 +63,14 @@ jobs:
       - name: Sync web application into Android project
         run: npx cap sync android
 
+      - name: Upload Android Studio project
+        uses: actions/upload-artifact@v4
+        with:
+          name: EngliMensh-Egypt-Android-Studio-Project
+          path: android/
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Install Gradle directly on the runner
         uses: gradle/actions/setup-gradle@v4
         with:
