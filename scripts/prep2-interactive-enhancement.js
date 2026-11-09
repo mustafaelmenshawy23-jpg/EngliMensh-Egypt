@@ -8,6 +8,7 @@
   const unit = layer.units?.[unitNumber] || {};
   const sectionType = moduleName === 'vocabulary_questions' ? 'vocabulary' :
     moduleName === 'grammar_questions' ? 'grammar' :
+    moduleName === 'grammar' ? 'grammar_guide' :
     moduleName === 'reading' ? 'reading' : moduleName === 'listening' ? 'listening' : null;
   if (!sectionType) return;
   const sectionHeadings = [...document.querySelectorAll('.section, body > h2, .container > h2')];
@@ -16,6 +17,7 @@
     const text = (heading?.textContent || '').toLowerCase();
     return sectionType === 'vocabulary' ? /vocabulary quiz/.test(text) :
       sectionType === 'grammar' ? /grammar quiz/.test(text) :
+      sectionType === 'grammar_guide' ? /grammar/.test(text) && !/grammar quiz/.test(text) :
       sectionType === 'reading' ? /reading/.test(text) : /listening/.test(text);
   });
   if (!target) return;
@@ -34,6 +36,50 @@
   target.querySelectorAll('.question .question').forEach((nested) => {
     nested.parentNode.insertBefore(nested, nested.parentNode.nextSibling);
   });
+  if (sectionType === 'grammar_guide') {
+    const guide = window.__PREP2_GRAMMAR_GUIDES__?.units?.[unitNumber];
+    if (!guide || target.querySelector('.prep-grammar-expanded')) return;
+    const panel = document.createElement('section');
+    panel.className = 'prep-grammar-expanded';
+    const heading = document.createElement('h3');
+    heading.textContent = guide.title;
+    panel.append(heading);
+    const intro = document.createElement('p');
+    intro.textContent = guide.purpose;
+    panel.append(intro);
+    const labels = {
+      affirmative: 'الإثبات',
+      negative: 'النفي',
+      questions: 'السؤال والإجابات القصيرة',
+      spelling: 'قواعد تكوين الكلمات',
+      signals: 'الكلمات الدالة',
+      examples: 'أمثلة',
+      warning: 'تنبيه مهم'
+    };
+    for (const key of ['affirmative','negative','questions','spelling','signals','examples','warning']) {
+      const values = Array.isArray(guide[key]) ? guide[key] : guide[key] ? [guide[key]] : [];
+      if (!values.length) continue;
+      const section = document.createElement('div');
+      section.className = 'prep-grammar-topic';
+      const subheading = document.createElement('h4');
+      subheading.textContent = labels[key];
+      section.append(subheading);
+      if (key === 'warning') {
+        const p = document.createElement('p'); p.textContent = values[0]; section.append(p);
+      } else {
+        const list = document.createElement('ul');
+        values.forEach((value) => { const item = document.createElement('li'); item.textContent = value; list.append(item); });
+        section.append(list);
+      }
+      panel.append(section);
+    }
+    const style = document.createElement('style');
+    style.textContent = '.prep-grammar-expanded{margin:18px 0;padding:18px;border:1px solid #d8c8a8;border-radius:14px;background:#fffaf0;color:#332b20;line-height:1.8}.prep-grammar-expanded h3{margin-top:0}.prep-grammar-topic{margin:14px 0}.prep-grammar-topic h4{margin-bottom:5px;color:#76552b}.prep-grammar-topic ul{padding-inline-start:24px}.prep-grammar-topic li{margin:6px 0}';
+    document.head.append(style);
+    const title = target.querySelector('h2');
+    (title || target).after(panel);
+    return;
+  }
   const overrides = unit.answerKeyOverrides?.[sectionType] || {};
   const optionFixes = unit.optionTextFixes?.[sectionType] || {};
   const questionFixes = unit.questionTextFixes?.[sectionType] || {};
