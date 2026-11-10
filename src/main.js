@@ -11,6 +11,7 @@ import './style.css';
 import { getPreparatoryHtmlCourse } from './data/preparatory-html-registry.js';
 import preparatoryVocabulary from './data/preparatory-vocabulary.json';
 import { createStudentProfileStore } from './lib/student-profile-store.mjs';
+import { renderPrimaryHtmlWorkspace } from './lib/primary-html-renderer.mjs';
 
 const approvedDraftModules = import.meta.glob('./data/approved-unit-drafts/*.json', { eager: true, import: 'default' });
 function isApprovedUnitDraft(draft) {
@@ -79,6 +80,7 @@ const state = {
   preview: null,
   htmlUnitSelection: null,
   primaryUnitNumber: null,
+  primarySection: null,
   htmlModuleSelection: null,
   htmlGame: { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' },
   unitSelection: null,
@@ -508,36 +510,13 @@ function renderBookLibrary(books) {
 }
 
 function renderPrimaryHtmlLibrary() {
-  if (state.stage !== 'primary') return '';
-  const track = (primaryHtmlCurriculum.tracks || []).find((item) => item.id === state.path);
-  const grade = track?.grades?.find((item) => Number(item.grade) === Number(state.grade));
-  const units = grade?.units || [];
-  if (!units.length) return '';
-  const selected = units.find((unit) => Number(unit.number) === Number(state.primaryUnitNumber));
-  const note = '<p class="primary-source-note">Imported curriculum bundle · 2026/2027 · academic content review is still pending. This is not yet marked as academically approved.</p>';
-  if (!selected) {
-    return `<section class="primary-imported panel" dir="ltr">
-      <div class="imported-curriculum-heading"><div><p class="eyebrow">PRIMARY CURRICULUM · 2026/2027</p><h2>${escapeHtml(track.name)} · Primary ${state.grade}</h2><p class="library-intro">Choose a unit to study its vocabulary, grammar, reading and practice.</p></div><span class="book-count">${units.length} units</span></div>
-      ${note}
-      <div class="primary-unit-grid">${units.map((unit) => `<button type="button" class="primary-unit-card" data-primary-unit="${Number(unit.number)}"><span>UNIT ${Number(unit.number)}</span><strong>${escapeHtml(unit.title)}</strong><small>Open learning content ↗</small></button>`).join('')}</div>
-    </section>`;
-  }
-  const vocab = Array.isArray(selected.vocabulary) ? selected.vocabulary : [];
-  const vocabQuestions = Array.isArray(selected.vocabularyQuestions) ? selected.vocabularyQuestions : [];
-  const grammar = selected.grammar || {};
-  const grammarQuestions = Array.isArray(grammar.quiz) ? grammar.quiz : [];
-  const examQuestions = Array.isArray(selected.examQuestions) ? selected.examQuestions : [];
-  const questionsMarkup = (items) => items.length ? `<div class="primary-question-list">${items.map((q, i) => `<article class="primary-question-card"><strong>${escapeHtml(q.q || '')}</strong><div>${(q.opts || []).map((option) => `<span class="primary-option">${escapeHtml(option)}</span>`).join('')}</div></article>`).join('')}</div>` : '<p class="primary-empty">No questions in this section of the imported source.</p>';
-  return `<section class="primary-imported panel" dir="ltr">
-    <div class="prep-learning-toolbar"><button type="button" class="prep-back-link" data-primary-back>← All primary units</button><div><span class="eyebrow">${escapeHtml(track.name)} · PRIMARY ${state.grade} · UNIT ${Number(selected.number)}</span><h2>${escapeHtml(selected.title)}</h2></div></div>
-    ${note}
-    <section class="primary-content-section"><h3>Vocabulary · ${vocab.length} words</h3><div class="primary-vocab-grid">${vocab.map((word) => `<article class="primary-vocab-card"><span>${escapeHtml(word.e || '📘')}</span><strong>${escapeHtml(word.en || '')}</strong><b dir="rtl">${escapeHtml(word.ar || '')}</b><small>${escapeHtml(word.ex || '')}</small></article>`).join('')}</div></section>
-    <section class="primary-content-section"><h3>Vocabulary practice</h3>${questionsMarkup(vocabQuestions)}</section>
-    <section class="primary-content-section"><h3>Grammar</h3><p>${escapeHtml(grammar.rule || 'Grammar rule not listed in the imported source.')}</p>${(grammar.examples || []).map((example) => `<p class="primary-example">${escapeHtml(example)}</p>`).join('')}${questionsMarkup(grammarQuestions)}</section>
-    <section class="primary-content-section"><h3>Reading</h3><p class="primary-reading">${escapeHtml(selected.readingText || 'Reading text not listed in the imported source.')}</p></section>
-    <section class="primary-content-section"><h3>Unit practice</h3>${questionsMarkup(examQuestions)}</section>
-    <p class="primary-source-note">Source status: needs academic review. Answers, distractors, translations and source-page references must be audited before approval.</p>
-  </section>`;
+  return renderPrimaryHtmlWorkspace({
+    state,
+    primaryHtmlCurriculum,
+    escapeHtml,
+    renderPreparatoryGame,
+    renderSpeakerVoiceSettings
+  });
 }
 
 function getSelectedPreparatoryUnit() {
@@ -2612,8 +2591,46 @@ function render() {
   app.querySelectorAll('[data-preview-file]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.preview = { file: button.dataset.previewFile, page: Number(button.dataset.previewPage) || 1 }; render(); app.querySelector('.pdf-preview')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   app.querySelector('[data-close-preview]')?.addEventListener('click', (e) => { e.stopPropagation(); state.preview = null; render(); });
   app.querySelectorAll('.stage-card[data-stage]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.stage = button.dataset.stage; const next = currentStage(); state.grade = next?.grades?.[0] ?? null; state.path = next?.paths?.[0]?.id ?? ''; state.search = ''; state.preview = null; state.unitSelection = null; state.primaryUnitNumber = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
-  app.querySelectorAll('[data-primary-unit]').forEach((button) => button.addEventListener('click', (event) => { event.stopPropagation(); state.primaryUnitNumber = Number(button.dataset.primaryUnit); render(); app.querySelector('.primary-imported')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  app.querySelector('[data-primary-back]')?.addEventListener('click', (event) => { event.stopPropagation(); state.primaryUnitNumber = null; render(); });
+  app.querySelectorAll('[data-primary-unit]').forEach((button) => button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    state.primaryUnitNumber = Number(button.dataset.primaryUnit);
+    state.primarySection = null;
+    render();
+    app.querySelector('.primary-imported')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  app.querySelector('[data-primary-back]')?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    state.primaryUnitNumber = null;
+    state.primarySection = null;
+    render();
+  });
+  app.querySelectorAll('[data-primary-section]').forEach((button) => button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    state.primarySection = button.dataset.primarySection || null;
+    if (state.primarySection === 'games') {
+      state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '', roundWords: [], optionSets: {} };
+    }
+    render();
+  }));
+  app.querySelector('[data-primary-section-back]')?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    state.primarySection = null;
+    render();
+  });
+  app.querySelectorAll('[data-primary-answer]').forEach((button) => button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const questionId = button.dataset.primaryQuestion;
+    const selectedIndex = Number(button.dataset.optionIndex);
+    const correctIndex = Number(button.dataset.correctIndex);
+    if (!questionId || !Number.isInteger(selectedIndex) || !Number.isInteger(correctIndex)) return;
+    state.quizAnswers[questionId] = {
+      selectedIndex,
+      isCorrect: selectedIndex === correctIndex,
+      wrongChoices: selectedIndex === correctIndex ? [] : [selectedIndex]
+    };
+    saveProgressToStorage();
+    render();
+  }));
   app.querySelectorAll('.grade-button[data-grade]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.grade = Number(button.dataset.grade); state.search = ''; state.preview = null; state.unitSelection = null; state.primaryUnitNumber = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
   app.querySelectorAll('.path-button[data-path]').forEach((button) => button.addEventListener('click', (e) => { e.stopPropagation(); state.path = button.dataset.path; state.search = ''; state.preview = null; state.unitSelection = null; state.primaryUnitNumber = null; state.htmlUnitSelection = null; state.htmlModuleSelection = null; state.htmlGame = { id: 'picture-match', index: 0, score: 0, selectedWord: null, selectedImage: null, matched: [], selectedOption: null, placed: [], flipped: false, opened: null, feedback: '' }; state.activeModule = null; render(); }));
 
