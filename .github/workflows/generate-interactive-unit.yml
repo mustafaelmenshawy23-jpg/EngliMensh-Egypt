@@ -7,10 +7,13 @@ on:
       - 'scripts/generate-interactive-curriculum-batch.mjs'
       - 'scripts/extract-pdfs.mjs'
       - 'scripts/ocr-scanned-pages.py'
+      - 'scripts/build-source-review-queue.mjs'
+      - 'scripts/lib/source-review-queue.mjs'
       - 'scripts/repair-watermark-pages.mjs'
       - 'scripts/lib/extraction-quality.mjs'
       - 'scripts/lib/extraction-cache-health.mjs'
       - 'scripts/lib/curriculum-batch-progress.mjs'
+      - 'scripts/test-source-review-queue.mjs'
       - 'scripts/check-extraction-cache.mjs'
       - 'scripts/generate-interactive-unit.mjs'
       - 'scripts/lib/curriculum-order.mjs'
@@ -79,6 +82,8 @@ jobs:
           path: |
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
+          artifacts/source-review-queue.json
+          artifacts/source-review-queue.md
           key: englimensh-source-extraction-fullcoverage-v2-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py', 'scripts/repair-watermark-pages.mjs', 'scripts/lib/extraction-cache-health.mjs', 'scripts/check-extraction-cache.mjs') }}
           restore-keys: |
             englimensh-source-extraction-
@@ -135,11 +140,14 @@ jobs:
       - name: Hydrate only PDFs with watermark-only pages from a restored cache
         if: steps.extraction_coverage.outputs.needs_full_extraction != 'true' && steps.source_cache.outputs.cache-matched-key != '' && steps.source_cache.outputs.cache-hit != 'true'
         run: |
-          if [ -s src/data/extracted/watermark-repair-sources.txt ]; then
-            include="$(paste -sd, src/data/extracted/watermark-repair-sources.txt)"
-            git lfs pull --include="$include"
+          sources="$(cat src/data/extracted/watermark-repair-sources.txt src/data/extracted/ocr-retry-sources.txt 2>/dev/null | sed '/^$/d' | sort -u || true)"
+          if [ -n "$sources" ]; then
+            include="$(printf '%s\n' "$sources" | paste -sd, -)"
+            if ! git lfs pull --include="$include"; then
+              echo "::warning::Some PDFs needed for OCR retry could not be hydrated; their pages will remain explicitly blocked for visual review."
+            fi
           else
-            echo "No additional source PDFs are required for watermark OCR."
+            echo "No additional source PDFs are required for OCR retry."
           fi
 
       - name: Set up OCR tools for scanned and watermark-only pages
@@ -152,13 +160,17 @@ jobs:
 
       - name: OCR scanned and watermark-only pages
         if: steps.source_cache.outputs.cache-hit != 'true' || steps.extraction_coverage.outputs.needs_full_extraction == 'true'
-        run: OCR_LANG=eng+ara OCR_DPI=200 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=25 .venv/bin/python scripts/ocr-scanned-pages.py
+        run: OCR_LANG=eng+ara OCR_DPI=300 OCR_WORKERS=4 OCR_CHECKPOINT_EVERY=10 OCR_RETRY_EMPTY=1 OCR_PSMS=6,11,3 OCR_PAGE_TIMEOUT=45 .venv/bin/python scripts/ocr-scanned-pages.py
 
       - name: Validate complete source extraction before generation
         if: steps.source_cache.outputs.cache-hit != 'true' || steps.extraction_coverage.outputs.needs_full_extraction == 'true'
         run: |
           npm run validate:extraction
           node scripts/check-extraction-cache.mjs --require-complete
+
+      - name: Build source visual-review queue
+        if: steps.source_cache.outputs.cache-hit != 'true' || steps.extraction_coverage.outputs.needs_full_extraction == 'true'
+        run: node scripts/build-source-review-queue.mjs
 
       - name: Save reusable source extraction cache
         if: steps.source_cache.outputs.cache-hit != 'true'

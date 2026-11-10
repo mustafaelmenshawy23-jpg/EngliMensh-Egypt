@@ -6,6 +6,7 @@ const dataDir = path.join(process.cwd(), 'src', 'data', 'extracted');
 const pagesPath = path.join(dataDir, 'pages.jsonl');
 const manifestPath = path.join(dataDir, 'manifest.json');
 const sourceListPath = path.join(dataDir, 'watermark-repair-sources.txt');
+const retrySourceListPath = path.join(dataDir, 'ocr-retry-sources.txt');
 
 const lines = (await fs.readFile(pagesPath, 'utf8')).split(/\r?\n/).filter(Boolean);
 const records = lines.map((line) => JSON.parse(line));
@@ -64,8 +65,13 @@ await fs.rename(tempManifest, manifestPath);
 
 const sources = [...detectedBySource.keys()].sort();
 await fs.writeFile(sourceListPath, sources.join('\n') + (sources.length ? '\n' : ''), 'utf8');
+const retrySources = [...new Set(records
+  .filter((record) => record.extractionStatus === 'ocr_empty_needs_manual_review')
+  .map((record) => record.source))].sort();
+await fs.writeFile(retrySourceListPath, retrySources.join('\n') + (retrySources.length ? '\n' : ''), 'utf8');
 console.log(JSON.stringify({
   detectedSources: sources,
   detectedPages: manifest.watermarkDetection.detectedPages,
-  queuedForOcr: manifest.totals.pagesNeedingOcrOrReview
+  queuedForOcr: manifest.totals.pagesNeedingOcrOrReview,
+  retrySources: retrySources.length
 }, null, 2));
