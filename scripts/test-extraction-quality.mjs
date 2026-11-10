@@ -59,8 +59,16 @@ const partialManifest = {
     { source: "public/books/two.pdf", status: "lfs_pointer_not_downloaded", pages: 0 }
   ]
 };
-assert.equal(assessExtractionCoverage({ expectedSources, manifest: partialManifest, pageRows: completeRows.slice(0, 2) }).needsFullExtraction, true,
-  "A restored cache with an LFS pointer must force a full extraction");
+const partialCoverage = assessExtractionCoverage({
+  expectedSources,
+  manifest: partialManifest,
+  pageRows: completeRows.slice(0, 2)
+});
+assert.equal(partialCoverage.complete, true,
+  "A source explicitly blocked by an unavailable LFS object must not block fully verified books");
+assert.equal(partialCoverage.needsFullExtraction, false);
+assert.deepEqual(partialCoverage.blockedSources, ["public/books/two.pdf"]);
+assert.deepEqual(partialCoverage.blockedSourcesWithPages, []);
 
 assert.equal(assessExtractionCoverage({
   expectedSources,
