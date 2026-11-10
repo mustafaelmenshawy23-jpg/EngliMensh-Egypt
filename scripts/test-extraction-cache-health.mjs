@@ -44,6 +44,22 @@ assert.equal(missingPage.complete, false);
 assert.equal(missingPage.needsFullExtraction, true);
 assert.deepEqual(missingPage.pageCoverageIssues[0].missingPages, [3]);
 
+const partialWithUnavailableLfs = assessExtractionCoverage({
+  expectedSources: ["public/books/sample.pdf", "public/books/unavailable.pdf"],
+  manifest: {
+    books: [
+      { source: "public/books/sample.pdf", status: "processed", pages: 2 },
+      { source: "public/books/unavailable.pdf", status: "lfs_pointer_not_downloaded", pages: 0, extractedPages: 0 }
+    ]
+  },
+  pageRows: parsed.pageRows,
+  pageParseErrors: 0
+});
+assert.equal(partialWithUnavailableLfs.complete, true, "one explicitly blocked LFS source must not block verified extraction of the remaining books");
+assert.equal(partialWithUnavailableLfs.needsFullExtraction, false);
+assert.deepEqual(partialWithUnavailableLfs.blockedSources, ["public/books/unavailable.pdf"]);
+assert.deepEqual(partialWithUnavailableLfs.blockedSourcesWithPages, []);
+
 assert.equal(
   formatGithubOutput("needs_full_extraction", true),
   "needs_full_extraction=true\n"

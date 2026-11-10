@@ -64,6 +64,8 @@ console.log(JSON.stringify({
   unexpectedSources: report.unexpectedSources,
   duplicateManifestSources: report.duplicateManifestSources,
   unprocessedBooks: report.unprocessedBooks,
+  blockedSources: report.blockedSources,
+  blockedSourcesWithPages: report.blockedSourcesWithPages,
   pageCoverageIssues: report.pageCoverageIssues.slice(0, 20),
   unexpectedPageSources: report.unexpectedPageSources
 }, null, 2));

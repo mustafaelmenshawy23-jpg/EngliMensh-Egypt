@@ -83,7 +83,9 @@ jobs:
         if: steps.extraction_coverage.outputs.needs_full_extraction == 'true'
         run: |
           set -euo pipefail
-          git lfs pull
+          if ! git lfs pull; then
+            echo "::warning::One or more LFS objects could not be downloaded. Continuing with readable PDFs; missing objects will be recorded as blocked sources."
+          fi
           python3 - <<'PY'
           from pathlib import Path
           import sys
@@ -97,14 +99,17 @@ jobs:
                   pointers.append(str(path))
               elif not header.startswith(b"%PDF-"):
                   invalid.append(str(path))
-          if pointers or invalid:
-              print(f"::error::Source PDF hydration is incomplete: {len(pointers)} LFS pointer(s), {len(invalid)} invalid PDF file(s).")
-              for path in pointers[:20]:
-                  print(" - LFS pointer: " + path)
+          if invalid:
+              print(f"::error::Found {len(invalid)} invalid PDF file(s); refusing to extract corrupted sources.")
               for path in invalid[:20]:
                   print(" - Invalid PDF: " + path)
               sys.exit(1)
-          print(f"All {len(pdfs)} source PDF files are hydrated and begin with a PDF signature.")
+          if pointers:
+              print(f"::warning::Continuing with {len(pdfs) - len(pointers)} hydrated PDF(s); {len(pointers)} source(s) remain blocked by missing LFS objects.")
+              for path in pointers:
+                  print(" - Blocked LFS source: " + path)
+          else:
+              print(f"All {len(pdfs)} source PDF files are hydrated and begin with a PDF signature.")
           PY
 
       - name: Extract all source pages when cache is incomplete

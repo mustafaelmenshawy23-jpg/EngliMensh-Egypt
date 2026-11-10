@@ -18,8 +18,10 @@ export function assessExtractionCoverage({
   const duplicateManifestSources = [...sourceCounts.entries()]
     .filter(([, count]) => count > 1)
     .map(([source]) => source);
+  const blockedBooks = books.filter((book) => book?.status === "lfs_pointer_not_downloaded");
+  const blockedSources = blockedBooks.map((book) => normalize(book?.source));
   const unprocessedBooks = books
-    .filter((book) => book?.status !== "processed")
+    .filter((book) => book?.status !== "processed" && book?.status !== "lfs_pointer_not_downloaded")
     .map((book) => ({ source: normalize(book?.source), status: book?.status || "missing_status" }));
 
   const pagesBySource = new Map();
@@ -35,6 +37,7 @@ export function assessExtractionCoverage({
     pageMap.set(pageNumber, (pageMap.get(pageNumber) || 0) + 1);
   }
 
+  const blockedSourcesWithPages = blockedSources.filter((source) => (pagesBySource.get(source)?.size || 0) > 0);
   const pageCoverageIssues = [];
   for (const book of books) {
     const source = normalize(book?.source);
@@ -69,6 +72,7 @@ export function assessExtractionCoverage({
     && unexpectedSources.length === 0
     && duplicateManifestSources.length === 0
     && unprocessedBooks.length === 0
+    && blockedSourcesWithPages.length === 0
     && pageCoverageIssues.length === 0
     && unexpectedPageSources.size === 0
     && Number(pageParseErrors) === 0;
@@ -85,6 +89,8 @@ export function assessExtractionCoverage({
     unexpectedSources,
     duplicateManifestSources,
     unprocessedBooks,
+    blockedSources,
+    blockedSourcesWithPages,
     pageCoverageIssues,
     unexpectedPageSources: [...unexpectedPageSources]
   };
