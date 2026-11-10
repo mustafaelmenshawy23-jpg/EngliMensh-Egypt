@@ -9,6 +9,8 @@ on:
       - 'scripts/ocr-scanned-pages.py'
       - 'scripts/repair-watermark-pages.mjs'
       - 'scripts/lib/extraction-quality.mjs'
+      - 'scripts/lib/extraction-cache-health.mjs'
+      - 'scripts/check-extraction-cache.mjs'
       - 'scripts/generate-interactive-unit.mjs'
       - 'scripts/lib/curriculum-order.mjs'
       - 'scripts/lib/source-quality-gate.mjs'
