@@ -61,11 +61,25 @@ jobs:
                   print(f"::warning file={path}::File does not begin with a PDF signature; extractor will report it")
 
           if pointers:
-              print(f"::warning::Found {len(pointers)} Git LFS pointer file(s). The extractor is designed to skip these and record them in manifest.json:")
+              print(f"::error::Found {len(pointers)} Git LFS pointer file(s) after hydration. Refusing to publish a partial extraction artifact:")
               for path in pointers:
                   print(f" - {path}")
-          hydrated = len(pdfs) - len(pointers)
-          print(f"Found {len(pdfs)} PDF entries: {hydrated} hydrated, {len(pointers)} unavailable LFS pointer(s). Continuing with available books.")
+              sys.exit(1)
+
+          invalid = []
+          for path in pdfs:
+              with path.open("rb") as stream:
+                  header = stream.read(256)
+              if not header.startswith(b"%PDF-"):
+                  invalid.append(path)
+
+          if invalid:
+              print(f"::error::Found {len(invalid)} file(s) that are not valid PDF bytes:")
+              for path in invalid:
+                  print(f" - {path}")
+              sys.exit(1)
+
+          print(f"All {len(pdfs)} source PDF files are hydrated and ready for extraction.")
           PY
 
       - name: Extract page-level text
