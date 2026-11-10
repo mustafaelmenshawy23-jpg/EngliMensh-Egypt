@@ -69,6 +69,9 @@ assert.throws(() => formatGithubOutput("invalid name", true), /Invalid GitHub Ac
 console.log("Extraction-cache JSONL parsing, coverage checks, and GitHub output tests passed.");
 
 const checkScript = fs.readFileSync(new URL("./check-extraction-cache.mjs", import.meta.url), "utf8");
-assert.match(checkScript, /import \\{[^}]*parsePagesJsonl[^}]*formatGithubOutput[^}]*\\} from ["']\\.\\/lib\\/extraction-cache-health\\.mjs["']/);
+assert.ok(
+  checkScript.includes('import { assessExtractionCoverage, parsePagesJsonl, formatGithubOutput } from "./lib/extraction-cache-health.mjs";'),
+  "check-cache script must import the shared coverage, JSONL parser, and output formatter"
+);
 assert.ok(checkScript.includes("parsePagesJsonl(text)"), "check-cache script must use the shared JSONL parser");
 assert.ok(checkScript.includes("formatGithubOutput("), "check-cache script must write a real newline to GITHUB_OUTPUT");

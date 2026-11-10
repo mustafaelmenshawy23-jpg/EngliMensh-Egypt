@@ -22,11 +22,34 @@ assert.deepEqual(getConfiguredGeminiKeys({
   GEMINI_API_KEY_BACKUP_2: ' backup-2 '
 }), [['GEMINI_API_KEY_BACKUP_2', 'backup-2']]);
 assert.deepEqual(getConfiguredGeminiKeys({}), []);
-assert.deepEqual(getSupportedGeminiModels(), ['gemini-3.8-flash']);
-assert.deepEqual(getSupportedGeminiModels('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.8-flash']);
-assert.deepEqual(getSupportedGeminiModels('custom-model'), ['custom-model', 'gemini-3.8-flash']);
+assert.deepEqual(getSupportedGeminiModels(), [
+  'gemini-3.8-flash',
+  'gemini-3.6-flash',
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+]);
+assert.deepEqual(getSupportedGeminiModels('gemini-2.5-flash'), [
+  'gemini-2.5-flash',
+  'gemini-3.8-flash',
+  'gemini-3.6-flash',
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+]);
+assert.deepEqual(getSupportedGeminiModels('gemini-3.6-flash'), [
+  'gemini-3.6-flash',
+  'gemini-3.8-flash',
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+]);
+assert.deepEqual(getSupportedGeminiModels('custom-model'), [
+  'custom-model',
+  'gemini-3.8-flash',
+  'gemini-3.6-flash',
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+]);
 assert.equal(isGeminiModelUnavailable(404, 'This model models/gemini-2.5-flash is no longer available to new users.'), true);
 assert.equal(isGeminiModelUnavailable(404, 'File not found'), false);
 assert.equal(isGeminiModelUnavailable(500, 'Model is not available'), false);
 
-console.log('Gemini credential, model fallback, and model-retirement tests passed.');
+console.log('Gemini credential, multi-model fallback, and model-retirement tests passed.');

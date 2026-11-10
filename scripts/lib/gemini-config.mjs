@@ -6,6 +6,11 @@ export const GEMINI_KEY_ENV_NAMES = Object.freeze([
 ]);
 
 export const DEFAULT_GEMINI_MODEL = 'gemini-3.8-flash';
+export const FALLBACK_GEMINI_MODELS = Object.freeze([
+  'gemini-3.6-flash',
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+]);
 
 export function getConfiguredGeminiKeys(env = process.env) {
   return GEMINI_KEY_ENV_NAMES
@@ -15,7 +20,11 @@ export function getConfiguredGeminiKeys(env = process.env) {
 
 export function getSupportedGeminiModels(preferredModel = DEFAULT_GEMINI_MODEL) {
   const preferred = typeof preferredModel === 'string' ? preferredModel.trim() : '';
-  return [...new Set([preferred || DEFAULT_GEMINI_MODEL, DEFAULT_GEMINI_MODEL])];
+  return [...new Set([
+    preferred || DEFAULT_GEMINI_MODEL,
+    DEFAULT_GEMINI_MODEL,
+    ...FALLBACK_GEMINI_MODELS
+  ])];
 }
 
 export function isGeminiModelUnavailable(status, detail = '') {
