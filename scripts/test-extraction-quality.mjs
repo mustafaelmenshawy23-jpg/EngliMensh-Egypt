@@ -34,3 +34,51 @@ assert.equal(findRepeatedShortTextPages(tooFewPages).size, 0,
   'Small repeated sets do not trigger the conservative watermark rule');
 
 console.log('Repeated watermark text detection tests passed.');
+
+
+import { assessExtractionCoverage } from "./lib/extraction-cache-health.mjs";
+
+const expectedSources = ["public/books/one.pdf", "public/books/two.pdf"];
+const completeManifest = {
+  books: [
+    { source: "public/books/one.pdf", status: "processed", pages: 2 },
+    { source: "public/books/two.pdf", status: "processed", pages: 1 }
+  ]
+};
+const completeRows = [
+  { source: "public/books/one.pdf", pdfPage: 1 },
+  { source: "public/books/one.pdf", pdfPage: 2 },
+  { source: "public/books/two.pdf", pdfPage: 1 }
+];
+assert.equal(assessExtractionCoverage({ expectedSources, manifest: completeManifest, pageRows: completeRows }).complete, true,
+  "A cache is complete only when every PDF and every physical page is represented exactly once");
+
+const partialManifest = {
+  books: [
+    { source: "public/books/one.pdf", status: "processed", pages: 2 },
+    { source: "public/books/two.pdf", status: "lfs_pointer_not_downloaded", pages: 0 }
+  ]
+};
+assert.equal(assessExtractionCoverage({ expectedSources, manifest: partialManifest, pageRows: completeRows.slice(0, 2) }).needsFullExtraction, true,
+  "A restored cache with an LFS pointer must force a full extraction");
+
+assert.equal(assessExtractionCoverage({
+  expectedSources,
+  manifest: completeManifest,
+  pageRows: completeRows.slice(0, 2)
+}).needsFullExtraction, true, "A missing physical page must invalidate the cache");
+
+assert.equal(assessExtractionCoverage({
+  expectedSources,
+  manifest: completeManifest,
+  pageRows: [...completeRows, { source: "public/books/one.pdf", pdfPage: 2 }]
+}).needsFullExtraction, true, "Duplicate page records must invalidate the cache");
+
+assert.equal(assessExtractionCoverage({
+  expectedSources,
+  manifest: completeManifest,
+  pageRows: completeRows,
+  pageParseErrors: 1
+}).needsFullExtraction, true, "Malformed extraction records must invalidate the cache");
+
+console.log("Full-book extraction cache coverage tests passed.");
