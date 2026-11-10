@@ -6,6 +6,7 @@ import { validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/sourc
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
 import { getConfiguredGeminiKeys } from './lib/gemini-config.mjs';
+import { isTransientGenerationError, summarizeCandidateProgress, hasFatalBatchFailures } from './lib/curriculum-batch-progress.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -23,8 +24,7 @@ const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 function retryDelayFor(error, attemptCount) {
   const attempts = Math.max(1, Number(attemptCount) || 1);
   const message = String(error?.message || error || '');
-  const transient = /Gemini API\\s+(?:429|500|502|503|504)\\b|HTTP\\s+(?:429|500|502|503|504)\\b|rate limit|temporarily unavailable|timeout|ECONNRESET|ETIMEDOUT/i.test(message);
-  if (transient) {
+  if (isTransientGenerationError(message)) {
     const minutes = Math.min(60, 5 * (2 ** Math.min(attempts - 1, 4)));
     return minutes * 60 * 1000;
   }
@@ -241,7 +241,7 @@ for (const unit of selected) {
     console.log('Generating ' + unit.bookId + ' Unit ' + unit.unitNumber + ': ' + unit.title + ' (PDF ' + unit.start + '-' + unit.end + ') using ' + model);
     await new Promise((resolve, reject) => {
       const child = spawn(process.execPath, ['scripts/generate-interactive-unit.mjs'], {
-        stdio: 'inherit',
+        stdio: ['ignore', 'pipe', 'pipe'],
         env: {
           ...process.env,
           BOOK_ID: unit.bookId,
@@ -250,10 +250,20 @@ for (const unit of selected) {
           GEMINI_MODEL: model
         }
       });
+      let stderrTail = '';
+      child.stdout.on('data', (chunk) => process.stdout.write(chunk));
+      child.stderr.on('data', (chunk) => {
+        const output = chunk.toString();
+        process.stderr.write(output);
+        stderrTail = (stderrTail + output).slice(-5000);
+      });
       child.on('error', reject);
-      child.on('exit', (code) => {
+      child.on('exit', (code, signal) => {
         if (code === 0) resolve();
-        else reject(new Error('Generator exited with code ' + code));
+        else {
+          const detail = stderrTail.slice(-3500);
+          reject(new Error('Generator exited with code ' + code + (signal ? ' (signal ' + signal + ')' : '') + (detail ? ': ' + detail : '')));
+        }
       });
     });
 
@@ -306,7 +316,14 @@ summary.stateTotals = {
   blockedSourceReview: attemptStatuses.filter((item) => item.status === 'blocked_source_review').length,
   failed: attemptStatuses.filter((item) => item.status === 'failed' || item.status === 'failed_validation').length
 };
-summary.pendingCandidates = Math.max(0, totalCandidates - summary.stateTotals.generatedNeedsReview - summary.stateTotals.approved - summary.stateTotals.blockedSourceReview);
+const progressState = summarizeCandidateProgress(
+  orderedCandidates.map((candidate) => ({ unitId: candidate.bookId + '-unit-' + candidate.unitNumber })),
+  batchState.attempts,
+  Date.now()
+);
+summary.pendingCandidates = progressState.pendingCandidates;
+summary.waitingForRetry = progressState.waitingForRetry;
+summary.stateTotals.waitingForRetry = progressState.waitingForRetry;
 await persist();
 
 console.log(JSON.stringify({
@@ -318,11 +335,12 @@ console.log(JSON.stringify({
   blockedSourceReview: summary.blockedSourceReview,
   completedDrafts: summary.completedDrafts,
   pendingCandidates: summary.pendingCandidates,
+  waitingForRetry: summary.waitingForRetry,
   nextCursorIndex: summary.nextCursorIndex,
   progress: progressFile,
   state: stateFile
 }, null, 2));
 
-if (summary.results.some((item) => item.status === 'failed' || item.status === 'failed_validation')) {
+if (hasFatalBatchFailures(summary.results)) {
   process.exitCode = 1;
 }

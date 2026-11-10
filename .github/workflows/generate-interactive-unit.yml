@@ -10,6 +10,7 @@ on:
       - 'scripts/repair-watermark-pages.mjs'
       - 'scripts/lib/extraction-quality.mjs'
       - 'scripts/lib/extraction-cache-health.mjs'
+      - 'scripts/lib/curriculum-batch-progress.mjs'
       - 'scripts/check-extraction-cache.mjs'
       - 'scripts/generate-interactive-unit.mjs'
       - 'scripts/lib/curriculum-order.mjs'
@@ -60,6 +61,7 @@ jobs:
       - name: Checkout only the EngliMensh-Egypt repository and hydrate source PDFs
         uses: actions/checkout@v4
         with:
+          ref: main
           lfs: false
 
       - name: Set up Node.js
