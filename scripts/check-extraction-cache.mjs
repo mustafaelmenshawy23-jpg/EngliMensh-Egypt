@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { assessExtractionCoverage } from "./lib/extraction-cache-health.mjs";
+import { assessExtractionCoverage, parsePagesJsonl, formatGithubOutput } from "./lib/extraction-cache-health.mjs";
 
 const root = process.cwd();
 const booksRoot = path.join(root, "public", "books");
