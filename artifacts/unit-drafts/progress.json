@@ -1,44 +1,69 @@
 {
-  "generatedAt": "2026-11-10T07:37:41.142Z",
+  "generatedAt": "2026-11-10T08:00:42.382Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
-  "selected": 5,
-  "cursorIndex": 0,
-  "nextCursorIndex": 5,
-  "batchSize": 5,
+  "selected": 10,
+  "cursorIndex": 5,
+  "nextCursorIndex": 16,
+  "batchSize": 10,
   "model": "gemini-3.8-flash",
   "completedDrafts": 0,
   "approvedPreserved": 0,
   "blockedSourceReview": 43,
   "excludedUnits": 0,
-  "pendingCandidates": 82,
+  "pendingCandidates": 67,
   "results": [
     {
-      "unitId": "primary1-student-term1-unit-1",
+      "unitId": "primary1-student-term1-unit-6",
       "status": "failed",
-      "error": "Generator exited with code 1"
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "primary1-student-term1-unit-2",
+      "unitId": "connectplus-primary1-supplement-unit-1",
       "status": "failed",
-      "error": "Generator exited with code 1"
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "primary1-student-term1-unit-3",
+      "unitId": "connectplus-primary1-supplement-unit-2",
       "status": "failed",
-      "error": "Generator exited with code 1"
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "primary1-student-term1-unit-4",
+      "unitId": "connectplus-primary1-supplement-unit-3",
       "status": "failed",
-      "error": "Generator exited with code 1"
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "primary1-student-term1-unit-5",
+      "unitId": "connectplus-primary1-supplement-unit-4",
       "status": "failed",
-      "error": "Generator exited with code 1"
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "connectplus-primary1-supplement-unit-5",
+      "status": "failed",
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "primary2-student-term1-unit-1",
+      "status": "failed",
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "primary2-student-term1-unit-2",
+      "status": "failed",
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "primary2-student-term1-unit-3",
+      "status": "failed",
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "primary2-student-term1-unit-4",
+      "status": "failed",
+      "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.8-flash; trying another configured key.\nGemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n"
     }
   ],
   "blocked": [
@@ -8205,6 +8230,8 @@
     "generatedNeedsReview": 0,
     "approved": 0,
     "blockedSourceReview": 43,
-    "failed": 5
-  }
+    "failed": 15,
+    "waitingForRetry": 15
+  },
+  "waitingForRetry": 15
 }
