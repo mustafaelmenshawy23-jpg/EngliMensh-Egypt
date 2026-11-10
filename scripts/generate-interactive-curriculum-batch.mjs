@@ -20,6 +20,17 @@ const requestedStart = process.env.START_INDEX?.trim();
 const batchSize = Number(process.env.BATCH_SIZE || 5);
 const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
+function retryDelayFor(error, attemptCount) {
+  const attempts = Math.max(1, Number(attemptCount) || 1);
+  const message = String(error?.message || error || '');
+  const transient = /Gemini API\\s+(?:429|500|502|503|504)\\b|HTTP\\s+(?:429|500|502|503|504)\\b|rate limit|temporarily unavailable|timeout|ECONNRESET|ETIMEDOUT/i.test(message);
+  if (transient) {
+    const minutes = Math.min(60, 5 * (2 ** Math.min(attempts - 1, 4)));
+    return minutes * 60 * 1000;
+  }
+  return Math.min(168, 24 * attempts) * 60 * 60 * 1000;
+}
+
 const configuredGeminiKeys = getConfiguredGeminiKeys();
 if (!configuredGeminiKeys.length) {
   throw new Error('At least one Gemini secret is required: GEMINI_API_KEY, GEMINI_API_KEY_BACKUP, GEMINI_API_KEY_BACKUP_2, or GEMINI_API_KEY_BACKUP_3. No offline curriculum fallback is used by the batch workflow.');
@@ -272,14 +283,15 @@ for (const unit of selected) {
         ? 'failed_validation'
         : 'failed';
     const prior = batchState.attempts[unit.unitId];
-    const retryHours = Math.min(168, 24 * Math.max(1, Number(prior?.attemptCount || 0) + 1));
+    const attemptCount = Number(prior?.attemptCount || 0) + 1;
+    const retryDelayMs = retryDelayFor(error, attemptCount);
     summary.results.push({ unitId: unit.unitId, status, error: error.message });
     batchState.attempts[unit.unitId] = {
       status,
       sourceSignature: unit.sourceSignature,
       lastAttemptAt: new Date().toISOString(),
-      retryAfter: new Date(Date.now() + retryHours * 60 * 60 * 1000).toISOString(),
-      attemptCount: Number(prior?.attemptCount || 0) + 1,
+      retryAfter: new Date(Date.now() + retryDelayMs).toISOString(),
+      attemptCount,
       error: error.message
     };
     console.error('[' + status + '] ' + unit.unitId + ': ' + error.message);
