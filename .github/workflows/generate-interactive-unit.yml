@@ -31,7 +31,12 @@ on:
       batch_size:
         description: Number of units to process in this run (1-10)
         required: true
-        default: "5"
+        default: "10"
+        type: string
+      chain_depth:
+        description: Internal safety counter for automatic resumable batches
+        required: false
+        default: "0"
         type: string
       gemini_model:
         description: Gemini model
@@ -41,6 +46,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: englimensh-curriculum-generation
@@ -169,7 +175,7 @@ jobs:
           GEMINI_API_KEY_BACKUP_3: ${{ secrets.GEMINI_API_KEY_BACKUP_3 }}
           GEMINI_MODEL: ${{ github.event.inputs.gemini_model || 'gemini-3.8-flash' }}
           START_INDEX: ${{ github.event.inputs.start_index || '' }}
-          BATCH_SIZE: ${{ github.event.inputs.batch_size || '5' }}
+          BATCH_SIZE: ${{ github.event.inputs.batch_size || '10' }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
 
       - name: Persist unapproved drafts and resumable queue state
@@ -220,3 +226,39 @@ jobs:
             src/data/extracted/manifest.json
           if-no-files-found: warn
           retention-days: 30
+
+      - name: Continue with the next resumable batch when eligible units remain
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHAIN_DEPTH: ${{ github.event.inputs.chain_depth || '0' }}
+        run: |
+          set -euo pipefail
+          PROGRESS_FILE="artifacts/unit-drafts/progress.json"
+          if [ ! -f "$PROGRESS_FILE" ]; then
+            echo "::warning::No progress report was produced; automatic continuation is skipped."
+            exit 0
+          fi
+
+          PENDING="$(node -e 'const fs = require("node:fs"); const p = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(String(Number(p.pendingCandidates || 0)));' "$PROGRESS_FILE")"
+          DEPTH="${CHAIN_DEPTH:-0}"
+          if ! [[ "$PENDING" =~ ^[0-9]+$ && "$DEPTH" =~ ^[0-9]+$ ]]; then
+            echo "::warning::Progress or chain-depth value is invalid; automatic continuation is skipped."
+            exit 0
+          fi
+
+          if (( PENDING == 0 )); then
+            echo "No eligible curriculum candidates remain. Remaining units are completed or explicitly blocked for review."
+            exit 0
+          fi
+
+          if (( DEPTH >= 9 )); then
+            echo "::notice::Automatic batch safety cap reached after 10 runs. The saved cursor remains available for the next scheduled or manual run."
+            exit 0
+          fi
+
+          NEXT_DEPTH=$((DEPTH + 1))
+          echo "Queueing the next batch: $PENDING eligible candidates remain; chain depth $NEXT_DEPTH."
+          gh workflow run generate-interactive-unit.yml --ref main -f batch_size=10 -f chain_depth="$NEXT_DEPTH" || {
+            echo "::warning::GitHub did not accept the automatic next-batch dispatch. Progress is saved and the next scheduled/manual run can resume."
+          }
