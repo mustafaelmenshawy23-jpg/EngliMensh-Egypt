@@ -13,6 +13,8 @@ on:
       - 'scripts/lib/extraction-quality.mjs'
       - 'scripts/lib/extraction-cache-health.mjs'
       - 'scripts/lib/curriculum-batch-progress.mjs'
+      - 'scripts/lib/gemini-config.mjs'
+      - 'scripts/test-gemini-config.mjs'
       - 'scripts/test-source-review-queue.mjs'
       - 'scripts/check-extraction-cache.mjs'
       - 'scripts/generate-interactive-unit.mjs'
