@@ -89,3 +89,29 @@ export function assessExtractionCoverage({
     unexpectedPageSources: [...unexpectedPageSources]
   };
 }
+
+
+export function parsePagesJsonl(text = "") {
+  const pageRows = [];
+  const invalidLines = [];
+  for (const [index, line] of String(text ?? "").split(/\r?\n/).entries()) {
+    if (!line.trim()) continue;
+    try {
+      pageRows.push(JSON.parse(line));
+    } catch {
+      invalidLines.push(index + 1);
+    }
+  }
+  return {
+    pageRows,
+    pageParseErrors: invalidLines.length,
+    invalidLines
+  };
+}
+
+export function formatGithubOutput(name, value) {
+  if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(String(name))) {
+    throw new Error("Invalid GitHub Actions output name.");
+  }
+  return String(name) + "=" + String(value) + "\n";
+}

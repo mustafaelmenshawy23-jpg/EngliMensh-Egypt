@@ -38,21 +38,18 @@ let pageRows = [];
 let pageParseErrors = 0;
 try {
   const text = await fs.readFile(path.join(extractedRoot, "pages.jsonl"), "utf8");
-  for (const [index, line] of text.split(/\\r?\\n/).entries()) {
-    if (!line.trim()) continue;
-    try {
-      pageRows.push(JSON.parse(line));
-    } catch {
-      pageParseErrors += 1;
-      console.error("Invalid pages.jsonl JSON at line " + (index + 1));
-    }
+  const parsed = parsePagesJsonl(text);
+  pageRows = parsed.pageRows;
+  pageParseErrors = parsed.pageParseErrors;
+  for (const lineNumber of parsed.invalidLines) {
+    console.error("Invalid pages.jsonl JSON at line " + lineNumber);
   }
 } catch {
   pageParseErrors += 1;
 }
 
 const report = assessExtractionCoverage({ expectedSources, manifest, pageRows, pageParseErrors });
-const outputLine = "needs_full_extraction=" + String(report.needsFullExtraction) + "\\n";
+const outputLine = formatGithubOutput("needs_full_extraction", report.needsFullExtraction);
 if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT, outputLine, "utf8");
 
 console.log(JSON.stringify({
