@@ -40,8 +40,9 @@ Four older draft artifacts are present (Primary 1 Units 1–3 and Baccalaureate 
 - The app loads only drafts from `src/data/approved-unit-drafts/` that pass the approval guard, including all nine section types, teacher review, confirmed visual review, and matching source fingerprint. This correctly prevents unreviewed artifacts from being published.
 - The current batch generator covers student books and commercial supplements. Assessment books and the reader need their own source-grounded review/term-assessment processing path.
 - The invalid regular-expression literal in `scripts/test-extraction-cache-health.mjs` was replaced with a direct import-contract assertion. The next run exposed a brittle expected sort order in `scripts/test-source-review-queue.mjs`; the test now correctly checks grouping by source PDF, then ascending PDF page.
-- [Validation run 42782826362](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826362) completed successfully: source-index checks, review-candidate checks, visual-recovery checks, lesson-content checks, unit-module checks, JavaScript syntax, all automated tests, and the production web build passed.
-- [Deploy preview run 42782826316](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826316) completed successfully. [Android preview run 42782826475](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826475) was still running when this report was refreshed; its APK is not counted as complete until the APK verification and upload steps finish.
+- [Latest validation run 42783064793](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42783064793) completed successfully on commit `c730cc0`: source-index checks, review-candidate checks, visual-recovery checks, lesson-content checks, unit-module checks, JavaScript syntax, all automated tests, and the production web build passed.
+- [Latest deploy preview run 42783064663](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42783064663) completed successfully.
+- [Android preview run 42783064656](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42783064656) completed successfully. Artifact `EngliMensh-Egypt-preview-debug-apk` (ID `13747131763`) contains a verified `app-debug.apk` of 7,245,181 bytes. It is a debug preview, not a signed Play Store release, and it has not been installed on a physical device.
 - These workflow successes prove code/test/build health only; they do not prove lesson-content completeness.
 
 ## TTS and speaking
@@ -52,7 +53,7 @@ No physical Android device test was performed in this run, so actual male/female
 
 ## Blocking workflow configuration
 
-The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, while this curriculum work runs on `main`. The default-branch copy of `generate-interactive-unit.yml` is an older, different workflow that checks out the feature branch and has no push trigger for the main-branch pipeline. Consequently, a push to `main` creates a no-job workflow run rather than starting the new generator, and the automatic continuation request is rejected. I did not modify the feature branch. GitHub batch continuation requires a manual repository-setting alignment: set `main` as the default branch, or have the repository owner add the dispatch-enabled main-branch workflow to the current default branch with its checkout explicitly targeting `main`. The saved per-unit cursor and retry state remain intact.
+The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, while this curriculum work runs on `main`. The default-branch copy of `generate-interactive-unit.yml` is an older workflow that checks out the feature branch. The main-branch workflow push produced a no-job run [42783062859](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42783062859), and the earlier automatic continuation attempt was rejected by GitHub with HTTP 422. I did not modify the feature branch. GitHub batch continuation requires a manual repository-setting alignment: set `main` as the default branch, or have the repository owner add the current dispatch-enabled workflow to the default branch with its checkout explicitly targeting `main`. The saved per-unit cursor and retry state remain intact.
 
 ## Next work
 
@@ -62,4 +63,4 @@ The repository default branch is currently `feature/primary-connect-connect-plus
 4. Add a separate workflow for the nine assessment books and the reader.
 5. Review each draft against its actual PDF pages, approve only after visual and answer-key checks, then test the approved content inside the app.
 
-**Completion status: not complete.** No batch-generated unit is approved, and build success alone is not a curriculum-completion signal.
+**Completion status: not complete.** The current batch snapshot still has 43 source-review blockers, 15 transient failures, and 67 pending candidates; no batch-generated unit is approved. The new fallback code is unit-tested but has not yet been exercised by a new generation run because of the default-branch workflow mismatch. Build success alone is not a curriculum-completion signal.
