@@ -39,8 +39,10 @@ Four older draft artifacts are present (Primary 1 Units 1–3 and Baccalaureate 
 
 - The app loads only drafts from `src/data/approved-unit-drafts/` that pass the approval guard, including all nine section types, teacher review, confirmed visual review, and matching source fingerprint. This correctly prevents unreviewed artifacts from being published.
 - The current batch generator covers student books and commercial supplements. Assessment books and the reader need their own source-grounded review/term-assessment processing path.
-- The latest validation run [42778284639](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42778284639) stopped in the test suite because `scripts/test-extraction-cache-health.mjs` contained an invalid regular-expression literal. This is a test-source syntax defect, not evidence that the app itself failed at runtime; the test is corrected in the next commit.
-- The latest deploy preview [42778284839](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42778284839) and Android preview build [42778284657](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42778284657) succeeded for the preceding source commit, but they do not prove lesson-content completeness.
+- The invalid regular-expression literal in `scripts/test-extraction-cache-health.mjs` was replaced with a direct import-contract assertion. The next run exposed a brittle expected sort order in `scripts/test-source-review-queue.mjs`; the test now correctly checks grouping by source PDF, then ascending PDF page.
+- [Validation run 42782826362](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826362) completed successfully: source-index checks, review-candidate checks, visual-recovery checks, lesson-content checks, unit-module checks, JavaScript syntax, all automated tests, and the production web build passed.
+- [Deploy preview run 42782826316](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826316) completed successfully. [Android preview run 42782826475](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/42782826475) was still running when this report was refreshed; its APK is not counted as complete until the APK verification and upload steps finish.
+- These workflow successes prove code/test/build health only; they do not prove lesson-content completeness.
 
 ## TTS and speaking
 
@@ -50,12 +52,12 @@ No physical Android device test was performed in this run, so actual male/female
 
 ## Blocking workflow configuration
 
-The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, while this curriculum work and its generation workflow run on `main`. The generation workflow's automatic next-batch dispatch returned HTTP 422 because GitHub does not see a `workflow_dispatch` trigger on the repository's default branch. The saved cursor is intact, but GitHub Actions cannot chain the next batch until the default-branch workflow configuration is aligned (set the repository default branch to `main`, or add the same dispatch-enabled workflow to the current default branch).
+The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, while this curriculum work runs on `main`. The default-branch copy of `generate-interactive-unit.yml` is an older, different workflow that checks out the feature branch and has no push trigger for the main-branch pipeline. Consequently, a push to `main` creates a no-job workflow run rather than starting the new generator, and the automatic continuation request is rejected. I did not modify the feature branch. GitHub batch continuation requires a manual repository-setting alignment: set `main` as the default branch, or have the repository owner add the dispatch-enabled main-branch workflow to the current default branch with its checkout explicitly targeting `main`. The saved per-unit cursor and retry state remain intact.
 
 ## Next work
 
-1. Retry the 15 transiently failed units using the newly added Gemini fallback sequence: 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, then 3.5 Flash.
-2. Continue the 67 eligible candidates in bounded batches; keep all source-blocked units out of generation until repaired/reviewed.
+1. Retry the 15 transiently failed units using the newly added and unit-tested Gemini fallback sequence: 3.8 Flash, 3.6 Flash, 3.5 Flash-Lite, then 3.5 Flash. The fallback code is committed, but it has not yet been exercised by a new batch because of the default-branch workflow mismatch.
+2. Continue the 67 eligible candidates in bounded batches once the workflow is dispatchable; keep all source-blocked units out of generation until repaired/reviewed.
 3. Recover the one unavailable LFS PDF and work through the 43 visual/OCR blockers.
 4. Add a separate workflow for the nine assessment books and the reader.
 5. Review each draft against its actual PDF pages, approve only after visual and answer-key checks, then test the approved content inside the app.
