@@ -20,7 +20,15 @@ assert.equal(queue.summary.pagesNeedingVisualReview, 3);
 assert.equal(queue.summary.emptyPages, 1);
 assert.equal(queue.summary.unreliablePages, 1);
 assert.equal(queue.summary.errorPages, 1);
-assert.deepEqual(queue.items.map((item) => item.pdfPage), [4, 8, 2].sort((a,b)=>a-b).length ? [4,8,2].sort((a,b)=>a-b) : []);
+assert.deepEqual(
+  queue.items.map((item) => [item.source, item.pdfPage]),
+  [
+    ["public/books/a.pdf", 4],
+    ["public/books/a.pdf", 8],
+    ["public/books/b.pdf", 2]
+  ],
+  "review queue pages must be grouped by source PDF, then ordered by PDF page"
+);
 assert.match(renderSourceReviewQueueMarkdown(queue), /Individual PDF page references/);
 assert.match(renderSourceReviewQueueMarkdown(queue), /lfs_pointer_not_downloaded|Books blocked/);
 
