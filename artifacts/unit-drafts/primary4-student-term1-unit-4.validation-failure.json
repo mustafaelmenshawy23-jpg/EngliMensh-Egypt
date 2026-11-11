@@ -1,0 +1,147 @@
+{
+  "status": "failed_validation",
+  "bookId": "primary4-student-term1",
+  "unitNumber": 4,
+  "score": 40,
+  "criticalFailures": [
+    "u4_voc_01: missing Arabic meaning",
+    "u4_voc_01: missing or incomplete English example sentence",
+    "u4_voc_02: missing Arabic meaning",
+    "u4_voc_02: missing or incomplete English example sentence",
+    "u4_voc_03: missing Arabic meaning",
+    "u4_voc_03: missing or incomplete English example sentence",
+    "u4_voc_04: missing Arabic meaning",
+    "u4_voc_04: missing or incomplete English example sentence",
+    "u4_voc_05: missing Arabic meaning",
+    "u4_voc_05: missing or incomplete English example sentence",
+    "u4_vq_01: options must be an array",
+    "u4_vq_02: options must be an array",
+    "u4_vq_03: options must be an array",
+    "u4_gram_01: missing or incomplete grammar explanation",
+    "u4_gram_01: missing or incomplete grammar example",
+    "u4_gq_01: options must be an array",
+    "u4_gq_02: options must be an array",
+    "u4_gq_03: options must be an array",
+    "u4_read_02: options must be an array",
+    "u4_list_02: options must be an array",
+    "Game item u4_game_01 is missing gameName or description",
+    "Game item u4_game_01 has no supported skill classification",
+    "u4_game_01: options must be an array",
+    "Game item u4_game_02 is missing gameName or description",
+    "Game item u4_game_02 has no supported skill classification",
+    "u4_game_02: options must be an array",
+    "u4_test_01: options must be an array",
+    "u4_test_02: options must be an array",
+    "u4_test_03: options must be an array",
+    "u4_test_04: options must be an array",
+    "u4_test_05: options must be an array",
+    "u4_test_06: options must be an array",
+    "u4_test_07: options must be an array",
+    "u4_test_08: options must be an array",
+    "u4_test_09: options must be an array",
+    "u4_test_10: options must be an array",
+    "Games section must vary across at least two supported skills."
+  ],
+  "warnings": [],
+  "report": {
+    "unitTitle": "Unit 4: Egypt – My Homeland",
+    "expectedRange": {
+      "start": 62,
+      "end": 79,
+      "totalPages": 18
+    },
+    "recordedCoverage": {
+      "totalPages": 18,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 7,
+      "supplementaryItems": 22,
+      "vocabularyCount": 0,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 0,
+        "issues": [
+          "u4_voc_01: missing Arabic meaning",
+          "u4_voc_01: missing or incomplete English example sentence",
+          "u4_voc_02: missing Arabic meaning",
+          "u4_voc_02: missing or incomplete English example sentence",
+          "u4_voc_03: missing Arabic meaning",
+          "u4_voc_03: missing or incomplete English example sentence",
+          "u4_voc_04: missing Arabic meaning",
+          "u4_voc_04: missing or incomplete English example sentence",
+          "u4_voc_05: missing Arabic meaning",
+          "u4_voc_05: missing or incomplete English example sentence"
+        ]
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 0,
+        "issues": [
+          "u4_vq_01: options must be an array",
+          "u4_vq_02: options must be an array",
+          "u4_vq_03: options must be an array"
+        ]
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 0,
+        "issues": [
+          "u4_gram_01: missing or incomplete grammar explanation",
+          "u4_gram_01: missing or incomplete grammar example"
+        ]
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 0,
+        "issues": [
+          "u4_gq_01: options must be an array",
+          "u4_gq_02: options must be an array",
+          "u4_gq_03: options must be an array"
+        ]
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 1,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 1,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 0,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 0,
+        "issues": [
+          "u4_test_01: options must be an array",
+          "u4_test_02: options must be an array",
+          "u4_test_03: options must be an array",
+          "u4_test_04: options must be an array",
+          "u4_test_05: options must be an array",
+          "u4_test_06: options must be an array",
+          "u4_test_07: options must be an array",
+          "u4_test_08: options must be an array",
+          "u4_test_09: options must be an array",
+          "u4_test_10: options must be an array"
+        ]
+      }
+    },
+    "validationTimestamp": "2026-11-11T07:48:37.690Z"
+  }
+}
