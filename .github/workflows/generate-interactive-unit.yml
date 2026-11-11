@@ -171,7 +171,7 @@ jobs:
           node scripts/check-extraction-cache.mjs --require-complete
 
       - name: Build source visual-review queue
-        if: steps.source_cache.outputs.cache-hit != 'true' || steps.extraction_coverage.outputs.needs_full_extraction == 'true'
+        if: steps.source_cache.outputs.cache-hit != 'true' || steps.extraction_coverage.outputs.needs_full_extraction == 'true' || hashFiles('artifacts/source-review-queue.json') == ''
         run: node scripts/build-source-review-queue.mjs
 
       - name: Save reusable source extraction cache
@@ -181,6 +181,8 @@ jobs:
           path: |
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
+            artifacts/source-review-queue.json
+            artifacts/source-review-queue.md
           key: ${{ steps.source_cache.outputs.cache-primary-key }}
 
       - name: Generate resumable ordered unit batch
