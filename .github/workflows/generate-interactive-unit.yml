@@ -84,8 +84,8 @@ jobs:
           path: |
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
-          artifacts/source-review-queue.json
-          artifacts/source-review-queue.md
+            artifacts/source-review-queue.json
+            artifacts/source-review-queue.md
           key: englimensh-source-extraction-fullcoverage-v2-${{ hashFiles('public/books/**', 'scripts/extract-pdfs.mjs', 'scripts/ocr-scanned-pages.py', 'scripts/repair-watermark-pages.mjs', 'scripts/lib/extraction-cache-health.mjs', 'scripts/check-extraction-cache.mjs') }}
           restore-keys: |
             englimensh-source-extraction-
