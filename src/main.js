@@ -515,6 +515,7 @@ function renderPrimaryHtmlLibrary() {
     primaryHtmlCurriculum,
     escapeHtml,
     renderPreparatoryGame,
+    renderPrimaryGames: renderGames,
     renderSpeakerVoiceSettings
   });
 }
