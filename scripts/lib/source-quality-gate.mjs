@@ -117,7 +117,12 @@ export function validatePageText(text, customConfig = {}) {
   // - needs_review: short page (e.g. opener, cover, divider) or minor formatting anomaly
   // - valid: clear, readable source text
   let status = 'valid';
-  const hasSevereCorruption = longWords.length > 0 || replacementCharCount > 5 || readableRatio < 0.35 || charCount === 0;
+  // A single long OCR token on an otherwise readable page is a review warning, not enough to block the whole unit.
+  // Block only when long-token corruption is repeated/dominant or the page is otherwise unreadable.
+  const longWordRatio = longWords.length / Math.max(1, wordCount);
+  const severeLongWordCorruption = (longWords.length >= 2 && longWordRatio >= 0.1) ||
+    (longWords.length === 1 && wordCount <= 4 && longWords[0].length > 60);
+  const hasSevereCorruption = severeLongWordCorruption || replacementCharCount > 5 || readableRatio < 0.35 || charCount === 0;
   if (hasSevereCorruption || score < 35) {
     status = 'blocked';
   } else if (issues.length > 0 || score < 75) {
@@ -133,6 +138,8 @@ export function validatePageText(text, customConfig = {}) {
       wordCount,
       readableRatio: Number(readableRatio.toFixed(3)),
       longWordCount: longWords.length,
+      longWordRatio: Number(longWordRatio.toFixed(3)),
+      severeLongWordCorruption,
       replacementCharCount
     }
   };
