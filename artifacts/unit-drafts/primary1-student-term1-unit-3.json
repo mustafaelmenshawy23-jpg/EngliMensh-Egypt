@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-07T16:00:00.000Z",
+  "generatedAt": "2026-11-12T07:45:45.769Z",
   "generator": {
-    "provider": "source-grounded-manual-curation",
-    "model": "manual",
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
     "reviewStatus": "needs_review"
   },
   "bookId": "primary1-student-term1",
   "sourceFilename": "English_language_prim1_t1.pdf",
   "grade": "Primary 1",
   "unitNumber": 3,
-  "unitTitle": "I Love My Family",
+  "unitTitle": "Unit 3: I Love My Family",
   "sourcePdfRange": {
     "start": 42,
-    "end": 60
+    "end": 64
   },
   "sourceCoverage": [
     42,
@@ -35,17 +35,81 @@
     57,
     58,
     59,
-    60
+    60,
+    61,
+    62,
+    63,
+    64
   ],
-  "qualityScore": null,
+  "sourceFingerprint": "4962e48359683d6ddf7219eacc60b8ec23b326d1751f2c358daa8589cf33adfb",
+  "qualityScore": 85,
   "qualityReport": {
-    "status": "needs_review",
-    "sourceBasis": "Official student book OCR extraction artifact; verify every item against original PDF page images.",
-    "notes": [
-      "Source items cite exact PDF pages.",
-      "Generated questions are marked supplementary.",
-      "No missing OCR content has been guessed."
-    ]
+    "unitTitle": "Unit 3: I Love My Family",
+    "expectedRange": {
+      "start": 42,
+      "end": 64,
+      "totalPages": 23
+    },
+    "recordedCoverage": {
+      "totalPages": 23,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 34,
+      "sourceItems": 12,
+      "supplementaryItems": 22,
+      "vocabularyCount": 7,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 7,
+        "validItems": 7,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:45:45.769Z"
   },
   "reviewStatus": "needs_review",
   "reviewedBy": null,
@@ -56,7 +120,7 @@
       "title": "Vocabulary",
       "items": [
         {
-          "itemId": "p1u3-voc-1",
+          "itemId": "vocab-1",
           "content": {
             "word": "father",
             "arabicMeaning": "أب",
@@ -65,11 +129,10 @@
             "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u3-voc-2",
+          "itemId": "vocab-2",
           "content": {
             "word": "mother",
             "arabicMeaning": "أم",
@@ -78,611 +141,574 @@
             "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u3-voc-3",
+          "itemId": "vocab-3",
+          "content": {
+            "word": "brother",
+            "arabicMeaning": "أخ",
+            "example": "I have one brother.",
+            "origin": "source",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "sister",
+            "arabicMeaning": "أخت",
+            "example": "This is my sister.",
+            "origin": "source",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
           "content": {
             "word": "parents",
             "arabicMeaning": "والدان",
             "example": "They are my parents.",
             "origin": "source",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u3-voc-4",
-          "content": {
-            "word": "brother",
-            "arabicMeaning": "أخ",
-            "example": "I have 1 brother.",
-            "origin": "source",
-            "sourcePdfPage": 43
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-5",
-          "content": {
-            "word": "sister",
-            "arabicMeaning": "أخت",
-            "example": "I have 2 sisters.",
-            "origin": "source",
-            "sourcePdfPage": 43
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-6",
+          "itemId": "vocab-6",
           "content": {
             "word": "grandfather",
             "arabicMeaning": "جد",
-            "example": "This is my grandfather.",
+            "example": "My grandfather is kind.",
             "origin": "source",
             "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u3-voc-7",
+          "itemId": "vocab-7",
           "content": {
             "word": "grandmother",
             "arabicMeaning": "جدة",
-            "example": "This is my grandmother.",
+            "example": "My grandmother is helpful.",
             "origin": "source",
             "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-8",
-          "content": {
-            "word": "nurse",
-            "arabicMeaning": "ممرضة",
-            "example": "N is for nurse.",
-            "origin": "source",
-            "sourcePdfPage": 47
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-9",
-          "content": {
-            "word": "nail",
-            "arabicMeaning": "ظفر",
-            "example": "N is for nail.",
-            "origin": "source",
-            "sourcePdfPage": 47
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-10",
-          "content": {
-            "word": "nose",
-            "arabicMeaning": "أنف",
-            "example": "N is for nose.",
-            "origin": "source",
-            "sourcePdfPage": 47
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-11",
-          "content": {
-            "word": "net",
-            "arabicMeaning": "شبكة",
-            "example": "N is for net.",
-            "origin": "source",
-            "sourcePdfPage": 47
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-12",
-          "content": {
-            "word": "neck",
-            "arabicMeaning": "رقبة",
-            "example": "N is for neck.",
-            "origin": "source",
-            "sourcePdfPage": 47
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-13",
-          "content": {
-            "word": "pencil",
-            "arabicMeaning": "قلم رصاص",
-            "example": "P is for pencil.",
-            "origin": "source",
-            "sourcePdfPage": 49
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-14",
-          "content": {
-            "word": "potato",
-            "arabicMeaning": "بطاطس",
-            "example": "P is for potato.",
-            "origin": "source",
-            "sourcePdfPage": 49
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-15",
-          "content": {
-            "word": "parrot",
-            "arabicMeaning": "ببغاء",
-            "example": "P is for parrot.",
-            "origin": "source",
-            "sourcePdfPage": 49
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-16",
-          "content": {
-            "word": "panda",
-            "arabicMeaning": "باندا",
-            "example": "P is for panda.",
-            "origin": "source",
-            "sourcePdfPage": 49
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-17",
-          "content": {
-            "word": "pizza",
-            "arabicMeaning": "بيتزا",
-            "example": "P is for pizza.",
-            "origin": "source",
-            "sourcePdfPage": 49
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-18",
-          "content": {
-            "word": "hair",
-            "arabicMeaning": "شعر",
-            "example": "H is for hair.",
-            "origin": "source",
-            "sourcePdfPage": 56
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-19",
-          "content": {
-            "word": "hat",
-            "arabicMeaning": "قبعة",
-            "example": "H is for hat.",
-            "origin": "source",
-            "sourcePdfPage": 56
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-20",
-          "content": {
-            "word": "hands",
-            "arabicMeaning": "يدان",
-            "example": "H is for hands.",
-            "origin": "source",
-            "sourcePdfPage": 56
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-21",
-          "content": {
-            "word": "house",
-            "arabicMeaning": "منزل",
-            "example": "H is for house.",
-            "origin": "source",
-            "sourcePdfPage": 56
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-22",
-          "content": {
-            "word": "horse",
-            "arabicMeaning": "حصان",
-            "example": "H is for horse.",
-            "origin": "source",
-            "sourcePdfPage": 56
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-23",
-          "content": {
-            "word": "door",
-            "arabicMeaning": "باب",
-            "example": "D is for door.",
-            "origin": "source",
-            "sourcePdfPage": 58
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-24",
-          "content": {
-            "word": "dog",
-            "arabicMeaning": "كلب",
-            "example": "D is for dog.",
-            "origin": "source",
-            "sourcePdfPage": 58
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-25",
-          "content": {
-            "word": "duck",
-            "arabicMeaning": "بطة",
-            "example": "D is for duck.",
-            "origin": "source",
-            "sourcePdfPage": 58
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-26",
-          "content": {
-            "word": "drum",
-            "arabicMeaning": "طبل",
-            "example": "D is for drum.",
-            "origin": "source",
-            "sourcePdfPage": 58
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-voc-27",
-          "content": {
-            "word": "doll",
-            "arabicMeaning": "دمية",
-            "example": "D is for doll.",
-            "origin": "source",
-            "sourcePdfPage": 58
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        }
-      ]
-    },
-    {
-      "type": "grammar",
-      "title": "Language Structures",
-      "items": [
-        {
-          "itemId": "p1u3-gr-1",
-          "content": {
-            "rule": "Introducing family members",
-            "explanation": "Use This is my + family member. Use They are my parents for both parents.",
-            "example": "This is my father. This is my mother. They are my parents.",
-            "origin": "source",
-            "sourcePdfPage": 43
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-gr-2",
-          "content": {
-            "rule": "Talking about family numbers",
-            "explanation": "Use I have + number + plural family member.",
-            "example": "I have 1 brother. I have 2 sisters.",
-            "origin": "source",
-            "sourcePdfPage": 43
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u3-gr-3",
-          "content": {
-            "rule": "Asking about quantity",
-            "explanation": "Use How many...? Answer There is 1... or There are...",
-            "example": "There is 1 butterfly. There are 4 books.",
-            "origin": "source",
-            "sourcePdfPage": 53
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        }
-      ]
-    },
-    {
-      "type": "reading",
-      "title": "Reading & Dialogue",
-      "items": [
-        {
-          "itemId": "p1u3-rd-1",
-          "content": {
-            "passage": "Maya: Hi, Sara!\nSara: Hi, Maya!\nMaya: Who is this?\nSara: This is my father. And this is my mother. They are my parents.\nMaya: Oh, nice! Do you have any brothers?\nSara: Yes! I have 1 brother.\nMaya: Cool! I have 2 sisters. Can you show me their pictures?\nSara: Sure, I will show you pictures of my whole family.",
-            "origin": "source",
-            "sourcePdfPage": 43
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Transcribed from the unit dialogue; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     },
     {
       "type": "vocabulary_questions",
-      "title": "Vocabulary Practice",
+      "title": "Vocabulary Questions",
       "items": [
         {
-          "itemId": "p1u3-vq-1",
+          "itemId": "vocab-q-1",
           "content": {
-            "question": "Who are Sara’s parents?",
+            "question": "Your mother and father together are your ______ .",
             "options": [
-              "Her father and mother",
-              "Her brother and sister",
-              "Her teacher and friend"
+              "parents",
+              "brothers",
+              "sisters"
             ],
-            "correctAnswer": "Her father and mother",
-            "reason": "Sara identifies her father and mother as her parents.",
+            "correctAnswer": "parents",
+            "reason": "Mother and father combined are referred to as parents.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-vq-2",
+          "itemId": "vocab-q-2",
           "content": {
-            "question": "How many brothers does Sara have?",
+            "question": "Who is your mother's mother?",
             "options": [
-              "1",
-              "2",
-              "3"
+              "sister",
+              "grandmother",
+              "father"
             ],
-            "correctAnswer": "1",
-            "reason": "Sara says she has 1 brother.",
+            "correctAnswer": "grandmother",
+            "reason": "Your mother's mother is your grandmother.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-vq-3",
+          "itemId": "vocab-q-3",
           "content": {
-            "question": "Which word begins with N?",
+            "question": "Which word starts with the letter Nn?",
             "options": [
-              "nose",
-              "pizza",
-              "dog"
+              "nurse",
+              "pencil",
+              "hat"
             ],
-            "correctAnswer": "nose",
-            "reason": "Nose is listed in the N phonics lesson.",
+            "correctAnswer": "nurse",
+            "reason": "Nurse begins with the letter Nn as shown in the phonics lesson.",
             "origin": "supplementary",
             "sourcePdfPage": 47
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "grammar-1",
+          "content": {
+            "rule": "Asking 'Who's this?' and answering 'This is my...'",
+            "explanation": "Use 'Who's this?' to ask about a person nearby, and answer with 'This is my...' followed by the family member name.",
+            "example": "Who's this? This is my father.",
+            "origin": "source",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "grammar-2",
+          "content": {
+            "rule": "Expressing quantity with 'There is' and 'There are'",
+            "explanation": "Use 'There is' for single items (1) and 'There are' for plural items (2-5).",
+            "example": "There is 1 butterfly. There are 4 books.",
+            "origin": "source",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     },
     {
       "type": "grammar_questions",
-      "title": "Grammar Practice",
+      "title": "Grammar Questions",
       "items": [
         {
-          "itemId": "p1u3-gq-1",
+          "itemId": "gram-q-1",
           "content": {
-            "question": "Complete: They are my _____.",
+            "question": "______ is this? - This is my mother.",
             "options": [
-              "parents",
-              "mother",
-              "brother"
+              "Who",
+              "What",
+              "Where"
             ],
-            "correctAnswer": "parents",
-            "reason": "The dialogue uses parents for father and mother together.",
+            "correctAnswer": "Who",
+            "reason": "We use 'Who' when asking about a person.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-gq-2",
+          "itemId": "gram-q-2",
           "content": {
-            "question": "Complete: There _____ 4 books.",
+            "question": "Who's this? - ______ is my brother.",
             "options": [
-              "are",
+              "This",
+              "These",
+              "They"
+            ],
+            "correctAnswer": "This",
+            "reason": "We respond to 'Who's this?' with 'This is my...'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram-q-3",
+          "content": {
+            "question": "There ______ 3 books on the table.",
+            "options": [
               "is",
+              "are",
               "am"
             ],
             "correctAnswer": "are",
-            "reason": "The book models There are 4 books.",
+            "reason": "'3 books' is plural, so we use 'are'.",
             "origin": "supplementary",
             "sourcePdfPage": 53
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "reading-p-1",
+          "content": {
+            "passage": "Maya: Hi, Sara! Sara: Hi, Maya! Maya: Who is this? Sara: This is my father. And this is my mother. They are my parents. Maya: Oh, nice! Do you have any brothers? Sara: Yes! I have 1 brother. Maya: Cool! I have 2 sisters. Can you show me their pictures? Sara: Sure, I will show you pictures of my whole family.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "reading-q-1",
+          "content": {
+            "question": "How many brothers does Sara have?",
+            "options": [
+              "1 brother",
+              "2 brothers",
+              "3 brothers"
+            ],
+            "correctAnswer": "1 brother",
+            "reason": "In the dialogue, Sara explicitly states 'I have 1 brother.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "reading-q-2",
+          "content": {
+            "question": "How many sisters does Maya have?",
+            "options": [
+              "1 sister",
+              "2 sisters",
+              "3 sisters"
+            ],
+            "correctAnswer": "2 sisters",
+            "reason": "Maya says 'I have 2 sisters.' in the reading text.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "listening-s-1",
+          "content": {
+            "script": "Omar: How many books do you have? Aly: Let's see... 1, 2, 3. There are 3 books. Omar: Can you count the flowers? Aly: Okay! 1, 2, 3, 4. There are 4 flowers! Omar: What else can you see? Aly: There is 1 sun. Omar: Aly, look! I have 5 apples. Do you want one? Aly: Yes, please! I have 1 apple now. Thank you!",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "listening-q-1",
+          "content": {
+            "question": "How many flowers did Aly count?",
+            "options": [
+              "3 flowers",
+              "4 flowers",
+              "5 flowers"
+            ],
+            "correctAnswer": "4 flowers",
+            "reason": "Aly counts '1, 2, 3, 4. There are 4 flowers!'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "listening-q-2",
+          "content": {
+            "question": "How many books does Aly have?",
+            "options": [
+              "2 books",
+              "3 books",
+              "4 books"
+            ],
+            "correctAnswer": "3 books",
+            "reason": "Aly counts '1, 2, 3. There are 3 books.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "speaking-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Maya",
+                "text": "Hi, Sara!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Sara",
+                "text": "Hi, Maya!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Maya",
+                "text": "Who is this?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Sara",
+                "text": "This is my father.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Family Word Pop",
+            "description": "Select the correct word for the family member in the question.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Who is your male sibling?",
+            "options": [
+              "brother",
+              "sister",
+              "mother"
+            ],
+            "correctAnswer": "brother",
+            "reason": "A male sibling is called a brother.",
+            "origin": "supplementary",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Number Master",
+            "description": "Choose the right option to complete the counting sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "There ______ 1 butterfly in the garden.",
+            "options": [
+              "is",
+              "are",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "Singular items use 'is' with 'There'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     },
     {
       "type": "comprehensive_test",
-      "title": "Comprehensive Unit Assessment",
+      "title": "Comprehensive Test",
       "items": [
         {
-          "itemId": "p1u3-test-1",
+          "itemId": "test-q-1",
           "content": {
-            "question": "Who are Sara’s parents?",
+            "question": "Who's this? - This is my ______ (mother's husband).",
             "options": [
-              "Her father and mother",
-              "Her brother and sister",
-              "Her teacher and friend"
+              "father",
+              "sister",
+              "grandmother"
             ],
-            "correctAnswer": "Her father and mother",
-            "reason": "Sara identifies her father and mother as her parents.",
+            "correctAnswer": "father",
+            "reason": "Your mother's husband is your father.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-test-2",
+          "itemId": "test-q-2",
           "content": {
-            "question": "How many brothers does Sara have?",
+            "question": "Complete the word: n _ r s e",
+            "options": [
+              "u",
+              "a",
+              "o"
+            ],
+            "correctAnswer": "u",
+            "reason": "The correct spelling is 'nurse'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 47
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-3",
+          "content": {
+            "question": "Which letter does 'parrot' start with?",
+            "options": [
+              "Nn",
+              "Pp",
+              "Hh"
+            ],
+            "correctAnswer": "Pp",
+            "reason": "Parrot begins with the letter Pp.",
+            "origin": "supplementary",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-4",
+          "content": {
+            "question": "Complete the sentence: 'There ______ 5 apples.'",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "are",
+            "reason": "5 apples is plural, so we use 'are'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-5",
+          "content": {
+            "question": "Which word begins with the letter Hh?",
+            "options": [
+              "hat",
+              "dog",
+              "net"
+            ],
+            "correctAnswer": "hat",
+            "reason": "Hat begins with the letter Hh.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-6",
+          "content": {
+            "question": "Which word starts with the letter Dd?",
+            "options": [
+              "duck",
+              "pen",
+              "nose"
+            ],
+            "correctAnswer": "duck",
+            "reason": "Duck begins with the letter Dd.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-7",
+          "content": {
+            "question": "How many sisters does Maya have in the story?",
             "options": [
               "1",
               "2",
               "3"
             ],
-            "correctAnswer": "1",
-            "reason": "Sara says she has 1 brother.",
+            "correctAnswer": "2",
+            "reason": "Maya states in Lesson 1 dialogue that she has 2 sisters.",
             "origin": "supplementary",
             "sourcePdfPage": 43
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-test-3",
+          "itemId": "test-q-8",
           "content": {
-            "question": "Which word begins with N?",
+            "question": "______ is this? - This is my grandmother.",
             "options": [
-              "nose",
-              "pizza",
-              "dog"
+              "Who",
+              "What",
+              "Where"
             ],
-            "correctAnswer": "nose",
-            "reason": "Nose is listed in the N phonics lesson.",
+            "correctAnswer": "Who",
+            "reason": "'Who' is used to ask about people.",
             "origin": "supplementary",
-            "sourcePdfPage": 47
+            "sourcePdfPage": 44
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-test-4",
+          "itemId": "test-q-9",
           "content": {
-            "question": "Complete: They are my _____.",
+            "question": "Complete: 'I have 1 ______.'",
             "options": [
-              "parents",
-              "mother",
-              "brother"
+              "brother",
+              "brothers",
+              "sisters"
             ],
-            "correctAnswer": "parents",
-            "reason": "The dialogue uses parents for father and mother together.",
+            "correctAnswer": "brother",
+            "reason": "The number 1 requires a singular noun 'brother'.",
             "origin": "supplementary",
             "sourcePdfPage": 43
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u3-test-5",
+          "itemId": "test-q-10",
           "content": {
-            "question": "Complete: There _____ 4 books.",
+            "question": "There ______ 1 sun in the sky.",
             "options": [
-              "are",
               "is",
+              "are",
               "am"
             ],
-            "correctAnswer": "are",
-            "reason": "The book models There are 4 books.",
-            "origin": "supplementary",
-            "sourcePdfPage": 53
-          },
-          "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
-        },
-        {
-          "itemId": "p1u3-test-6",
-          "content": {
-            "question": "How many flowers are there in the dialogue?",
-            "options": [
-              "4",
-              "1",
-              "5"
-            ],
-            "correctAnswer": "4",
-            "reason": "The dialogue counts four flowers.",
+            "correctAnswer": "is",
+            "reason": "Singular noun '1 sun' takes 'is'.",
             "origin": "supplementary",
             "sourcePdfPage": 52
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }

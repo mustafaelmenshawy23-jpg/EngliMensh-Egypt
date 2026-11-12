@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:46:02.643Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary1-student-term1",
+  "sourceFilename": "English_language_prim1_t1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: My Body and My Senses",
+  "sourcePdfRange": {
+    "start": 65,
+    "end": 83
+  },
+  "sourceCoverage": [
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+  ],
+  "sourceFingerprint": "724d780e8e13c12638e691f6adf7fbd5898a2146cd458c367a9db3db9a00c310",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 4: My Body and My Senses",
+    "expectedRange": {
+      "start": 65,
+      "end": 83,
+      "totalPages": 19
+    },
+    "recordedCoverage": {
+      "totalPages": 19,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 18,
+      "supplementaryItems": 11,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:46:02.643Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Head to Toe Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "head",
+            "arabicMeaning": "رأس",
+            "example": "I have one head.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "eye",
+            "arabicMeaning": "عين",
+            "example": "I have two eyes.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "ear",
+            "arabicMeaning": "أذن",
+            "example": "I listen with my ear.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v4",
+          "content": {
+            "word": "nose",
+            "arabicMeaning": "أنف",
+            "example": "I smell with my nose.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v5",
+          "content": {
+            "word": "mouth",
+            "arabicMeaning": "فم",
+            "example": "I have one mouth.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "Which body part do you use to see?",
+            "options": [
+              "eye",
+              "ear",
+              "nose",
+              "mouth"
+            ],
+            "correctAnswer": "eye",
+            "reason": "Eyes are the body parts used for seeing.",
+            "origin": "supplementary",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which body part do you use to smell?",
+            "options": [
+              "nose",
+              "hand",
+              "foot",
+              "eye"
+            ],
+            "correctAnswer": "nose",
+            "reason": "The nose is used for smelling things.",
+            "origin": "supplementary",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "How many mouths do you have?",
+            "options": [
+              "1",
+              "2",
+              "5",
+              "10"
+            ],
+            "correctAnswer": "1",
+            "reason": "We have one mouth.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar and Functions",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Expressing possession and quantity with body parts using 'I have'.",
+            "explanation": "Use 'I have' followed by a number and a body part noun (singular or plural) to describe body features.",
+            "example": "I have two eyes.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Choose the correct sentence:",
+            "options": [
+              "I have two eyes.",
+              "I has two eyes.",
+              "I have two eye.",
+              "I am two eyes."
+            ],
+            "correctAnswer": "I have two eyes.",
+            "reason": "We use 'I have' with the plural noun 'eyes'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "Complete: I _____ one nose.",
+            "options": [
+              "have",
+              "has",
+              "is",
+              "are"
+            ],
+            "correctAnswer": "have",
+            "reason": "The first-person pronoun 'I' takes the verb 'have'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "Choose the correct plural form:",
+            "options": [
+              "feet",
+              "foots",
+              "footes",
+              "feets"
+            ],
+            "correctAnswer": "feet",
+            "reason": "The irregular plural of 'foot' is 'feet'.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "I have a head, two eyes, one nose, and one mouth. I can see with my eyes and smell with my nose.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "What do you use to see in the reading passage?",
+            "options": [
+              "eyes",
+              "nose",
+              "mouth",
+              "ears"
+            ],
+            "correctAnswer": "eyes",
+            "reason": "The text states 'I can see with my eyes'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Teacher: Listen carefully. Point to your ears. What do you do with them? Student: I hear with my ears!",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What body part is used for hearing in the listening script?",
+            "options": [
+              "ears",
+              "eyes",
+              "hands",
+              "nose"
+            ],
+            "correctAnswer": "ears",
+            "reason": "We hear sounds using our ears.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Aly",
+                "text": "Hi, Omar!",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Omar",
+                "text": "Hi, Aly. Let's talk about our senses.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Aly",
+                "text": "Great idea. Tell me—what can you see?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Omar",
+                "text": "I can see the teacher and the desk.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Fun Learning Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Sense Matcher",
+            "description": "Choose the correct body part for the given sense.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which body part matches the sense of taste?",
+            "options": [
+              "tongue",
+              "ear",
+              "eye",
+              "nose"
+            ],
+            "correctAnswer": "tongue",
+            "reason": "The tongue is used for tasting food.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Grammar Hero",
+            "description": "Test your knowledge of body part sentences.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Choose the correct completion: I _____ two hands.",
+            "options": [
+              "have",
+              "has",
+              "am",
+              "is"
+            ],
+            "correctAnswer": "have",
+            "reason": "First-person plural or singular 'I' takes 'have'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "What do you use to touch things?",
+            "options": [
+              "hands",
+              "ears",
+              "eyes",
+              "nose"
+            ],
+            "correctAnswer": "hands",
+            "reason": "We use our hands for touching.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "How many noses do you have?",
+            "options": [
+              "1",
+              "2",
+              "5",
+              "10"
+            ],
+            "correctAnswer": "1",
+            "reason": "We have one nose.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "Choose the correct sentence for your eyes:",
+            "options": [
+              "I have two eyes.",
+              "I have one eye.",
+              "I has two eyes.",
+              "I am two eyes."
+            ],
+            "correctAnswer": "I have two eyes.",
+            "reason": "Standard phrasing for two eyes uses 'I have two eyes'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "Which letter starts the word 'egg'?",
+            "options": [
+              "Ee",
+              "Rr",
+              "Cc",
+              "Kk"
+            ],
+            "correctAnswer": "Ee",
+            "reason": "Egg begins with the letter Ee.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "Which letter starts the word 'robot'?",
+            "options": [
+              "Rr",
+              "Ee",
+              "Cc",
+              "Kk"
+            ],
+            "correctAnswer": "Rr",
+            "reason": "Robot begins with the letter Rr.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "Which letter starts the word 'cat'?",
+            "options": [
+              "Cc",
+              "Rr",
+              "Ee",
+              "Kk"
+            ],
+            "correctAnswer": "Cc",
+            "reason": "Cat begins with the letter Cc.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Which letter starts the word 'key'?",
+            "options": [
+              "Kk",
+              "Cc",
+              "Ee",
+              "Rr"
+            ],
+            "correctAnswer": "Kk",
+            "reason": "Key begins with the letter Kk.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "What do you use to hear music?",
+            "options": [
+              "ears",
+              "eyes",
+              "nose",
+              "mouth"
+            ],
+            "correctAnswer": "ears",
+            "reason": "Ears are the sense organs for hearing.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "How many senses do we have?",
+            "options": [
+              "5",
+              "2",
+              "4",
+              "10"
+            ],
+            "correctAnswer": "5",
+            "reason": "We have five senses: see, hear, smell, taste, and touch.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "Complete the sentence: I can _____ with my tongue.",
+            "options": [
+              "taste",
+              "see",
+              "hear",
+              "smell"
+            ],
+            "correctAnswer": "taste",
+            "reason": "The tongue is used for tasting.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 114,
+  "cursorIndex": 6,
   "chainDepth": 1,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
@@ -1163,7 +1163,7 @@
       "missingPages": []
     },
     "secondary3-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "a60003e91971d4f5080ce69f0cbe551288ad185d011ffe4f989a8c7669c5b441",
       "lastAttemptAt": "2026-11-12T07:36:05.819Z",
       "qualityScore": 90,
@@ -1217,7 +1217,7 @@
       }
     },
     "secondary3-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "833be6cc14ce96051e9e28b2ee6189aff1e2a73fd0ea890bf12a5ecb98a9ad9e",
       "lastAttemptAt": "2026-11-12T07:36:34.103Z",
       "qualityScore": 85,
@@ -1271,7 +1271,7 @@
       }
     },
     "secondary3-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "b1ef44fff4abd3ce000d77279f1673763b6391b83eb4efa9c062e301929a60d6",
       "lastAttemptAt": "2026-11-12T07:37:13.023Z",
       "qualityScore": 90,
@@ -1325,7 +1325,7 @@
       }
     },
     "secondary3-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "648ef143a9ceb950225ed38978134a9e539861fa1160382dfcddfdf3f6c4e2ab",
       "lastAttemptAt": "2026-11-12T07:37:56.419Z",
       "qualityScore": 90,
@@ -1379,7 +1379,7 @@
       }
     },
     "secondary3-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "6de540e6f1ca37c4027d92199472c58729eec738cc813426bd7a4f6d2d925c77",
       "lastAttemptAt": "2026-11-12T07:38:45.154Z",
       "qualityScore": 85,
@@ -1806,58 +1806,282 @@
       "missingPages": []
     },
     "primary1-student-term1-unit-1": {
-      "status": "failed",
-      "sourceSignature": "c83e6304eb558fe8a1b0d96a7c713ec0ab8072e30047628ce413191f0be8b8d9",
-      "lastAttemptAt": "2026-11-10T07:38:04.186Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "failed_validation",
+      "sourceSignature": "6c7b30cff2a843e99528edd2e9967c8afe057cddf5c486a8950051ea24b135a4",
+      "lastAttemptAt": "2026-11-12T07:44:57.163Z",
+      "retryAfter": "2026-11-13T07:44:57.163Z",
+      "attemptCount": 2,
+      "error": "Generator exited with code 1: Gemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash-lite did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nDuplicate question prompt detected: \"Which word starts with 'T'?\"\nDuplicate question prompt detected: \"Which word starts with 'I'?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "primary1-student-term1-unit-2": {
-      "status": "failed",
-      "sourceSignature": "7e075089768d4fbcf2d2ad420ca79ee972687739bc275afa433f86d9ac1b168e",
-      "lastAttemptAt": "2026-11-10T07:40:51.483Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "d1e1c21e4efe6bed81e00467ab8e25b902729d6c1c2358105045fb6dea5245c9",
+      "lastAttemptAt": "2026-11-12T07:45:21.644Z",
+      "qualityScore": 85,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary1-student-term1-unit-3": {
-      "status": "failed",
-      "sourceSignature": "f6b059b8f937ab2302057ca81329e3e5852b4a108004e92edd9bf497251a52b0",
-      "lastAttemptAt": "2026-11-10T07:41:20.593Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "4962e48359683d6ddf7219eacc60b8ec23b326d1751f2c358daa8589cf33adfb",
+      "lastAttemptAt": "2026-11-12T07:45:45.778Z",
+      "qualityScore": 85,
+      "itemCount": 34,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary1-student-term1-unit-4": {
-      "status": "failed",
-      "sourceSignature": "2f2f6c53b9d4eee5997c77899b97b5f61052eb9430272286465a87097ab63d31",
-      "lastAttemptAt": "2026-11-10T07:41:24.083Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "724d780e8e13c12638e691f6adf7fbd5898a2146cd458c367a9db3db9a00c310",
+      "lastAttemptAt": "2026-11-12T07:46:02.652Z",
+      "qualityScore": 100,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary1-student-term1-unit-5": {
-      "status": "failed",
-      "sourceSignature": "547c9d95a35cce1151e0f90b6fafcae7c802632ff2b58f5281b57a38f6d67ba1",
-      "lastAttemptAt": "2026-11-10T07:41:27.458Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "2eadb81da8526d2538f468139281f68f92f063947313a29f4291025178c46058",
+      "lastAttemptAt": "2026-11-12T07:46:30.869Z",
+      "qualityScore": 100,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary1-student-term1-unit-6": {
-      "status": "failed",
-      "sourceSignature": "ad74ac9efa8d2276eb68e3ecd7daf13be108e75b3c7f4c94044594bb0afbedcd",
-      "lastAttemptAt": "2026-11-10T08:00:47.383Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "4656f47dd165adccecec127ad6d2bd878eea3308418f3e855d0e49757d46c3e2",
+      "lastAttemptAt": "2026-11-12T07:46:56.114Z",
+      "qualityScore": 85,
+      "itemCount": 35,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary1-supplement-unit-1": {
       "status": "blocked_source_review",
@@ -2926,20 +3150,58 @@
       "missingPages": []
     },
     "baccalaureate-y2-first-language-part1-unit-4": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "0b8b3ee5a6527cd955185c9cfdc0f0e329709cdbe73f5e39b6d3bb4c914e78e1",
-      "lastAttemptAt": "2026-11-11T07:09:33.280Z",
-      "issues": [
-        "PDF p.112: Contains 1 abnormally long unbroken word(s) (e.g. \"esensonerersssnsreconcrornreec...\", length 55)",
-        "PDF p.130: Excessive character repetition detected: \"0000000\"",
-        "PDF p.131: Excessive character repetition detected: \"00000\"",
-        "PDF p.133: Repeated substring pattern detected: \"........\"",
-        "PDF p.136: Repeated substring pattern detected: \"..........\"",
-        "PDF p.138: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 5,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:42:12.966Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "baccalaureate-y2-first-language-part2-unit-6": {
       "status": "blocked_source_review",
@@ -3382,7 +3644,7 @@
       }
     },
     "secondary2-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "3d6a81bfb45923163dd5e31a1055c4fc119874f9fcbb0dc64cafdf7cb1fb7f37",
       "lastAttemptAt": "2026-11-12T07:32:36.412Z",
       "qualityScore": 85,
@@ -3436,7 +3698,7 @@
       }
     },
     "secondary2-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "3d4cfb5a000fdc5bfa46e6aa85f911fd54f0c2522b340aa8b325537281816781",
       "lastAttemptAt": "2026-11-12T07:33:10.241Z",
       "qualityScore": 85,
@@ -3498,7 +3760,7 @@
       "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.6-flash; trying another configured key.\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\ntest_3: question contains duplicate options: [\"unique\",\"uniquely\",\"uniqueness\",\"uniquely\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "secondary2-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "eb4104f34ebf9e1e065ce733d1284814f947d39939075c9919c2e0e97635f721",
       "lastAttemptAt": "2026-11-12T07:34:33.704Z",
       "qualityScore": 90,
@@ -3552,7 +3814,7 @@
       }
     },
     "baccalaureate-y2-first-language-part1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "cd7b3ef92a9d48f630a781ebcea6afca033395d57bac64d74a1e31cde7f6da74",
       "lastAttemptAt": "2026-11-12T07:39:58.321Z",
       "qualityScore": 85,
@@ -3604,6 +3866,122 @@
           "issues": []
         }
       }
+    },
+    "baccalaureate-y2-first-language-part1-unit-3": {
+      "status": "generated_needs_review",
+      "sourceSignature": "b4d5205642bb25dd1e27403dae9d940d04003a7c5c14f7913496cbc7e743f763",
+      "lastAttemptAt": "2026-11-12T07:41:23.623Z",
+      "qualityScore": 90,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "baccalaureate-y2-first-language-part2-unit-7": {
+      "status": "generated_needs_review",
+      "sourceSignature": "64ddcd3e4eca6338e61a4078d0169dd3a4da76d1bee1e4dbcaebc867be23ec82",
+      "lastAttemptAt": "2026-11-12T07:42:53.751Z",
+      "qualityScore": 90,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "baccalaureate-y2-first-language-part2-unit-9": {
+      "status": "failed_validation",
+      "sourceSignature": "c9e1d17311d298adeb51046a18913f825f9b2f6bc5a695e50e7996252bc60dec",
+      "lastAttemptAt": "2026-11-12T07:43:21.870Z",
+      "retryAfter": "2026-11-12T07:43:21.870Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nDuplicate question prompt detected: \"Choose the correct causative sentence:\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     }
   }
 }

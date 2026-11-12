@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:46:56.106Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary1-student-term1",
+  "sourceFilename": "English_language_prim1_t1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 6,
+  "unitTitle": "Unit 6: Animals Around Me",
+  "sourcePdfRange": {
+    "start": 103,
+    "end": 128
+  },
+  "sourceCoverage": [
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128
+  ],
+  "sourceFingerprint": "4656f47dd165adccecec127ad6d2bd878eea3308418f3e855d0e49757d46c3e2",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 6: Animals Around Me",
+    "expectedRange": {
+      "start": 103,
+      "end": 128,
+      "totalPages": 26
+    },
+    "recordedCoverage": {
+      "totalPages": 26,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 35,
+      "sourceItems": 28,
+      "supplementaryItems": 7,
+      "vocabularyCount": 10,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:46:56.106Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u6-v1",
+          "content": {
+            "word": "lion",
+            "arabicMeaning": "أسد",
+            "example": "The lion lives in the jungle.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v2",
+          "content": {
+            "word": "tiger",
+            "arabicMeaning": "نمر",
+            "example": "A tiger has four legs.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v3",
+          "content": {
+            "word": "monkey",
+            "arabicMeaning": "قرد",
+            "example": "The monkey is in the tree.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v4",
+          "content": {
+            "word": "elephant",
+            "arabicMeaning": "فيل",
+            "example": "I can see a big elephant.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v5",
+          "content": {
+            "word": "giraffe",
+            "arabicMeaning": "زرافة",
+            "example": "The giraffe is tall.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v6",
+          "content": {
+            "word": "snake",
+            "arabicMeaning": "ثعبان",
+            "example": "There is a snake on the ground.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v7",
+          "content": {
+            "word": "cat",
+            "arabicMeaning": "قطة",
+            "example": "The cat is under the chair.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v8",
+          "content": {
+            "word": "dog",
+            "arabicMeaning": "كلب",
+            "example": "The dog is on the couch.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v9",
+          "content": {
+            "word": "bird",
+            "arabicMeaning": "طائر",
+            "example": "The bird is in the cage.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-v10",
+          "content": {
+            "word": "turtle",
+            "arabicMeaning": "سلحفاة",
+            "example": "The turtle is under the table.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u6-vq1",
+          "content": {
+            "question": "Which animal lives in the jungle and has stripes?",
+            "options": [
+              "tiger",
+              "cat",
+              "dog"
+            ],
+            "correctAnswer": "tiger",
+            "reason": "A tiger is a wild jungle animal with stripes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6-vq2",
+          "content": {
+            "question": "Which of these is a small pet that can fly?",
+            "options": [
+              "bird",
+              "elephant",
+              "giraffe"
+            ],
+            "correctAnswer": "bird",
+            "reason": "A bird is a pet that has wings and can fly.",
+            "origin": "supplementary",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6-vq3",
+          "content": {
+            "question": "Where is the monkey in the jungle?",
+            "options": [
+              "in the tree",
+              "under the table",
+              "in a cage"
+            ],
+            "correctAnswer": "in the tree",
+            "reason": "In the unit text, the monkey is seen inside the tree.",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar & Language Structures",
+      "items": [
+        {
+          "itemId": "u6-g1",
+          "content": {
+            "rule": "Prepositions of Place (in, on, under)",
+            "explanation": "Use prepositions of place to tell where an animal or object is located. Use 'in' for inside, 'on' for touching a surface, and 'under' for below something.",
+            "example": "The cat is under the chair.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-g2",
+          "content": {
+            "rule": "Asking about Quantity with 'How many'",
+            "explanation": "Use 'How many + plural noun + can you see?' or 'How many legs does [animal] have?' to ask about quantities.",
+            "example": "How many legs does a tiger have? A tiger has 4 legs.",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u6-gq1",
+          "content": {
+            "question": "Where is the bird? The bird is ___ the cage.",
+            "options": [
+              "in",
+              "on",
+              "under"
+            ],
+            "correctAnswer": "in",
+            "reason": "The bird is positioned inside the cage, so we use 'in'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6-gq2",
+          "content": {
+            "question": "The cat is ___ the couch.",
+            "options": [
+              "on",
+              "in",
+              "under"
+            ],
+            "correctAnswer": "on",
+            "reason": "The cat rests on top of the couch surface, so 'on' is correct.",
+            "origin": "supplementary",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6-gq3",
+          "content": {
+            "question": "How many legs ___ a tiger have?",
+            "options": [
+              "does",
+              "do",
+              "is"
+            ],
+            "correctAnswer": "does",
+            "reason": "We use 'does' with a singular subject like 'a tiger' when asking questions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u6-r1",
+          "content": {
+            "passage": "Look! What is this? It is a lion! How many lions can you see? I can see 2 lions! How many legs does a tiger have? A tiger has 4 legs. Where is the monkey? The monkey is in the tree! I see an elephant and a giraffe too! And look! There is a snake on the ground! We love the jungle!",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-rq1",
+          "content": {
+            "question": "Where is the monkey according to the reading passage?",
+            "options": [
+              "in the tree",
+              "on the ground",
+              "under the table"
+            ],
+            "correctAnswer": "in the tree",
+            "reason": "The passage states directly: 'The monkey is in the tree!'",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "u6-l1",
+          "content": {
+            "script": "Look! The cat is on my leg! Where is the dog? The dog is on the couch. What about the bird? The bird is in the cage. And the turtle? Hmm... The turtle is under the table! I love pets! Me too!",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-lq1",
+          "content": {
+            "question": "Where is the turtle in the dialogue?",
+            "options": [
+              "under the table",
+              "on the couch",
+              "in the cage"
+            ],
+            "correctAnswer": "under the table",
+            "reason": "Ali states that the turtle is under the table.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u6-s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Omar",
+                "text": "Look! What is this?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Leila",
+                "text": "It is a lion!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Omar",
+                "text": "How many lions can you see?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Leila",
+                "text": "I can see 2 lions!",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "u6-game1",
+          "content": {
+            "gameName": "Jungle Animal Quiz",
+            "description": "Choose the correct jungle animal based on the sentence prompt.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which big wild animal has four legs and live in the jungle?",
+            "options": [
+              "elephant",
+              "cat",
+              "dog"
+            ],
+            "correctAnswer": "elephant",
+            "reason": "An elephant is a large jungle animal.",
+            "origin": "supplementary",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6-game2",
+          "content": {
+            "gameName": "Preposition Power",
+            "description": "Select the correct preposition to describe where the pet is sitting.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "The turtle is ___ the table.",
+            "options": [
+              "under",
+              "in",
+              "on"
+            ],
+            "correctAnswer": "under",
+            "reason": "The turtle is beneath the table, so 'under' is correct.",
+            "origin": "supplementary",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 6 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u6-t1",
+          "content": {
+            "question": "Which of the following is a jungle animal?",
+            "options": [
+              "lion",
+              "cat",
+              "dog"
+            ],
+            "correctAnswer": "lion",
+            "reason": "The lion is listed as a jungle animal in Lesson 1.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t2",
+          "content": {
+            "question": "How many legs does a tiger have?",
+            "options": [
+              "4 legs",
+              "2 legs",
+              "6 legs"
+            ],
+            "correctAnswer": "4 legs",
+            "reason": "The textbook explicitly mentions that a tiger has 4 legs.",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t3",
+          "content": {
+            "question": "Where is the dog in the pet lesson?",
+            "options": [
+              "on the couch",
+              "in the cage",
+              "under the table"
+            ],
+            "correctAnswer": "on the couch",
+            "reason": "In Lesson 3, the dog is on the couch.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t4",
+          "content": {
+            "question": "Where is the bird in the pet lesson?",
+            "options": [
+              "in the cage",
+              "under the chair",
+              "on the leg"
+            ],
+            "correctAnswer": "in the cage",
+            "reason": "In Lesson 3, the bird is inside the cage.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t5",
+          "content": {
+            "question": "Complete: The turtle is ___ the table.",
+            "options": [
+              "under",
+              "in",
+              "on"
+            ],
+            "correctAnswer": "under",
+            "reason": "The turtle is positioned under the table in the pets dialogue.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t6",
+          "content": {
+            "question": "Which letter does 'banana' start with?",
+            "options": [
+              "Bb",
+              "Ll",
+              "Uu"
+            ],
+            "correctAnswer": "Bb",
+            "reason": "Banana starts with the letter Bb as shown on page 108.",
+            "origin": "source",
+            "sourcePdfPage": 108
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t7",
+          "content": {
+            "question": "Which word starts with the letter Ll?",
+            "options": [
+              "leaf",
+              "umbrella",
+              "jacket"
+            ],
+            "correctAnswer": "leaf",
+            "reason": "Leaf starts with the letter Ll on page 110.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t8",
+          "content": {
+            "question": "Which word starts with the letter Uu?",
+            "options": [
+              "umbrella",
+              "jellyfish",
+              "banana"
+            ],
+            "correctAnswer": "umbrella",
+            "reason": "Umbrella starts with the letter Uu on page 117.",
+            "origin": "source",
+            "sourcePdfPage": 117
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t9",
+          "content": {
+            "question": "Which word starts with the letter Jj?",
+            "options": [
+              "jacket",
+              "leaf",
+              "ball"
+            ],
+            "correctAnswer": "jacket",
+            "reason": "Jacket starts with the letter Jj on page 119.",
+            "origin": "source",
+            "sourcePdfPage": 119
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6-t10",
+          "content": {
+            "question": "Complete the phrase: 'We love the ___!'",
+            "options": [
+              "jungle",
+              "table",
+              "couch"
+            ],
+            "correctAnswer": "jungle",
+            "reason": "Omar and Leila exclaim 'We love the jungle!' at the end of Lesson 1.",
+            "origin": "source",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

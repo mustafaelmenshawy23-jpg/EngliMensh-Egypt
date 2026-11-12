@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-07T16:00:00.000Z",
+  "generatedAt": "2026-11-12T07:45:21.636Z",
   "generator": {
-    "provider": "source-grounded-manual-curation",
-    "model": "manual",
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
     "reviewStatus": "needs_review"
   },
   "bookId": "primary1-student-term1",
   "sourceFilename": "English_language_prim1_t1.pdf",
   "grade": "Primary 1",
   "unitNumber": 2,
-  "unitTitle": "The Garden of Colors and Shapes",
+  "unitTitle": "Primary 1, Unit 2: The Garden of Colors and Shapes",
   "sourcePdfRange": {
     "start": 25,
     "end": 41
@@ -35,15 +35,75 @@
     40,
     41
   ],
-  "qualityScore": null,
+  "sourceFingerprint": "d1e1c21e4efe6bed81e00467ab8e25b902729d6c1c2358105045fb6dea5245c9",
+  "qualityScore": 85,
   "qualityReport": {
-    "status": "needs_review",
-    "sourceBasis": "Official student book OCR extraction artifact; verify every item against original PDF page images.",
-    "notes": [
-      "Source items cite exact PDF pages.",
-      "Generated questions are marked supplementary.",
-      "No missing OCR content has been guessed."
-    ]
+    "unitTitle": "Primary 1, Unit 2: The Garden of Colors and Shapes",
+    "expectedRange": {
+      "start": 25,
+      "end": 41,
+      "totalPages": 17
+    },
+    "recordedCoverage": {
+      "totalPages": 17,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 18,
+      "supplementaryItems": 13,
+      "vocabularyCount": 7,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 7,
+        "validItems": 7,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:45:21.635Z"
   },
   "reviewStatus": "needs_review",
   "reviewedBy": null,
@@ -51,10 +111,10 @@
   "sections": [
     {
       "type": "vocabulary",
-      "title": "Vocabulary",
+      "title": "Unit Vocabulary",
       "items": [
         {
-          "itemId": "p1u2-voc-1",
+          "itemId": "u2_vocab_1",
           "content": {
             "word": "bird",
             "arabicMeaning": "طائر",
@@ -63,37 +123,34 @@
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-voc-2",
+          "itemId": "u2_vocab_2",
           "content": {
             "word": "flower",
             "arabicMeaning": "زهرة",
-            "example": "I can see a flower.",
+            "example": "The flower is red.",
             "origin": "source",
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-voc-3",
+          "itemId": "u2_vocab_3",
           "content": {
             "word": "butterfly",
             "arabicMeaning": "فراشة",
-            "example": "The butterfly is flying.",
+            "example": "This is a butterfly.",
             "origin": "source",
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-voc-4",
+          "itemId": "u2_vocab_4",
           "content": {
             "word": "grass",
             "arabicMeaning": "عشب",
@@ -102,11 +159,10 @@
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-voc-5",
+          "itemId": "u2_vocab_5",
           "content": {
             "word": "sky",
             "arabicMeaning": "سماء",
@@ -115,11 +171,22 @@
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-voc-6",
+          "itemId": "u2_vocab_6",
+          "content": {
+            "word": "sun",
+            "arabicMeaning": "شمس",
+            "example": "The sun is yellow.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_7",
           "content": {
             "word": "tree",
             "arabicMeaning": "شجرة",
@@ -128,494 +195,483 @@
             "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-7",
-          "content": {
-            "word": "sun",
-            "arabicMeaning": "شمس",
-            "example": "The sun is yellow.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-8",
-          "content": {
-            "word": "green",
-            "arabicMeaning": "أخضر",
-            "example": "The grass is green.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-9",
-          "content": {
-            "word": "blue",
-            "arabicMeaning": "أزرق",
-            "example": "The sky is blue.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-10",
-          "content": {
-            "word": "yellow",
-            "arabicMeaning": "أصفر",
-            "example": "The sun is yellow.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-11",
-          "content": {
-            "word": "red",
-            "arabicMeaning": "أحمر",
-            "example": "The flower is red.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-12",
-          "content": {
-            "word": "triangle",
-            "arabicMeaning": "مثلث",
-            "example": "This is a triangle.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-13",
-          "content": {
-            "word": "circle",
-            "arabicMeaning": "دائرة",
-            "example": "This is a circle.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-14",
-          "content": {
-            "word": "rectangle",
-            "arabicMeaning": "مستطيل",
-            "example": "This is a rectangle.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-15",
-          "content": {
-            "word": "square",
-            "arabicMeaning": "مربع",
-            "example": "This is a square.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-16",
-          "content": {
-            "word": "spoon",
-            "arabicMeaning": "ملعقة",
-            "example": "S is for spoon.",
-            "origin": "source",
-            "sourcePdfPage": 30
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-17",
-          "content": {
-            "word": "snake",
-            "arabicMeaning": "ثعبان",
-            "example": "S is for snake.",
-            "origin": "source",
-            "sourcePdfPage": 30
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-18",
-          "content": {
-            "word": "star",
-            "arabicMeaning": "نجمة",
-            "example": "S is for star.",
-            "origin": "source",
-            "sourcePdfPage": 30
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-19",
-          "content": {
-            "word": "apple",
-            "arabicMeaning": "تفاحة",
-            "example": "A is for apple.",
-            "origin": "source",
-            "sourcePdfPage": 38
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-20",
-          "content": {
-            "word": "arrow",
-            "arabicMeaning": "سهم",
-            "example": "A is for arrow.",
-            "origin": "source",
-            "sourcePdfPage": 38
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-21",
-          "content": {
-            "word": "axe",
-            "arabicMeaning": "فأس",
-            "example": "A is for axe.",
-            "origin": "source",
-            "sourcePdfPage": 38
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-voc-22",
-          "content": {
-            "word": "ant",
-            "arabicMeaning": "نملة",
-            "example": "A is for ant.",
-            "origin": "source",
-            "sourcePdfPage": 38
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "OCR transcription; verify against original PDF scan."
-        }
-      ]
-    },
-    {
-      "type": "grammar",
-      "title": "Language Structures",
-      "items": [
-        {
-          "itemId": "p1u2-gr-1",
-          "content": {
-            "rule": "Describing colors",
-            "explanation": "Use The + noun + is + color to describe an object.",
-            "example": "The grass is green. The sky is blue.",
-            "origin": "source",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-gr-2",
-          "content": {
-            "rule": "Naming shapes",
-            "explanation": "Ask What shape is this? Answer This is a + shape.",
-            "example": "What shape is this? This is a circle.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        },
-        {
-          "itemId": "p1u2-gr-3",
-          "content": {
-            "rule": "Sides of shapes",
-            "explanation": "A rectangle has 4 sides. A triangle has 3 sides.",
-            "example": "The triangle has 3 sides.",
-            "origin": "source",
-            "sourcePdfPage": 36
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Based on the printed language model; verify against original PDF scan."
-        }
-      ]
-    },
-    {
-      "type": "reading",
-      "title": "Reading & Dialogue",
-      "items": [
-        {
-          "itemId": "p1u2-rd-1",
-          "content": {
-            "passage": "Maya: Look! The grass is green.\nHana: I can see a flower.\nMaya: Yes, the flower is red. And look at the sky! It’s blue.\nHana: I can see a tree.\nMaya: Me too! Oh, look! A butterfly! The butterfly is flying near the tree!\nHana: And I see a little bird in the tree!",
-            "origin": "source",
-            "sourcePdfPage": 26
-          },
-          "reviewStatus": "needs_review",
-          "origin": "source",
-          "notes": "Transcribed from the unit dialogue; verify against original PDF scan."
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     },
     {
       "type": "vocabulary_questions",
-      "title": "Vocabulary Practice",
+      "title": "Vocabulary Questions",
       "items": [
         {
-          "itemId": "p1u2-vq-1",
+          "itemId": "u2_vq_1",
           "content": {
-            "question": "What color is the grass?",
+            "question": "What color is the grass in the garden?",
             "options": [
               "green",
-              "red",
-              "yellow"
+              "blue",
+              "yellow",
+              "red"
             ],
             "correctAnswer": "green",
-            "reason": "The source says the grass is green.",
+            "reason": "The text states that the grass is green.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u2-vq-2",
+          "itemId": "u2_vq_2",
           "content": {
-            "question": "What color is the flower?",
+            "question": "Which object in the sky is yellow?",
             "options": [
-              "red",
-              "blue",
-              "green"
+              "sun",
+              "bird",
+              "cloud",
+              "star"
             ],
-            "correctAnswer": "red",
-            "reason": "The source says the flower is red.",
+            "correctAnswer": "sun",
+            "reason": "The text teaches that the sun is yellow.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 27
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u2-vq-3",
+          "itemId": "u2_vq_3",
           "content": {
-            "question": "Which thing is flying near the tree?",
+            "question": "What insect flies near the tree?",
             "options": [
               "butterfly",
-              "bird",
-              "ant"
+              "ant",
+              "spider",
+              "bee"
             ],
             "correctAnswer": "butterfly",
-            "reason": "The dialogue says the butterfly is flying near the tree.",
+            "reason": "The dialogue mentions that the butterfly is flying near the tree.",
             "origin": "supplementary",
             "sourcePdfPage": 26
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar and Functional Language",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Describing objects using colors with 'is'",
+            "explanation": "Use singular noun + 'is' + color adjective to describe the color of objects.",
+            "example": "The sky is blue.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     },
     {
       "type": "grammar_questions",
-      "title": "Grammar Practice",
+      "title": "Grammar Questions",
       "items": [
         {
-          "itemId": "p1u2-gq-1",
+          "itemId": "u2_gq_1",
           "content": {
-            "question": "A triangle has how many sides?",
+            "question": "Complete the sentence: The sky ___ blue.",
             "options": [
-              "3",
-              "4",
-              "1"
+              "is",
+              "are",
+              "am",
+              "be"
             ],
-            "correctAnswer": "3",
-            "reason": "The source states a triangle has 3 sides.",
+            "correctAnswer": "is",
+            "reason": "Singular subjects like 'sky' take the verb 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 36
+            "sourcePdfPage": 34
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u2-gq-2",
+          "itemId": "u2_gq_2",
           "content": {
-            "question": "The rectangle has how many sides?",
+            "question": "Choose the correct sentence:",
             "options": [
-              "4",
-              "3",
-              "1"
+              "The sun is yellow.",
+              "The sun are yellow.",
+              "The sun am yellow.",
+              "The sun be yellow."
             ],
-            "correctAnswer": "4",
-            "reason": "The source states a rectangle has 4 sides.",
+            "correctAnswer": "The sun is yellow.",
+            "reason": "'The sun' is singular and pairs correctly with 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 36
+            "sourcePdfPage": 34
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary question based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "Complete the sentence: The flower ___ red.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "The singular noun 'flower' requires 'is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Practice",
+      "items": [
+        {
+          "itemId": "u2_read_1",
+          "content": {
+            "passage": "Maya: Look! The grass is green. I can see a flower. Yes, the flower is red. And look at the sky! It's blue. I can see a tree. Me too! Oh, look! A butterfly! The butterfly is flying near the tree! And I see a little bird in the tree!",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_2",
+          "content": {
+            "question": "What color is the flower mentioned in the reading passage?",
+            "options": [
+              "red",
+              "blue",
+              "green",
+              "yellow"
+            ],
+            "correctAnswer": "red",
+            "reason": "The passage explicitly states 'the flower is red.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "u2_list_1",
+          "content": {
+            "script": "Teacher: Listen and look at the garden. What is in the sky? Student: The sky is blue and the sun is yellow.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_list_2",
+          "content": {
+            "question": "According to the listening script, what color is the sun?",
+            "options": [
+              "yellow",
+              "blue",
+              "green",
+              "red"
+            ],
+            "correctAnswer": "yellow",
+            "reason": "The student states that the sun is yellow.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u2_speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Maya",
+                "text": "Look! The grass is green.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Hana",
+                "text": "I can see a flower.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Maya",
+                "text": "Yes, the flower is red.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Color Match Challenge",
+            "description": "Choose the correct color that matches the natural object.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What color is the sky?",
+            "options": [
+              "blue",
+              "green",
+              "red",
+              "yellow"
+            ],
+            "correctAnswer": "blue",
+            "reason": "The sky is blue in the unit vocabulary.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Grammar Quest",
+            "description": "Pick the right verb for descriptive sentences.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Choose the correct word: The grass ___ green.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "'The grass' is singular and takes 'is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     },
     {
       "type": "comprehensive_test",
-      "title": "Comprehensive Unit Assessment",
+      "title": "Comprehensive Unit Test",
       "items": [
         {
-          "itemId": "p1u2-test-1",
+          "itemId": "u2_test_1",
+          "content": {
+            "question": "What animal is mentioned as being in the tree?",
+            "options": [
+              "bird",
+              "fish",
+              "cat",
+              "dog"
+            ],
+            "correctAnswer": "bird",
+            "reason": "The text notes a little bird in the tree.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_2",
           "content": {
             "question": "What color is the grass?",
             "options": [
               "green",
               "red",
+              "blue",
               "yellow"
             ],
             "correctAnswer": "green",
-            "reason": "The source says the grass is green.",
+            "reason": "The grass is green.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_3",
+          "content": {
+            "question": "Complete: The sun ___ yellow.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "Singular subject takes 'is'.",
             "origin": "supplementary",
             "sourcePdfPage": 34
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "p1u2-test-2",
+          "itemId": "u2_test_4",
           "content": {
-            "question": "What color is the flower?",
+            "question": "Which of these is a shape mentioned in the unit?",
             "options": [
-              "red",
-              "blue",
-              "green"
+              "circle",
+              "cloud",
+              "river",
+              "stone"
             ],
-            "correctAnswer": "red",
-            "reason": "The source says the flower is red.",
-            "origin": "supplementary",
-            "sourcePdfPage": 34
-          },
-          "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
-        },
-        {
-          "itemId": "p1u2-test-3",
-          "content": {
-            "question": "Which thing is flying near the tree?",
-            "options": [
-              "butterfly",
-              "bird",
-              "ant"
-            ],
-            "correctAnswer": "butterfly",
-            "reason": "The dialogue says the butterfly is flying near the tree.",
-            "origin": "supplementary",
-            "sourcePdfPage": 26
-          },
-          "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
-        },
-        {
-          "itemId": "p1u2-test-4",
-          "content": {
-            "question": "A triangle has how many sides?",
-            "options": [
-              "3",
-              "4",
-              "1"
-            ],
-            "correctAnswer": "3",
-            "reason": "The source states a triangle has 3 sides.",
-            "origin": "supplementary",
+            "correctAnswer": "circle",
+            "reason": "Circle is a basic 2D shape taught in Unit 2.",
+            "origin": "source",
             "sourcePdfPage": 36
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-test-5",
+          "itemId": "u2_test_5",
           "content": {
-            "question": "The rectangle has how many sides?",
+            "question": "What letter starts the word 'sun'?",
             "options": [
-              "4",
-              "3",
-              "1"
+              "Ss",
+              "Aa",
+              "Mm",
+              "Bb"
             ],
-            "correctAnswer": "4",
-            "reason": "The source states a rectangle has 4 sides.",
-            "origin": "supplementary",
-            "sourcePdfPage": 36
+            "correctAnswer": "Ss",
+            "reason": "Sun starts with the letter Ss.",
+            "origin": "source",
+            "sourcePdfPage": 31
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "p1u2-test-6",
+          "itemId": "u2_test_6",
           "content": {
-            "question": "Which word begins with A?",
+            "question": "What letter starts the word 'apple'?",
             "options": [
-              "apple",
-              "snake",
-              "spoon"
+              "Aa",
+              "Ss",
+              "Tt",
+              "Pp"
             ],
-            "correctAnswer": "apple",
-            "reason": "Apple is listed in the A phonics lesson.",
-            "origin": "supplementary",
+            "correctAnswer": "Aa",
+            "reason": "Apple starts with the letter Aa.",
+            "origin": "source",
             "sourcePdfPage": 38
           },
           "reviewStatus": "needs_review",
-          "origin": "supplementary",
-          "notes": "Supplementary assessment item based only on unit source content."
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_7",
+          "content": {
+            "question": "What is the Arabic meaning of 'flower'?",
+            "options": [
+              "زهرة",
+              "شجرة",
+              "شمس",
+              "سماء"
+            ],
+            "correctAnswer": "زهرة",
+            "reason": "Flower translates to زهرة in Arabic.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_8",
+          "content": {
+            "question": "Which shape has 3 sides?",
+            "options": [
+              "triangle",
+              "circle",
+              "square",
+              "rectangle"
+            ],
+            "correctAnswer": "triangle",
+            "reason": "The triangle has 3 sides.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_9",
+          "content": {
+            "question": "Choose the correct color for the sky:",
+            "options": [
+              "blue",
+              "green",
+              "red",
+              "yellow"
+            ],
+            "correctAnswer": "blue",
+            "reason": "The sky is blue.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_10",
+          "content": {
+            "question": "What is flying near the tree in the dialogue?",
+            "options": [
+              "butterfly",
+              "bird",
+              "flower",
+              "sun"
+            ],
+            "correctAnswer": "butterfly",
+            "reason": "The butterfly is flying near the tree.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     }

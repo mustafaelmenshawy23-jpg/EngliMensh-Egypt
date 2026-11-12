@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:46:30.861Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary1-student-term1",
+  "sourceFilename": "English_language_prim1_t1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 5,
+  "unitTitle": "On the Farm",
+  "sourcePdfRange": {
+    "start": 84,
+    "end": 102
+  },
+  "sourceCoverage": [
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102
+  ],
+  "sourceFingerprint": "2eadb81da8526d2538f468139281f68f92f063947313a29f4291025178c46058",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "On the Farm",
+    "expectedRange": {
+      "start": 84,
+      "end": 102,
+      "totalPages": 19
+    },
+    "recordedCoverage": {
+      "totalPages": 19,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 18,
+      "supplementaryItems": 11,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:46:30.861Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Farm Animals and Words",
+      "items": [
+        {
+          "itemId": "voc_001",
+          "content": {
+            "word": "cow",
+            "arabicMeaning": "بقرة",
+            "example": "The cow is big.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_002",
+          "content": {
+            "word": "duck",
+            "arabicMeaning": "بطة",
+            "example": "The duck is small.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_003",
+          "content": {
+            "word": "horse",
+            "arabicMeaning": "حصان",
+            "example": "The horse is big.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_004",
+          "content": {
+            "word": "chicken",
+            "arabicMeaning": "دجاجة",
+            "example": "The chicken is small.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "voc_q001",
+          "content": {
+            "question": "Which animal is usually big on the farm?",
+            "options": [
+              "duck",
+              "cow",
+              "chicken"
+            ],
+            "correctAnswer": "cow",
+            "reason": "The unit describes the cow as a big animal.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "voc_q002",
+          "content": {
+            "question": "Which animal is usually small?",
+            "options": [
+              "horse",
+              "cow",
+              "duck"
+            ],
+            "correctAnswer": "duck",
+            "reason": "The unit describes the duck as a small animal.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "voc_q003",
+          "content": {
+            "question": "Which word starts with the letter M?",
+            "options": [
+              "mouse",
+              "fork",
+              "duck"
+            ],
+            "correctAnswer": "mouse",
+            "reason": "Mouse is a word that begins with the letter M.",
+            "origin": "supplementary",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar and Phonics",
+      "items": [
+        {
+          "itemId": "gram_001",
+          "content": {
+            "rule": "Using adjectives to describe size",
+            "explanation": "We use 'big' and 'small' to describe the size of animals.",
+            "example": "The cow is big.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_002",
+          "content": {
+            "rule": "Counting numbers 6 to 10",
+            "explanation": "We use numbers to count how many animals we see.",
+            "example": "I can see 7 horses.",
+            "origin": "source",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q001",
+          "content": {
+            "question": "The horse is ____.",
+            "options": [
+              "big",
+              "small",
+              "seven"
+            ],
+            "correctAnswer": "big",
+            "reason": "The unit teaches that the horse is big.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram_q002",
+          "content": {
+            "question": "How many ducks are there if we count 1, 2, 3, 4, 5, 6, 7, 8, 9?",
+            "options": [
+              "7",
+              "8",
+              "9"
+            ],
+            "correctAnswer": "9",
+            "reason": "The sequence ends at 9.",
+            "origin": "supplementary",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram_q003",
+          "content": {
+            "question": "Which letter comes after G in the alphabet?",
+            "options": [
+              "H",
+              "F",
+              "M"
+            ],
+            "correctAnswer": "H",
+            "reason": "H follows G in the alphabet.",
+            "origin": "supplementary",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Passage",
+      "items": [
+        {
+          "itemId": "read_001",
+          "content": {
+            "passage": "Look at the cow! Wow! The cow is big! And look at the duck! The duck is small. Do you see the horse? Yes! The horse is big, too. What about the chicken? The chicken is small.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q001",
+          "content": {
+            "question": "Is the chicken big or small?",
+            "options": [
+              "big",
+              "small",
+              "none"
+            ],
+            "correctAnswer": "small",
+            "reason": "The passage states the chicken is small.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "list_001",
+          "content": {
+            "script": "Teacher: Listen and repeat the numbers. 6, 7, 8, 9, 10. How many cows do you see? Student: I see 6 cows.",
+            "origin": "supplementary",
+            "sourcePdfPage": 95
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q001",
+          "content": {
+            "question": "What number comes after 8?",
+            "options": [
+              "7",
+              "9",
+              "10"
+            ],
+            "correctAnswer": "9",
+            "reason": "In the counting sequence, 9 follows 8.",
+            "origin": "supplementary",
+            "sourcePdfPage": 95
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "speak_001",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Sara",
+                "text": "How many horses can you see?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Tamer",
+                "text": "I can see 7 horses!",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Fun Farm Games",
+      "items": [
+        {
+          "itemId": "game_001",
+          "content": {
+            "gameName": "Animal Size Quiz",
+            "description": "Choose the correct size for the animal.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Is the cow big or small?",
+            "options": [
+              "big",
+              "small",
+              "medium"
+            ],
+            "correctAnswer": "big",
+            "reason": "The cow is described as big in the unit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_002",
+          "content": {
+            "gameName": "Number Match",
+            "description": "Identify the correct number.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which number is after 6?",
+            "options": [
+              "5",
+              "7",
+              "8"
+            ],
+            "correctAnswer": "7",
+            "reason": "7 comes after 6 in the counting sequence.",
+            "origin": "supplementary",
+            "sourcePdfPage": 95
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 5 Test",
+      "items": [
+        {
+          "itemId": "test_001",
+          "content": {
+            "question": "The cow is ____.",
+            "options": [
+              "big",
+              "small",
+              "long"
+            ],
+            "correctAnswer": "big",
+            "reason": "The unit describes the cow as big.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_002",
+          "content": {
+            "question": "Which animal is small?",
+            "options": [
+              "cow",
+              "horse",
+              "duck"
+            ],
+            "correctAnswer": "duck",
+            "reason": "The duck is described as small.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_003",
+          "content": {
+            "question": "How many horses did Tamer see?",
+            "options": [
+              "6",
+              "7",
+              "8"
+            ],
+            "correctAnswer": "7",
+            "reason": "Tamer says he can see 7 horses.",
+            "origin": "source",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_004",
+          "content": {
+            "question": "Which letter starts the word 'mango'?",
+            "options": [
+              "M",
+              "G",
+              "F"
+            ],
+            "correctAnswer": "M",
+            "reason": "Mango starts with the letter M.",
+            "origin": "source",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_005",
+          "content": {
+            "question": "Which letter starts the word 'girl'?",
+            "options": [
+              "M",
+              "G",
+              "O"
+            ],
+            "correctAnswer": "G",
+            "reason": "Girl starts with the letter G.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_006",
+          "content": {
+            "question": "Which letter starts the word 'fork'?",
+            "options": [
+              "F",
+              "O",
+              "M"
+            ],
+            "correctAnswer": "F",
+            "reason": "Fork starts with the letter F.",
+            "origin": "source",
+            "sourcePdfPage": 100
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_007",
+          "content": {
+            "question": "Which letter starts the word 'olive'?",
+            "options": [
+              "O",
+              "G",
+              "F"
+            ],
+            "correctAnswer": "O",
+            "reason": "Olive starts with the letter O.",
+            "origin": "source",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_008",
+          "content": {
+            "question": "What number comes after 9?",
+            "options": [
+              "8",
+              "10",
+              "7"
+            ],
+            "correctAnswer": "10",
+            "reason": "10 follows 9 in the counting sequence.",
+            "origin": "source",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_009",
+          "content": {
+            "question": "Is the chicken big or small?",
+            "options": [
+              "big",
+              "small",
+              "tall"
+            ],
+            "correctAnswer": "small",
+            "reason": "The chicken is described as small.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_010",
+          "content": {
+            "question": "How many ducks were counted?",
+            "options": [
+              "7",
+              "8",
+              "9"
+            ],
+            "correctAnswer": "9",
+            "reason": "The dialogue mentions there are 9 ducks.",
+            "origin": "source",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

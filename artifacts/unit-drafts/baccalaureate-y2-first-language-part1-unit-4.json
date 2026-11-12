@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-07T07:23:21.255Z",
+  "generatedAt": "2026-11-12T07:42:12.958Z",
   "generator": {
     "provider": "Google Gemini API",
-    "model": "gemini-2.5-flash",
-    "reviewStatus": "ready_for_teacher_review"
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
   },
   "bookId": "baccalaureate-y2-first-language-part1",
   "sourceFilename": "Eng-L1-EB-Part1 (1).pdf",
   "grade": "Baccalaureate Year 2",
   "unitNumber": 4,
-  "unitTitle": "The Power of Choice",
+  "unitTitle": "Unit 4: The Power of Choice",
   "sourcePdfRange": {
     "start": 102,
     "end": 139
@@ -56,9 +56,10 @@
     138,
     139
   ],
-  "qualityScore": 100,
+  "sourceFingerprint": "0b8b3ee5a6527cd955185c9cfdc0f0e329709cdbe73f5e39b6d3bb4c914e78e1",
+  "qualityScore": 85,
   "qualityReport": {
-    "unitTitle": "The Power of Choice",
+    "unitTitle": "Unit 4: The Power of Choice",
     "expectedRange": {
       "start": 102,
       "end": 139,
@@ -70,16 +71,16 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 24,
-      "sourceItems": 22,
-      "supplementaryItems": 2,
-      "vocabularyCount": 8,
-      "questionsCount": 8
+      "totalItems": 30,
+      "sourceItems": 25,
+      "supplementaryItems": 5,
+      "vocabularyCount": 5,
+      "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 8,
-        "validItems": 8,
+        "itemCount": 5,
+        "validItems": 5,
         "issues": []
       },
       "vocabulary_questions": {
@@ -98,8 +99,8 @@
         "issues": []
       },
       "reading": {
-        "itemCount": 3,
-        "validItems": 3,
+        "itemCount": 2,
+        "validItems": 2,
         "issues": []
       },
       "listening": {
@@ -112,52 +113,45 @@
         "validItems": 1,
         "issues": []
       },
-      "comprehensive_test": {
+      "games": {
         "itemCount": 2,
         "validItems": 2,
         "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
       }
     },
-    "validationTimestamp": "2026-11-07T07:23:21.254Z"
+    "validationTimestamp": "2026-11-12T07:42:12.958Z"
   },
-  "reviewStatus": "ready_for_teacher_review",
+  "reviewStatus": "needs_review",
   "reviewedBy": null,
   "reviewedAt": null,
   "sections": [
     {
       "type": "vocabulary",
-      "title": "Vocabulary",
+      "title": "Unit Vocabulary",
       "items": [
         {
-          "itemId": "u4-voc-1",
+          "itemId": "voc_1",
           "content": {
-            "word": "purchase",
-            "arabicMeaning": "شراء / يشتري",
-            "example": "Consumers carefully plan their purchases in advance during sale events.",
+            "word": "storage",
+            "arabicMeaning": "تخزين",
+            "example": "Good storage keeps fresh food like bread and vegetables from spoiling quickly.",
             "origin": "source",
-            "sourcePdfPage": 126
+            "sourcePdfPage": 108
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-voc-2",
-          "content": {
-            "word": "fall for",
-            "arabicMeaning": "ينخدع بـ",
-            "example": "Shoppers often fall for marketing tricks that create a false sense of urgency.",
-            "origin": "source",
-            "sourcePdfPage": 124
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-voc-3",
+          "itemId": "voc_2",
           "content": {
             "word": "loss aversion",
             "arabicMeaning": "تجنب الخسارة",
-            "example": "Loss aversion makes people fear missing out on limited-time discounts.",
+            "example": "Loss aversion makes shoppers feel that missing a discount is a personal loss.",
             "origin": "source",
             "sourcePdfPage": 126
           },
@@ -165,61 +159,37 @@
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-voc-4",
+          "itemId": "voc_3",
+          "content": {
+            "word": "brand loyalty",
+            "arabicMeaning": "الولاء للعلامة التجارية",
+            "example": "Brand loyalty occurs when consumers consistently purchase from the same company.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_4",
+          "content": {
+            "word": "leftover",
+            "arabicMeaning": "بقايا الطعام",
+            "example": "Shops should donate safe leftover food to local food banks.",
+            "origin": "source",
+            "sourcePdfPage": 108
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_5",
           "content": {
             "word": "urgency",
-            "arabicMeaning": "إلحاح / استعجال",
-            "example": "Countdown timers create urgency, pushing customers to decide quickly.",
+            "arabicMeaning": "شعور بالاستعجال",
+            "example": "Countdown clocks on shopping websites create a sense of urgency for buyers.",
             "origin": "source",
             "sourcePdfPage": 126
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-voc-5",
-          "content": {
-            "word": "digital literacy",
-            "arabicMeaning": "معرفة رقمية",
-            "example": "Digital literacy education helps teenagers understand how apps use their time.",
-            "origin": "source",
-            "sourcePdfPage": 120
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-voc-6",
-          "content": {
-            "word": "preserve",
-            "arabicMeaning": "يحافظ على / يحمي",
-            "example": "Preserving Egyptian heritage helps future generations connect with history.",
-            "origin": "source",
-            "sourcePdfPage": 132
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-voc-7",
-          "content": {
-            "word": "verify",
-            "arabicMeaning": "يتحقق من",
-            "example": " Salma verified the date and source before sharing the old photograph.",
-            "origin": "source",
-            "sourcePdfPage": 133
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-voc-8",
-          "content": {
-            "word": "fragile",
-            "arabicMeaning": "هش / سريع الكسر",
-            "example": "Ancient papyrus documents are fragile and require careful protection.",
-            "origin": "source",
-            "sourcePdfPage": 133
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -228,58 +198,58 @@
     },
     {
       "type": "vocabulary_questions",
-      "title": "Vocabulary Questions",
+      "title": "Vocabulary Practice",
       "items": [
         {
-          "itemId": "u4-vq-1",
+          "itemId": "voc_q1",
           "content": {
-            "question": "The phrase \"falling for\" in the text about shopping events is closest in meaning to:",
+            "question": "What does the term 'loss aversion' refer to in consumer psychology?",
             "options": [
-              "avoiding",
-              "being tricked by",
-              "understanding",
-              "comparing"
+              "A desire to spend all money immediately",
+              "The tendency to fear losing an opportunity more than gaining something",
+              "A formula for calculating store discounts",
+              "A strategy to return damaged items"
             ],
-            "correctAnswer": "being tricked by",
-            "reason": "Falling for a marketing trick means being deceived or tricked by it.",
+            "correctAnswer": "The tendency to fear losing an opportunity more than gaining something",
+            "reason": "Loss aversion is a cognitive framework where people feel that missing out on a deal is losing money.",
             "origin": "source",
-            "sourcePdfPage": 124
+            "sourcePdfPage": 126
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-vq-2",
+          "itemId": "voc_q2",
           "content": {
-            "question": "The Grand Egyptian Museum protects valuable artifacts so future generations can learn from them. What does \"preserve\" mean here?",
+            "question": "What is the meaning of 'leftover' in the context of food awareness?",
             "options": [
-              "To protect something from damage or loss",
-              "To hide something completely",
-              "To sell something",
-              "To destroy something"
+              "Fresh produce bought from a local market",
+              "Food remains that have not been eaten after a meal",
+              "Food stored in frozen packaging",
+              "Ingredients used for cooking new meals"
             ],
-            "correctAnswer": "To protect something from damage or loss",
-            "reason": "Preserve means safeguarding historical objects from destruction.",
+            "correctAnswer": "Food remains that have not been eaten after a meal",
+            "reason": "Leftover refers to uneaten food remaining after a meal is finished.",
             "origin": "source",
-            "sourcePdfPage": 132
+            "sourcePdfPage": 108
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-vq-3",
+          "itemId": "voc_q3",
           "content": {
-            "question": "Before sharing an old photograph, Salma checked that its information was correct and reliable. Which word describes this?",
+            "question": "If a consumer demonstrates 'brand loyalty', what are they doing?",
             "options": [
-              "verified",
-              "ignored",
-              "changed",
-              "copied"
+              "Consistently choosing one brand over others",
+              "Searching for the cheapest product available",
+              "Refusing to buy branded clothing",
+              "Comparing prices across multiple websites"
             ],
-            "correctAnswer": "verified",
-            "reason": "Verified means checked for accuracy and authenticity.",
+            "correctAnswer": "Consistently choosing one brand over others",
+            "reason": "Brand loyalty means repeatedly choosing the same brand and resisting alternatives.",
             "origin": "source",
-            "sourcePdfPage": 133
+            "sourcePdfPage": 114
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -288,28 +258,28 @@
     },
     {
       "type": "grammar",
-      "title": "Grammar",
+      "title": "Grammar Focus: Present Perfect & Fronting",
       "items": [
         {
-          "itemId": "u4-gr-1",
+          "itemId": "gram_1",
           "content": {
-            "rule": "Present Perfect Tense (have/has + past participle)",
-            "explanation": "Use the Present Perfect with \"just\", \"already\", \"yet\", \"since\", \"for\", and \"never\" to link past actions to present relevance.",
-            "example": "Scientists have just published new research on food waste.",
+            "rule": "Present Perfect Tense with Time Markers",
+            "explanation": "The present perfect tense (have/has + past participle) connects past actions to present results. It is frequently used with markers like since, for, just, already, yet, never, and ever.",
+            "example": "Researchers have found that bread waste is very high in Egyptian cities.",
             "origin": "source",
-            "sourcePdfPage": 127
+            "sourcePdfPage": 126
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-gr-2",
+          "itemId": "gram_2",
           "content": {
-            "rule": "Present Perfect with \"yet\" in negatives and questions",
-            "explanation": "Use \"yet\" at the end of negative sentences and questions to show an expected action has not happened yet.",
-            "example": "The company has not introduced the new system yet.",
+            "rule": "Fronting for Emphasis in Formal Writing",
+            "explanation": "Fronting involves placing a time phrase, result/cause clause, or contrasting phrase at the beginning of a sentence to add emphasis and variety in formal texts.",
+            "example": "As a result of poor storage, bread goes bad quickly.",
             "origin": "source",
-            "sourcePdfPage": 127
+            "sourcePdfPage": 108
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -318,20 +288,20 @@
     },
     {
       "type": "grammar_questions",
-      "title": "Grammar Questions",
+      "title": "Grammar Practice",
       "items": [
         {
-          "itemId": "u4-gq-1",
+          "itemId": "gram_q1",
           "content": {
-            "question": "Researchers ________ (find) that bread waste is very high in urban centers.",
+            "question": "Which sentence uses the present perfect tense correctly?",
             "options": [
-              "have found",
-              "found",
-              "are finding",
-              "find"
+              "She has buy a jacket during the sale.",
+              "Researchers have found that bread waste is high.",
+              "They has started teaching food education.",
+              "Shops have using countdown clocks for years."
             ],
-            "correctAnswer": "have found",
-            "reason": "Present Perfect \"have found\" connects past research finding to present awareness.",
+            "correctAnswer": "Researchers have found that bread waste is high.",
+            "reason": "The present perfect requires 'have/has' followed by the past participle verb 'found'.",
             "origin": "source",
             "sourcePdfPage": 128
           },
@@ -339,37 +309,37 @@
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-gq-2",
+          "itemId": "gram_q2",
           "content": {
-            "question": "The company ________ (not / introduce) the new recycling system yet.",
+            "question": "Which sentence correctly applies 'fronting' for emphasis?",
             "options": [
-              "has not introduced",
-              "did not introduce",
-              "is not introducing",
-              "will not introduce"
+              "Bread goes bad quickly as a result of poor storage.",
+              "As a result of poor storage, bread goes bad quickly.",
+              "Because storage is poor bread going bad quickly.",
+              "Poor storage makes bread going bad quickly."
             ],
-            "correctAnswer": "has not introduced",
-            "reason": "Use Present Perfect negative \"has not introduced\" with \"yet\".",
+            "correctAnswer": "As a result of poor storage, bread goes bad quickly.",
+            "reason": "Fronting places the prepositional result phrase at the start of the sentence followed by a comma.",
             "origin": "source",
-            "sourcePdfPage": 128
+            "sourcePdfPage": 108
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-gq-3",
+          "itemId": "gram_q3",
           "content": {
-            "question": "Some schools in Cairo ________ (already / start) food education programs.",
+            "question": "Which time expression fits correctly in: 'The company has not introduced the new system ____'?",
             "options": [
-              "have already started",
-              "already started",
-              "are starting already",
-              "start already"
+              "already",
+              "just",
+              "yet",
+              "since"
             ],
-            "correctAnswer": "have already started",
-            "reason": "Present Perfect with \"already\" emphasizes early completion.",
+            "correctAnswer": "yet",
+            "reason": "'Yet' is used at the end of negative present perfect statements.",
             "origin": "source",
-            "sourcePdfPage": 128
+            "sourcePdfPage": 127
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -378,76 +348,66 @@
     },
     {
       "type": "reading",
-      "title": "Reading & Questions",
+      "title": "Reading Comprehension: Sale Psychology",
       "items": [
         {
-          "itemId": "u4-rd-1",
+          "itemId": "read_1",
           "content": {
-            "passage": "Many teenagers use social media every day without thinking about how these apps work. Although platforms seem free, they collect data on user behavior. Designers use engagement features to maximize user screen time.",
+            "passage": "Every year, millions of people around the world wait for events like Black Friday to go shopping. They feel excited as they plan their purchases in advance and believe they are making smart choices. But are they really saving money, or are they falling for a set of very clever tricks? One of the most common tricks is called loss aversion. Imagine a jacket that costs 400 Egyptian pounds. You do not really need it. Then a sign appears: 'Was 800 LE, Now 400 LE, Save 50%!' Suddenly, the jacket feels much more attractive. Your brain tells you, 'If I don't buy it, I will lose the chance to save 400 pounds.' Of course, you have not lost anything, but that is how our brains work. Not buying something feels like a loss.",
             "origin": "source",
-            "sourcePdfPage": 117
+            "sourcePdfPage": 124
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-rd-2",
+          "itemId": "read_q1",
           "content": {
-            "passage": "When Places Remember: A historical landscape is more than a collection of old buildings. It is a place where past events leave visible and invisible traces connecting communities to their shared memory and values.",
-            "origin": "source",
-            "sourcePdfPage": 135
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
-        },
-        {
-          "itemId": "u4-rd-q1",
-          "content": {
-            "question": "Why do free digital social media platforms collect user behavior data?",
+            "question": "According to the reading text, why does a 'Was 800 LE, Now 400 LE' sign make a jacket seem more attractive?",
             "options": [
-              "To analyze interests and keep users engaged",
-              "To charge monthly subscription fees",
-              "To delete inactive accounts",
-              "To replace textbook education"
+              "Because the jacket is made of superior fabric",
+              "Because loss aversion tricks the brain into viewing not buying it as losing 400 LE",
+              "Because the store offers a free warranty",
+              "Because the store will close down permanently"
             ],
-            "correctAnswer": "To analyze interests and keep users engaged",
-            "reason": "The text explains platforms collect behavior data to optimize user engagement.",
-            "origin": "supplementary",
-            "sourcePdfPage": 117
+            "correctAnswer": "Because loss aversion tricks the brain into viewing not buying it as losing 400 LE",
+            "reason": "The text explains that loss aversion causes the brain to interpret missing a discount as an actual financial loss.",
+            "origin": "source",
+            "sourcePdfPage": 124
           },
           "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "Transcribed from the source book; teacher verification required."
         }
       ]
     },
     {
       "type": "listening",
-      "title": "Listening & Questions",
+      "title": "Listening Comprehension: Digital Attention",
       "items": [
         {
-          "itemId": "u4-ls-1",
+          "itemId": "list_1",
           "content": {
-            "script": "Audio discussion: \"If you are not paying for the product, you are the product.\" Understand how notification badges and continuous scrolling keep users engaged.",
-            "origin": "source",
-            "sourcePdfPage": 119
+            "script": "Welcome to Digital Awareness. Today we explore how mobile applications manage user attention. While many platforms appear free, they monetize user engagement by collecting data on habits and preferences. Features like infinite scroll and autoplay are deliberately engineered to keep users scrolling without interruption. Studies indicate that even unread notifications cause cognitive disruption, reducing concentration while studying. Recognizing the value of your attention is the essential first step toward healthier digital choices.",
+            "origin": "supplementary",
+            "sourcePdfPage": 117
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         },
         {
-          "itemId": "u4-ls-q1",
+          "itemId": "list_q1",
           "content": {
-            "question": "What does the phrase \"If you are not paying for the product, you are the product\" signify?",
+            "question": "According to the listening script, what effect do smartphone notifications have on studying?",
             "options": [
-              "Users attention and data are sold to advertisers",
-              "All software must be paid for cash",
-              "Products are free for everyone forever",
-              "Only physical stores sell products"
+              "They improve study speed and comprehension.",
+              "They disrupt concentration even if they are not opened.",
+              "They only affect focus when users reply to messages.",
+              "They have zero impact on academic performance."
             ],
-            "correctAnswer": "Users attention and data are sold to advertisers",
-            "reason": "Free apps monetize user attention and data.",
+            "correctAnswer": "They disrupt concentration even if they are not opened.",
+            "reason": "The script specifies that simply receiving a notification disrupts concentration even if left unread.",
             "origin": "supplementary",
-            "sourcePdfPage": 119
+            "sourcePdfPage": 118
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -456,65 +416,273 @@
     },
     {
       "type": "speaking",
-      "title": "Speaking",
+      "title": "Speaking & Debate Role-Play",
       "items": [
         {
-          "itemId": "u4-sp-1",
+          "itemId": "speak_1",
           "content": {
             "dialogue": [
               {
-                "speaker": "Presenter",
-                "text": "Today I am presenting a 2-minute review of a popular social media app."
+                "speaker": "Student A",
+                "text": "Do you think supermarkets should be required by law to donate unsold food to food banks?",
+                "speakerGender": "unknown"
               },
               {
-                "speaker": "Reviewer",
-                "text": "One of its greatest strengths is instant connectivity, but it can encourage impulse scrolling."
+                "speaker": "Student B",
+                "text": "Yes, because large amounts of perfectly good food are wasted while families in need could benefit from it.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student A",
+                "text": "That is true, but supermarket managers might worry about transport logistics and safety regulations.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "With clear food safety guidelines and charity partnerships, those logistical challenges can easily be solved.",
+                "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 121
+            "origin": "supplementary",
+            "sourcePdfPage": 110
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Retail Terminology Challenge",
+            "description": "Identify key terms used in sales psychology and retail strategies.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which term describes a visual timer on a web shop counting down the remaining time of a discount?",
+            "options": [
+              "Loss aversion",
+              "Countdown clock",
+              "Brand loyalty",
+              "Leftover"
+            ],
+            "correctAnswer": "Countdown clock",
+            "reason": "A countdown clock visually displays remaining seconds to create urgency.",
+            "origin": "supplementary",
+            "sourcePdfPage": 124
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Structure Challenge",
+            "description": "Choose the correct present perfect sentence structure.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which sentence correctly uses the present perfect with 'already'?",
+            "options": [
+              "Some schools have already started teaching food literacy.",
+              "Some schools has already start teaching food literacy.",
+              "Some schools already have starting food literacy.",
+              "Some schools are already started food literacy."
+            ],
+            "correctAnswer": "Some schools have already started teaching food literacy.",
+            "reason": "The plural subject 'schools' takes auxiliary 'have' and past participle 'started'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 127
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     },
     {
       "type": "comprehensive_test",
-      "title": "Comprehensive Unit Test",
+      "title": "Unit 4 Comprehensive Test",
       "items": [
         {
-          "itemId": "u4-test-1",
+          "itemId": "comp_q1",
           "content": {
-            "question": "Which section of an opinion article introduces the main topic and states the writers view?",
+            "question": "What is the primary difference between 'best before' and 'use by' dates on food labels?",
             "options": [
-              "Introduction",
-              "Headline",
-              "Summary table",
-              "Glossary"
+              "'Best before' indicates food safety, while 'use by' relates to food quality.",
+              "'Best before' refers to food quality, whereas 'use by' indicates when food is no longer safe to eat.",
+              "Both labels mean the exact same thing in Egypt.",
+              "'Use by' is only required for dry canned products."
             ],
-            "correctAnswer": "Introduction",
-            "reason": "An opinion article introduction states the main topic and thesis view.",
+            "correctAnswer": "'Best before' refers to food quality, whereas 'use by' indicates when food is no longer safe to eat.",
+            "reason": "The report clarifies that 'best before' relates to taste or quality, while 'use by' indicates safety.",
             "origin": "source",
-            "sourcePdfPage": 116
+            "sourcePdfPage": 106
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
         },
         {
-          "itemId": "u4-test-2",
+          "itemId": "comp_q2",
           "content": {
-            "question": "What marketing strategy creates a feeling that a customer must buy immediately before time runs out?",
+            "question": "Why do major companies invest heavily in brand-building beyond simple logo design?",
             "options": [
-              "Urgency and countdown timers",
-              "Free shipping guarantees",
-              "Long-term product testing",
-              "Word of mouth reviews"
+              "Logos are legally restricted after one year.",
+              "A strong brand connects products to personal identity and emotional belonging.",
+              "Brand building costs less than product manufacturing.",
+              "It reduces international transport fees."
             ],
-            "correctAnswer": "Urgency and countdown timers",
-            "reason": "Countdown timers create urgency to induce impulse purchases.",
+            "correctAnswer": "A strong brand connects products to personal identity and emotional belonging.",
+            "reason": "Brands create emotional identity and feelings of belonging that influence consumer decisions.",
             "origin": "source",
-            "sourcePdfPage": 123
+            "sourcePdfPage": 111
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q3",
+          "content": {
+            "question": "Which sentence correctly uses 'fronting' to emphasize a result?",
+            "options": [
+              "Bread goes bad quickly as a result of poor storage.",
+              "As a result of poor storage, bread goes bad quickly.",
+              "Poor storage is why bread going bad quickly.",
+              "Bread is bad quickly because of poor storage."
+            ],
+            "correctAnswer": "As a result of poor storage, bread goes bad quickly.",
+            "reason": "Fronting moves the result phrase to the beginning of the sentence for emphasis.",
+            "origin": "source",
+            "sourcePdfPage": 108
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q4",
+          "content": {
+            "question": "What does brain research reveal about what happens when consumers see their favorite brand's logo?",
+            "options": [
+              "The brain enters a restful sleep state.",
+              "The brain region linked to personal identity becomes more active.",
+              "The brain forgets all previous purchases.",
+              "The brain automatically calculates exact discount percentages."
+            ],
+            "correctAnswer": "The brain region linked to personal identity becomes more active.",
+            "reason": "Brain research shows that viewing a favorite brand logo activates areas tied to self-identity.",
+            "origin": "source",
+            "sourcePdfPage": 112
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q5",
+          "content": {
+            "question": "Which present perfect sentence correctly uses the word 'yet'?",
+            "options": [
+              "Supermarkets haven't changed their habits yet.",
+              "Supermarkets have yet changed their habits.",
+              "Supermarkets yet haven't change their habits.",
+              "Supermarkets hasn't changed their habits yet."
+            ],
+            "correctAnswer": "Supermarkets haven't changed their habits yet.",
+            "reason": "'Yet' is placed at the end of negative present perfect statements with plural verb 'haven't'.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q6",
+          "content": {
+            "question": "How do features like 'infinite scroll' and 'autoplay' influence social media app users?",
+            "options": [
+              "They help users close applications quickly.",
+              "They are engineered to keep users online and scrolling longer.",
+              "They automatically erase user personal data.",
+              "They prevent pop-up advertisements from displaying."
+            ],
+            "correctAnswer": "They are engineered to keep users online and scrolling longer.",
+            "reason": "App designers use infinite scroll and autoplay mechanisms to maximize screen time.",
+            "origin": "source",
+            "sourcePdfPage": 117
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q7",
+          "content": {
+            "question": "What did behavioral research discover regarding consumers who shop during sale events?",
+            "options": [
+              "They spend less money overall than regular shoppers.",
+              "They spend more money overall despite believing they saved money.",
+              "They never buy products on impulse.",
+              "They only purchase items planned months in advance."
+            ],
+            "correctAnswer": "They spend more money overall despite believing they saved money.",
+            "reason": "Research shows that sale shoppers spend more overall because sales encourage additional buying.",
+            "origin": "source",
+            "sourcePdfPage": 124
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q8",
+          "content": {
+            "question": "Which word is defined as 'being kind and willing to give a lot to others'?",
+            "options": [
+              "generosity",
+              "urgency",
+              "loyalty",
+              "preference"
+            ],
+            "correctAnswer": "generosity",
+            "reason": "Generosity refers to the quality of being kind and sharing freely with others.",
+            "origin": "source",
+            "sourcePdfPage": 108
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q9",
+          "content": {
+            "question": "Choose the sentence that correctly forms the present perfect tense.",
+            "options": [
+              "Food waste has become a serious problem in recent years.",
+              "Food waste have become a serious problem in recent years.",
+              "Food waste has becoming a serious problem in recent years.",
+              "Food waste is become a serious problem in recent years."
+            ],
+            "correctAnswer": "Food waste has become a serious problem in recent years.",
+            "reason": "'Food waste' requires the singular auxiliary verb 'has' plus past participle 'become'.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q10",
+          "content": {
+            "question": "What is a main recommendation for reducing food waste according to the report on Egyptian homes?",
+            "options": [
+              "Building larger landfills outside cities",
+              "Education in schools, better storage habits, and clearer food labeling",
+              "Importing all fresh food from abroad",
+              "Canceling traditional family gatherings"
+            ],
+            "correctAnswer": "Education in schools, better storage habits, and clearer food labeling",
+            "reason": "The report highlights school education, better storage, and clearer labels as primary recommendations.",
+            "origin": "source",
+            "sourcePdfPage": 106
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
