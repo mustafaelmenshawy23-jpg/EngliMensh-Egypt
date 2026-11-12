@@ -191,25 +191,25 @@ function getQuestionState(qId) {
   };
 }
 
-function getShuffledOptions(itemId, options) {
+function getShuffledOptions(itemId, options, correctAnswer, questionIndex, sectionType) {
   if (!Array.isArray(options)) return [];
   if (!state.shuffledOptions) state.shuffledOptions = {};
-  if (!state.shuffledOptions[itemId]) {
-    const copy = [...options];
-    let seed = 0;
-    const idStr = String(itemId || 'q');
-    for (let i = 0; i < idStr.length; i++) {
-      seed = (seed * 31 + idStr.charCodeAt(i)) % 1000000007;
-    }
-    for (let i = copy.length - 1; i > 0; i--) {
-      seed = (seed * 16807) % 2147483647;
-      const j = Math.floor((seed / 2147483647) * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    state.shuffledOptions[itemId] = copy;
+  const groupKey = [
+    state.unitSelection?.bookId || state.stage || 'stage',
+    state.unitSelection?.unitNumber || state.grade || 'grade',
+    sectionType || 'quiz'
+  ].join(':');
+  const cacheKey = `${itemId}::balanced-v1`;
+  const cached = state.shuffledOptions[cacheKey];
+  const sameOptions = Array.isArray(cached) && cached.length === options.length &&
+    options.every((option) => cached.filter((value) => value === option).length === options.filter((value) => value === option).length);
+  if (!sameOptions || (typeof correctAnswer === 'string' && cached.filter((value) => value === correctAnswer).length !== 1)) {
+    state.shuffledOptions[cacheKey] = getBalancedQuizOptions({
+      itemId, options, correctAnswer, questionIndex, groupKey
+    });
     saveProgressToStorage();
   }
-  return state.shuffledOptions[itemId];
+  return state.shuffledOptions[cacheKey];
 }
 
 function resetReadingProgress() {
@@ -1229,7 +1229,7 @@ function renderStudentQuestionCard(item, index, sectionType, customBadge = null)
   const qId = item.itemId || `${sectionType}-${index}`;
   const qState = getQuestionState(qId);
   const hasKey = typeof data.correctAnswer === 'string';
-  const shuffledOpts = getShuffledOptions(qId, data.options);
+  const shuffledOpts = getShuffledOptions(qId, data.options, data.correctAnswer, index, sectionType);
 
   return `
     <article class="interactive-question">
