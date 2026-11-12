@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 99,
+  "cursorIndex": 114,
   "chainDepth": 1,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
@@ -794,7 +794,7 @@
       "missingPages": []
     },
     "secondary1-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "7c0962a1aa3db2634f4e6efa7e01ddfd09edd81368daaaef69c1cf80535095dc",
       "lastAttemptAt": "2026-11-12T07:18:56.489Z",
       "qualityScore": 85,
@@ -848,7 +848,7 @@
       }
     },
     "secondary1-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "756145cb098c8e3e24cbca7573c20a98ae32921e0ae2a09960bdeebeaeca0d55",
       "lastAttemptAt": "2026-11-12T07:19:28.468Z",
       "qualityScore": 100,
@@ -902,7 +902,7 @@
       }
     },
     "secondary1-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "b89d9540603a2ba4e90ff25513ee7d9f7c98651a6b51cd4d6b4a5569c987648e",
       "lastAttemptAt": "2026-11-12T07:20:13.185Z",
       "qualityScore": 90,
@@ -956,7 +956,7 @@
       }
     },
     "secondary1-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "7b26959f579be25ad305d394ffcb4af0f01ba4d6fde5bcd404dba200a890e873",
       "lastAttemptAt": "2026-11-12T07:21:19.204Z",
       "qualityScore": 90,
@@ -1010,7 +1010,7 @@
       }
     },
     "secondary1-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "4522d2adb0bc7428a1a62f9a489a5f03232c491211468fe4cd5a1d75e13f1785",
       "lastAttemptAt": "2026-11-12T07:21:35.126Z",
       "qualityScore": 90,
@@ -1163,104 +1163,274 @@
       "missingPages": []
     },
     "secondary3-student-term1-unit-1": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "a60003e91971d4f5080ce69f0cbe551288ad185d011ffe4f989a8c7669c5b441",
-      "lastAttemptAt": "2026-11-10T07:37:40.745Z",
-      "issues": [
-        "PDF p.14: Repeated substring pattern detected: \"............\"",
-        "PDF p.15: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.15: Repeated substring pattern detected: \"...............\"",
-        "PDF p.17: Repeated substring pattern detected: \"............\"",
-        "PDF p.18: Repeated substring pattern detected: \"............\"",
-        "PDF p.19: Repeated substring pattern detected: \"...............\"",
-        "PDF p.21: Repeated substring pattern detected: \"............\"",
-        "PDF p.23: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.23: Repeated substring pattern detected: \"...............\""
-      ],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 5,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:36:05.819Z",
+      "qualityScore": 90,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "secondary3-student-term1-unit-2": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "833be6cc14ce96051e9e28b2ee6189aff1e2a73fd0ea890bf12a5ecb98a9ad9e",
-      "lastAttemptAt": "2026-11-10T07:37:40.755Z",
-      "issues": [
-        "PDF p.28: Repeated substring pattern detected: \"............\"",
-        "PDF p.29: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-        "PDF p.29: Repeated substring pattern detected: \"...............\"",
-        "PDF p.30: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-        "PDF p.30: Repeated substring pattern detected: \"............\"",
-        "PDF p.33: Repeated substring pattern detected: \"............\"",
-        "PDF p.35: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.35: Repeated substring pattern detected: \"...............\""
-      ],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 2,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:36:34.103Z",
+      "qualityScore": 85,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "secondary3-student-term1-unit-3": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "b1ef44fff4abd3ce000d77279f1673763b6391b83eb4efa9c062e301929a60d6",
-      "lastAttemptAt": "2026-11-10T07:37:40.771Z",
-      "issues": [
-        "PDF p.38: Repeated substring pattern detected: \"............\"",
-        "PDF p.40: Repeated substring pattern detected: \"...............\"",
-        "PDF p.41: Repeated substring pattern detected: \"............\"",
-        "PDF p.42: Repeated substring pattern detected: \"............\"",
-        "PDF p.43: Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 169)",
-        "PDF p.43: Repeated substring pattern detected: \"............\"",
-        "PDF p.45: Repeated substring pattern detected: \"............\"",
-        "PDF p.46: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-        "PDF p.46: Repeated substring pattern detected: \"...............\"",
-        "PDF p.47: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.48: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.49: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.51: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.52: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.53: Repeated substring pattern detected: \" . . . . . . . \""
-      ],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 11,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:37:13.023Z",
+      "qualityScore": 90,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "secondary3-student-term1-unit-4": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "648ef143a9ceb950225ed38978134a9e539861fa1160382dfcddfdf3f6c4e2ab",
-      "lastAttemptAt": "2026-11-10T07:37:40.779Z",
-      "issues": [
-        "PDF p.57: Repeated substring pattern detected: \"............\"",
-        "PDF p.59: Repeated substring pattern detected: \"............\"",
-        "PDF p.60: Repeated substring pattern detected: \"............\"",
-        "PDF p.61: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.61: Repeated substring pattern detected: \"............\"",
-        "PDF p.62: Repeated substring pattern detected: \"............\"",
-        "PDF p.64: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 123)",
-        "PDF p.64: Repeated substring pattern detected: \"...............\"",
-        "PDF p.65: Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 66)",
-        "PDF p.65: Repeated substring pattern detected: \"...............\"",
-        "PDF p.67: Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 54)",
-        "PDF p.67: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 4,
-      "needsReviewPageCount": 4,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:37:56.419Z",
+      "qualityScore": 90,
+      "itemCount": 28,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "secondary3-student-term1-unit-5": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "6de540e6f1ca37c4027d92199472c58729eec738cc813426bd7a4f6d2d925c77",
-      "lastAttemptAt": "2026-11-10T07:37:40.786Z",
-      "issues": [
-        "PDF p.70: Repeated substring pattern detected: \"............\"",
-        "PDF p.71: Repeated substring pattern detected: \"............\"",
-        "PDF p.74: Repeated substring pattern detected: \"............\"",
-        "PDF p.75: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-        "PDF p.75: Repeated substring pattern detected: \"............\"",
-        "PDF p.78: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 4,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T07:38:45.154Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "secondary3-student-term1-unit-6": {
       "status": "blocked_source_review",
@@ -2551,7 +2721,7 @@
       "missingPages": []
     },
     "prep3-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "278996817e9d672a2e554a24baeba45fba474aa4022aaf8e16a56f1eb22f830a",
       "lastAttemptAt": "2026-11-12T07:12:44.242Z",
       "qualityScore": 100,
@@ -3042,7 +3212,7 @@
       "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
     },
     "prep2-student-term1-unit-6": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "fa7c40afc1fe5bffd1c0f4eebc4dfcda8a20c7e42448b1ae33daae85cba840d0",
       "lastAttemptAt": "2026-11-12T07:11:25.732Z",
       "qualityScore": 85,
@@ -3104,7 +3274,7 @@
       "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.8-flash; trying another configured key.\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nlist_q1: correctAnswer \"They didn't talk face-to-face\" does not match any of the provided options: [\"They had different opinions on homework.\", \"They didn't talk face-to-face.\", \"They forgot to turn in a project.\", \"They were late for school.\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "prep3-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "1c0c4e45e3efb7999e8aabff8630787bc280664ac2802c0f4890d3d8881e02a5",
       "lastAttemptAt": "2026-11-12T07:16:46.268Z",
       "qualityScore": 100,
@@ -3158,7 +3328,7 @@
       }
     },
     "prep3-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "ec03fd697baba396fbd9d60725a8c0e28a0cde4c0d3c0d2a59dfa45af0392913",
       "lastAttemptAt": "2026-11-12T07:17:24.577Z",
       "qualityScore": 85,
@@ -3202,6 +3372,230 @@
         "games": {
           "itemCount": 3,
           "validItems": 3,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "secondary2-student-term1-unit-1": {
+      "status": "generated_needs_review",
+      "sourceSignature": "3d6a81bfb45923163dd5e31a1055c4fc119874f9fcbb0dc64cafdf7cb1fb7f37",
+      "lastAttemptAt": "2026-11-12T07:32:36.412Z",
+      "qualityScore": 85,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "secondary2-student-term1-unit-2": {
+      "status": "generated_needs_review",
+      "sourceSignature": "3d4cfb5a000fdc5bfa46e6aa85f911fd54f0c2522b340aa8b325537281816781",
+      "lastAttemptAt": "2026-11-12T07:33:10.241Z",
+      "qualityScore": 85,
+      "itemCount": 33,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 8,
+          "validItems": 8,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "secondary2-student-term1-unit-3": {
+      "status": "failed_validation",
+      "sourceSignature": "f7ff8f52c1e7c284f8b1e2967ab41c8a25fa16278575e671db6ab5c8a2f1a2b6",
+      "lastAttemptAt": "2026-11-12T07:33:38.600Z",
+      "retryAfter": "2026-11-12T07:33:38.600Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.6-flash; trying another configured key.\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\ntest_3: question contains duplicate options: [\"unique\",\"uniquely\",\"uniqueness\",\"uniquely\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
+    },
+    "secondary2-student-term1-unit-5": {
+      "status": "generated_needs_review",
+      "sourceSignature": "eb4104f34ebf9e1e065ce733d1284814f947d39939075c9919c2e0e97635f721",
+      "lastAttemptAt": "2026-11-12T07:34:33.704Z",
+      "qualityScore": 90,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    "baccalaureate-y2-first-language-part1-unit-2": {
+      "status": "generated_needs_review",
+      "sourceSignature": "cd7b3ef92a9d48f630a781ebcea6afca033395d57bac64d74a1e31cde7f6da74",
+      "lastAttemptAt": "2026-11-12T07:39:58.321Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "comprehensive_test": {

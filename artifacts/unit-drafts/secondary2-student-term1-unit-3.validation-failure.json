@@ -1,0 +1,83 @@
+{
+  "status": "failed_validation",
+  "bookId": "secondary2-student-term1",
+  "unitNumber": 3,
+  "score": 75,
+  "criticalFailures": [
+    "test_3: question contains duplicate options: [\"unique\",\"uniquely\",\"uniqueness\",\"uniquely\"]"
+  ],
+  "warnings": [
+    "Speaking item speak_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 3: Sustainable Development Goals (SDG)",
+    "expectedRange": {
+      "start": 30,
+      "end": 47,
+      "totalPages": 18
+    },
+    "recordedCoverage": {
+      "totalPages": 18,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 21,
+      "supplementaryItems": 7,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 9,
+        "issues": [
+          "test_3: question contains duplicate options: [\"unique\",\"uniquely\",\"uniqueness\",\"uniquely\"]"
+        ]
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:33:38.592Z"
+  }
+}

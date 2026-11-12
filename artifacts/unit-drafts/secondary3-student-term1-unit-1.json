@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:36:05.810Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary3-student-term1",
+  "sourceFilename": "English_language_Sec3_tr1 (1).pdf",
+  "grade": "Secondary 3",
+  "unitNumber": 1,
+  "unitTitle": "Inside the World of Care",
+  "sourcePdfRange": {
+    "start": 12,
+    "end": 23
+  },
+  "sourceCoverage": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "sourceFingerprint": "a60003e91971d4f5080ce69f0cbe551288ad185d011ffe4f989a8c7669c5b441",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Inside the World of Care",
+    "expectedRange": {
+      "start": 12,
+      "end": 23,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 23,
+      "supplementaryItems": 6,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:36:05.810Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u1_voc_1",
+          "content": {
+            "word": "administer",
+            "arabicMeaning": "يقدم علاجاً أو دواء",
+            "example": "The nurse will administer the medication to the patient on time.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_voc_2",
+          "content": {
+            "word": "shift",
+            "arabicMeaning": "فترة عمل",
+            "example": "Nurse Sarah started her twelve-hour shift early in the morning.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_voc_3",
+          "content": {
+            "word": "chaos",
+            "arabicMeaning": "فوضى عارمة",
+            "example": "Despite the chaos in the emergency room, the team remained calm.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_voc_4",
+          "content": {
+            "word": "paramedics",
+            "arabicMeaning": "مسعفون",
+            "example": "The paramedics arrived quickly to give emergency care to the injured driver.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_voc_5",
+          "content": {
+            "word": "groan",
+            "arabicMeaning": "أنين من الألم",
+            "example": "The injured man began to groan while waiting for the emergency doctor.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u1_vq_1",
+          "content": {
+            "question": "What is the meaning of the idiom 'spring into action'?",
+            "options": [
+              "To rest after a long work shift",
+              "To suddenly begin working or responding quickly",
+              "To jump over an obstacle in a hurry",
+              "To delay an emergency response"
+            ],
+            "correctAnswer": "To suddenly begin working or responding quickly",
+            "reason": "The text explicitly defines 'spring into action' as starting to act or respond quickly during an emergency.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_vq_2",
+          "content": {
+            "question": "If a person is described as 'pale as a ghost', they look extremely pale because of:",
+            "options": [
+              "Fear, shock, or severe illness",
+              "Working outside under bright sunlight",
+              "Feeling energetic and joyful",
+              "Wearing white hospital clothes"
+            ],
+            "correctAnswer": "Fear, shock, or severe illness",
+            "reason": "The idiom 'pale as a ghost' refers to someone looking very pale due to shock, pain, or illness.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_vq_3",
+          "content": {
+            "question": "The abbreviation CPR stands for:",
+            "options": [
+              "Cardiopulmonary Resuscitation",
+              "Care Patient Recovery",
+              "Central Paramedic Response",
+              "Critical Pressure Reduction"
+            ],
+            "correctAnswer": "Cardiopulmonary Resuscitation",
+            "reason": "CPR is defined in the source text as Cardiopulmonary Resuscitation, an emergency procedure using chest compressions.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Structure",
+      "items": [
+        {
+          "itemId": "u1_gram_1",
+          "content": {
+            "rule": "Present Perfect Simple vs Present Perfect Continuous",
+            "explanation": "Use the Present Perfect Simple (have/has + past participle) to focus on completed actions, life experiences, or specific quantities/results. Use the Present Perfect Continuous (have/has + been + -ing) to emphasize the duration of an action that started in the past and is still ongoing or has just recently finished with a visible result.",
+            "example": "She has visited Paris three times, but she has been working in the ER all morning.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u1_gq_1",
+          "content": {
+            "question": "Many doctors __________ long hours to care for patients over the years.",
+            "options": [
+              "have worked",
+              "has worked",
+              "are working",
+              "will work"
+            ],
+            "correctAnswer": "have worked",
+            "reason": "Plural subject 'Many doctors' takes 'have worked' in the Present Perfect Simple to show completed experience over time.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_gq_2",
+          "content": {
+            "question": "Nurses __________ in the emergency room since early morning.",
+            "options": [
+              "had worked",
+              "has worked",
+              "is working",
+              "have been working"
+            ],
+            "correctAnswer": "have been working",
+            "reason": "The time expression 'since early morning' paired with continuous action requires the Present Perfect Continuous form 'have been working'.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_gq_3",
+          "content": {
+            "question": "Which sentence correctly changes 'They have built a new hospital recently' into the passive voice?",
+            "options": [
+              "A new hospital has been built recently.",
+              "A new hospital was built recently.",
+              "A new hospital has built recently.",
+              "A new hospital is built recently."
+            ],
+            "correctAnswer": "A new hospital has been built recently.",
+            "reason": "The passive form of Present Perfect Simple uses 'has/have + been + past participle'.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u1_read_p1",
+          "content": {
+            "passage": "Every morning, Nurse Sarah kicks off her day with a strong cup of coffee before her 12-hour shift begins. She is always preparing herself mentally for the challenges ahead. As soon as she arrives, she checks patients’ charts and reviews updates from the night shift. The hospital is buzzing with activity—doctors rushing, monitors beeping, and patients waiting. Sarah’s first task is administering medication to her patients. Some have been waiting anxiously, while others are resting quietly. She has cared for many patients over the years, but each day brings new surprises. One elderly patient, Mr. Ramy, has been recovering from surgery and needs extra attention. Sarah makes sure he is comfortable before moving on. By midday, emergencies arise—a car accident victim is rushed in, and the team springs into action. Sarah assists the doctors, ensuring everything runs smoothly. Despite the chaos, she remains calm and focuses on her duties. 'Teamwork makes the dream work,' she often says, relying on her colleagues for support. By evening, Sarah has checked on all her patients and has documented their progress. She feels exhausted but fulfilled. As she heads home, she reflects on the day—some moments were heartbreaking, but many were rewarding. Nursing is a never-ending rollercoaster, but Sarah wouldn’t trade it for anything.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_read_q1",
+          "content": {
+            "question": "Why does Nurse Sarah feel fulfilled at the end of her 12-hour shift?",
+            "options": [
+              "Because she finished her work without dealing with any emergency cases",
+              "Because helping her patients and seeing their progress makes her hard work rewarding",
+              "Because she spent most of her day resting in the break room",
+              "Because her shift was shortened by the hospital director"
+            ],
+            "correctAnswer": "Because helping her patients and seeing their progress makes her hard work rewarding",
+            "reason": "The passage explains that despite exhaustion and chaos, helping patients and reflecting on positive outcomes makes nursing a rewarding career for Sarah.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "u1_list_s1",
+          "content": {
+            "script": "Emergency Operator: 123 Emergency Service, what is your location?\nCaller: Please help! My neighbor collapsed on the floor in front of his apartment!\nEmergency Operator: Stay calm. Is he conscious or responding to you?\nCaller: No, he is not awake at all! I checked for a pulse on his wrist, but it feels very faint. He isn't breathing normally.\nEmergency Operator: Paramedics are on their way. I need you to place him flat on his back and begin CPR immediately. Push hard and fast in the center of his chest until the ambulance arrives.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_list_q1",
+          "content": {
+            "question": "What instruction does the emergency operator give to the caller right after dispatching paramedics?",
+            "options": [
+              "To give the neighbor a glass of water",
+              "To begin CPR immediately by pressing on the center of the chest",
+              "To carry the neighbor upstairs into his apartment",
+              "To wait quietly outside until the ambulance arrives"
+            ],
+            "correctAnswer": "To begin CPR immediately by pressing on the center of the chest",
+            "reason": "The operator instructs the caller to place the unresponsive person on his back and perform CPR chest compressions immediately.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u1_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Nurse",
+                "text": "Are you feeling any pain right now?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Patient",
+                "text": "Yes, I have a sharp pain in my back.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u1_game_1",
+          "content": {
+            "gameName": "Medical Vocab Dash",
+            "description": "Choose the correct medical term that matches the definition provided.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word refers to a set period of time worked by staff in a hospital?",
+            "options": [
+              "shift",
+              "chaos",
+              "pulse",
+              "stitch"
+            ],
+            "correctAnswer": "shift",
+            "reason": "A 'shift' is a fixed period of working hours assigned to employees.",
+            "origin": "supplementary",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_game_2",
+          "content": {
+            "gameName": "Grammar Time Master",
+            "description": "Identify the correct verb structure explaining continuous activity with present results.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Complete the sentence: 'He is out of breath because he __________.'",
+            "options": [
+              "has been running",
+              "has runned",
+              "was run",
+              "is run"
+            ],
+            "correctAnswer": "has been running",
+            "reason": "The Present Perfect Continuous 'has been running' explains a present physical result resulting from recent activity.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 1 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "u1_test_1",
+          "content": {
+            "question": "The phrase 'rained cats and dogs' means it was raining:",
+            "options": [
+              "Very heavily",
+              "Lightly with small drops",
+              "For a few seconds only",
+              "With unusual animal sounds"
+            ],
+            "correctAnswer": "Very heavily",
+            "reason": "'Rained cats and dogs' is an idiom meaning heavy downpour.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_2",
+          "content": {
+            "question": "What is the primary role of paramedics during a road emergency?",
+            "options": [
+              "To perform complex surgical operations in clinics",
+              "To provide immediate emergency care and transport patients to hospital",
+              "To write prescription notes for pharmacy pickups",
+              "To clean hospital wards after shifts"
+            ],
+            "correctAnswer": "To provide immediate emergency care and transport patients to hospital",
+            "reason": "Paramedics are trained professionals who provide pre-hospital emergency care and transport victims.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_3",
+          "content": {
+            "question": "Fill in the blank: 'I am exhausted because I __________ in the ER all day.'",
+            "options": [
+              "have been working",
+              "have worked",
+              "am work",
+              "was worked"
+            ],
+            "correctAnswer": "have been working",
+            "reason": "Present Perfect Continuous ('have been working') emphasizes ongoing continuous labor causing present fatigue.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_test_4",
+          "content": {
+            "question": "Choose the correct passive transformation: 'The nurse has checked all patients.'",
+            "options": [
+              "All patients have been checked by the nurse.",
+              "All patients were checked by the nurse.",
+              "All patients has been checked by the nurse.",
+              "All patients are being checked by the nurse."
+            ],
+            "correctAnswer": "All patients have been checked by the nurse.",
+            "reason": "Plural object 'All patients' takes 'have been checked' in the Present Perfect passive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_test_5",
+          "content": {
+            "question": "In Lesson 4, how did the medical team remove the coin swallowed by the toddler?",
+            "options": [
+              "By performing open surgery",
+              "Using a flexible scope carefully",
+              "By giving him warm fluids to swallow",
+              "By waiting for it to pass naturally"
+            ],
+            "correctAnswer": "Using a flexible scope carefully",
+            "reason": "The text states that the medical team used a flexible scope to carefully remove the coin from the child's throat.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_6",
+          "content": {
+            "question": "What is the main purpose of an introduction in a blog post?",
+            "options": [
+              "To list all details and subtopics at once",
+              "To introduce the topic and hook the reader's attention",
+              "To write a final summary and goodbye message",
+              "To present formal academic references"
+            ],
+            "correctAnswer": "To introduce the topic and hook the reader's attention",
+            "reason": "The blog post guide notes that an introduction serves to introduce the topic and engage the reader early.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_7",
+          "content": {
+            "question": "Which sentence contains a mistake in Present Perfect usage?",
+            "options": [
+              "She has known him for 10 years.",
+              "I am really tired because I have studied all night.",
+              "How many times have you been seeing that movie?",
+              "Hospitals have introduced new medical technologies recently."
+            ],
+            "correctAnswer": "How many times have you been seeing that movie?",
+            "reason": "Stating how many times an action occurred requires Present Perfect Simple ('have you seen'), not Present Perfect Continuous.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_8",
+          "content": {
+            "question": "What does the word 'consciousness' mean in medical terms?",
+            "options": [
+              "The state of being awake and aware of surroundings",
+              "A severe pain felt in joints",
+              "An sudden emotional outburst",
+              "The loss of blood from a deep cut"
+            ],
+            "correctAnswer": "The state of being awake and aware of surroundings",
+            "reason": "'Consciousness' is defined as the state of being awake and aware of what is happening around you.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_9",
+          "content": {
+            "question": "Why is clear reporting and communication crucial in healthcare settings?",
+            "options": [
+              "It shortens staff break periods",
+              "It contributes directly to patient safety and coordinated care",
+              "It allows doctors to avoid writing shift notes",
+              "It replaces the need for emergency paramedics"
+            ],
+            "correctAnswer": "It contributes directly to patient safety and coordinated care",
+            "reason": "Interprofessional communication ensures patient safety and smooth coordination among healthcare teams.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_test_10",
+          "content": {
+            "question": "What should a nurse write in a 'shift note' for the next nurse on duty?",
+            "options": [
+              "Personal stories unrelated to hospital work",
+              "Patient condition, treatments given, and critical follow-up actions",
+              "A list of personal hobbies and vacation plans",
+              "General medical history of all hospital employees"
+            ],
+            "correctAnswer": "Patient condition, treatments given, and critical follow-up actions",
+            "reason": "A shift note must detail patient updates, medications administered, and instructions for ongoing care.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

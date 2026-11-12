@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:34:33.696Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary2-student-term1",
+  "sourceFilename": "English_language_2sec_t1 (1).pdf",
+  "grade": "Secondary 2",
+  "unitNumber": 5,
+  "unitTitle": "Media Manipulation",
+  "sourcePdfRange": {
+    "start": 60,
+    "end": 71
+  },
+  "sourceCoverage": [
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceFingerprint": "eb4104f34ebf9e1e065ce733d1284814f947d39939075c9919c2e0e97635f721",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Media Manipulation",
+    "expectedRange": {
+      "start": 60,
+      "end": 71,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 12,
+      "supplementaryItems": 15,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:34:33.696Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "misinformation",
+            "arabicMeaning": "معلومات مضللة",
+            "example": "The internet is full of misinformation that can confuse people.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "sensational",
+            "arabicMeaning": "مثير",
+            "example": "The newspaper used a sensational headline to attract more readers.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "algorithms",
+            "arabicMeaning": "خوارزميات",
+            "example": "Social media algorithms decide which posts you see in your feed.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "What does 'misinformation' mean?",
+            "options": [
+              "True facts",
+              "False information",
+              "Scientific data",
+              "Official news"
+            ],
+            "correctAnswer": "False information",
+            "reason": "Misinformation refers to false or inaccurate information spread to deceive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which word describes headlines designed to trigger strong emotions?",
+            "options": [
+              "Reliable",
+              "Sensational",
+              "Honest",
+              "Accurate"
+            ],
+            "correctAnswer": "Sensational",
+            "reason": "Sensational headlines are meant to shock or excite readers to get clicks.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "What do algorithms create on social media?",
+            "options": [
+              "Echo chambers",
+              "Public libraries",
+              "Scientific journals",
+              "Reliable news"
+            ],
+            "correctAnswer": "Echo chambers",
+            "reason": "Algorithms show users content that matches their existing views, creating echo chambers.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Tag Questions",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Tag questions",
+            "explanation": "A tag question is a short phrase at the end of a statement. A positive statement takes a negative tag, and a negative statement takes a positive tag.",
+            "example": "You are a student, aren't you?",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "She lives in London, ______?",
+            "options": [
+              "doesn't she",
+              "does she",
+              "is she",
+              "isn't she"
+            ],
+            "correctAnswer": "doesn't she",
+            "reason": "The statement is positive and in present simple, so the tag must be negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "They aren't coming to the party, ______?",
+            "options": [
+              "are they",
+              "aren't they",
+              "do they",
+              "don't they"
+            ],
+            "correctAnswer": "are they",
+            "reason": "The statement is negative, so the tag must be positive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "You can swim, ______?",
+            "options": [
+              "can you",
+              "can't you",
+              "do you",
+              "don't you"
+            ],
+            "correctAnswer": "can't you",
+            "reason": "The statement is positive with a modal verb, so the tag is negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "In today’s digital age, misinformation spreads faster than wildfire. A recent study found that false news stories spread six times faster on social media than true stories. But how can ordinary readers distinguish between reliable sources and fake news?",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "According to the text, how much faster do false stories spread than true ones?",
+            "options": [
+              "Two times",
+              "Four times",
+              "Six times",
+              "Ten times"
+            ],
+            "correctAnswer": "Six times",
+            "reason": "The text explicitly states that false news stories spread six times faster than true stories.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Dr. Park: I believe we need better media literacy education. Professor Chen: I agree, but we also need to regulate platforms to stop verifiably false claims.",
+            "origin": "supplementary",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What does Dr. Park suggest as a long-term solution?",
+            "options": [
+              "Censorship",
+              "Media literacy education",
+              "Banning all opinions",
+              "Removing all content"
+            ],
+            "correctAnswer": "Media literacy education",
+            "reason": "Dr. Park suggests media literacy education is a better long-term solution than censorship.",
+            "origin": "supplementary",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "A",
+                "text": "It’s a beautiful day, isn’t it?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "B",
+                "text": "Yes, it is. I love sunny weather!",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Challenges",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Tag Question Master",
+            "description": "Choose the correct tag question for the statement.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "He is very kind, ______?",
+            "options": [
+              "is he",
+              "isn't he",
+              "does he",
+              "doesn't he"
+            ],
+            "correctAnswer": "isn't he",
+            "reason": "The statement is positive, so the tag must be negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Vocabulary Match",
+            "description": "Identify the meaning of the word.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What is the meaning of 'misprints'?",
+            "options": [
+              "Correct text",
+              "Mistakes in written text",
+              "Newspaper headlines",
+              "Digital algorithms"
+            ],
+            "correctAnswer": "Mistakes in written text",
+            "reason": "Misprints are errors in printing or writing.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "Which of these is a characteristic of reliable journalism?",
+            "options": [
+              "Using sensational headlines",
+              "Citing information",
+              "Hiding the author",
+              "Making unsupported claims"
+            ],
+            "correctAnswer": "Citing information",
+            "reason": "Reliable sources always cite their information.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "They went to the cinema, ______?",
+            "options": [
+              "did they",
+              "didn't they",
+              "do they",
+              "don't they"
+            ],
+            "correctAnswer": "didn't they",
+            "reason": "The statement is positive past simple, so the tag is negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "What is an 'echo chamber'?",
+            "options": [
+              "A place to record audio",
+              "A social media algorithm effect",
+              "A type of reliable news",
+              "A printing error"
+            ],
+            "correctAnswer": "A social media algorithm effect",
+            "reason": "Algorithms create echo chambers where users only see content they agree with.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "She won't forget, ______?",
+            "options": [
+              "will she",
+              "won't she",
+              "does she",
+              "doesn't she"
+            ],
+            "correctAnswer": "will she",
+            "reason": "The statement is negative, so the tag must be positive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "What is the main idea of 'The Puppet Masters'?",
+            "options": [
+              "How to become a puppet master",
+              "Media shapes thoughts using psychological techniques",
+              "Social media is always good",
+              "Algorithms are not important"
+            ],
+            "correctAnswer": "Media shapes thoughts using psychological techniques",
+            "reason": "The text explains how media uses techniques to influence behavior.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "I'm not late, ______?",
+            "options": [
+              "am I",
+              "am not I",
+              "are I",
+              "aren't I"
+            ],
+            "correctAnswer": "am I",
+            "reason": "The statement is negative, so the tag is positive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "What does 'emotional manipulation' mean?",
+            "options": [
+              "Using facts to inform",
+              "Using words to spark strong feelings",
+              "Ignoring all news",
+              "Printing errors"
+            ],
+            "correctAnswer": "Using words to spark strong feelings",
+            "reason": "Emotional manipulation uses words to override critical thinking.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "We've met before, ______?",
+            "options": [
+              "have we",
+              "haven't we",
+              "do we",
+              "don't we"
+            ],
+            "correctAnswer": "haven't we",
+            "reason": "The statement is positive, so the tag is negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "Why is attention called the 'most valuable resource'?",
+            "options": [
+              "Because it is limited",
+              "Because companies profit when users click",
+              "Because it helps us sleep",
+              "Because it is free"
+            ],
+            "correctAnswer": "Because companies profit when users click",
+            "reason": "Companies profit when users click, watch, or share content.",
+            "origin": "source",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "He's very kind, ______?",
+            "options": [
+              "is he",
+              "isn't he",
+              "does he",
+              "doesn't he"
+            ],
+            "correctAnswer": "isn't he",
+            "reason": "The statement is positive, so the tag is negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

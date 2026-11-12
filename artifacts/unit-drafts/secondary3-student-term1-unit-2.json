@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:36:34.094Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary3-student-term1",
+  "sourceFilename": "English_language_Sec3_tr1 (1).pdf",
+  "grade": "Secondary 3",
+  "unitNumber": 2,
+  "unitTitle": "The Power of Machines",
+  "sourcePdfRange": {
+    "start": 24,
+    "end": 35
+  },
+  "sourceCoverage": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "sourceFingerprint": "833be6cc14ce96051e9e28b2ee6189aff1e2a73fd0ea890bf12a5ecb98a9ad9e",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "The Power of Machines",
+    "expectedRange": {
+      "start": 24,
+      "end": 35,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 25,
+      "supplementaryItems": 4,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:36:34.094Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "dynasty",
+            "arabicMeaning": "سلالة حاكمة",
+            "example": "The ancient dynasty ruled the country for several generations.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "infrastructure",
+            "arabicMeaning": "البنية التحتية",
+            "example": "The government is investing heavily in modern infrastructure.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "troubleshoot",
+            "arabicMeaning": "إصلاح الأعطال",
+            "example": "The IT team worked quickly to troubleshoot the printer error.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "automated",
+            "arabicMeaning": "آلي / ميكانيكي",
+            "example": "The factory uses an automated system to pack products efficiently.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u2_vq_1",
+          "content": {
+            "question": "Which of the following words means a ruling family that holds power for several generations?",
+            "options": [
+              "infrastructure",
+              "dynasty",
+              "initiative",
+              "version"
+            ],
+            "correctAnswer": "dynasty",
+            "reason": "By definition in the unit text, a dynasty refers to a ruling family holding power across generations.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_2",
+          "content": {
+            "question": "If a printer is showing as 'offline', what does that mean?",
+            "options": [
+              "It is printing at high speed",
+              "It is not connected to the network",
+              "It needs new paper",
+              "It is completely broken"
+            ],
+            "correctAnswer": "It is not connected to the network",
+            "reason": "'Offline' refers to a device that is currently disconnected from the network or system.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_3",
+          "content": {
+            "question": "What software helps hardware devices work properly with your computer system?",
+            "options": [
+              "cables",
+              "drivers",
+              "appliances",
+              "initiatives"
+            ],
+            "correctAnswer": "drivers",
+            "reason": "Drivers are specialized software components that enable hardware devices to operate with an operating system.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Reported Speech",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Reported Speech: Statements",
+            "explanation": "When reporting statements, the verb tense usually shifts back into the past tense (e.g., present simple becomes past simple, present perfect becomes past perfect). Pronouns also change as needed.",
+            "example": "Dr. Ali said that machines helped people work faster.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_2",
+          "content": {
+            "rule": "Reported Speech: Commands and Requests",
+            "explanation": "To report commands or requests, use a reporting verb like told, asked, ordered, or warned followed by an object and 'to' or 'not to' + infinitive.",
+            "example": "The supervisor told me to turn off the machine.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u2_gq_1",
+          "content": {
+            "question": "She said that they _____________ a new machine.",
+            "options": [
+              "builds",
+              "build",
+              "have built",
+              "had built"
+            ],
+            "correctAnswer": "had built",
+            "reason": "In reported speech, past or present perfect forms backshift to the past perfect 'had built'.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gq_2",
+          "content": {
+            "question": "The police officer told us _____________ without a seat belt.",
+            "options": [
+              "not drive",
+              "to not drive",
+              "not to drive",
+              "don't drive"
+            ],
+            "correctAnswer": "not to drive",
+            "reason": "Negative commands in reported speech follow the pattern: object + not to + infinitive.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "He asked me _____________ the report.",
+            "options": [
+              "writing",
+              "to write",
+              "write",
+              "wrote"
+            ],
+            "correctAnswer": "to write",
+            "reason": "Reported requests use the reporting verb + object + to + infinitive verb.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u2_read_passage",
+          "content": {
+            "passage": "Egypt, a land rich in ancient wonders, has a long and fascinating history with machines. From the very basic tools of the early dynasties to the sophisticated devices of today, machines have played an important role in shaping the nation. In ancient times, Egyptians relied heavily on simple machines like levers and ramps to build their monumental pyramids and temples. Historians believe that these early innovations laid the groundwork for future engineering marvels. One expert noted, “The Egyptians were masters of mechanics long before the modern era.” During the Industrial Revolution, Egypt began importing advanced machinery from Europe. Cotton gins and steam engines revolutionized agriculture and transportation. However, not all changes were smooth—some traditional crafts disappeared as machines took over. Today, Egypt continues to adopt modern technology, from computerized factories to renewable energy systems. While some fear that machines may replace human labor, others argue they enhance productivity. As one engineer remarked, “Machines are tools, not replacements for human skills.”",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_q1",
+          "content": {
+            "question": "What simple machines did ancient Egyptians use to build pyramids and temples?",
+            "options": [
+              "Steam engines and cotton gins",
+              "Levers and ramps",
+              "3D scanners and robots",
+              "Computers and smart watches"
+            ],
+            "correctAnswer": "Levers and ramps",
+            "reason": "The text explicitly states that ancient Egyptians relied on simple machines like levers and ramps.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "u2_list_script",
+          "content": {
+            "script": "Customer: Hello, I am calling from Egypt Technologies. I need help with my office printer. It shows that it is offline, and I urgently need to print a project report.\nTechnician: Hello! Let's troubleshoot this together. First, please check if the printer cable is securely connected to your computer.\nCustomer: Yes, the cable is plugged in tightly.\nTechnician: Great. Next, right-click on the printer icon on your computer screen and check the printer settings. You might need to update your printer drivers to the latest version.\nCustomer: I see the option now. Updating drivers solved the issue! Thank you so much.\nTechnician: You are welcome. To prevent this issue in the future, make sure your operating system updates hardware drivers automatically.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_list_q1",
+          "content": {
+            "question": "What was the main reason the customer's printer was not working?",
+            "options": [
+              "The power cable was broken",
+              "The printer driver needed an update",
+              "The customer ran out of paper",
+              "The computer screen was turned off"
+            ],
+            "correctAnswer": "The printer driver needed an update",
+            "reason": "Updating the printer drivers to the latest version resolved the offline status.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking & Role-Play",
+      "items": [
+        {
+          "itemId": "u2_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Customer",
+                "text": "Hello, I need help with my computer software. It is not opening my emails.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Technician",
+                "text": "Can you check if your internet connection is active?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Customer",
+                "text": "It is not working because the network status shows offline.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Technician",
+                "text": "Please try restarting your router. That should solve the issue.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Language Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Vocab Builder Challenge",
+            "description": "Test your mastery of technology and machinery terms by selecting the correct word.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Choose the word that describes making preparations necessary for something to succeed later:",
+            "options": [
+              "full steam ahead",
+              "lay the groundwork",
+              "come to a standstill",
+              "right-click"
+            ],
+            "correctAnswer": "lay the groundwork",
+            "reason": "The idiom 'lay the groundwork' means to make necessary preparations for future success.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Reported Speech Master",
+            "description": "Choose the correctly reported sentence structure.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "The engineer said, 'We use solar energy.' Which is the correct reported speech form?",
+            "options": [
+              "The engineer said that they use solar energy.",
+              "The engineer said that they used solar energy.",
+              "The engineer told that we used solar energy.",
+              "The engineer asked if they use solar energy."
+            ],
+            "correctAnswer": "The engineer said that they used solar energy.",
+            "reason": "Present simple 'use' changes to past simple 'used' and pronoun 'we' changes to 'they'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Assessment",
+      "items": [
+        {
+          "itemId": "u2_test_1",
+          "content": {
+            "question": "Which ancient simple machines were used by Egyptians to build pyramids?",
+            "options": [
+              "Levers and ramps",
+              "Steam engines",
+              "Cotton gins",
+              "3D scanners"
+            ],
+            "correctAnswer": "Levers and ramps",
+            "reason": "Ancient Egyptians relied on levers and ramps for monumental construction projects.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_2",
+          "content": {
+            "question": "What machine revolutionized Egyptian agriculture during the Industrial Revolution?",
+            "options": [
+              "Smartwatch",
+              "Cotton gin",
+              "Computerized scanner",
+              "3D printer"
+            ],
+            "correctAnswer": "Cotton gin",
+            "reason": "The cotton gin quickly separated cotton fibers from seeds, revolutionizing agriculture.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_3",
+          "content": {
+            "question": "What does the phrase 'full steam ahead' mean?",
+            "options": [
+              "To stop working completely",
+              "To proceed with as much speed and energy as possible",
+              "To repair broken machinery",
+              "To change settings back to normal"
+            ],
+            "correctAnswer": "To proceed with as much speed and energy as possible",
+            "reason": "The idiom tip defines 'full steam ahead' as proceeding with maximum speed and energy.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_4",
+          "content": {
+            "question": "What is the primary function of hardware 'drivers'?",
+            "options": [
+              "To connect physical wires to power outlets",
+              "Software that helps devices work properly with a computer system",
+              "To clean computer screens automatically",
+              "To store backup files safely on the cloud"
+            ],
+            "correctAnswer": "Software that helps devices work properly with a computer system",
+            "reason": "Drivers are software programs designed to help hardware devices communicate with operating systems.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_5",
+          "content": {
+            "question": "Dr. Ali said, 'Machines help people work faster.' How is this reported?",
+            "options": [
+              "Dr. Ali said that machines helped people work faster.",
+              "Dr. Ali told that machines will help people work faster.",
+              "Dr. Ali asked if machines helped people work faster.",
+              "Dr. Ali says that machines had helped people work faster."
+            ],
+            "correctAnswer": "Dr. Ali said that machines helped people work faster.",
+            "reason": "Present simple 'help' changes to past simple 'helped' in reported speech.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_6",
+          "content": {
+            "question": "The guide said, 'Don't touch the ancient statue.' Choose the correct reported command:",
+            "options": [
+              "The guide warned us not to touch the ancient statue.",
+              "The guide warned us to not touch the ancient statue.",
+              "The guide asked us don't touch the ancient statue.",
+              "The guide told us to touch not the ancient statue."
+            ],
+            "correctAnswer": "The guide warned us not to touch the ancient statue.",
+            "reason": "Negative imperative commands report as reporting verb + object + not to + infinitive.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_7",
+          "content": {
+            "question": "The teacher told the students _____________ their homework.",
+            "options": [
+              "do",
+              "to do",
+              "did",
+              "doing"
+            ],
+            "correctAnswer": "to do",
+            "reason": "Reported commands/requests take 'to + infinitive'.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_8",
+          "content": {
+            "question": "In the text 'Our Machine-Driven World', what does the phrase 'come to a standstill' mean?",
+            "options": [
+              "Become faster and smoother",
+              "Stop completely",
+              "Start working automatically",
+              "Become cleaner"
+            ],
+            "correctAnswer": "Stop completely",
+            "reason": "The context explains that if technology fails completely, activities stop entirely (come to a standstill).",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_9",
+          "content": {
+            "question": "Which section of an argumentative essay introduces the opposite claim and refutes it?",
+            "options": [
+              "Introduction",
+              "Opposing View",
+              "Body Paragraph 1",
+              "Title"
+            ],
+            "correctAnswer": "Opposing View",
+            "reason": "The opposing view paragraph presents the counterargument and explains why the author disagrees.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_10",
+          "content": {
+            "question": "Which of the following linking words is used to state a conclusion in an argumentative essay?",
+            "options": [
+              "Firstly",
+              "In conclusion",
+              "On the other hand",
+              "For example"
+            ],
+            "correctAnswer": "In conclusion",
+            "reason": "'In conclusion' signals the final summary and restatement of the thesis in writing.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

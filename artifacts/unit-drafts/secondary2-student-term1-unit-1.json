@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:32:36.402Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary2-student-term1",
+  "sourceFilename": "English_language_2sec_t1 (1).pdf",
+  "grade": "Secondary 2",
+  "unitNumber": 1,
+  "unitTitle": "Egypt-Africa Cooperation",
+  "sourcePdfRange": {
+    "start": 6,
+    "end": 17
+  },
+  "sourceCoverage": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "sourceFingerprint": "3d6a81bfb45923163dd5e31a1055c4fc119874f9fcbb0dc64cafdf7cb1fb7f37",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Egypt-Africa Cooperation",
+    "expectedRange": {
+      "start": 6,
+      "end": 17,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 26,
+      "supplementaryItems": 5,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:32:36.402Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "gateway",
+            "arabicMeaning": "بوابة / منفذ",
+            "example": "Egypt serves as a strategic gateway to the African continent.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "infrastructure",
+            "arabicMeaning": "بنية تحتية",
+            "example": "The government is investing heavily in infrastructure projects across the region.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "partnership",
+            "arabicMeaning": "شراكة",
+            "example": "Strong partnerships between African countries boost economic growth.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "manufactured goods",
+            "arabicMeaning": "بضائع مصنعة",
+            "example": "Egypt exports manufactured goods to several African markets.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "integration",
+            "arabicMeaning": "تكامل / اندماج",
+            "example": "Regional integration helps different systems work together efficiently.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "enhance",
+            "arabicMeaning": "يعزز / يحسن",
+            "example": "Modern irrigation techniques help enhance crop yields.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What term refers to the basic physical structures such as roads and power supplies needed for a society?",
+            "options": [
+              "Gateway",
+              "Infrastructure",
+              "Integration",
+              "Hybrid"
+            ],
+            "correctAnswer": "Infrastructure",
+            "reason": "Infrastructure describes basic physical and organizational structures needed for operations.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Egypt exports __________ and textiles to various African markets.",
+            "options": [
+              "raw materials",
+              "manufactured goods",
+              "fossil fuels only",
+              "heavy machinery only"
+            ],
+            "correctAnswer": "manufactured goods",
+            "reason": "The text states that Egypt exports manufactured goods, textiles, and agricultural products.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "The process of bringing different groups or systems together to work as one is called __________.",
+            "options": [
+              "integration",
+              "funding",
+              "yield",
+              "milestone"
+            ],
+            "correctAnswer": "integration",
+            "reason": "Integration is defined as combining separate units or systems into a unified whole.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Structure: Present Continuous Active and Passive",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Present Continuous Active Voice",
+            "explanation": "We use subject + am/is/are + verb-ing to describe actions or situations going on right now or planned future arrangements.",
+            "example": "We are working on a new project right now.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Present Continuous Passive Voice",
+            "explanation": "We use subject + am/is/are + being + past participle to focus on actions happening now that are being done to the subject.",
+            "example": "New projects are being launched across Africa.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "They __________ a new bridge across the Nile now.",
+            "options": [
+              "build",
+              "are building",
+              "is built",
+              "are built"
+            ],
+            "correctAnswer": "are building",
+            "reason": "The plural subject 'They' takes 'are building' in the present continuous active for an action occurring now.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Many new projects __________ out in the countryside right now.",
+            "options": [
+              "are carrying",
+              "have carried",
+              "are being carried",
+              "have been carried"
+            ],
+            "correctAnswer": "are being carried",
+            "reason": "The passive form 'are being carried' is required because the plural subject 'projects' receives the action.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "English __________ in many schools across the region right now.",
+            "options": [
+              "is teaching",
+              "are teaching",
+              "is being taught",
+              "is taught"
+            ],
+            "correctAnswer": "is being taught",
+            "reason": "The singular subject 'English' requires 'is being taught' in the present continuous passive.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_pass_1",
+          "content": {
+            "passage": "Egypt occupies a unique position as Africa’s northeastern gateway, serving as a bridge among the African continent, the Middle East, and Europe. This strategic location has shaped Egypt’s role in African cooperation for decades. Currently, Egypt is strengthening its ties with Sub-Saharan African countries through various initiatives. The government is investing heavily in infrastructure projects that connect Egypt with its southern neighbors. These projects include road networks, telecommunications systems, and energy partnerships that benefit the entire region.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What main sectors of infrastructure is Egypt investing in to connect with African neighbors?",
+            "options": [
+              "Road networks, telecommunications systems, and energy partnerships",
+              "Railway stations and private airports only",
+              "Tourist resorts and amusement parks",
+              "Military installations and border fences"
+            ],
+            "correctAnswer": "Road networks, telecommunications systems, and energy partnerships",
+            "reason": "The reading passage explicitly mentions road networks, telecommunications systems, and energy partnerships as key infrastructure investments.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Speaker 1: Currently, trade relationships with African countries are expanding rapidly, with trade volume reaching eight billion dollars annually. Our goal is to increase trade by 20% by 2026, although infrastructure limitations remain our main challenge. Speaker 2: I am Dr. James Nyambura. We have been working alongside Egyptian scientists for three years on a solar-powered irrigation project in Kenya, which has greatly increased local crop yields.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "According to Speaker 1, what is the biggest challenge to increasing trade between Egypt and African countries?",
+            "options": [
+              "Language barriers",
+              "Infrastructure limitations",
+              "Lack of agricultural workers",
+              "High custom tariffs"
+            ],
+            "correctAnswer": "Infrastructure limitations",
+            "reason": "The speaker explicitly identifies infrastructure limitations as the main obstacle to boosting trade volume.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking & Role-Play",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "We are currently working on a joint education-technology project to support African universities.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "Our countries have been cooperating for years, and this project builds real bridges between our youth.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student C",
+                "text": "We see eye to eye on the importance of digital tools for sustainable development.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocabulary Challenge",
+            "description": "Choose the best term to complete the sentence about international ties.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Egypt acts as a __________ bridging Africa, the Middle East, and Europe.",
+            "options": [
+              "barrier",
+              "gateway",
+              "island",
+              "border"
+            ],
+            "correctAnswer": "gateway",
+            "reason": "A gateway is a point of entry connecting different geographical regions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Master",
+            "description": "Select the correct present continuous passive form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Modern medical clinics __________ by Egyptian medical teams in neighboring countries right now.",
+            "options": [
+              "are establishing",
+              "are being established",
+              "were established",
+              "have established"
+            ],
+            "correctAnswer": "are being established",
+            "reason": "'Are being established' correctly uses the present continuous passive structure.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 1 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "Egypt occupies a unique strategic position as Africa's northeastern __________.",
+            "options": [
+              "barrier",
+              "gateway",
+              "island",
+              "colony"
+            ],
+            "correctAnswer": "gateway",
+            "reason": "The unit text highlights Egypt's role as Africa's northeastern gateway connecting continents.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "How does Egypt support healthcare development in Africa besides delivering medical treatment?",
+            "options": [
+              "By closing local clinics",
+              "By training local doctors and nurses in advanced techniques",
+              "By relying solely on European medical staff",
+              "By stopping medical aid programs"
+            ],
+            "correctAnswer": "By training local doctors and nurses in advanced techniques",
+            "reason": "Egypt supports capacity building by training African medical professionals.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "What term describes bringing different groups or systems together to function as one?",
+            "options": [
+              "isolation",
+              "integration",
+              "reduction",
+              "division"
+            ],
+            "correctAnswer": "integration",
+            "reason": "Integration means process of bringing systems together into a unified system.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "The main road __________ by workers right now to improve travel.",
+            "options": [
+              "is paving",
+              "is being paved",
+              "has paved",
+              "paved"
+            ],
+            "correctAnswer": "is being paved",
+            "reason": "The present continuous passive 'is being paved' fits the singular receiver of action happening now.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "Egyptian companies __________ in renewable energy projects across Africa currently.",
+            "options": [
+              "are investing",
+              "were invested",
+              "have been invested",
+              "is investing"
+            ],
+            "correctAnswer": "are investing",
+            "reason": "The active plural form 'are investing' expresses an action ongoing at present.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Which diseases are specifically mentioned as subjects of joint research supported by Egypt?",
+            "options": [
+              "Asthma and influenza",
+              "Malaria, hepatitis, and COVID-19",
+              "Diabetes and heart disease",
+              "Polio and smallpox"
+            ],
+            "correctAnswer": "Malaria, hepatitis, and COVID-19",
+            "reason": "The reading passage explicitly mentions malaria, hepatitis, and COVID-19.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "The Egypt-Sudan Agricultural Project achieved a __________ increase in food production.",
+            "options": [
+              "25%",
+              "30%",
+              "35%",
+              "50%"
+            ],
+            "correctAnswer": "35%",
+            "reason": "Page 14 states that modern irrigation techniques resulted in a 35% increase in food production.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "New houses __________ quickly in this area to accommodate families.",
+            "options": [
+              "are being built",
+              "is built",
+              "are building",
+              "being built"
+            ],
+            "correctAnswer": "are being built",
+            "reason": "The present continuous passive 'are being built' matches the plural noun 'houses'.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "The annual African Movies Festival held in Cairo features films from __________ African nations.",
+            "options": [
+              "10",
+              "15",
+              "25",
+              "40"
+            ],
+            "correctAnswer": "25",
+            "reason": "The passage notes that the festival features films from 25 African nations.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "In an essay, the sentence in the introduction that states the main point of the entire essay is called the __________.",
+            "options": [
+              "topic sentence",
+              "thesis statement",
+              "concluding sentence",
+              "supporting sentence"
+            ],
+            "correctAnswer": "thesis statement",
+            "reason": "The writing guide defines the thesis statement as the sentence in the introduction telling the reader what the essay will be about.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

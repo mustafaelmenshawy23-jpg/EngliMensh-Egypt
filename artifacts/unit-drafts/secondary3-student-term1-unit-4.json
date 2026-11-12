@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:37:56.410Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary3-student-term1",
+  "sourceFilename": "English_language_Sec3_tr1 (1).pdf",
+  "grade": "Secondary 3",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Marine Life",
+  "sourcePdfRange": {
+    "start": 55,
+    "end": 67
+  },
+  "sourceCoverage": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+  ],
+  "sourceFingerprint": "648ef143a9ceb950225ed38978134a9e539861fa1160382dfcddfdf3f6c4e2ab",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Marine Life",
+    "expectedRange": {
+      "start": 55,
+      "end": 67,
+      "totalPages": 13
+    },
+    "recordedCoverage": {
+      "totalPages": 13,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 7,
+      "supplementaryItems": 21,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:37:56.410Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "unit4_vocab_1",
+          "content": {
+            "word": "fragile",
+            "arabicMeaning": "هش أو سريع العطب",
+            "example": "Coral reefs are very fragile ecosystems that can be easily damaged by pollution.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit4_vocab_2",
+          "content": {
+            "word": "erosion",
+            "arabicMeaning": "تآكل أو انجراف",
+            "example": "Strong ocean waves cause coastal erosion over time.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit4_vocab_3",
+          "content": {
+            "word": "thrive",
+            "arabicMeaning": "يزدهر أو ينشط",
+            "example": "Marine creatures thrive in clean, protected ocean waters.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit4_vocab_4",
+          "content": {
+            "word": "entangled",
+            "arabicMeaning": "متشابك أو عالق",
+            "example": "The sea turtle became entangled in an abandoned fishing net.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "unit4_vocab_q1",
+          "content": {
+            "question": "What does the word 'fragile' mean when describing coral reefs?",
+            "options": [
+              "Strong and durable",
+              "Easily damaged or broken",
+              "Extremely heavy",
+              "Deep underwater"
+            ],
+            "correctAnswer": "Easily damaged or broken",
+            "reason": "Fragile describes something delicate that can be easily harmed by environmental changes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_vocab_q2",
+          "content": {
+            "question": "Which word means 'to grow, develop, or flourish successfully'?",
+            "options": [
+              "Bleach",
+              "Thrive",
+              "Disrupt",
+              "Struggle"
+            ],
+            "correctAnswer": "Thrive",
+            "reason": "Thrive means to grow and flourish healthily under good conditions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_vocab_q3",
+          "content": {
+            "question": "When ocean animals get twisted or caught in old fishing gear, they are:",
+            "options": [
+              "entangled",
+              "bleached",
+              "non-invasive",
+              "awe-inspiring"
+            ],
+            "correctAnswer": "entangled",
+            "reason": "Entangled means caught or twisted in a complicated structure like a net or rope.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Explanation: Compound Adjectives",
+      "items": [
+        {
+          "itemId": "unit4_grammar_1",
+          "content": {
+            "rule": "Compound Adjectives Formation and Hyphenation",
+            "explanation": "Compound adjectives are made up of two or more words acting as a single descriptive unit before a noun. They use a hyphen when placed before a noun (e.g., 'a three-hour meeting'), but do not take a hyphen when placed after the noun or linking verb (e.g., 'The meeting was three hours'). Common structures include Number + Noun, Adjective + Participle, and Noun + Adjective.",
+            "example": "Mohamed Salah is a well-known footballer, but as a player he is well known.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "unit4_grammar_q1",
+          "content": {
+            "question": "Choose the sentence that uses a compound adjective correctly before a noun:",
+            "options": [
+              "We went on a ten miles walk.",
+              "We went on a ten-mile walk.",
+              "We went on a ten-miles-walk.",
+              "We went on a ten miles-walk."
+            ],
+            "correctAnswer": "We went on a ten-mile walk.",
+            "reason": "When a number and noun modify another noun, the noun in the modifier remains singular ('mile') and takes a hyphen.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_grammar_q2",
+          "content": {
+            "question": "In which sentence is hyphenation used correctly?",
+            "options": [
+              "The scientist is world-famous.",
+              "He is a world-famous scientist.",
+              "He is a world famous scientist.",
+              "The world-famous scientist is world-famous."
+            ],
+            "correctAnswer": "He is a world-famous scientist.",
+            "reason": "Compound adjectives are hyphenated when placed before the noun they describe.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_grammar_q3",
+          "content": {
+            "question": "Complete the sentence: 'They offered her a __________ job.'",
+            "options": [
+              "full time",
+              "full-time",
+              "fulls-time",
+              "fully-time"
+            ],
+            "correctAnswer": "full-time",
+            "reason": "'Full-time' is a compound adjective modifying 'job' before the noun, requiring a hyphen.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "unit4_reading_p1",
+          "content": {
+            "passage": "Beneath the surface of the warm, crystal-clear ocean lies a breathtaking, world known as the coral reef. Often called a “colorful underwater city,” the reef is home to thousands of marine species, from graceful sea turtles to tiny, brightly-colored fish. These ecosystems are incredibly diverse and provide essential shelter, food, and protection for ocean life. Coral reefs grow slowly over thousands of years, but they are surprisingly fragile. Pollution, climate change, and destructive fishing practices pose serious threats to these natural wonders. When conditions are poor, corals bleach, losing their vivid colors, and becoming lifeless. In contrast, a healthy reef is alive with motion and brilliant colors. Marine biologists work tirelessly to protect coral reefs. Their efforts include educating communities and promoting eco-friendly tourism. As the saying goes, “a stitch in time saves nine”—acting early can prevent long-term damage. We must act now, before the reefs become a thing of the past. Some people may underestimate the importance of coral reefs, but they are priceless. They not only support marine life, but also protect coastal areas from storms and erosion. With renewed effort and widespread awareness, we can help these underwater cities recover and thrive again. Every little action makes a difference—because in the ocean, everything is connected.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit4_reading_q1",
+          "content": {
+            "question": "According to the reading passage, why are coral reefs referred to as 'underwater cities'?",
+            "options": [
+              "Because humans construct buildings on them",
+              "Because they provide shelter and food for thousands of marine species",
+              "Because they generate electrical power underwater",
+              "Because they are made of concrete structures"
+            ],
+            "correctAnswer": "Because they provide shelter and food for thousands of marine species",
+            "reason": "The text explicitly describes coral reefs as underwater cities because they serve as home, shelter, and food sources for thousands of ocean species.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "unit4_listening_s1",
+          "content": {
+            "script": "Host: Welcome to today's podcast on marine conservation. Today we are talking about saving the whales. Dr. Sarah, what are the primary threats to these ocean giants? Dr. Sarah: Whales face severe human-made dangers. Heavy ship traffic creates noise pollution that disrupts their communication, while abandoned fishing gear leaves them entangled. Fortunately, dedicated scientists now use non-invasive drones to observe and protect whale pods without causing them distress.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_listening_q1",
+          "content": {
+            "question": "According to the podcast script, how do scientists study whales without disturbing them?",
+            "options": [
+              "By catching them in large nets",
+              "By using non-invasive drones",
+              "By tagging them with heavy anchors",
+              "By following them in high-speed boats"
+            ],
+            "correctAnswer": "By using non-invasive drones",
+            "reason": "Dr. Sarah states that scientists use non-invasive drones to monitor whales safely without causing stress.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "unit4_speaking_d1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Waiter",
+                "text": "Good evening! Can I get you something to drink while you look at the menu?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Customer",
+                "text": "Yes..., but only if the water is room temperature. No ice, no lemon, nothing.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "unit4_game_1",
+          "content": {
+            "gameName": "Marine Vocab Challenge",
+            "description": "Select the correct vocabulary word to complete the marine life fact.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What happens when stressed corals lose their algae and turn pale white?",
+            "options": [
+              "They hatch",
+              "They bleach",
+              "They thrive",
+              "They coordinate"
+            ],
+            "correctAnswer": "They bleach",
+            "reason": "Coral bleaching occurs when corals lose their vivid colors under stressful environmental conditions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_game_2",
+          "content": {
+            "gameName": "Compound Adjective Builder",
+            "description": "Test your understanding of hyphenated compound adjectives.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which phrase uses the correct compound adjective format?",
+            "options": [
+              "a three hours meeting",
+              "a three-hour meeting",
+              "a three-hours meeting",
+              "a three hours-meeting"
+            ],
+            "correctAnswer": "a three-hour meeting",
+            "reason": "Compound adjectives formed with a number and noun use a singular noun and a hyphen before the modified noun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 4 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "unit4_test_q1",
+          "content": {
+            "question": "What does the idiom 'a stitch in time saves nine' mean in the context of ocean conservation?",
+            "options": [
+              "Fixing a small environmental problem early prevents greater damage later.",
+              "Stitching broken fishing nets takes nine hours.",
+              "Creating nine marine reserves is always better than one.",
+              "Doing small tasks late is better than doing them early."
+            ],
+            "correctAnswer": "Fixing a small environmental problem early prevents greater damage later.",
+            "reason": "The idiom means that addressing a problem immediately prevents severe long-term complications.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q2",
+          "content": {
+            "question": "The wearing away of coastal land caused by sea waves and weather is called:",
+            "options": [
+              "bleaching",
+              "erosion",
+              "conservation",
+              "reputation"
+            ],
+            "correctAnswer": "erosion",
+            "reason": "Erosion refers to the gradual wearing away of land or soil by natural elements like water and wind.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q3",
+          "content": {
+            "question": "Which word refers to a sound or song that stays in your mind in a poignant, memorable way?",
+            "options": [
+              "Hazardous",
+              "Haunting",
+              "Non-invasive",
+              "Time-consuming"
+            ],
+            "correctAnswer": "Haunting",
+            "reason": "Haunting describes something beautiful yet sad that lingers in memory, such as whale songs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q4",
+          "content": {
+            "question": "A device designed to save time is best described as a __________ device.",
+            "options": [
+              "time-save",
+              "time-saving",
+              "times-saving",
+              "time-saved"
+            ],
+            "correctAnswer": "time-saving",
+            "reason": "Noun + Present Participle creates the compound adjective 'time-saving'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q5",
+          "content": {
+            "question": "In which sentence should the compound adjective NOT be hyphenated?",
+            "options": [
+              "She bought a brand-new car.",
+              "The famous footballer is well known.",
+              "We took a ten-minute break.",
+              "He is a highly-respected scientist."
+            ],
+            "correctAnswer": "The famous footballer is well known.",
+            "reason": "Compound adjectives coming after a linking verb (like 'is well known') do not require hyphens.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q6",
+          "content": {
+            "question": "Choose the correct compound adjective: 'The party guests were very __________ and followed all instructions.'",
+            "options": [
+              "well-behaved",
+              "well-behaving",
+              "good-behaved",
+              "well-behave"
+            ],
+            "correctAnswer": "well-behaved",
+            "reason": "'Well-behaved' is the established Adverb + Past Participle compound adjective.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q7",
+          "content": {
+            "question": "Why are coral reefs referred to as the 'rainforests of the sea'?",
+            "options": [
+              "Because rain falls heavily on ocean surfaces",
+              "Because they harbor thousands of diverse species like rainforests do on land",
+              "Because they consist of underwater trees",
+              "Because they are bright green"
+            ],
+            "correctAnswer": "Because they harbor thousands of diverse species like rainforests do on land",
+            "reason": "Coral reefs host high biodiversity, making them analogous to terrestrial rainforests.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q8",
+          "content": {
+            "question": "What major obstacle do baby sea turtles face immediately after hatching?",
+            "options": [
+              "A long flight to coastal sanctuaries",
+              "A dangerous journey across the sand to reach the sea",
+              "Building nests on rocky cliffs",
+              "Finding freshwater streams"
+            ],
+            "correctAnswer": "A dangerous journey across the sand to reach the sea",
+            "reason": "After hatching, baby sea turtles must navigate a perilous trek across the shore to the water.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q9",
+          "content": {
+            "question": "How does heavy ship traffic harm whales in the ocean?",
+            "options": [
+              "It supplies them with excess food.",
+              "It creates noise pollution that disrupts their communication.",
+              "It protects them from predators.",
+              "It cools ocean temperatures too quickly."
+            ],
+            "correctAnswer": "It creates noise pollution that disrupts their communication.",
+            "reason": "Ship noise interferes with whale echolocation and long-distance vocal communication.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit4_test_q10",
+          "content": {
+            "question": "What does the idiom 'in deep water' mean in the sentence: 'If we ignore environmental damage, we will be in deep water'?",
+            "options": [
+              "In serious trouble or difficulty",
+              "Swimming safely in deep ocean trenches",
+              "Exploring the sea with scuba gear",
+              "Working as professional divers"
+            ],
+            "correctAnswer": "In serious trouble or difficulty",
+            "reason": "The idiom 'in deep water' figuratively means being in a dangerous or difficult situation.",
+            "origin": "supplementary",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:38:45.144Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary3-student-term1",
+  "sourceFilename": "English_language_Sec3_tr1 (1).pdf",
+  "grade": "Secondary 3",
+  "unitNumber": 5,
+  "unitTitle": "From Muscles to Mindset",
+  "sourcePdfRange": {
+    "start": 68,
+    "end": 81
+  },
+  "sourceCoverage": [
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+  ],
+  "sourceFingerprint": "6de540e6f1ca37c4027d92199472c58729eec738cc813426bd7a4f6d2d925c77",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "From Muscles to Mindset",
+    "expectedRange": {
+      "start": 68,
+      "end": 81,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 25,
+      "supplementaryItems": 5,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:38:45.144Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "sec3_u5_voc_1",
+          "content": {
+            "word": "repetitive",
+            "arabicMeaning": "متكرر",
+            "example": "Machines are often used to perform repetitive tasks in modern factories.",
+            "origin": "source",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_voc_2",
+          "content": {
+            "word": "digital literacy",
+            "arabicMeaning": "التمكن الرقمي",
+            "example": "Digital literacy is essential for workers in modern office environments.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_voc_3",
+          "content": {
+            "word": "emotional intelligence",
+            "arabicMeaning": "الذكاء العاطفي",
+            "example": "Emotional intelligence helps team leaders understand and manage interpersonal feelings.",
+            "origin": "source",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_voc_4",
+          "content": {
+            "word": "stay ahead of the curve",
+            "arabicMeaning": "يبقي نفسه في الطليعة",
+            "example": "Workers must learn new skills continuously to stay ahead of the curve.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_voc_5",
+          "content": {
+            "word": "think outside the box",
+            "arabicMeaning": "يفكر خارج الصندوق",
+            "example": "To solve complex modern problems, employees need to think outside the box.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_voc_6",
+          "content": {
+            "word": "climb the career ladder",
+            "arabicMeaning": "يرتقي في السلم الوظيفي",
+            "example": "Hard work and learning enable professionals to climb the career ladder.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "sec3_u5_vocq_1",
+          "content": {
+            "question": "What does the idiom 'think outside the box' mean?",
+            "options": [
+              "To think in a creative and different way",
+              "To clean up your workplace",
+              "To follow instructions blindly",
+              "To avoid using computers"
+            ],
+            "correctAnswer": "To think in a creative and different way",
+            "reason": "Thinking outside the box means adopting non-traditional and creative approaches to problem-solving.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_vocq_2",
+          "content": {
+            "question": "Which term refers to the ability to understand and use digital tools and technology effectively?",
+            "options": [
+              "Physical strength",
+              "Digital literacy",
+              "Manual labor",
+              "Basic income"
+            ],
+            "correctAnswer": "Digital literacy",
+            "reason": "Digital literacy is defined as the competence required to operate modern digital tools and technology.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_vocq_3",
+          "content": {
+            "question": "What does 'stay ahead of the curve' mean in a professional context?",
+            "options": [
+              "To drive fast on curved roads",
+              "To be more advanced or better prepared than others",
+              "To retire early from work",
+              "To work without taking any breaks"
+            ],
+            "correctAnswer": "To be more advanced or better prepared than others",
+            "reason": "Staying ahead of the curve means keeping up with changes so you remain better prepared than your peers.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "sec3_u5_gram_1",
+          "content": {
+            "rule": "Active and Passive Causative Structures (have / get)",
+            "explanation": "We use 'have' and 'get' to show that we arrange for someone else to perform an action for us. Active: have + person + base verb, or get + person + to-infinitive. Passive: have/get + object + past participle.",
+            "example": "I had the mechanic repair my car yesterday, and she got her eyes checked.",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "sec3_u5_gramq_1",
+          "content": {
+            "question": "I had the mechanic ______ my brakes yesterday.",
+            "options": [
+              "fix",
+              "fixed",
+              "to fix",
+              "fixing"
+            ],
+            "correctAnswer": "fix",
+            "reason": "Active causative 'have' takes a person object followed by the bare infinitive (have + person + inf.).",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_gramq_2",
+          "content": {
+            "question": "She got her brother ______ her with her project.",
+            "options": [
+              "help",
+              "helped",
+              "to help",
+              "helping"
+            ],
+            "correctAnswer": "to help",
+            "reason": "Active causative 'get' takes a person object followed by 'to + infinitive' (get + person + to + inf.).",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_gramq_3",
+          "content": {
+            "question": "We get the carpets ______ every three months.",
+            "options": [
+              "clean",
+              "cleaned",
+              "to clean",
+              "cleaning"
+            ],
+            "correctAnswer": "cleaned",
+            "reason": "Passive causative uses have/get + object + past participle (cleaned).",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "sec3_u5_read_1",
+          "content": {
+            "passage": "We are now in the year 2045, the world had changed in ways no one expected. Technology had advanced so far that it could do almost everything people once did. Digital systems diagnosed illnesses with perfect accuracy, automated assistants wrote flawless contracts, and machines composed music that moved people to tears. As a result, many jobs in factories, offices, and even creative fields disappeared. In response, governments introduced basic income, and schools began teaching \"future-proof\" skills. Yet in a quiet corner of Cairo, a small café remained a place of warmth and humanity. Every Friday afternoon, children gathered around an elderly woman named Amina, who told stories in a way no machine could match. Parents often said her stories had something special—a deep emotion, a human spark, and a magic no program could imitate. One rainy afternoon, Dr. Sami, a leading engineer, visited the café. His newest creation had just won a prize for storytelling, but many readers still said something was missing. Curious, he asked Amina, “Let my system analyze your storytelling. I want to understand what makes yours so special.” Amina agreed. She told a story about a lonely moon and a brave firefly. The system collected everything—metaphors, plot twists, emotions—but it couldn’t capture the gasps, smiles, and wide eyes of the children. When she finished, Dr. Sami stared at his results. “We can copy the words,” he said softly, “but we can’t restore the passion.”",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_read_2",
+          "content": {
+            "question": "What important conclusion did Dr. Sami reach after analyzing Amina's storytelling?",
+            "options": [
+              "AI machines can easily capture human emotional passion.",
+              "Words can be copied, but human passion and authentic emotion cannot be replaced by machines.",
+              "Children prefer automated storytelling systems over human storytellers.",
+              "Storytelling should be banned in public cafes."
+            ],
+            "correctAnswer": "Words can be copied, but human passion and authentic emotion cannot be replaced by machines.",
+            "reason": "Dr. Sami realized that while AI can record words and structural elements, it cannot replicate real human warmth and emotional connection.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "sec3_u5_list_1",
+          "content": {
+            "script": "Presenter: Welcome to today's audio report on the changing workforce. Nowadays, smartphones serve as palm-sized computers, and artificial intelligence aids medical professionals in diagnosing patient conditions accurately. Industry managers note that modern automated systems work continuously without physical exhaustion. However, to stay competitive, workers must acquire continuous digital training and soft skills. Experts stress that technology simplifies tasks, but human critical thinking and adaptability remain essential.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "sec3_u5_list_2",
+          "content": {
+            "question": "According to the listening report, why must workers continuously update their skills?",
+            "options": [
+              "To completely avoid working with technology",
+              "To keep pace with technological advancement and remain employable",
+              "To replace computers in all offices",
+              "To work without taking rest breaks"
+            ],
+            "correctAnswer": "To keep pace with technological advancement and remain employable",
+            "reason": "The audio text emphasizes that continuous skill development is needed to keep up with rapid technology changes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "sec3_u5_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "Do you think artificial intelligence will displace more jobs than it creates in the coming years?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "While AI takes over repetitive manual tasks, it also creates new roles in data analysis and technology management.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student A",
+                "text": "That is true, but workers need to build strong soft skills and digital literacy to stay ahead of the curve.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "sec3_u5_game_1",
+          "content": {
+            "gameName": "Vocab Mastermind",
+            "description": "Test your knowledge of workplace idioms by selecting the correct meaning.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "What does a professional do when trying to 'climb the career ladder'?",
+            "options": [
+              "They move up to higher and better positions in their job.",
+              "They fix physical ladders at construction sites.",
+              "They change their career field every month.",
+              "They stop working to go on vacation."
+            ],
+            "correctAnswer": "They move up to higher and better positions in their job.",
+            "reason": "Climbing the career ladder represents professional advancement into higher roles.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "sec3_u5_game_2",
+          "content": {
+            "gameName": "Causative Challenge",
+            "description": "Pick the correct causative verb structure to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "The project leader gets the technicians ______ the system software regularly.",
+            "options": [
+              "update",
+              "to update",
+              "updated",
+              "updating"
+            ],
+            "correctAnswer": "to update",
+            "reason": "The active causative with 'get' takes 'to + infinitive' (get + person + to + inf.).",
+            "origin": "supplementary",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "sec3_u5_test_1",
+          "content": {
+            "question": "Which of the following is defined as the ability to manage your own and others' emotions effectively?",
+            "options": [
+              "Digital literacy",
+              "Emotional intelligence",
+              "Physical strength",
+              "Data management"
+            ],
+            "correctAnswer": "Emotional intelligence",
+            "reason": "Emotional intelligence involves managing and understanding personal and interpersonal feelings.",
+            "origin": "source",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_2",
+          "content": {
+            "question": "Tasks that are performed again and again in the exact same manner are described as ______.",
+            "options": [
+              "creative",
+              "repetitive",
+              "unpredictable",
+              "flexible"
+            ],
+            "correctAnswer": "repetitive",
+            "reason": "Repetitive tasks consist of actions repeated continuously without change.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_3",
+          "content": {
+            "question": "To be more advanced and better prepared than others in your field means to stay ______.",
+            "options": [
+              "behind the scenes",
+              "ahead of the curve",
+              "under the radar",
+              "off the record"
+            ],
+            "correctAnswer": "ahead of the curve",
+            "reason": "Staying ahead of the curve means remaining innovative and well prepared for upcoming developments.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_4",
+          "content": {
+            "question": "My manager had the assistant ______ the quarterly financial reports.",
+            "options": [
+              "prepare",
+              "to prepare",
+              "prepared",
+              "preparing"
+            ],
+            "correctAnswer": "prepare",
+            "reason": "Active causative 'have' requires a bare infinitive (have + person + bare inf.).",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_5",
+          "content": {
+            "question": "The teacher got the students ______ their essays before the end of the period.",
+            "options": [
+              "revise",
+              "to revise",
+              "revised",
+              "revising"
+            ],
+            "correctAnswer": "to revise",
+            "reason": "Active causative 'get' requires 'to + infinitive' (get + person + to + inf.).",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_6",
+          "content": {
+            "question": "She is going to have her computer ______ at the maintenance store tomorrow.",
+            "options": [
+              "repair",
+              "to repair",
+              "repaired",
+              "repairing"
+            ],
+            "correctAnswer": "repaired",
+            "reason": "Passive causative requires 'have/get + object + past participle' (repaired).",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_7",
+          "content": {
+            "question": "Our supervisor allowed us ______ early after we completed our assigned tasks.",
+            "options": [
+              "leave",
+              "to leave",
+              "leaving",
+              "left"
+            ],
+            "correctAnswer": "to leave",
+            "reason": "'Allow' takes an object followed by 'to + infinitive', whereas 'let' takes a bare infinitive.",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_8",
+          "content": {
+            "question": "In the story set in 2045, why did children gather around Amina every Friday afternoon?",
+            "options": [
+              "To play virtual reality games",
+              "To listen to her warm and emotional storytelling",
+              "To repair damaged robotic assistants",
+              "To learn advanced programming languages"
+            ],
+            "correctAnswer": "To listen to her warm and emotional storytelling",
+            "reason": "Children gathered to experience Amina's human spark and emotional storytelling that technology could not replicate.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_9",
+          "content": {
+            "question": "Why are soft skills like critical thinking and collaboration increasingly prioritized in modern workplaces?",
+            "options": [
+              "Because automated machines can easily perform them",
+              "Because they rely on human insight and cannot be easily replaced by machines",
+              "Because technical skills are no longer needed in industry",
+              "Because manual labor is legally prohibited"
+            ],
+            "correctAnswer": "Because they rely on human insight and cannot be easily replaced by machines",
+            "reason": "Soft skills involve judgment and empathy, which AI and automated systems cannot replace.",
+            "origin": "source",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "sec3_u5_test_10",
+          "content": {
+            "question": "In narrative writing about future technology, what is the key purpose of sharing personal feelings and voice?",
+            "options": [
+              "To list technical instructions",
+              "To create deeper emotional meaning and connect with readers",
+              "To eliminate character development",
+              "To reduce word count"
+            ],
+            "correctAnswer": "To create deeper emotional meaning and connect with readers",
+            "reason": "Expressing personal thoughts and feelings in narrative writing engages readers and conveys thematic message.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
