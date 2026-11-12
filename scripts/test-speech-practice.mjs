@@ -16,7 +16,7 @@ assert.ok(main.includes("language: 'en-US'") && main.includes('popup: true'),
   'Android recognition must request English using the native recognition dialog.');
 assert.ok(main.includes('data-speech-target=') && main.includes("querySelectorAll('[data-speech-target]')"),
   'Speaking prompts must expose working speech-practice controls.');
-assert.ok(main.includes('data-speech-result') && main.includes('recognized words'),
+assert.ok(main.includes('data-speech-result') && main.includes('Recognized:') && main.includes('Word match:'),
   'Learners must see recognized text and an honest text-match result.');
 assert.ok(main.includes('window.SpeechRecognition || window.webkitSpeechRecognition'),
   'Browser speech-recognition fallback is missing.');
