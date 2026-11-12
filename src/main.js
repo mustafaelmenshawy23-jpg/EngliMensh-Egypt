@@ -2,6 +2,7 @@ import { Capacitor, registerPlugin } from '@capacitor/core';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
+import { SpeechRecognition } from '@capacitor-community/speech-recognition';
 import { detectSpeakerGender, chooseSpeakerVoice } from './lib/tts-voice-selection.mjs';
 import curriculum from './data/curriculum/structure.json';
 import primaryHtmlCurriculum from './data/curriculum/primary-connect-html-2026-2027.json';
@@ -449,6 +450,104 @@ async function speakText(text, rate = null, speakerGender = null) {
   }
 }
 
+
+function normalizeSpeechText(value) {
+  return String(value || '').toLowerCase().replace(/[^\\p{L}\\p{N}\\s]/gu, ' ').replace(/\\s+/g, ' ').trim();
+}
+
+function speechTextMatchPercent(target, transcript) {
+  const expected = normalizeSpeechText(target).split(' ').filter(Boolean);
+  const actual = new Set(normalizeSpeechText(transcript).split(' ').filter(Boolean));
+  if (!expected.length || !actual.size) return 0;
+  return Math.round((expected.filter((word) => actual.has(word)).length / expected.length) * 100);
+}
+
+async function recognizeSpeechText() {
+  if (Capacitor.isNativePlatform()) {
+    let permission = await SpeechRecognition.checkPermissions();
+    if (permission?.speechRecognition !== 'granted') {
+      permission = await SpeechRecognition.requestPermissions();
+    }
+    if (permission?.speechRecognition !== 'granted') {
+      throw new Error('Microphone permission is required. Allow microphone access in Android settings and try again.');
+    }
+    const availability = await SpeechRecognition.available();
+    if (!availability?.available) {
+      throw new Error('Speech recognition is unavailable on this device. Check that a speech service is installed and enabled.');
+    }
+    const result = await SpeechRecognition.start({
+      language: 'en-US',
+      maxResults: 5,
+      prompt: 'Say the English word or sentence clearly',
+      popup: true,
+      partialResults: false
+    });
+    const transcript = Array.isArray(result?.matches) ? result.matches.find((match) => String(match || '').trim()) : '';
+    if (!transcript) throw new Error('No clear speech detected. Please speak after the listening screen opens, then try again.');
+    return String(transcript).trim();
+  }
+
+  const BrowserRecognizer = typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition);
+  if (!BrowserRecognizer) throw new Error('Speech recognition is not supported by this browser. Try the installed Android app.');
+  return await new Promise((resolve, reject) => {
+    const recognition = new BrowserRecognizer();
+    let settled = false;
+    recognition.lang = 'en-US';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 5;
+    recognition.onresult = (event) => {
+      const transcript = event.results?.[0]?.[0]?.transcript || '';
+      if (!settled && transcript.trim()) {
+        settled = true;
+        resolve(transcript.trim());
+      }
+    };
+    recognition.onerror = (event) => {
+      if (!settled) {
+        settled = true;
+        reject(new Error(event.error === 'not-allowed'
+          ? 'Microphone permission was denied. Allow microphone access and try again.'
+          : 'Speech recognition failed (' + (event.error || 'unknown error') + '). Please try again.'));
+      }
+    };
+    recognition.onend = () => {
+      if (!settled) {
+        settled = true;
+        reject(new Error('No clear speech detected. Please speak closer to the microphone and try again.'));
+      }
+    };
+    try { recognition.start(); } catch (error) { reject(error); }
+  });
+}
+
+async function runSpeechPractice(button) {
+  if (!button || button.disabled) return;
+  const target = String(button.dataset.speechTarget || '').trim();
+  const resultNode = button.parentElement?.querySelector('[data-speech-result]');
+  if (!target || !resultNode) return;
+  const originalLabel = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Listening…';
+  resultNode.textContent = 'Listening for your English response…';
+  resultNode.classList.remove('is-success', 'is-retry');
+  try {
+    await stopAudio();
+    const transcript = await recognizeSpeechText();
+    const match = speechTextMatchPercent(target, transcript);
+    resultNode.textContent = 'Recognized: “' + transcript + '” · Word match: ' + match + '% · ' +
+      (match >= 80 ? 'Great work!' : 'Good try — listen again and repeat slowly.');
+    resultNode.classList.add(match >= 80 ? 'is-success' : 'is-retry');
+  } catch (error) {
+    console.warn('Speaking practice recognition error:', error);
+    resultNode.textContent = error?.message || 'Speech recognition could not start. Please try again.';
+    resultNode.classList.add('is-retry');
+  } finally {
+    button.disabled = false;
+    button.textContent = originalLabel;
+  }
+}
+
 async function playDialogue(dialogue) {
   if (!Array.isArray(dialogue) || !dialogue.length) return;
   await stopAudio();
@@ -581,7 +680,9 @@ function renderPreparatorySpeaking(words) {
             ${item.arabic ? `<strong class="prep-vocabulary-arabic" dir="rtl">${escapeHtml(item.arabic)}</strong>` : ''}
             ${item.example && !/essential curriculum term|word .* is essential when studying/i.test(item.example) ? `<p class="prep-vocabulary-example" dir="ltr">${escapeHtml(item.example)}</p>` : ''}
             <button type="button" class="tts-play-btn small" data-tts-text="${escapeHtml(item.word)}">🔊 Hear model</button>
-            <p class="speaking-practice-note">Now say it aloud in your own voice.</p>
+            <button type="button" class="speaking-practice-check" data-speech-target="${escapeHtml(item.word)}">🎙 Speak &amp; check</button>
+            <p class="speaking-practice-result" data-speech-result aria-live="polite"></p>
+            <p class="speaking-practice-note">The check compares recognized words; it does not grade accent or pronunciation quality.</p>
           </article>
         `).join('')}
       </div>
@@ -1290,6 +1391,8 @@ function renderUnitWorkspace() {
                       <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
                       <p dir="ltr">${escapeHtml(line.text || '')}</p>
                       <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
+                      <button type="button" class="speaking-practice-check" data-speech-target="${escapeHtml(line.text || '')}">🎙 Practise this line</button>
+                      <p class="speaking-practice-result" data-speech-result aria-live="polite"></p>
                     </article>`;
                   }).join('')}
                 </div>
@@ -2639,6 +2742,10 @@ function render() {
   app.querySelectorAll('[data-tts-text]').forEach((button) => button.addEventListener('click', (e) => {
     e.stopPropagation();
     speakText(button.dataset.ttsText, null, button.dataset.ttsGender || null);
+  }));
+  app.querySelectorAll('[data-speech-target]').forEach((button) => button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    runSpeechPractice(button);
   }));
   app.querySelectorAll('[data-tts-voice]').forEach((select) => select.addEventListener('change', () => {
     const gender = select.dataset.ttsVoice;
