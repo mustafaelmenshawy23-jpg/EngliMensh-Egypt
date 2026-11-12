@@ -16,7 +16,7 @@ Snapshot: 2026-11-12 10:53 Asia/Riyadh. All repository work in this report is li
 | Validated draft awaiting teacher review | 26 |
 | Blocked by source/OCR review | 59 |
 | Failed transiently (quota, timeout, API/model availability, etc.) | 25 |
-| Failed content/schema validation | 15 |
+| Failed validation or unusable model output | 15 |
 | Approved | 0 |
 | Candidates currently eligible for retry/generation | 39 |
 | Candidates waiting for retry time | 1 |
@@ -63,6 +63,8 @@ The 40 failed attempts include overlapping issues:
 - Game items that do not satisfy the supported playable multiple-choice schema.
 
 Failed drafts are not promoted. They must be regenerated and pass validation.
+
+A continuation trigger was committed on `main` at [4d0fb894](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/commit/4d0fb8949f2b9afa995def566cf28282413cc236), resuming from the saved cursor (index 6) with a 10-unit batch. At report time, the new run had not yet written a newer progress timestamp, so its start/completion is not claimed.
 
 ## Voice and provenance limitations
 
