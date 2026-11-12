@@ -21,10 +21,10 @@ const requestedStart = process.env.START_INDEX?.trim();
 const batchSize = Number(process.env.BATCH_SIZE || 5);
 const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
-function retryDelayFor(error, attemptCount) {
+function retryDelayFor(error, attemptCount, status = 'failed') {
   const attempts = Math.max(1, Number(attemptCount) || 1);
   const message = String(error?.message || error || '');
-  if (/failed quality validation|Post-generation quality validation|no structured content/i.test(message)) {
+  if (status === 'failed_validation' || /failed quality validation|Post-generation quality validation|no structured content/i.test(message)) {
     return attempts === 1 ? 0 : 24 * 60 * 60 * 1000;
   }
   if (isTransientGenerationError(message)) {
@@ -313,12 +313,12 @@ for (const unit of selected) {
   } catch (error) {
     const status = error.message.includes('BLOCKED_SOURCE_REVIEW')
       ? 'blocked_source_review'
-      : error.message.includes('failed quality validation') || error.message.includes('Post-generation quality validation')
-        ? 'failed_validation'
-        : 'failed';
+      : isTransientGenerationError(error.message)
+        ? 'failed'
+        : 'failed_validation';
     const prior = batchState.attempts[unit.unitId];
     const attemptCount = Number(prior?.attemptCount || 0) + 1;
-    const retryDelayMs = retryDelayFor(error, attemptCount);
+    const retryDelayMs = retryDelayFor(error, attemptCount, status);
     summary.results.push({ unitId: unit.unitId, status, error: error.message });
     batchState.attempts[unit.unitId] = {
       status,
