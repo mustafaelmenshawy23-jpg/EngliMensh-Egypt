@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:20:13.178Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary1-student-term1",
+  "sourceFilename": "English_1sec_t1 (1).pdf",
+  "grade": "Secondary 1",
+  "unitNumber": 3,
+  "unitTitle": "Truth Vs. Lies",
+  "sourcePdfRange": {
+    "start": 36,
+    "end": 56
+  },
+  "sourceCoverage": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "sourceFingerprint": "b89d9540603a2ba4e90ff25513ee7d9f7c98651a6b51cd4d6b4a5569c987648e",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Truth Vs. Lies",
+    "expectedRange": {
+      "start": 36,
+      "end": 56,
+      "totalPages": 21
+    },
+    "recordedCoverage": {
+      "totalPages": 21,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 25,
+      "supplementaryItems": 5,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:20:13.178Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "wolves in sheep's clothing",
+            "arabicMeaning": "ذئاب في ثياب حملان",
+            "example": "Some dishonest people act friendly at first, but turn out to be wolves in sheep's clothing.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "deceive",
+            "arabicMeaning": "يخدع",
+            "example": "Scammers try to deceive people to gain money or personal data.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "misinformation",
+            "arabicMeaning": "معلومات ضالة",
+            "example": "We should check reliable sources to stop the spread of misinformation.",
+            "origin": "source",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "reputation",
+            "arabicMeaning": "سمعة",
+            "example": "Spreading false stories can damage a person's reputation.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What is the meaning of the phrase 'wolves in sheep's clothing'?",
+            "options": [
+              "Dangerous people who appear kind",
+              "Animals that disguise themselves",
+              "Brave individuals in hardship",
+              "People who love taking care of animals"
+            ],
+            "correctAnswer": "Dangerous people who appear kind",
+            "reason": "The idiom describes deceitful people who pretend to be friendly to hide bad intentions.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "The scammer tried to ........ the elderly woman by pretending to be a bank agent.",
+            "options": [
+              "deceive",
+              "rescue",
+              "carve",
+              "impress"
+            ],
+            "correctAnswer": "deceive",
+            "reason": "To deceive means to trick someone into believing something that is not true.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "He felt deeply ........ when his close friend shared his secret with everyone.",
+            "options": [
+              "betrayed",
+              "honored",
+              "protected",
+              "rescued"
+            ],
+            "correctAnswer": "betrayed",
+            "reason": "Feeling betrayed happens when someone breaks your trust or reveals a secret.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Conditionals (Zero, First, Second)",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Zero Conditional",
+            "explanation": "Used for general truths and scientific facts. Structure: If + present simple, present simple.",
+            "example": "If water boils, it turns to steam.",
+            "origin": "source",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "First Conditional",
+            "explanation": "Used for real future possibilities. Structure: If + present simple, will + infinitive.",
+            "example": "If it rains tomorrow, we will stay at home.",
+            "origin": "source",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_3",
+          "content": {
+            "rule": "Second Conditional",
+            "explanation": "Used for unreal or hypothetical situations in the present/future. Structure: If + past simple, would + infinitive.",
+            "example": "If I had enough money, I would buy a new car.",
+            "origin": "source",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "If you press this button, the light ........ on.",
+            "options": [
+              "comes",
+              "came",
+              "would come",
+              "will coming"
+            ],
+            "correctAnswer": "comes",
+            "reason": "Zero conditional takes present simple in both clauses for automatic or routine actions.",
+            "origin": "source",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "If I ........ you, I would apologize to him immediately.",
+            "options": [
+              "were",
+              "am",
+              "was",
+              "will be"
+            ],
+            "correctAnswer": "were",
+            "reason": "Second conditional uses 'were' for hypothetical advice across all subject pronouns.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "If it rains tomorrow, we ........ the outdoor event.",
+            "options": [
+              "will cancel",
+              "cancel",
+              "canceled",
+              "would cancel"
+            ],
+            "correctAnswer": "will cancel",
+            "reason": "First conditional uses 'will + infinitive' in the result clause for realistic future plans.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension: Truth Vs. Lies",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "Trust is one of the most valuable things in our lives, yet it is not always easy to know whom we can rely on. While many people act with honesty and kindness, there are also those who hide their true intentions behind a friendly smile. In life, not everyone we meet is truly honest. Some people put on a friendly face, but are in fact \" wolves in sheep's clothing \". They may deceive us to gain money, favors, or private information. This can happen anywhere–at school, in the workplace, or even among people we once considered close friends.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "Why do dishonest people put on a friendly face according to the text?",
+            "options": [
+              "To gain money, favors, or private information",
+              "To help students learn online safety skills",
+              "To build genuine, lasting friendships",
+              "To encourage people to share accurate stories"
+            ],
+            "correctAnswer": "To gain money, favors, or private information",
+            "reason": "The text states that deceitful individuals pretend to be friendly specifically to gain money, favors, or private information.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension: Wise Choices",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Host: Welcome Dr. Sarah. Can you explain how scammers exploit teenagers online?\nDr. Sarah: Scammers often target young people with fake job offers or quick profits. They intentionally build emotional urgency to prevent victims from thinking clearly. My top advice is to guard your personal data, time, and trust, and always double-check facts before making any agreement.",
+            "origin": "supplementary",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "Why do exploiters create strong emotional pressure on victims according to Dr. Sarah?",
+            "options": [
+              "To stop the victim from thinking clearly",
+              "To make the victim feel happy",
+              "To help the victim remember the deal",
+              "To test the victim's patience"
+            ],
+            "correctAnswer": "To stop the victim from thinking clearly",
+            "reason": "High emotional pressure confuses victims and stops them from logically analyzing facts.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Role-Play: Giving Advice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Friend in trouble",
+                "text": "An online contact offered me a free smartphone, but they asked for my home address and password first.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Adviser",
+                "text": "That sounds like a trap! You should never share private passwords or personal details with unverified platforms.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocabulary Detective",
+            "description": "Identify terms associated with digital scams and media literacy.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which term describes misleading or false stories shared on social media?",
+            "options": [
+              "Misinformation",
+              "Reputation",
+              "Interaction",
+              "Awareness"
+            ],
+            "correctAnswer": "Misinformation",
+            "reason": "Misinformation refers to untruthful or inaccurate information spread to mislead others.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Conditional Quiz Show",
+            "description": "Select the proper verb tense to form a correct first conditional sentence.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "If you verify news before sharing it, you ........ spreading false rumors.",
+            "options": [
+              "will avoid",
+              "avoided",
+              "would avoid",
+              "had avoided"
+            ],
+            "correctAnswer": "will avoid",
+            "reason": "First conditional uses present simple after 'if' and 'will + verb' in the main clause.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 3 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What does the phrase 'wolves in sheep's clothing' describe?",
+            "options": [
+              "Dangerous people who appear kind",
+              "People who are very quiet",
+              "Animals that hunt in winter",
+              "Friendly neighbors who help everyone"
+            ],
+            "correctAnswer": "Dangerous people who appear kind",
+            "reason": "The idiom means people who act friendly to hide harmful intentions.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "If a news story is fake, people ........ trusting that media source.",
+            "options": [
+              "stop",
+              "stopped",
+              "would stop",
+              "stopping"
+            ],
+            "correctAnswer": "stop",
+            "reason": "Zero conditional expresses a general rule using present simple in both clauses.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "If I had more free time, I ........ a new foreign language.",
+            "options": [
+              "would learn",
+              "learn",
+              "will learn",
+              "learned"
+            ],
+            "correctAnswer": "would learn",
+            "reason": "Second conditional uses 'would + infinitive' to express imaginary situations.",
+            "origin": "source",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "According to 'The Truth Trap', what is the main goal in modern information warfare?",
+            "options": [
+              "To damage trust",
+              "To destroy buildings",
+              "To steal weapons",
+              "To repair roads"
+            ],
+            "correctAnswer": "To damage trust",
+            "reason": "The text explains that the goal of modern lie-based conflicts is damaging trust rather than physical destruction.",
+            "origin": "source",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "He felt deeply ........ when his private information was posted online without permission.",
+            "options": [
+              "betrayed",
+              "honored",
+              "rescued",
+              "supported"
+            ],
+            "correctAnswer": "betrayed",
+            "reason": "Betrayed describes the emotional distress caused by broken trust.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "If you heat ice, it ........ into water.",
+            "options": [
+              "turns",
+              "turned",
+              "would turn",
+              "will turned"
+            ],
+            "correctAnswer": "turns",
+            "reason": "Zero conditional is used for scientific facts with present simple tenses.",
+            "origin": "supplementary",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "What is the key advice behind the phrase 'Trust, but verify'?",
+            "options": [
+              "Confirm facts carefully before believing suspicious information",
+              "Never speak to anyone you do not know",
+              "Believe all online deals immediately",
+              "Share every news story with your friends"
+            ],
+            "correctAnswer": "Confirm facts carefully before believing suspicious information",
+            "reason": "The proverb advises maintaining optimism while critically verifying information.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "If she ........ harder, she will achieve higher test scores.",
+            "options": [
+              "studies",
+              "studied",
+              "study",
+              "would study"
+            ],
+            "correctAnswer": "studies",
+            "reason": "First conditional requires present simple (studies) after 'if'.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Why do online scammers create false urgency?",
+            "options": [
+              "To prevent targets from thinking critically",
+              "To make targets feel calm and happy",
+              "To give targets extra time to double-check details",
+              "To reduce the financial profit"
+            ],
+            "correctAnswer": "To prevent targets from thinking critically",
+            "reason": "Urgency forces quick decisions without proper investigation.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "Spreading false rumors online can easily ruin a person's ........ .",
+            "options": [
+              "reputation",
+              "interaction",
+              "courage",
+              "harmony"
+            ],
+            "correctAnswer": "reputation",
+            "reason": "Reputation is the public opinion or trust regarding a person's character.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

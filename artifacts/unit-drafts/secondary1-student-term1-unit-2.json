@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:19:28.460Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "secondary1-student-term1",
+  "sourceFilename": "English_1sec_t1 (1).pdf",
+  "grade": "Secondary 1",
+  "unitNumber": 2,
+  "unitTitle": "Hands Help, Hearts Care",
+  "sourcePdfRange": {
+    "start": 24,
+    "end": 35
+  },
+  "sourceCoverage": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "sourceFingerprint": "756145cb098c8e3e24cbca7573c20a98ae32921e0ae2a09960bdeebeaeca0d55",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Hands Help, Hearts Care",
+    "expectedRange": {
+      "start": 24,
+      "end": 35,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 27,
+      "supplementaryItems": 4,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:19:28.460Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "isolated",
+            "arabicMeaning": "معزول",
+            "example": "Sama felt isolated from her friends because she had little contact with them lately.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "irresistible",
+            "arabicMeaning": "لا يُقاوم",
+            "example": "The smell of the freshly baked bread was irresistible.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "optimism",
+            "arabicMeaning": "تفاؤل",
+            "example": "Helping her cousin filled Sama with optimism about the future.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "community",
+            "arabicMeaning": "مجتمع",
+            "example": "The whole community joined the campaign to protect the local environment.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_5",
+          "content": {
+            "word": "volunteer",
+            "arabicMeaning": "متطوع",
+            "example": "A volunteer works without pay to assist people in need.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_6",
+          "content": {
+            "word": "obligation",
+            "arabicMeaning": "التزام أو واجب",
+            "example": "Firefighters act out of a strong sense of obligation to save lives.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u2_vocab_q1",
+          "content": {
+            "question": "What does the word 'volunteer' mean?",
+            "options": [
+              "A person who works for a high salary",
+              "A person who works without pay to help others",
+              "A person who enforces traffic laws",
+              "A person who buys goods online"
+            ],
+            "correctAnswer": "A person who works without pay to help others",
+            "reason": "A volunteer is someone who offers their time and effort freely without financial payment.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_q2",
+          "content": {
+            "question": "Sama felt 'isolated' because she had very little contact with her ______ .",
+            "options": [
+              "teachers",
+              "friends",
+              "doctors",
+              "neighbors"
+            ],
+            "correctAnswer": "friends",
+            "reason": "The reading passage explicitly mentions that Sama felt isolated from her friends due to lack of contact.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_q3",
+          "content": {
+            "question": "Which word refers to 'a sudden, dangerous situation' requiring immediate action?",
+            "options": [
+              "Optimism",
+              "Emergency",
+              "Sapling",
+              "Obligation"
+            ],
+            "correctAnswer": "Emergency",
+            "reason": "An emergency is an unexpected and dangerous event that demands urgent response.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Focus: Modal Verbs",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Modal verbs 'must' and 'mustn't' for rules, laws, and strong obligation",
+            "explanation": "We use 'must' when something is compulsory by law or rule, and 'mustn't' to show strict prohibition.",
+            "example": "Drivers must follow traffic rules and mustn't use their phones while driving.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_2",
+          "content": {
+            "rule": "Modal verbs 'should' and 'shouldn't' for suggestions and advice",
+            "explanation": "We use 'should' and 'shouldn't' to express recommendations or polite advice.",
+            "example": "You should eat healthy food and shouldn't drink too much soda.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u2_gram_q1",
+          "content": {
+            "question": "You ______ wear a helmet when riding a motorbike. It's the law.",
+            "options": [
+              "should",
+              "must",
+              "shouldn't",
+              "mustn't"
+            ],
+            "correctAnswer": "must",
+            "reason": "'Must' expresses a strict rule or legal obligation.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_q2",
+          "content": {
+            "question": "You ______ eat so much sugar. It's not healthy.",
+            "options": [
+              "have to",
+              "must",
+              "shouldn't",
+              "should"
+            ],
+            "correctAnswer": "shouldn't",
+            "reason": "'Shouldn't' is used to give health-related advice against bad habits.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_q3",
+          "content": {
+            "question": "Drivers ______ use their phones while driving because it is strictly forbidden.",
+            "options": [
+              "mustn't",
+              "should",
+              "have to",
+              "must"
+            ],
+            "correctAnswer": "mustn't",
+            "reason": "'Mustn't' indicates prohibition under traffic safety regulations.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u2_read_p1",
+          "content": {
+            "passage": "My name is Radwan, and I work as a firefighter in Alexandria. Many people think our job is just putting out fires, but it’s much more than that. We rescue people from car accidents, help during floods, and sometimes save animals trapped in dangerous places. The truth is, our work can be risky. I have entered burning buildings where smoke made it hard to see and breathe. I’ve stood on shaking ladders in the middle of the night, with the heat almost burning my skin. Sadly, I have also seen lives lost before we could reach them. These moments stay with me forever. Yet, we do it because we believe in obligation – the duty to help each other, no matter the cost. In every emergency, we must act quickly, stay calm, and trust our training. We don’t think about fear in those moments; we think about the people waiting for us. I am proud to serve my community. I know that my work saves lives, and that is worth every risk. When you help others, you are not just doing a job – you are protecting hope itself.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_q1",
+          "content": {
+            "question": "Why does Radwan say firefighters perform their duties despite the extreme risks?",
+            "options": [
+              "They want to earn a large fortune.",
+              "They believe in their obligation to help others.",
+              "They enjoy climbing tall ladders.",
+              "They are required to work only at night."
+            ],
+            "correctAnswer": "They believe in their obligation to help others.",
+            "reason": "Radwan directly states that they act because of their belief in obligation and the duty to assist others regardless of the cost.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "u2_list_s1",
+          "content": {
+            "script": "Hello everyone, my name is Ahmed. Last summer, I joined a local community tree-planting project in my village. At first, I felt quite nervous and doubted my skills. However, working alongside other volunteers to plant young saplings completely transformed my attitude. An old farmer told me that every sapling we planted would provide shade for future generations. Hearing that filled me with pride and confidence. Volunteering did not only improve our village environment; it helped me grow as a person.",
+            "origin": "supplementary",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_list_q1",
+          "content": {
+            "question": "How did participating in the tree-planting project affect Ahmed's feelings?",
+            "options": [
+              "It made him feel stressed and discouraged.",
+              "It built his self-confidence and gave him pride.",
+              "It caused him to stop volunteering.",
+              "It convinced him to move away from his village."
+            ],
+            "correctAnswer": "It built his self-confidence and gave him pride.",
+            "reason": "The speaker explains that working with volunteers and planting saplings gave him immense confidence and pride.",
+            "origin": "supplementary",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u2_speak_d1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Sama",
+                "text": "Thank you for the warm bread, Mrs. Aya. It smells wonderful!",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Mrs. Aya",
+                "text": "You are very welcome! Sometimes, the smallest kindness can make a big difference.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Skill Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Community Word Match",
+            "description": "Identify the correct vocabulary word related to community service.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which term refers to a young tree planted to create green spaces?",
+            "options": [
+              "Sapling",
+              "Obligation",
+              "Emergency",
+              "Optimism"
+            ],
+            "correctAnswer": "Sapling",
+            "reason": "A sapling is defined as a young tree.",
+            "origin": "supplementary",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Modal Master Challenge",
+            "description": "Select the correct modal verb to complete safety rules.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Complete the sentence: Citizens ______ respect national laws to maintain safety.",
+            "options": [
+              "must",
+              "shouldn't",
+              "mustn't",
+              "don't have to"
+            ],
+            "correctAnswer": "must",
+            "reason": "'Must' expresses mandatory compliance with national laws.",
+            "origin": "supplementary",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 2 Comprehensive Evaluation",
+      "items": [
+        {
+          "itemId": "u2_test_q1",
+          "content": {
+            "question": "What does the word 'irresistible' mean in the context of Mrs. Aya's freshly baked bread?",
+            "options": [
+              "Too attractive or pleasant to resist",
+              "Unpleasant and smelling burnt",
+              "Difficult to see or taste",
+              "Extremely expensive to purchase"
+            ],
+            "correctAnswer": "Too attractive or pleasant to resist",
+            "reason": "The delightful smell of the warm bread was so appealing that Sama could not resist it.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q2",
+          "content": {
+            "question": "Which word means 'completely changed in a positive way'?",
+            "options": [
+              "Transformed",
+              "Isolated",
+              "Slipped",
+              "Trapped"
+            ],
+            "correctAnswer": "Transformed",
+            "reason": "Transformed means undergoing a complete change for the better.",
+            "origin": "source",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q3",
+          "content": {
+            "question": "In Radwan's story, what is an 'obligation'?",
+            "options": [
+              "A financial payment",
+              "A legal or moral duty",
+              "A dangerous hobby",
+              "A school exam"
+            ],
+            "correctAnswer": "A legal or moral duty",
+            "reason": "An obligation is something a person feels morally or legally bound to perform.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q4",
+          "content": {
+            "question": "You ______ check your answers carefully before submitting the exam. It is a good idea.",
+            "options": [
+              "should",
+              "mustn't",
+              "has to",
+              "shouldn't"
+            ],
+            "correctAnswer": "should",
+            "reason": "'Should' is used to give recommendations and good advice.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q5",
+          "content": {
+            "question": "Citizens ______ respect the national laws; it is an official requirement.",
+            "options": [
+              "must",
+              "shouldn't",
+              "mustn't",
+              "don't have to"
+            ],
+            "correctAnswer": "must",
+            "reason": "'Must' expresses legal obligation and rule compliance.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q6",
+          "content": {
+            "question": "You ______ cheat during school exams; it is prohibited.",
+            "options": [
+              "mustn't",
+              "should",
+              "have to",
+              "must"
+            ],
+            "correctAnswer": "mustn't",
+            "reason": "'Mustn't' expresses strict prohibition against forbidden actions.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q7",
+          "content": {
+            "question": "How did Sama's mood change after helping her younger cousin with homework?",
+            "options": [
+              "She felt overwhelmed again.",
+              "She was filled with optimism.",
+              "She decided to stay isolated.",
+              "She became angry at her neighbor."
+            ],
+            "correctAnswer": "She was filled with optimism.",
+            "reason": "Helping her cousin light up filled Sama with optimism and happiness.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q8",
+          "content": {
+            "question": "Besides extinguishing fires, what other work do firefighters carry out?",
+            "options": [
+              "Teaching students in classrooms",
+              "Rescuing people from car accidents and floods",
+              "Selling food in markets",
+              "Building roads in cities"
+            ],
+            "correctAnswer": "Rescuing people from car accidents and floods",
+            "reason": "Radwan explains that firefighters rescue people from car accidents, floods, and trapped situations.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q9",
+          "content": {
+            "question": "I ______ renew my driving licence next month because it expires soon.",
+            "options": [
+              "have to",
+              "mustn't",
+              "shouldn't",
+              "has to"
+            ],
+            "correctAnswer": "have to",
+            "reason": "'Have to' expresses an external necessity or requirement.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_q10",
+          "content": {
+            "question": "Which sentence properly expresses advice using a modal verb?",
+            "options": [
+              "You should take a shower every day in hot weather.",
+              "You must to take a shower every day.",
+              "You shouldn't taking a shower in hot weather.",
+              "You has to take a shower every day."
+            ],
+            "correctAnswer": "You should take a shower every day in hot weather.",
+            "reason": "'Should' followed by the base form of the verb correctly expresses advice.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

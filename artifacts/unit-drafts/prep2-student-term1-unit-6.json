@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:11:25.721Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep2-student-term1",
+  "sourceFilename": "English_language_prep2_t1 (1).pdf",
+  "grade": "Preparatory 2",
+  "unitNumber": 6,
+  "unitTitle": "Unit 6 Young Innovators",
+  "sourcePdfRange": {
+    "start": 87,
+    "end": 114
+  },
+  "sourceCoverage": [
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114
+  ],
+  "sourceFingerprint": "fa7c40afc1fe5bffd1c0f4eebc4dfcda8a20c7e42448b1ae33daae85cba840d0",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 6 Young Innovators",
+    "expectedRange": {
+      "start": 87,
+      "end": 114,
+      "totalPages": 28
+    },
+    "recordedCoverage": {
+      "totalPages": 28,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 28,
+      "supplementaryItems": 2,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:11:25.721Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "prep2_u6_vocab_1",
+          "content": {
+            "word": "impact",
+            "arabicMeaning": "تأثير قوي",
+            "example": "Her speech made a strong impact on the audience.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vocab_2",
+          "content": {
+            "word": "complex",
+            "arabicMeaning": "معقد",
+            "example": "Inventions do not have to be complex to be useful.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vocab_3",
+          "content": {
+            "word": "sensors",
+            "arabicMeaning": "أجهزة استشعار",
+            "example": "Biomedical engineers use sensors to help patients with movement difficulties.",
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vocab_4",
+          "content": {
+            "word": "solar-powered",
+            "arabicMeaning": "يعمل بالطاقة الشمسية",
+            "example": "She wants to design a solar-powered backpack for school.",
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vocab_5",
+          "content": {
+            "word": "water saving",
+            "arabicMeaning": "موفِّر للمياه",
+            "example": "A student created a water saving device for her town.",
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "prep2_u6_vq_1",
+          "content": {
+            "question": "What does the word 'impact' mean in the context of innovation?",
+            "options": [
+              "A strong effect or influence",
+              "A small mistake",
+              "A quiet thought",
+              "A difficult problem"
+            ],
+            "correctAnswer": "A strong effect or influence",
+            "reason": "Impact refers to the strong effect or meaningful difference something makes.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vq_2",
+          "content": {
+            "question": "Biomedical engineers use special tools like .......... to assist patients with physical challenges.",
+            "options": [
+              "sensors",
+              "maps",
+              "tunnels",
+              "glaciers"
+            ],
+            "correctAnswer": "sensors",
+            "reason": "Sensors are tools used to measure biological signals and assist patients.",
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_vq_3",
+          "content": {
+            "question": "If something has many parts and is difficult to understand, it is described as .............. .",
+            "options": [
+              "complex",
+              "simple",
+              "solar-powered",
+              "water-saving"
+            ],
+            "correctAnswer": "complex",
+            "reason": "Complex is defined as having many parts that may be difficult to understand.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "prep2_u6_gram_1",
+          "content": {
+            "rule": "First Conditional",
+            "explanation": "We use the first conditional (If + present simple, will + infinitive) to express real or possible situations in the future.",
+            "example": "If it rains tomorrow, we will stay home.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_gram_2",
+          "content": {
+            "rule": "Second Conditional",
+            "explanation": "We use the second conditional (If + past simple, would + infinitive) to express unreal or imaginary situations in the present or future.",
+            "example": "If I had wings, I would fly.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "prep2_u6_gq_1",
+          "content": {
+            "question": "If you study hard, you .............. pass the exam.",
+            "options": [
+              "will",
+              "would",
+              "passed",
+              "studying"
+            ],
+            "correctAnswer": "will",
+            "reason": "The first conditional uses Present Simple in the if-clause and 'will + infinitive' for real future outcomes.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_gq_2",
+          "content": {
+            "question": "If I .............. a plane, I would fly around the world.",
+            "options": [
+              "had",
+              "have",
+              "will have",
+              "am having"
+            ],
+            "correctAnswer": "had",
+            "reason": "The second conditional uses Past Simple ('had') in the if-clause for imaginary scenarios.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_gq_3",
+          "content": {
+            "question": "If we built a simple model, we .............. test how it works.",
+            "options": [
+              "could",
+              "will",
+              "are",
+              "can"
+            ],
+            "correctAnswer": "could",
+            "reason": "Second conditional structures use modal past forms like 'could' or 'would' in the main clause.",
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "prep2_u6_rd_passage",
+          "content": {
+            "passage": "Hany Azer is a famous Egyptian engineer who made a great impact in the world of civil engineering. He was born in Tanta, Egypt, and later moved to Germany. He worked as the chief engineer for the Berlin Main Station, one of the largest train stations in Europe. Hany Azer has a relative who works as a biomedical engineer. Together, they believe in using science and technology to help people live better lives. Biomedical engineers use special tools like sensors to help patients. These sensors can help people with problems such as poor hearing or movement difficulties. Technology like this can change lives and support those in need. Hany Azer is not only known for his buildings, but also for his support of science and young inventors. He is a role model for many students in Egypt and around the world.",
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_rd_q1",
+          "content": {
+            "question": "What major engineering achievement in Germany is Hany Azer famous for leading?",
+            "options": [
+              "Berlin Main Station",
+              "The Great Pyramids",
+              "Alexandria Library",
+              "Berlin Airport Tunnel"
+            ],
+            "correctAnswer": "Berlin Main Station",
+            "reason": "The passage states that Hany Azer worked as the chief engineer for the Berlin Main Station in Germany.",
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "prep2_u6_ls_script",
+          "content": {
+            "script": "Ahmed Zewail was one of the most important Egyptian scientists in modern history. He was born in Damanhur in 1946 and grew up in Alexandria. From a young age, he loved learning and showed great interest in science. He studied at Alexandria University. Zewail worked very hard and became a professor of chemistry at the California Institute of Technology. His most famous discovery was the femtosecond. With this new science discovery, he was able to study chemical reactions in an extremely short time, measured in femtoseconds (a femtosecond is one millionth of a billionth of a second!). This invention changed the world of chemistry and opened the door for new scientific research. Because of this great achievement, Ahmed Zewail won the Nobel Prize in Chemistry in 1999. He was the first Egyptian and Arab scientist to receive the Nobel Prize in this field.",
+            "origin": "source",
+            "sourcePdfPage": 107
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_ls_q1",
+          "content": {
+            "question": "What was Ahmed Zewail's most famous scientific discovery mentioned in the listening text?",
+            "options": [
+              "The femtosecond",
+              "Biomedical sensors",
+              "Solar pumps",
+              "Nubian code"
+            ],
+            "correctAnswer": "The femtosecond",
+            "reason": "The text explains that Zewail's most famous discovery was the femtosecond, which allowed scientists to study chemical reactions.",
+            "origin": "source",
+            "sourcePdfPage": 107
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "prep2_u6_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Zeina",
+                "text": "Did you hear about that student competition for young inventors?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Lina",
+                "text": "Yes! Our teacher said that if we brainstormed together, we might come up with a great idea.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Zeina",
+                "text": "That’s true. Last year, a student created a water-saving device. Her innovation made a big impact on her town.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Lina",
+                "text": "Impressive! If I had more time, I would design a solar-powered backpack.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "prep2_u6_game_1",
+          "content": {
+            "gameName": "Vocabulary Master",
+            "description": "Choose the word that best matches the description of solar technology.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word describes a device powered directly by energy from the sun?",
+            "options": [
+              "solar-powered",
+              "water-saving",
+              "complex",
+              "biomedical"
+            ],
+            "correctAnswer": "solar-powered",
+            "reason": "Solar-powered means operated using light and heat energy from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "prep2_u6_game_2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Select the correct verb form for imaginary situations in the second conditional.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "If I .......... a time machine, I would visit ancient Egypt.",
+            "options": [
+              "had",
+              "have",
+              "will have",
+              "am having"
+            ],
+            "correctAnswer": "had",
+            "reason": "Second conditional requires past simple tense in the if-clause.",
+            "origin": "supplementary",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "prep2_u6_test_1",
+          "content": {
+            "question": "What is the first step in turning an idea into an invention according to the text?",
+            "options": [
+              "Finding a problem",
+              "Building a model",
+              "Selling the invention",
+              "Drawing a picture"
+            ],
+            "correctAnswer": "Finding a problem",
+            "reason": "Inventors begin by looking at the world and asking what could be better, finding a problem to solve.",
+            "origin": "source",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_2",
+          "content": {
+            "question": "Why do inventors build a model or prototype of an idea?",
+            "options": [
+              "To test if the idea works",
+              "To sell it immediately",
+              "To find a problem",
+              "To win a prize"
+            ],
+            "correctAnswer": "To test if the idea works",
+            "reason": "A model is built so that inventors can test its safety and functionality.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_3",
+          "content": {
+            "question": "If it rains tomorrow, we .............. stay at home.",
+            "options": [
+              "will",
+              "would",
+              "were",
+              "had"
+            ],
+            "correctAnswer": "will",
+            "reason": "The first conditional uses Present Simple ('rains') and 'will' for possible future situations.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_4",
+          "content": {
+            "question": "If I had wings, I .............. fly to school.",
+            "options": [
+              "would",
+              "will",
+              "am",
+              "do"
+            ],
+            "correctAnswer": "would",
+            "reason": "Second conditional sentences use 'would + infinitive' in the result clause.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_5",
+          "content": {
+            "question": "In 1999, Ahmed Zewail received the Nobel Prize in which field?",
+            "options": [
+              "Chemistry",
+              "Physics",
+              "Medicine",
+              "Literature"
+            ],
+            "correctAnswer": "Chemistry",
+            "reason": "Ahmed Zewail was awarded the Nobel Prize in Chemistry for his groundbreaking research.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_6",
+          "content": {
+            "question": "What code did Ahmed Idris suggest using during the 1973 October War?",
+            "options": [
+              "The Nubian language",
+              "Hieroglyphics",
+              "Binary code",
+              "English"
+            ],
+            "correctAnswer": "The Nubian language",
+            "reason": "Ahmed Idris suggested using the unwritten Nubian language as a secret military code.",
+            "origin": "source",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_7",
+          "content": {
+            "question": "Biomedical engineers design devices such as sensors to help patients with .............. .",
+            "options": [
+              "movement difficulties",
+              "writing biographies",
+              "drawing maps",
+              "building monuments"
+            ],
+            "correctAnswer": "movement difficulties",
+            "reason": "Sensors can assist patients who face physical movement or hearing challenges.",
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_8",
+          "content": {
+            "question": "What is the most important aspect of an invention as described in the textbook?",
+            "options": [
+              "The impact it has on people",
+              "How big it is",
+              "How expensive it is",
+              "How complex it is"
+            ],
+            "correctAnswer": "The impact it has on people",
+            "reason": "The text emphasizes that an invention's value comes from its impact and how it solves problems.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_9",
+          "content": {
+            "question": "If you help me, I .............. finish faster.",
+            "options": [
+              "will",
+              "would",
+              "had",
+              "did"
+            ],
+            "correctAnswer": "will",
+            "reason": "First conditional uses Present Simple ('help') + 'will' + infinitive ('finish').",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep2_u6_test_10",
+          "content": {
+            "question": "If she studied hard, she .............. pass the exam.",
+            "options": [
+              "would",
+              "will",
+              "can",
+              "is"
+            ],
+            "correctAnswer": "would",
+            "reason": "Second conditional uses Past Simple ('studied') + 'would' + infinitive ('pass').",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

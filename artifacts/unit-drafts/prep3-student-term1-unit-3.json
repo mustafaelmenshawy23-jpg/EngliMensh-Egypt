@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:12:44.234Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "prep3-student-term1",
+  "sourceFilename": "English_language_prep3_t1 (1).pdf",
+  "grade": "Preparatory 3",
+  "unitNumber": 3,
+  "unitTitle": "Unit 3: Artificial Intelligence",
+  "sourcePdfRange": {
+    "start": 41,
+    "end": 58
+  },
+  "sourceCoverage": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "sourceFingerprint": "278996817e9d672a2e554a24baeba45fba474aa4022aaf8e16a56f1eb22f830a",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 3: Artificial Intelligence",
+    "expectedRange": {
+      "start": 41,
+      "end": 58,
+      "totalPages": 18
+    },
+    "recordedCoverage": {
+      "totalPages": 18,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 16,
+      "supplementaryItems": 11,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:12:44.234Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "artificial intelligence",
+            "arabicMeaning": "الذكاء الاصطناعي",
+            "example": "Artificial intelligence helps computers learn and make decisions.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "advanced",
+            "arabicMeaning": "متطور",
+            "example": "Some robots are very advanced and can walk and run.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "behavior",
+            "arabicMeaning": "سلوك",
+            "example": "The robot can learn from actions and change its behavior.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "v_q1",
+          "content": {
+            "question": "What does the word 'advanced' mean in the context of technology?",
+            "options": [
+              "Very simple and basic",
+              "Very modern, developed, or complex",
+              "Broken or old",
+              "Slow and quiet"
+            ],
+            "correctAnswer": "Very modern, developed, or complex",
+            "reason": "Advanced refers to technology that is highly developed and complex, not basic.",
+            "origin": "supplementary",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "v_q2",
+          "content": {
+            "question": "What is the Arabic meaning of 'artificial intelligence'?",
+            "options": [
+              "الذكاء الاصطناعي",
+              "الطاقة الشمسية",
+              "المركبات الفضائية",
+              "التجارة الالكترونية"
+            ],
+            "correctAnswer": "الذكاء الاصطناعي",
+            "reason": "Artificial intelligence translates directly to الذكاء الاصطناعي.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "v_q3",
+          "content": {
+            "question": "Which word describes the way someone or something acts or responds?",
+            "options": [
+              "Behavior",
+              "Limit",
+              "Surgery",
+              "Donation"
+            ],
+            "correctAnswer": "Behavior",
+            "reason": "Behavior is defined as the way someone or something acts or responds.",
+            "origin": "supplementary",
+            "sourcePdfPage": 44
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Future Simple Passive",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Future Simple Passive",
+            "explanation": "The future simple passive is used to describe actions that will be done in the future. Form: object + will be + past participle.",
+            "example": "The test will be corrected by the teacher.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "g_q1",
+          "content": {
+            "question": "Choose the correct passive form: 'The exam papers .................... by the teacher next week.'",
+            "options": [
+              "will check",
+              "will be checked",
+              "checked",
+              "are checking"
+            ],
+            "correctAnswer": "will be checked",
+            "reason": "The future simple passive requires 'will be' plus the past participle 'checked'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "g_q2",
+          "content": {
+            "question": "Complete the sentence: 'New medicines .................... by AI in the future.'",
+            "options": [
+              "will discover",
+              "will be discovered",
+              "discovering",
+              "discovered"
+            ],
+            "correctAnswer": "will be discovered",
+            "reason": "It is a future passive statement where medicine receives the action.",
+            "origin": "supplementary",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "g_q3",
+          "content": {
+            "question": "Identify the correct future simple passive sentence.",
+            "options": [
+              "The engineer will solve the problem.",
+              "The problem will be solved by the engineer.",
+              "The problem solved the engineer.",
+              "The problem is solving the engineer."
+            ],
+            "correctAnswer": "The problem will be solved by the engineer.",
+            "reason": "Option b correctly uses 'will be solved' to form the future passive voice.",
+            "origin": "supplementary",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_1",
+          "content": {
+            "passage": "Many people think robots and Artificial Intelligence (Al) are the same, but they are different. A robot is a machine that can move and do tasks. Some robots are very simple, like a machine in a factory that puts bottles in a box. Other robots are more advanced, like robot dogs that can walk, run, and even play with people. Al is the “brain” that can go inside a robot. Al allows the robot to make decisions, learn from actions, and change its behavior. For example, a robot vacuum cleaner with Al can learn the shape of your room and clean it better each time. Without Al, the robot can only follow basic orders. Some robots with Al are used in hospitals. They can bring medicine to patients or help during surgery. In schools, robots can help students learn new languages or solve math problems. Still, robots and Al have limits. They can’t truly understand emotions, and they often need humans to help or program them. Also, making smart robots can be very expensive. As technology improves, we will see more robots in our daily lives. But it’s important to know: not all Al is in robots, and not all robots are smart.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What is considered the 'brain' that goes inside a robot according to the text?",
+            "options": [
+              "A battery",
+              "Artificial Intelligence (AI)",
+              "A factory machine",
+              "A human emotion"
+            ],
+            "correctAnswer": "Artificial Intelligence (AI)",
+            "reason": "The text explicitly states that AI is the 'brain' that can go inside a robot.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_1",
+          "content": {
+            "script": "Adham: Have you read about how AI can help us create art and stories, Lina? Lina: Yes! AI can actually create pictures, songs, and even stories. Adham: That is fascinating. But remember, AI is just a tool, not a replacement for human creativity. Lina: Exactly, humans still control it to ensure it is used safely.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "According to the listening script, what can AI help create?",
+            "options": [
+              "Only factories",
+              "Pictures, songs, and stories",
+              "Real human emotions",
+              "Physical human bodies"
+            ],
+            "correctAnswer": "Pictures, songs, and stories",
+            "reason": "Lina mentions that AI can actually create pictures, songs, and even stories.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Eman",
+                "text": "Hi Ali, have you heard about how AI is becoming really advanced these days?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Ali",
+                "text": "Yes! I think robots with AI will be able to do many new things in the future.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Eman",
+                "text": "That's so exciting! But do you think AI will ever understand emotions like humans do?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Ali",
+                "text": "Hmm, I'm not sure. I heard that AI has limits, and understanding feelings is one of them.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocab Master",
+            "description": "Choose the correct definition for the vocabulary word.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What is the meaning of 'customize'?",
+            "options": [
+              "To stop doing something",
+              "To change something to make it the way you want",
+              "To feel sad about a failure",
+              "To run very fast"
+            ],
+            "correctAnswer": "To change something to make it the way you want",
+            "reason": "Customize means adjusting or modifying something to suit specific needs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Hero",
+            "description": "Select the correct passive form for the future sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Complete: 'Cars .................... by computers in the future.'",
+            "options": [
+              "will drive",
+              "will be driven",
+              "are driving",
+              "drove"
+            ],
+            "correctAnswer": "will be driven",
+            "reason": "The future passive requires 'will be' + past participle ('driven').",
+            "origin": "supplementary",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What is a robot according to the unit text?",
+            "options": [
+              "A machine that can move and do tasks",
+              "A human teacher at school",
+              "A living animal with feelings",
+              "A natural weather phenomenon"
+            ],
+            "correctAnswer": "A machine that can move and do tasks",
+            "reason": "A robot is defined in the text as a machine that can move and do tasks.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "Which of the following is considered a limit of AI and robots?",
+            "options": [
+              "They can understand all human emotions perfectly.",
+              "They never need humans to program them.",
+              "They can’t truly understand emotions.",
+              "They are always completely free."
+            ],
+            "correctAnswer": "They can’t truly understand emotions.",
+            "reason": "The text states that AI and robots have limits, such as not truly understanding emotions.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "Choose the correct passive structure: 'Our essays .................... next week.'",
+            "options": [
+              "will return",
+              "will be returned",
+              "returned",
+              "were returning"
+            ],
+            "correctAnswer": "will be returned",
+            "reason": "Future simple passive uses 'will be' + past participle for future actions.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "What does the word 'instantly' mean?",
+            "options": [
+              "After a very long time",
+              "Without any delay",
+              "With great difficulty",
+              "In secret"
+            ],
+            "correctAnswer": "Without any delay",
+            "reason": "Instantly means immediately or without any delay.",
+            "origin": "source",
+            "sourcePdfPage": 48
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "In the story about the school garden project, what did Zeina show when facing problems?",
+            "options": [
+              "Anger",
+              "Initiative and determination",
+              "Laziness",
+              "Indifference"
+            ],
+            "correctAnswer": "Initiative and determination",
+            "reason": "Zeina showed initiative by seeking donations and determination by not giving up.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Identify the correct active-to-passive conversion: 'The teacher will correct the test.'",
+            "options": [
+              "The test will corrected by the teacher.",
+              "The test will be corrected by the teacher.",
+              "The test is correcting by the teacher.",
+              "The test was corrected by the teacher."
+            ],
+            "correctAnswer": "The test will be corrected by the teacher.",
+            "reason": "Correct future passive formation requires 'will be corrected'.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "What is one benefit of AI in education mentioned in the unit?",
+            "options": [
+              "It replaces human teachers entirely.",
+              "It helps customize lessons for individual students.",
+              "It increases student stress.",
+              "It removes the need for schools."
+            ],
+            "correctAnswer": "It helps customize lessons for individual students.",
+            "reason": "AI helps teachers customize lessons and provide personalized support.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "What does 'climate' refer to in the context of the school garden?",
+            "options": [
+              "The usual weather in a place",
+              "The price of seeds",
+              "A type of tool",
+              "A money donation"
+            ],
+            "correctAnswer": "The usual weather in a place",
+            "reason": "Climate is defined as the usual weather in a particular place.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Complete: 'Deliveries will .................... by drones in the future.'",
+            "options": [
+              "make",
+              "be made",
+              "making",
+              "made"
+            ],
+            "correctAnswer": "be made",
+            "reason": "Future passive voice structure needs 'will be' + past participle ('made').",
+            "origin": "source",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "According to the conversation between Eman and Ali, what is true about AI?",
+            "options": [
+              "AI has no limits at all.",
+              "AI will never change any jobs.",
+              "AI is powerful but will be controlled by humans.",
+              "AI can feel true human emotions."
+            ],
+            "correctAnswer": "AI is powerful but will be controlled by humans.",
+            "reason": "Ali and Eman agree that even though AI is powerful, it will be controlled by humans for safety.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

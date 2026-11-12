@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:16:46.258Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "prep3-student-term1",
+  "sourceFilename": "English_language_prep3_t1 (1).pdf",
+  "grade": "Preparatory 3",
+  "unitNumber": 4,
+  "unitTitle": "Screen Time",
+  "sourcePdfRange": {
+    "start": 59,
+    "end": 71
+  },
+  "sourceCoverage": [
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceFingerprint": "1c0c4e45e3efb7999e8aabff8630787bc280664ac2802c0f4890d3d8881e02a5",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Screen Time",
+    "expectedRange": {
+      "start": 59,
+      "end": 71,
+      "totalPages": 13
+    },
+    "recordedCoverage": {
+      "totalPages": 13,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 27,
+      "supplementaryItems": 4,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:16:46.258Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "screen time",
+            "arabicMeaning": "وقت الشاشة",
+            "example": "Screen time means the total time a person spends looking at screens.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "entertainment",
+            "arabicMeaning": "أنشطة ترفيهية",
+            "example": "Young people should limit entertainment screen time to two hours daily.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "expert",
+            "arabicMeaning": "خبير",
+            "example": "An expert is a person who knows a lot about a subject.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "distraction",
+            "arabicMeaning": "تشتيت الانتباه",
+            "example": "Too much screen time can be a big distraction when studying.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
+          "content": {
+            "word": "eco-friendly",
+            "arabicMeaning": "صديق للبيئة",
+            "example": "The students used eco-friendly methods to grow vegetables in the garden.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-6",
+          "content": {
+            "word": "blame",
+            "arabicMeaning": "يلوم",
+            "example": "A good leader does not blame others when mistakes happen.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab-q1",
+          "content": {
+            "question": "Which word describes agricultural methods that do not harm nature?",
+            "options": [
+              "chemical",
+              "eco-friendly",
+              "harmful",
+              "stressful"
+            ],
+            "correctAnswer": "eco-friendly",
+            "reason": "Eco-friendly refers to practices that protect the natural environment.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q2",
+          "content": {
+            "question": "What is something that takes your attention away from your work?",
+            "options": [
+              "distraction",
+              "fertilizer",
+              "system",
+              "leader"
+            ],
+            "correctAnswer": "distraction",
+            "reason": "A distraction diverts focus away from the main task.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q3",
+          "content": {
+            "question": "The word 'stressed' is opposite in meaning to '...'.",
+            "options": [
+              "worried",
+              "relaxed",
+              "angry",
+              "nervous"
+            ],
+            "correctAnswer": "relaxed",
+            "reason": "Relaxed means calm and free from stress.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "gram-1",
+          "content": {
+            "rule": "Modal Verbs for Obligation, Permission, Prohibition, and Advice",
+            "explanation": "We use 'must' for obligation, 'can' and 'can't' for permission, 'mustn't' for prohibition, and 'should' / 'shouldn't' for advice.",
+            "example": "You must follow safety rules, and you shouldn't spend too much time on screens.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-2",
+          "content": {
+            "rule": "Connectors of Contrast and Balance",
+            "explanation": "We use 'While', 'Although', and 'Even though' to show contrast. We use 'On one hand' and 'On the other hand' to express balance.",
+            "example": "Although he was tired, he finished his homework.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram-q1",
+          "content": {
+            "question": "You ... make noise in the school library.",
+            "options": [
+              "must",
+              "mustn't",
+              "can",
+              "should"
+            ],
+            "correctAnswer": "mustn't",
+            "reason": "We use 'mustn't' to express prohibition.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q2",
+          "content": {
+            "question": "A: Excuse me, may I borrow your eraser? B: Of course, you ... use it.",
+            "options": [
+              "can",
+              "can't",
+              "mustn't",
+              "shouldn't"
+            ],
+            "correctAnswer": "can",
+            "reason": "We use 'can' to give permission.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q3",
+          "content": {
+            "question": "... it was raining outside, the students went out to play.",
+            "options": [
+              "Because",
+              "Although",
+              "So",
+              "On the other hand"
+            ],
+            "correctAnswer": "Although",
+            "reason": "'Although' introduces a clause of contrast.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read-p1",
+          "content": {
+            "passage": "Screen time means the total time a person spends looking at screens. These screens can include phones, computers, tablets, or TVs. Today, almost everyone uses screens for many activities. Students use laptops for homework, teenagers scroll through social media, and families watch movies on the weekend. But not all screen time is the same. Some of it is useful, like doing schoolwork or learning a new skill online. Other screen time, such as watching videos or playing games for hours, may not be helpful. Experts say young people should not spend more than two hours a day on entertainment screen time. It’s important to balance screen use with physical activity, face-to-face time with friends, and rest. Spending too much time on screens can also affect your health physically and mentally. It causes tired eyes, headaches, and trouble sleeping. Moreover, it can also make it harder to focus and may make you stressed. So, to avoid these side effects, you should take short breaks during meals, before bedtime, and while doing your homework.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read-q1",
+          "content": {
+            "question": "What is the maximum daily entertainment screen time recommended by experts for young people?",
+            "options": [
+              "One hour",
+              "Two hours",
+              "Four hours",
+              "Six hours"
+            ],
+            "correctAnswer": "Two hours",
+            "reason": "The text explicitly states experts recommend not spending more than two hours a day on entertainment screen time.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list-s1",
+          "content": {
+            "script": "Welcome to today's talk on Smart Habits for Egypt's Smart Future. Egypt is building modern smart cities and advanced transportation systems like the Monorail. To build a great future, young people need to build smart habits today. Using technology wisely helps us learn and innovate. However, spending too much screen time on games or social media causes distractions and makes us lose energy and focus. By staying focused and balancing technology with daily exercise, young people prepare to lead Egypt into a bright future.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list-q1",
+          "content": {
+            "question": "What happens when students spend too much screen time according to the talk?",
+            "options": [
+              "They gain energy",
+              "They lose energy and focus",
+              "They build modern roads",
+              "They improve their grades"
+            ],
+            "correctAnswer": "They lose energy and focus",
+            "reason": "The listening script explains that excessive screen time causes distractions and loss of energy and focus.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak-d1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Mother",
+                "text": "I think you should try to find a good balance between screen time for entertainment and other activities.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Son",
+                "text": "But mom, screens help me stay focused when I study.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Mother",
+                "text": "I see, but experts say screens can also be a big distraction if you’re not careful.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Son",
+                "text": "So, how can I make my screen time more useful?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Mother",
+                "text": "You could set specific times for studying and breaks. Also, you must avoid using screens during meals or before bedtime.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Screen Habit Master",
+            "description": "Choose the correct modal verb to complete healthy digital habit advice.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "To protect your eyes before sleep, you ... turn off notifications.",
+            "options": [
+              "should",
+              "mustn't",
+              "can't",
+              "shouldn't"
+            ],
+            "correctAnswer": "should",
+            "reason": "'Should' is used to offer helpful advice.",
+            "origin": "supplementary",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Eco Vocabulary Match",
+            "description": "Identify the word that matches environmental care definitions.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which word describes natural substances added to soil to help crops grow without harmful chemicals?",
+            "options": [
+              "distractions",
+              "natural fertilizers",
+              "smart habits",
+              "notifications"
+            ],
+            "correctAnswer": "natural fertilizers",
+            "reason": "Natural fertilizers feed plants organically without artificial chemicals.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "comp-1",
+          "content": {
+            "question": "What is the definition of screen time?",
+            "options": [
+              "Time spent playing sports outside",
+              "Total time a person spends looking at screens",
+              "Time spent reading printed storybooks",
+              "Time spent eating meals with family"
+            ],
+            "correctAnswer": "Total time a person spends looking at screens",
+            "reason": "Screen time is defined as the total time spent using electronic screens.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-2",
+          "content": {
+            "question": "The prefix 'dis-' in 'disappointed' means '...'.",
+            "options": [
+              "again",
+              "not",
+              "very",
+              "together"
+            ],
+            "correctAnswer": "not",
+            "reason": "The prefix 'dis-' conveys negation.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-3",
+          "content": {
+            "question": "You ... use a strong password to keep your device secure.",
+            "options": [
+              "must",
+              "mustn't",
+              "can't",
+              "shouldn't"
+            ],
+            "correctAnswer": "must",
+            "reason": "'Must' indicates essential obligation for online security.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-4",
+          "content": {
+            "question": "You ... post photos of someone online without asking for permission.",
+            "options": [
+              "can",
+              "should",
+              "mustn't",
+              "must"
+            ],
+            "correctAnswer": "mustn't",
+            "reason": "'Mustn't' expresses prohibition against posting photos without permission.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-5",
+          "content": {
+            "question": "On one hand, social media helps students connect. ..., it can waste time.",
+            "options": [
+              "Because",
+              "On the other hand",
+              "So",
+              "Although"
+            ],
+            "correctAnswer": "On the other hand",
+            "reason": "'On the other hand' balances two opposing perspectives.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-6",
+          "content": {
+            "question": "What did Zeina learn about being a leader when the project faced difficulties?",
+            "options": [
+              "Leadership means blaming team members",
+              "Leadership means being responsible for both successes and mistakes",
+              "Leadership means working alone",
+              "Leadership means ignoring problems"
+            ],
+            "correctAnswer": "Leadership means being responsible for both successes and mistakes",
+            "reason": "Zeina learned leadership involves taking full responsibility rather than blaming others.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-7",
+          "content": {
+            "question": "Which physical health issue is caused by excessive screen time?",
+            "options": [
+              "Tired eyes and headaches",
+              "Stronger vision",
+              "Increased muscle strength",
+              "Improved sleep"
+            ],
+            "correctAnswer": "Tired eyes and headaches",
+            "reason": "The text lists eye strain and headaches as side effects of prolonged screen use.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-8",
+          "content": {
+            "question": "Which word refers to a person who has deep knowledge about a subject?",
+            "options": [
+              "expert",
+              "distraction",
+              "fertilizer",
+              "system"
+            ],
+            "correctAnswer": "expert",
+            "reason": "An expert is someone who knows a lot about a subject.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-9",
+          "content": {
+            "question": "Students shouldn't ... noise during class.",
+            "options": [
+              "make",
+              "making",
+              "made",
+              "makes"
+            ],
+            "correctAnswer": "make",
+            "reason": "Modal verbs like 'shouldn't' are followed by the base form of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp-10",
+          "content": {
+            "question": "What action can help lower distractions while studying with digital tools?",
+            "options": [
+              "Turning off social media notifications",
+              "Playing games while studying",
+              "Using screens right before sleep",
+              "Skipping study breaks"
+            ],
+            "correctAnswer": "Turning off social media notifications",
+            "reason": "Disabling notifications prevents sudden interruptions during study sessions.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

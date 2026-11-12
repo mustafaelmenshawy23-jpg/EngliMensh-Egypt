@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:21:35.114Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary1-student-term1",
+  "sourceFilename": "English_1sec_t1 (1).pdf",
+  "grade": "Secondary 1",
+  "unitNumber": 5,
+  "unitTitle": "Using Technology at Schools",
+  "sourcePdfRange": {
+    "start": 69,
+    "end": 79
+  },
+  "sourceCoverage": [
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "sourceFingerprint": "4522d2adb0bc7428a1a62f9a489a5f03232c491211468fe4cd5a1d75e13f1785",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Using Technology at Schools",
+    "expectedRange": {
+      "start": 69,
+      "end": 79,
+      "totalPages": 11
+    },
+    "recordedCoverage": {
+      "totalPages": 11,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 18,
+      "supplementaryItems": 10,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:21:35.114Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "fluency",
+            "arabicMeaning": "طلاقة",
+            "example": "She speaks English with great fluency.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "tolerance",
+            "arabicMeaning": "تسامح",
+            "example": "Learning new languages promotes tolerance between cultures.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "anxious",
+            "arabicMeaning": "قلق",
+            "example": "He felt anxious before his first flight abroad.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v4",
+          "content": {
+            "word": "complicated",
+            "arabicMeaning": "معقد",
+            "example": "The instructions were too complicated to understand.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "What is the meaning of 'fluency'?",
+            "options": [
+              "The ability to speak easily and accurately",
+              "A feeling of worry",
+              "A type of language",
+              "A way of thinking"
+            ],
+            "correctAnswer": "The ability to speak easily and accurately",
+            "reason": "Fluency refers to the ease and accuracy of speech.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which word describes someone who is worried or nervous?",
+            "options": [
+              "Confident",
+              "Anxious",
+              "Enriching",
+              "Complicated"
+            ],
+            "correctAnswer": "Anxious",
+            "reason": "Anxious means feeling worried or nervous about something.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "If something is 'complicated', it is:",
+            "options": [
+              "Simple",
+              "Easy",
+              "Difficult to understand",
+              "Very short"
+            ],
+            "correctAnswer": "Difficult to understand",
+            "reason": "Complicated means having many parts and being hard to deal with.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Countable and Uncountable Nouns",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Countable and Uncountable Nouns",
+            "explanation": "Countable nouns can be counted (e.g., cars). Uncountable nouns cannot be counted and have only one form (e.g., money, advice).",
+            "example": "I have many friends (countable), but I need some advice (uncountable).",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "I don't have ___ homework today.",
+            "options": [
+              "many",
+              "much",
+              "a few",
+              "some"
+            ],
+            "correctAnswer": "much",
+            "reason": "Homework is an uncountable noun, so we use 'much' in negative sentences.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "How ___ milk is in the fridge?",
+            "options": [
+              "many",
+              "much",
+              "a few",
+              "some"
+            ],
+            "correctAnswer": "much",
+            "reason": "Milk is an uncountable noun, so we use 'much' in questions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "She has ___ good ideas.",
+            "options": [
+              "much",
+              "a little",
+              "many",
+              "any"
+            ],
+            "correctAnswer": "many",
+            "reason": "Ideas is a countable plural noun, so we use 'many'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Passage",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Ramy had always dreamed of traveling abroad. One summer, he finally flew to Liverpool, England. At first, he was excited, but soon he felt anxious. His biggest difficulty was that he couldn’t speak English. At the airport, he struggled to understand the officer’s questions. He only smiled and showed his passport, hoping for the best. In the city, life became more complicated. When he tried to buy a bus ticket, he couldn’t explain himself. People behind him grew impatient, and he felt embarrassed. Later, at a restaurant, he wanted chickens but accidentally received fish. That night, Ramy decided something important: he must learn English.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "Why did Ramy feel anxious at the airport?",
+            "options": [
+              "He lost his passport",
+              "He couldn't speak English",
+              "He missed his flight",
+              "He was hungry"
+            ],
+            "correctAnswer": "He couldn't speak English",
+            "reason": "The passage states his biggest difficulty was that he couldn't speak English.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Interviewer: Salma, how did you feel when you moved to Spain? Salma: It was challenging at first because I didn't know the language. Interviewer: Did you learn Spanish before moving? Salma: No, I learned it by interacting with locals and practicing every day. It helped me make friends from different cultures.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "How did Salma learn Spanish?",
+            "options": [
+              "By taking a class in Egypt",
+              "By practicing with locals in Spain",
+              "By watching movies",
+              "By reading books"
+            ],
+            "correctAnswer": "By practicing with locals in Spain",
+            "reason": "The script mentions she learned by interacting with locals and practicing every day.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Role-Play",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "If I practice English every day, will I speak it fluently?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "Yes, if you practice consistently, you will definitely improve your fluency.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Language Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Vocabulary Match",
+            "description": "Choose the correct meaning for the word.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What is the meaning of 'expanding'?",
+            "options": [
+              "Making smaller",
+              "Making larger",
+              "Staying the same",
+              "Stopping"
+            ],
+            "correctAnswer": "Making larger",
+            "reason": "Expanding means to increase in size or importance.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Grammar Quiz",
+            "description": "Select the correct quantifier.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "There are ___ apples in the basket.",
+            "options": [
+              "much",
+              "a little",
+              "some",
+              "any"
+            ],
+            "correctAnswer": "some",
+            "reason": "Apples is a countable plural noun, so 'some' is used in affirmative sentences.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 5 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "Learning a foreign language helps students become:",
+            "options": [
+              "Global citizens",
+              "Isolated",
+              "Less confident",
+              "Only local workers"
+            ],
+            "correctAnswer": "Global citizens",
+            "reason": "The text states learning a language is a key to becoming a global citizen.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "Which of these is an uncountable noun?",
+            "options": [
+              "Car",
+              "Friend",
+              "Money",
+              "Ticket"
+            ],
+            "correctAnswer": "Money",
+            "reason": "Money is an uncountable noun.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "What does 'tolerance' mean?",
+            "options": [
+              "Willingness to accept differences",
+              "Being afraid",
+              "Speaking fast",
+              "Traveling abroad"
+            ],
+            "correctAnswer": "Willingness to accept differences",
+            "reason": "Tolerance is the ability to accept different opinions or cultures.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "How ___ bags do you have?",
+            "options": [
+              "much",
+              "many",
+              "a little",
+              "any"
+            ],
+            "correctAnswer": "many",
+            "reason": "Bags is a countable noun.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "Ramy felt ___ when he couldn't explain himself.",
+            "options": [
+              "Confident",
+              "Embarrassed",
+              "Happy",
+              "Excited"
+            ],
+            "correctAnswer": "Embarrassed",
+            "reason": "The text says he felt embarrassed when he couldn't explain himself.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "Which quantifier is used with uncountable nouns in negative sentences?",
+            "options": [
+              "Many",
+              "Much",
+              "A few",
+              "Some"
+            ],
+            "correctAnswer": "Much",
+            "reason": "Much is used with uncountable nouns in negative sentences.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "What did Ramy do to improve his English?",
+            "options": [
+              "He took a class",
+              "He downloaded an app",
+              "He moved to Egypt",
+              "He stopped traveling"
+            ],
+            "correctAnswer": "He downloaded an app",
+            "reason": "The text says he downloaded a language app to practice.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "Which word means 'feeling sure of yourself'?",
+            "options": [
+              "Anxious",
+              "Complicated",
+              "Confident",
+              "Enriching"
+            ],
+            "correctAnswer": "Confident",
+            "reason": "Confident means feeling sure of your abilities.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "What is the benefit of practicing a language regularly?",
+            "options": [
+              "Better fluency",
+              "Less confidence",
+              "More confusion",
+              "Less travel"
+            ],
+            "correctAnswer": "Better fluency",
+            "reason": "The text states that regular practice improves fluency.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "Which of these is a countable noun?",
+            "options": [
+              "Advice",
+              "Information",
+              "Homework",
+              "Friend"
+            ],
+            "correctAnswer": "Friend",
+            "reason": "Friend is a countable noun.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

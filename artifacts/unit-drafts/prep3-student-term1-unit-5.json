@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:17:24.568Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep3-student-term1",
+  "sourceFilename": "English_language_prep3_t1 (1).pdf",
+  "grade": "Preparatory 3",
+  "unitNumber": 5,
+  "unitTitle": "Unit 5 Design Thinking",
+  "sourcePdfRange": {
+    "start": 72,
+    "end": 84
+  },
+  "sourceCoverage": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sourceFingerprint": "ec03fd697baba396fbd9d60725a8c0e28a0cde4c0d3c0d2a59dfa45af0392913",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 5 Design Thinking",
+    "expectedRange": {
+      "start": 72,
+      "end": 84,
+      "totalPages": 13
+    },
+    "recordedCoverage": {
+      "totalPages": 13,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 28,
+      "supplementaryItems": 5,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:17:24.568Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "prototype",
+            "arabicMeaning": "نموذج أولي",
+            "example": "Designers test a simple prototype before making the final product.",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "stylish",
+            "arabicMeaning": "أنيق",
+            "example": "Her new outfit was very stylish and comfortable.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "ideation",
+            "arabicMeaning": "توليد الأفكار",
+            "example": "Ideation is the process of coming up with many creative ideas.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "practical",
+            "arabicMeaning": "عملي",
+            "example": "Ali provided practical solutions to fix daily school problems.",
+            "origin": "source",
+            "sourcePdfPage": 84
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "dedicated",
+            "arabicMeaning": "مخلص / متفانٍ",
+            "example": "She is dedicated to her studies and completes her work on time.",
+            "origin": "source",
+            "sourcePdfPage": 80
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "agriculture",
+            "arabicMeaning": "الزراعة",
+            "example": "Farmers work in the field of agriculture to grow fresh food.",
+            "origin": "source",
+            "sourcePdfPage": 80
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What is a simple model of a design used for testing called?",
+            "options": [
+              "prototype",
+              "schedule",
+              "relationship",
+              "agriculture"
+            ],
+            "correctAnswer": "prototype",
+            "reason": "A prototype is a simple model created to test ideas before building the final design.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Which word means effective, suitable, and easy to apply in real life?",
+            "options": [
+              "crazy",
+              "practical",
+              "confused",
+              "stylish"
+            ],
+            "correctAnswer": "practical",
+            "reason": "Practical describes solutions or ideas that are useful and work well in actual situations.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Farmers work in the field of ______ to grow food for the community.",
+            "options": [
+              "industry",
+              "trade",
+              "design",
+              "agriculture"
+            ],
+            "correctAnswer": "agriculture",
+            "reason": "Agriculture refers to farming and cultivating land to produce food and crops.",
+            "origin": "source",
+            "sourcePdfPage": 80
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar & Functional Language",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Imperatives (Commands and Instructions)",
+            "explanation": "Imperatives are used to give orders, instructions, or advice. Positive imperatives start with the base form of the verb. Negative imperatives start with 'Don't' or 'Never' followed by the base verb.",
+            "example": "Don't open the window. It is very cold outside.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Sequence Adverbs",
+            "explanation": "Sequence adverbs show the order of steps in a process or project. Common words include First, Next, Then, After that, and Finally.",
+            "example": "First, identify the problem; next, brainstorm ideas; finally, test your prototype.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "______ open the window. It's very cold outside.",
+            "options": [
+              "Do",
+              "Don't",
+              "Isn't",
+              "Haven't"
+            ],
+            "correctAnswer": "Don't",
+            "reason": "Negative imperatives start with 'Don't' followed by the main verb.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Never ______ smoking. It is very harmful.",
+            "options": [
+              "tries",
+              "try",
+              "trying",
+              "tried"
+            ],
+            "correctAnswer": "try",
+            "reason": "'Never' is followed by the base form of the verb to express strong prohibition.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "______ your time and effort by planning your daily schedule.",
+            "options": [
+              "Saving",
+              "To save",
+              "Saves",
+              "Save"
+            ],
+            "correctAnswer": "Save",
+            "reason": "Positive imperative sentences begin directly with the base form of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 84
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "Omar loved designing things. One day, his teacher gave the class a challenge: “How can we make life easier for new students at school?” Omar had a few ideas, but his teacher stopped him. “First, see through their eyes,” she said. “You need to understand how they feel.” So Omar spent a day with a new student named Karim. He watched Karim closely. Karim didn’t talk much. He looked confused and nervous. He didn’t know where to sit or what to do during the break. Omar felt sorry. He remembered how hard it was when he was new. Later, Omar and his group wrote down everything they noticed. Then they brainstormed ideas. They created a “Welcome Buddy” plan, a school map for new students, and a break-time corner for newcomers. When they tested the idea, the new students smiled and felt more relaxed. Omar learned something important: Good design starts with real people—and real feelings.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What important lesson did Omar learn at the end of the project?",
+            "options": [
+              "Design is hard for some people.",
+              "People don't want help.",
+              "Good design starts with real people.",
+              "We can't design solutions."
+            ],
+            "correctAnswer": "Good design starts with real people.",
+            "reason": "The text directly states that Omar learned good design starts with real people and real feelings.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q2",
+          "content": {
+            "question": "Why did Omar spend a whole day with Karim?",
+            "options": [
+              "To draw a map of his house",
+              "To understand how new students feel",
+              "To test a phone application",
+              "To ask for extra homework"
+            ],
+            "correctAnswer": "To understand how new students feel",
+            "reason": "Omar's teacher advised him to see through new students' eyes and understand their feelings.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Welcome back to my blog! Today, our class took on a fast design sprint to make our school library cleaner and better organized. First, we defined the main problem: books were often left on the wrong shelves. Next, we started ideation and brainstormed over 50 different ideas! Some were practical, and a few were completely crazy, like building a book-sorting robot. Then, we chose a simple color-coded shelf plan, created a prototype chart, and tested it with real students. It worked amazingly well!",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "What main problem did the students try to solve during their design sprint?",
+            "options": [
+              "Books were left on the wrong shelves.",
+              "The library was too small for students.",
+              "Students did not enjoy reading books.",
+              "The school library had no internet connection."
+            ],
+            "correctAnswer": "Books were left on the wrong shelves.",
+            "reason": "In the blog script, Sara explains that their design sprint target was organizing books left on wrong shelves.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Amir",
+                "text": "Hi Magdy, do you know what design thinking is?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "Not really. What is it?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "It’s a way to solve problems by doing some steps. First, you must understand the users and what they need. This part might take some time, but it’s important.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "Okay, what comes next?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "Next, think of many ideas. Be creative and don’t worry about being perfect.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "Got it. Then?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "Then, you should make a simple model or drawing called a prototype.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "Is it okay if it’s not perfect?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "Yes! Design thinking is a process where you improve your prototype many times.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "That makes sense. What happens after making the prototype?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "Finally, test it and ask people what they think. Then, fix it and make it better. Keep it practical and useful.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Magdy",
+                "text": "Thanks! So, first understand, then brainstorm, next make a prototype, and keep improving it.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Amir",
+                "text": "Exactly! If you do this, you might make something really great.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Challenges",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Design Detective",
+            "description": "Identify the key design thinking vocabulary word from its definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What term describes the stage where designers generate a wide variety of creative ideas?",
+            "options": [
+              "ideation",
+              "agriculture",
+              "schedule",
+              "comfort"
+            ],
+            "correctAnswer": "ideation",
+            "reason": "Ideation is the brainstorming phase where developers generate multiple problem-solving concepts.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Command Center",
+            "description": "Choose the correct imperative verb to complete the instructions.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Choose the correct command form: '______ judge ideas during early brainstorming.'",
+            "options": [
+              "Don't",
+              "Doesn't",
+              "Aren't",
+              "Not"
+            ],
+            "correctAnswer": "Don't",
+            "reason": "'Don't' followed by the infinitive verb is the standard negative imperative form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_3",
+          "content": {
+            "gameName": "Sequence Master",
+            "description": "Select the correct sequence adverb to end a multi-step design process.",
+            "skill": "reading",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which adverb best introduces the last step in a design process?",
+            "options": [
+              "First",
+              "Finally",
+              "Next",
+              "To begin with"
+            ],
+            "correctAnswer": "Finally",
+            "reason": "'Finally' or 'Lastly' marks the concluding step in sequence writing.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What do designers build to quickly test their ideas before final production?",
+            "options": [
+              "prototypes",
+              "schedules",
+              "relationships",
+              "passports"
+            ],
+            "correctAnswer": "prototypes",
+            "reason": "A prototype is a simple preliminary model used to test design functionality.",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "______ hesitate. Trust your abilities when solving problems.",
+            "options": [
+              "Aren't",
+              "Doesn't",
+              "Isn't",
+              "Don't"
+            ],
+            "correctAnswer": "Don't",
+            "reason": "Negative imperatives start with 'Don't' before base verbs.",
+            "origin": "source",
+            "sourcePdfPage": 84
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "In 'See through Their Eyes', what solution did Omar's team create for new students?",
+            "options": [
+              "A Welcome Buddy plan",
+              "A new sports field",
+              "A swimming pool",
+              "A computer lab"
+            ],
+            "correctAnswer": "A Welcome Buddy plan",
+            "reason": "Omar's group created a Welcome Buddy plan, a map, and a break corner for newcomers.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "Which word means 'as good as possible' or 'ideal'?",
+            "options": [
+              "practical",
+              "perfect",
+              "crazy",
+              "confused"
+            ],
+            "correctAnswer": "perfect",
+            "reason": "The unit vocabulary matches 'perfect' with being as good as possible.",
+            "origin": "source",
+            "sourcePdfPage": 82
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "______ your time and effort by following a clear study plan.",
+            "options": [
+              "Save",
+              "Saves",
+              "Saving",
+              "To save"
+            ],
+            "correctAnswer": "Save",
+            "reason": "Imperative statements start directly with the base form of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 84
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "What is the first step in the design thinking process?",
+            "options": [
+              "Build a prototype",
+              "Understand the users and their needs",
+              "Test with real people",
+              "Draw a stylish picture"
+            ],
+            "correctAnswer": "Understand the users and their needs",
+            "reason": "Design thinking begins by empathizing with users and understanding their needs.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "Nancy discovered a love for growing food and wanted to study ______.",
+            "options": [
+              "industry",
+              "trade",
+              "design",
+              "agriculture"
+            ],
+            "correctAnswer": "agriculture",
+            "reason": "In the story 'The Impact of Growth', Nancy wanted to pursue agricultural studies.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "Which sequence adverb signals the beginning of a step-by-step procedure?",
+            "options": [
+              "Finally",
+              "Then",
+              "First",
+              "Lastly"
+            ],
+            "correctAnswer": "First",
+            "reason": "'First' or 'Firstly' introduces the initial step of a process.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "What does it mean when an idea or explanation 'makes sense'?",
+            "options": [
+              "It is difficult to understand",
+              "It is logically correct and clear",
+              "It is completely incorrect",
+              "It takes a very long time"
+            ],
+            "correctAnswer": "It is logically correct and clear",
+            "reason": "Page 82 defines 'make sense' as logically correct and easy to understand.",
+            "origin": "source",
+            "sourcePdfPage": 82
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "Zeina realized that being ______ with others helps people trust you as a leader.",
+            "options": [
+              "honest",
+              "lazy",
+              "angry",
+              "confused"
+            ],
+            "correctAnswer": "honest",
+            "reason": "Zeina realized being honest about limits builds genuine trust with others.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

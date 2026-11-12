@@ -1,171 +1,514 @@
 {
-  "generatedAt": "2026-11-12T06:52:29.496Z",
+  "generatedAt": "2026-11-12T07:10:30.658Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
   "selected": 10,
-  "cursorIndex": 63,
-  "nextCursorIndex": 81,
+  "cursorIndex": 81,
+  "nextCursorIndex": 99,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
+  "sourceExtraction": {
+    "indexedSourceBooks": 34,
+    "totalPages": null,
+    "ocrProcessedPages": 4399,
+    "ocrReliablePages": 3847,
+    "ocrUnreliablePages": 468,
+    "ocrEmptyPages": 84,
+    "ocrErrorPages": 0,
+    "pagesNeedingManualVisualReview": 4399
+  },
   "completedDrafts": 0,
   "approvedPreserved": 0,
-  "blockedSourceReview": 71,
+  "blockedSourceReview": 49,
   "excludedUnits": 0,
-  "pendingCandidates": 29,
+  "pendingCandidates": 51,
   "results": [
     {
-      "unitId": "prep1-student-term1-unit-1",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "prep2-student-term1-unit-6",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep1-student-term1-unit-2",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "prep3-student-term1-unit-2",
+      "status": "failed_validation",
+      "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.8-flash; trying another configured key.\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nlist_q1: correctAnswer \"They didn't talk face-to-face\" does not match any of the provided options: [\"They had different opinions on homework.\", \"They didn't talk face-to-face.\", \"They forgot to turn in a project.\", \"They were late for school.\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "prep1-student-term1-unit-3",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "prep3-student-term1-unit-3",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep1-student-term1-unit-5",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "prep3-student-term1-unit-4",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep1-student-term1-unit-6",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "prep3-student-term1-unit-5",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 33,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "helloplus-prep1-supplement-unit-5",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "secondary1-student-term1-unit-1",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep2-student-term1-unit-1",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "secondary1-student-term1-unit-2",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep2-student-term1-unit-2",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "secondary1-student-term1-unit-3",
+      "status": "generated_needs_review",
+      "qualityScore": 90,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep2-student-term1-unit-3",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "secondary1-student-term1-unit-4",
+      "status": "generated_needs_review",
+      "qualityScore": 90,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     {
-      "unitId": "prep2-student-term1-unit-5",
-      "status": "failed",
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+      "unitId": "secondary1-student-term1-unit-5",
+      "status": "generated_needs_review",
+      "qualityScore": 90,
+      "itemCount": 28,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     }
   ],
   "blocked": [
-    {
-      "unitId": "connectplus-primary1-supplement-unit-1",
-      "bookId": "connectplus-primary1-supplement",
-      "unitNumber": 1,
-      "title": "This is me",
-      "expectedRange": {
-        "start": 10,
-        "end": 42,
-        "totalPages": 33
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 33,
-        "validPages": 25,
-        "needsReviewPages": 7,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 7,
-      "pageEvaluations": [
-        {
-          "pdfPage": 11,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 12,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 21,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 22,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 26,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 32,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 37,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 41,
-          "status": "blocked",
-          "score": 60,
-          "issues": [
-            "Contains 2 abnormally long unbroken word(s) (e.g. \"cesjavricnuetanwenecasvaseaauq...\", length 107)"
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.11: Repeated substring pattern detected: \"............\"",
-        "PDF p.12: Repeated substring pattern detected: \"............\"",
-        "PDF p.21: Repeated substring pattern detected: \"............\"",
-        "PDF p.22: Repeated substring pattern detected: \"............\"",
-        "PDF p.26: Repeated substring pattern detected: \"............\"",
-        "PDF p.32: Repeated substring pattern detected: \"...............\"",
-        "PDF p.37: Repeated substring pattern detected: \"............\"",
-        "PDF p.41: Contains 2 abnormally long unbroken word(s) (e.g. \"cesjavricnuetanwenecasvaseaauq...\", length 107)"
-      ]
-    },
     {
       "unitId": "connectplus-primary1-supplement-unit-6",
       "bookId": "connectplus-primary1-supplement",
@@ -410,354 +753,6 @@
       ]
     },
     {
-      "unitId": "connectplus-primary2-supplement-unit-2",
-      "bookId": "connectplus-primary2-supplement",
-      "unitNumber": 2,
-      "title": "Let’s get fit!",
-      "expectedRange": {
-        "start": 56,
-        "end": 86,
-        "totalPages": 31
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 31,
-        "validPages": 21,
-        "needsReviewPages": 9,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 9,
-      "pageEvaluations": [
-        {
-          "pdfPage": 56,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"ووووووو\"",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 58,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 61,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 62,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 66,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 67,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 70,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (18 chars, 4 words)"
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 80,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"ceeceidaneceveveeeeseepevipase...\", length 134)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 86,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.56: Excessive character repetition detected: \"ووووووو\"",
-        "PDF p.56: Repeated substring pattern detected: \"...............\"",
-        "PDF p.58: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.61: Repeated substring pattern detected: \"............\"",
-        "PDF p.62: Repeated substring pattern detected: \"............\"",
-        "PDF p.66: Repeated substring pattern detected: \"...............\"",
-        "PDF p.67: Repeated substring pattern detected: \"...............\"",
-        "PDF p.70: Page content is unusually short (18 chars, 4 words)",
-        "PDF p.74: Repeated substring pattern detected: \"............\"",
-        "PDF p.80: Contains 1 abnormally long unbroken word(s) (e.g. \"ceeceidaneceveveeeeseepevipase...\", length 134)",
-        "PDF p.80: Repeated substring pattern detected: \"............\"",
-        "PDF p.86: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
-      "unitId": "connectplus-primary2-supplement-unit-3",
-      "bookId": "connectplus-primary2-supplement",
-      "unitNumber": 3,
-      "title": "A day in my life",
-      "expectedRange": {
-        "start": 87,
-        "end": 127,
-        "totalPages": 41
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 41,
-        "validPages": 30,
-        "needsReviewPages": 10,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 10,
-      "pageEvaluations": [
-        {
-          "pdfPage": 93,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" 0 0 0 0\""
-          ]
-        },
-        {
-          "pdfPage": 94,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 95,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 98,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 103,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 104,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 109,
-          "status": "blocked",
-          "score": 80,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"coetstestavouscuvecsrottebebse...\", length 66)"
-          ]
-        },
-        {
-          "pdfPage": 117,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (20 chars, 3 words)"
-          ]
-        },
-        {
-          "pdfPage": 119,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 121,
-          "status": "needs_review",
-          "score": 70,
-          "issues": [
-            "Page content is unusually short (21 chars, 5 words)"
-          ]
-        },
-        {
-          "pdfPage": 127,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.93: Repeated substring pattern detected: \" 0 0 0 0\"",
-        "PDF p.94: Repeated substring pattern detected: \"..........\"",
-        "PDF p.95: Repeated substring pattern detected: \"...............\"",
-        "PDF p.98: Repeated substring pattern detected: \"............\"",
-        "PDF p.103: Repeated substring pattern detected: \"............\"",
-        "PDF p.104: Repeated substring pattern detected: \"...............\"",
-        "PDF p.109: Contains 1 abnormally long unbroken word(s) (e.g. \"coetstestavouscuvecsrottebebse...\", length 66)",
-        "PDF p.117: Page content is unusually short (20 chars, 3 words)",
-        "PDF p.119: Repeated substring pattern detected: \"..........\"",
-        "PDF p.121: Page content is unusually short (21 chars, 5 words)",
-        "PDF p.127: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
-      "unitId": "connectplus-primary2-supplement-unit-5",
-      "bookId": "connectplus-primary2-supplement",
-      "unitNumber": 5,
-      "title": "A boat trip",
-      "expectedRange": {
-        "start": 158,
-        "end": 206,
-        "totalPages": 49
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 49,
-        "validPages": 41,
-        "needsReviewPages": 7,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 7,
-      "pageEvaluations": [
-        {
-          "pdfPage": 161,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 168,
-          "status": "blocked",
-          "score": 80,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"Cesebentnneemnestoanegeenenset...\", length 51)"
-          ]
-        },
-        {
-          "pdfPage": 177,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 182,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 189,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"000000\"",
-            "Repeated substring pattern detected: \"04040404\""
-          ]
-        },
-        {
-          "pdfPage": 197,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"ا ا ا ا ا \""
-          ]
-        },
-        {
-          "pdfPage": 201,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 206,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"------------\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.161: Repeated substring pattern detected: \"...............\"",
-        "PDF p.168: Contains 1 abnormally long unbroken word(s) (e.g. \"Cesebentnneemnestoanegeenenset...\", length 51)",
-        "PDF p.177: Excessive character repetition detected: \"00000\"",
-        "PDF p.182: Repeated substring pattern detected: \"...............\"",
-        "PDF p.189: Excessive character repetition detected: \"000000\"",
-        "PDF p.189: Repeated substring pattern detected: \"04040404\"",
-        "PDF p.197: Repeated substring pattern detected: \"ا ا ا ا ا \"",
-        "PDF p.201: Repeated substring pattern detected: \"............\"",
-        "PDF p.206: Repeated substring pattern detected: \"------------\""
-      ]
-    },
-    {
       "unitId": "connectplus-primary2-supplement-unit-6",
       "bookId": "connectplus-primary2-supplement",
       "unitNumber": 6,
@@ -772,13 +767,13 @@
       "actualRange": {
         "foundPages": 112,
         "validPages": 91,
-        "needsReviewPages": 19,
-        "blockedPages": 2
+        "needsReviewPages": 20,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 19,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 20,
       "pageEvaluations": [
         {
           "pdfPage": 218,
@@ -882,7 +877,7 @@
         },
         {
           "pdfPage": 306,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"HSSEEHESSEESEDEEEDESSEOESHTESE...\", length 43)",
@@ -1145,13 +1140,13 @@
       "actualRange": {
         "foundPages": 46,
         "validPages": 26,
-        "needsReviewPages": 14,
-        "blockedPages": 6
+        "needsReviewPages": 16,
+        "blockedPages": 4
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 6,
-      "needsReviewPageCount": 14,
+      "blockedPageCount": 4,
+      "needsReviewPageCount": 16,
       "pageEvaluations": [
         {
           "pdfPage": 14,
@@ -1230,7 +1225,7 @@
         },
         {
           "pdfPage": 31,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \"Sapmsenwancnpeneianccertestars...\", length 45)",
@@ -1300,7 +1295,7 @@
         },
         {
           "pdfPage": 54,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"KeLeARERUNOosATESeRaneeranesne...\", length 75)"
@@ -1362,147 +1357,6 @@
       ]
     },
     {
-      "unitId": "connectplus-primary3-supplement-unit-2",
-      "bookId": "connectplus-primary3-supplement",
-      "unitNumber": 2,
-      "title": "Body matters",
-      "expectedRange": {
-        "start": 58,
-        "end": 89,
-        "totalPages": 32
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 32,
-        "validPages": 20,
-        "needsReviewPages": 11,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 11,
-      "pageEvaluations": [
-        {
-          "pdfPage": 58,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"ccccc\"",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 60,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 61,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 62,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"ccccc\"",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 66,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 69,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"mmmmm\""
-          ]
-        },
-        {
-          "pdfPage": 72,
-          "status": "blocked",
-          "score": 80,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"seeesecaeeeseneerensenseteneun...\", length 75)"
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"ا ا ا ا \""
-          ]
-        },
-        {
-          "pdfPage": 75,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"1 1 1 1 1 \""
-          ]
-        },
-        {
-          "pdfPage": 82,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"mmmmm\"",
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 84,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 88,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.58: Excessive character repetition detected: \"ccccc\"",
-        "PDF p.58: Repeated substring pattern detected: \"............\"",
-        "PDF p.60: Repeated substring pattern detected: \"..........\"",
-        "PDF p.61: Repeated substring pattern detected: \"..........\"",
-        "PDF p.62: Excessive character repetition detected: \"ccccc\"",
-        "PDF p.62: Repeated substring pattern detected: \"............\"",
-        "PDF p.66: Repeated substring pattern detected: \"........\"",
-        "PDF p.69: Excessive character repetition detected: \"mmmmm\"",
-        "PDF p.72: Contains 1 abnormally long unbroken word(s) (e.g. \"seeesecaeeeseneerensenseteneun...\", length 75)",
-        "PDF p.74: Repeated substring pattern detected: \"ا ا ا ا \"",
-        "PDF p.75: Repeated substring pattern detected: \"1 1 1 1 1 \"",
-        "PDF p.82: Excessive character repetition detected: \"mmmmm\"",
-        "PDF p.82: Repeated substring pattern detected: \"..........\"",
-        "PDF p.84: Repeated substring pattern detected: \"..........\"",
-        "PDF p.88: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
       "unitId": "connectplus-primary3-supplement-unit-3",
       "bookId": "connectplus-primary3-supplement",
       "unitNumber": 3,
@@ -1517,13 +1371,13 @@
       "actualRange": {
         "foundPages": 39,
         "validPages": 23,
-        "needsReviewPages": 5,
-        "blockedPages": 11
+        "needsReviewPages": 11,
+        "blockedPages": 5
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 11,
-      "needsReviewPageCount": 5,
+      "blockedPageCount": 5,
+      "needsReviewPageCount": 11,
       "pageEvaluations": [
         {
           "pdfPage": 93,
@@ -1573,7 +1427,7 @@
         },
         {
           "pdfPage": 105,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"EEESOEEESESSRSSEESISSSNDESSSEB...\", length 61)",
@@ -1599,7 +1453,7 @@
         },
         {
           "pdfPage": 111,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"taesoesseneeanersbeverssedssec...\", length 163)"
@@ -1626,7 +1480,7 @@
         },
         {
           "pdfPage": 115,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"¥bwabcdewssuecweuesmesecdceeue...\", length 63)"
@@ -1644,7 +1498,7 @@
         },
         {
           "pdfPage": 121,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 60,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \"‎Saenomunscrproprvrosdosececse...\", length 102)"
@@ -1652,7 +1506,7 @@
         },
         {
           "pdfPage": 122,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"gepscrapncapwosaesspavcmoosons...\", length 96)",
@@ -1661,7 +1515,7 @@
         },
         {
           "pdfPage": 123,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 60,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \"euceseNensdsessnegsioneesseede...\", length 55)"
@@ -1716,13 +1570,13 @@
       "actualRange": {
         "foundPages": 38,
         "validPages": 24,
-        "needsReviewPages": 8,
-        "blockedPages": 6
+        "needsReviewPages": 12,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 6,
-      "needsReviewPageCount": 8,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 12,
       "pageEvaluations": [
         {
           "pdfPage": 132,
@@ -1778,7 +1632,7 @@
         },
         {
           "pdfPage": 147,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"EAEREEHARERIAIEIASEEEAEEEHSAEE...\", length 77)",
@@ -1787,7 +1641,7 @@
         },
         {
           "pdfPage": 148,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"AEOOAINIDSEREONEOTESSSOOEOININ...\", length 55)"
@@ -1811,7 +1665,7 @@
         },
         {
           "pdfPage": 155,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"‎APOSESORNSARORSASARIAPNSNRRAA...\", length 41)",
@@ -1829,7 +1683,7 @@
         },
         {
           "pdfPage": 165,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"Smanshsnendanennokeubssnsnnccb...\", length 53)",
@@ -1885,17 +1739,17 @@
       "actualRange": {
         "foundPages": 37,
         "validPages": 20,
-        "needsReviewPages": 12,
-        "blockedPages": 5
+        "needsReviewPages": 15,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 5,
-      "needsReviewPageCount": 12,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 15,
       "pageEvaluations": [
         {
           "pdfPage": 167,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \"shegegvarsreveiaverevcasenetoc...\", length 69)",
@@ -1938,7 +1792,7 @@
         },
         {
           "pdfPage": 180,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"auaEagetegennaaasseeswenensere...\", length 62)",
@@ -1965,7 +1819,7 @@
         },
         {
           "pdfPage": 186,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"‎peawraneesneasestnsnertareser...\", length 52)"
@@ -2085,13 +1939,13 @@
       "actualRange": {
         "foundPages": 133,
         "validPages": 77,
-        "needsReviewPages": 44,
-        "blockedPages": 12
+        "needsReviewPages": 47,
+        "blockedPages": 9
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 12,
-      "needsReviewPageCount": 44,
+      "blockedPageCount": 9,
+      "needsReviewPageCount": 47,
       "pageEvaluations": [
         {
           "pdfPage": 205,
@@ -2103,7 +1957,7 @@
         },
         {
           "pdfPage": 207,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"arsaebiooscrasedpoeedeuelectas...\", length 85)",
@@ -2490,7 +2344,7 @@
         },
         {
           "pdfPage": 324,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"___“rssseseusnnneaneneneenaene...\", length 116)",
@@ -2499,7 +2353,7 @@
         },
         {
           "pdfPage": 325,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"deESENOeRSceceVervacHeevocerec...\", length 59)",
@@ -2708,13 +2562,13 @@
       "actualRange": {
         "foundPages": 16,
         "validPages": 12,
-        "needsReviewPages": 2,
-        "blockedPages": 2
+        "needsReviewPages": 3,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 2,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 3,
       "pageEvaluations": [
         {
           "pdfPage": 84,
@@ -2734,7 +2588,7 @@
         },
         {
           "pdfPage": 89,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"ceeananaweeennanaeceuaaaaeuee....\", length 41)",
@@ -2777,13 +2631,13 @@
       "actualRange": {
         "foundPages": 170,
         "validPages": 97,
-        "needsReviewPages": 67,
-        "blockedPages": 6
+        "needsReviewPages": 70,
+        "blockedPages": 3
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 6,
-      "needsReviewPageCount": 67,
+      "blockedPageCount": 3,
+      "needsReviewPageCount": 70,
       "pageEvaluations": [
         {
           "pdfPage": 190,
@@ -3140,7 +2994,7 @@
         },
         {
           "pdfPage": 280,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 60,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \"ittesttetserenssesvavannnnsave...\", length 122)"
@@ -3148,7 +3002,7 @@
         },
         {
           "pdfPage": 299,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \"‎eneseseeseeneesecerecceescoon...\", length 49)",
@@ -3240,7 +3094,7 @@
         },
         {
           "pdfPage": 323,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"seeesenenaretatesenecccsertsse...\", length 44)",
@@ -3517,17 +3371,17 @@
       "actualRange": {
         "foundPages": 18,
         "validPages": 9,
-        "needsReviewPages": 3,
-        "blockedPages": 6
+        "needsReviewPages": 5,
+        "blockedPages": 4
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 6,
-      "needsReviewPageCount": 3,
+      "blockedPageCount": 4,
+      "needsReviewPageCount": 5,
       "pageEvaluations": [
         {
           "pdfPage": 8,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 60)",
@@ -3556,7 +3410,7 @@
         },
         {
           "pdfPage": 12,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 255)",
@@ -3653,17 +3507,17 @@
       "actualRange": {
         "foundPages": 15,
         "validPages": 6,
-        "needsReviewPages": 4,
-        "blockedPages": 5
+        "needsReviewPages": 5,
+        "blockedPages": 4
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 5,
-      "needsReviewPageCount": 4,
+      "blockedPageCount": 4,
+      "needsReviewPageCount": 5,
       "pageEvaluations": [
         {
           "pdfPage": 27,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 238)",
@@ -3785,17 +3639,17 @@
       "actualRange": {
         "foundPages": 20,
         "validPages": 9,
-        "needsReviewPages": 5,
-        "blockedPages": 6
+        "needsReviewPages": 6,
+        "blockedPages": 5
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 6,
-      "needsReviewPageCount": 5,
+      "blockedPageCount": 5,
+      "needsReviewPageCount": 6,
       "pageEvaluations": [
         {
           "pdfPage": 43,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 238)",
@@ -3939,13 +3793,13 @@
       "actualRange": {
         "foundPages": 16,
         "validPages": 4,
-        "needsReviewPages": 4,
-        "blockedPages": 8
+        "needsReviewPages": 10,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 8,
-      "needsReviewPageCount": 4,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 10,
       "pageEvaluations": [
         {
           "pdfPage": 62,
@@ -3959,7 +3813,7 @@
         },
         {
           "pdfPage": 63,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 236)",
@@ -3968,7 +3822,7 @@
         },
         {
           "pdfPage": 64,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 68)",
@@ -3977,7 +3831,7 @@
         },
         {
           "pdfPage": 65,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
@@ -3986,7 +3840,7 @@
         },
         {
           "pdfPage": 66,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 148)",
@@ -4043,7 +3897,7 @@
         },
         {
           "pdfPage": 75,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 207)",
@@ -4052,7 +3906,7 @@
         },
         {
           "pdfPage": 76,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"VŏŖƱǷƆűȪϒȣƼňďŇȇƞďǣȪϒďŇƼȇǷϒǠƞďň...\", length 49)"
@@ -4104,17 +3958,17 @@
       "actualRange": {
         "foundPages": 15,
         "validPages": 6,
-        "needsReviewPages": 2,
-        "blockedPages": 7
+        "needsReviewPages": 4,
+        "blockedPages": 5
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 7,
-      "needsReviewPageCount": 2,
+      "blockedPageCount": 5,
+      "needsReviewPageCount": 4,
       "pageEvaluations": [
         {
           "pdfPage": 79,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 237)",
@@ -4189,7 +4043,7 @@
         },
         {
           "pdfPage": 91,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"VŏŖƱǷƆűȪϒȣƼňďŇȇƞďǣȪϒďŇƼȇǷϒƱďǷȇ...\", length 44)"
@@ -4234,13 +4088,13 @@
       "actualRange": {
         "foundPages": 22,
         "validPages": 13,
-        "needsReviewPages": 1,
-        "blockedPages": 8
+        "needsReviewPages": 6,
+        "blockedPages": 3
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 8,
-      "needsReviewPageCount": 1,
+      "blockedPageCount": 3,
+      "needsReviewPageCount": 6,
       "pageEvaluations": [
         {
           "pdfPage": 95,
@@ -4252,7 +4106,7 @@
         },
         {
           "pdfPage": 100,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 93)",
@@ -4261,7 +4115,7 @@
         },
         {
           "pdfPage": 101,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
@@ -4280,7 +4134,7 @@
         },
         {
           "pdfPage": 104,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 243)",
@@ -4299,7 +4153,7 @@
         },
         {
           "pdfPage": 106,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 41)",
@@ -4308,7 +4162,7 @@
         },
         {
           "pdfPage": 107,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 41)",
@@ -4525,13 +4379,13 @@
       "actualRange": {
         "foundPages": 153,
         "validPages": 80,
-        "needsReviewPages": 69,
-        "blockedPages": 4
+        "needsReviewPages": 72,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 4,
-      "needsReviewPageCount": 69,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 72,
       "pageEvaluations": [
         {
           "pdfPage": 138,
@@ -4625,7 +4479,7 @@
         },
         {
           "pdfPage": 158,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 60,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \"It'stheforcethatmakesleavesfol...\", length 43)"
@@ -4800,7 +4654,7 @@
         },
         {
           "pdfPage": 209,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \"Sbersyrzesennrnnrnnteunessypuo...\", length 45)",
@@ -4978,7 +4832,7 @@
         },
         {
           "pdfPage": 252,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"becerseusnatentenpeeessesceeet...\", length 44)",
@@ -5238,120 +5092,6 @@
         "PDF p.278: Excessive character repetition detected: \"0000000000\"",
         "PDF p.278: Repeated substring pattern detected: \"0000000000\"",
         "PDF p.279: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "primary6-student-term1-unit-1",
-      "bookId": "primary6-student-term1",
-      "unitNumber": 1,
-      "title": "Amazing Places in Egypt",
-      "expectedRange": {
-        "start": 7,
-        "end": 23,
-        "totalPages": 17
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 17,
-        "validPages": 8,
-        "needsReviewPages": 8,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 8,
-      "pageEvaluations": [
-        {
-          "pdfPage": 9,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"EEEEEEEEEE\"",
-            "Repeated substring pattern detected: \"EEEEEEEEEEEEEEE\""
-          ]
-        },
-        {
-          "pdfPage": 10,
-          "status": "needs_review",
-          "score": 80,
-          "issues": [
-            "Page content is unusually short (25 chars, 4 words)"
-          ]
-        },
-        {
-          "pdfPage": 12,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 13,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"OOOOOO\"",
-            "Repeated substring pattern detected: \"e ee ee ee e\""
-          ]
-        },
-        {
-          "pdfPage": 14,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 15,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"OIOSOSOOOOTOSOOTOOOeOOTOSOOOSO...\", length 46)",
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 17,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 19,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 22,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.9: Excessive character repetition detected: \"EEEEEEEEEE\"",
-        "PDF p.9: Repeated substring pattern detected: \"EEEEEEEEEEEEEEE\"",
-        "PDF p.10: Page content is unusually short (25 chars, 4 words)",
-        "PDF p.12: Repeated substring pattern detected: \"............\"",
-        "PDF p.13: Excessive character repetition detected: \"OOOOOO\"",
-        "PDF p.13: Repeated substring pattern detected: \"e ee ee ee e\"",
-        "PDF p.14: Repeated substring pattern detected: \"............\"",
-        "PDF p.15: Contains 1 abnormally long unbroken word(s) (e.g. \"OIOSOSOOOOTOSOOTOOOeOOTOSOOOSO...\", length 46)",
-        "PDF p.15: Excessive character repetition detected: \"00000\"",
-        "PDF p.17: Repeated substring pattern detected: \"...............\"",
-        "PDF p.19: Repeated substring pattern detected: \"..........\"",
-        "PDF p.22: Repeated substring pattern detected: \"...............\""
       ]
     },
     {
@@ -5641,13 +5381,13 @@
       "actualRange": {
         "foundPages": 157,
         "validPages": 102,
-        "needsReviewPages": 48,
-        "blockedPages": 7
+        "needsReviewPages": 50,
+        "blockedPages": 5
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 7,
-      "needsReviewPageCount": 48,
+      "blockedPageCount": 5,
+      "needsReviewPageCount": 50,
       "pageEvaluations": [
         {
           "pdfPage": 134,
@@ -5888,7 +5628,7 @@
         },
         {
           "pdfPage": 238,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"saeneennneonenenvtunsiansvesen...\", length 51)",
@@ -5931,7 +5671,7 @@
         },
         {
           "pdfPage": 248,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \"‎sccsseveunausssasancscavanusc...\", length 48)",
@@ -6433,745 +6173,6 @@
       ]
     },
     {
-      "unitId": "helloplus-prep1-supplement-unit-2",
-      "bookId": "helloplus-prep1-supplement",
-      "unitNumber": 2,
-      "title": "The world of work",
-      "expectedRange": {
-        "start": 48,
-        "end": 90,
-        "totalPages": 43
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 43,
-        "validPages": 21,
-        "needsReviewPages": 21,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 21,
-      "pageEvaluations": [
-        {
-          "pdfPage": 48,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"bbcbannsessinsecousscstcetcsso...\", length 55)",
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 50,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 51,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 52,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 55,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"ccccc\"",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 56,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 57,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 60,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 61,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 63,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 65,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 67,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 71,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 72,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 73,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 76,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 78,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 80,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 85,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 86,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 89,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.48: Contains 1 abnormally long unbroken word(s) (e.g. \"bbcbannsessinsecousscstcetcsso...\", length 55)",
-        "PDF p.48: Repeated substring pattern detected: \"..........\"",
-        "PDF p.50: Repeated substring pattern detected: \"............\"",
-        "PDF p.51: Repeated substring pattern detected: \"............\"",
-        "PDF p.52: Repeated substring pattern detected: \"............\"",
-        "PDF p.55: Excessive character repetition detected: \"ccccc\"",
-        "PDF p.55: Repeated substring pattern detected: \"............\"",
-        "PDF p.56: Repeated substring pattern detected: \"..........\"",
-        "PDF p.57: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.60: Repeated substring pattern detected: \"............\"",
-        "PDF p.61: Repeated substring pattern detected: \"............\"",
-        "PDF p.63: Repeated substring pattern detected: \"..........\"",
-        "PDF p.65: Repeated substring pattern detected: \"............\"",
-        "PDF p.67: Repeated substring pattern detected: \"...............\"",
-        "PDF p.71: Repeated substring pattern detected: \"............\"",
-        "PDF p.72: Repeated substring pattern detected: \"............\"",
-        "PDF p.73: Repeated substring pattern detected: \"............\"",
-        "PDF p.74: Repeated substring pattern detected: \"............\"",
-        "PDF p.76: Repeated substring pattern detected: \"............\"",
-        "PDF p.78: Repeated substring pattern detected: \"..........\"",
-        "PDF p.80: Repeated substring pattern detected: \"............\"",
-        "PDF p.85: Repeated substring pattern detected: \"............\"",
-        "PDF p.86: Repeated substring pattern detected: \"..........\"",
-        "PDF p.89: Repeated substring pattern detected: \"..........\""
-      ]
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-3",
-      "bookId": "helloplus-prep1-supplement",
-      "unitNumber": 3,
-      "title": "Activities",
-      "expectedRange": {
-        "start": 91,
-        "end": 159,
-        "totalPages": 69
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 69,
-        "validPages": 37,
-        "needsReviewPages": 31,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 31,
-      "pageEvaluations": [
-        {
-          "pdfPage": 92,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 95,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 99,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 100,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 101,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"—————\""
-          ]
-        },
-        {
-          "pdfPage": 103,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 104,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 108,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 109,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 111,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 119,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 120,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 121,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 122,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 124,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 126,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 131,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 132,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"ssssssssss\"",
-            "Repeated substring pattern detected: \"ssssssssss\""
-          ]
-        },
-        {
-          "pdfPage": 134,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 136,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 139,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 144,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 145,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 146,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 147,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 148,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"1111111\""
-          ]
-        },
-        {
-          "pdfPage": 150,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 151,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 152,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"ccsssscsssssssnnssetssetsvesse...\", length 53)",
-            "Excessive character repetition detected: \"sssssss\""
-          ]
-        },
-        {
-          "pdfPage": 154,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 157,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 158,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.92: Repeated substring pattern detected: \"..........\"",
-        "PDF p.95: Repeated substring pattern detected: \"........\"",
-        "PDF p.99: Repeated substring pattern detected: \"............\"",
-        "PDF p.100: Repeated substring pattern detected: \"............\"",
-        "PDF p.101: Excessive character repetition detected: \"—————\"",
-        "PDF p.103: Repeated substring pattern detected: \"..........\"",
-        "PDF p.104: Repeated substring pattern detected: \"............\"",
-        "PDF p.108: Repeated substring pattern detected: \"..........\"",
-        "PDF p.109: Repeated substring pattern detected: \"............\"",
-        "PDF p.111: Repeated substring pattern detected: \"..........\"",
-        "PDF p.119: Repeated substring pattern detected: \"..........\"",
-        "PDF p.120: Repeated substring pattern detected: \"............\"",
-        "PDF p.121: Repeated substring pattern detected: \"..........\"",
-        "PDF p.122: Repeated substring pattern detected: \"............\"",
-        "PDF p.124: Repeated substring pattern detected: \"............\"",
-        "PDF p.126: Repeated substring pattern detected: \"..........\"",
-        "PDF p.131: Repeated substring pattern detected: \"............\"",
-        "PDF p.132: Excessive character repetition detected: \"ssssssssss\"",
-        "PDF p.132: Repeated substring pattern detected: \"ssssssssss\"",
-        "PDF p.134: Repeated substring pattern detected: \"............\"",
-        "PDF p.136: Repeated substring pattern detected: \"........\"",
-        "PDF p.139: Repeated substring pattern detected: \"...............\"",
-        "PDF p.144: Repeated substring pattern detected: \"..........\"",
-        "PDF p.145: Repeated substring pattern detected: \"............\"",
-        "PDF p.146: Repeated substring pattern detected: \"..........\"",
-        "PDF p.147: Repeated substring pattern detected: \"..........\"",
-        "PDF p.148: Excessive character repetition detected: \"1111111\"",
-        "PDF p.150: Repeated substring pattern detected: \"..........\"",
-        "PDF p.151: Repeated substring pattern detected: \"............\"",
-        "PDF p.152: Contains 1 abnormally long unbroken word(s) (e.g. \"ccsssscsssssssnnssetssetsvesse...\", length 53)",
-        "PDF p.152: Excessive character repetition detected: \"sssssss\"",
-        "PDF p.154: Repeated substring pattern detected: \"............\"",
-        "PDF p.157: Repeated substring pattern detected: \"............\"",
-        "PDF p.158: Repeated substring pattern detected: \"..........\""
-      ]
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-4",
-      "bookId": "helloplus-prep1-supplement",
-      "unitNumber": 4,
-      "title": "Shopping well",
-      "expectedRange": {
-        "start": 160,
-        "end": 195,
-        "totalPages": 36
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 36,
-        "validPages": 18,
-        "needsReviewPages": 17,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 17,
-      "pageEvaluations": [
-        {
-          "pdfPage": 160,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 162,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 163,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 168,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 169,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 170,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 171,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \".......cnecssinnsnsentsensinen...\", length 56)",
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 173,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 174,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 175,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 178,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 179,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 181,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 184,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 185,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 187,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 194,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 195,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.160: Repeated substring pattern detected: \"..........\"",
-        "PDF p.162: Repeated substring pattern detected: \"...............\"",
-        "PDF p.163: Repeated substring pattern detected: \"............\"",
-        "PDF p.168: Repeated substring pattern detected: \"............\"",
-        "PDF p.169: Repeated substring pattern detected: \"............\"",
-        "PDF p.170: Repeated substring pattern detected: \"...............\"",
-        "PDF p.171: Contains 1 abnormally long unbroken word(s) (e.g. \".......cnecssinnsnsentsensinen...\", length 56)",
-        "PDF p.171: Repeated substring pattern detected: \"..........\"",
-        "PDF p.173: Repeated substring pattern detected: \"..........\"",
-        "PDF p.174: Repeated substring pattern detected: \"............\"",
-        "PDF p.175: Repeated substring pattern detected: \"..........\"",
-        "PDF p.178: Repeated substring pattern detected: \"............\"",
-        "PDF p.179: Repeated substring pattern detected: \"...............\"",
-        "PDF p.181: Repeated substring pattern detected: \"............\"",
-        "PDF p.184: Repeated substring pattern detected: \"............\"",
-        "PDF p.185: Repeated substring pattern detected: \"............\"",
-        "PDF p.187: Repeated substring pattern detected: \"..........\"",
-        "PDF p.194: Repeated substring pattern detected: \"..........\"",
-        "PDF p.195: Repeated substring pattern detected: \"..........\""
-      ]
-    },
-    {
       "unitId": "helloplus-prep1-supplement-unit-6",
       "bookId": "helloplus-prep1-supplement",
       "unitNumber": 6,
@@ -7186,13 +6187,13 @@
       "actualRange": {
         "foundPages": 166,
         "validPages": 72,
-        "needsReviewPages": 91,
-        "blockedPages": 3
+        "needsReviewPages": 92,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 91,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 92,
       "pageEvaluations": [
         {
           "pdfPage": 266,
@@ -7383,7 +6384,7 @@
         },
         {
           "pdfPage": 315,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"meeenenennnaeaheennewanrarenet...\", length 62)"
@@ -8067,98 +7068,6 @@
       ]
     },
     {
-      "unitId": "prep2-student-term1-unit-4",
-      "bookId": "prep2-student-term1",
-      "unitNumber": 4,
-      "title": "Expression",
-      "expectedRange": {
-        "start": 58,
-        "end": 71,
-        "totalPages": 14
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 14,
-        "validPages": 7,
-        "needsReviewPages": 6,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 6,
-      "pageEvaluations": [
-        {
-          "pdfPage": 58,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 61,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"easususasusussasisissasisissis...\", length 64)",
-            "Excessive character repetition detected: \"000000\""
-          ]
-        },
-        {
-          "pdfPage": 63,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 65,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"0.0.0.0.\""
-          ]
-        },
-        {
-          "pdfPage": 67,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 70,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 71,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.58: Repeated substring pattern detected: \"...............\"",
-        "PDF p.61: Contains 1 abnormally long unbroken word(s) (e.g. \"easususasusussasisissasisissis...\", length 64)",
-        "PDF p.61: Excessive character repetition detected: \"000000\"",
-        "PDF p.63: Repeated substring pattern detected: \"............\"",
-        "PDF p.65: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.67: Repeated substring pattern detected: \"............\"",
-        "PDF p.70: Repeated substring pattern detected: \"..........\"",
-        "PDF p.71: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
       "unitId": "prep3-student-term1-unit-1",
       "bookId": "prep3-student-term1",
       "unitNumber": 1,
@@ -8232,107 +7141,6 @@
         "PDF p.24: Excessive character repetition detected: \"ccccccccc\"",
         "PDF p.24: Repeated substring pattern detected: \"cccccccc\"",
         "PDF p.26: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "prep3-student-term1-unit-3",
-      "bookId": "prep3-student-term1",
-      "unitNumber": 3,
-      "title": "Artificial Intelligence",
-      "expectedRange": {
-        "start": 41,
-        "end": 58,
-        "totalPages": 18
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 18,
-        "validPages": 10,
-        "needsReviewPages": 7,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 7,
-      "pageEvaluations": [
-        {
-          "pdfPage": 46,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 48,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 50,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 53,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 54,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 56,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 3 abnormally long unbroken word(s) (e.g. \"csscessesseesstsnesstasetsitas...\", length 108)",
-            "Excessive character repetition detected: \"ssssss\""
-          ]
-        },
-        {
-          "pdfPage": 57,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 58,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.46: Repeated substring pattern detected: \"............\"",
-        "PDF p.48: Repeated substring pattern detected: \"............\"",
-        "PDF p.50: Repeated substring pattern detected: \"............\"",
-        "PDF p.53: Repeated substring pattern detected: \"............\"",
-        "PDF p.54: Repeated substring pattern detected: \"............\"",
-        "PDF p.56: Contains 3 abnormally long unbroken word(s) (e.g. \"csscessesseesstsnesstasetsitas...\", length 108)",
-        "PDF p.56: Excessive character repetition detected: \"ssssss\"",
-        "PDF p.57: Excessive character repetition detected: \"00000\"",
-        "PDF p.58: Repeated substring pattern detected: \"..........\""
       ]
     },
     {
@@ -8464,13 +7272,13 @@
       "actualRange": {
         "foundPages": 63,
         "validPages": 32,
-        "needsReviewPages": 28,
-        "blockedPages": 3
+        "needsReviewPages": 29,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 28,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 29,
       "pageEvaluations": [
         {
           "pdfPage": 6,
@@ -8648,7 +7456,7 @@
         },
         {
           "pdfPage": 50,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \"Anneenenneswenranenseenenenesa...\", length 73)",
@@ -8790,13 +7598,13 @@
       "actualRange": {
         "foundPages": 40,
         "validPages": 15,
-        "needsReviewPages": 23,
-        "blockedPages": 2
+        "needsReviewPages": 24,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 23,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 24,
       "pageEvaluations": [
         {
           "pdfPage": 70,
@@ -8949,7 +7757,7 @@
         },
         {
           "pdfPage": 97,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 80,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"eeeceeensscencnnsccoasensneene...\", length 62)"
@@ -9913,13 +8721,13 @@
       "actualRange": {
         "foundPages": 58,
         "validPages": 34,
-        "needsReviewPages": 22,
-        "blockedPages": 2
+        "needsReviewPages": 23,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 22,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 23,
       "pageEvaluations": [
         {
           "pdfPage": 254,
@@ -10023,7 +8831,7 @@
         },
         {
           "pdfPage": 285,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"pessccnerececccssncsccascessca...\", length 71)",
@@ -10160,557 +8968,6 @@
       ]
     },
     {
-      "unitId": "secondary1-student-term1-unit-1",
-      "bookId": "secondary1-student-term1",
-      "unitNumber": 1,
-      "title": "Egypt’s Heritage",
-      "expectedRange": {
-        "start": 11,
-        "end": 23,
-        "totalPages": 13
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 13,
-        "validPages": 8,
-        "needsReviewPages": 3,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 3,
-      "pageEvaluations": [
-        {
-          "pdfPage": 13,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 14,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 126)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 17,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 18,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 23,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 184)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.13: Repeated substring pattern detected: \"............\"",
-        "PDF p.14: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 126)",
-        "PDF p.14: Repeated substring pattern detected: \"...............\"",
-        "PDF p.17: Repeated substring pattern detected: \"............\"",
-        "PDF p.18: Repeated substring pattern detected: \"............\"",
-        "PDF p.23: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 184)",
-        "PDF p.23: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "secondary1-student-term1-unit-2",
-      "bookId": "secondary1-student-term1",
-      "unitNumber": 2,
-      "title": "Hands Help, Hearts Care",
-      "expectedRange": {
-        "start": 24,
-        "end": 35,
-        "totalPages": 12
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 12,
-        "validPages": 3,
-        "needsReviewPages": 5,
-        "blockedPages": 4
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 4,
-      "needsReviewPageCount": 5,
-      "pageEvaluations": [
-        {
-          "pdfPage": 26,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 27,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 28,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 29,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 30,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 31,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 33,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 34,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 35,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 42)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.26: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-        "PDF p.26: Repeated substring pattern detected: \"...............\"",
-        "PDF p.27: Repeated substring pattern detected: \"............\"",
-        "PDF p.28: Repeated substring pattern detected: \"............\"",
-        "PDF p.29: Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-        "PDF p.29: Repeated substring pattern detected: \"...............\"",
-        "PDF p.30: Repeated substring pattern detected: \"............\"",
-        "PDF p.31: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 178)",
-        "PDF p.31: Repeated substring pattern detected: \"............\"",
-        "PDF p.33: Repeated substring pattern detected: \"............\"",
-        "PDF p.34: Repeated substring pattern detected: \"............\"",
-        "PDF p.35: Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 42)",
-        "PDF p.35: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "secondary1-student-term1-unit-3",
-      "bookId": "secondary1-student-term1",
-      "unitNumber": 3,
-      "title": "Truth Vs. Lies",
-      "expectedRange": {
-        "start": 36,
-        "end": 56,
-        "totalPages": 21
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 21,
-        "validPages": 9,
-        "needsReviewPages": 10,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 10,
-      "pageEvaluations": [
-        {
-          "pdfPage": 38,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 39,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 42,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 43,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 181)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 45,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 48,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 49,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 50,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 51,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 54,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 55,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 56,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 181)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.38: Repeated substring pattern detected: \"............\"",
-        "PDF p.39: Repeated substring pattern detected: \"............\"",
-        "PDF p.42: Repeated substring pattern detected: \"............\"",
-        "PDF p.43: Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 181)",
-        "PDF p.43: Repeated substring pattern detected: \"............\"",
-        "PDF p.45: Repeated substring pattern detected: \"............\"",
-        "PDF p.48: Repeated substring pattern detected: \"............\"",
-        "PDF p.49: Repeated substring pattern detected: \"............\"",
-        "PDF p.50: Repeated substring pattern detected: \"............\"",
-        "PDF p.51: Repeated substring pattern detected: \"............\"",
-        "PDF p.54: Repeated substring pattern detected: \"............\"",
-        "PDF p.55: Repeated substring pattern detected: \"............\"",
-        "PDF p.56: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 181)",
-        "PDF p.56: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
-      "unitId": "secondary1-student-term1-unit-4",
-      "bookId": "secondary1-student-term1",
-      "unitNumber": 4,
-      "title": "Save and Shine",
-      "expectedRange": {
-        "start": 57,
-        "end": 68,
-        "totalPages": 12
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 12,
-        "validPages": 3,
-        "needsReviewPages": 2,
-        "blockedPages": 7
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 7,
-      "needsReviewPageCount": 2,
-      "pageEvaluations": [
-        {
-          "pdfPage": 59,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 60,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 62,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 63,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 64,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 12 abnormally long unbroken word(s) (e.g. \".................................\", length 80)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 65,
-          "status": "blocked",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 66,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 67,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 68,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.59: Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.59: Repeated substring pattern detected: \"............\"",
-        "PDF p.60: Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.60: Repeated substring pattern detected: \"...............\"",
-        "PDF p.62: Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.62: Repeated substring pattern detected: \"...............\"",
-        "PDF p.63: Repeated substring pattern detected: \"............\"",
-        "PDF p.64: Contains 12 abnormally long unbroken word(s) (e.g. \".................................\", length 80)",
-        "PDF p.64: Repeated substring pattern detected: \"............\"",
-        "PDF p.65: Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.65: Repeated substring pattern detected: \"...............\"",
-        "PDF p.66: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.66: Repeated substring pattern detected: \"...............\"",
-        "PDF p.67: Repeated substring pattern detected: \"............\"",
-        "PDF p.68: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.68: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "secondary1-student-term1-unit-5",
-      "bookId": "secondary1-student-term1",
-      "unitNumber": 5,
-      "title": "Using Technology at Schools",
-      "expectedRange": {
-        "start": 69,
-        "end": 79,
-        "totalPages": 11
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 11,
-        "validPages": 4,
-        "needsReviewPages": 3,
-        "blockedPages": 4
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 4,
-      "needsReviewPageCount": 3,
-      "pageEvaluations": [
-        {
-          "pdfPage": 71,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 73,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 15 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 75,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 76,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 78,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 79,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.71: Repeated substring pattern detected: \"............\"",
-        "PDF p.73: Repeated substring pattern detected: \"............\"",
-        "PDF p.74: Contains 15 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-        "PDF p.74: Repeated substring pattern detected: \"...............\"",
-        "PDF p.75: Repeated substring pattern detected: \"...............\"",
-        "PDF p.76: Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-        "PDF p.76: Repeated substring pattern detected: \"............\"",
-        "PDF p.78: Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-        "PDF p.78: Repeated substring pattern detected: \"............\"",
-        "PDF p.79: Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
-        "PDF p.79: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
       "unitId": "secondary1-student-term1-unit-6",
       "bookId": "secondary1-student-term1",
       "unitNumber": 6,
@@ -10725,13 +8982,13 @@
       "actualRange": {
         "foundPages": 93,
         "validPages": 71,
-        "needsReviewPages": 19,
-        "blockedPages": 3
+        "needsReviewPages": 20,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 19,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 20,
       "pageEvaluations": [
         {
           "pdfPage": 82,
@@ -10751,7 +9008,7 @@
         },
         {
           "pdfPage": 87,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 10 abnormally long unbroken word(s) (e.g. \".................................\", length 183)",
@@ -11399,507 +9656,6 @@
       ]
     },
     {
-      "unitId": "secondary3-student-term1-unit-1",
-      "bookId": "secondary3-student-term1",
-      "unitNumber": 1,
-      "title": "Inside the World of Care",
-      "expectedRange": {
-        "start": 12,
-        "end": 23,
-        "totalPages": 12
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 12,
-        "validPages": 5,
-        "needsReviewPages": 5,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 5,
-      "pageEvaluations": [
-        {
-          "pdfPage": 14,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 15,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 17,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 18,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 19,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 21,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 23,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.14: Repeated substring pattern detected: \"............\"",
-        "PDF p.15: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.15: Repeated substring pattern detected: \"...............\"",
-        "PDF p.17: Repeated substring pattern detected: \"............\"",
-        "PDF p.18: Repeated substring pattern detected: \"............\"",
-        "PDF p.19: Repeated substring pattern detected: \"...............\"",
-        "PDF p.21: Repeated substring pattern detected: \"............\"",
-        "PDF p.23: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.23: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "secondary3-student-term1-unit-2",
-      "bookId": "secondary3-student-term1",
-      "unitNumber": 2,
-      "title": "The Power of Machines",
-      "expectedRange": {
-        "start": 24,
-        "end": 35,
-        "totalPages": 12
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 12,
-        "validPages": 7,
-        "needsReviewPages": 2,
-        "blockedPages": 3
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 2,
-      "pageEvaluations": [
-        {
-          "pdfPage": 28,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 29,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 30,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 33,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 35,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.28: Repeated substring pattern detected: \"............\"",
-        "PDF p.29: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-        "PDF p.29: Repeated substring pattern detected: \"...............\"",
-        "PDF p.30: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 88)",
-        "PDF p.30: Repeated substring pattern detected: \"............\"",
-        "PDF p.33: Repeated substring pattern detected: \"............\"",
-        "PDF p.35: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
-        "PDF p.35: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
-      "unitId": "secondary3-student-term1-unit-3",
-      "bookId": "secondary3-student-term1",
-      "unitNumber": 3,
-      "title": "Protect Nature, Protect Future",
-      "expectedRange": {
-        "start": 36,
-        "end": 54,
-        "totalPages": 19
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 19,
-        "validPages": 6,
-        "needsReviewPages": 11,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 11,
-      "pageEvaluations": [
-        {
-          "pdfPage": 38,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 40,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 41,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 42,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 43,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 169)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 45,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 46,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 47,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        },
-        {
-          "pdfPage": 48,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        },
-        {
-          "pdfPage": 49,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        },
-        {
-          "pdfPage": 51,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        },
-        {
-          "pdfPage": 52,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        },
-        {
-          "pdfPage": 53,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" . . . . . . . \""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.38: Repeated substring pattern detected: \"............\"",
-        "PDF p.40: Repeated substring pattern detected: \"...............\"",
-        "PDF p.41: Repeated substring pattern detected: \"............\"",
-        "PDF p.42: Repeated substring pattern detected: \"............\"",
-        "PDF p.43: Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 169)",
-        "PDF p.43: Repeated substring pattern detected: \"............\"",
-        "PDF p.45: Repeated substring pattern detected: \"............\"",
-        "PDF p.46: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-        "PDF p.46: Repeated substring pattern detected: \"...............\"",
-        "PDF p.47: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.48: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.49: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.51: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.52: Repeated substring pattern detected: \" . . . . . . . \"",
-        "PDF p.53: Repeated substring pattern detected: \" . . . . . . . \""
-      ]
-    },
-    {
-      "unitId": "secondary3-student-term1-unit-4",
-      "bookId": "secondary3-student-term1",
-      "unitNumber": 4,
-      "title": "Marine Life",
-      "expectedRange": {
-        "start": 55,
-        "end": 67,
-        "totalPages": 13
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 13,
-        "validPages": 5,
-        "needsReviewPages": 4,
-        "blockedPages": 4
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 4,
-      "needsReviewPageCount": 4,
-      "pageEvaluations": [
-        {
-          "pdfPage": 57,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 59,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 60,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 61,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 62,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 64,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 123)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 65,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 66)",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 67,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 54)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.57: Repeated substring pattern detected: \"............\"",
-        "PDF p.59: Repeated substring pattern detected: \"............\"",
-        "PDF p.60: Repeated substring pattern detected: \"............\"",
-        "PDF p.61: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
-        "PDF p.61: Repeated substring pattern detected: \"............\"",
-        "PDF p.62: Repeated substring pattern detected: \"............\"",
-        "PDF p.64: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 123)",
-        "PDF p.64: Repeated substring pattern detected: \"...............\"",
-        "PDF p.65: Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 66)",
-        "PDF p.65: Repeated substring pattern detected: \"...............\"",
-        "PDF p.67: Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 54)",
-        "PDF p.67: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
-      "unitId": "secondary3-student-term1-unit-5",
-      "bookId": "secondary3-student-term1",
-      "unitNumber": 5,
-      "title": "From Muscles to Mindset",
-      "expectedRange": {
-        "start": 68,
-        "end": 81,
-        "totalPages": 14
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 14,
-        "validPages": 9,
-        "needsReviewPages": 4,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 4,
-      "pageEvaluations": [
-        {
-          "pdfPage": 70,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 71,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 75,
-          "status": "blocked",
-          "score": 35,
-          "issues": [
-            "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 78,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.70: Repeated substring pattern detected: \"............\"",
-        "PDF p.71: Repeated substring pattern detected: \"............\"",
-        "PDF p.74: Repeated substring pattern detected: \"............\"",
-        "PDF p.75: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 161)",
-        "PDF p.75: Repeated substring pattern detected: \"............\"",
-        "PDF p.78: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
       "unitId": "secondary3-student-term1-unit-6",
       "bookId": "secondary3-student-term1",
       "unitNumber": 6,
@@ -11914,17 +9670,17 @@
       "actualRange": {
         "foundPages": 205,
         "validPages": 111,
-        "needsReviewPages": 58,
-        "blockedPages": 36
+        "needsReviewPages": 83,
+        "blockedPages": 11
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 36,
-      "needsReviewPageCount": 58,
+      "blockedPageCount": 11,
+      "needsReviewPageCount": 83,
       "pageEvaluations": [
         {
           "pdfPage": 84,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 42)",
@@ -11941,7 +9697,7 @@
         },
         {
           "pdfPage": 88,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 87)",
@@ -11950,7 +9706,7 @@
         },
         {
           "pdfPage": 89,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 173)",
@@ -11959,7 +9715,7 @@
         },
         {
           "pdfPage": 92,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
@@ -11968,7 +9724,7 @@
         },
         {
           "pdfPage": 94,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \"……...............................\", length 49)",
@@ -11977,7 +9733,7 @@
         },
         {
           "pdfPage": 95,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
@@ -12098,7 +9854,7 @@
         },
         {
           "pdfPage": 156,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 99)",
@@ -12143,7 +9899,7 @@
         },
         {
           "pdfPage": 166,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 176)",
@@ -12176,7 +9932,7 @@
         },
         {
           "pdfPage": 172,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 179)",
@@ -12217,7 +9973,7 @@
         },
         {
           "pdfPage": 178,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 139)",
@@ -12283,7 +10039,7 @@
         },
         {
           "pdfPage": 190,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
@@ -12340,7 +10096,7 @@
         },
         {
           "pdfPage": 201,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 98)",
@@ -12349,7 +10105,7 @@
         },
         {
           "pdfPage": 202,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 80)",
@@ -12438,7 +10194,7 @@
         },
         {
           "pdfPage": 219,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
@@ -12455,7 +10211,7 @@
         },
         {
           "pdfPage": 221,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
@@ -12472,7 +10228,7 @@
         },
         {
           "pdfPage": 225,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
@@ -12489,7 +10245,7 @@
         },
         {
           "pdfPage": 227,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 177)",
@@ -12538,7 +10294,7 @@
         },
         {
           "pdfPage": 242,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 67)",
@@ -12547,7 +10303,7 @@
         },
         {
           "pdfPage": 244,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 180)",
@@ -12612,7 +10368,7 @@
         },
         {
           "pdfPage": 275,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12621,7 +10377,7 @@
         },
         {
           "pdfPage": 276,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12630,7 +10386,7 @@
         },
         {
           "pdfPage": 277,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12639,7 +10395,7 @@
         },
         {
           "pdfPage": 278,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12648,7 +10404,7 @@
         },
         {
           "pdfPage": 279,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12657,7 +10413,7 @@
         },
         {
           "pdfPage": 280,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 165)",
@@ -12882,87 +10638,6 @@
       ]
     },
     {
-      "unitId": "baccalaureate-y2-first-language-part1-unit-4",
-      "bookId": "baccalaureate-y2-first-language-part1",
-      "unitNumber": 4,
-      "title": "The Power of Choice",
-      "expectedRange": {
-        "start": 102,
-        "end": 139,
-        "totalPages": 38
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 38,
-        "validPages": 32,
-        "needsReviewPages": 5,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 5,
-      "pageEvaluations": [
-        {
-          "pdfPage": 112,
-          "status": "blocked",
-          "score": 80,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"esensonerersssnsreconcrornreec...\", length 55)"
-          ]
-        },
-        {
-          "pdfPage": 130,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"0000000\""
-          ]
-        },
-        {
-          "pdfPage": 131,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 133,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 136,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 138,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.112: Contains 1 abnormally long unbroken word(s) (e.g. \"esensonerersssnsreconcrornreec...\", length 55)",
-        "PDF p.130: Excessive character repetition detected: \"0000000\"",
-        "PDF p.131: Excessive character repetition detected: \"00000\"",
-        "PDF p.133: Repeated substring pattern detected: \"........\"",
-        "PDF p.136: Repeated substring pattern detected: \"..........\"",
-        "PDF p.138: Repeated substring pattern detected: \"............\""
-      ]
-    },
-    {
       "unitId": "baccalaureate-y2-first-language-part1-unit-5",
       "bookId": "baccalaureate-y2-first-language-part1",
       "unitNumber": 5,
@@ -12977,13 +10652,13 @@
       "actualRange": {
         "foundPages": 33,
         "validPages": 27,
-        "needsReviewPages": 4,
-        "blockedPages": 2
+        "needsReviewPages": 5,
+        "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 4,
+      "blockedPageCount": 1,
+      "needsReviewPageCount": 5,
       "pageEvaluations": [
         {
           "pdfPage": 146,
@@ -12995,7 +10670,7 @@
         },
         {
           "pdfPage": 149,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \"sscseterencqeseateseeetenteanp...\", length 135)",
@@ -13328,17 +11003,17 @@
       "actualRange": {
         "foundPages": 34,
         "validPages": 5,
-        "needsReviewPages": 2,
-        "blockedPages": 27
+        "needsReviewPages": 24,
+        "blockedPages": 5
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 27,
-      "needsReviewPageCount": 2,
+      "blockedPageCount": 5,
+      "needsReviewPageCount": 24,
       "pageEvaluations": [
         {
           "pdfPage": 6,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13347,7 +11022,7 @@
         },
         {
           "pdfPage": 7,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13356,7 +11031,7 @@
         },
         {
           "pdfPage": 8,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13365,7 +11040,7 @@
         },
         {
           "pdfPage": 9,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 8 abnormally long unbroken word(s) (e.g. \".................................\", length 98)",
@@ -13374,7 +11049,7 @@
         },
         {
           "pdfPage": 10,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 124)",
@@ -13401,7 +11076,7 @@
         },
         {
           "pdfPage": 13,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13410,7 +11085,7 @@
         },
         {
           "pdfPage": 14,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13419,7 +11094,7 @@
         },
         {
           "pdfPage": 15,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 46)",
@@ -13428,7 +11103,7 @@
         },
         {
           "pdfPage": 16,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 113)",
@@ -13437,7 +11112,7 @@
         },
         {
           "pdfPage": 17,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 78)",
@@ -13446,7 +11121,7 @@
         },
         {
           "pdfPage": 19,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13463,7 +11138,7 @@
         },
         {
           "pdfPage": 21,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 113)",
@@ -13472,7 +11147,7 @@
         },
         {
           "pdfPage": 22,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 77)",
@@ -13481,7 +11156,7 @@
         },
         {
           "pdfPage": 24,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13490,7 +11165,7 @@
         },
         {
           "pdfPage": 25,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 113)",
@@ -13499,7 +11174,7 @@
         },
         {
           "pdfPage": 26,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13517,7 +11192,7 @@
         },
         {
           "pdfPage": 28,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 60)",
@@ -13526,7 +11201,7 @@
         },
         {
           "pdfPage": 30,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 127)",
@@ -13552,7 +11227,7 @@
         },
         {
           "pdfPage": 33,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13561,7 +11236,7 @@
         },
         {
           "pdfPage": 34,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13570,7 +11245,7 @@
         },
         {
           "pdfPage": 35,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 9 abnormally long unbroken word(s) (e.g. \".................................\", length 86)",
@@ -13579,7 +11254,7 @@
         },
         {
           "pdfPage": 36,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13668,17 +11343,17 @@
       "actualRange": {
         "foundPages": 24,
         "validPages": 3,
-        "needsReviewPages": 1,
-        "blockedPages": 20
+        "needsReviewPages": 19,
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 20,
-      "needsReviewPageCount": 1,
+      "blockedPageCount": 2,
+      "needsReviewPageCount": 19,
       "pageEvaluations": [
         {
           "pdfPage": 42,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13687,7 +11362,7 @@
         },
         {
           "pdfPage": 43,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13696,7 +11371,7 @@
         },
         {
           "pdfPage": 44,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
@@ -13714,7 +11389,7 @@
         },
         {
           "pdfPage": 46,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 123)",
@@ -13723,7 +11398,7 @@
         },
         {
           "pdfPage": 47,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13732,7 +11407,7 @@
         },
         {
           "pdfPage": 48,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13741,7 +11416,7 @@
         },
         {
           "pdfPage": 49,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
@@ -13750,7 +11425,7 @@
         },
         {
           "pdfPage": 50,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 69)",
@@ -13759,7 +11434,7 @@
         },
         {
           "pdfPage": 51,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13768,7 +11443,7 @@
         },
         {
           "pdfPage": 52,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13777,7 +11452,7 @@
         },
         {
           "pdfPage": 53,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 94)",
@@ -13786,7 +11461,7 @@
         },
         {
           "pdfPage": 54,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13795,7 +11470,7 @@
         },
         {
           "pdfPage": 55,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 109)",
@@ -13804,7 +11479,7 @@
         },
         {
           "pdfPage": 56,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13813,7 +11488,7 @@
         },
         {
           "pdfPage": 57,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13831,7 +11506,7 @@
         },
         {
           "pdfPage": 59,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 55)",
@@ -13840,7 +11515,7 @@
         },
         {
           "pdfPage": 60,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
@@ -13849,7 +11524,7 @@
         },
         {
           "pdfPage": 61,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
@@ -13924,17 +11599,17 @@
       "actualRange": {
         "foundPages": 33,
         "validPages": 4,
-        "needsReviewPages": 0,
-        "blockedPages": 29
+        "needsReviewPages": 25,
+        "blockedPages": 4
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 29,
-      "needsReviewPageCount": 0,
+      "blockedPageCount": 4,
+      "needsReviewPageCount": 25,
       "pageEvaluations": [
         {
           "pdfPage": 66,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13943,7 +11618,7 @@
         },
         {
           "pdfPage": 67,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13952,7 +11627,7 @@
         },
         {
           "pdfPage": 69,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 87)",
@@ -13961,7 +11636,7 @@
         },
         {
           "pdfPage": 70,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 123)",
@@ -13970,7 +11645,7 @@
         },
         {
           "pdfPage": 71,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13979,7 +11654,7 @@
         },
         {
           "pdfPage": 72,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -13988,7 +11663,7 @@
         },
         {
           "pdfPage": 73,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
@@ -13997,7 +11672,7 @@
         },
         {
           "pdfPage": 74,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 61)",
@@ -14006,7 +11681,7 @@
         },
         {
           "pdfPage": 75,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -14015,7 +11690,7 @@
         },
         {
           "pdfPage": 76,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -14024,7 +11699,7 @@
         },
         {
           "pdfPage": 77,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 103)",
@@ -14033,7 +11708,7 @@
         },
         {
           "pdfPage": 78,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -14051,7 +11726,7 @@
         },
         {
           "pdfPage": 80,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 89)",
@@ -14060,7 +11735,7 @@
         },
         {
           "pdfPage": 81,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -14069,7 +11744,7 @@
         },
         {
           "pdfPage": 82,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
@@ -14087,7 +11762,7 @@
         },
         {
           "pdfPage": 84,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 124)",
@@ -14096,7 +11771,7 @@
         },
         {
           "pdfPage": 85,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 124)",
@@ -14105,7 +11780,7 @@
         },
         {
           "pdfPage": 86,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 73)",
@@ -14114,7 +11789,7 @@
         },
         {
           "pdfPage": 87,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
@@ -14132,7 +11807,7 @@
         },
         {
           "pdfPage": 89,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 55,
           "issues": [
             "Contains 1 abnormally long unbroken word(s) (e.g. \".................................\", length 114)",
@@ -14141,7 +11816,7 @@
         },
         {
           "pdfPage": 90,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 68)",
@@ -14150,7 +11825,7 @@
         },
         {
           "pdfPage": 91,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 114)",
@@ -14159,7 +11834,7 @@
         },
         {
           "pdfPage": 92,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 114)",
@@ -14168,7 +11843,7 @@
         },
         {
           "pdfPage": 93,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 101)",
@@ -14177,7 +11852,7 @@
         },
         {
           "pdfPage": 94,
-          "status": "blocked",
+          "status": "needs_review",
           "score": 35,
           "issues": [
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
@@ -14256,11 +11931,251 @@
   ],
   "excluded": [],
   "stateTotals": {
-    "generatedNeedsReview": 0,
+    "generatedNeedsReview": 9,
     "approved": 0,
-    "blockedSourceReview": 71,
-    "failed": 42,
-    "waitingForRetry": 25
+    "blockedSourceReview": 65,
+    "failed": 43,
+    "waitingForRetry": 0
   },
-  "waitingForRetry": 25
+  "waitingForRetry": 0,
+  "bookProgress": [
+    {
+      "bookId": "baccalaureate-y2-first-language-part1",
+      "totalUnits": 5,
+      "statuses": {
+        "blocked_source_review": 3,
+        "pending": 2
+      }
+    },
+    {
+      "bookId": "baccalaureate-y2-first-language-part2",
+      "totalUnits": 5,
+      "statuses": {
+        "blocked_source_review": 3,
+        "pending": 2
+      }
+    },
+    {
+      "bookId": "baccalaureate-y2-second-language-part1",
+      "totalUnits": 3,
+      "statuses": {
+        "blocked_source_review": 3
+      }
+    },
+    {
+      "bookId": "connectplus-primary1-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 2,
+        "failed": 4
+      }
+    },
+    {
+      "bookId": "connectplus-primary2-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "failed": 1,
+        "blocked_source_review": 4,
+        "failed_validation": 1
+      }
+    },
+    {
+      "bookId": "connectplus-primary3-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 6
+      }
+    },
+    {
+      "bookId": "connectplus-primary4-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "failed": 2,
+        "failed_validation": 3,
+        "blocked_source_review": 1
+      }
+    },
+    {
+      "bookId": "connectplus-primary5-supplement",
+      "totalUnits": 4,
+      "statuses": {
+        "failed_validation": 1,
+        "blocked_source_review": 2,
+        "failed": 1
+      }
+    },
+    {
+      "bookId": "connectplus-primary6-supplement",
+      "totalUnits": 4,
+      "statuses": {
+        "failed_validation": 2,
+        "failed": 1,
+        "blocked_source_review": 1
+      }
+    },
+    {
+      "bookId": "helloplus-prep1-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 5,
+        "failed": 1
+      }
+    },
+    {
+      "bookId": "helloplus-prep3-supplement",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 6
+      }
+    },
+    {
+      "bookId": "prep1-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "failed": 5,
+        "blocked_source_review": 1
+      }
+    },
+    {
+      "bookId": "prep2-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "failed": 4,
+        "blocked_source_review": 1,
+        "generated_needs_review": 1
+      }
+    },
+    {
+      "bookId": "prep3-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 2,
+        "failed_validation": 1,
+        "generated_needs_review": 3
+      }
+    },
+    {
+      "bookId": "primary1-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "failed": 6
+      }
+    },
+    {
+      "bookId": "primary2-student-term1",
+      "totalUnits": 4,
+      "statuses": {
+        "failed": 2,
+        "blocked_source_review": 2
+      }
+    },
+    {
+      "bookId": "primary3-student-term1",
+      "totalUnits": 4,
+      "statuses": {
+        "blocked_source_review": 3,
+        "failed": 1
+      }
+    },
+    {
+      "bookId": "primary4-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "failed_validation": 3,
+        "failed": 2,
+        "blocked_source_review": 1
+      }
+    },
+    {
+      "bookId": "primary5-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 6
+      }
+    },
+    {
+      "bookId": "primary6-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 4,
+        "failed": 1,
+        "failed_validation": 1
+      }
+    },
+    {
+      "bookId": "secondary1-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "generated_needs_review": 5,
+        "blocked_source_review": 1
+      }
+    },
+    {
+      "bookId": "secondary2-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "pending": 4,
+        "blocked_source_review": 2
+      }
+    },
+    {
+      "bookId": "secondary3-student-term1",
+      "totalUnits": 6,
+      "statuses": {
+        "blocked_source_review": 6
+      }
+    }
+  ],
+  "sectionCoverage": {
+    "vocabulary": {
+      "unitsWithItems": 9,
+      "totalItems": 46,
+      "validItems": 46
+    },
+    "vocabulary_questions": {
+      "unitsWithItems": 9,
+      "totalItems": 27,
+      "validItems": 27
+    },
+    "grammar": {
+      "unitsWithItems": 9,
+      "totalItems": 15,
+      "validItems": 15
+    },
+    "grammar_questions": {
+      "unitsWithItems": 9,
+      "totalItems": 27,
+      "validItems": 27
+    },
+    "reading": {
+      "unitsWithItems": 9,
+      "totalItems": 19,
+      "validItems": 19
+    },
+    "listening": {
+      "unitsWithItems": 9,
+      "totalItems": 18,
+      "validItems": 18
+    },
+    "speaking": {
+      "unitsWithItems": 9,
+      "totalItems": 9,
+      "validItems": 9
+    },
+    "games": {
+      "unitsWithItems": 9,
+      "totalItems": 19,
+      "validItems": 19
+    },
+    "comprehensive_test": {
+      "unitsWithItems": 9,
+      "totalItems": 90,
+      "validItems": 90
+    }
+  },
+  "autoContinuation": {
+    "scheduled": true,
+    "chainDepth": 1,
+    "reason": "eligible candidates remain; the trigger commit will queue the next main-branch run"
+  }
 }

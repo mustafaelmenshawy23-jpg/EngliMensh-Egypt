@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T07:21:19.195Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary1-student-term1",
+  "sourceFilename": "English_1sec_t1 (1).pdf",
+  "grade": "Secondary 1",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Save and Shine",
+  "sourcePdfRange": {
+    "start": 57,
+    "end": 68
+  },
+  "sourceCoverage": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68
+  ],
+  "sourceFingerprint": "7b26959f579be25ad305d394ffcb4af0f01ba4d6fde5bcd404dba200a890e873",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Save and Shine",
+    "expectedRange": {
+      "start": 57,
+      "end": 68,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 27,
+      "supplementaryItems": 3,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T07:21:19.195Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u4-voc-1",
+          "content": {
+            "word": "depletion",
+            "arabicMeaning": "استنفاد",
+            "example": "The depletion of natural resources is a serious global concern.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-2",
+          "content": {
+            "word": "renewable",
+            "arabicMeaning": "متجدد",
+            "example": "Solar energy is a clean and renewable power source.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-3",
+          "content": {
+            "word": "sustainable",
+            "arabicMeaning": "مستدام",
+            "example": "Building a sustainable future requires using eco-friendly practices.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-4",
+          "content": {
+            "word": "eco-friendly",
+            "arabicMeaning": "صديق للبيئة",
+            "example": "Many companies are transforming their factories into eco-friendly plants.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-5",
+          "content": {
+            "word": "reusable",
+            "arabicMeaning": "قابل لإعادة الاستخدام",
+            "example": "Carrying a reusable bag helps reduce single-use plastic waste.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-voc-6",
+          "content": {
+            "word": "campaign",
+            "arabicMeaning": "حملة",
+            "example": "The school organized a campaign to raise awareness about water conservation.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u4-vocq-1",
+          "content": {
+            "question": "What does the term 'depletion' mean in the context of natural resources?",
+            "options": [
+              "Reduction in the amount or quantity of something",
+              "Increase in the production of factory goods",
+              "Creating new renewable energy sources",
+              "Painting machinery with eco-friendly colors"
+            ],
+            "correctAnswer": "Reduction in the amount or quantity of something",
+            "reason": "Depletion refers to the gradual reduction or using up of a supply or resource.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-vocq-2",
+          "content": {
+            "question": "Which word describes an energy source that can be replaced naturally?",
+            "options": [
+              "Depleted",
+              "Renewable",
+              "Harmful",
+              "Polluted"
+            ],
+            "correctAnswer": "Renewable",
+            "reason": "Renewable resources, such as solar and wind power, replace themselves naturally over time.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-vocq-3",
+          "content": {
+            "question": "An activity or product that is not harmful to the environment is described as:",
+            "options": [
+              "costly",
+              "eco-friendly",
+              "depleted",
+              "industrial"
+            ],
+            "correctAnswer": "eco-friendly",
+            "reason": "Eco-friendly products and practices are designed to avoid damaging the environment.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Verbs Followed by Infinitive or -ing Form",
+      "items": [
+        {
+          "itemId": "u4-gram-1",
+          "content": {
+            "rule": "Verbs followed by to + infinitive or gerund (-ing)",
+            "explanation": "Some verbs are followed by 'to + infinitive' (e.g., decide, promise, agree, plan, want), while others are followed by a gerund '-ing' (e.g., enjoy, avoid, suggest, mind). Certain verbs like 'remember', 'forget', and 'stop' can take both forms, but with a change in meaning.",
+            "example": "She enjoys listening to music, but she decided to study early today.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u4-gramq-1",
+          "content": {
+            "question": "She enjoys .......... to classical music when she studies.",
+            "options": [
+              "to listen",
+              "listening",
+              "listen",
+              "to listening"
+            ],
+            "correctAnswer": "listening",
+            "reason": "The verb 'enjoy' is followed by a gerund (-ing form).",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-gramq-2",
+          "content": {
+            "question": "He promised .......... me with the science project tomorrow.",
+            "options": [
+              "helping",
+              "to help",
+              "help",
+              "to helping"
+            ],
+            "correctAnswer": "to help",
+            "reason": "The verb 'promise' takes 'to + infinitive'.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-gramq-3",
+          "content": {
+            "question": "They decided .......... a new electric car to reduce carbon emissions.",
+            "options": [
+              "buying",
+              "to buy",
+              "buy",
+              "to buying"
+            ],
+            "correctAnswer": "to buy",
+            "reason": "The verb 'decide' is followed by 'to + infinitive'.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u4-read-1",
+          "content": {
+            "passage": "After many years since the Industrial Revolution and the misuse of technology, the large-scale production of machines and automobiles has had harmful effects on the environment. These technologies have mainly caused damage in two ways: through air and water pollution, and through the overuse of natural resources. For this reason, environmental concerns have become a major issue across all industries. Today, 'Go Green' has become a widely used slogan in industry. Green manufacturing refers to producing goods in ways that do not harm the environment and that help preserve natural resources for future generations. The concept of 'green manufacturing' can be understood in two ways. First, it means producing environmentally friendly products by using renewable energy and clean technologies. Second, it refers to making the manufacturing process itself greener—reducing pollution and waste by cutting down on resource use, recycling, and reusing materials. This approach helps slow the depletion of natural resources and reduces the amount of waste going into landfills. Both manufacturers and consumers play a role in the fight against climate change, and building a sustainable future is essential.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-read-2",
+          "content": {
+            "question": "According to the passage, in what two main ways did early industrial technology damage the environment?",
+            "options": [
+              "Through solar power and wind energy overuse",
+              "Through air and water pollution, and overuse of natural resources",
+              "Through building landfills and planting too many trees",
+              "Through selling reusable bags and recycling waste"
+            ],
+            "correctAnswer": "Through air and water pollution, and overuse of natural resources",
+            "reason": "The passage explicitly states that technology caused damage through air and water pollution and the overuse of natural resources.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "u4-list-1",
+          "content": {
+            "script": "Hello everyone. My name is Ahmed. Last month, I started a campaign in our neighborhood called 'One Bag at a Time'. Plastic bags were polluting our streets and harming local trees. I spoke with shop owners and suggested using paper or fabric reusable bags instead. At first, some shop owners thought it would be too expensive, but when we organized a 'Bag Swap Day', local families brought reusable bags to exchange. Now, more than half of the shops in our area have stopped handing out single-use plastic bags!",
+            "origin": "supplementary",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u4-list-2",
+          "content": {
+            "question": "What event helped make Ahmed's environmental campaign popular and fun for local families?",
+            "options": [
+              "A shop discount day",
+              "A Bag Swap Day",
+              "A recycling quiz",
+              "A community picnic"
+            ],
+            "correctAnswer": "A Bag Swap Day",
+            "reason": "In the listening script, Ahmed mentions that organizing a 'Bag Swap Day' helped convince people and made the initiative successful.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u4-spk-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "I think switching our factory to green manufacturing is far too expensive. It will hurt our profits.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "While initial costs might be high, using renewable energy and reducing waste saves money in the long run and helps protect our planet.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u4-game-1",
+          "content": {
+            "gameName": "Eco Vocabulary Match",
+            "description": "Choose the correct term that matches the eco-friendly definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word describes materials that can be used again many times?",
+            "options": [
+              "reusable",
+              "depleted",
+              "harmful",
+              "industrial"
+            ],
+            "correctAnswer": "reusable",
+            "reason": "Reusable means something designed to be used more than once.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u4-game-2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Select the correct verb form to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "We must avoid .......... single-use plastic bottles.",
+            "options": [
+              "to buy",
+              "buying",
+              "buy",
+              "to buying"
+            ],
+            "correctAnswer": "buying",
+            "reason": "The verb 'avoid' is followed by a gerund (-ing form).",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "u4-test-1",
+          "content": {
+            "question": "The overuse of natural resources leads to their .......... .",
+            "options": [
+              "depletion",
+              "improvement",
+              "production",
+              "recreation"
+            ],
+            "correctAnswer": "depletion",
+            "reason": "Overusing natural resources causes them to be depleted or reduced.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-2",
+          "content": {
+            "question": "Energy from solar or wind sources is considered .......... energy.",
+            "options": [
+              "harmful",
+              "renewable",
+              "depleted",
+              "wasteful"
+            ],
+            "correctAnswer": "renewable",
+            "reason": "Solar and wind energy are natural resources that replenish themselves.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-3",
+          "content": {
+            "question": "Which phrase describes producing goods without harming the environment?",
+            "options": [
+              "Green manufacturing",
+              "Industrial revolution",
+              "Resource depletion",
+              "Global warming"
+            ],
+            "correctAnswer": "Green manufacturing",
+            "reason": "Green manufacturing focuses on eco-friendly processes and sustainable production.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-4",
+          "content": {
+            "question": "Nada suggested .......... a break after two hours of studying.",
+            "options": [
+              "taking",
+              "to take",
+              "take",
+              "to taking"
+            ],
+            "correctAnswer": "taking",
+            "reason": "The verb 'suggest' is followed by a gerund (-ing form).",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-5",
+          "content": {
+            "question": "Please remember .......... off the lights before leaving the classroom.",
+            "options": [
+              "turning",
+              "to turn",
+              "turn",
+              "turned"
+            ],
+            "correctAnswer": "to turn",
+            "reason": "When 'remember' means to not forget to do an action in the future, it is followed by 'to + infinitive'.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-6",
+          "content": {
+            "question": "I don't mind .......... for you until the assembly finishes.",
+            "options": [
+              "to wait",
+              "waiting",
+              "wait",
+              "waited"
+            ],
+            "correctAnswer": "waiting",
+            "reason": "The verb phrase 'don't mind' takes a gerund (-ing form).",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-7",
+          "content": {
+            "question": "What was the main mission of the 'Water Team' in Lesson 4?",
+            "options": [
+              "To plant trees in the garden",
+              "To check the school's water sources for leaks",
+              "To clean the science lab desks",
+              "To buy plastic water bottles"
+            ],
+            "correctAnswer": "To check the school's water sources for leaks",
+            "reason": "The text states that the Water Team's mission was to survey school water sources and check for leaks.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-8",
+          "content": {
+            "question": "Why is fixing small water leaks so important?",
+            "options": [
+              "It makes the taps look cleaner",
+              "Even small drips can waste many liters of water each day",
+              "It stops students from using water bottles",
+              "It increases the school's electric bill"
+            ],
+            "correctAnswer": "Even small drips can waste many liters of water each day",
+            "reason": "The passage highlights that small leaks accumulate to waste significant amounts of water daily.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-9",
+          "content": {
+            "question": "In formal email writing, which greeting is appropriate when writing to a known teacher?",
+            "options": [
+              "Hey Rody,",
+              "Dear Mr. Ali,",
+              "What's up,",
+              "Hi friend,"
+            ],
+            "correctAnswer": "Dear Mr. Ali,",
+            "reason": "Formal emails require polite titles and last names, such as 'Dear Mr. Ali,'.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4-test-10",
+          "content": {
+            "question": "Which formal closing should be used at the end of a professional email?",
+            "options": [
+              "Thanks a lot,",
+              "Yours sincerely,",
+              "See ya,",
+              "Bye for now,"
+            ],
+            "correctAnswer": "Yours sincerely,",
+            "reason": "'Yours sincerely,' is a standard professional closing for formal email correspondence.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
