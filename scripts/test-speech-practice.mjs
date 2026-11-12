@@ -18,6 +18,8 @@ assert.ok(main.includes('data-speech-target=') && main.includes("querySelectorAl
   'Speaking prompts must expose working speech-practice controls.');
 assert.ok(main.includes('data-speech-result') && main.includes('Recognized:') && main.includes('Word match:'),
   'Learners must see recognized text and an honest text-match result.');
+assert.ok(main.includes('the app checks which words it recognizes, not your accent or pronunciation quality') && main.includes('Your voice recording is not saved'),
+  'Speaking feedback must clearly distinguish word recognition from pronunciation scoring and audio storage.');
 assert.ok(main.includes('window.SpeechRecognition || window.webkitSpeechRecognition'),
   'Browser speech-recognition fallback is missing.');
 
