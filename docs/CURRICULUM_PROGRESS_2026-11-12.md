@@ -90,3 +90,8 @@ A continuation trigger was committed on `main` at [4d0fb894](https://github.com/
 - [Resumable batch state](../artifacts/unit-drafts/batch-state.json)
 - [Unit draft directory](../artifacts/unit-drafts/)
 - [Generation workflow](../.github/workflows/generate-interactive-unit.yml)
+
+
+## Workflow dispatch constraint
+
+The repository metadata still reports `feature/primary-connect-connect-plus-2026-2027` as the default branch. The current workflow therefore reports automatic `workflow_dispatch` continuation as unavailable on `main`. A continuation trigger was committed to `main`, but the progress/state files have not yet advanced beyond the 07:46:56Z attempt snapshot, so this run does not claim that the queued follow-up has started. To enable automatic chained batches, the repository owner must set `main` as the default branch in GitHub Settings. No other branch was changed.
