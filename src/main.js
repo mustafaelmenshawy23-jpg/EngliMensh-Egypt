@@ -671,7 +671,7 @@ function renderPreparatorySpeaking(words) {
   return `
     <section class="prep-vocabulary-section prep-speaking-section">
       <div class="prep-vocabulary-heading"><div><p class="eyebrow">OPTIONAL ORAL PRACTICE</p><h3>Say the words aloud</h3><p>Listen to the model if you want, then repeat each word clearly. You can also make your own sentence using it.</p></div><span>${practiceWords.length} prompts</span></div>
-      <p class="speaking-practice-note">This is self-practice only. The app does not record your voice or score pronunciation.</p>
+      <p class="speaking-practice-note">Optional speaking practice: the app checks which words it recognizes, not your accent or pronunciation quality. Your voice recording is not saved.</p>
       <div class="prep-vocabulary-grid">
         ${practiceWords.map((item, index) => `
           <article class="prep-vocabulary-card">
