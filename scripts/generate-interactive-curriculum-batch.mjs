@@ -382,7 +382,7 @@ if (shouldAutoContinue) {
     pendingCandidates: summary.pendingCandidates,
     generatedAt: new Date().toISOString()
   };
-  await fs.writeFile('artifacts/unit-drafts/batch-trigger.json', JSON.stringify(trigger, null, 2) + '\\n');
+  await fs.writeFile('artifacts/unit-drafts/batch-trigger.json', JSON.stringify(trigger, null, 2) + '\n');
   summary.autoContinuation = { scheduled: true, chainDepth: batchState.chainDepth, reason: 'eligible candidates remain; the trigger commit will queue the next main-branch run' };
 } else {
   summary.autoContinuation = { scheduled: false, chainDepth, reason: summary.pendingCandidates === 0 ? 'no eligible candidates remain; waiting-for-retry items stay saved' : 'automatic chain safety cap reached' };
