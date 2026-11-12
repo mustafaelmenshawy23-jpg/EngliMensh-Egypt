@@ -25,15 +25,17 @@ assert.deepEqual(getConfiguredGeminiKeys({}), []);
 assert.deepEqual(getSupportedGeminiModels(), [
   'gemini-3.8-flash',
   'gemini-3.6-flash',
+  'gemini-3.5-flash',
   'gemini-3.5-flash-lite',
-  'gemini-3.5-flash'
+  'gemini-3.1-flash-lite'
 ]);
 assert.deepEqual(getSupportedGeminiModels('gemini-2.5-flash'), [
   'gemini-2.5-flash',
   'gemini-3.8-flash',
   'gemini-3.6-flash',
+  'gemini-3.5-flash',
   'gemini-3.5-flash-lite',
-  'gemini-3.5-flash'
+  'gemini-3.1-flash-lite'
 ]);
 assert.deepEqual(getSupportedGeminiModels('gemini-3.6-flash'), [
   'gemini-3.6-flash',
@@ -45,8 +47,9 @@ assert.deepEqual(getSupportedGeminiModels('custom-model'), [
   'custom-model',
   'gemini-3.8-flash',
   'gemini-3.6-flash',
+  'gemini-3.5-flash',
   'gemini-3.5-flash-lite',
-  'gemini-3.5-flash'
+  'gemini-3.1-flash-lite'
 ]);
 assert.equal(isGeminiModelUnavailable(404, 'This model models/gemini-2.5-flash is no longer available to new users.'), true);
 assert.equal(isGeminiModelUnavailable(404, 'File not found'), false);

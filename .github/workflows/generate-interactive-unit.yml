@@ -14,7 +14,10 @@ on:
       - 'scripts/lib/extraction-cache-health.mjs'
       - 'scripts/lib/curriculum-batch-progress.mjs'
       - 'scripts/lib/gemini-config.mjs'
+      - 'scripts/lib/interactive-unit-schema.mjs'
+      - 'scripts/test-interactive-unit-schema.mjs'
       - 'scripts/test-gemini-config.mjs'
+      - 'artifacts/unit-drafts/batch-trigger.json'
       - 'scripts/test-source-review-queue.mjs'
       - 'scripts/check-extraction-cache.mjs'
       - 'scripts/generate-interactive-unit.mjs'
@@ -185,6 +188,23 @@ jobs:
             artifacts/source-review-queue.md
           key: ${{ steps.source_cache.outputs.cache-primary-key }}
 
+      - name: Resolve resumable chain depth
+        id: batch_chain
+        shell: bash
+        run: |
+          DEPTH="${{ github.event.inputs.chain_depth || '0' }}"
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            MESSAGE="$(node -e 'const fs=require("node:fs"); const event=JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,"utf8")); process.stdout.write(event.head_commit?.message || "");')"
+            if [ "$MESSAGE" = "Auto-continue curriculum batch" ] && [ -f artifacts/unit-drafts/batch-trigger.json ]; then
+              DEPTH="$(node -e 'const fs=require("node:fs"); const state=JSON.parse(fs.readFileSync("artifacts/unit-drafts/batch-trigger.json","utf8")); process.stdout.write(String(Number(state.chainDepth || 0)));')"
+            else
+              DEPTH=0
+            fi
+          elif [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            DEPTH=0
+          fi
+          echo "value=$DEPTH" >> "$GITHUB_OUTPUT"
+
       - name: Generate resumable ordered unit batch
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -194,6 +214,7 @@ jobs:
           GEMINI_MODEL: ${{ github.event.inputs.gemini_model || 'gemini-3.8-flash' }}
           START_INDEX: ${{ github.event.inputs.start_index || '' }}
           BATCH_SIZE: ${{ github.event.inputs.batch_size || '10' }}
+          CHAIN_DEPTH: ${{ steps.batch_chain.outputs.value || '0' }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
 
       - name: Persist unapproved drafts and resumable queue state
@@ -225,7 +246,11 @@ jobs:
             git config user.email "41898282+users.noreply.github.com"
             git add artifacts/unit-drafts/*.json 2>/dev/null || true
             if ! git diff --cached --quiet; then
-              git commit -m "Save resumable interactive curriculum batch"
+              if git diff --cached --name-only | grep -qx 'artifacts/unit-drafts/batch-trigger.json'; then
+                git commit -m "Auto-continue curriculum batch"
+              else
+                git commit -m "Save resumable interactive curriculum batch"
+              fi
               git pull --rebase origin main
               git push
             else
@@ -242,41 +267,17 @@ jobs:
             artifacts/unit-drafts/*.json
             src/data/extracted/pages.jsonl
             src/data/extracted/manifest.json
+            artifacts/source-review-queue.json
+            artifacts/source-review-queue.md
           if-no-files-found: warn
           retention-days: 30
 
-      - name: Continue with the next resumable batch when eligible units remain
+      - name: Report resumable batch continuation
         if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          CHAIN_DEPTH: ${{ github.event.inputs.chain_depth || '0' }}
         run: |
-          set -euo pipefail
-          PROGRESS_FILE="artifacts/unit-drafts/progress.json"
-          if [ ! -f "$PROGRESS_FILE" ]; then
-            echo "::warning::No progress report was produced; automatic continuation is skipped."
-            exit 0
+          SHOULD_CONTINUE="$(node -e 'const fs=require("node:fs"); const p=JSON.parse(fs.readFileSync("artifacts/unit-drafts/progress.json","utf8")); process.stdout.write(p.autoContinuation?.scheduled ? "true" : "false");' 2>/dev/null || echo false)"
+          if [ "$SHOULD_CONTINUE" = "true" ]; then
+            echo "::notice::A batch-trigger file was saved. The persistence commit will queue the next run on main."
+          else
+            echo "::notice::No automatic batch continuation is queued. Remaining blockers and retry times are preserved in progress.json and batch-state.json."
           fi
-
-          PENDING="$(node -e 'const fs = require("node:fs"); const p = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(String(Number(p.pendingCandidates || 0)));' "$PROGRESS_FILE")"
-          DEPTH="${CHAIN_DEPTH:-0}"
-          if ! [[ "$PENDING" =~ ^[0-9]+$ && "$DEPTH" =~ ^[0-9]+$ ]]; then
-            echo "::warning::Progress or chain-depth value is invalid; automatic continuation is skipped."
-            exit 0
-          fi
-
-          if (( PENDING == 0 )); then
-            echo "No eligible curriculum candidates remain. Remaining units are completed or explicitly blocked for review."
-            exit 0
-          fi
-
-          if (( DEPTH >= 9 )); then
-            echo "::notice::Automatic batch safety cap reached after 10 runs. The saved cursor remains available for the next scheduled or manual run."
-            exit 0
-          fi
-
-          NEXT_DEPTH=$((DEPTH + 1))
-          echo "Queueing the next batch: $PENDING eligible candidates remain; chain depth $NEXT_DEPTH."
-          gh workflow run generate-interactive-unit.yml --ref main -f batch_size=10 -f chain_depth="$NEXT_DEPTH" || {
-            echo "::warning::GitHub did not accept the automatic next-batch dispatch. Progress is saved and the next scheduled/manual run can resume."
-          }

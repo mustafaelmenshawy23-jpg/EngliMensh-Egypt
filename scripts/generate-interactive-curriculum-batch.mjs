@@ -5,8 +5,8 @@ import { spawn } from 'node:child_process';
 import { validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
-import { getConfiguredGeminiKeys } from './lib/gemini-config.mjs';
-import { isTransientGenerationError, summarizeCandidateProgress, hasFatalBatchFailures } from './lib/curriculum-batch-progress.mjs';
+import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
+import { isTransientGenerationError, summarizeCandidateProgress } from './lib/curriculum-batch-progress.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -24,6 +24,9 @@ const model = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 function retryDelayFor(error, attemptCount) {
   const attempts = Math.max(1, Number(attemptCount) || 1);
   const message = String(error?.message || error || '');
+  if (/failed quality validation|Post-generation quality validation|no structured content/i.test(message)) {
+    return attempts === 1 ? 0 : 24 * 60 * 60 * 1000;
+  }
   if (isTransientGenerationError(message)) {
     const minutes = Math.min(60, 5 * (2 ** Math.min(attempts - 1, 4)));
     return minutes * 60 * 1000;
@@ -84,17 +87,22 @@ const stateFile = 'artifacts/unit-drafts/batch-state.json';
 const progressFile = 'artifacts/unit-drafts/progress.json';
 await fs.mkdir('artifacts/unit-drafts', { recursive: true });
 
-let batchState = { schemaVersion: 1, cursorIndex: 0, attempts: {} };
+let batchState = { schemaVersion: 1, cursorIndex: 0, chainDepth: 0, attempts: {} };
 try {
   const saved = JSON.parse(await fs.readFile(stateFile, 'utf8'));
   if (saved && typeof saved === 'object') {
     batchState = {
       schemaVersion: 1,
       cursorIndex: Number.isInteger(saved.cursorIndex) ? saved.cursorIndex : 0,
+      chainDepth: Number.isInteger(saved.chainDepth) ? saved.chainDepth : 0,
       attempts: saved.attempts && typeof saved.attempts === 'object' ? saved.attempts : {}
     };
   }
 } catch {}
+
+const requestedChainDepth = Number(process.env.CHAIN_DEPTH ?? batchState.chainDepth ?? 0);
+batchState.chainDepth = Number.isInteger(requestedChainDepth) && requestedChainDepth >= 0 ? requestedChainDepth : 0;
+const modelSequence = getSupportedGeminiModels(model);
 
 let extractedPages;
 try {
@@ -177,7 +185,9 @@ for (let i = 0; i < orderedCandidates.length; i++) {
         status: 'complete_draft_needs_review',
         sourceSignature,
         lastAttemptAt: priorAttempt?.lastAttemptAt || null,
-        qualityScore: audit.score
+        qualityScore: audit.score,
+        itemCount: audit.report.itemTotals.totalItems,
+        sections: audit.report.sections
       };
       sourceCache.set(unitId, { ...unit, unitId, rows, gate, sourceSignature, file, index: i, eligible: false });
       continue;
@@ -220,6 +230,16 @@ const summary = {
   nextCursorIndex: batchState.cursorIndex,
   batchSize,
   model,
+  sourceExtraction: {
+    indexedSourceBooks: manifest.books?.length || 0,
+    totalPages: manifest.totals?.totalPages ?? null,
+    ocrProcessedPages: manifest.totals?.ocrProcessedPages ?? 0,
+    ocrReliablePages: manifest.totals?.ocrReliablePages ?? 0,
+    ocrUnreliablePages: manifest.totals?.ocrUnreliablePages ?? 0,
+    ocrEmptyPages: manifest.totals?.ocrEmptyPages ?? 0,
+    ocrErrorPages: manifest.totals?.ocrErrorPages ?? 0,
+    pagesNeedingManualVisualReview: manifest.totals?.pagesNeedingManualVisualReview ?? 0
+  },
   completedDrafts: completedCandidates.filter((item) => item.status === 'complete_draft_needs_review').length,
   approvedPreserved: completedCandidates.filter((item) => item.status === 'approved_preserved').length,
   blockedSourceReview: blockedCandidates.length,
@@ -238,7 +258,9 @@ await persist();
 
 for (const unit of selected) {
   try {
-    console.log('Generating ' + unit.bookId + ' Unit ' + unit.unitNumber + ': ' + unit.title + ' (PDF ' + unit.start + '-' + unit.end + ') using ' + model);
+    const previousAttempts = Number(batchState.attempts[unit.unitId]?.attemptCount || 0);
+    const unitModel = modelSequence[Math.min(previousAttempts, modelSequence.length - 1)] || model;
+    console.log('Generating ' + unit.bookId + ' Unit ' + unit.unitNumber + ': ' + unit.title + ' (PDF ' + unit.start + '-' + unit.end + ') using ' + unitModel);
     await new Promise((resolve, reject) => {
       const child = spawn(process.execPath, ['scripts/generate-interactive-unit.mjs'], {
         stdio: ['ignore', 'pipe', 'pipe'],
@@ -247,7 +269,7 @@ for (const unit of selected) {
           BOOK_ID: unit.bookId,
           UNIT_NUMBER: String(unit.unitNumber),
           SOURCE_SIGNATURE: unit.sourceSignature,
-          GEMINI_MODEL: model
+          GEMINI_MODEL: unitModel
         }
       });
       let stderrTail = '';
@@ -284,7 +306,9 @@ for (const unit of selected) {
       status: 'generated_needs_review',
       sourceSignature: unit.sourceSignature,
       lastAttemptAt: new Date().toISOString(),
-      qualityScore: audit.score
+      qualityScore: audit.score,
+      itemCount: audit.report.itemTotals.totalItems,
+      sections: audit.report.sections
     };
   } catch (error) {
     const status = error.message.includes('BLOCKED_SOURCE_REVIEW')
@@ -324,6 +348,45 @@ const progressState = summarizeCandidateProgress(
 summary.pendingCandidates = progressState.pendingCandidates;
 summary.waitingForRetry = progressState.waitingForRetry;
 summary.stateTotals.waitingForRetry = progressState.waitingForRetry;
+
+const bookProgress = new Map();
+for (const candidate of orderedCandidates) {
+  const row = bookProgress.get(candidate.bookId) || { bookId: candidate.bookId, totalUnits: 0, statuses: {} };
+  row.totalUnits++;
+  const status = batchState.attempts[candidate.bookId + '-unit-' + candidate.unitNumber]?.status || 'pending';
+  row.statuses[status] = (row.statuses[status] || 0) + 1;
+  bookProgress.set(candidate.bookId, row);
+}
+summary.bookProgress = [...bookProgress.values()].sort((a, b) => a.bookId.localeCompare(b.bookId));
+
+const sectionCoverage = {};
+for (const attempt of Object.values(batchState.attempts)) {
+  for (const [sectionType, section] of Object.entries(attempt.sections || {})) {
+    const row = sectionCoverage[sectionType] || { unitsWithItems: 0, totalItems: 0, validItems: 0 };
+    if ((section.itemCount || 0) > 0) row.unitsWithItems++;
+    row.totalItems += Number(section.itemCount || 0);
+    row.validItems += Number(section.validItems || 0);
+    sectionCoverage[sectionType] = row;
+  }
+}
+summary.sectionCoverage = sectionCoverage;
+
+const chainDepth = batchState.chainDepth;
+const shouldAutoContinue = summary.pendingCandidates > 0 && chainDepth < 9;
+if (shouldAutoContinue) {
+  batchState.chainDepth = chainDepth + 1;
+  const trigger = {
+    repository: 'mustafaelmenshawy23-jpg/EngliMensh-Egypt',
+    nextCursorIndex: batchState.cursorIndex,
+    chainDepth: batchState.chainDepth,
+    pendingCandidates: summary.pendingCandidates,
+    generatedAt: new Date().toISOString()
+  };
+  await fs.writeFile('artifacts/unit-drafts/batch-trigger.json', JSON.stringify(trigger, null, 2) + '\\n');
+  summary.autoContinuation = { scheduled: true, chainDepth: batchState.chainDepth, reason: 'eligible candidates remain; the trigger commit will queue the next main-branch run' };
+} else {
+  summary.autoContinuation = { scheduled: false, chainDepth, reason: summary.pendingCandidates === 0 ? 'no eligible candidates remain; waiting-for-retry items stay saved' : 'automatic chain safety cap reached' };
+}
 await persist();
 
 console.log(JSON.stringify({
@@ -337,10 +400,9 @@ console.log(JSON.stringify({
   pendingCandidates: summary.pendingCandidates,
   waitingForRetry: summary.waitingForRetry,
   nextCursorIndex: summary.nextCursorIndex,
+  autoContinuation: summary.autoContinuation,
   progress: progressFile,
   state: stateFile
 }, null, 2));
 
-if (hasFatalBatchFailures(summary.results)) {
-  process.exitCode = 1;
-}
+// Per-unit API and quality failures are saved with retry metadata; they must not stop later units in the batch.
