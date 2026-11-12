@@ -23,6 +23,7 @@ on:
       - 'scripts/generate-interactive-unit.mjs'
       - 'scripts/lib/curriculum-order.mjs'
       - 'scripts/lib/source-quality-gate.mjs'
+      - 'scripts/test-source-quality-gate.mjs'
       - 'scripts/lib/content-quality-validator.mjs'
       - 'data/curriculum/source-book-index.draft.json'
       - 'src/data/extracted/manifest.json'

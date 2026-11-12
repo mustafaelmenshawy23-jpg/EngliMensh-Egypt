@@ -13,7 +13,7 @@ assert.equal(oneLongWord.status, 'needs_review',
 assert.equal(oneLongWord.metrics.longWordCount, 1);
 assert.equal(oneLongWord.metrics.severeLongWordCorruption, false);
 
-const mostlyCorruptPage = 'abnormallylongmergedocrwordthatcannotberead';
+const mostlyCorruptPage = 'abnormallylongmergedocrwordthatcannotberead'.repeat(2);
 assert.equal(validatePageText(mostlyCorruptPage).status, 'blocked',
   'a mostly unreadable page with one extremely long token must remain blocked');
 
