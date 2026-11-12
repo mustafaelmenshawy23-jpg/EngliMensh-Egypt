@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 63,
+  "cursorIndex": 81,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
       "status": "blocked_source_review",
@@ -2723,6 +2723,86 @@
       "retryAfter": "2026-11-12T09:43:27.562Z",
       "attemptCount": 1,
       "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 40/100):\nSection listening requires at least 2 item(s); found 1\nvoc-1: missing Arabic meaning\nvoc-1: missing or incomplete English example sentence\nvoc-2: missing Arabic meaning\nvoc-2: missing or incomplete English example sentence\nvoc-3: missing Arabic meaning\nvoc-3: missing or incomplete English example sentence\nvoc-4: missing Arabic meaning\nvoc-4: missing or incomplete English example sentence\nvoc-5: missing Arabic meaning\nvoc-5: missing or incomplete English example sentence\nvoc-6: missing Arabic meaning\nvoc-6: missing or incomplete English example sentence\nvoc-7: missing Arabic meaning\nvoc-7: missing or incomplete English example sentence\nvoc-8: missing Arabic meaning\nvoc-8: missing or incomplete English example sentence\nvoc-q-1: options must be an array\nvoc-q-2: options must be an array\nvoc-q-3: options must be an array\nvoc-q-4: options must be an array\ngram-1: missing or incomplete grammar explanation\ngram-1: missing or incomplete grammar example\ngram-2: missing or incomplete grammar explanation\ngram-2: missing or incomplete grammar example\ngram-3: missing or incomplete grammar explanation\ngram-3: missing or incomplete grammar example\ngram-q-1: options must be an array\ngram-q-2: options must be an array\ngram-q-3: options must be an array\ngram-q-4: options must be an array\nread-2: options must be an array\nGame item game-1 is missing gameName or description\nGame item game-1 has no supported difficulty classification\nGame item game-1 must use the currently supported playable gameMode multiple_choice\ngame-1: question prompt is missing or too short (0 chars)\ngame-1: options must be an array\ngame-1: missing or incomplete explanation/reason for answer\nGame item game-2 is missing gameName or description\nGame item game-2 has no supported difficulty classification\nGame item game-2 must use the currently supported playable gameMode multiple_choice\ngame-2: question prompt is missing or too short (0 chars)\ngame-2: options must be an array\ngame-2: missing or incomplete explanation/reason for answer\ntest-q-1: options must be an array\ntest-q-2: options must be an array\ntest-q-3: options must be an array\ntest-q-4: options must be an array\ntest-q-5: options must be an array\ntest-q-6: options must be an array\ntest-q-7: options must be an array\ntest-q-8: options must be an array\ntest-q-9: options must be an array\ntest-q-10: options must be an array\nSection listening must include at least one comprehension question with an answer key.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n"
+    },
+    "prep1-student-term1-unit-1": {
+      "status": "failed",
+      "sourceSignature": "612c673a7720a4e87abf6f7fe9fa7c0acbf300c665c92bf4f281819e8b125ae9",
+      "lastAttemptAt": "2026-11-12T06:52:29.537Z",
+      "retryAfter": "2026-11-13T06:52:29.537Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep1-student-term1-unit-2": {
+      "status": "failed",
+      "sourceSignature": "f025f7f1aa47540df785275258aecb39c5b136417bf8e2339b3474caaba25f11",
+      "lastAttemptAt": "2026-11-12T06:52:29.571Z",
+      "retryAfter": "2026-11-13T06:52:29.571Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep1-student-term1-unit-3": {
+      "status": "failed",
+      "sourceSignature": "6ce0c5684ad137fb78fbdb7b31ec7134159d4de2cd7442fc3f7dbe57a305b8a6",
+      "lastAttemptAt": "2026-11-12T06:52:29.608Z",
+      "retryAfter": "2026-11-13T06:52:29.608Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep1-student-term1-unit-5": {
+      "status": "failed",
+      "sourceSignature": "e4b3090d7d8e7621e4f2db34a05c16763b9c3e78da4990db35e301be45c0b125",
+      "lastAttemptAt": "2026-11-12T06:52:29.646Z",
+      "retryAfter": "2026-11-13T06:52:29.646Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep1-student-term1-unit-6": {
+      "status": "failed",
+      "sourceSignature": "4108627455ab11cf9969dda7b0d0f385df4b16edb9fc53a2a05b01f932dbb1f4",
+      "lastAttemptAt": "2026-11-12T06:52:29.682Z",
+      "retryAfter": "2026-11-13T06:52:29.682Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "helloplus-prep1-supplement-unit-5": {
+      "status": "failed",
+      "sourceSignature": "4756e1d171b0623b3ae48d00681b9dda60cee7857db87c7c0d544060f25ae430",
+      "lastAttemptAt": "2026-11-12T06:52:29.720Z",
+      "retryAfter": "2026-11-13T06:52:29.720Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep2-student-term1-unit-1": {
+      "status": "failed",
+      "sourceSignature": "9a5a2d1f5f6295c96117344ec2b83560c24897fc672cbf12e046009d6aec0b9e",
+      "lastAttemptAt": "2026-11-12T06:52:29.757Z",
+      "retryAfter": "2026-11-13T06:52:29.757Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep2-student-term1-unit-2": {
+      "status": "failed",
+      "sourceSignature": "67a70344dff0fad88a0fd8e86bad636326a1bb48185847f2b8e48fe0726c53ce",
+      "lastAttemptAt": "2026-11-12T06:52:29.793Z",
+      "retryAfter": "2026-11-13T06:52:29.793Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep2-student-term1-unit-3": {
+      "status": "failed",
+      "sourceSignature": "3cef56f974c6d1b6e9511237c82176d20fc09362594f57ba78041fe6102417be",
+      "lastAttemptAt": "2026-11-12T06:52:29.830Z",
+      "retryAfter": "2026-11-13T06:52:29.830Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
+    },
+    "prep2-student-term1-unit-5": {
+      "status": "failed",
+      "sourceSignature": "e5094883e25b7db75846e08211a13b0a5ad1b5c11fb528b807e83fa86a1cb7b0",
+      "lastAttemptAt": "2026-11-12T06:52:29.869Z",
+      "retryAfter": "2026-11-13T06:52:29.869Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n"
     }
   }
 }
