@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:07:14.898Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary1-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_1_ابتدائي_ترم_1_ذاكرولي1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 4,
+  "unitTitle": "On the farm",
+  "sourcePdfRange": {
+    "start": 109,
+    "end": 145
+  },
+  "sourceCoverage": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145
+  ],
+  "sourceFingerprint": "5fa84925e5afd36fbd390e11b9fa1ce73563e7e193d17557f51efe44e0879366",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "On the farm",
+    "expectedRange": {
+      "start": 109,
+      "end": 145,
+      "totalPages": 37
+    },
+    "recordedCoverage": {
+      "totalPages": 37,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 27,
+      "supplementaryItems": 6,
+      "vocabularyCount": 9,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 9,
+        "validItems": 9,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:07:14.898Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "duck",
+            "arabicMeaning": "بطة",
+            "example": "A duck has two wings.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "goat",
+            "arabicMeaning": "معزة",
+            "example": "A goat lives on the farm.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "horse",
+            "arabicMeaning": "حصان",
+            "example": "A horse is big.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "chicken",
+            "arabicMeaning": "دجاجة",
+            "example": "A chicken lives on the farm.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
+          "content": {
+            "word": "tail",
+            "arabicMeaning": "ذيل",
+            "example": "A horse has a long tail.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-6",
+          "content": {
+            "word": "grass",
+            "arabicMeaning": "عشب",
+            "example": "A cow eats grass.",
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-7",
+          "content": {
+            "word": "hay",
+            "arabicMeaning": "قش",
+            "example": "Horses eat hay.",
+            "origin": "source",
+            "sourcePdfPage": 132
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-8",
+          "content": {
+            "word": "shelter",
+            "arabicMeaning": "مأوى",
+            "example": "Animals need shelter.",
+            "origin": "source",
+            "sourcePdfPage": 127
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-9",
+          "content": {
+            "word": "soil",
+            "arabicMeaning": "تربة",
+            "example": "The roots are in the soil.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab-q-1",
+          "content": {
+            "question": "What does a cow eat?",
+            "options": [
+              "grass",
+              "milk",
+              "meat"
+            ],
+            "correctAnswer": "grass",
+            "reason": "Cows are herbivores on the farm that feed on grass.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-2",
+          "content": {
+            "question": "Where do roots grow?",
+            "options": [
+              "in the sky",
+              "in the soil",
+              "on the tree"
+            ],
+            "correctAnswer": "in the soil",
+            "reason": "Plant roots grow underground inside the soil to absorb nutrients.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-3",
+          "content": {
+            "question": "What animal swims in the water?",
+            "options": [
+              "horse",
+              "fish",
+              "goat"
+            ],
+            "correctAnswer": "fish",
+            "reason": "Fish live and swim in water.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "gram-1",
+          "content": {
+            "rule": "Present Simple Tense with Singular Subjects",
+            "explanation": "We add -s, -es, or -ies to the verb when the subject pronoun is singular (He, She, It) or a singular noun.",
+            "example": "It swims in the water.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram-q-1",
+          "content": {
+            "question": "A goat _____ hay.",
+            "options": [
+              "eat",
+              "eats",
+              "eating"
+            ],
+            "correctAnswer": "eats",
+            "reason": "With a singular subject like 'A goat', we add '-s' to the verb in the present simple tense.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q-2",
+          "content": {
+            "question": "The bird _____ in the sky.",
+            "options": [
+              "fly",
+              "flies",
+              "flying"
+            ],
+            "correctAnswer": "flies",
+            "reason": "For verbs ending in consonant + y, we drop 'y' and add '-ies' for singular subjects.",
+            "origin": "source",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q-3",
+          "content": {
+            "question": "Chickens _____ small.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "are",
+            "reason": "'Chickens' is a plural subject, so it takes the plural verb 'are'.",
+            "origin": "source",
+            "sourcePdfPage": 111
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read-passage-1",
+          "content": {
+            "passage": "There are many animals on the farm. A horse is big. It has brown hair and a long tail. A duck has two wings and one beak.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read-q-1",
+          "content": {
+            "question": "What color hair does the horse have?",
+            "options": [
+              "black",
+              "brown",
+              "white"
+            ],
+            "correctAnswer": "brown",
+            "reason": "The passage explicitly states that the horse has brown hair.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "listen-script-1",
+          "content": {
+            "script": "Look at the farm! The cow is big and eats green grass. The little duck swims near the water and has two wings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "listen-q-1",
+          "content": {
+            "question": "What does the cow eat in the recording?",
+            "options": [
+              "green grass",
+              "dry hay",
+              "fresh fish"
+            ],
+            "correctAnswer": "green grass",
+            "reason": "The speaker mentions that the cow eats green grass.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak-dialogue-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child",
+                "text": "What does a horse eat?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Farmer",
+                "text": "It eats hay and runs in the field.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Educational Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Farm Word Match",
+            "description": "Select the correct animal description to match the word.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which animal has a beak and two wings?",
+            "options": [
+              "duck",
+              "horse",
+              "goat"
+            ],
+            "correctAnswer": "duck",
+            "reason": "A duck is a bird with wings and a beak.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Verb Master",
+            "description": "Choose the correct present simple verb form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "A fish _____ in the water.",
+            "options": [
+              "swims",
+              "swim",
+              "swimming"
+            ],
+            "correctAnswer": "swims",
+            "reason": "'A fish' is a singular subject requiring the verb ending '-s'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 114
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "test-q-1",
+          "content": {
+            "question": "A duck has two _____.",
+            "options": [
+              "antlers",
+              "wings",
+              "tails"
+            ],
+            "correctAnswer": "wings",
+            "reason": "Ducks have wings that help them move and fly.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-2",
+          "content": {
+            "question": "A horse _____ in the field.",
+            "options": [
+              "run",
+              "runs",
+              "running"
+            ],
+            "correctAnswer": "runs",
+            "reason": "Singular third-person subject 'A horse' takes 'runs'.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-3",
+          "content": {
+            "question": "Chickens _____ on the farm.",
+            "options": [
+              "lives",
+              "live",
+              "living"
+            ],
+            "correctAnswer": "live",
+            "reason": "Plural subject 'Chickens' uses the base verb 'live'.",
+            "origin": "source",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-4",
+          "content": {
+            "question": "What do plants need from the soil?",
+            "options": [
+              "litter",
+              "water and nutrients",
+              "plastic"
+            ],
+            "correctAnswer": "water and nutrients",
+            "reason": "Plant roots grow in the soil to absorb water and essential nutrients.",
+            "origin": "supplementary",
+            "sourcePdfPage": 129
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-q-5",
+          "content": {
+            "question": "Deserts are usually hot and _____.",
+            "options": [
+              "sandy",
+              "salty",
+              "cold"
+            ],
+            "correctAnswer": "sandy",
+            "reason": "Deserts are characterized by hot weather and large sandy areas.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-6",
+          "content": {
+            "question": "The River Nile has _____ water.",
+            "options": [
+              "fresh",
+              "salty",
+              "plastic"
+            ],
+            "correctAnswer": "fresh",
+            "reason": "Rivers like the Nile provide fresh water, unlike oceans which have salt water.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-7",
+          "content": {
+            "question": "We should NOT drop _____ in our world.",
+            "options": [
+              "trees",
+              "litter",
+              "water"
+            ],
+            "correctAnswer": "litter",
+            "reason": "To care for our environment, we must avoid dropping trash or litter.",
+            "origin": "source",
+            "sourcePdfPage": 120
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-8",
+          "content": {
+            "question": "Leaves grow on the _____.",
+            "options": [
+              "roots",
+              "stem",
+              "soil"
+            ],
+            "correctAnswer": "stem",
+            "reason": "In plant anatomy, leaves sprout and grow along the stem.",
+            "origin": "source",
+            "sourcePdfPage": 126
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-9",
+          "content": {
+            "question": "A goat has small _____.",
+            "options": [
+              "antlers",
+              "beaks",
+              "wings"
+            ],
+            "correctAnswer": "antlers",
+            "reason": "Goats feature small horns or antlers on their heads.",
+            "origin": "source",
+            "sourcePdfPage": 137
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-10",
+          "content": {
+            "question": "Animals need food, water, and _____ to live.",
+            "options": [
+              "litter",
+              "shelter",
+              "plastic"
+            ],
+            "correctAnswer": "shelter",
+            "reason": "Basic biological needs of animals include food, water, and safe shelter.",
+            "origin": "source",
+            "sourcePdfPage": 127
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

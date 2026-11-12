@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 6,
+  "cursorIndex": 19,
   "chainDepth": 1,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
@@ -1814,7 +1814,7 @@
       "error": "Generator exited with code 1: Gemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash-lite did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nDuplicate question prompt detected: \"Which word starts with 'T'?\"\nDuplicate question prompt detected: \"Which word starts with 'I'?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "primary1-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "d1e1c21e4efe6bed81e00467ab8e25b902729d6c1c2358105045fb6dea5245c9",
       "lastAttemptAt": "2026-11-12T07:45:21.644Z",
       "qualityScore": 85,
@@ -1868,7 +1868,7 @@
       }
     },
     "primary1-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "4962e48359683d6ddf7219eacc60b8ec23b326d1751f2c358daa8589cf33adfb",
       "lastAttemptAt": "2026-11-12T07:45:45.778Z",
       "qualityScore": 85,
@@ -1922,7 +1922,7 @@
       }
     },
     "primary1-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "724d780e8e13c12638e691f6adf7fbd5898a2146cd458c367a9db3db9a00c310",
       "lastAttemptAt": "2026-11-12T07:46:02.652Z",
       "qualityScore": 100,
@@ -1976,7 +1976,7 @@
       }
     },
     "primary1-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "2eadb81da8526d2538f468139281f68f92f063947313a29f4291025178c46058",
       "lastAttemptAt": "2026-11-12T07:46:30.869Z",
       "qualityScore": 100,
@@ -2030,7 +2030,7 @@
       }
     },
     "primary1-student-term1-unit-6": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "4656f47dd165adccecec127ad6d2bd878eea3308418f3e855d0e49757d46c3e2",
       "lastAttemptAt": "2026-11-12T07:46:56.114Z",
       "qualityScore": 85,
@@ -2084,76 +2084,336 @@
       }
     },
     "connectplus-primary1-supplement-unit-1": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "04bcb42850dceefc462bbb963eb66a8b1c73cd35b687c5d7f0bf95b78e5d1a7f",
-      "lastAttemptAt": "2026-11-11T07:09:30.492Z",
-      "issues": [
-        "PDF p.11: Repeated substring pattern detected: \"............\"",
-        "PDF p.12: Repeated substring pattern detected: \"............\"",
-        "PDF p.21: Repeated substring pattern detected: \"............\"",
-        "PDF p.22: Repeated substring pattern detected: \"............\"",
-        "PDF p.26: Repeated substring pattern detected: \"............\"",
-        "PDF p.32: Repeated substring pattern detected: \"...............\"",
-        "PDF p.37: Repeated substring pattern detected: \"............\"",
-        "PDF p.41: Contains 2 abnormally long unbroken word(s) (e.g. \"cesjavricnuetanwenecasvaseaauq...\", length 107)"
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 7,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T08:03:47.136Z",
+      "qualityScore": 85,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary1-supplement-unit-2": {
-      "status": "failed",
-      "sourceSignature": "3f78ec9be0c128c7265c33416c5142fb3138489a61b10f5be2fa72449a257eef",
-      "lastAttemptAt": "2026-11-10T08:00:54.595Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "3c4ce174f8d1363fc58761ee64b827f286891bd24699d71e85db135120a9b546",
+      "lastAttemptAt": "2026-11-12T08:04:02.628Z",
+      "qualityScore": 90,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary1-supplement-unit-3": {
       "status": "failed",
-      "sourceSignature": "fc84602b96745b0aeb6c0b8914c7e218467c493e43f223b628cfff41c39c7e0a",
-      "lastAttemptAt": "2026-11-10T08:00:59.498Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "sourceSignature": "59443b14038195469d177c8c25bb82a23d96a184d6b105ead904001b9d306550",
+      "lastAttemptAt": "2026-11-12T08:06:51.262Z",
+      "retryAfter": "2026-11-13T08:06:51.262Z",
+      "attemptCount": 2,
+      "error": "Generator exited with code 1: Gemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash-lite did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"____ to your teacher.\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "connectplus-primary1-supplement-unit-4": {
-      "status": "failed",
-      "sourceSignature": "1439484d534fab1c9c3f3ee4a2c7c613de7e55fe38177e1f2ff4281f1cfa9088",
-      "lastAttemptAt": "2026-11-10T08:01:25.436Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "5fa84925e5afd36fbd390e11b9fa1ce73563e7e193d17557f51efe44e0879366",
+      "lastAttemptAt": "2026-11-12T08:07:14.950Z",
+      "qualityScore": 90,
+      "itemCount": 33,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 9,
+          "validItems": 9,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary1-supplement-unit-5": {
-      "status": "failed",
-      "sourceSignature": "8d76c9b24178f46811529c8a58e5a26249aa3ae8fdd421ce0fc56faa42f50eb6",
-      "lastAttemptAt": "2026-11-10T08:01:27.591Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "f9efd43613d6c6b90d9cdedeed6241be1c12f1f5feaf8323af4b7411a8e450a0",
+      "lastAttemptAt": "2026-11-12T08:07:40.968Z",
+      "qualityScore": 90,
+      "itemCount": 35,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary2-student-term1-unit-1": {
-      "status": "failed",
-      "sourceSignature": "2fe8b7dc70c609c0c3eab8d675808977d45101537d3117aa9295aa69e3d659d0",
-      "lastAttemptAt": "2026-11-10T08:01:31.095Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "7fd83566f1b81755febc49ffd920d4aaeb16405ee05d745770cef107575b1876",
+      "lastAttemptAt": "2026-11-12T08:08:02.444Z",
+      "qualityScore": 90,
+      "itemCount": 32,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary2-student-term1-unit-2": {
-      "status": "failed",
-      "sourceSignature": "97c5eaf649096980df80ebe6163401e772a4b9accd4361fea35c1b297fc7d959",
-      "lastAttemptAt": "2026-11-10T08:01:37.657Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018\n  throw new Error(`Gemini request failed: ${lastFailure?.message || 'unknown error'}`);\n        ^\n\nError: Gemini request failed: Gemini API 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1018:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "b4f7c8633180d081b77874dd1128e812dc9f75bf0d1240551430592a1e863f63",
+      "lastAttemptAt": "2026-11-12T08:09:06.329Z",
+      "qualityScore": 90,
+      "itemCount": 28,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary2-student-term1-unit-3": {
       "status": "blocked_source_review",
@@ -2182,47 +2442,112 @@
       "missingPages": []
     },
     "connectplus-primary2-supplement-unit-2": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "8a025d5179d344098a03bb83436f03aeb2ca8134b072e562f2c73f25c89c12c1",
-      "lastAttemptAt": "2026-11-11T07:09:30.618Z",
-      "issues": [
-        "PDF p.56: Excessive character repetition detected: \"ووووووو\"",
-        "PDF p.56: Repeated substring pattern detected: \"...............\"",
-        "PDF p.58: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.61: Repeated substring pattern detected: \"............\"",
-        "PDF p.62: Repeated substring pattern detected: \"............\"",
-        "PDF p.66: Repeated substring pattern detected: \"...............\"",
-        "PDF p.67: Repeated substring pattern detected: \"...............\"",
-        "PDF p.70: Page content is unusually short (18 chars, 4 words)",
-        "PDF p.74: Repeated substring pattern detected: \"............\"",
-        "PDF p.80: Contains 1 abnormally long unbroken word(s) (e.g. \"ceeceidaneceveveeeeseepevipase...\", length 134)",
-        "PDF p.80: Repeated substring pattern detected: \"............\"",
-        "PDF p.86: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 9,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T08:10:04.590Z",
+      "qualityScore": 90,
+      "itemCount": 33,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary2-supplement-unit-3": {
-      "status": "blocked_source_review",
+      "status": "generated_needs_review",
       "sourceSignature": "5a9a46eb6c368dbd501fe1656926532affdb695ab594e21734becaf83b7df720",
-      "lastAttemptAt": "2026-11-11T07:09:30.639Z",
-      "issues": [
-        "PDF p.93: Repeated substring pattern detected: \" 0 0 0 0\"",
-        "PDF p.94: Repeated substring pattern detected: \"..........\"",
-        "PDF p.95: Repeated substring pattern detected: \"...............\"",
-        "PDF p.98: Repeated substring pattern detected: \"............\"",
-        "PDF p.103: Repeated substring pattern detected: \"............\"",
-        "PDF p.104: Repeated substring pattern detected: \"...............\"",
-        "PDF p.109: Contains 1 abnormally long unbroken word(s) (e.g. \"coetstestavouscuvecsrottebebse...\", length 66)",
-        "PDF p.117: Page content is unusually short (20 chars, 3 words)",
-        "PDF p.119: Repeated substring pattern detected: \"..........\"",
-        "PDF p.121: Page content is unusually short (21 chars, 5 words)",
-        "PDF p.127: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 10,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-12T08:10:50.637Z",
+      "qualityScore": 90,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary2-supplement-unit-5": {
       "status": "blocked_source_review",
@@ -3150,7 +3475,7 @@
       "missingPages": []
     },
     "baccalaureate-y2-first-language-part1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "0b8b3ee5a6527cd955185c9cfdc0f0e329709cdbe73f5e39b6d3bb4c914e78e1",
       "lastAttemptAt": "2026-11-12T07:42:12.966Z",
       "qualityScore": 85,
@@ -3222,13 +3547,58 @@
       "missingPages": []
     },
     "connectplus-primary2-supplement-unit-1": {
-      "status": "failed",
+      "status": "generated_needs_review",
       "sourceSignature": "f4295d8eef926d37cd104ca99f5368364dc9820b7a73deef0c726f2c703ae602",
-      "lastAttemptAt": "2026-11-11T07:24:53.519Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1023\nif (!raw) throw new Error('Gemini returned no structured content.');\n                ^\n\nError: Gemini returned no structured content.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1023:17\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-12T08:09:25.718Z",
+      "qualityScore": 100,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary2-supplement-unit-4": {
       "status": "failed_validation",
@@ -3868,7 +4238,7 @@
       }
     },
     "baccalaureate-y2-first-language-part1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "b4d5205642bb25dd1e27403dae9d940d04003a7c5c14f7913496cbc7e743f763",
       "lastAttemptAt": "2026-11-12T07:41:23.623Z",
       "qualityScore": 90,
@@ -3922,7 +4292,7 @@
       }
     },
     "baccalaureate-y2-first-language-part2-unit-7": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "64ddcd3e4eca6338e61a4078d0169dd3a4da76d1bee1e4dbcaebc867be23ec82",
       "lastAttemptAt": "2026-11-12T07:42:53.751Z",
       "qualityScore": 90,

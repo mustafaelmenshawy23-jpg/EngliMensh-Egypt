@@ -1,0 +1,81 @@
+{
+  "status": "failed_validation",
+  "bookId": "connectplus-primary1-supplement",
+  "unitNumber": 3,
+  "score": 75,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"____ to your teacher.\""
+  ],
+  "warnings": [
+    "Speaking item s1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item s1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "In my community",
+    "expectedRange": {
+      "start": 70,
+      "end": 108,
+      "totalPages": 39
+    },
+    "recordedCoverage": {
+      "totalPages": 39,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 11,
+      "supplementaryItems": 19,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:06:51.253Z"
+  }
+}

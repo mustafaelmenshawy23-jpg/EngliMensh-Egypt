@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:10:04.576Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary2-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 2",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: Let’s get fit!",
+  "sourcePdfRange": {
+    "start": 56,
+    "end": 86
+  },
+  "sourceCoverage": [
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86
+  ],
+  "sourceFingerprint": "8a025d5179d344098a03bb83436f03aeb2ca8134b072e562f2c73f25c89c12c1",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 2: Let’s get fit!",
+    "expectedRange": {
+      "start": 56,
+      "end": 86,
+      "totalPages": 31
+    },
+    "recordedCoverage": {
+      "totalPages": 31,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 10,
+      "supplementaryItems": 23,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:10:04.576Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "short",
+            "arabicMeaning": "قصير",
+            "example": "He is short and fast.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "fast",
+            "arabicMeaning": "سريع",
+            "example": "The cat is small and fast.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "athlete",
+            "arabicMeaning": "لاعب رياضي",
+            "example": "Habiba Marzouk is a famous athlete.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "gymnastics",
+            "arabicMeaning": "جمباز",
+            "example": "She does gymnastics every day.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_5",
+          "content": {
+            "word": "vegetables",
+            "arabicMeaning": "خضروات",
+            "example": "We eat fresh vegetables to stay healthy.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_6",
+          "content": {
+            "word": "fresh air",
+            "arabicMeaning": "هواء نقي",
+            "example": "Go outside to get some fresh air.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "u2_vq_1",
+          "content": {
+            "question": "Habiba Marzouk is an ______ who does gymnastics every day.",
+            "options": [
+              "athlete",
+              "insect",
+              "bird",
+              "fish"
+            ],
+            "correctAnswer": "athlete",
+            "reason": "An athlete is a person who trains and competes in sports.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_vq_2",
+          "content": {
+            "question": "Which of these is healthy to eat?",
+            "options": [
+              "cakes",
+              "sweets",
+              "vegetables",
+              "sugar"
+            ],
+            "correctAnswer": "vegetables",
+            "reason": "Vegetables are healthy food that gives our body vitamins.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_vq_3",
+          "content": {
+            "question": "What is the opposite of fast?",
+            "options": [
+              "tall",
+              "slow",
+              "young",
+              "fit"
+            ],
+            "correctAnswer": "slow",
+            "reason": "Slow means moving at a low speed, which is the direct opposite of fast.",
+            "origin": "supplementary",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Asking about frequency with 'How often do you...?'",
+            "explanation": "Use 'How often do you + verb?' to ask how frequently someone performs an action. Answer using adverbs of frequency such as always, usually, often, sometimes, or never.",
+            "example": "How often do you walk to school? - I usually walk to school.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_2",
+          "content": {
+            "rule": "Present simple tense for routines and habits",
+            "explanation": "Use the present simple tense to talk about daily healthy routines. Singular subjects take verbs ending in -s or does.",
+            "example": "She does gymnastics every day and eats healthy food.",
+            "origin": "source",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "u2_gq_1",
+          "content": {
+            "question": "How often ______ you play on the swing?",
+            "options": [
+              "does",
+              "do",
+              "is",
+              "are"
+            ],
+            "correctAnswer": "do",
+            "reason": "In present simple questions, we use 'do' with the subject pronoun 'you'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_gq_2",
+          "content": {
+            "question": "She always ______ healthy food to stay fit.",
+            "options": [
+              "eat",
+              "eats",
+              "eating",
+              "ate"
+            ],
+            "correctAnswer": "eats",
+            "reason": "Third-person singular subjects (she) take a verb with '-s' in the present simple tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "Do camels have wings? - No, they ______.",
+            "options": [
+              "do",
+              "don't",
+              "aren't",
+              "doesn't"
+            ],
+            "correctAnswer": "don't",
+            "reason": "The short negative answer for a present simple question starting with 'Do they' is 'No, they don't.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "u2_read_pass_1",
+          "content": {
+            "passage": "Habiba Marzouk is an athlete. She does gymnastics. She does gymnastics every day. Habiba is healthy. She always eats healthy food. She always has healthy drinks.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_q_1",
+          "content": {
+            "question": "What sport does Habiba Marzouk do every day?",
+            "options": [
+              "football",
+              "gymnastics",
+              "basketball",
+              "swimming"
+            ],
+            "correctAnswer": "gymnastics",
+            "reason": "The text explicitly states that Habiba does gymnastics every day.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_read_q_2",
+          "content": {
+            "question": "How often does Habiba eat healthy food?",
+            "options": [
+              "never",
+              "sometimes",
+              "always",
+              "seldom"
+            ],
+            "correctAnswer": "always",
+            "reason": "The passage confirms that she always eats healthy food.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "u2_list_script_1",
+          "content": {
+            "script": "My name is Noha. I usually walk to school. On Wednesday, I take the bus. I often eat breakfast and I always do my homework.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_list_q_1",
+          "content": {
+            "question": "How does Noha usually go to school?",
+            "options": [
+              "by car",
+              "by bus",
+              "she walks",
+              "by bicycle"
+            ],
+            "correctAnswer": "she walks",
+            "reason": "In the listening audio, Noha mentions that she usually walks to school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_list_q_2",
+          "content": {
+            "question": "What does Noha do on Wednesday?",
+            "options": [
+              "takes the bus",
+              "swims in the sea",
+              "stays home",
+              "plays football"
+            ],
+            "correctAnswer": "takes the bus",
+            "reason": "Noha states that on Wednesday she takes the bus.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "u2_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Younis",
+                "text": "How often do you walk to school?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Emad",
+                "text": "I usually walk to school.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Healthy Habits Quest",
+            "description": "Select the best healthy choice to keep your body strong and active!",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which activity helps you stay fit and healthy?",
+            "options": [
+              "watching TV all day",
+              "eating lots of sweets",
+              "drinking lots of water",
+              "sleeping 4 hours"
+            ],
+            "correctAnswer": "drinking lots of water",
+            "reason": "Drinking plenty of water is essential for staying fit and healthy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Grammar Master",
+            "description": "Choose the correct adverb of frequency to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "I want to be fit, so I ______ eat healthy food.",
+            "options": [
+              "never",
+              "always",
+              "don't",
+              "doesn't"
+            ],
+            "correctAnswer": "always",
+            "reason": "'Always' expresses a continuous positive habit needed for health.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u2_ct_1",
+          "content": {
+            "question": "A hoopoe is a small ______ with colorful feathers.",
+            "options": [
+              "bird",
+              "fish",
+              "insect",
+              "snake"
+            ],
+            "correctAnswer": "bird",
+            "reason": "A hoopoe is classified as a small bird.",
+            "origin": "supplementary",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_2",
+          "content": {
+            "question": "How many wings does a butterfly have?",
+            "options": [
+              "two",
+              "four",
+              "six",
+              "none"
+            ],
+            "correctAnswer": "four",
+            "reason": "Butterflies are insects that have four wings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_3",
+          "content": {
+            "question": "Snakes have ______ legs.",
+            "options": [
+              "two",
+              "four",
+              "no",
+              "six"
+            ],
+            "correctAnswer": "no",
+            "reason": "Snakes are reptiles that have no legs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_4",
+          "content": {
+            "question": "How often do you go to the park? - I ______ go on Fridays.",
+            "options": [
+              "often",
+              "is",
+              "am",
+              "are"
+            ],
+            "correctAnswer": "often",
+            "reason": "'Often' is an adverb of frequency answering 'How often'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_5",
+          "content": {
+            "question": "Habiba Marzouk does gymnastics ______ day.",
+            "options": [
+              "every",
+              "no",
+              "never",
+              "not"
+            ],
+            "correctAnswer": "every",
+            "reason": "'Every day' indicates a daily routine.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_6",
+          "content": {
+            "question": "To stay fit and healthy, children should sleep for ______ hours a night.",
+            "options": [
+              "5",
+              "10",
+              "2",
+              "20"
+            ],
+            "correctAnswer": "10",
+            "reason": "10 hours of sleep each night supports healthy physical growth.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_7",
+          "content": {
+            "question": "The giraffe is tall and eats ______.",
+            "options": [
+              "fish",
+              "leaves",
+              "insects",
+              "meat"
+            ],
+            "correctAnswer": "leaves",
+            "reason": "Giraffes use their long necks to eat leaves from trees.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_8",
+          "content": {
+            "question": "Always ______ fruit and vegetables before eating them.",
+            "options": [
+              "wash",
+              "watch",
+              "break",
+              "sleep"
+            ],
+            "correctAnswer": "wash",
+            "reason": "Washing fruit and vegetables is an essential hygiene practice.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_9",
+          "content": {
+            "question": "My cat is small. It has four black ______.",
+            "options": [
+              "feet",
+              "beaks",
+              "wings",
+              "teeth"
+            ],
+            "correctAnswer": "feet",
+            "reason": "Cats walk on four feet (paws).",
+            "origin": "supplementary",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_ct_10",
+          "content": {
+            "question": "Sherif is ______ because he eats bad food and watches TV all day.",
+            "options": [
+              "healthy",
+              "unhealthy",
+              "fast",
+              "fit"
+            ],
+            "correctAnswer": "unhealthy",
+            "reason": "Lack of physical activity and poor diet make a person unhealthy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

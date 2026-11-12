@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:08:02.383Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary2-student-term1",
+  "sourceFilename": "English_language_prim2_t1 (1).pdf",
+  "grade": "Primary 2",
+  "unitNumber": 1,
+  "unitTitle": "Unit 1: Let’s Get Started!",
+  "sourcePdfRange": {
+    "start": 7,
+    "end": 18
+  },
+  "sourceCoverage": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "sourceFingerprint": "7fd83566f1b81755febc49ffd920d4aaeb16405ee05d745770cef107575b1876",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 1: Let’s Get Started!",
+    "expectedRange": {
+      "start": 7,
+      "end": 18,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 32,
+      "sourceItems": 11,
+      "supplementaryItems": 21,
+      "vocabularyCount": 7,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 7,
+        "validItems": 7,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:08:02.383Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "desk",
+            "arabicMeaning": "مكتب",
+            "example": "This is a desk.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "teacher",
+            "arabicMeaning": "معلم",
+            "example": "My teacher is kind.",
+            "origin": "source",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "chair",
+            "arabicMeaning": "كرسي",
+            "example": "This is a chair.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "board",
+            "arabicMeaning": "سبورة",
+            "example": "This is a board.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "window",
+            "arabicMeaning": "نافذة",
+            "example": "That is a window.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "door",
+            "arabicMeaning": "باب",
+            "example": "That is a door.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_7",
+          "content": {
+            "word": "circle",
+            "arabicMeaning": "دائرة",
+            "example": "This is a red circle.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What classroom object do you write on with a marker or chalk?",
+            "options": [
+              "board",
+              "chair",
+              "bag",
+              "eraser"
+            ],
+            "correctAnswer": "board",
+            "reason": "A board is used in the classroom for writing notes and lessons.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Complete the sentence: My _____ is kind. She helps me learn.",
+            "options": [
+              "teacher",
+              "desk",
+              "ruler",
+              "pencil"
+            ],
+            "correctAnswer": "teacher",
+            "reason": "A teacher is the person who helps students learn at school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Which shape is round with no straight sides?",
+            "options": [
+              "circle",
+              "square",
+              "triangle",
+              "rectangle"
+            ],
+            "correctAnswer": "circle",
+            "reason": "A circle is a round geometric shape.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Focus",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Demonstrative Pronoun: This is",
+            "explanation": "Use 'This is' when pointing to a single person or object that is close to you.",
+            "example": "This is a desk.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Demonstrative Pronoun: That is",
+            "explanation": "Use 'That is' when pointing to a single object that is far from you.",
+            "example": "That is a door.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Choose the correct word: _____ is a desk. (pointing to a desk near you)",
+            "options": [
+              "This",
+              "That",
+              "These",
+              "Those"
+            ],
+            "correctAnswer": "This",
+            "reason": "'This' is used for a singular object near the speaker.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Complete the question: What _____ this? - This is an eraser.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "'is' is the singular verb used with 'this'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "Choose the correct word: _____ is a window. (pointing to a window far away)",
+            "options": [
+              "That",
+              "This",
+              "These",
+              "It"
+            ],
+            "correctAnswer": "That",
+            "reason": "'That' is used for a singular object at a distance.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "Hello. My name is Ahmed. I sit on a chair at school. My teacher is kind. She helps me learn. At the end of the day, I say goodbye.",
+            "origin": "source",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What is the student's name in the passage?",
+            "options": [
+              "Ahmed",
+              "Ali",
+              "Mona",
+              "Omar"
+            ],
+            "correctAnswer": "Ahmed",
+            "reason": "The text explicitly states 'My name is Ahmed.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Teacher: Where is the door? Student: It’s over there.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "Where is the door according to the student?",
+            "options": [
+              "It’s over there.",
+              "It’s under the desk.",
+              "It’s in the bag.",
+              "It’s on the chair."
+            ],
+            "correctAnswer": "It’s over there.",
+            "reason": "The student responds that the door is over there.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "Where is the door?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "It’s over there.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Classroom Match",
+            "description": "Identify the item you sit on in the classroom.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which item do you sit on at school?",
+            "options": [
+              "chair",
+              "board",
+              "window",
+              "door"
+            ],
+            "correctAnswer": "chair",
+            "reason": "You sit on a chair.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Near or Far",
+            "description": "Choose the correct demonstrative pronoun.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Point to the window across the room: _____ is a window.",
+            "options": [
+              "That",
+              "This",
+              "These",
+              "Here"
+            ],
+            "correctAnswer": "That",
+            "reason": "'That' refers to a single distant object.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What is the English word for 'سبورة'?",
+            "options": [
+              "board",
+              "door",
+              "pencil",
+              "bag"
+            ],
+            "correctAnswer": "board",
+            "reason": "'Board' means سبورة in Arabic.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "Complete the sentence: My _____ helps me learn.",
+            "options": [
+              "teacher",
+              "ruler",
+              "pen",
+              "chair"
+            ],
+            "correctAnswer": "teacher",
+            "reason": "A teacher guides students and helps them learn.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "Which of the following is a geometric shape?",
+            "options": [
+              "square",
+              "pen",
+              "desk",
+              "bag"
+            ],
+            "correctAnswer": "square",
+            "reason": "A square is a geometric shape.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "What tool do you use to remove pencil marks?",
+            "options": [
+              "eraser",
+              "door",
+              "window",
+              "board"
+            ],
+            "correctAnswer": "eraser",
+            "reason": "An eraser is used to remove pencil marks.",
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "_____ is a chair. (referring to a chair right next to you)",
+            "options": [
+              "This",
+              "That",
+              "Those",
+              "These"
+            ],
+            "correctAnswer": "This",
+            "reason": "'This' is used for singular objects near the speaker.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "_____ is a door. (pointing across the room)",
+            "options": [
+              "That",
+              "This",
+              "These",
+              "They"
+            ],
+            "correctAnswer": "That",
+            "reason": "'That' points to a singular object that is far.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "Complete the question: What _____ this?",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "'is' is the correct singular form of 'to be' used with 'this'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "According to Ahmed's reading passage, how is his teacher described?",
+            "options": [
+              "kind",
+              "tall",
+              "old",
+              "fast"
+            ],
+            "correctAnswer": "kind",
+            "reason": "The text says 'My teacher is kind.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "When someone asks 'Where is the door?', how does Student B answer?",
+            "options": [
+              "It’s over there.",
+              "This is a door.",
+              "I see a board.",
+              "Goodbye."
+            ],
+            "correctAnswer": "It’s over there.",
+            "reason": "Student B points out the location by saying 'It's over there.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "What polite phrase do you say at the end of the school day?",
+            "options": [
+              "Goodbye",
+              "Hello",
+              "Thank you",
+              "Sorry"
+            ],
+            "correctAnswer": "Goodbye",
+            "reason": "Ahmed says goodbye at the end of the day.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

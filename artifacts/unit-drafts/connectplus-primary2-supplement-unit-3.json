@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:10:50.627Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary2-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 2",
+  "unitNumber": 3,
+  "unitTitle": "Unit 3: A day in my life",
+  "sourcePdfRange": {
+    "start": 87,
+    "end": 127
+  },
+  "sourceCoverage": [
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "sourceFingerprint": "5a9a46eb6c368dbd501fe1656926532affdb695ab594e21734becaf83b7df720",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 3: A day in my life",
+    "expectedRange": {
+      "start": 87,
+      "end": 127,
+      "totalPages": 41
+    },
+    "recordedCoverage": {
+      "totalPages": 41,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 26,
+      "supplementaryItems": 4,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:10:50.627Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u3_voc_1",
+          "content": {
+            "word": "hotel",
+            "arabicMeaning": "فندق",
+            "example": "My dad works in a hotel.",
+            "origin": "source",
+            "sourcePdfPage": 87
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_2",
+          "content": {
+            "word": "hospital",
+            "arabicMeaning": "مستشفى",
+            "example": "Doctors help sick people at the hospital.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_3",
+          "content": {
+            "word": "mechanic",
+            "arabicMeaning": "ميكانيكي",
+            "example": "A mechanic mends cars and lorries.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_4",
+          "content": {
+            "word": "printer",
+            "arabicMeaning": "طابعة",
+            "example": "We use a printer to print things.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_5",
+          "content": {
+            "word": "tablet",
+            "arabicMeaning": "كمبيوتر لوحي",
+            "example": "A tablet is smaller than a laptop.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u3_vocq_1",
+          "content": {
+            "question": "What device do we use to print things?",
+            "options": [
+              "keyboard",
+              "printer",
+              "cell phone"
+            ],
+            "correctAnswer": "printer",
+            "reason": "A printer is used to output text and images onto paper.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_vocq_2",
+          "content": {
+            "question": "Who mends cars and lorries?",
+            "options": [
+              "chef",
+              "mechanic",
+              "fisherman"
+            ],
+            "correctAnswer": "mechanic",
+            "reason": "A mechanic is a worker whose job is to fix and maintain vehicles.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_vocq_3",
+          "content": {
+            "question": "Where does a doctor work?",
+            "options": [
+              "in a hospital",
+              "on a farm",
+              "in a kitchen"
+            ],
+            "correctAnswer": "in a hospital",
+            "reason": "Doctors help sick people in a hospital context.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "u3_gram_1",
+          "content": {
+            "rule": "Present Continuous Tense",
+            "explanation": "Use am, is, or are followed by a verb ending in -ing to talk about actions happening right now.",
+            "example": "He is putting on his jacket.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_2",
+          "content": {
+            "rule": "Present Simple Tense for Jobs and Routines",
+            "explanation": "Use the singular verb form ending in -s/es for He, She, or It to describe job facts or regular daily habits.",
+            "example": "The farmer works on a farm.",
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u3_gramq_1",
+          "content": {
+            "question": "Look! Dad is __________ his tea in the kitchen.",
+            "options": [
+              "having",
+              "have",
+              "has"
+            ],
+            "correctAnswer": "having",
+            "reason": "Present continuous requires the verb form ending in -ing after 'is'.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gramq_2",
+          "content": {
+            "question": "Where __________ she work?",
+            "options": [
+              "do",
+              "does",
+              "are"
+            ],
+            "correctAnswer": "does",
+            "reason": "In the present simple, we use 'does' for third-person singular subjects (she).",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gramq_3",
+          "content": {
+            "question": "They __________ watching TV right now.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "are",
+            "reason": "The subject 'They' takes 'are' in the present continuous tense.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u3_read_1",
+          "content": {
+            "passage": "It’s 6 o'clock in the morning. I'm getting up. Where's Dad ? He's in the kitchen! He's having his tea. It’s 7 am. We're having our breakfast. My dad is putting on his jacket. He's putting on his shoes and he's picking up his bag. Why is he going out ? My dad is a doctor. He works at the hospital. He starts work at 8 o'clock in the morning! It’s 5 pm. We're watching TV now. What is Dad doing ? Dad is working. He's helping people. It’s 9 pm. I'm going to bed. Goodnight!",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_read_2",
+          "content": {
+            "question": "What time does Dad start work at the hospital?",
+            "options": [
+              "at 6 o'clock",
+              "at 7 o'clock",
+              "at 8 o'clock"
+            ],
+            "correctAnswer": "at 8 o'clock",
+            "reason": "The passage explicitly states 'He starts work at 8 o'clock in the morning!'",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "u3_list_1",
+          "content": {
+            "script": "Hello! My name is Omnia. I get up early every morning. I wash my hands before dinner. On Wednesdays, I go swimming with my family.",
+            "origin": "supplementary",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3_list_2",
+          "content": {
+            "question": "What day does Omnia go swimming?",
+            "options": [
+              "On Mondays",
+              "On Wednesdays",
+              "On Fridays"
+            ],
+            "correctAnswer": "On Wednesdays",
+            "reason": "According to the listening script, Omnia goes swimming on Wednesdays.",
+            "origin": "supplementary",
+            "sourcePdfPage": 104
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Activities",
+      "items": [
+        {
+          "itemId": "u3_speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child",
+                "text": "What does he do?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Teacher",
+                "text": "He's an architect.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 113
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u3_game_1",
+          "content": {
+            "gameName": "Job Match Challenge",
+            "description": "Choose the correct place of work for each profession.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Where does a chef work?",
+            "options": [
+              "in a kitchen",
+              "on a farm",
+              "in a hospital"
+            ],
+            "correctAnswer": "in a kitchen",
+            "reason": "A chef works in a kitchen to prepare food for people.",
+            "origin": "supplementary",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3_game_2",
+          "content": {
+            "gameName": "Grammar Action Quiz",
+            "description": "Select the correct verb form for actions happening right now.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "She is __________ a white coat today.",
+            "options": [
+              "wear",
+              "wearing",
+              "wears"
+            ],
+            "correctAnswer": "wearing",
+            "reason": "We use the present continuous form verb+ing after 'is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u3_test_1",
+          "content": {
+            "question": "A __________ mends cars and lorries.",
+            "options": [
+              "mechanic",
+              "chef",
+              "farmer"
+            ],
+            "correctAnswer": "mechanic",
+            "reason": "A mechanic is trained to repair vehicles like cars and lorries.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_2",
+          "content": {
+            "question": "What do we use to call people?",
+            "options": [
+              "cell phone",
+              "printer",
+              "keyboard"
+            ],
+            "correctAnswer": "cell phone",
+            "reason": "A cell phone is a device used primarily to make phone calls.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_3",
+          "content": {
+            "question": "The farmer __________ after animals on the farm.",
+            "options": [
+              "looks",
+              "looking",
+              "look"
+            ],
+            "correctAnswer": "looks",
+            "reason": "Third-person singular 'The farmer' takes the verb form ending in -s in present simple.",
+            "origin": "source",
+            "sourcePdfPage": 96
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_4",
+          "content": {
+            "question": "They are __________ television right now.",
+            "options": [
+              "watch",
+              "watching",
+              "watches"
+            ],
+            "correctAnswer": "watching",
+            "reason": "Present continuous tense uses are + verb ending in -ing.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_5",
+          "content": {
+            "question": "Where does a market seller work?",
+            "options": [
+              "at the market",
+              "at the hospital",
+              "in a school"
+            ],
+            "correctAnswer": "at the market",
+            "reason": "A market seller sells fruit and vegetables at the market.",
+            "origin": "source",
+            "sourcePdfPage": 106
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_6",
+          "content": {
+            "question": "What is smaller than a laptop?",
+            "options": [
+              "tablet",
+              "building",
+              "hotel"
+            ],
+            "correctAnswer": "tablet",
+            "reason": "A tablet is a portable digital device smaller than a laptop.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_7",
+          "content": {
+            "question": "I wash my hands __________ dinner.",
+            "options": [
+              "before",
+              "on",
+              "under"
+            ],
+            "correctAnswer": "before",
+            "reason": "'Before' indicates doing a hygiene routine prior to eating a meal.",
+            "origin": "source",
+            "sourcePdfPage": 102
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_8",
+          "content": {
+            "question": "A chef makes food for people to __________.",
+            "options": [
+              "enjoy",
+              "mend",
+              "drive"
+            ],
+            "correctAnswer": "enjoy",
+            "reason": "A chef prepares delicious meals so people can enjoy eating them.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_9",
+          "content": {
+            "question": "What preposition comes before days of the week like Fridays?",
+            "options": [
+              "on",
+              "in",
+              "at"
+            ],
+            "correctAnswer": "on",
+            "reason": "We use the preposition 'on' before days of the week.",
+            "origin": "source",
+            "sourcePdfPage": 100
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_10",
+          "content": {
+            "question": "A construction worker wears a hard hat to __________ his head.",
+            "options": [
+              "protect",
+              "wash",
+              "eat"
+            ],
+            "correctAnswer": "protect",
+            "reason": "A hard hat is safety gear worn to protect the head on building sites.",
+            "origin": "source",
+            "sourcePdfPage": 105
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

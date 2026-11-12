@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:09:06.271Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary2-student-term1",
+  "sourceFilename": "English_language_prim2_t1 (1).pdf",
+  "grade": "Primary 2",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: Colors, Shapes, and Numbers 1–20",
+  "sourcePdfRange": {
+    "start": 19,
+    "end": 30
+  },
+  "sourceCoverage": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "sourceFingerprint": "b4f7c8633180d081b77874dd1128e812dc9f75bf0d1240551430592a1e863f63",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 2: Colors, Shapes, and Numbers 1–20",
+    "expectedRange": {
+      "start": 19,
+      "end": 30,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 6,
+      "supplementaryItems": 22,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:09:06.271Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "triangle",
+            "arabicMeaning": "مثلث",
+            "example": "This is a yellow triangle.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "square",
+            "arabicMeaning": "مربع",
+            "example": "This is a blue square.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "circle",
+            "arabicMeaning": "دائرة",
+            "example": "This is a red circle.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "pencil",
+            "arabicMeaning": "قلم رصاص",
+            "example": "I have one pencil.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vq-1",
+          "content": {
+            "question": "What shape has three sides?",
+            "options": [
+              "circle",
+              "triangle",
+              "square",
+              "star"
+            ],
+            "correctAnswer": "triangle",
+            "reason": "A triangle is a geometric shape with three sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq-2",
+          "content": {
+            "question": "Choose the word for a completely round shape:",
+            "options": [
+              "square",
+              "triangle",
+              "circle",
+              "ruler"
+            ],
+            "correctAnswer": "circle",
+            "reason": "A circle is a round shape without straight lines or corners.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq-3",
+          "content": {
+            "question": "Which of the following words is a color?",
+            "options": [
+              "desk",
+              "green",
+              "pencil",
+              "bag"
+            ],
+            "correctAnswer": "green",
+            "reason": "Green is a color word taught in this unit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram-1",
+          "content": {
+            "rule": "Singular and Plural Nouns",
+            "explanation": "Use the singular form for one item. Add -s to the noun to make it plural when there is more than one item.",
+            "example": "I have one book. I have two chairs.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gq-1",
+          "content": {
+            "question": "Complete: 'I have one _____.'",
+            "options": [
+              "books",
+              "book",
+              "pencils",
+              "chairs"
+            ],
+            "correctAnswer": "book",
+            "reason": "We use the singular form 'book' after the number one.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq-2",
+          "content": {
+            "question": "Complete: 'There are three _____ in the classroom.'",
+            "options": [
+              "bag",
+              "bags",
+              "desk",
+              "pen"
+            ],
+            "correctAnswer": "bags",
+            "reason": "We add -s to form a plural noun when counting more than one item.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq-3",
+          "content": {
+            "question": "Choose the correct sentence:",
+            "options": [
+              "How many pencils are there?",
+              "How many pencil is there?",
+              "How much pencils are there?",
+              "How many pencil are there?"
+            ],
+            "correctAnswer": "How many pencils are there?",
+            "reason": "The structure 'How many' takes a plural noun followed by 'are there?'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read-passage-1",
+          "content": {
+            "passage": "Look at my classroom. This is a red circle on the wall. This is a blue square on the desk. I have six pencils and eight books.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "read-q-1",
+          "content": {
+            "question": "What shape is blue on the desk?",
+            "options": [
+              "circle",
+              "square",
+              "triangle",
+              "rectangle"
+            ],
+            "correctAnswer": "square",
+            "reason": "The reading passage states that the blue square is on the desk.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list-script-1",
+          "content": {
+            "script": "Teacher: How many pens do you have? Student: I have five pens. Teacher: Great! Let's count the desks. How many desks are there? Student: I see four desks.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list-q-1",
+          "content": {
+            "question": "How many pens does the student have?",
+            "options": [
+              "four pens",
+              "five pens",
+              "six pens",
+              "ten pens"
+            ],
+            "correctAnswer": "five pens",
+            "reason": "In the conversation, the student explicitly says 'I have five pens.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "spk-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "How many pens do you have?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "I have five pens.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Color & Shape Match",
+            "description": "Test your knowledge of shapes and colors in this quick challenge!",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which shape is round like a wheel?",
+            "options": [
+              "triangle",
+              "square",
+              "circle",
+              "rectangle"
+            ],
+            "correctAnswer": "circle",
+            "reason": "A circle is a round shape with no corners, like a wheel.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Grammar Master",
+            "description": "Choose the correct plural word to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Fill in the blank: 'There are ten _____.'",
+            "options": [
+              "student",
+              "students",
+              "a student",
+              "studying"
+            ],
+            "correctAnswer": "students",
+            "reason": "The plural form 'students' is required when counting ten people.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test-1",
+          "content": {
+            "question": "What shape has three straight sides?",
+            "options": [
+              "circle",
+              "triangle",
+              "square",
+              "oval"
+            ],
+            "correctAnswer": "triangle",
+            "reason": "A triangle is defined by its three straight sides.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-2",
+          "content": {
+            "question": "Which of the following is a shape with four equal sides?",
+            "options": [
+              "blue",
+              "green",
+              "square",
+              "circle"
+            ],
+            "correctAnswer": "square",
+            "reason": "A square has four straight sides of equal length.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-3",
+          "content": {
+            "question": "Which word contains the short 'o' vowel sound?",
+            "options": [
+              "sun",
+              "cup",
+              "fox",
+              "bun"
+            ],
+            "correctAnswer": "fox",
+            "reason": "The word 'fox' features the short 'o' sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-4",
+          "content": {
+            "question": "Which word contains the short 'u' vowel sound?",
+            "options": [
+              "box",
+              "dog",
+              "cup",
+              "fox"
+            ],
+            "correctAnswer": "cup",
+            "reason": "The word 'cup' features the short 'u' sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-5",
+          "content": {
+            "question": "Complete the sentence: 'I have six _____.'",
+            "options": [
+              "pencils",
+              "pencil",
+              "a pencil",
+              "one pencil"
+            ],
+            "correctAnswer": "pencils",
+            "reason": "Numbers greater than one require a plural noun ending in -s.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-6",
+          "content": {
+            "question": "What is the correct plural form of 'book'?",
+            "options": [
+              "bookes",
+              "books",
+              "book",
+              "bookies"
+            ],
+            "correctAnswer": "books",
+            "reason": "Regular singular nouns form their plural by adding -s.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-7",
+          "content": {
+            "question": "Which question asks about the number of objects?",
+            "options": [
+              "What color is this?",
+              "What shape is this?",
+              "How many pens are there?",
+              "Where are the pens?"
+            ],
+            "correctAnswer": "How many pens are there?",
+            "reason": "'How many' is the standard question phrase used to inquire about quantity.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-8",
+          "content": {
+            "question": "If there is 1 board and 3 bags, how many total items are there?",
+            "options": [
+              "two",
+              "three",
+              "four",
+              "five"
+            ],
+            "correctAnswer": "four",
+            "reason": "Adding 1 board and 3 bags equals 4 items in total.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-9",
+          "content": {
+            "question": "Which word has a long 'a' sound?",
+            "options": [
+              "cat",
+              "snake",
+              "get",
+              "snack"
+            ],
+            "correctAnswer": "snake",
+            "reason": "The word 'snake' contains the long 'a' sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test-10",
+          "content": {
+            "question": "What number comes after 40 when counting by 10s?",
+            "options": [
+              "45",
+              "50",
+              "60",
+              "30"
+            ],
+            "correctAnswer": "50",
+            "reason": "The sequence counting by tens is 10, 20, 30, 40, 50.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

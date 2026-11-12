@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-12T08:09:25.708Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "connectplus-primary2-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 2",
+  "unitNumber": 1,
+  "unitTitle": "Ready, get set, go!",
+  "sourcePdfRange": {
+    "start": 11,
+    "end": 55
+  },
+  "sourceCoverage": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "sourceFingerprint": "f4295d8eef926d37cd104ca99f5368364dc9820b7a73deef0c726f2c703ae602",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Ready, get set, go!",
+    "expectedRange": {
+      "start": 11,
+      "end": 55,
+      "totalPages": 45
+    },
+    "recordedCoverage": {
+      "totalPages": 45,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 22,
+      "supplementaryItems": 7,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-12T08:09:25.708Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "daily routine",
+            "arabicMeaning": "الروتين اليومي",
+            "example": "My daily routine starts at seven o'clock.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "have lunch",
+            "arabicMeaning": "يتناول وجبة الغداء",
+            "example": "I have lunch at one o'clock.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "ride a bike",
+            "arabicMeaning": "يركب دراجة",
+            "example": "I ride my bike after school.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "drink water",
+            "arabicMeaning": "يشرب ماء",
+            "example": "I eat sandwiches and I drink water.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "grandma",
+            "arabicMeaning": "جدة",
+            "example": "My grandma wears glasses.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vq_1",
+          "content": {
+            "question": "What do you do with a bike?",
+            "options": [
+              "ride a bike",
+              "eat a bike",
+              "drink a bike"
+            ],
+            "correctAnswer": "ride a bike",
+            "reason": "We use the phrase ride a bike for bicycles.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq_2",
+          "content": {
+            "question": "What meal do we usually have at one o'clock in the afternoon?",
+            "options": [
+              "breakfast",
+              "lunch",
+              "dinner"
+            ],
+            "correctAnswer": "lunch",
+            "reason": "We have lunch at one o'clock as shown in the daily routine vocabulary.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq_3",
+          "content": {
+            "question": "Who is your mother's or father's mother?",
+            "options": [
+              "grandma",
+              "brother",
+              "uncle"
+            ],
+            "correctAnswer": "grandma",
+            "reason": "Grandma is the mother of your parents.",
+            "origin": "supplementary",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Present Simple Tense",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Present Simple Affirmative with He / She / It",
+            "explanation": "We add 's' or 'es' to the base form of the verb with He, She, It, or a singular noun.",
+            "example": "She gets up at 7 o'clock.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gq_1",
+          "content": {
+            "question": "She ________ to school every day.",
+            "options": [
+              "walk",
+              "walks",
+              "walking"
+            ],
+            "correctAnswer": "walks",
+            "reason": "With 'She', we add 's' to the base verb in the present simple tense.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gq_2",
+          "content": {
+            "question": "Does Ali ________ up early?",
+            "options": [
+              "gets",
+              "get",
+              "got"
+            ],
+            "correctAnswer": "get",
+            "reason": "After 'Does' in questions, we use the base form of the verb without adding 's'.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gq_3",
+          "content": {
+            "question": "I ________ home at half past five.",
+            "options": [
+              "go",
+              "goes",
+              "going"
+            ],
+            "correctAnswer": "go",
+            "reason": "With the pronoun 'I', we use the base form of the verb in the present simple tense.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_pass_1",
+          "content": {
+            "passage": "Amira is a clever girl. She gets up at seven o'clock. She eats her breakfast at seven. Amira walks to school with her dad. She plays tennis after school.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q_1",
+          "content": {
+            "question": "Who does Amira walk to school with?",
+            "options": [
+              "mom",
+              "friend",
+              "dad"
+            ],
+            "correctAnswer": "dad",
+            "reason": "The text states that Amira walks to school with her dad.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Boy: What time do you have breakfast, Mona? Girl: I have breakfast at seven o'clock in the morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q_1",
+          "content": {
+            "question": "What time does Mona have breakfast according to the dialogue?",
+            "options": [
+              "at seven o'clock",
+              "at eight o'clock",
+              "at one o'clock"
+            ],
+            "correctAnswer": "at seven o'clock",
+            "reason": "The girl states she has breakfast at seven o'clock in the morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Mona",
+                "text": "What is the time?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Nora",
+                "text": "It's twelve twenty.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Fun Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocabulary Challenge",
+            "description": "Choose the correct word for the daily routine activity.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What do you do with water?",
+            "options": [
+              "drink water",
+              "ride water",
+              "play water"
+            ],
+            "correctAnswer": "drink water",
+            "reason": "Water is something we drink.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Hop",
+            "description": "Select the correct verb form for present simple.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "He ________ up at seven o'clock.",
+            "options": [
+              "get",
+              "gets",
+              "getting"
+            ],
+            "correctAnswer": "gets",
+            "reason": "With 'He', we use the verb plus 's' (gets).",
+            "origin": "supplementary",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_1",
+          "content": {
+            "question": "I eat my breakfast at half ________ seven.",
+            "options": [
+              "past",
+              "clock",
+              "to"
+            ],
+            "correctAnswer": "past",
+            "reason": "We say 'half past seven' for 30 minutes after seven.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_2",
+          "content": {
+            "question": "She ________ lunch at one o'clock.",
+            "options": [
+              "have",
+              "has",
+              "having"
+            ],
+            "correctAnswer": "has",
+            "reason": "The verb 'have' becomes 'has' with the pronoun 'She' in the present simple.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_3",
+          "content": {
+            "question": "Do you eat sandwiches? - No, I ________.",
+            "options": [
+              "do",
+              "don't",
+              "does"
+            ],
+            "correctAnswer": "don't",
+            "reason": "A negative short answer with 'Do you' uses 'don't'.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_4",
+          "content": {
+            "question": "My mom has curly, ________ hair.",
+            "options": [
+              "brown",
+              "tall",
+              "long"
+            ],
+            "correctAnswer": "brown",
+            "reason": "The text mentions curly, brown hair for the mother.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_5",
+          "content": {
+            "question": "These ________ my parents.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "are",
+            "reason": "We use 'These are' with plural nouns like parents.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_6",
+          "content": {
+            "question": "What is she doing? - She is ________ a book.",
+            "options": [
+              "reading",
+              "eating",
+              "riding"
+            ],
+            "correctAnswer": "reading",
+            "reason": "We read books in the present continuous tense.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_7",
+          "content": {
+            "question": "Fares and Amir are ________ kites in the park.",
+            "options": [
+              "flying",
+              "driving",
+              "baking"
+            ],
+            "correctAnswer": "flying",
+            "reason": "Kites are flown in the sky.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_8",
+          "content": {
+            "question": "Baby lions are called ________.",
+            "options": [
+              "cubs",
+              "birds",
+              "herds"
+            ],
+            "correctAnswer": "cubs",
+            "reason": "Baby lions are known as cubs.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_9",
+          "content": {
+            "question": "Elephants live in a ________ with lots of other elephants.",
+            "options": [
+              "nest",
+              "herd",
+              "pride"
+            ],
+            "correctAnswer": "herd",
+            "reason": "Elephants live together in a group called a herd.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_10",
+          "content": {
+            "question": "Would you like some cookies? - Yes, ________.",
+            "options": [
+              "please",
+              "thanks",
+              "no"
+            ],
+            "correctAnswer": "please",
+            "reason": "Polite offers are accepted with 'Yes, please.'",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
