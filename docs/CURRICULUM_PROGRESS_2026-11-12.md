@@ -69,7 +69,9 @@ A continuation trigger was committed on `main` at [4d0fb894](https://github.com/
 ## Voice and provenance limitations
 
 - Sampled Primary 1 Unit 2 and Unit 3 drafts have all nine sections and valid page references, but dialogue turns are marked `speakerGender: unknown`; no gender-matched voice is claimed for those turns.
-- A sampled Preparatory 3 dialogue has male/female labels, but no actual Android device voice test has been completed.
+- The app queries native Android voices through `TextToSpeech.getSupportedVoices()` and browser voices through `speechSynthesis.getVoices()`. It identifies gender only when the voice name/URI explicitly contains `male` or `female`; unknown voices are never assigned to a gendered role.
+- Separate male/female voice selectors are present and save preferences. Dialogue replay is sequential. Speaking practice calls `stopAudio()` before opening speech recognition, preventing TTS and microphone capture from intentionally running together.
+- If no verified matching voice is exposed, the app uses the platform default and explicitly warns that gender matching is unverified. A sampled Preparatory 3 dialogue has male/female labels, but no actual Android device voice test has been completed.
 - The content validator checks the declared `origin` and page range but does not independently prove that every item marked `source` is an exact transcription. Teacher/source review remains mandatory.
 - Listening scripts must remain clearly supplementary when no printed transcript exists.
 
