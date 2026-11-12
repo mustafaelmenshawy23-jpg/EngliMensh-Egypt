@@ -81,6 +81,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Preflight curriculum generation syntax
+        run: |
+          node --check scripts/generate-interactive-unit.mjs
+          node --check scripts/generate-interactive-curriculum-batch.mjs
+
       - name: Restore reusable source extraction cache
         id: source_cache
         uses: actions/cache/restore@v4
@@ -282,3 +287,38 @@ jobs:
           else
             echo "::notice::No automatic batch continuation is queued. Remaining blockers and retry times are preserved in progress.json and batch-state.json."
           fi
+
+      - name: Dispatch the next resumable curriculum batch
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const progressPath = 'artifacts/unit-drafts/progress.json';
+            const triggerPath = 'artifacts/unit-drafts/batch-trigger.json';
+            if (!fs.existsSync(progressPath) || !fs.existsSync(triggerPath)) {
+              core.info('No saved batch progress/trigger; no follow-up run will be dispatched.');
+              return;
+            }
+            const progress = JSON.parse(fs.readFileSync(progressPath, 'utf8'));
+            const trigger = JSON.parse(fs.readFileSync(triggerPath, 'utf8'));
+            if (!progress.autoContinuation?.scheduled || Number(progress.pendingCandidates || 0) < 1) {
+              core.info('The latest batch did not qualify for automatic continuation.');
+              return;
+            }
+            if (trigger.repository !== 'mustafaelmenshawy23-jpg/EngliMensh-Egypt') {
+              throw new Error('Refusing to dispatch a batch trigger for a different repository.');
+            }
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'generate-interactive-unit.yml',
+              ref: 'main',
+              inputs: {
+                start_index: String(trigger.nextCursorIndex ?? progress.nextCursorIndex ?? ''),
+                batch_size: String(trigger.batchSize ?? progress.batchSize ?? 10),
+                chain_depth: String(trigger.chainDepth ?? 0),
+                gemini_model: String(trigger.model ?? progress.model ?? 'gemini-3.8-flash')
+              }
+            });
+            core.notice('Dispatched the next resumable batch on main using workflow_dispatch.');

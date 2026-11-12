@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import {
   isTransientGenerationError,
   summarizeCandidateProgress,
-  hasFatalBatchFailures
+  hasFatalBatchFailures,
+  shouldAutoContinueBatch
 } from "./lib/curriculum-batch-progress.mjs";
 
 const now = Date.parse("2026-11-10T08:00:00.000Z");
@@ -30,5 +31,10 @@ assert.equal(hasFatalBatchFailures([{ status: "failed", error: "Gemini API 503: 
 assert.equal(hasFatalBatchFailures([{ status: "failed", error: "Invalid API key" }]), true);
 assert.equal(hasFatalBatchFailures([{ status: "failed_validation", error: "Wrong answer key" }]), true);
 assert.equal(hasFatalBatchFailures([{ status: "generated_needs_review" }]), false);
+
+assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 0, 3), true);
+assert.equal(shouldAutoContinueBatch([{ status: "failed_validation" }], 5, 0, 3), false);
+assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 0, 0, 3), false);
+assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 3, 3), false);
 
 console.log("Curriculum batch retry and pending-candidate tests passed.");

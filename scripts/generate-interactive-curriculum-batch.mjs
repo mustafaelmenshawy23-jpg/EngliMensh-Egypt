@@ -6,7 +6,7 @@ import { validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/sourc
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
 import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
-import { isTransientGenerationError, summarizeCandidateProgress } from './lib/curriculum-batch-progress.mjs';
+import { isTransientGenerationError, summarizeCandidateProgress, shouldAutoContinueBatch } from './lib/curriculum-batch-progress.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -372,7 +372,8 @@ for (const attempt of Object.values(batchState.attempts)) {
 summary.sectionCoverage = sectionCoverage;
 
 const chainDepth = batchState.chainDepth;
-const shouldAutoContinue = summary.pendingCandidates > 0 && chainDepth < 9;
+const maxChainDepth = 3;
+const shouldAutoContinue = shouldAutoContinueBatch(summary.results, summary.pendingCandidates, chainDepth, maxChainDepth);
 if (shouldAutoContinue) {
   batchState.chainDepth = chainDepth + 1;
   const trigger = {
@@ -380,12 +381,19 @@ if (shouldAutoContinue) {
     nextCursorIndex: batchState.cursorIndex,
     chainDepth: batchState.chainDepth,
     pendingCandidates: summary.pendingCandidates,
+    batchSize: summary.batchSize,
+    model: summary.model,
     generatedAt: new Date().toISOString()
   };
   await fs.writeFile('artifacts/unit-drafts/batch-trigger.json', JSON.stringify(trigger, null, 2) + '\n');
   summary.autoContinuation = { scheduled: true, chainDepth: batchState.chainDepth, reason: 'eligible candidates remain; the trigger commit will queue the next main-branch run' };
 } else {
-  summary.autoContinuation = { scheduled: false, chainDepth, reason: summary.pendingCandidates === 0 ? 'no eligible candidates remain; waiting-for-retry items stay saved' : 'automatic chain safety cap reached' };
+  const reason = summary.pendingCandidates === 0
+    ? 'no eligible candidates remain; waiting-for-retry items stay saved'
+    : chainDepth >= maxChainDepth
+      ? 'automatic chain safety cap reached'
+      : 'no draft passed quality validation in this batch; remaining candidates stay saved for a later retry';
+  summary.autoContinuation = { scheduled: false, chainDepth, reason };
 }
 await persist();
 
