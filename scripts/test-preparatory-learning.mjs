@@ -34,7 +34,7 @@ for (const game of ['picture-match', 'picture-quiz', 'anagram', 'meaning-quest',
 assert.ok(main.includes('data-prep-match-word') && main.includes('data-prep-match-image'), 'Picture matching controls are not wired.');
 assert.ok(main.includes('data-prep-word-check') && main.includes('data-prep-game-option'), 'Quiz and spelling controls are not wired.');
 assert.ok(main.includes('function renderPreparatorySpeaking') && main.includes('data-tts-text=') && main.includes('OPTIONAL ORAL PRACTICE'), 'Speaking practice module is missing its oral prompts or optional model playback.');
-assert.ok(main.includes('The app does not record your voice or score pronunciation.'), 'Speaking practice must disclose that it does not record or score pronunciation.');
+assert.ok(main.includes('the app checks which words it recognizes, not your accent or pronunciation quality') && main.includes('Your voice recording is not saved'), 'Speaking practice must explain word-recognition feedback, avoid claiming pronunciation scoring, and disclose that recordings are not saved.');
 assert.ok(main.includes('const swapIndex = Math.floor(Math.random() * (index + 1));'), 'Preparatory game rounds must use Fisher-Yates randomization.');
 assert.ok(main.includes('const distractors = shuffled(words.filter((item) => item.word !== target.word)).slice(0, 3);'), 'Game distractors must be selected from a shuffled set.');
 assert.ok(main.includes('game.optionSets[target.word] = shuffled([target, ...distractors]);'), 'Correct answer position must be randomized and cached for the current question.');
