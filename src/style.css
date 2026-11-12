@@ -2920,3 +2920,34 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .app-splash-loader { width:42px; height:4px; overflow:hidden; border-radius:10px; background:#E8DDC9; position:relative; }
 .app-splash-loader:after { content:""; position:absolute; inset:0; width:45%; border-radius:10px; background:#B58A43; animation:splash-progress 1.15s ease-in-out infinite alternate; }
 @keyframes splash-progress { from { transform:translateX(0); } to { transform:translateX(125%); } }
+
+
+/* Native and browser speech-practice feedback. */
+.speaking-practice-check {
+  justify-self: start;
+  border: 1px solid #b8c9e8;
+  border-radius: 10px;
+  padding: 9px 13px;
+  background: #eef4ff;
+  color: #1e438b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.speaking-practice-check:disabled { opacity: .65; cursor: wait; }
+.speaking-practice-result {
+  min-height: 0;
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.speaking-practice-result:empty { display: none; }
+.speaking-practice-result.is-success { color: #087443; font-weight: 800; }
+.speaking-practice-result.is-retry { color: #9a4b0a; }
+.prep-speaking-section .speaking-practice-check,
+.prep-speaking-section .speaking-practice-result { margin-top: 8px; }
+.speaking-line-card .speaking-practice-check,
+.speaking-line-card .speaking-practice-result { grid-column: 1 / -1; }
