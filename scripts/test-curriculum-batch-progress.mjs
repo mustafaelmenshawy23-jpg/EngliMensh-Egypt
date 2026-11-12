@@ -36,5 +36,6 @@ assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 
 assert.equal(shouldAutoContinueBatch([{ status: "failed_validation" }], 5, 0, 3), false);
 assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 0, 0, 3), false);
 assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 3, 3), false);
+assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 0, 3, false), false);
 
 console.log("Curriculum batch retry and pending-candidate tests passed.");

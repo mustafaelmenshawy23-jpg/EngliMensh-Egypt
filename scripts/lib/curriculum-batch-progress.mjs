@@ -34,7 +34,8 @@ export function hasFatalBatchFailures(results = []) {
   );
 }
 
-export function shouldAutoContinueBatch(results = [], pendingCandidates = 0, chainDepth = 0, maxChainDepth = 3) {
+export function shouldAutoContinueBatch(results = [], pendingCandidates = 0, chainDepth = 0, maxChainDepth = 3, dispatchAvailable = true) {
+  if (!dispatchAvailable) return false;
   const hasValidatedDraft = (results || []).some((result) =>
     result.status === "generated_needs_review" ||
     result.status === "complete_draft_needs_review"

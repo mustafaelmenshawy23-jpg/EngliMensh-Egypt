@@ -373,7 +373,8 @@ summary.sectionCoverage = sectionCoverage;
 
 const chainDepth = batchState.chainDepth;
 const maxChainDepth = 3;
-const shouldAutoContinue = shouldAutoContinueBatch(summary.results, summary.pendingCandidates, chainDepth, maxChainDepth);
+const dispatchAvailable = process.env.DISPATCH_AVAILABLE === 'true';
+const shouldAutoContinue = shouldAutoContinueBatch(summary.results, summary.pendingCandidates, chainDepth, maxChainDepth, dispatchAvailable);
 if (shouldAutoContinue) {
   batchState.chainDepth = chainDepth + 1;
   const trigger = {
@@ -388,11 +389,13 @@ if (shouldAutoContinue) {
   await fs.writeFile('artifacts/unit-drafts/batch-trigger.json', JSON.stringify(trigger, null, 2) + '\n');
   summary.autoContinuation = { scheduled: true, chainDepth: batchState.chainDepth, reason: 'eligible candidates remain; the trigger commit will queue the next main-branch run' };
 } else {
-  const reason = summary.pendingCandidates === 0
-    ? 'no eligible candidates remain; waiting-for-retry items stay saved'
-    : chainDepth >= maxChainDepth
-      ? 'automatic chain safety cap reached'
-      : 'no draft passed quality validation in this batch; remaining candidates stay saved for a later retry';
+  const reason = !dispatchAvailable
+    ? 'automatic dispatch is unavailable until main is the repository default branch; remaining candidates stay saved'
+    : summary.pendingCandidates === 0
+      ? 'no eligible candidates remain; waiting-for-retry items stay saved'
+      : chainDepth >= maxChainDepth
+        ? 'automatic chain safety cap reached'
+        : 'no draft passed quality validation in this batch; remaining candidates stay saved for a later retry';
   summary.autoContinuation = { scheduled: false, chainDepth, reason };
 }
 await persist();
