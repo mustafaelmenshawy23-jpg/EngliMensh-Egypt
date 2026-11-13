@@ -46,7 +46,7 @@ await fs.mkdir('artifacts/unit-drafts', { recursive: true });
 let extractedPages = [];
 try {
   extractedPages = (await fs.readFile('src/data/extracted/pages.jsonl', 'utf8'))
-    .split(/\\r?\\n/)
+    .split(/\r?\n/)
     .filter(Boolean)
     .map((line) => JSON.parse(line));
 } catch {
@@ -95,7 +95,7 @@ for (let candidateIndex = startIndex; candidateIndex < candidates.length && sele
 
   if (complete) {
     summary.results.push({ ...unit, status: 'already_generated' });
-    await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\\n');
+    await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
     continue;
   }
 
@@ -108,7 +108,7 @@ for (let candidateIndex = startIndex; candidateIndex < candidates.length && sele
       coveragePercentage: gate.coveragePercentage
     });
     console.warn('BLOCKED FOR SOURCE REVIEW ' + unit.bookId + ' Unit ' + unit.unitNumber + ': ' + gate.issues.join('; '));
-    await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\\n');
+    await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
     continue;
   }
 
@@ -117,6 +117,7 @@ for (let candidateIndex = startIndex; candidateIndex < candidates.length && sele
 }
 
 summary.selected = selected.length;
+await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
 
 for (const unit of selected) {
   const file = path.join('artifacts/unit-drafts', unit.bookId + '-unit-' + unit.unitNumber + '.json');
@@ -141,10 +142,10 @@ for (const unit of selected) {
     summary.results.push({ ...unit, status, error: error.message, candidateIndex: selectedIndexes.get(unit.bookId + ':' + unit.unitNumber) });
     console.error('[' + status.toUpperCase() + '] ' + unit.bookId + ' Unit ' + unit.unitNumber + ': ' + error.message);
   }
-  await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\\n');
+  await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
 }
 
-await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\\n');
+await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify({
   eligibleTotal: summary.eligibleTotal,
   selected: summary.selected,
