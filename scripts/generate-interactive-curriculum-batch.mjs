@@ -94,7 +94,7 @@ for (let candidateIndex = startIndex; candidateIndex < candidates.length && sele
   } catch {}
 
   if (complete) {
-    summary.results.push({ ...unit, status: 'already_generated' });
+    summary.results.push({ ...unit, status: 'already_generated', candidateIndex });
     await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
     continue;
   }
@@ -104,6 +104,7 @@ for (let candidateIndex = startIndex; candidateIndex < candidates.length && sele
     summary.results.push({
       ...unit,
       status: 'blocked_source_review',
+      candidateIndex,
       error: 'Source quality gate blocked: ' + gate.issues.join('; '),
       coveragePercentage: gate.coveragePercentage
     });
@@ -144,6 +145,15 @@ for (const unit of selected) {
   }
   await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
 }
+
+// Keep the cursor at the earliest blocked/failed unit so later batches cannot
+// permanently skip it. Source-blocked units are rechecked after OCR improves;
+// failed generations are retried instead of being lost behind a later cursor.
+const retryableIndexes = summary.results
+  .filter((entry) => ['blocked_source_review', 'failed_validation', 'failed'].includes(entry.status))
+  .map((entry) => entry.candidateIndex)
+  .filter(Number.isInteger);
+if (retryableIndexes.length) summary.nextStartIndex = Math.min(...retryableIndexes);
 
 await fs.writeFile('artifacts/unit-drafts/progress.json', JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify({
