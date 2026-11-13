@@ -340,6 +340,17 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
               origin: 'supplementary',
               sourcePdfPage: 102
             }
+          },
+          {
+            itemId: 'u4-ls-q1',
+            content: {
+              question: 'Which habit does the radio host recommend before buying a new phone?',
+              options: ['Compare features and total cost', 'Buy the first model you see', 'Ignore the warranty'],
+              correctAnswer: 'Compare features and total cost',
+              reason: 'Comparing features and cost helps consumers make informed decisions.',
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
           }
         ]
       },
@@ -351,8 +362,8 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
             itemId: 'u4-sp-1',
             content: {
               dialogue: [
-                { speaker: 'Omar', text: 'Which smartphone do you think offers better value?' },
-                { speaker: 'Ziad', text: 'I would compare the battery life and warranty before deciding.' }
+                { speaker: 'Omar', text: 'Which smartphone do you think offers better value?', speakerGender: 'male' },
+                { speaker: 'Ziad', text: 'I would compare the battery life and warranty before deciding.', speakerGender: 'male' }
               ],
               origin: 'supplementary',
               sourcePdfPage: 102
@@ -382,9 +393,65 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
         title: 'Games',
         items: [
           {
-            itemId: 'u4-game-1',
+            itemId: 'u4-game-vocab',
             content: {
-              gameName: 'Picture–Word Matching Game',
+              gameName: 'Picture–Word Matching',
+              gameType: 'matching',
+              skill: 'vocabulary',
+              difficulty: 'easy',
+              description: 'Match unit words with their correct meanings.',
+              targetWords: ['consumer', 'sustainable'],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          },
+          {
+            itemId: 'u4-game-grammar',
+            content: {
+              gameName: 'Sentence Builder',
+              gameType: 'sentence_builder',
+              skill: 'grammar',
+              difficulty: 'medium',
+              description: 'Build a correct sentence using the unit grammar rule.',
+              targetWords: ['consumer', 'sustainable'],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          },
+          {
+            itemId: 'u4-game-reading',
+            content: {
+              gameName: 'Evidence Detective',
+              gameType: 'reading_comprehension',
+              skill: 'reading',
+              difficulty: 'medium',
+              description: 'Match claims to evidence in the reading passage.',
+              targetWords: ['consumer', 'sustainable'],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          },
+          {
+            itemId: 'u4-game-listening',
+            content: {
+              gameName: 'Listen and Choose',
+              gameType: 'listen_and_choose',
+              skill: 'listening',
+              difficulty: 'medium',
+              description: 'Listen to a supplementary script and select its key detail.',
+              targetWords: ['consumer', 'sustainable'],
+              origin: 'supplementary',
+              sourcePdfPage: 102
+            }
+          },
+          {
+            itemId: 'u4-game-speaking',
+            content: {
+              gameName: 'Role-play Challenge',
+              gameType: 'role_play',
+              skill: 'speaking',
+              difficulty: 'hard',
+              description: 'Take turns defending a careful purchasing decision.',
               targetWords: ['consumer', 'sustainable'],
               origin: 'supplementary',
               sourcePdfPage: 102

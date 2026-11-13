@@ -335,12 +335,51 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
         }
       } else if (sectionType === 'speaking') {
         const c = item.content || {};
-        if (Array.isArray(c.dialogue) && c.dialogue.length >= 2) {
-          sectionReports[sectionType].validItems++;
-        } else if (c.instruction) {
-          sectionReports[sectionType].validItems++;
+        const dialogue = Array.isArray(c.dialogue) ? c.dialogue : [];
+        if (dialogue.length < 2) {
+          criticalFailures.push('Speaking item ' + item.itemId + ' must contain at least two dialogue turns');
         } else {
-          warnings.push(`Speaking item ${item.itemId} has minimal dialogue structure`);
+          const invalidTurn = dialogue.find((turn) =>
+            !String(turn.speaker || '').trim() ||
+            !String(turn.text || '').trim() ||
+            !['male', 'female'].includes(turn.speakerGender)
+          );
+          if (invalidTurn) {
+            criticalFailures.push('Speaking item ' + item.itemId + ' has a turn without speaker, text or valid speakerGender');
+          } else if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+            criticalFailures.push('Speaking item ' + item.itemId + ' has invalid origin');
+          } else if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+            criticalFailures.push('Speaking item ' + item.itemId + ' has sourcePdfPage outside the unit range');
+          } else {
+            sectionReports[sectionType].validItems++;
+          }
+        }
+      } else if (sectionType === 'games') {
+        const c = item.content || {};
+        const requiredFields = ['gameName', 'gameType', 'skill', 'difficulty', 'description'];
+        for (const field of requiredFields) {
+          if (typeof c[field] !== 'string' || !c[field].trim()) {
+            criticalFailures.push('Game item ' + item.itemId + ' is missing ' + field);
+          }
+        }
+        if (!['vocabulary', 'grammar', 'reading', 'listening', 'speaking'].includes(c.skill)) {
+          criticalFailures.push('Game item ' + item.itemId + ' has an invalid skill');
+        }
+        if (!['easy', 'medium', 'hard'].includes(c.difficulty)) {
+          criticalFailures.push('Game item ' + item.itemId + ' has an invalid difficulty');
+        }
+        if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
+          criticalFailures.push('Game item ' + item.itemId + ' has invalid origin');
+        }
+        if (!Number.isInteger(c.sourcePdfPage) || c.sourcePdfPage < start || c.sourcePdfPage > end) {
+          criticalFailures.push('Game item ' + item.itemId + ' has sourcePdfPage outside the unit range');
+        }
+        if (requiredFields.every(field => typeof c[field] === 'string' && c[field].trim()) &&
+            ['vocabulary', 'grammar', 'reading', 'listening', 'speaking'].includes(c.skill) &&
+            ['easy', 'medium', 'hard'].includes(c.difficulty) &&
+            ['source', 'supplementary'].includes(c.origin) &&
+            Number.isInteger(c.sourcePdfPage) && c.sourcePdfPage >= start && c.sourcePdfPage <= end) {
+          sectionReports[sectionType].validItems++;
         }
       }
     }

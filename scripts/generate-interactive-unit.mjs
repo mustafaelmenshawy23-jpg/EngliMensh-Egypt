@@ -8,7 +8,9 @@ const unitNumber = Number(process.env.UNIT_NUMBER);
 
 const apiKeys = [
   ['GEMINI_API_KEY', process.env.GEMINI_API_KEY],
-  ['GEMINI_API_KEY_BACKUP', process.env.GEMINI_API_KEY_BACKUP]
+  ['GEMINI_API_KEY_BACKUP', process.env.GEMINI_API_KEY_BACKUP],
+  ['GEMINI_API_KEY_BACKUP_2', process.env.GEMINI_API_KEY_BACKUP_2],
+  ['GEMINI_API_KEY_BACKUP_3', process.env.GEMINI_API_KEY_BACKUP_3]
 ].filter(([, value]) => Boolean(value));
 
 // Supported standard models - NEVER default to paid-only or non-existent models
@@ -96,8 +98,12 @@ const sourcePages = rows.map((p) => ({ pdfPage: p.pdfPage, text: p.text }));
 // 2. Schema Definition for Structured Output
 const dialogueTurnSchema = {
   type: 'OBJECT',
-  properties: { speaker: { type: 'STRING' }, text: { type: 'STRING' } },
-  required: ['speaker', 'text']
+  properties: {
+    speaker: { type: 'STRING' },
+    text: { type: 'STRING' },
+    speakerGender: { type: 'STRING', enum: ['male', 'female'] }
+  },
+  required: ['speaker', 'text', 'speakerGender']
 };
 
 const contentSchema = {
@@ -111,6 +117,13 @@ const contentSchema = {
     passage: { type: 'STRING' },
     script: { type: 'STRING' },
     dialogue: { type: 'ARRAY', items: dialogueTurnSchema },
+    gameName: { type: 'STRING' },
+    gameType: { type: 'STRING', enum: ['matching', 'sentence_builder', 'reading_comprehension', 'listen_and_choose', 'role_play', 'word_builder'] },
+    skill: { type: 'STRING', enum: ['vocabulary', 'grammar', 'reading', 'listening', 'speaking'] },
+    difficulty: { type: 'STRING', enum: ['easy', 'medium', 'hard'] },
+    description: { type: 'STRING' },
+    targetWords: { type: 'ARRAY', items: { type: 'STRING' } },
+    targetCommands: { type: 'ARRAY', items: { type: 'STRING' } },
     question: { type: 'STRING' },
     instruction: { type: 'STRING' },
     options: { type: 'ARRAY', items: { type: 'STRING' } },
@@ -171,8 +184,13 @@ CRITICAL ACCURACY & QUALITY RULES:
 6. Reading & Listening:
    - If a reading passage or listening text exists in the source, transcribe it accurately with origin="source". If not present, provide a supplementary passage with origin="supplementary".
 7. Speaking:
-   - Provide a natural conversational dialogue (2-4 turns).
-8. Comprehensive Unit Test:
+   - Provide a natural dialogue of at least 2 turns. Every turn must include speaker, text and speakerGender exactly male or female.
+   - Do not infer gender from a name alone. If the source does not establish gender, use a clearly supplementary Boy/Girl or Male/Female role-play.
+8. Games:
+   - Create five distinct age-appropriate games, one each for vocabulary, grammar, reading, listening and speaking.
+   - Each game must include gameName, gameType, skill, difficulty (easy/medium/hard), description, origin and sourcePdfPage. Mark generated games supplementary.
+   - Match difficulty to stage: Primary mostly easy/medium; Preparatory medium; Secondary and Baccalaureate medium/hard. Vary game types.
+9. Comprehensive Unit Test:
    - Provide a balanced test reflecting unit vocabulary, grammar, and comprehension.
 
 Source text follows as JSON: ${JSON.stringify(sourcePages)}`;
@@ -405,9 +423,9 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-sp-1',
               content: {
                 dialogue: [
-                  { speaker: 'Child A', text: 'Hello! What\'s your name?' },
-                  { speaker: 'Child B', text: 'My name is Hana. What\'s your name?' },
-                  { speaker: 'Child A', text: 'My name is Maya. Nice to meet you!' }
+                  { speaker: 'Maya', text: 'Hello! What\'s your name?', speakerGender: 'female' },
+                  { speaker: 'Hana', text: 'My name is Hana. What\'s your name?', speakerGender: 'female' },
+                  { speaker: 'Maya', text: 'My name is Maya. Nice to meet you!', speakerGender: 'female' }
                 ],
                 origin: 'source',
                 sourcePdfPage: 8
@@ -539,6 +557,7 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-game-1',
               content: {
                 gameName: 'Picture–Word Matching Game',
+                gameType: 'matching', skill: 'vocabulary', difficulty: 'easy',
                 description: 'Match classroom objects and phonics words (pencil, bag, chair, tiger, tree, tomato) with their pictures.',
                 targetWords: ['pencil', 'bag', 'chair', 'tiger', 'tree', 'tomato'],
                 origin: 'supplementary',
@@ -549,6 +568,7 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-game-2',
               content: {
                 gameName: 'Word Builder Game',
+                gameType: 'word_builder', skill: 'grammar', difficulty: 'easy',
                 description: 'Arrange letter tiles to assemble target unit words (tiger, tomato, table, tree, ink, insect).',
                 targetWords: ['tiger', 'tomato', 'table', 'tree', 'ink', 'insect'],
                 origin: 'supplementary',
@@ -559,6 +579,7 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-game-3',
               content: {
                 gameName: 'Listen and Choose Game',
+                gameType: 'listen_and_choose', skill: 'listening', difficulty: 'easy',
                 description: 'Listen to pronunciation audio and select the matching word card.',
                 targetWords: ['hello', 'goodbye', 'teacher', 'board', 'desk', 'insect'],
                 origin: 'supplementary',
@@ -569,17 +590,31 @@ if (isOfflineFallbackAllowed) {
               itemId: 'p1u1-game-4',
               content: {
                 gameName: 'Classroom Commands Challenge',
+                gameType: 'role_play', skill: 'speaking', difficulty: 'easy',
                 description: 'Identify and respond to classroom imperatives (stand up, sit down, open your bag, close your book).',
                 targetCommands: ['stand up', 'sit down', 'open your bag', 'close your book'],
                 origin: 'supplementary',
                 sourcePdfPage: 19
+              }
+            },
+            {
+              itemId: 'p1u1-game-5',
+              content: {
+                gameName: 'Read and Sequence',
+                gameType: 'reading_comprehension',
+                skill: 'reading',
+                difficulty: 'easy',
+                description: 'Put three short classroom dialogue lines in the correct order.',
+                targetWords: ['hello', 'name', 'friend'],
+                origin: 'supplementary',
+                sourcePdfPage: 8
               }
             }
           ]
         }
       ]
     };
-  } else {
+  } else if (bookId === 'baccalaureate-y2-first-language-part1' && unitNumber === 4) {
     generated = {
       unitTitle: unit.title || 'The Power of Choice',
       sourceCoverage: allCoverage,
@@ -879,6 +914,9 @@ if (isOfflineFallbackAllowed) {
       }
     ]
   };
+  } else {
+    throw new Error('BLOCKED_API_KEY: no Gemini key is available for this unit; refusing to reuse unrelated offline content.');
+  }
 }
 
   payload = { candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] };
