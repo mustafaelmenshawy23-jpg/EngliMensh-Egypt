@@ -676,6 +676,10 @@ function renderImportedPrimaryCurriculum() {
     return '<section class="panel imported-curriculum"><div class="section-heading"><div><p class="eyebrow">PRIMARY 2026/2027 · ' + escapeHtml(track.name) + '</p><h2>Grade ' + grade.grade + ' · Units</h2><p class="unit-source-note">Select a unit to open its own learning dashboard.</p></div><span class="book-count">' + grade.units.length + ' units</span></div><div class="imported-unit-list">' +
       grade.units.map((item) => '<button type="button" class="imported-unit-card imported-unit-button" data-imported-unit="' + item.number + '"><span class="imported-unit-number">UNIT ' + item.number + '</span><strong>' + escapeHtml(item.title) + '</strong><span>' + item.vocabulary.length + ' words · ' + item.examQuestions.length + ' exam questions</span><b>Open unit ›</b></button>').join('') + '</div></section>';
   }
+  if (primaryHtmlCurriculum.source?.reviewStatus !== 'approved' || unit.reviewStatus !== 'approved') {
+    return '<section class="panel content-review-hold"><p class="eyebrow">CONTENT REVIEW HOLD</p><h2>' + escapeHtml(unit.title) + '</h2><p>This imported primary unit is not approved for student use.</p><p>Its source is a user-supplied HTML bundle with no PDF page references, and its review status is still needs_review. No vocabulary, grammar, passages, answers or generated activities from this bundle are displayed until source verification and academic approval are recorded.</p></section>';
+  }
+
   const unitWords = unit?.vocabulary || [];
   const choiceOptions = (answer, index = 0, limit = 4) => {
     const pool = unitWords.map((item) => item.en).filter((word) => word && word.toLowerCase() !== String(answer).toLowerCase());
@@ -1093,10 +1097,7 @@ function renderBookLibrary(books) {
     const units = (book.units || []).map((unit) => {
       const pageLabel = Number.isInteger(unit.startPdfPage) ? `PDF page ${unit.startPdfPage}` : 'Page reference not indexed';
       const title = `Unit ${unit.number}: ${unit.title}`;
-      const hasLessonDraft = lessonDrafts.records.some((lesson) => lesson.bookId === book.id && lesson.unitNumber === unit.number) || (book.id === 'primary1-student-term1' && unit.number === 1);
-      return Number.isInteger(unit.startPdfPage) || hasLessonDraft
-        ? `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit</span></button>`
-        : `<div class="unit-link unavailable"><strong>${escapeHtml(title)}</strong><span>${pageLabel}</span></div>`;
+      return `<button class="unit-link" type="button" data-unit-book="${escapeHtml(book.id)}" data-unit-number="${unit.number}"><strong>${escapeHtml(title)}</strong><span>${pageLabel} · Open unit · Review pending</span></button>`;
     }).join('');
     const typeLabel = book.documentType === 'student_book' ? 'Student book'
       : book.documentType === 'assessment' ? 'Assessment book'
@@ -1650,21 +1651,27 @@ function renderUnitWorkspace() {
   const unit = book?.units?.find((item) => item.number === state.unitSelection.unitNumber);
   if (!book || !unit) return '';
 
-  const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1;
-  const activeUnitDraft = book.id === 'primary1-student-term1'
+  const draftCandidate = book.id === 'primary1-student-term1'
     ? ({ 1: p1u1Draft, 2: p1u2Draft, 3: p1u3Draft }[unit.number] || null)
     : null;
-  const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3);
+  const activeUnitDraft = draftCandidate?.reviewStatus === 'approved' && draftCandidate.reviewedBy && draftCandidate.reviewedAt
+    ? draftCandidate
+    : null;
+  const isP1U1 = book.id === 'primary1-student-term1' && unit.number === 1 && Boolean(activeUnitDraft);
+  const isP1U2U3 = book.id === 'primary1-student-term1' && (unit.number === 2 || unit.number === 3) && Boolean(activeUnitDraft);
+  const unitScaffold = unitModules.records.find((record) => record.bookId === book.id && record.unitNumber === unit.number);
 
-  // Clear, named learning areas. Speaking is included because Unit 1 has a verified role-play.
-  const sixSections = [
-    { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, meanings, pictures & pronunciation', icon: 'Aa', draftType: 'vocabulary' },
-    { type: 'grammar', title: 'Grammar', subtitle: 'Rules and classroom language', icon: '文', draftType: 'grammar' },
-    { type: 'reading', title: 'Reading', subtitle: 'Read the Maya & Hana dialogue', icon: '▤', draftType: 'reading' },
-    { type: 'listening', title: 'Listening', subtitle: 'Listen, replay and answer', icon: '♫', draftType: 'listening' },
-    { type: 'speaking', title: 'Speaking', subtitle: 'Practise the dialogue aloud', icon: '🎤', draftType: 'speaking' },
-    { type: 'games', title: 'Games', subtitle: '4 interactive learning games', icon: '★', draftType: 'games' },
-    { type: 'comprehensive_test', title: 'Tests', subtitle: '10-question unit assessment', icon: '✓', draftType: 'comprehensive_test' }
+  // Nine independent learning areas required for every indexed unit.
+  const unitSections = [
+    { type: 'vocabulary', title: 'Vocabulary', subtitle: 'Words, Arabic meanings, examples and pronunciation', icon: 'Aa', draftType: 'vocabulary' },
+    { type: 'vocabulary_questions', title: 'Vocabulary Questions', subtitle: 'Separate vocabulary practice and answer feedback', icon: '✎', draftType: 'vocabulary_questions' },
+    { type: 'grammar', title: 'Grammar', subtitle: 'Rules, explanations and examples', icon: '文', draftType: 'grammar' },
+    { type: 'grammar_questions', title: 'Grammar Questions', subtitle: 'Separate grammar practice and answer feedback', icon: '✓', draftType: 'grammar_questions' },
+    { type: 'reading', title: 'Reading', subtitle: 'Complete source passage and comprehension questions', icon: '▤', draftType: 'reading' },
+    { type: 'listening', title: 'Listening', subtitle: 'Verified transcript or labelled supplementary script', icon: '♫', draftType: 'listening' },
+    { type: 'speaking', title: 'Speaking', subtitle: 'Role-labelled dialogue and speaking practice', icon: '🎤', draftType: 'speaking' },
+    { type: 'games', title: 'Games', subtitle: 'Skill-varied vocabulary, grammar, reading, listening and speaking games', icon: '★', draftType: 'games' },
+    { type: 'comprehensive_test', title: 'Comprehensive Test', subtitle: 'Unit assessment with checked answers', icon: '🏁', draftType: 'comprehensive_test' }
   ];
 
   // Helper to count answered questions without duplicates
@@ -1675,7 +1682,7 @@ function renderUnitWorkspace() {
 
   // SECTION SCREEN (When a student opens an independent section)
   if (state.activeModule) {
-    const secDef = sixSections.find((s) => s.type === state.activeModule) || sixSections[0];
+    const secDef = unitSections.find((s) => s.type === state.activeModule) || unitSections[0];
     let bodyHtml = '';
 
     if (isP1U2U3 && activeUnitDraft) {
@@ -2189,8 +2196,8 @@ function renderUnitWorkspace() {
       bodyHtml = `
         <div class="empty-state">
           <div class="book-icon">📖</div>
-          <strong>Digital interactive exercises for Unit ${unit.number} (${escapeHtml(secDef.title)}) are in preparation</strong>
-          <span>This unit is mapped from the official curriculum textbook (${escapeHtml(book.sourceFile)}). You can view the original lesson material on PDF page ${unit.startPdfPage || 'N/A'}.</span>
+          <strong>${escapeHtml(secDef.title)} is awaiting academic approval</strong>
+          <span>Draft content is hidden from learners until source references, answers, all nine modules and academic review are verified. The original PDF remains unchanged and available for inspection.</span>
           ${Number.isInteger(unit.startPdfPage) ? `<button type="button" class="source-open" data-unit-preview="${escapeHtml(book.sourceFile)}" data-unit-page="${unit.startPdfPage}">Open PDF Page ${unit.startPdfPage} ↗</button>` : ''}
         </div>
       `;
@@ -2211,8 +2218,9 @@ function renderUnitWorkspace() {
     `;
   }
 
-  // UNIT DASHBOARD (The 6 Consolidated Section Cards + 2 Visual Activities)
+  // UNIT DASHBOARD (Nine independent section cards + approved supplementary activities)
   const calculateProgress = (secType) => {
+    if (!activeUnitDraft) return unitScaffold ? 'Awaiting academic approval' : 'Not indexed';
     if (!isP1U1 || !p1u1Draft) return 'Open section';
     if (secType === 'vocabulary') {
       const vocabQ = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [];
@@ -2260,7 +2268,7 @@ function renderUnitWorkspace() {
     ? Math.min(100, Math.round((totalAnswered / totalQuestions) * 100))
     : 0;
 
-  const sectionCards = sixSections.map((sec) => `
+  const sectionCards = unitSections.map((sec) => `
     <button type="button" class="unit-section-card" data-open-section="${sec.type}" aria-label="Open ${sec.title}">
       <span class="section-card-icon" aria-hidden="true">${sec.icon}</span>
       <div class="section-card-copy">
