@@ -66,6 +66,9 @@ export function validateVocabularyItem(item, unitRange) {
     }
   }
 
+  const example = typeof c.example === 'string' ? c.example.trim() : '';
+  if (!example || example.length < 5) issues.push(`${item?.itemId || 'Item'}: missing or incomplete example sentence`);
+
   // Provenance validation
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${item?.itemId || 'Item'}: invalid origin (must be 'source' or 'supplementary')`);
@@ -104,8 +107,8 @@ export function validateQuestionItem(item, unitRange) {
   if (!Array.isArray(c.options)) {
     issues.push(`${id}: options must be an array`);
   } else {
-    if (c.options.length < 3 || c.options.length > 5) {
-      issues.push(`${id}: question must have 3-4 options (found ${c.options.length})`);
+    if (c.options.length < 3 || c.options.length > 4) {
+      issues.push(`${id}: question must have exactly 3 or 4 options (found ${c.options.length})`);
     }
     // Check distinct options
     const uniqueOptions = new Set(c.options.map((opt) => String(opt).trim().toLowerCase()));
@@ -130,6 +133,9 @@ export function validateQuestionItem(item, unitRange) {
   }
 
   // Provenance
+  const example = typeof c.example === 'string' ? c.example.trim() : '';
+  if (!example || example.length < 5) issues.push(`${id}: missing or incomplete grammar example`);
+
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
   }
@@ -239,10 +245,15 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     sectionsByType.set(section.type, section);
   }
 
-  // Check all required 8 sections exist
+  // Check all required 9 sections exist
   for (const reqType of REQUIRED_MODULE_TYPES) {
     if (!sectionsByType.has(reqType)) {
       criticalFailures.push(`Missing required section: ${reqType}`);
+      continue;
+    }
+    const requiredSection = sectionsByType.get(reqType);
+    if (!Array.isArray(requiredSection.items) || requiredSection.items.length === 0) {
+      criticalFailures.push(`Required section ${reqType} is empty`);
     }
   }
 
@@ -385,6 +396,25 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     }
   }
 
+  // Reading and listening each require a passage/script and comprehension questions.
+  for (const sectionType of ['reading', 'listening']) {
+    const items = sectionsByType.get(sectionType)?.items || [];
+    const hasText = items.some((item) => {
+      const text = sectionType === 'reading' ? item.content?.passage : item.content?.script;
+      return typeof text === 'string' && text.trim().length > 0;
+    });
+    const hasQuestion = items.some((item) => typeof item.content?.question === 'string' && item.content.question.trim().length > 0);
+    if (!hasText) criticalFailures.push(`Section ${sectionType} is missing its passage/script`);
+    if (!hasQuestion) criticalFailures.push(`Section ${sectionType} is missing comprehension questions`);
+  }
+
+  // Every unit game set must cover all five requested language skills.
+  const gameItems = sectionsByType.get('games')?.items || [];
+  const gameSkills = new Set(gameItems.map((item) => item.content?.skill).filter(Boolean));
+  for (const skill of ['vocabulary', 'grammar', 'reading', 'listening', 'speaking']) {
+    if (!gameSkills.has(skill)) criticalFailures.push(`Games section is missing a ${skill} game`);
+  }
+
   // 4. Source Check for Empty Sections
   // If source pages had readable text, but the draft produced zero questions/items across all practice sections
   const questionsTotal = (sectionsByType.get('vocabulary_questions')?.items?.length || 0) +
@@ -392,7 +422,7 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     (sectionsByType.get('comprehensive_test')?.items?.length || 0);
 
   if (totalItems === 0) {
-    criticalFailures.push('Unit draft is completely empty across all 8 modules');
+    criticalFailures.push('Unit draft is completely empty across all 9 modules');
   } else if (questionsTotal === 0 && sourceItemCount > 0) {
     criticalFailures.push('Draft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)');
   }

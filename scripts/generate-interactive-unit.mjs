@@ -182,7 +182,8 @@ CRITICAL ACCURACY & QUALITY RULES:
    - "correctAnswer": must exactly match one of the options.
    - "reason": concise pedagogical explanation why this answer is correct.
 6. Reading & Listening:
-   - If a reading passage or listening text exists in the source, transcribe it accurately with origin="source". If not present, provide a supplementary passage with origin="supplementary".
+   - Include the complete reading passage and at least one reading comprehension question with a checked answer and reason.
+   - Include a listening script and at least one listening question with a checked answer and reason. If the source PDF contains no listening transcript, create a clearly supplementary script; never label generated text as source.
 7. Speaking:
    - Provide a natural dialogue of at least 2 turns. Every turn must include speaker, text and speakerGender exactly male or female.
    - Do not infer gender from a name alone. If the source does not establish gender, use a clearly supplementary Boy/Girl or Male/Female role-play.
