@@ -133,9 +133,6 @@ export function validateQuestionItem(item, unitRange) {
   }
 
   // Provenance
-  const example = typeof c.example === 'string' ? c.example.trim() : '';
-  if (!example || example.length < 5) issues.push(`${id}: missing or incomplete grammar example`);
-
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
   }
@@ -165,6 +162,9 @@ export function validateGrammarItem(item, unitRange) {
 
   const explanation = typeof c.explanation === 'string' ? c.explanation.trim() : '';
   if (!explanation || explanation.length < 10) issues.push(`${id}: missing or incomplete grammar explanation`);
+
+  const example = typeof c.example === 'string' ? c.example.trim() : '';
+  if (!example || example.length < 5) issues.push(`${id}: missing or incomplete grammar example`);
 
   if (!c.origin || !['source', 'supplementary'].includes(c.origin)) {
     issues.push(`${id}: invalid origin (must be 'source' or 'supplementary')`);
