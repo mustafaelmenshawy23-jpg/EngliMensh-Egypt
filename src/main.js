@@ -2222,15 +2222,17 @@ function renderUnitWorkspace() {
   const calculateProgress = (secType) => {
     if (!activeUnitDraft) return unitScaffold ? 'Awaiting academic approval' : 'Not indexed';
     if (!isP1U1 || !p1u1Draft) return 'Open section';
-    if (secType === 'vocabulary') {
-      const vocabQ = p1u1Draft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [];
+    if (secType === 'vocabulary') return '24 Words';
+    if (secType === 'vocabulary_questions') {
+      const vocabQ = activeUnitDraft.sections.find((s) => s.type === 'vocabulary_questions')?.items || [];
       const count = countAnswered(vocabQ);
-      return `24 Words · ${count}/${vocabQ.length} Practice Qs`;
+      return `${count}/${vocabQ.length} Answered`;
     }
-    if (secType === 'grammar') {
-      const gramQ = p1u1Draft.sections.find((s) => s.type === 'grammar_questions')?.items || [];
+    if (secType === 'grammar') return '2 Rules';
+    if (secType === 'grammar_questions') {
+      const gramQ = activeUnitDraft.sections.find((s) => s.type === 'grammar_questions')?.items || [];
       const count = countAnswered(gramQ);
-      return `2 Rules · ${count}/${gramQ.length} Practice Qs`;
+      return `${count}/${gramQ.length} Answered`;
     }
     if (secType === 'reading') {
       const readQ = p1u1Draft.sections.find((s) => s.type === 'reading')?.items?.filter(i => i.content?.question) || [];
@@ -2243,7 +2245,7 @@ function renderUnitWorkspace() {
       return `1 Task · ${count}/${listQ.length} Answered`;
     }
     if (secType === 'speaking') return '1 Role-Play Dialogue';
-    if (secType === 'games') return '4 Mini-Games';
+    if (secType === 'games') return '5 Skill Games';
     if (secType === 'comprehensive_test') {
       const testSec = p1u1Draft.sections.find((s) => s.type === 'comprehensive_test');
       const items = testSec?.items || [];
