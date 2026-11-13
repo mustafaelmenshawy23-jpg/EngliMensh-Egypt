@@ -921,70 +921,64 @@ if (isOfflineFallbackAllowed) {
 
   payload = { candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] };
 } else {
-  // 3. API Invocation with Controlled Resilience
-  const [keyName, apiKey] = apiKeys[0];
+  // 3. API Invocation with controlled model and credential rotation.
+  for (const candidateModel of supportedModels) {
+    model = candidateModel;
+    console.log('Requesting Gemini model: ' + model);
+    let modelUnavailable = false;
 
+    for (const [keyName, apiKey] of apiKeys) {
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          const url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + apiKey;
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: requestBody,
+            signal: AbortSignal.timeout(120000)
+          });
 
-for (const candidateModel of supportedModels) {
-  model = candidateModel;
-  console.log(`Requesting Gemini model: ${model}`);
-  let modelUnavailable = false;
-
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: requestBody,
-        signal: AbortSignal.timeout(120000)
-      });
-
-      if (!response.ok) {
-        const detail = (await response.text()).slice(0, 1000);
-        const error = new Error(`Gemini API ${response.status}: ${detail}`);
-
-        if (response.status === 401 || (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail))) {
-          throw new Error(`Configured API key (${keyName}) was rejected by Gemini API. Check your GEMINI_API_KEY.`);
+          if (!response.ok) {
+            const detail = (await response.text()).slice(0, 1000);
+            const error = new Error('Gemini API ' + response.status + ': ' + detail);
+            if (response.status === 401 || (response.status === 400 && /API_KEY_INVALID|invalid api key|key not valid/i.test(detail))) {
+              console.warn('Configured key ' + keyName + ' was rejected; trying the next configured key.');
+              break;
+            }
+            if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
+              console.warn('Gemini quota reached for ' + keyName + '; trying the next configured key.');
+              break;
+            }
+            if (![408, 500, 502, 503, 504].includes(response.status)) throw error;
+            lastFailure = error;
+            if (response.status === 503 || response.status === 504) { modelUnavailable = true; break; }
+          } else {
+            payload = await response.json();
+            selectedKeyName = keyName;
+            selectedModel = model;
+            break;
+          }
+        } catch (error) {
+          lastFailure = error;
+          const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
+            error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
+            /Gemini API (408|500|502|503|504)/.test(error.message);
+          if (!retryable) throw error;
+          if (/Gemini API (503|504)/.test(error.message)) { modelUnavailable = true; break; }
         }
-        if (response.status === 429 || /RESOURCE_EXHAUSTED|quota/i.test(detail)) {
-          throw new Error(`Gemini quota limit reached (429). Stopping without rotating credentials or models: ${error.message}`);
-        }
-        if (![408, 500, 502, 503, 504].includes(response.status)) {
-          throw error;
-        }
 
-        lastFailure = error;
-        if (response.status === 503 || response.status === 504) modelUnavailable = true;
-      } else {
-        payload = await response.json();
-        selectedKeyName = keyName;
-        selectedModel = model;
-        break;
+        if (payload || modelUnavailable) break;
+        if (attempt < 3) {
+          const delay = Math.min(20000, 4000 * 2 ** (attempt - 1));
+          console.warn('Gemini ' + model + ' attempt ' + attempt + '/3 with ' + keyName + ' failed: ' + (lastFailure?.message || 'network timeout') + '. Retrying in ' + (delay / 1000) + 's...');
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
       }
-    } catch (error) {
-      lastFailure = error;
-      if (/quota limit reached|API key.*rejected/.test(error.message)) throw error;
-      const retryable = error.name === 'TimeoutError' || error.name === 'AbortError' ||
-        error.cause?.code === 'UND_ERR_HEADERS_TIMEOUT' || /fetch failed/i.test(error.message) ||
-        /Gemini API (408|500|502|503|504)/.test(error.message);
-      if (!retryable) throw error;
-      modelUnavailable = true;
+      if (payload || modelUnavailable) break;
     }
-
     if (payload) break;
-    if (attempt < 3) {
-      const delay = Math.min(20000, 4000 * 2 ** (attempt - 1));
-      console.warn(`Gemini ${model} attempt ${attempt}/3 failed: ${lastFailure?.message}. Retrying in ${delay / 1000}s...`);
-      await new Promise((resolve) => setTimeout(resolve, delay));
-    }
+    if (modelUnavailable) console.warn('Gemini model ' + model + ' unavailable; trying the next supported fallback model.');
   }
-
-  if (payload) break;
-  if (modelUnavailable) {
-    console.warn(`Gemini model ${model} unavailable; trying next supported fallback model...`);
-    continue;
-  }
-}
 }
 
 if (!payload) {

@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
+import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -16,8 +17,8 @@ const startIndex = Number(process.env.START_INDEX || 0);
 const batchSize = Number(process.env.BATCH_SIZE || 5);
 const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
-if (!process.env.GEMINI_API_KEY) {
-  throw new Error('GEMINI_API_KEY secret is required.');
+if (![process.env.GEMINI_API_KEY, process.env.GEMINI_API_KEY_BACKUP, process.env.GEMINI_API_KEY_BACKUP_2, process.env.GEMINI_API_KEY_BACKUP_3].some(Boolean)) {
+  throw new Error('At least one Gemini API key secret is required (primary or backup 1-3).');
 }
 if (!Number.isInteger(startIndex) || startIndex < 0 || !Number.isInteger(batchSize) || batchSize < 1 || batchSize > 10) {
   throw new Error('START_INDEX must be >= 0 and BATCH_SIZE must be 1..10.');
@@ -47,6 +48,7 @@ const summary = {
   batchSize,
   eligibleTotal: candidates.length,
   selected: selected.length,
+  nextStartIndex: Math.min(candidates.length, startIndex + selected.length),
   results: []
 };
 
@@ -65,24 +67,36 @@ try {
 for (const unit of selected) {
   const file = path.join('artifacts/unit-drafts', `${unit.bookId}-unit-${unit.unitNumber}.json`);
   try {
+    const sourceBook = index.books.find((b) => b.id === unit.bookId);
+    const unitRows = extractedPages.filter(
+      (p) => p.sourceFilename === sourceBook?.sourceFile && p.pdfPage >= unit.start && p.pdfPage <= unit.end
+    );
+
     let skip = false;
     try {
       const prior = JSON.parse(await fs.readFile(file, 'utf8'));
+      const sectionMap = new Map((prior.sections || []).map((section) => [section.type, section]));
+      const allSectionsPopulated = REQUIRED_MODULE_TYPES.every((type) =>
+        Array.isArray(sectionMap.get(type)?.items) && sectionMap.get(type).items.length > 0
+      );
+      const expectedPages = unit.end - unit.start + 1;
+      const coverage = new Set(prior.sourceCoverage || []);
+      const completeCoverage = coverage.size === expectedPages &&
+        Array.from({ length: expectedPages }, (_, index) => unit.start + index).every((page) => coverage.has(page));
+      const sourceGateForPrior = validateUnitSourceCoverage(unitRows, unit.start, unit.end);
+      const audit = allSectionsPopulated && completeCoverage && sourceGateForPrior.status !== 'blocked'
+        ? validateUnitDraftQuality(prior, { start: unit.start, end: unit.end }, unitRows)
+        : { isValid: false };
       skip = prior.bookId === unit.bookId &&
         prior.unitNumber === unit.unitNumber &&
-        ['needs_review', 'ready_for_teacher_review'].includes(prior.reviewStatus) &&
-        Array.isArray(prior.sections);
+        ['needs_review', 'ready_for_teacher_review', 'approved'].includes(prior.reviewStatus) &&
+        allSectionsPopulated && completeCoverage && sourceGateForPrior.status !== 'blocked' && audit.isValid;
     } catch {}
 
     if (skip) {
       summary.results.push({ ...unit, status: 'already_generated' });
       continue;
     }
-
-    const sourceBook = index.books.find((b) => b.id === unit.bookId);
-    const unitRows = extractedPages.filter(
-      (p) => p.sourceFilename === sourceBook?.sourceFile && p.pdfPage >= unit.start && p.pdfPage <= unit.end
-    );
 
     // Pre-flight check via source quality gate
     const gate = validateUnitSourceCoverage(unitRows, unit.start, unit.end);
