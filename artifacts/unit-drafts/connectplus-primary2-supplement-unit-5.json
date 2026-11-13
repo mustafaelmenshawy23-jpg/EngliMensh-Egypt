@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T06:36:06.377Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary2-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 2",
+  "unitNumber": 5,
+  "unitTitle": "A boat trip",
+  "sourcePdfRange": {
+    "start": 158,
+    "end": 206
+  },
+  "sourceCoverage": [
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206
+  ],
+  "sourceFingerprint": "4b3b4f4445b76306173ccffade26fa4c073cbd96c39f71387f20342a20bac3a8",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "A boat trip",
+    "expectedRange": {
+      "start": 158,
+      "end": 206,
+      "totalPages": 49
+    },
+    "recordedCoverage": {
+      "totalPages": 49,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 10,
+      "supplementaryItems": 21,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T06:36:06.377Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u5_vocab_1",
+          "content": {
+            "word": "stork",
+            "arabicMeaning": "طائر اللقلق",
+            "example": "There were storks next to the river.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_vocab_2",
+          "content": {
+            "word": "turtle",
+            "arabicMeaning": "سلحفاة",
+            "example": "There was a big turtle in the water.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_vocab_3",
+          "content": {
+            "word": "rainforest",
+            "arabicMeaning": "غابة مطيرة",
+            "example": "Monkeys live in the rainforest.",
+            "origin": "source",
+            "sourcePdfPage": 170
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_vocab_4",
+          "content": {
+            "word": "desert",
+            "arabicMeaning": "صحراء",
+            "example": "In the desert, it is hot and dry.",
+            "origin": "source",
+            "sourcePdfPage": 171
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_vocab_5",
+          "content": {
+            "word": "vet",
+            "arabicMeaning": "طبيب بيطري",
+            "example": "Take your pet to the vet if it is sick.",
+            "origin": "source",
+            "sourcePdfPage": 180
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u5_vq_1",
+          "content": {
+            "question": "Which animal lives in the cold Antarctic tundra?",
+            "options": [
+              "Penguin",
+              "Camel",
+              "Monkey"
+            ],
+            "correctAnswer": "Penguin",
+            "reason": "Penguins live in the Antarctic tundra habitat where it is cold.",
+            "origin": "supplementary",
+            "sourcePdfPage": 171
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_vq_2",
+          "content": {
+            "question": "If your pet is sick, you should take it to a ...",
+            "options": [
+              "vet",
+              "teacher",
+              "farmer"
+            ],
+            "correctAnswer": "vet",
+            "reason": "A vet is a doctor who takes care of sick animals.",
+            "origin": "supplementary",
+            "sourcePdfPage": 180
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_vq_3",
+          "content": {
+            "question": "Monkeys live in trees in the ...",
+            "options": [
+              "rainforest",
+              "desert",
+              "tundra"
+            ],
+            "correctAnswer": "rainforest",
+            "reason": "Rainforests have many trees where monkeys make their home.",
+            "origin": "supplementary",
+            "sourcePdfPage": 170
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Explanations",
+      "items": [
+        {
+          "itemId": "u5_gram_1",
+          "content": {
+            "rule": "There was / There were in the past simple",
+            "explanation": "Use 'There was' with singular nouns and 'There were' with plural nouns to describe what existed in the past.",
+            "example": "There was a big turtle and there were lots of birds.",
+            "origin": "source",
+            "sourcePdfPage": 161
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_gram_2",
+          "content": {
+            "rule": "Asking 'Was that...?' in the past simple",
+            "explanation": "Ask 'Was that a...?' to identify something in the past. Answer with 'Yes, it was' or 'No, it wasn't'.",
+            "example": "Was that a hippo? No, it wasn't. It was an owl.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u5_gq_1",
+          "content": {
+            "question": "There _____ lots of birds next to the river yesterday.",
+            "options": [
+              "were",
+              "was",
+              "is"
+            ],
+            "correctAnswer": "were",
+            "reason": "'Birds' is a plural noun, so 'were' is required in the past simple.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_gq_2",
+          "content": {
+            "question": "There _____ a big turtle in the water.",
+            "options": [
+              "was",
+              "were",
+              "are"
+            ],
+            "correctAnswer": "was",
+            "reason": "'A big turtle' is singular, so we use 'was' in the past simple.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_gq_3",
+          "content": {
+            "question": "Was that a flamingo? - Yes, it _____.",
+            "options": [
+              "was",
+              "were",
+              "wasn't"
+            ],
+            "correctAnswer": "was",
+            "reason": "The affirmative short answer to 'Was that...?' is 'Yes, it was.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Passage and Questions",
+      "items": [
+        {
+          "itemId": "u5_rd_p1",
+          "content": {
+            "passage": "We were on a boat trip yesterday! It was great fun. It was a sunny day. There were lots of birds next to the river. There were storks, parrots, and flamingos. There weren't any owls. We usually see owls at nighttime. There were turtles and fish in the river too. There was a big turtle. It was brown and green. There were lots of big fish and small fish in the water. There weren't any crocodiles.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_rd_q1",
+          "content": {
+            "question": "What was the weather like during the boat trip?",
+            "options": [
+              "It was a sunny day.",
+              "It was a rainy day.",
+              "It was a windy day."
+            ],
+            "correctAnswer": "It was a sunny day.",
+            "reason": "The text directly states: 'It was a sunny day.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_rd_q2",
+          "content": {
+            "question": "Why were there no owls visible during the trip?",
+            "options": [
+              "Owls are usually seen at nighttime.",
+              "Owls live underwater.",
+              "Owls cannot fly near rivers."
+            ],
+            "correctAnswer": "Owls are usually seen at nighttime.",
+            "reason": "The text explains: 'We usually see owls at nighttime.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Script and Questions",
+      "items": [
+        {
+          "itemId": "u5_ls_s1",
+          "content": {
+            "script": "Speaker 1: Look! I think that was a stork! Speaker 2: Was it a turtle? Speaker 1: No, it wasn't! It was a hippo!",
+            "origin": "source",
+            "sourcePdfPage": 159
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u5_ls_q1",
+          "content": {
+            "question": "What animal did Speaker 1 actually see?",
+            "options": [
+              "A hippo",
+              "A turtle",
+              "A stork"
+            ],
+            "correctAnswer": "A hippo",
+            "reason": "Speaker 1 clarifies by saying 'No, it wasn't! It was a hippo!'",
+            "origin": "supplementary",
+            "sourcePdfPage": 159
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u5_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child 1",
+                "text": "Was that a turtle?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Child 2",
+                "text": "No, it wasn't. It was an owl.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Educational Games",
+      "items": [
+        {
+          "itemId": "u5_game_1",
+          "content": {
+            "gameName": "Habitat Explorer",
+            "description": "Choose the correct habitat for each wild animal.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Where do polar bears live?",
+            "options": [
+              "In the Antarctic tundra",
+              "In the rainforest",
+              "In the desert"
+            ],
+            "correctAnswer": "In the Antarctic tundra",
+            "reason": "Polar bears live in cold tundra environments with snow and ice.",
+            "origin": "supplementary",
+            "sourcePdfPage": 171
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_game_2",
+          "content": {
+            "gameName": "Past Grammar Master",
+            "description": "Select the correct past form of verb to be.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Complete: There _____ any crocodiles in the river yesterday.",
+            "options": [
+              "weren't",
+              "wasn't",
+              "isn't"
+            ],
+            "correctAnswer": "weren't",
+            "reason": "'Crocodiles' is plural, so 'weren't' is the correct negative past form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "u5_comp_1",
+          "content": {
+            "question": "Which bird is pink and stands near riverbanks?",
+            "options": [
+              "Flamingo",
+              "Owl",
+              "Penguin"
+            ],
+            "correctAnswer": "Flamingo",
+            "reason": "Flamingos are pink birds found near rivers and lakes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_2",
+          "content": {
+            "question": "There _____ a big turtle near the river yesterday.",
+            "options": [
+              "was",
+              "were",
+              "are"
+            ],
+            "correctAnswer": "was",
+            "reason": "'A big turtle' is singular, requiring 'was' in the past simple.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_3",
+          "content": {
+            "question": "There _____ any snakes on the boat trip.",
+            "options": [
+              "weren't",
+              "wasn't",
+              "isn't"
+            ],
+            "correctAnswer": "weren't",
+            "reason": "'Snakes' is plural, requiring 'weren't' in the past simple negative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 161
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_4",
+          "content": {
+            "question": "Camels can live in the dry _____ without drinking water every day.",
+            "options": [
+              "desert",
+              "ocean",
+              "rainforest"
+            ],
+            "correctAnswer": "desert",
+            "reason": "Camels live in hot, dry deserts.",
+            "origin": "supplementary",
+            "sourcePdfPage": 171
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_5",
+          "content": {
+            "question": "Seas and oceans cover about _____ of the Earth.",
+            "options": [
+              "71%",
+              "50%",
+              "25%"
+            ],
+            "correctAnswer": "71%",
+            "reason": "Seas and oceans cover 71% of the Earth's surface.",
+            "origin": "supplementary",
+            "sourcePdfPage": 170
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_6",
+          "content": {
+            "question": "Was that a stork? - Yes, it _____.",
+            "options": [
+              "was",
+              "were",
+              "is"
+            ],
+            "correctAnswer": "was",
+            "reason": "The affirmative past simple short answer to 'Was that...?' is 'Yes, it was.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_7",
+          "content": {
+            "question": "What should you do if your pet gets sick?",
+            "options": [
+              "Take it to the vet",
+              "Leave it outside",
+              "Give it plastic trash"
+            ],
+            "correctAnswer": "Take it to the vet",
+            "reason": "A vet provides medical care for sick pets.",
+            "origin": "supplementary",
+            "sourcePdfPage": 180
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_8",
+          "content": {
+            "question": "Plastic trash in the water can make animals _____.",
+            "options": [
+              "sick",
+              "happy",
+              "fast"
+            ],
+            "correctAnswer": "sick",
+            "reason": "Pollution and plastic trash harm animals and make them sick.",
+            "origin": "supplementary",
+            "sourcePdfPage": 176
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_9",
+          "content": {
+            "question": "Which type of boat requires human power to row?",
+            "options": [
+              "Rowing boat",
+              "Sailing boat",
+              "Cruise ship"
+            ],
+            "correctAnswer": "Rowing boat",
+            "reason": "You need to row a rowing boat using oars.",
+            "origin": "supplementary",
+            "sourcePdfPage": 181
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u5_comp_10",
+          "content": {
+            "question": "There _____ lots of small fish in the lake yesterday.",
+            "options": [
+              "were",
+              "was",
+              "is"
+            ],
+            "correctAnswer": "were",
+            "reason": "'Lots of small fish' functions as plural, using 'were' in the past context.",
+            "origin": "supplementary",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

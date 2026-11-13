@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T07:04:57.837Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 6,
+  "unitTitle": "The Hundred Dresses",
+  "sourcePdfRange": {
+    "start": 96,
+    "end": 121
+  },
+  "sourceCoverage": [
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121
+  ],
+  "sourceFingerprint": "10a5d403280309dafdf0b616eb76147e441b9e96bbe70556bd1bf03f139f2484",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "The Hundred Dresses",
+    "expectedRange": {
+      "start": 96,
+      "end": 121,
+      "totalPages": 26
+    },
+    "recordedCoverage": {
+      "totalPages": 26,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 16,
+      "supplementaryItems": 14,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T07:04:57.836Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u6_v1",
+          "content": {
+            "word": "faded",
+            "arabicMeaning": "باهت",
+            "example": "Wanda always wore a faded blue dress to school.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_v2",
+          "content": {
+            "word": "popular",
+            "arabicMeaning": "محبوب",
+            "example": "Peggy was a popular girl in the classroom.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_v3",
+          "content": {
+            "word": "annoying",
+            "arabicMeaning": "مزعج",
+            "example": "Making fun of others is annoying and unkind.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_v4",
+          "content": {
+            "word": "absent",
+            "arabicMeaning": "غائب",
+            "example": "Wanda was absent from school for several days.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_v5",
+          "content": {
+            "word": "apologize",
+            "arabicMeaning": "يعتذر",
+            "example": "The girls wrote a letter to apologize to Wanda.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_v6",
+          "content": {
+            "word": "behavior",
+            "arabicMeaning": "سلوك",
+            "example": "They said sorry for their bad behavior.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u6_vq1",
+          "content": {
+            "question": "What does the word 'absent' mean in the story?",
+            "options": [
+              "Not present at school",
+              "Very happy",
+              "Dressed in new clothes",
+              "Winning a contest"
+            ],
+            "correctAnswer": "Not present at school",
+            "reason": "'Absent' means not present in a place such as school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_vq2",
+          "content": {
+            "question": "When you say 'I am sorry' for doing something wrong, you ________.",
+            "options": [
+              "apologize",
+              "announce",
+              "ignore",
+              "annoy"
+            ],
+            "correctAnswer": "apologize",
+            "reason": "To apologize means to say sorry for a mistake or bad action.",
+            "origin": "supplementary",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_vq3",
+          "content": {
+            "question": "Hurting or scaring other students is called ________.",
+            "options": [
+              "bullying",
+              "drawing",
+              "decorating",
+              "celebrating"
+            ],
+            "correctAnswer": "bullying",
+            "reason": "Bullying means hurting, scaring, or making fun of others.",
+            "origin": "supplementary",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "u6_g1",
+          "content": {
+            "rule": "Superlative Adjectives",
+            "explanation": "We use superlative adjectives with 'the' and '-est' (or 'the most') to compare one person or thing with a whole group.",
+            "example": "She is the smartest student in our class.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u6_gq1",
+          "content": {
+            "question": "Wanda created ________ drawings in the annual art competition.",
+            "options": [
+              "the most beautiful",
+              "more beautiful",
+              "beautiful than",
+              "as beautiful"
+            ],
+            "correctAnswer": "the most beautiful",
+            "reason": "We use 'the most' before long adjectives to form the superlative degree.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_gq2",
+          "content": {
+            "question": "He is ________ student in the entire school.",
+            "options": [
+              "the smartest",
+              "smarter",
+              "smart than",
+              "as smart"
+            ],
+            "correctAnswer": "the smartest",
+            "reason": "The superlative form of short adjective 'smart' is 'the smartest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_gq3",
+          "content": {
+            "question": "The school library is ________ the main office and the computer lab.",
+            "options": [
+              "between",
+              "on",
+              "under",
+              "in"
+            ],
+            "correctAnswer": "between",
+            "reason": "'Between' is used when an object or location is situated in the middle of two places.",
+            "origin": "supplementary",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "u6_r_p1",
+          "content": {
+            "passage": "In a small school, there was a girl named Wanda. She was a quiet girl who sat in the back of the classroom. Wanda always wore the same faded blue dress every day. Despite this, Wanda told everyone she had a hundred beautiful dresses at home, all lined up in her closet. One day, Miss Mason announced the annual drawing competition. Wanda won the competition with a hundred beautiful drawings of dresses.",
+            "origin": "source",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_r_q1",
+          "content": {
+            "question": "What did Wanda's hundred dresses turn out to be?",
+            "options": [
+              "A hundred beautiful drawings of dresses",
+              "A hundred real silk dresses in her room",
+              "A hundred blue uniform dresses",
+              "A hundred small paper dolls"
+            ],
+            "correctAnswer": "A hundred beautiful drawings of dresses",
+            "reason": "Wanda drew a hundred dress designs for the contest instead of owning real ones.",
+            "origin": "supplementary",
+            "sourcePdfPage": 100
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "u6_l_s1",
+          "content": {
+            "script": "Miss Mason stood in front of the class and announced the results of the annual contest. She said, 'I will choose one boy and one girl as winners. To everyone's surprise, Wanda won the competition with her hundred drawings.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 100
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_l_q1",
+          "content": {
+            "question": "How many winners did Miss Mason choose for the competition?",
+            "options": [
+              "One boy and one girl",
+              "Three girls",
+              "Two boys and two girls",
+              "Only one student total"
+            ],
+            "correctAnswer": "One boy and one girl",
+            "reason": "Miss Mason announced she would choose one boy and one girl as winners.",
+            "origin": "supplementary",
+            "sourcePdfPage": 100
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "u6_s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Peggy",
+                "text": "Hey, Wanda, tell us about your hundred dresses!",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Wanda",
+                "text": "They are all lined up in my closet.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Maddie",
+                "text": "We need to write to Wanda and apologize.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 99
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "u6_game1",
+          "content": {
+            "gameName": "Vocabulary Master",
+            "description": "Choose the correct word that matches the meaning.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word means 'light in color because it is old or used'?",
+            "options": [
+              "faded",
+              "expensive",
+              "annoying",
+              "popular"
+            ],
+            "correctAnswer": "faded",
+            "reason": "'Faded' describes something that lost color from age or use.",
+            "origin": "supplementary",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_game2",
+          "content": {
+            "gameName": "Grammar Superlative Challenge",
+            "description": "Select the sentence with the correct superlative form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which sentence correctly uses a superlative adjective?",
+            "options": [
+              "This computer is the biggest in the lab.",
+              "This computer is big than that one.",
+              "This computer is more big than all.",
+              "This computer is as big test."
+            ],
+            "correctAnswer": "This computer is the biggest in the lab.",
+            "reason": "Short adjectives like 'big' double the final consonant and add '-est' with 'the'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u6_test1",
+          "content": {
+            "question": "What did Wanda wear every day to school?",
+            "options": [
+              "A faded blue dress",
+              "A brand new yellow coat",
+              "A green uniform dress",
+              "A white shirt and red skirt"
+            ],
+            "correctAnswer": "A faded blue dress",
+            "reason": "The story states Wanda always wore the same faded blue dress.",
+            "origin": "source",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test2",
+          "content": {
+            "question": "Why did Wanda's family move to the big city?",
+            "options": [
+              "So they wouldn't face unkindness",
+              "To buy new clothes",
+              "Because her dad found a new school",
+              "To join an art club"
+            ],
+            "correctAnswer": "So they wouldn't face unkindness",
+            "reason": "Wanda's dad wrote that they moved so they wouldn't experience unkindness.",
+            "origin": "source",
+            "sourcePdfPage": 101
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test3",
+          "content": {
+            "question": "What does the word 'apologize' mean?",
+            "options": [
+              "To say 'I am sorry'",
+              "To win a medal",
+              "To draw a picture",
+              "To move to a city"
+            ],
+            "correctAnswer": "To say 'I am sorry'",
+            "reason": "Apologize means expressing regret by saying 'I am sorry'.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test4",
+          "content": {
+            "question": "Wanda was ________ artist in the school contest.",
+            "options": [
+              "the best",
+              "gooder",
+              "more good",
+              "as good"
+            ],
+            "correctAnswer": "the best",
+            "reason": "'The best' is the superlative form of 'good'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_test5",
+          "content": {
+            "question": "The post office is ________ the library and the hospital.",
+            "options": [
+              "between",
+              "under",
+              "on",
+              "at"
+            ],
+            "correctAnswer": "between",
+            "reason": "'Between' indicates positioning in the space separating two places.",
+            "origin": "supplementary",
+            "sourcePdfPage": 116
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u6_test6",
+          "content": {
+            "question": "She has ________ hair in the group.",
+            "options": [
+              "the shortest",
+              "shorter than",
+              "more short",
+              "as short"
+            ],
+            "correctAnswer": "the shortest",
+            "reason": "Superlative form uses 'the' + short adjective + '-est'.",
+            "origin": "source",
+            "sourcePdfPage": 110
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test7",
+          "content": {
+            "question": "What moral lesson do Peggy and Maddie learn at the end of the story?",
+            "options": [
+              "Kindness matters more than expensive clothes",
+              "Drawing is better than studying",
+              "Wearing new dresses makes you popular",
+              "Moving to a big city is easy"
+            ],
+            "correctAnswer": "Kindness matters more than expensive clothes",
+            "reason": "The text explicitly states they learned that kindness matters more than expensive clothes.",
+            "origin": "source",
+            "sourcePdfPage": 102
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test8",
+          "content": {
+            "question": "How did Peggy and Maddie express their regret to Wanda?",
+            "options": [
+              "They wrote her a letter of apology",
+              "They sent her new dresses",
+              "They called her on the telephone",
+              "They visited her new house"
+            ],
+            "correctAnswer": "They wrote her a letter of apology",
+            "reason": "Peggy and Maddie wrote a letter saying they were sorry for their behavior.",
+            "origin": "source",
+            "sourcePdfPage": 101
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test9",
+          "content": {
+            "question": "Who read the letter from Wanda's dad to the class?",
+            "options": [
+              "Miss Mason",
+              "Peggy",
+              "Maddie",
+              "The principal"
+            ],
+            "correctAnswer": "Miss Mason",
+            "reason": "Miss Mason read the letter from Wanda's father aloud.",
+            "origin": "source",
+            "sourcePdfPage": 101
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u6_test10",
+          "content": {
+            "question": "What is a kind response when someone apologizes to you?",
+            "options": [
+              "Thank you, I accept your apology.",
+              "I don't care at all.",
+              "You should buy me a dress.",
+              "That is very annoying."
+            ],
+            "correctAnswer": "Thank you, I accept your apology.",
+            "reason": "Accepting an apology politely promotes positive relationships and kindness.",
+            "origin": "supplementary",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

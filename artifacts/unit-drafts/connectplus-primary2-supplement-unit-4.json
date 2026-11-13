@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T06:35:15.453Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary2-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_2_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 2",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Into space",
+  "sourcePdfRange": {
+    "start": 128,
+    "end": 157
+  },
+  "sourceCoverage": [
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157
+  ],
+  "sourceFingerprint": "d085a5d666744091fc723592a3b6c02d0dc4c90abee7d3ba31513484f2b9f940",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Into space",
+    "expectedRange": {
+      "start": 128,
+      "end": 157,
+      "totalPages": 30
+    },
+    "recordedCoverage": {
+      "totalPages": 30,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 32,
+      "sourceItems": 28,
+      "supplementaryItems": 4,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T06:35:15.453Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "planet",
+            "arabicMeaning": "كوكب",
+            "example": "Mars is a red planet.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "constellation",
+            "arabicMeaning": "كوكبة نجمية",
+            "example": "A constellation is a group of stars in the sky.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "shadow",
+            "arabicMeaning": "ظل",
+            "example": "The shadow is dark and moves with you.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "vapor",
+            "arabicMeaning": "بخار",
+            "example": "Hot water turns into vapor.",
+            "origin": "source",
+            "sourcePdfPage": 133
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "orbit",
+            "arabicMeaning": "يدور في مدار",
+            "example": "The Earth orbits the Sun.",
+            "origin": "source",
+            "sourcePdfPage": 141
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "reflect",
+            "arabicMeaning": "يعكس",
+            "example": "The Moon reflects light from the Sun.",
+            "origin": "source",
+            "sourcePdfPage": 141
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "Mars is known as the red ______.",
+            "options": [
+              "star",
+              "planet",
+              "moon"
+            ],
+            "correctAnswer": "planet",
+            "reason": "Mars is one of the eight planets in our solar system and is known as the red planet.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "A group of stars that make a shape in the sky is called a ______.",
+            "options": [
+              "constellation",
+              "galaxy",
+              "shadow"
+            ],
+            "correctAnswer": "constellation",
+            "reason": "A constellation is defined as a group of stars forming a pattern or shape in the sky.",
+            "origin": "source",
+            "sourcePdfPage": 134
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Hot water turns into steam or ______.",
+            "options": [
+              "solid",
+              "vapor",
+              "rock"
+            ],
+            "correctAnswer": "vapor",
+            "reason": "When water gets heated, it evaporates and turns into water vapor.",
+            "origin": "source",
+            "sourcePdfPage": 135
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Structure",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Comparative and Superlative Adjectives with Consonant Doubling",
+            "explanation": "When an adjective ends with a single vowel followed by a consonant, double the consonant before adding -er or -est.",
+            "example": "Jupiter is bigger than Earth, and it is the biggest planet.",
+            "origin": "source",
+            "sourcePdfPage": 130
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Asking about the weather",
+            "explanation": "To ask about weather conditions, use 'What's the weather like?'. Respond with 'It's + adjective'.",
+            "example": "What's the weather like? It's rainy.",
+            "origin": "source",
+            "sourcePdfPage": 136
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Venus is ______ than Earth.",
+            "options": [
+              "hotter",
+              "hottest",
+              "hot"
+            ],
+            "correctAnswer": "hotter",
+            "reason": "We use comparative form '-er than' when comparing two planets.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Jupiter is the ______ planet in the solar system.",
+            "options": [
+              "big",
+              "bigger",
+              "biggest"
+            ],
+            "correctAnswer": "biggest",
+            "reason": "We use superlative form 'the -est' when comparing one item to all others in a group.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "What's the weather ______ today? - It's sunny.",
+            "options": [
+              "likes",
+              "like",
+              "liking"
+            ],
+            "correctAnswer": "like",
+            "reason": "The correct phrase to ask about weather is 'What's the weather like?'.",
+            "origin": "source",
+            "sourcePdfPage": 136
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "Venus is the hottest planet. It is 465°C ! Mercury is closer to the Sun than Venus, but Venus is hotter. Neptune is the farthest planet from the Sun. It is also the coldest.",
+            "origin": "source",
+            "sourcePdfPage": 129
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "Which planet is the farthest from the Sun?",
+            "options": [
+              "Venus",
+              "Mercury",
+              "Neptune"
+            ],
+            "correctAnswer": "Neptune",
+            "reason": "The text explicitly states that Neptune is the farthest planet from the Sun.",
+            "origin": "source",
+            "sourcePdfPage": 129
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q2",
+          "content": {
+            "question": "What temperature is Venus according to the passage?",
+            "options": [
+              "100°C",
+              "465°C",
+              "0°C"
+            ],
+            "correctAnswer": "465°C",
+            "reason": "The passage states that Venus is 465°C.",
+            "origin": "source",
+            "sourcePdfPage": 129
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Child: What is that in the night sky? Teacher: That is the Moon! It does not make its own light. It reflects light from the Sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 144
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "Does the Moon make its own light?",
+            "options": [
+              "Yes, it shines like a star",
+              "No, it reflects light from the Sun",
+              "Yes, it is made of fire"
+            ],
+            "correctAnswer": "No, it reflects light from the Sun",
+            "reason": "As stated in the listening text, the Moon does not make light; it reflects light from the Sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 144
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child A",
+                "text": "What's the weather like today?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Child B",
+                "text": "It's rainy and cold.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 136
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Space Explorer Quiz",
+            "description": "Select the correct celestial body based on its description.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which object in space orbits the Earth in about 27 days?",
+            "options": [
+              "The Moon",
+              "The Sun",
+              "Mars"
+            ],
+            "correctAnswer": "The Moon",
+            "reason": "The Moon orbits Earth and takes about 27 days to complete one orbit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 144
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Choose the correct comparative form of the adjective.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Mercury is ______ to the Sun than Venus.",
+            "options": [
+              "closer",
+              "closest",
+              "close"
+            ],
+            "correctAnswer": "closer",
+            "reason": "'Closer' is the correct comparative adjective used when comparing two items.",
+            "origin": "supplementary",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 4 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "How many planets are there in the solar system?",
+            "options": [
+              "Six",
+              "Eight",
+              "Ten"
+            ],
+            "correctAnswer": "Eight",
+            "reason": "There are eight planets in our solar system.",
+            "origin": "source",
+            "sourcePdfPage": 134
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "Earth is ______ than Jupiter.",
+            "options": [
+              "smaller",
+              "smallest",
+              "small"
+            ],
+            "correctAnswer": "smaller",
+            "reason": "We use comparative '-er than' when comparing Earth to Jupiter.",
+            "origin": "source",
+            "sourcePdfPage": 128
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "Which planet is the coldest and farthest from the Sun?",
+            "options": [
+              "Venus",
+              "Neptune",
+              "Mars"
+            ],
+            "correctAnswer": "Neptune",
+            "reason": "Neptune is both the farthest planet from the Sun and the coldest.",
+            "origin": "source",
+            "sourcePdfPage": 129
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "Hot water turns into ______.",
+            "options": [
+              "ice",
+              "vapor",
+              "solid"
+            ],
+            "correctAnswer": "vapor",
+            "reason": "When water becomes hot, it turns into water vapor.",
+            "origin": "source",
+            "sourcePdfPage": 135
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "Why do solid objects create shadows?",
+            "options": [
+              "Light cannot go through solid objects",
+              "Light travels through all objects easily",
+              "Shadows make their own light"
+            ],
+            "correctAnswer": "Light cannot go through solid objects",
+            "reason": "When light reaches a solid object, it cannot pass through, creating a shadow.",
+            "origin": "source",
+            "sourcePdfPage": 142
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Light travels in ______ lines.",
+            "options": [
+              "curved",
+              "straight",
+              "zigzag"
+            ],
+            "correctAnswer": "straight",
+            "reason": "Light travels in straight lines from light sources.",
+            "origin": "source",
+            "sourcePdfPage": 142
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "How long does it take Earth to orbit the Sun?",
+            "options": [
+              "24 hours",
+              "27 days",
+              "365 days"
+            ],
+            "correctAnswer": "365 days",
+            "reason": "It takes Earth 365 days (one year) to orbit the Sun.",
+            "origin": "source",
+            "sourcePdfPage": 143
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "What's the weather like? - It's ______.",
+            "options": [
+              "rainy",
+              "rain",
+              "rained"
+            ],
+            "correctAnswer": "rainy",
+            "reason": "We use an adjective like 'rainy' to describe weather.",
+            "origin": "source",
+            "sourcePdfPage": 136
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Solid objects have a fixed ______.",
+            "options": [
+              "shape",
+              "gas",
+              "vapor"
+            ],
+            "correctAnswer": "shape",
+            "reason": "Solid objects have a definite shape, unlike gases or liquids.",
+            "origin": "source",
+            "sourcePdfPage": 139
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "The Moon does not make light, it ______ light from the Sun.",
+            "options": [
+              "reflects",
+              "stops",
+              "eats"
+            ],
+            "correctAnswer": "reflects",
+            "reason": "The Moon reflects light shining on it from the Sun.",
+            "origin": "source",
+            "sourcePdfPage": 144
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

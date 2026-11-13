@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T07:05:53.000Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary4-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 4",
+  "unitNumber": 1,
+  "unitTitle": "Unit 1: What do I do?",
+  "sourcePdfRange": {
+    "start": 15,
+    "end": 48
+  },
+  "sourceCoverage": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "sourceFingerprint": "1c7ec7cd965f9cab27cc4a719c31ac620ee4d7cfa96046e34d6bca4d7ddded3d",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 1: What do I do?",
+    "expectedRange": {
+      "start": 15,
+      "end": 48,
+      "totalPages": 34
+    },
+    "recordedCoverage": {
+      "totalPages": 34,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 27,
+      "supplementaryItems": 3,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T07:05:53.000Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u1_v1",
+          "content": {
+            "word": "lounge",
+            "arabicMeaning": "صالة - غرفة الجلوس",
+            "example": "We have to tidy the lounge before going out.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_v2",
+          "content": {
+            "word": "champion",
+            "arabicMeaning": "بطل رياضي",
+            "example": "Aya Ayman Abbas is a swimming champion.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_v3",
+          "content": {
+            "word": "cerebrum",
+            "arabicMeaning": "منطقة المخ",
+            "example": "The cerebrum controls our senses and thoughts.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_v4",
+          "content": {
+            "word": "cerebellum",
+            "arabicMeaning": "منطقة المخيخ",
+            "example": "The cerebellum controls movement and balance.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_v5",
+          "content": {
+            "word": "brain stem",
+            "arabicMeaning": "جذع الدماغ",
+            "example": "The brain stem joins the two parts of the brain.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_v6",
+          "content": {
+            "word": "respiratory system",
+            "arabicMeaning": "الجهاز التنفسي",
+            "example": "We use our respiratory system when we breathe.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u1_vq1",
+          "content": {
+            "question": "Which part of the brain controls movement and balance?",
+            "options": [
+              "cerebrum",
+              "cerebellum",
+              "brain stem",
+              "stomach"
+            ],
+            "correctAnswer": "cerebellum",
+            "reason": "The cerebellum is responsible for controlling physical movement and balance in the human body.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_vq2",
+          "content": {
+            "question": "What does the brain stem do in our body?",
+            "options": [
+              "Pumps blood around the body",
+              "Joins the two parts of the brain",
+              "Digests our food",
+              "Helps us smell flowers"
+            ],
+            "correctAnswer": "Joins the two parts of the brain",
+            "reason": "According to the textbook description, the brain stem connects the two main halves of the brain together.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_vq3",
+          "content": {
+            "question": "Aya Ayman Abbas is a famous Egyptian Paralympic ......",
+            "options": [
+              "swimmer",
+              "teacher",
+              "doctor",
+              "engineer"
+            ],
+            "correctAnswer": "swimmer",
+            "reason": "Aya Ayman Abbas won many medals as the first female Egyptian Paralympic swimmer.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "u1_g1",
+          "content": {
+            "rule": "Present Simple Tense for Habits and Facts",
+            "explanation": "We use the Present Simple tense to express habits, routines, or general facts. For singular subjects (he, she, it), we add -s, -es, or -ies to the verb. For plural subjects (I, we, you, they), we use the base form of the verb.",
+            "example": "She usually plays tennis on Fridays.",
+            "origin": "source",
+            "sourcePdfPage": 23
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u1_gq1",
+          "content": {
+            "question": "My brother usually ...... TV after lunch.",
+            "options": [
+              "watch",
+              "watches",
+              "watching",
+              "is watch"
+            ],
+            "correctAnswer": "watches",
+            "reason": "With a singular subject like 'My brother' in the Present Simple tense, we add -es to verbs ending in -ch.",
+            "origin": "source",
+            "sourcePdfPage": 23
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_gq2",
+          "content": {
+            "question": "They ...... play football on rainy days.",
+            "options": [
+              "doesn't",
+              "don't",
+              "isn't",
+              "aren't"
+            ],
+            "correctAnswer": "don't",
+            "reason": "We use 'don't' to form negative Present Simple statements with plural subjects like 'They'.",
+            "origin": "source",
+            "sourcePdfPage": 23
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_gq3",
+          "content": {
+            "question": "...... she sleep early every night?",
+            "options": [
+              "Do",
+              "Is",
+              "Does",
+              "Has"
+            ],
+            "correctAnswer": "Does",
+            "reason": "We use 'Does' to start Yes/No questions in the Present Simple tense for singular subjects like 'she'.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Passage and Comprehension",
+      "items": [
+        {
+          "itemId": "u1_r1",
+          "content": {
+            "passage": "It is Saturday, so there's no school. 'What are we doing today, Mom?' asks Kareema. 'We have to tidy the lounge. Then you can choose what you want to do,' says Mom. Kareema's brother Adam smiles. 'I know what I want to do!' he says. 'Let's go to the park. We can run and play. I want to practice football.' Kareema looks disappointed. 'What's the matter?' asks Mom. 'I like the park,' Kareema answers. 'But I want to do something creative this afternoon. I would like to draw or paint a picture. Adam goes to the park every week.' 'Kareema always does drawing!' says Adam. Mom smiles. 'I think we can all be happy today. Let's go to the park. We can play there and we can take pencils and paper with us. You can draw in the park, too. But first, let's tidy the lounge.'",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_r2",
+          "content": {
+            "question": "Why does Kareema look disappointed at first?",
+            "options": [
+              "She wants to stay at school.",
+              "She wants to do something creative like drawing.",
+              "She dislikes going outside.",
+              "She lost her football."
+            ],
+            "correctAnswer": "She wants to do something creative like drawing.",
+            "reason": "Kareema was disappointed because she wanted to draw or paint a picture rather than only playing sports at the park.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "u1_l1",
+          "content": {
+            "script": "Listen to the dialogue between Mustafa and Mounir: Mustafa asks Mounir what he thinks of today's lesson. Mounir explains that it is an easy and interesting lesson about the human body. Mounir notes that humans have five senses and each sense has an important job. For instance, we use our skin to feel and our nose to smell.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_l2",
+          "content": {
+            "question": "How many senses do humans have according to Mounir?",
+            "options": [
+              "three",
+              "four",
+              "five",
+              "six"
+            ],
+            "correctAnswer": "five",
+            "reason": "In the listening dialogue, Mounir explicitly mentions that humans have five senses.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u1_sp1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Mustafa",
+                "text": "Hi, Mounir. What do you think of today's lesson?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mounir",
+                "text": "Hi, Mustafa. It's an easy lesson. As you know, we have five senses.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mustafa",
+                "text": "Sure, but why do we need them?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mounir",
+                "text": "Each sense has an important job.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mustafa",
+                "text": "Can you give me an example?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mounir",
+                "text": "Yes, we use our skin to feel and we use our nose to smell.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u1_gm1",
+          "content": {
+            "gameName": "Brain Power Quiz",
+            "description": "Select the correct organ or brain part responsible for bodily functions.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which organ controls how we move, what we remember, and the choices we make?",
+            "options": [
+              "Heart",
+              "Brain",
+              "Stomach",
+              "Lungs"
+            ],
+            "correctAnswer": "Brain",
+            "reason": "The brain is the body's main control center for memory, physical movement, and decision making.",
+            "origin": "supplementary",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u1_gm2",
+          "content": {
+            "gameName": "Grammar Master Challenge",
+            "description": "Choose the correct Present Simple verb form to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "A good diet ...... lots of fresh food and plenty of water.",
+            "options": [
+              "include",
+              "includes",
+              "including",
+              "is include"
+            ],
+            "correctAnswer": "includes",
+            "reason": "With singular noun subjects like 'A good diet', the Present Simple verb requires the singular ending -s.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 1 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u1_ct1",
+          "content": {
+            "question": "Which system do we use to digest the food we eat and drink?",
+            "options": [
+              "respiratory system",
+              "digestive system",
+              "nervous system",
+              "skeletal system"
+            ],
+            "correctAnswer": "digestive system",
+            "reason": "The digestive system breaks down food into energy and nutrients needed by our bodies.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct2",
+          "content": {
+            "question": "Our heart pumps ...... around our body.",
+            "options": [
+              "air",
+              "food",
+              "blood",
+              "water"
+            ],
+            "correctAnswer": "blood",
+            "reason": "The primary function of the heart is to pump blood throughout the body.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct3",
+          "content": {
+            "question": "We breathe in air through our ......",
+            "options": [
+              "ears",
+              "nose",
+              "eyes",
+              "teeth"
+            ],
+            "correctAnswer": "nose",
+            "reason": "Air enters our respiratory system primarily through the nose.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct4",
+          "content": {
+            "question": "The Paralympic Games is an international competition for athletes with ......",
+            "options": [
+              "disabilities",
+              "vehicles",
+              "animals",
+              "guitars"
+            ],
+            "correctAnswer": "disabilities",
+            "reason": "The Paralympic Games is specifically held for international athletes with disabilities.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct5",
+          "content": {
+            "question": "The cerebrum controls our senses, thoughts, and ......",
+            "options": [
+              "memories",
+              "digestion",
+              "blood pump",
+              "height"
+            ],
+            "correctAnswer": "memories",
+            "reason": "The cerebrum is the region of the brain that manages senses, thoughts, speech, and memories.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct6",
+          "content": {
+            "question": "An adult brain weighs about ...... grams.",
+            "options": [
+              "400",
+              "1400",
+              "2400",
+              "3400"
+            ],
+            "correctAnswer": "1400",
+            "reason": "The textbook explicitly states that an adult human brain weighs approximately 1400 grams.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct7",
+          "content": {
+            "question": "Tarek ...... two sisters.",
+            "options": [
+              "has",
+              "have",
+              "do",
+              "is"
+            ],
+            "correctAnswer": "has",
+            "reason": "With third-person singular subjects like 'Tarek', we use 'has' for possession.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct8",
+          "content": {
+            "question": "Do you have a jacket? - Yes, I ...... .",
+            "options": [
+              "does",
+              "have",
+              "do",
+              "don't"
+            ],
+            "correctAnswer": "do",
+            "reason": "In short affirmative answers to 'Do you...?' questions, we reply with 'Yes, I do.'",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct9",
+          "content": {
+            "question": "Sitting still for a long time ...... good for your health.",
+            "options": [
+              "is",
+              "isn't",
+              "are",
+              "aren't"
+            ],
+            "correctAnswer": "isn't",
+            "reason": "The unit text points out that staying motionless for long periods is not good for health.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u1_ct10",
+          "content": {
+            "question": "Which system of raised dots allows people who are blind to read?",
+            "options": [
+              "Sign language",
+              "Braille",
+              "Hieroglyphics",
+              "Morse code"
+            ],
+            "correctAnswer": "Braille",
+            "reason": "Braille is a tactile reading code made of raised dot combinations designed for blind people.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

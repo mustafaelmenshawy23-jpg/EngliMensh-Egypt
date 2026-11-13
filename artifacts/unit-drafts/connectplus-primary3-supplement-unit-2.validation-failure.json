@@ -1,0 +1,81 @@
+{
+  "status": "failed_validation",
+  "bookId": "connectplus-primary3-supplement",
+  "unitNumber": 2,
+  "score": 75,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"What is the largest organ in our body?\""
+  ],
+  "warnings": [
+    "Speaking item s1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item s1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 2: Body matters",
+    "expectedRange": {
+      "start": 58,
+      "end": 89,
+      "totalPages": 32
+    },
+    "recordedCoverage": {
+      "totalPages": 32,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 13,
+      "supplementaryItems": 16,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T06:53:37.958Z"
+  }
+}

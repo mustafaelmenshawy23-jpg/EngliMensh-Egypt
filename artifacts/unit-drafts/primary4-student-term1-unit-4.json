@@ -1,0 +1,684 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T07:01:53.264Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Egypt – My Homeland",
+  "sourcePdfRange": {
+    "start": 62,
+    "end": 79
+  },
+  "sourceCoverage": [
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "sourceFingerprint": "153dfdfced1e1a0c71bc34c7ead74615f61893b79e27196b97e10f435a34de98",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Egypt – My Homeland",
+    "expectedRange": {
+      "start": 62,
+      "end": 79,
+      "totalPages": 18
+    },
+    "recordedCoverage": {
+      "totalPages": 18,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 26,
+      "supplementaryItems": 4,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T07:01:53.264Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "oasis",
+            "arabicMeaning": "واحة",
+            "example": "The Siwa Oasis has lots of trees and water.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "bazaar",
+            "arabicMeaning": "سوق تجاري",
+            "example": "We went to Khan Al-Khalili Bazaar to buy gifts.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "hospital",
+            "arabicMeaning": "مستشفى",
+            "example": "Doctors and nurses help sick people feel better at the hospital.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "museum",
+            "arabicMeaning": "متحف",
+            "example": "The museum is full of history and ancient treasures.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
+          "content": {
+            "word": "monastery",
+            "arabicMeaning": "دير",
+            "example": "At the top of the mountain, tourists visit the old monastery.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab-q-1",
+          "content": {
+            "question": "Where do tourists go in Cairo to buy gifts and souvenirs?",
+            "options": [
+              "Cairo Tower",
+              "Khan Al-Khalili Bazaar",
+              "Siwa Oasis",
+              "Hospital"
+            ],
+            "correctAnswer": "Khan Al-Khalili Bazaar",
+            "reason": "Khan Al-Khalili Bazaar is a famous market where tourists buy gifts.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-2",
+          "content": {
+            "question": "Where do people send letters and packages to stay connected?",
+            "options": [
+              "Post office",
+              "Library",
+              "Shopping mall",
+              "Hospital"
+            ],
+            "correctAnswer": "Post office",
+            "reason": "The post office is the place in the city where people send letters and packages.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-3",
+          "content": {
+            "question": "What is a place in the desert with trees and water called?",
+            "options": [
+              "Pyramid",
+              "Oasis",
+              "Tower",
+              "Monastery"
+            ],
+            "correctAnswer": "Oasis",
+            "reason": "An oasis is a fertile spot in a desert where water and trees are found.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "grammar-1",
+          "content": {
+            "rule": "Prepositions of Place",
+            "explanation": "Prepositions of place show where things or people are located. Common prepositions include in, on, in front of, behind, next to, and between.",
+            "example": "The cat is next to the box.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "grammar-q-1",
+          "content": {
+            "question": "I couldn't see the cat because it was ....... the boxes.",
+            "options": [
+              "behind",
+              "on",
+              "in front of",
+              "between"
+            ],
+            "correctAnswer": "behind",
+            "reason": "When something is hidden behind an object, it cannot be seen directly.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "grammar-q-2",
+          "content": {
+            "question": "My family picture is hanging ....... the wall.",
+            "options": [
+              "in",
+              "on",
+              "under",
+              "between"
+            ],
+            "correctAnswer": "on",
+            "reason": "We use the preposition 'on' for objects attached to a vertical surface like a wall.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "grammar-q-3",
+          "content": {
+            "question": "The plant is placed ....... a book and a notebook.",
+            "options": [
+              "next to",
+              "between",
+              "on",
+              "behind"
+            ],
+            "correctAnswer": "between",
+            "reason": "'Between' indicates a position in the space separating two objects.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "reading-p-1",
+          "content": {
+            "passage": "Many tourists visit St. Catherine Mountain in South Sinai, Egypt. They wake up early to climb, and wear warm clothes because it's cold. Along the way, they see colorful rocks and small plants, and some take pictures. At the top, they visit the old monastery and learn about its history. St. Catherine is a popular place for nature, adventure, and fun with friends and family. People can learn about history and enjoy the natural world.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "reading-q-1",
+          "content": {
+            "question": "Where is St. Catherine Mountain located?",
+            "options": [
+              "North Egypt",
+              "South Sinai, Egypt",
+              "Cairo, Egypt",
+              "Siwa Oasis"
+            ],
+            "correctAnswer": "South Sinai, Egypt",
+            "reason": "The text explicitly states that St. Catherine Mountain is in South Sinai, Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "reading-q-2",
+          "content": {
+            "question": "Why do tourists wear warm clothes when climbing the mountain?",
+            "options": [
+              "Because it is hot",
+              "Because it is cold",
+              "Because it is raining",
+              "Because it is windy"
+            ],
+            "correctAnswer": "Because it is cold",
+            "reason": "The text explains that tourists wear warm clothes because it's cold on the mountain.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "listening-s-1",
+          "content": {
+            "script": "Speaker 1: Adam is talking about sending a package. He is standing near the building where people mail letters. It is the post office!\nSpeaker 2: Dina and Wafaa are looking at ancient artifacts and learning about history inside the museum.\nSpeaker 3: Ola and Farah are going to the library because they want to borrow some interesting books to read.",
+            "origin": "supplementary",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "listening-q-1",
+          "content": {
+            "question": "Where are Dina and Wafaa in Conversation 2?",
+            "options": [
+              "Shopping mall",
+              "Museum",
+              "Library",
+              "Hospital"
+            ],
+            "correctAnswer": "Museum",
+            "reason": "According to the conversation script, Dina and Wafaa are inside the museum looking at historical artifacts.",
+            "origin": "supplementary",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "speaking-d-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Ali",
+                "text": "Hi, I'm Ali! I work as a tour guide in Egypt. Welcome to Egypt!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "John",
+                "text": "Nice to meet you, Ali! I'm John. This is my first time in Egypt.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Ali",
+                "text": "You will like it here! The Pyramids are very nice. Tourists take many pictures here.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "John",
+                "text": "Great! Can I ride a camel, too?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Ali",
+                "text": "Yes! Many people ride camels near the Pyramids. It's fun!",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "City Explorer Challenge",
+            "description": "Choose the correct place in the city based on its main function.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Where do students go every morning to learn and meet their friends?",
+            "options": [
+              "Hospital",
+              "School",
+              "Shopping mall",
+              "Post office"
+            ],
+            "correctAnswer": "School",
+            "reason": "School is the community place where children go to learn and meet friends.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Preposition Master",
+            "description": "Identify the correct preposition of place for each room item.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "My cat is resting right ....... the blue chair.",
+            "options": [
+              "on",
+              "between",
+              "under",
+              "behind"
+            ],
+            "correctAnswer": "on",
+            "reason": "'On' describes something situated directly on top of a surface like a chair seat.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test-q-1",
+          "content": {
+            "question": "Which long river flows through Egypt?",
+            "options": [
+              "Amazon River",
+              "Nile River",
+              "Mississippi River",
+              "Congo River"
+            ],
+            "correctAnswer": "Nile River",
+            "reason": "The Nile River is the famous long river in Egypt mentioned in the unit.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-2",
+          "content": {
+            "question": "What tall landmark allows visitors to see all of Cairo from the top?",
+            "options": [
+              "Cairo Tower",
+              "The Pyramids",
+              "The Egyptian Museum",
+              "Khan Al-Khalili"
+            ],
+            "correctAnswer": "Cairo Tower",
+            "reason": "The Cairo Tower is very tall and lets visitors look out over the city.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-3",
+          "content": {
+            "question": "Where do doctors and nurses help sick people feel better?",
+            "options": [
+              "School",
+              "Post office",
+              "Hospital",
+              "Library"
+            ],
+            "correctAnswer": "Hospital",
+            "reason": "Hospitals are built to treat and care for sick people.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-4",
+          "content": {
+            "question": "Where can students go to read or borrow books?",
+            "options": [
+              "Library",
+              "Shopping mall",
+              "Bazaar",
+              "Hospital"
+            ],
+            "correctAnswer": "Library",
+            "reason": "A library is a place designed for reading and borrowing books.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-5",
+          "content": {
+            "question": "Which place contains treasures that teach us about history?",
+            "options": [
+              "Post office",
+              "Museum",
+              "Restaurant",
+              "Oasis"
+            ],
+            "correctAnswer": "Museum",
+            "reason": "Museums hold historical treasures and artifacts that show our history.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-6",
+          "content": {
+            "question": "The lamp is ....... the TV in the living room.",
+            "options": [
+              "next to",
+              "in",
+              "between",
+              "under"
+            ],
+            "correctAnswer": "next to",
+            "reason": "'Next to' is used when an object is beside another object.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-7",
+          "content": {
+            "question": "What number is equal to one thousand million?",
+            "options": [
+              "One hundred",
+              "One thousand",
+              "One million",
+              "One billion"
+            ],
+            "correctAnswer": "One billion",
+            "reason": "By mathematical definition in the lesson, 1,000,000,000 (one billion) is a thousand million.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-8",
+          "content": {
+            "question": "Which letter sound is voiced and produced using your lips and voice?",
+            "options": [
+              "/p/",
+              "/b/",
+              "/t/",
+              "/f/"
+            ],
+            "correctAnswer": "/b/",
+            "reason": "The phonics lesson clarifies that /b/ is voiced while /p/ is voiceless.",
+            "origin": "source",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-9",
+          "content": {
+            "question": "What do tourists visit at the top of St. Catherine Mountain?",
+            "options": [
+              "A shopping mall",
+              "An old monastery",
+              "A tall tower",
+              "A salt lake"
+            ],
+            "correctAnswer": "An old monastery",
+            "reason": "The text states that tourists visit the old monastery at the top of the mountain.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-10",
+          "content": {
+            "question": "Where can visitors swim and take photos in the Siwa Oasis?",
+            "options": [
+              "Nile River",
+              "Salt Lake",
+              "Cairo Tower",
+              "Bazaar"
+            ],
+            "correctAnswer": "Salt Lake",
+            "reason": "The leaflet specifies that visitors swim and take photos at the Salt Lake in Siwa Oasis.",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

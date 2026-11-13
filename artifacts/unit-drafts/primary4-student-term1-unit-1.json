@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T06:56:02.985Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 1,
+  "unitTitle": "The Five Senses",
+  "sourcePdfRange": {
+    "start": 8,
+    "end": 23
+  },
+  "sourceCoverage": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "sourceFingerprint": "dc48f0ed6884f84b1c8bdef4c50346f031c7c8672380e14ea1dd95faa7706f72",
+  "qualityScore": 95,
+  "qualityReport": {
+    "unitTitle": "The Five Senses",
+    "expectedRange": {
+      "start": 8,
+      "end": 23,
+      "totalPages": 16
+    },
+    "recordedCoverage": {
+      "totalPages": 16,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 13,
+      "supplementaryItems": 14,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T06:56:02.985Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "sense",
+            "arabicMeaning": "حاسة",
+            "example": "I have five senses to learn about the world.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "sight",
+            "arabicMeaning": "بصر",
+            "example": "I use my eyes for the sense of sight.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "hearing",
+            "arabicMeaning": "سمع",
+            "example": "I use my ears for the sense of hearing.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "Which sense do you use to smell flowers?",
+            "options": [
+              "sight",
+              "smell",
+              "touch"
+            ],
+            "correctAnswer": "smell",
+            "reason": "The nose is used for the sense of smell.",
+            "origin": "supplementary",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which sense do you use to see colorful butterflies?",
+            "options": [
+              "sight",
+              "hearing",
+              "taste"
+            ],
+            "correctAnswer": "sight",
+            "reason": "Sight is the sense used to see colors and shapes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "Which sense do you use to hear birds singing?",
+            "options": [
+              "smell",
+              "hearing",
+              "touch"
+            ],
+            "correctAnswer": "hearing",
+            "reason": "Hearing is the sense used to listen to sounds like birds.",
+            "origin": "supplementary",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Present Simple Tense",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Present Simple for daily habits",
+            "explanation": "Use the base verb for I, you, we, they. Add -s or -es to the verb for he, she, it.",
+            "example": "She brushes her teeth every day.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Sarah ____ healthy food every day.",
+            "options": [
+              "eat",
+              "eats",
+              "eating"
+            ],
+            "correctAnswer": "eats",
+            "reason": "With 'Sarah' (she), we add -s to the verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "They ____ sports after school.",
+            "options": [
+              "play",
+              "plays",
+              "playing"
+            ],
+            "correctAnswer": "play",
+            "reason": "With 'They', we use the base form of the verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "He ____ his teeth every morning.",
+            "options": [
+              "brush",
+              "brushes",
+              "brushing"
+            ],
+            "correctAnswer": "brushes",
+            "reason": "With 'He', we add -es to verbs ending in -sh.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Sarah is a healthy 10-year-old girl. She follows good habits every day to stay strong and healthy. In the morning, Sarah wakes up early at 6:00 a.m. She brushes her teeth and washes her face. Next, she does some simple exercises in the garden.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "What time does Sarah wake up?",
+            "options": [
+              "6:00 a.m.",
+              "7:00 a.m.",
+              "8:00 a.m."
+            ],
+            "correctAnswer": "6:00 a.m.",
+            "reason": "The text states Sarah wakes up early at 6:00 a.m.",
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Ms. Mona: Good morning, children! What a beautiful day in the school garden. Student: Good morning, Ms. Mona! What will we learn today? Ms. Mona: Today, we'll learn about our amazing senses.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "Where are Ms. Mona and the students?",
+            "options": [
+              "In the classroom",
+              "In the garden",
+              "At home"
+            ],
+            "correctAnswer": "In the garden",
+            "reason": "Ms. Mona mentions they are in the school garden.",
+            "origin": "supplementary",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student",
+                "text": "What are senses, Ms. Mona?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Ms. Mona",
+                "text": "Senses help us understand the world around us-like sight, hearing, and smell.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Unit Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Sense Matcher",
+            "description": "Choose the correct sense for the situation.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which sense do you use to taste delicious food?",
+            "options": [
+              "sight",
+              "taste",
+              "hearing"
+            ],
+            "correctAnswer": "taste",
+            "reason": "The tongue is used for the sense of taste.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Habit Hero",
+            "description": "Select the correct verb form for the habit.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "My sister ____ English every day.",
+            "options": [
+              "study",
+              "studies",
+              "studying"
+            ],
+            "correctAnswer": "studies",
+            "reason": "With 'My sister' (she), we change -y to -ies.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 1 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "Which sense do we use to touch soft things?",
+            "options": [
+              "sight",
+              "touch",
+              "smell"
+            ],
+            "correctAnswer": "touch",
+            "reason": "We use our hands for the sense of touch.",
+            "origin": "supplementary",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "Sarah ____ her teeth twice a day.",
+            "options": [
+              "brush",
+              "brushes",
+              "brushing"
+            ],
+            "correctAnswer": "brushes",
+            "reason": "Sarah is singular, so we use the -es form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "What does Sarah eat for breakfast?",
+            "options": [
+              "eggs and bread",
+              "pizza",
+              "sweets"
+            ],
+            "correctAnswer": "eggs and bread",
+            "reason": "The text mentions she eats eggs and brown bread.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "Which sense helps us stay safe if we smell smoke?",
+            "options": [
+              "sight",
+              "smell",
+              "hearing"
+            ],
+            "correctAnswer": "smell",
+            "reason": "Smelling smoke warns us of a fire.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "They ____ to school every morning.",
+            "options": [
+              "walk",
+              "walks",
+              "walking"
+            ],
+            "correctAnswer": "walk",
+            "reason": "With 'They', we use the base verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "How many hours does Sarah sleep?",
+            "options": [
+              "7 hours",
+              "8 hours",
+              "9 hours"
+            ],
+            "correctAnswer": "9 hours",
+            "reason": "The text says she sleeps for 9 hours.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Which sense do we use to hear music?",
+            "options": [
+              "hearing",
+              "sight",
+              "taste"
+            ],
+            "correctAnswer": "hearing",
+            "reason": "Hearing is the sense for music and voices.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "My brother ____ TV in the evening.",
+            "options": [
+              "watch",
+              "watches",
+              "watching"
+            ],
+            "correctAnswer": "watches",
+            "reason": "With 'My brother' (he), we add -es.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "What does Goha enjoy in the story?",
+            "options": [
+              "the smell of soup",
+              "the taste of bread",
+              "the sound of birds"
+            ],
+            "correctAnswer": "the smell of soup",
+            "reason": "Goha enjoys the smell of the restaurant's soup.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "What is a healthy habit?",
+            "options": [
+              "eating sweets",
+              "sleeping early",
+              "watching TV all day"
+            ],
+            "correctAnswer": "sleeping early",
+            "reason": "Sleeping early helps the body stay healthy.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

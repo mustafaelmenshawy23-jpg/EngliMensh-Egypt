@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T07:00:32.405Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 3,
+  "unitTitle": "Animals in Our World",
+  "sourcePdfRange": {
+    "start": 40,
+    "end": 61
+  },
+  "sourceCoverage": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "sourceFingerprint": "17a5b0886b04905c760dc4f2a3744f81e946de79040c052df1fe3b6aead9e6ef",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Animals in Our World",
+    "expectedRange": {
+      "start": 40,
+      "end": 61,
+      "totalPages": 22
+    },
+    "recordedCoverage": {
+      "totalPages": 22,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 17,
+      "supplementaryItems": 10,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T07:00:32.405Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "elephant",
+            "arabicMeaning": "فيل",
+            "example": "The elephant is a large gray animal with a long trunk.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "giraffe",
+            "arabicMeaning": "زرافة",
+            "example": "The giraffe eats leaves from tall trees.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "endangered",
+            "arabicMeaning": "مهدد بالانقراض",
+            "example": "The Arabian Leopard is an endangered animal in Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "Which animal has a long neck and eats leaves from tall trees?",
+            "options": [
+              "Lion",
+              "Giraffe",
+              "Monkey",
+              "Bear"
+            ],
+            "correctAnswer": "Giraffe",
+            "reason": "The text describes the giraffe as having a long neck and eating leaves from tall trees.",
+            "origin": "supplementary",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "What do we call animals that are in danger of disappearing forever?",
+            "options": [
+              "Healthy",
+              "Endangered",
+              "Strong",
+              "Safe"
+            ],
+            "correctAnswer": "Endangered",
+            "reason": "Endangered species are those at risk of disappearing from the wild.",
+            "origin": "supplementary",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "Which animal is known for having a striped coat?",
+            "options": [
+              "Elephant",
+              "Bear",
+              "Zebra",
+              "Lion"
+            ],
+            "correctAnswer": "Zebra",
+            "reason": "The zebra is characterized by its distinct striped coat.",
+            "origin": "supplementary",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Comparative Adjectives",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Comparative Adjectives",
+            "explanation": "We use comparative adjectives to compare two things. For short adjectives, we add -er. If it ends in a consonant-vowel-consonant, we double the last letter. If it ends in -y, we change it to -ier.",
+            "example": "A zebra is shorter than a giraffe.",
+            "origin": "source",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Elephants are ________ than monkeys.",
+            "options": [
+              "big",
+              "bigger",
+              "biggest",
+              "more big"
+            ],
+            "correctAnswer": "bigger",
+            "reason": "When comparing two things with a short adjective, we add -er and double the consonant.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "Rabbits are ________ than other animals.",
+            "options": [
+              "healthy",
+              "healthier",
+              "healthiest",
+              "more healthy"
+            ],
+            "correctAnswer": "healthier",
+            "reason": "For adjectives ending in -y, we change the y to i and add -er.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "The weather today is ________ than yesterday.",
+            "options": [
+              "cold",
+              "colder",
+              "coldest",
+              "more cold"
+            ],
+            "correctAnswer": "colder",
+            "reason": "We add -er to the short adjective 'cold' to form the comparative.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Animals need our help to stay healthy and safe. Some animals live in the wild, while others live in zoos or homes. Each animal needs special care to live well. Zoo animals need special attention. Elephants need bigger spaces than monkeys to move around. Lions eat a lot of food to stay stronger than other animals. Giraffes need taller trees to reach their food.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "Why do elephants need bigger spaces than monkeys?",
+            "options": [
+              "To eat more food",
+              "To move around",
+              "To sleep at night",
+              "To hunt"
+            ],
+            "correctAnswer": "To move around",
+            "reason": "The text explicitly states that elephants need bigger spaces than monkeys to move around.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Omar: Hi, Nadia! What does your dad do at the forest park? Nadia: He works as a forest guide. He shows visitors the animals. Omar: Do you usually go with him? Nadia: Sometimes. Omar: What animals do visitors see? Nadia: Lots of them! They see elephants drinking water and monkeys climbing trees.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What is Nadia's father's job?",
+            "options": [
+              "Vet",
+              "Forest guide",
+              "Teacher",
+              "Doctor"
+            ],
+            "correctAnswer": "Forest guide",
+            "reason": "Nadia states that her father works as a forest guide at the park.",
+            "origin": "supplementary",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Omar",
+                "text": "Hi, Nadia! What does your dad do at the forest park?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Nadia",
+                "text": "He works as a forest guide. He shows visitors the animals.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Challenges",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Animal Fact Finder",
+            "description": "Choose the correct animal based on the description provided.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "I am the king of the jungle and I hunt at night. What am I?",
+            "options": [
+              "Lion",
+              "Monkey",
+              "Zebra"
+            ],
+            "correctAnswer": "Lion",
+            "reason": "Lions are often called the king of the jungle and are known to hunt at night.",
+            "origin": "supplementary",
+            "sourcePdfPage": 42
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Comparative Master",
+            "description": "Select the correct comparative form to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "A cheetah is ________ than a turtle.",
+            "options": [
+              "fast",
+              "faster",
+              "fastest"
+            ],
+            "correctAnswer": "faster",
+            "reason": "We use the comparative form 'faster' to compare the speed of two animals.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 3 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "Which animal has a long trunk?",
+            "options": [
+              "Lion",
+              "Elephant",
+              "Zebra"
+            ],
+            "correctAnswer": "Elephant",
+            "reason": "Elephants are known for their long trunks used to spray water.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "What is the comparative form of 'big'?",
+            "options": [
+              "big",
+              "bigger",
+              "biggest"
+            ],
+            "correctAnswer": "bigger",
+            "reason": "For short adjectives ending in CVC, we double the consonant and add -er.",
+            "origin": "source",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "What do forest officers do?",
+            "options": [
+              "They hunt animals",
+              "They protect animals and their homes",
+              "They sell animals"
+            ],
+            "correctAnswer": "They protect animals and their homes",
+            "reason": "Forest officers work hard to protect animals and their habitats.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "What does the word 'pretend' mean in the story?",
+            "options": [
+              "To be real",
+              "To act like something is true when it is not",
+              "To sleep"
+            ],
+            "correctAnswer": "To act like something is true when it is not",
+            "reason": "The lion pretended to be sick to trick the other animals.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "Which animal is an endangered species in Egypt?",
+            "options": [
+              "Arabian Leopard",
+              "Monkey",
+              "Lion"
+            ],
+            "correctAnswer": "Arabian Leopard",
+            "reason": "The text identifies the Arabian Leopard as an endangered animal in Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "What do rabbits need to stay healthy?",
+            "options": [
+              "Junk food",
+              "Fresh vegetables",
+              "No exercise"
+            ],
+            "correctAnswer": "Fresh vegetables",
+            "reason": "The text mentions that rabbits eat fresh vegetables to stay healthy.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Why did the fox run away from the cave?",
+            "options": [
+              "He was hungry",
+              "He saw no footprints coming out",
+              "He was scared of the dark"
+            ],
+            "correctAnswer": "He saw no footprints coming out",
+            "reason": "The fox realized the danger because he saw footprints going in but none coming out.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "What is the comparative form of 'safe'?",
+            "options": [
+              "safer",
+              "safe",
+              "safest"
+            ],
+            "correctAnswer": "safer",
+            "reason": "For adjectives ending in -e, we add -r to form the comparative.",
+            "origin": "source",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "What do Red Sea Dugongs eat?",
+            "options": [
+              "Fish",
+              "Sea grass",
+              "Leaves"
+            ],
+            "correctAnswer": "Sea grass",
+            "reason": "The text states that Red Sea Dugongs are gentle sea animals that eat sea grass.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "What is a moral in a story?",
+            "options": [
+              "The end of the story",
+              "The lesson a story teaches us",
+              "The characters in the story"
+            ],
+            "correctAnswer": "The lesson a story teaches us",
+            "reason": "A moral is the lesson or message that a story conveys to the reader.",
+            "origin": "source",
+            "sourcePdfPage": 47
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-13T06:57:27.505Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: My Community",
+  "sourcePdfRange": {
+    "start": 24,
+    "end": 39
+  },
+  "sourceCoverage": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "sourceFingerprint": "5b53dda42bbbca56de0d79257be6def4b20ea176f4c354aacb27f0cb917a2eac",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 2: My Community",
+    "expectedRange": {
+      "start": 24,
+      "end": 39,
+      "totalPages": 16
+    },
+    "recordedCoverage": {
+      "totalPages": 16,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 20,
+      "supplementaryItems": 7,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-13T06:57:27.505Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Community Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "volunteer",
+            "arabicMeaning": "يتطوع",
+            "example": "I volunteer to help in the park.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "collect",
+            "arabicMeaning": "يجمع",
+            "example": "We collect bottles and trash.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "traffic",
+            "arabicMeaning": "مرور / ازدحام مروري",
+            "example": "Cars don't move quickly in the morning traffic.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "What do people do when they work without getting paid to help others?",
+            "options": [
+              "volunteer",
+              "sleep",
+              "hide",
+              "run"
+            ],
+            "correctAnswer": "volunteer",
+            "reason": "To volunteer means to offer your time to help your community without getting paid.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which word means to gather things like bottles or clothes?",
+            "options": [
+              "collect",
+              "destroy",
+              "throw",
+              "forget"
+            ],
+            "correctAnswer": "collect",
+            "reason": "To collect means to bring things together, such as collecting bottles or old clothes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "What do we call many cars moving slowly on the road?",
+            "options": [
+              "traffic",
+              "water",
+              "music",
+              "garden"
+            ],
+            "correctAnswer": "traffic",
+            "reason": "Traffic refers to the vehicles moving along a road or stuck in congestion.",
+            "origin": "supplementary",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Present Simple Tense",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Present Simple Negative and Questions",
+            "explanation": "We use don't with I, you, we, they and doesn't with he, she, it. For questions, we use Do or Does followed by the subject and the infinitive verb.",
+            "example": "Cars don't move quickly in the morning.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "She .......... like pollution.",
+            "options": [
+              "don't",
+              "doesn't",
+              "isn't",
+              "aren't"
+            ],
+            "correctAnswer": "doesn't",
+            "reason": "With third-person singular pronouns like 'She', we use 'doesn't' in the negative present simple.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": ".......... he take the bus to school?",
+            "options": [
+              "Do",
+              "Does",
+              "Is",
+              "Are"
+            ],
+            "correctAnswer": "Does",
+            "reason": "Questions with third-person singular subjects ('he') in the present simple start with 'Does'.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "They .......... use trash bins in their street.",
+            "options": [
+              "don't",
+              "doesn't",
+              "isn't",
+              "not"
+            ],
+            "correctAnswer": "don't",
+            "reason": "With plural subjects like 'They', we use 'don't' to form the negative in the present simple.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Our community has many problems, so let's talk about them. The first problem is traffic. Cars don't move quickly in the morning, especially near schools. The second problem is trash. Some people don't put trash in bins, so the streets look dirty. We put new bins everywhere, and now our street is very clean!",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "What causes the streets to look dirty according to the text?",
+            "options": [
+              "People planting trees",
+              "People not putting trash in bins",
+              "People walking to school",
+              "People cleaning the park"
+            ],
+            "correctAnswer": "People not putting trash in bins",
+            "reason": "The passage notes that some people do not put trash in bins, causing the streets to look dirty.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Amira: Hello, Adam! What do you do to help our community? Adam: I clean trash from the streets with my friends every Saturday. I also plant trees in the park and feed the dogs and cats.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "When does Adam clean trash from the streets?",
+            "options": [
+              "Every Sunday",
+              "Every Saturday",
+              "Every Friday",
+              "Every Monday"
+            ],
+            "correctAnswer": "Every Saturday",
+            "reason": "Adam states in the dialogue that he cleans trash from the streets with his friends every Saturday.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Amira",
+                "text": "Hello, Adam! What do you do to help our community?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Adam",
+                "text": "Hello, Amira! I clean trash from the streets with my friends every Saturday.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Community Challenge Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Grammar Quest",
+            "description": "Choose the correct verb form to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "We .......... need to use cars every day.",
+            "options": [
+              "don't",
+              "doesn't",
+              "isn't",
+              "aren't"
+            ],
+            "correctAnswer": "don't",
+            "reason": "The subject 'We' takes 'don't' in present simple negative sentences.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Vocabulary Match",
+            "description": "Select the right word for community actions.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "We plant flowers and .......... in the park.",
+            "options": [
+              "trees",
+              "cars",
+              "trash",
+              "traffic"
+            ],
+            "correctAnswer": "trees",
+            "reason": "People plant flowers and trees to make the park nice and green.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 2 Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "What do people collect to give to people who need them?",
+            "options": [
+              "clothes",
+              "cars",
+              "traffic",
+              "trash"
+            ],
+            "correctAnswer": "clothes",
+            "reason": "Amira mentions collecting clothes and giving them to people who need them.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "Where are houses painted in bright colors in Egypt?",
+            "options": [
+              "Nubia",
+              "Alexandria",
+              "Cairo",
+              "Delta"
+            ],
+            "correctAnswer": "Nubia",
+            "reason": "The text about Egypt states that houses in Nubia are painted in bright colors and have special designs.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "She .......... at the community garden on Fridays.",
+            "options": [
+              "help",
+              "helps",
+              "helping",
+              "helped"
+            ],
+            "correctAnswer": "helps",
+            "reason": "With third-person singular subjects ('She') in the present simple, verbs take an 's' ending.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "What is a good solution to reduce traffic near schools?",
+            "options": [
+              "Use the school bus",
+              "Leave car engines running",
+              "Buy more cars",
+              "Throw trash on the road"
+            ],
+            "correctAnswer": "Use the school bus",
+            "reason": "Taking the school bus reduces the number of cars on the road and helps fix traffic problems.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": ".......... you volunteer in your community?",
+            "options": [
+              "Do",
+              "Does",
+              "Is",
+              "Are"
+            ],
+            "correctAnswer": "Do",
+            "reason": "Questions with the subject 'you' in the present simple use 'Do'.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "What do farmers grow in the Delta region?",
+            "options": [
+              "rice and cotton",
+              "sugar cane",
+              "apples",
+              "bananas"
+            ],
+            "correctAnswer": "rice and cotton",
+            "reason": "The text explains that farmers grow rice and cotton in the Delta region.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "What prefix means 'not' or forms the opposite of 'legal'?",
+            "options": [
+              "il",
+              "dis",
+              "ir",
+              "un"
+            ],
+            "correctAnswer": "il",
+            "reason": "The prefix 'il-' is added to words starting with 'l' like 'legal' to form 'illegal'.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "Fifty years ago, what was where the big supermarket stands now?",
+            "options": [
+              "An old market with wooden stalls",
+              "A tall building",
+              "A busy highway",
+              "A large factory"
+            ],
+            "correctAnswer": "An old market with wooden stalls",
+            "reason": "Hana's diary states that where the supermarket stands now, there was a beautiful old market with wooden stalls.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "Which of these helps reduce air pollution?",
+            "options": [
+              "Walk or cycle to school",
+              "Use more plastic",
+              "Keep trash in the street",
+              "Leave car engines running"
+            ],
+            "correctAnswer": "Walk or cycle to school",
+            "reason": "Walking or cycling instead of driving helps stop air pollution.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "How should you start a diary entry?",
+            "options": [
+              "With the date and a greeting",
+              "With your final grade",
+              "With a math problem",
+              "With a list of numbers"
+            ],
+            "correctAnswer": "With the date and a greeting",
+            "reason": "Guidelines for writing a diary entry state that you must start with the date at the top and a greeting like 'Dear diary'.",
+            "origin": "source",
+            "sourcePdfPage": 35
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
