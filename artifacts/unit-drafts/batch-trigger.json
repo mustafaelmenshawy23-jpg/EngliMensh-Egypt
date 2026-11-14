@@ -1,10 +1,10 @@
 {
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
-  "nextCursorIndex": 19,
-  "chainDepth": 2,
-  "pendingCandidates": 32,
+  "nextCursorIndex": 61,
+  "chainDepth": 0,
+  "pendingCandidates": 20,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
-  "generatedAt": "2026-11-13T06:24:36.000Z",
-  "reason": "Resume the saved all-books curriculum queue after the 2026-11-12 batch; preserve source blockers and validated drafts"
+  "generatedAt": "2026-11-14T07:35:00.000Z",
+  "reason": "Queue another resumable all-books batch after the currently running batch. The saved batch-state cursor is authoritative; this trigger does not overwrite or approve any draft."
 }
