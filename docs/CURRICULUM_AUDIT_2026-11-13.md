@@ -1,6 +1,7 @@
 # EngliMensh-Egypt — Repository Curriculum Inventory & Progress Audit
 
-**Snapshot:** 13 November 2026, 06:24 UTC  
+**Source extraction snapshot:** 13 November 2026, 06:58 UTC (latest reusable extraction artifact)  
+**Latest generation snapshot:** 14 November 2026, 07:19 UTC (run 43570517411; next batch is still running)  
 **Repository:** [mustafaelmenshawy23-jpg/EngliMensh-Egypt](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt)  
 **Working branch:** `main` only. No other repository or product variant is part of this audit.
 
@@ -12,12 +13,12 @@
 | PDF objects extracted successfully in the reusable Actions cache | 33 |
 | PDF still represented by an unhydrated Git LFS pointer | 1 |
 | Pages across the 33 extracted PDFs | 5,626 |
-| OCR-processed pages | 4,399 |
-| OCR pages classified reliable | 3,847 |
-| OCR pages classified unreliable | 468 |
-| OCR pages with no usable text | 84 |
+| OCR-processed pages | 5,626 |
+| Pages with usable OCR text | 3,906 |
+| OCR pages flagged unreliable | 132 |
+| OCR pages with no usable text | 73 |
 | OCR execution errors | 0 |
-| Pages in the visual-review queue | 552 |
+| Pages in the visual-review queue | 205 |
 | Indexed books/documents | 34 |
 | Student books | 15 |
 | Commercial supplements | 9 |
@@ -27,7 +28,7 @@
 | Books with unit boundaries | 23 |
 | Documents without unit boundaries | 11 |
 
-The 552-page visual-review queue is the actionable set (84 empty + 468 unreliable pages). The older progress field `pagesNeedingManualVisualReview=4399` over-counts by treating every OCR-processed page as needing visual review; it should not be interpreted as 4,399 unreadable pages.
+The current 205-page visual-review queue is the actionable set (132 OCR-unreliable + 73 OCR-empty pages). All OCR output remains `needs_review`; OCR extraction is not academic approval. The 288-page Hello Plus Prep 2 supplement currently contains repeated `t.me/G5_Y5` watermark text rather than usable curriculum text. The next cache-v3 generation run is configured to detect those watermark-only pages, re-hydrate that original PDF, and retry OCR.
 
 **Unhydrated source:** `public/books/Performance Tasks Prep 2-OnlineMaterials.PDF`. Its LFS object was not available to the extraction job, so it remains explicitly blocked; the original pointer file was not modified.
 
@@ -43,9 +44,22 @@ The 552-page visual-review queue is the actionable set (84 empty + 468 unreliabl
 
 The 125 unit records span 23 books: 15 student books and 8 of the 9 commercial supplements. Eleven indexed documents do not currently have unit boundaries: nine assessment books, one reader, and one supplementary Prep 2 document. These must be handled as book/term assessment or reader content rather than by inventing unit numbers.
 
-## 3. All indexed PDFs and unit map
+## 3. Latest generation snapshot
 
-Unit start pages below are the indexed PDF page numbers. A unit end page is derived from the next verified unit start page minus one, or from the extracted PDF page count for the final unit. Documents with no unit records remain listed; they are not silently omitted.
+The last persisted batch snapshot (14 November 2026, 07:19 UTC) reports:
+
+| Generation status | Units |
+|---|---:|
+| Structurally valid drafts with all nine sections (`needs_review`) | 52 |
+| Blocked by source-quality review | 53 |
+| Failed / awaiting retry | 20 |
+| Approved and published | 0 |
+
+Section coverage across the 52 draft units: vocabulary 288 items; vocabulary questions 160; grammar 84; grammar questions 159; reading 115; listening 109; speaking 52; games 107; comprehensive tests 520 questions. These are validated draft counts, not published content. The per-book/per-unit status source is [`artifacts/unit-drafts/progress.json`](../artifacts/unit-drafts/progress.json). Run 43570679945 is still processing the next ten eligible/retry candidates; no result from that run is included in these persisted counts.
+
+## 4. All indexed PDFs and unit map
+
+Unit start pages below are the indexed PDF page numbers. A unit end page is derived from the next verified unit start page minus one, or from the extracted PDF page count for the final unit. Documents with no unit records remain listed; they are not silently omitted. **The detailed status labels in the table are the 13 November 06:24 UTC inventory snapshot; use the live `progress.json` link above for the latest per-unit status.**
 
 | Grade/stage | Document type | Original PDF filename | Units | Current unit status | Unit inventory |
 |---|---|---|---:|---|---|
