@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T09:01:38.680Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep2-student-term1",
+  "sourceFilename": "English_language_prep2_t1 (1).pdf",
+  "grade": "Preparatory 2",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4 Art and Expression",
+  "sourcePdfRange": {
+    "start": 58,
+    "end": 71
+  },
+  "sourceCoverage": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "sourceFingerprint": "447825dcaaa0ac4884c6152111eef9692ad702252670ec2bbbf9c6a3f88fc9ba",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 4 Art and Expression",
+    "expectedRange": {
+      "start": 58,
+      "end": 71,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 26,
+      "supplementaryItems": 3,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T09:01:38.680Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary List",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "artwork",
+            "arabicMeaning": "عمل فني",
+            "example": "An artwork can express an artist's personal ideas and emotions.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "sculpture",
+            "arabicMeaning": "تمثال / منحوتة",
+            "example": "The sculpture was made from smooth stone and shiny metal.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "creativity",
+            "arabicMeaning": "إبداع",
+            "example": "Creativity is a valuable life skill that helps us solve problems.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "gallery",
+            "arabicMeaning": "معرض فني",
+            "example": "We visited an art gallery to see the new paintings.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
+          "content": {
+            "word": "sculptor",
+            "arabicMeaning": "نحات",
+            "example": "Mahmoud Mokhtar was a famous Egyptian sculptor.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab-q-1",
+          "content": {
+            "question": "Which of the following best describes the main goal of an artwork?",
+            "options": [
+              "To match the colors in a room",
+              "To express personal thoughts and feelings",
+              "To follow artistic traditions and styles",
+              "To copy other famous artists' works"
+            ],
+            "correctAnswer": "To express personal thoughts and feelings",
+            "reason": "The text states that an artwork is created by an artist to express their ideas and emotions.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-2",
+          "content": {
+            "question": "Mahmoud Mokhtar was one of the most famous Egyptian ______.",
+            "options": [
+              "sculptors",
+              "pilots",
+              "farmers",
+              "engineers"
+            ],
+            "correctAnswer": "sculptors",
+            "reason": "Mahmoud Mokhtar is recognized in the text as a pioneer Egyptian sculptor.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-3",
+          "content": {
+            "question": "A place where people go to view paintings and sculptures is called an art ______.",
+            "options": [
+              "gallery",
+              "stadium",
+              "bakery",
+              "laboratory"
+            ],
+            "correctAnswer": "gallery",
+            "reason": "An art gallery is a public space dedicated to displaying works of art.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "gram-1",
+          "content": {
+            "rule": "Using Connectors (because, so, but, although)",
+            "explanation": "Connectors link sentences to show cause (because), result (so), or contrast (but, although).",
+            "example": "I kept trying although I was tired.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram-q-1",
+          "content": {
+            "question": "I didn't give up ______ I believed in myself.",
+            "options": [
+              "because",
+              "so",
+              "but",
+              "although"
+            ],
+            "correctAnswer": "because",
+            "reason": "'Because' introduces the reason/cause for not giving up.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q-2",
+          "content": {
+            "question": "He worked hard, ______ he improved his artistic skills.",
+            "options": [
+              "so",
+              "because",
+              "although",
+              "but"
+            ],
+            "correctAnswer": "so",
+            "reason": "'So' expresses the result of working hard.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram-q-3",
+          "content": {
+            "question": "______ the exam was difficult, she got high marks.",
+            "options": [
+              "Although",
+              "Because",
+              "So",
+              "But"
+            ],
+            "correctAnswer": "Although",
+            "reason": "'Although' shows contrast between the difficulty of the exam and getting high marks.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read-p-1",
+          "content": {
+            "passage": "Mahmoud Mokhtar (born in 1891) was a very important national artist. He was one of the famous Egyptian sculptors. He mixed old Egyptian art with new European styles. Mokhtar learned to sculpt as a child. He later went to art schools in Egypt and Paris. His most famous work is Nahdat Misr Statue. This sculpture shows a woman and a Sphinx, symbolizing Egypt's history and agriculture. It became a big symbol for Egypt and was put in a public square in Cairo in 1928. Mokhtar actively participated in the art movement, using his art to promote Egyptian identity. He also wrote articles to encourage art appreciation. He gained international recognition, exhibiting his work in Paris. His piece, al-Khamaseen, shows a peasant woman battling sandstorms. He died in 1934. Later, a museum was opened in Cairo to show his art. Mokhtar is still known as Egypt's most famous sculptor, and his art played a big part in modern Egyptian art history.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read-q-1",
+          "content": {
+            "question": "What figures are featured in the famous Nahdat Misr Statue?",
+            "options": [
+              "A woman and a Sphinx",
+              "A peasant and a horse",
+              "Two modern artists",
+              "A king and a queen"
+            ],
+            "correctAnswer": "A woman and a Sphinx",
+            "reason": "The text explicitly mentions that the sculpture shows a woman and a Sphinx symbolizing Egypt's history and agriculture.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Skills",
+      "items": [
+        {
+          "itemId": "list-s-1",
+          "content": {
+            "script": "Interviewer: Welcome Youssef. Can you tell us about your artwork?\nYoussef: Hello! I love creating sculptures using different materials like clay and shiny metal.\nInterviewer: Do you like sharing your studio?\nYoussef: Yes, I enjoy sharing my studio with others and making interactive art that lets people engage directly with the message.",
+            "origin": "supplementary",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list-q-1",
+          "content": {
+            "question": "What primary material does Youssef mention using for his sculptures?",
+            "options": [
+              "clay",
+              "wood",
+              "plastic",
+              "glass"
+            ],
+            "correctAnswer": "clay",
+            "reason": "In the listening context, Youssef identifies clay as a key material for shaping his art.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "spk-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student",
+                "text": "Wow! I just walked through that modern art section in this museum. Some of the pieces are really amazing!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Art teacher",
+                "text": "I'm glad you enjoyed it! Many artists here use different materials to create something original.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student",
+                "text": "I saw one sculpture made from paper and metal. It looked so special—I've never seen anything like it. Do you like this style of art?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Art teacher",
+                "text": "Yes, of course. I think it's a great example of creativity.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Art Vocabulary Challenge",
+            "description": "Choose the correct vocabulary item matching the provided definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word means objects made by shaping materials like stone or clay?",
+            "options": [
+              "sculpture",
+              "compass",
+              "notification",
+              "conflict"
+            ],
+            "correctAnswer": "sculpture",
+            "reason": "A sculpture is a three-dimensional artwork created by shaping materials such as clay or stone.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Grammar Connector Quiz",
+            "description": "Select the proper connecting word to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Rodayna stayed home ______ she was unwell.",
+            "options": [
+              "because",
+              "so",
+              "but",
+              "although"
+            ],
+            "correctAnswer": "because",
+            "reason": "'Because' introduces the reason for Rodayna staying home.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "test-q-1",
+          "content": {
+            "question": "Gen Alpha are true ______ because they grew up with technology everywhere.",
+            "options": [
+              "digital natives",
+              "designers",
+              "experts",
+              "conflicts"
+            ],
+            "correctAnswer": "digital natives",
+            "reason": "Digital natives refers to people who grew up in the era of digital technology.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-2",
+          "content": {
+            "question": "Showing ______ means understanding how others feel.",
+            "options": [
+              "empathy",
+              "distraction",
+              "integrity",
+              "background"
+            ],
+            "correctAnswer": "empathy",
+            "reason": "Empathy is defined as the capacity to understand and share the feelings of others.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-3",
+          "content": {
+            "question": "Which sculpture by Mahmoud Mokhtar shows a peasant woman battling sandstorms?",
+            "options": [
+              "al-Khamaseen",
+              "Nahdat Misr",
+              "The Sphinx",
+              "The Hidden Island"
+            ],
+            "correctAnswer": "al-Khamaseen",
+            "reason": "Al-Khamaseen is Mokhtar's renowned sculpture depicting a peasant woman in a storm.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-4",
+          "content": {
+            "question": "In 1928, the Nahdat Misr Statue was placed in a public square in ______.",
+            "options": [
+              "Cairo",
+              "Paris",
+              "Alexandria",
+              "Giza"
+            ],
+            "correctAnswer": "Cairo",
+            "reason": "The text confirms the Nahdat Misr Statue was erected in a Cairo public square in 1928.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-5",
+          "content": {
+            "question": "The painting was colorful, ______ it didn't win the competition.",
+            "options": [
+              "but",
+              "because",
+              "so",
+              "and"
+            ],
+            "correctAnswer": "but",
+            "reason": "'But' is used to connect two contrasting clauses.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-6",
+          "content": {
+            "question": "She takes an art class every week ______ she loves drawing.",
+            "options": [
+              "because",
+              "so",
+              "but",
+              "although"
+            ],
+            "correctAnswer": "because",
+            "reason": "'Because' provides the reason for taking an art class.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-7",
+          "content": {
+            "question": "An artwork is anything an artist makes to express their ideas and ______.",
+            "options": [
+              "emotions",
+              "tools",
+              "conflicts",
+              "schedules"
+            ],
+            "correctAnswer": "emotions",
+            "reason": "The text defines artwork as a means of expressing personal ideas and emotions.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-8",
+          "content": {
+            "question": "The friends on the adventure packed food, water, notebooks, and a ______ to navigate.",
+            "options": [
+              "compass",
+              "sculpture",
+              "gallery",
+              "fabric"
+            ],
+            "correctAnswer": "compass",
+            "reason": "A compass was listed among the practical items packed for their exploration.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-9",
+          "content": {
+            "question": "Mahmoud Mokhtar mixed ancient Egyptian art styles with modern ______ styles.",
+            "options": [
+              "European",
+              "American",
+              "Asian",
+              "African"
+            ],
+            "correctAnswer": "European",
+            "reason": "The passage highlights how Mokhtar combined traditional Egyptian art with European technique.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-10",
+          "content": {
+            "question": "Malik enjoyed ______ the scenery as they sailed towards the hidden island.",
+            "options": [
+              "drawing",
+              "singing",
+              "sleeping",
+              "cooking"
+            ],
+            "correctAnswer": "drawing",
+            "reason": "The text states that Malik loved drawing and sketched the scenery along the journey.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

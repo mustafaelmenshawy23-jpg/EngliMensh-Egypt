@@ -1,92 +1,44 @@
 {
-  "generatedAt": "2026-11-14T07:33:34.255Z",
+  "generatedAt": "2026-11-14T08:12:22.615Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
   "selected": 10,
-  "cursorIndex": 61,
-  "nextCursorIndex": 72,
+  "cursorIndex": 72,
+  "nextCursorIndex": 83,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
   "sourceExtraction": {
     "indexedSourceBooks": 34,
     "totalPages": null,
-    "ocrProcessedPages": 5626,
-    "ocrReliablePages": 0,
-    "ocrUnreliablePages": 0,
-    "ocrEmptyPages": 0,
+    "ocrProcessedPages": 4399,
+    "ocrReliablePages": 4237,
+    "ocrUnreliablePages": 141,
+    "ocrEmptyPages": 21,
     "ocrErrorPages": 0,
-    "pagesNeedingManualVisualReview": 0
+    "pagesNeedingManualVisualReview": 4399
   },
-  "completedDrafts": 51,
+  "completedDrafts": 61,
   "approvedPreserved": 0,
-  "blockedSourceReview": 21,
+  "blockedSourceReview": 15,
   "excludedUnits": 0,
-  "pendingCandidates": 14,
+  "pendingCandidates": 10,
   "results": [
     {
-      "unitId": "connectplus-primary6-supplement-unit-2",
-      "status": "generated_needs_review",
-      "qualityScore": 100,
-      "itemCount": 30,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
+      "unitId": "helloplus-prep1-supplement-unit-3",
+      "status": "failed",
+      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"We ___ a party for our little sister nex\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     {
-      "unitId": "connectplus-primary6-supplement-unit-3",
+      "unitId": "helloplus-prep1-supplement-unit-4",
       "status": "generated_needs_review",
       "qualityScore": 85,
-      "itemCount": 31,
+      "itemCount": 28,
       "sections": {
         "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
+          "itemCount": 4,
+          "validItems": 4,
           "issues": []
         },
         "vocabulary_questions": {
@@ -95,8 +47,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 1,
+          "validItems": 1,
           "issues": []
         },
         "grammar_questions": {
@@ -132,12 +84,7 @@
       }
     },
     {
-      "unitId": "prep1-student-term1-unit-1",
-      "status": "failed_validation",
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\ntest_q8: question contains duplicate options: [\"I went to Alexandria last June.\",\"i went to alexandria last june.\",\"I went to alexandria Last june.\",\"i Went To Alexandria last june.\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
-    },
-    {
-      "unitId": "prep1-student-term1-unit-2",
+      "unitId": "helloplus-prep1-supplement-unit-5",
       "status": "generated_needs_review",
       "qualityScore": 85,
       "itemCount": 30,
@@ -190,113 +137,7 @@
       }
     },
     {
-      "unitId": "prep1-student-term1-unit-3",
-      "status": "generated_needs_review",
-      "qualityScore": 85,
-      "itemCount": 29,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep1-student-term1-unit-4",
-      "status": "generated_needs_review",
-      "qualityScore": 90,
-      "itemCount": 33,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 6,
-          "validItems": 6,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep1-student-term1-unit-5",
+      "unitId": "helloplus-prep1-supplement-unit-6",
       "status": "generated_needs_review",
       "qualityScore": 100,
       "itemCount": 27,
@@ -349,10 +190,63 @@
       }
     },
     {
-      "unitId": "prep1-student-term1-unit-6",
+      "unitId": "prep2-student-term1-unit-1",
+      "status": "generated_needs_review",
+      "qualityScore": 90,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "prep2-student-term1-unit-2",
       "status": "generated_needs_review",
       "qualityScore": 100,
-      "itemCount": 33,
+      "itemCount": 37,
       "sections": {
         "vocabulary": {
           "itemCount": 8,
@@ -360,8 +254,8 @@
           "issues": []
         },
         "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 4,
+          "validItems": 4,
           "issues": []
         },
         "grammar": {
@@ -370,18 +264,18 @@
           "issues": []
         },
         "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
           "itemCount": 3,
           "validItems": 3,
           "issues": []
         },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
         "listening": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "speaking": {
@@ -402,14 +296,14 @@
       }
     },
     {
-      "unitId": "helloplus-prep1-supplement-unit-1",
+      "unitId": "prep2-student-term1-unit-3",
       "status": "generated_needs_review",
       "qualityScore": 85,
-      "itemCount": 29,
+      "itemCount": 30,
       "sections": {
         "vocabulary": {
-          "itemCount": 4,
-          "validItems": 4,
+          "itemCount": 6,
+          "validItems": 6,
           "issues": []
         },
         "vocabulary_questions": {
@@ -418,8 +312,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 1,
+          "validItems": 1,
           "issues": []
         },
         "grammar_questions": {
@@ -455,7 +349,7 @@
       }
     },
     {
-      "unitId": "helloplus-prep1-supplement-unit-2",
+      "unitId": "prep2-student-term1-unit-4",
       "status": "generated_needs_review",
       "qualityScore": 85,
       "itemCount": 29,
@@ -506,913 +400,153 @@
           "issues": []
         }
       }
+    },
+    {
+      "unitId": "prep2-student-term1-unit-5",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "prep3-student-term1-unit-1",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 36,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     }
   ],
   "blocked": [
     {
-      "unitId": "connectplus-primary1-supplement-unit-6",
-      "bookId": "connectplus-primary1-supplement",
-      "unitNumber": 6,
-      "title": "The world around us",
+      "unitId": "primary2-student-term1-unit-3",
+      "bookId": "primary2-student-term1",
+      "unitNumber": 3,
+      "title": "Classroom Actions & Routines",
       "expectedRange": {
-        "start": 179,
-        "end": 295,
-        "totalPages": 117
+        "start": 31,
+        "end": 50,
+        "totalPages": 20
       },
       "status": "blocked",
       "coveragePercentage": 100,
       "actualRange": {
-        "foundPages": 117,
-        "validPages": 101,
-        "needsReviewPages": 14,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 14,
-      "pageEvaluations": [
-        {
-          "pdfPage": 179,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 186,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 191,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 202,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"sssss\""
-          ]
-        },
-        {
-          "pdfPage": 216,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 220,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 221,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 222,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 228,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 230,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 232,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 236,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" | | | |\""
-          ]
-        },
-        {
-          "pdfPage": 255,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 270,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 280,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 294,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.179: Repeated substring pattern detected: \"............\"",
-        "PDF p.186: Repeated substring pattern detected: \"........\"",
-        "PDF p.191: Repeated substring pattern detected: \"............\"",
-        "PDF p.202: Excessive character repetition detected: \"sssss\"",
-        "PDF p.216: Page is empty (zero extractable characters)",
-        "PDF p.220: Repeated substring pattern detected: \" | | | | |\"",
-        "PDF p.221: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.222: Excessive character repetition detected: \"00000\"",
-        "PDF p.228: Repeated substring pattern detected: \" | | | | | |\"",
-        "PDF p.230: Repeated substring pattern detected: \"........\"",
-        "PDF p.232: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.236: Repeated substring pattern detected: \" | | | |\"",
-        "PDF p.255: Excessive character repetition detected: \"00000\"",
-        "PDF p.270: Page is empty (zero extractable characters)",
-        "PDF p.280: Repeated substring pattern detected: \"...............\"",
-        "PDF p.294: Repeated substring pattern detected: \"........\""
-      ]
-    },
-    {
-      "unitId": "primary4-student-term1-unit-6",
-      "bookId": "primary4-student-term1",
-      "unitNumber": 6,
-      "title": "The Hundred Dresses",
-      "expectedRange": {
-        "start": 96,
-        "end": 121,
-        "totalPages": 26
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 26,
-        "validPages": 22,
-        "needsReviewPages": 1,
-        "blockedPages": 3
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 3,
-      "needsReviewPageCount": 1,
-      "pageEvaluations": [
-        {
-          "pdfPage": 104,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 117,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 118,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 119,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.104: Repeated substring pattern detected: \"............\"",
-        "PDF p.117: Page is empty (zero extractable characters)",
-        "PDF p.118: Page is empty (zero extractable characters)",
-        "PDF p.119: Page is empty (zero extractable characters)"
-      ]
-    },
-    {
-      "unitId": "connectplus-primary4-supplement-unit-6",
-      "bookId": "connectplus-primary4-supplement",
-      "unitNumber": 6,
-      "title": "Let’s work",
-      "expectedRange": {
-        "start": 190,
-        "end": 359,
-        "totalPages": 170
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 170,
-        "validPages": 99,
-        "needsReviewPages": 70,
+        "foundPages": 20,
+        "validPages": 19,
+        "needsReviewPages": 0,
         "blockedPages": 1
       },
       "missingPages": [],
       "duplicatePages": [],
       "blockedPageCount": 1,
-      "needsReviewPageCount": 70,
+      "needsReviewPageCount": 0,
       "pageEvaluations": [
         {
-          "pdfPage": 190,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 198,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 204,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 211,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 212,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 213,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 222,
+          "pdfPage": 32,
           "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 230,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 231,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"cccccccc\"",
-            "Repeated substring pattern detected: \"cccccccc\""
-          ]
-        },
-        {
-          "pdfPage": 232,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 235,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 237,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 242,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 244,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 245,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 246,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 247,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 248,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 253,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 254,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 255,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 257,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 258,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 261,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 262,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 264,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"0000000\"",
-            "Repeated substring pattern detected: \"eeeeeeee\""
-          ]
-        },
-        {
-          "pdfPage": 265,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 266,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 269,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 270,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 273,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 274,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 276,
-          "status": "needs_review",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"onnisioamunnanemeeeumsannanonc...\", length 62)",
-            "Excessive character repetition detected: \"11111\""
-          ]
-        },
-        {
-          "pdfPage": 277,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"0.0.0.0.\""
-          ]
-        },
-        {
-          "pdfPage": 278,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 298,
-          "status": "needs_review",
-          "score": 80,
-          "issues": [
-            "Page content is unusually short (26 chars, 3 words)"
-          ]
-        },
-        {
-          "pdfPage": 302,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 303,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 304,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 305,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 306,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 307,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 309,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 310,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 311,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 316,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 318,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 319,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 321,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"سسسسسس\""
-          ]
-        },
-        {
-          "pdfPage": 322,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 323,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 327,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 329,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 330,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 331,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 333,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 334,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 336,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"ccccccc\""
-          ]
-        },
-        {
-          "pdfPage": 337,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 338,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 339,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 341,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 343,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 345,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 346,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 348,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"cccccc\""
-          ]
-        },
-        {
-          "pdfPage": 351,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 352,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 353,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 354,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 355,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
+          "score": 30,
+          "issues": [
+            "Contains 1 abnormally long unbroken word(s) (e.g. \"ececccesesesesesesesessseseses...\", length 329)",
+            "Excessive character repetition detected: \"sssss\"",
+            "Repeated substring pattern detected: \" م م م م\""
           ]
         }
       ],
       "issues": [
-        "PDF p.190: Repeated substring pattern detected: \"........\"",
-        "PDF p.198: Repeated substring pattern detected: \"...............\"",
-        "PDF p.204: Repeated substring pattern detected: \"............\"",
-        "PDF p.211: Repeated substring pattern detected: \"........\"",
-        "PDF p.212: Repeated substring pattern detected: \"...............\"",
-        "PDF p.213: Repeated substring pattern detected: \"...............\"",
-        "PDF p.222: Page is empty (zero extractable characters)",
-        "PDF p.230: Repeated substring pattern detected: \"..........\"",
-        "PDF p.231: Excessive character repetition detected: \"cccccccc\"",
-        "PDF p.231: Repeated substring pattern detected: \"cccccccc\"",
-        "PDF p.232: Repeated substring pattern detected: \"..........\"",
-        "PDF p.235: Repeated substring pattern detected: \"...............\"",
-        "PDF p.237: Repeated substring pattern detected: \"........\"",
-        "PDF p.242: Repeated substring pattern detected: \"........\"",
-        "PDF p.244: Repeated substring pattern detected: \"...............\"",
-        "PDF p.245: Repeated substring pattern detected: \"..........\"",
-        "PDF p.246: Repeated substring pattern detected: \"...............\"",
-        "PDF p.247: Repeated substring pattern detected: \"..........\"",
-        "PDF p.248: Repeated substring pattern detected: \"...............\"",
-        "PDF p.253: Repeated substring pattern detected: \"...............\"",
-        "PDF p.254: Repeated substring pattern detected: \"...............\"",
-        "PDF p.255: Repeated substring pattern detected: \"..........\"",
-        "PDF p.257: Repeated substring pattern detected: \"...............\"",
-        "PDF p.258: Repeated substring pattern detected: \"...............\"",
-        "PDF p.261: Repeated substring pattern detected: \"........\"",
-        "PDF p.262: Repeated substring pattern detected: \"........\"",
-        "PDF p.264: Excessive character repetition detected: \"0000000\"",
-        "PDF p.264: Repeated substring pattern detected: \"eeeeeeee\"",
-        "PDF p.265: Repeated substring pattern detected: \"...............\"",
-        "PDF p.266: Repeated substring pattern detected: \"...............\"",
-        "PDF p.269: Repeated substring pattern detected: \"...............\"",
-        "PDF p.270: Repeated substring pattern detected: \"............\"",
-        "PDF p.273: Repeated substring pattern detected: \"...............\"",
-        "PDF p.274: Repeated substring pattern detected: \"............\"",
-        "PDF p.276: Contains 1 abnormally long unbroken word(s) (e.g. \"onnisioamunnanemeeeumsannanonc...\", length 62)",
-        "PDF p.276: Excessive character repetition detected: \"11111\"",
-        "PDF p.277: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.278: Repeated substring pattern detected: \"...............\"",
-        "PDF p.298: Page content is unusually short (26 chars, 3 words)",
-        "PDF p.302: Repeated substring pattern detected: \"..........\"",
-        "PDF p.303: Repeated substring pattern detected: \"...............\"",
-        "PDF p.304: Repeated substring pattern detected: \"...............\"",
-        "PDF p.305: Repeated substring pattern detected: \"...............\"",
-        "PDF p.306: Repeated substring pattern detected: \"............\"",
-        "PDF p.307: Repeated substring pattern detected: \"...............\"",
-        "PDF p.309: Repeated substring pattern detected: \"............\"",
-        "PDF p.310: Repeated substring pattern detected: \"...............\"",
-        "PDF p.311: Repeated substring pattern detected: \"...............\"",
-        "PDF p.316: Repeated substring pattern detected: \"...............\"",
-        "PDF p.318: Repeated substring pattern detected: \"...............\"",
-        "PDF p.319: Repeated substring pattern detected: \"........\"",
-        "PDF p.321: Excessive character repetition detected: \"سسسسسس\"",
-        "PDF p.322: Repeated substring pattern detected: \"..........\"",
-        "PDF p.323: Repeated substring pattern detected: \"............\"",
-        "PDF p.327: Repeated substring pattern detected: \"............\"",
-        "PDF p.329: Repeated substring pattern detected: \"...............\"",
-        "PDF p.330: Repeated substring pattern detected: \"............\"",
-        "PDF p.331: Repeated substring pattern detected: \"........\"",
-        "PDF p.333: Repeated substring pattern detected: \"........\"",
-        "PDF p.334: Repeated substring pattern detected: \"...............\"",
-        "PDF p.336: Excessive character repetition detected: \"ccccccc\"",
-        "PDF p.337: Repeated substring pattern detected: \"............\"",
-        "PDF p.338: Repeated substring pattern detected: \"...............\"",
-        "PDF p.339: Repeated substring pattern detected: \"..........\"",
-        "PDF p.341: Repeated substring pattern detected: \"...............\"",
-        "PDF p.343: Repeated substring pattern detected: \"...............\"",
-        "PDF p.345: Repeated substring pattern detected: \"...............\"",
-        "PDF p.346: Repeated substring pattern detected: \"...............\"",
-        "PDF p.348: Excessive character repetition detected: \"cccccc\"",
-        "PDF p.351: Repeated substring pattern detected: \"...............\"",
-        "PDF p.352: Repeated substring pattern detected: \"...............\"",
-        "PDF p.353: Repeated substring pattern detected: \"...............\"",
-        "PDF p.354: Repeated substring pattern detected: \"...............\"",
-        "PDF p.355: Repeated substring pattern detected: \"..........\""
+        "PDF p.32: Contains 1 abnormally long unbroken word(s) (e.g. \"ececccesesesesesesesessseseses...\", length 329)",
+        "PDF p.32: Excessive character repetition detected: \"sssss\"",
+        "PDF p.32: Repeated substring pattern detected: \" م م م م\""
       ]
     },
     {
@@ -2252,1418 +1386,6 @@
       ]
     },
     {
-      "unitId": "primary6-student-term1-unit-5",
-      "bookId": "primary6-student-term1",
-      "unitNumber": 5,
-      "title": "Made in Egypt",
-      "expectedRange": {
-        "start": 70,
-        "end": 84,
-        "totalPages": 15
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 15,
-        "validPages": 9,
-        "needsReviewPages": 4,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 4,
-      "pageEvaluations": [
-        {
-          "pdfPage": 72,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 74,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"--------\""
-          ]
-        },
-        {
-          "pdfPage": 76,
-          "status": "needs_review",
-          "score": 55,
-          "issues": [
-            "Contains 1 abnormally long unbroken word(s) (e.g. \"...cescssessssuesssnuessssessn...\", length 85)",
-            "Repeated substring pattern detected: \" 1 1 1 1 1 1 1\""
-          ]
-        },
-        {
-          "pdfPage": 82,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 83,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 84,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.72: Repeated substring pattern detected: \"...............\"",
-        "PDF p.74: Repeated substring pattern detected: \"--------\"",
-        "PDF p.76: Contains 1 abnormally long unbroken word(s) (e.g. \"...cescssessssuesssnuessssessn...\", length 85)",
-        "PDF p.76: Repeated substring pattern detected: \" 1 1 1 1 1 1 1\"",
-        "PDF p.82: Repeated substring pattern detected: \"...............\"",
-        "PDF p.83: Page is empty (zero extractable characters)",
-        "PDF p.84: Page is empty (zero extractable characters)"
-      ]
-    },
-    {
-      "unitId": "connectplus-primary6-supplement-unit-4",
-      "bookId": "connectplus-primary6-supplement",
-      "unitNumber": 4,
-      "title": "We can make a difference!",
-      "expectedRange": {
-        "start": 132,
-        "end": 288,
-        "totalPages": 157
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 157,
-        "validPages": 108,
-        "needsReviewPages": 48,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 48,
-      "pageEvaluations": [
-        {
-          "pdfPage": 134,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"ccccccc\""
-          ]
-        },
-        {
-          "pdfPage": 138,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 139,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 146,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 147,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 152,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"________\""
-          ]
-        },
-        {
-          "pdfPage": 155,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 157,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 163,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 164,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 165,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 166,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 175,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 227,
-          "status": "needs_review",
-          "score": 70,
-          "issues": [
-            "Page content is unusually short (16 chars, 7 words)"
-          ]
-        },
-        {
-          "pdfPage": 229,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 230,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 231,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 233,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 235,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 237,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 239,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 241,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"11111\""
-          ]
-        },
-        {
-          "pdfPage": 245,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 246,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 248,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 251,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \" © © © © © © ©\""
-          ]
-        },
-        {
-          "pdfPage": 252,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 253,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 254,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 255,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"0.0.0.0.\""
-          ]
-        },
-        {
-          "pdfPage": 258,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 260,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 261,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"00000\""
-          ]
-        },
-        {
-          "pdfPage": 262,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 264,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 265,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 268,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 269,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 270,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 272,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 273,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 274,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 275,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 276,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 278,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 279,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 280,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 284,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 285,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.134: Excessive character repetition detected: \"ccccccc\"",
-        "PDF p.138: Repeated substring pattern detected: \"...............\"",
-        "PDF p.139: Repeated substring pattern detected: \"..........\"",
-        "PDF p.146: Repeated substring pattern detected: \"...............\"",
-        "PDF p.147: Repeated substring pattern detected: \"............\"",
-        "PDF p.152: Repeated substring pattern detected: \"________\"",
-        "PDF p.155: Repeated substring pattern detected: \"...............\"",
-        "PDF p.157: Repeated substring pattern detected: \"...............\"",
-        "PDF p.163: Repeated substring pattern detected: \"...............\"",
-        "PDF p.164: Repeated substring pattern detected: \"...............\"",
-        "PDF p.165: Repeated substring pattern detected: \"..........\"",
-        "PDF p.166: Repeated substring pattern detected: \"...............\"",
-        "PDF p.175: Page is empty (zero extractable characters)",
-        "PDF p.227: Page content is unusually short (16 chars, 7 words)",
-        "PDF p.229: Repeated substring pattern detected: \"...............\"",
-        "PDF p.230: Repeated substring pattern detected: \"...............\"",
-        "PDF p.231: Repeated substring pattern detected: \"...............\"",
-        "PDF p.233: Repeated substring pattern detected: \"...............\"",
-        "PDF p.235: Repeated substring pattern detected: \"...............\"",
-        "PDF p.237: Repeated substring pattern detected: \"...............\"",
-        "PDF p.239: Repeated substring pattern detected: \"............\"",
-        "PDF p.241: Excessive character repetition detected: \"11111\"",
-        "PDF p.245: Repeated substring pattern detected: \"...............\"",
-        "PDF p.246: Repeated substring pattern detected: \"...............\"",
-        "PDF p.248: Repeated substring pattern detected: \"...............\"",
-        "PDF p.251: Repeated substring pattern detected: \" © © © © © © ©\"",
-        "PDF p.252: Repeated substring pattern detected: \"...............\"",
-        "PDF p.253: Repeated substring pattern detected: \"............\"",
-        "PDF p.254: Repeated substring pattern detected: \"..........\"",
-        "PDF p.255: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.258: Repeated substring pattern detected: \"...............\"",
-        "PDF p.260: Repeated substring pattern detected: \"...............\"",
-        "PDF p.261: Excessive character repetition detected: \"00000\"",
-        "PDF p.262: Repeated substring pattern detected: \"...............\"",
-        "PDF p.264: Repeated substring pattern detected: \"..........\"",
-        "PDF p.265: Repeated substring pattern detected: \"...............\"",
-        "PDF p.268: Repeated substring pattern detected: \"........\"",
-        "PDF p.269: Repeated substring pattern detected: \"...............\"",
-        "PDF p.270: Repeated substring pattern detected: \"...............\"",
-        "PDF p.272: Repeated substring pattern detected: \"............\"",
-        "PDF p.273: Repeated substring pattern detected: \"..........\"",
-        "PDF p.274: Repeated substring pattern detected: \"..........\"",
-        "PDF p.275: Repeated substring pattern detected: \"........\"",
-        "PDF p.276: Repeated substring pattern detected: \"............\"",
-        "PDF p.278: Repeated substring pattern detected: \"...............\"",
-        "PDF p.279: Repeated substring pattern detected: \"...............\"",
-        "PDF p.280: Repeated substring pattern detected: \"............\"",
-        "PDF p.284: Repeated substring pattern detected: \"............\"",
-        "PDF p.285: Repeated substring pattern detected: \"........\""
-      ]
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-6",
-      "bookId": "helloplus-prep1-supplement",
-      "unitNumber": 6,
-      "title": "Literature: The Prince and the Pauper — Part A",
-      "expectedRange": {
-        "start": 251,
-        "end": 416,
-        "totalPages": 166
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 166,
-        "validPages": 74,
-        "needsReviewPages": 90,
-        "blockedPages": 2
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 90,
-      "pageEvaluations": [
-        {
-          "pdfPage": 266,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"000000\""
-          ]
-        },
-        {
-          "pdfPage": 269,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"———————\""
-          ]
-        },
-        {
-          "pdfPage": 281,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"titititi\""
-          ]
-        },
-        {
-          "pdfPage": 282,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 292,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 295,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 296,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 297,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 298,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 299,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 300,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 302,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 303,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 304,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 305,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 306,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 307,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 309,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 310,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 311,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 312,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 313,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 314,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 316,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 317,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 318,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 319,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 320,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 322,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 323,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 325,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 326,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 327,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 328,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 329,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 331,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 332,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 334,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 335,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 336,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 337,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 338,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 339,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 340,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 341,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 343,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 344,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 346,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 347,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 349,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 350,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 352,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 353,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 355,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 356,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 357,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 358,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 359,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 360,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 361,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 362,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 363,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 364,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 365,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 370,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        },
-        {
-          "pdfPage": 375,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 377,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 378,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 379,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"00000\"",
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 380,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 381,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 382,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 383,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 384,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 385,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 386,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 387,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 388,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"..........\""
-          ]
-        },
-        {
-          "pdfPage": 389,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 393,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"——————\""
-          ]
-        },
-        {
-          "pdfPage": 394,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 395,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 404,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 405,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 406,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"............\""
-          ]
-        },
-        {
-          "pdfPage": 407,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 408,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"000000000\"",
-            "Repeated substring pattern detected: \"00000000\""
-          ]
-        },
-        {
-          "pdfPage": 410,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 411,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"........\""
-          ]
-        },
-        {
-          "pdfPage": 412,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        },
-        {
-          "pdfPage": 413,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Excessive character repetition detected: \"111111\""
-          ]
-        },
-        {
-          "pdfPage": 414,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"000000\"",
-            "Repeated substring pattern detected: \"...............\""
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.266: Excessive character repetition detected: \"000000\"",
-        "PDF p.269: Excessive character repetition detected: \"———————\"",
-        "PDF p.281: Repeated substring pattern detected: \"titititi\"",
-        "PDF p.282: Repeated substring pattern detected: \"............\"",
-        "PDF p.292: Page is empty (zero extractable characters)",
-        "PDF p.295: Repeated substring pattern detected: \"...............\"",
-        "PDF p.296: Repeated substring pattern detected: \"............\"",
-        "PDF p.297: Repeated substring pattern detected: \"..........\"",
-        "PDF p.298: Repeated substring pattern detected: \"........\"",
-        "PDF p.299: Repeated substring pattern detected: \"............\"",
-        "PDF p.300: Repeated substring pattern detected: \"............\"",
-        "PDF p.302: Repeated substring pattern detected: \"..........\"",
-        "PDF p.303: Repeated substring pattern detected: \"............\"",
-        "PDF p.304: Repeated substring pattern detected: \"..........\"",
-        "PDF p.305: Repeated substring pattern detected: \"..........\"",
-        "PDF p.306: Repeated substring pattern detected: \"............\"",
-        "PDF p.307: Repeated substring pattern detected: \"............\"",
-        "PDF p.309: Repeated substring pattern detected: \"............\"",
-        "PDF p.310: Repeated substring pattern detected: \"..........\"",
-        "PDF p.311: Repeated substring pattern detected: \"............\"",
-        "PDF p.312: Repeated substring pattern detected: \"............\"",
-        "PDF p.313: Repeated substring pattern detected: \"..........\"",
-        "PDF p.314: Repeated substring pattern detected: \"..........\"",
-        "PDF p.316: Repeated substring pattern detected: \"..........\"",
-        "PDF p.317: Repeated substring pattern detected: \"..........\"",
-        "PDF p.318: Repeated substring pattern detected: \"........\"",
-        "PDF p.319: Repeated substring pattern detected: \"........\"",
-        "PDF p.320: Repeated substring pattern detected: \"............\"",
-        "PDF p.322: Repeated substring pattern detected: \"............\"",
-        "PDF p.323: Repeated substring pattern detected: \"............\"",
-        "PDF p.325: Repeated substring pattern detected: \"..........\"",
-        "PDF p.326: Repeated substring pattern detected: \"........\"",
-        "PDF p.327: Repeated substring pattern detected: \"..........\"",
-        "PDF p.328: Repeated substring pattern detected: \"............\"",
-        "PDF p.329: Repeated substring pattern detected: \"..........\"",
-        "PDF p.331: Repeated substring pattern detected: \"..........\"",
-        "PDF p.332: Repeated substring pattern detected: \"..........\"",
-        "PDF p.334: Repeated substring pattern detected: \"............\"",
-        "PDF p.335: Repeated substring pattern detected: \"..........\"",
-        "PDF p.336: Repeated substring pattern detected: \"............\"",
-        "PDF p.337: Repeated substring pattern detected: \"............\"",
-        "PDF p.338: Repeated substring pattern detected: \"............\"",
-        "PDF p.339: Repeated substring pattern detected: \"..........\"",
-        "PDF p.340: Repeated substring pattern detected: \"..........\"",
-        "PDF p.341: Repeated substring pattern detected: \"............\"",
-        "PDF p.343: Repeated substring pattern detected: \"............\"",
-        "PDF p.344: Repeated substring pattern detected: \"............\"",
-        "PDF p.346: Repeated substring pattern detected: \"..........\"",
-        "PDF p.347: Repeated substring pattern detected: \"............\"",
-        "PDF p.349: Repeated substring pattern detected: \"............\"",
-        "PDF p.350: Repeated substring pattern detected: \"............\"",
-        "PDF p.352: Repeated substring pattern detected: \"............\"",
-        "PDF p.353: Repeated substring pattern detected: \"............\"",
-        "PDF p.355: Repeated substring pattern detected: \"............\"",
-        "PDF p.356: Repeated substring pattern detected: \"............\"",
-        "PDF p.357: Repeated substring pattern detected: \"............\"",
-        "PDF p.358: Repeated substring pattern detected: \"..........\"",
-        "PDF p.359: Repeated substring pattern detected: \"..........\"",
-        "PDF p.360: Repeated substring pattern detected: \"............\"",
-        "PDF p.361: Repeated substring pattern detected: \"............\"",
-        "PDF p.362: Repeated substring pattern detected: \"..........\"",
-        "PDF p.363: Repeated substring pattern detected: \"............\"",
-        "PDF p.364: Repeated substring pattern detected: \"..........\"",
-        "PDF p.365: Repeated substring pattern detected: \"..........\"",
-        "PDF p.370: Page is empty (zero extractable characters)",
-        "PDF p.375: Repeated substring pattern detected: \"...............\"",
-        "PDF p.377: Repeated substring pattern detected: \"........\"",
-        "PDF p.378: Repeated substring pattern detected: \"...............\"",
-        "PDF p.379: Excessive character repetition detected: \"00000\"",
-        "PDF p.379: Repeated substring pattern detected: \"............\"",
-        "PDF p.380: Repeated substring pattern detected: \"........\"",
-        "PDF p.381: Repeated substring pattern detected: \"..........\"",
-        "PDF p.382: Repeated substring pattern detected: \"..........\"",
-        "PDF p.383: Repeated substring pattern detected: \"..........\"",
-        "PDF p.384: Repeated substring pattern detected: \"........\"",
-        "PDF p.385: Repeated substring pattern detected: \"............\"",
-        "PDF p.386: Repeated substring pattern detected: \"..........\"",
-        "PDF p.387: Repeated substring pattern detected: \"..........\"",
-        "PDF p.388: Repeated substring pattern detected: \"..........\"",
-        "PDF p.389: Repeated substring pattern detected: \"........\"",
-        "PDF p.393: Excessive character repetition detected: \"——————\"",
-        "PDF p.394: Repeated substring pattern detected: \"............\"",
-        "PDF p.395: Repeated substring pattern detected: \"............\"",
-        "PDF p.404: Repeated substring pattern detected: \"...............\"",
-        "PDF p.405: Repeated substring pattern detected: \"............\"",
-        "PDF p.406: Repeated substring pattern detected: \"............\"",
-        "PDF p.407: Repeated substring pattern detected: \"...............\"",
-        "PDF p.408: Excessive character repetition detected: \"000000000\"",
-        "PDF p.408: Repeated substring pattern detected: \"00000000\"",
-        "PDF p.410: Repeated substring pattern detected: \"...............\"",
-        "PDF p.411: Repeated substring pattern detected: \"........\"",
-        "PDF p.412: Repeated substring pattern detected: \"...............\"",
-        "PDF p.413: Excessive character repetition detected: \"111111\"",
-        "PDF p.414: Excessive character repetition detected: \"000000\"",
-        "PDF p.414: Repeated substring pattern detected: \"...............\""
-      ]
-    },
-    {
       "unitId": "secondary1-student-term1-unit-6",
       "bookId": "secondary1-student-term1",
       "unitNumber": 6,
@@ -3677,14 +1399,14 @@
       "coveragePercentage": 100,
       "actualRange": {
         "foundPages": 93,
-        "validPages": 71,
-        "needsReviewPages": 20,
+        "validPages": 73,
+        "needsReviewPages": 18,
         "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
       "blockedPageCount": 2,
-      "needsReviewPageCount": 20,
+      "needsReviewPageCount": 18,
       "pageEvaluations": [
         {
           "pdfPage": 82,
@@ -3824,22 +1546,6 @@
           ]
         },
         {
-          "pdfPage": 128,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (12 chars, 3 words)"
-          ]
-        },
-        {
-          "pdfPage": 134,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (9 chars, 2 words)"
-          ]
-        },
-        {
           "pdfPage": 152,
           "status": "needs_review",
           "score": 75,
@@ -3883,103 +1589,9 @@
         "PDF p.104: Page is empty (zero extractable characters)",
         "PDF p.108: Page content is unusually short (23 chars, 6 words)",
         "PDF p.121: Page content is unusually short (21 chars, 5 words)",
-        "PDF p.128: Page content is unusually short (12 chars, 3 words)",
-        "PDF p.134: Page content is unusually short (9 chars, 2 words)",
         "PDF p.152: Repeated substring pattern detected: \"------------\"",
         "PDF p.153: Repeated substring pattern detected: \"--------\"",
         "PDF p.168: Repeated substring pattern detected: \"----------\""
-      ]
-    },
-    {
-      "unitId": "secondary2-student-term1-unit-4",
-      "bookId": "secondary2-student-term1",
-      "unitNumber": 4,
-      "title": "Natural Disasters",
-      "expectedRange": {
-        "start": 48,
-        "end": 59,
-        "totalPages": 12
-      },
-      "status": "blocked",
-      "coveragePercentage": 100,
-      "actualRange": {
-        "foundPages": 12,
-        "validPages": 5,
-        "needsReviewPages": 6,
-        "blockedPages": 1
-      },
-      "missingPages": [],
-      "duplicatePages": [],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 6,
-      "pageEvaluations": [
-        {
-          "pdfPage": 48,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (24 chars, 4 words)"
-          ]
-        },
-        {
-          "pdfPage": 51,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"--------\""
-          ]
-        },
-        {
-          "pdfPage": 52,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"---------------\""
-          ]
-        },
-        {
-          "pdfPage": 54,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"__________\""
-          ]
-        },
-        {
-          "pdfPage": 56,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Excessive character repetition detected: \"………………………\"",
-            "Repeated substring pattern detected: \"……………………\""
-          ]
-        },
-        {
-          "pdfPage": 58,
-          "status": "needs_review",
-          "score": 75,
-          "issues": [
-            "Repeated substring pattern detected: \"---------------\""
-          ]
-        },
-        {
-          "pdfPage": 59,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
-        }
-      ],
-      "issues": [
-        "PDF p.48: Page content is unusually short (24 chars, 4 words)",
-        "PDF p.51: Repeated substring pattern detected: \"--------\"",
-        "PDF p.52: Repeated substring pattern detected: \"---------------\"",
-        "PDF p.54: Repeated substring pattern detected: \"__________\"",
-        "PDF p.56: Excessive character repetition detected: \"………………………\"",
-        "PDF p.56: Repeated substring pattern detected: \"……………………\"",
-        "PDF p.58: Repeated substring pattern detected: \"---------------\"",
-        "PDF p.59: Page is empty (zero extractable characters)"
       ]
     },
     {
@@ -4365,14 +1977,14 @@
       "coveragePercentage": 100,
       "actualRange": {
         "foundPages": 205,
-        "validPages": 111,
-        "needsReviewPages": 87,
+        "validPages": 114,
+        "needsReviewPages": 84,
         "blockedPages": 7
       },
       "missingPages": [],
       "duplicatePages": [],
       "blockedPageCount": 7,
-      "needsReviewPageCount": 87,
+      "needsReviewPageCount": 84,
       "pageEvaluations": [
         {
           "pdfPage": 84,
@@ -4501,14 +2113,6 @@
           ]
         },
         {
-          "pdfPage": 114,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (11 chars, 3 words)"
-          ]
-        },
-        {
           "pdfPage": 119,
           "status": "needs_review",
           "score": 50,
@@ -4517,27 +2121,11 @@
           ]
         },
         {
-          "pdfPage": 122,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (12 chars, 3 words)"
-          ]
-        },
-        {
           "pdfPage": 129,
           "status": "needs_review",
           "score": 50,
           "issues": [
             "Page content is unusually short (22 chars, 4 words)"
-          ]
-        },
-        {
-          "pdfPage": 136,
-          "status": "needs_review",
-          "score": 50,
-          "issues": [
-            "Page content is unusually short (12 chars, 3 words)"
           ]
         },
         {
@@ -5179,11 +2767,8 @@
         "PDF p.103: Repeated substring pattern detected: \"............\"",
         "PDF p.104: Repeated substring pattern detected: \"............\"",
         "PDF p.108: Page is empty (zero extractable characters)",
-        "PDF p.114: Page content is unusually short (11 chars, 3 words)",
         "PDF p.119: Page content is unusually short (21 chars, 4 words)",
-        "PDF p.122: Page content is unusually short (12 chars, 3 words)",
         "PDF p.129: Page content is unusually short (22 chars, 4 words)",
-        "PDF p.136: Page content is unusually short (12 chars, 3 words)",
         "PDF p.153: Page is empty (zero extractable characters)",
         "PDF p.156: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 99)",
         "PDF p.156: Repeated substring pattern detected: \"...............\"",
@@ -5829,13 +3414,13 @@
       "coveragePercentage": 100,
       "actualRange": {
         "foundPages": 24,
-        "validPages": 3,
+        "validPages": 4,
         "needsReviewPages": 18,
-        "blockedPages": 3
+        "blockedPages": 2
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 3,
+      "blockedPageCount": 2,
       "needsReviewPageCount": 18,
       "pageEvaluations": [
         {
@@ -6017,14 +3602,6 @@
             "Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
             "Repeated substring pattern detected: \"...............\""
           ]
-        },
-        {
-          "pdfPage": 62,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
         }
       ],
       "issues": [
@@ -6067,8 +3644,7 @@
         "PDF p.60: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
         "PDF p.60: Repeated substring pattern detected: \"...............\"",
         "PDF p.61: Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
-        "PDF p.61: Repeated substring pattern detected: \"...............\"",
-        "PDF p.62: Page is empty (zero extractable characters)"
+        "PDF p.61: Repeated substring pattern detected: \"...............\""
       ]
     },
     {
@@ -6085,13 +3661,13 @@
       "coveragePercentage": 100,
       "actualRange": {
         "foundPages": 33,
-        "validPages": 4,
+        "validPages": 5,
         "needsReviewPages": 25,
-        "blockedPages": 4
+        "blockedPages": 3
       },
       "missingPages": [],
       "duplicatePages": [],
-      "blockedPageCount": 4,
+      "blockedPageCount": 3,
       "needsReviewPageCount": 25,
       "pageEvaluations": [
         {
@@ -6345,14 +3921,6 @@
             "Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
             "Repeated substring pattern detected: \"...............\""
           ]
-        },
-        {
-          "pdfPage": 96,
-          "status": "blocked",
-          "score": 0,
-          "issues": [
-            "Page is empty (zero extractable characters)"
-          ]
         }
       ],
       "issues": [
@@ -6411,17 +3979,16 @@
         "PDF p.93: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 101)",
         "PDF p.93: Repeated substring pattern detected: \"...............\"",
         "PDF p.94: Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
-        "PDF p.94: Repeated substring pattern detected: \"...............\"",
-        "PDF p.96: Page is empty (zero extractable characters)"
+        "PDF p.94: Repeated substring pattern detected: \"...............\""
       ]
     }
   ],
   "excluded": [],
   "stateTotals": {
-    "generatedNeedsReview": 60,
+    "generatedNeedsReview": 70,
     "approved": 0,
-    "blockedSourceReview": 51,
-    "failed": 14,
+    "blockedSourceReview": 45,
+    "failed": 10,
     "waitingForRetry": 0
   },
   "waitingForRetry": 0,
@@ -6495,8 +4062,7 @@
       "bookId": "connectplus-primary6-supplement",
       "totalUnits": 4,
       "statuses": {
-        "complete_draft_needs_review": 1,
-        "generated_needs_review": 2,
+        "complete_draft_needs_review": 3,
         "blocked_source_review": 1
       }
     },
@@ -6504,9 +4070,9 @@
       "bookId": "helloplus-prep1-supplement",
       "totalUnits": 6,
       "statuses": {
-        "generated_needs_review": 2,
-        "blocked_source_review": 3,
-        "failed": 1
+        "complete_draft_needs_review": 2,
+        "failed": 1,
+        "generated_needs_review": 3
       }
     },
     {
@@ -6521,15 +4087,14 @@
       "totalUnits": 6,
       "statuses": {
         "failed_validation": 1,
-        "generated_needs_review": 5
+        "complete_draft_needs_review": 5
       }
     },
     {
       "bookId": "prep2-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "failed": 4,
-        "blocked_source_review": 1,
+        "generated_needs_review": 5,
         "complete_draft_needs_review": 1
       }
     },
@@ -6537,9 +4102,10 @@
       "bookId": "prep3-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "blocked_source_review": 2,
+        "generated_needs_review": 1,
         "failed_validation": 1,
-        "complete_draft_needs_review": 3
+        "complete_draft_needs_review": 3,
+        "blocked_source_review": 1
       }
     },
     {
@@ -6570,8 +4136,8 @@
       "bookId": "primary4-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "complete_draft_needs_review": 4,
-        "blocked_source_review": 2
+        "complete_draft_needs_review": 5,
+        "blocked_source_review": 1
       }
     },
     {
@@ -6618,49 +4184,49 @@
   ],
   "sectionCoverage": {
     "vocabulary": {
-      "unitsWithItems": 60,
-      "totalItems": 328,
-      "validItems": 328
+      "unitsWithItems": 70,
+      "totalItems": 382,
+      "validItems": 382
     },
     "vocabulary_questions": {
-      "unitsWithItems": 60,
-      "totalItems": 184,
-      "validItems": 184
+      "unitsWithItems": 70,
+      "totalItems": 216,
+      "validItems": 216
     },
     "grammar": {
-      "unitsWithItems": 60,
-      "totalItems": 99,
-      "validItems": 99
+      "unitsWithItems": 70,
+      "totalItems": 112,
+      "validItems": 112
     },
     "grammar_questions": {
-      "unitsWithItems": 60,
-      "totalItems": 183,
-      "validItems": 183
+      "unitsWithItems": 70,
+      "totalItems": 215,
+      "validItems": 215
     },
     "reading": {
-      "unitsWithItems": 60,
-      "totalItems": 132,
-      "validItems": 132
+      "unitsWithItems": 70,
+      "totalItems": 154,
+      "validItems": 154
     },
     "listening": {
-      "unitsWithItems": 60,
-      "totalItems": 126,
-      "validItems": 126
+      "unitsWithItems": 70,
+      "totalItems": 148,
+      "validItems": 148
     },
     "speaking": {
-      "unitsWithItems": 60,
-      "totalItems": 60,
-      "validItems": 60
+      "unitsWithItems": 70,
+      "totalItems": 70,
+      "validItems": 70
     },
     "games": {
-      "unitsWithItems": 60,
-      "totalItems": 123,
-      "validItems": 123
+      "unitsWithItems": 70,
+      "totalItems": 143,
+      "validItems": 143
     },
     "comprehensive_test": {
-      "unitsWithItems": 60,
-      "totalItems": 600,
-      "validItems": 600
+      "unitsWithItems": 70,
+      "totalItems": 700,
+      "validItems": 700
     }
   },
   "autoContinuation": {

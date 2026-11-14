@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 72,
+  "cursorIndex": 83,
   "chainDepth": 0,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
@@ -100,8 +100,8 @@
       "missingPages": []
     },
     "primary4-student-term1-unit-6": {
-      "status": "blocked_source_review",
-      "sourceSignature": "9d020795837fbcfb390324e8f6867151ad607e507e8668c1b0745ca9621a9e9f",
+      "status": "complete_draft_needs_review",
+      "sourceSignature": "feeb85efbd6418794ab316bf35db2411a8ef4acee511e8b4989e9bc2a6a644e3",
       "lastAttemptAt": "2026-11-14T07:33:32.555Z",
       "issues": [
         "PDF p.104: Repeated substring pattern detected: \"............\"",
@@ -111,7 +111,56 @@
       ],
       "blockedPageCount": 3,
       "needsReviewPageCount": 1,
-      "missingPages": []
+      "missingPages": [],
+      "qualityScore": 100,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary4-supplement-unit-6": {
       "status": "blocked_source_review",
@@ -522,7 +571,7 @@
       "missingPages": []
     },
     "prep1-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "4d8002daa3c981fce6841b49598506093f5e5e16b0831dd691f86715557d47d7",
       "lastAttemptAt": "2026-11-14T07:47:46.215Z",
       "qualityScore": 90,
@@ -576,7 +625,7 @@
       }
     },
     "helloplus-prep1-supplement-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "ec4bd65ce3109058570ff8ef7c9cae9f1d6b02dbcbac479805392a5add0fc8b1",
       "lastAttemptAt": "2026-11-14T08:02:16.442Z",
       "qualityScore": 85,
@@ -630,66 +679,66 @@
       }
     },
     "helloplus-prep1-supplement-unit-3": {
-      "status": "blocked_source_review",
-      "sourceSignature": "42a97d7334e3fbbcc0fac946e2694f2b2de241aa37b18d0514ac5de62b327792",
-      "lastAttemptAt": "2026-11-11T07:09:32.093Z",
-      "issues": [
-        "PDF p.92: Repeated substring pattern detected: \"..........\"",
-        "PDF p.95: Repeated substring pattern detected: \"........\"",
-        "PDF p.99: Repeated substring pattern detected: \"............\"",
-        "PDF p.100: Repeated substring pattern detected: \"............\"",
-        "PDF p.101: Excessive character repetition detected: \"—————\"",
-        "PDF p.103: Repeated substring pattern detected: \"..........\"",
-        "PDF p.104: Repeated substring pattern detected: \"............\"",
-        "PDF p.108: Repeated substring pattern detected: \"..........\"",
-        "PDF p.109: Repeated substring pattern detected: \"............\"",
-        "PDF p.111: Repeated substring pattern detected: \"..........\"",
-        "PDF p.119: Repeated substring pattern detected: \"..........\"",
-        "PDF p.120: Repeated substring pattern detected: \"............\"",
-        "PDF p.121: Repeated substring pattern detected: \"..........\"",
-        "PDF p.122: Repeated substring pattern detected: \"............\"",
-        "PDF p.124: Repeated substring pattern detected: \"............\"",
-        "PDF p.126: Repeated substring pattern detected: \"..........\"",
-        "PDF p.131: Repeated substring pattern detected: \"............\"",
-        "PDF p.132: Excessive character repetition detected: \"ssssssssss\"",
-        "PDF p.132: Repeated substring pattern detected: \"ssssssssss\"",
-        "PDF p.134: Repeated substring pattern detected: \"............\"",
-        "PDF p.136: Repeated substring pattern detected: \"........\"",
-        "PDF p.139: Repeated substring pattern detected: \"...............\"",
-        "PDF p.144: Repeated substring pattern detected: \"..........\"",
-        "PDF p.145: Repeated substring pattern detected: \"............\"",
-        "PDF p.146: Repeated substring pattern detected: \"..........\"",
-        "PDF p.147: Repeated substring pattern detected: \"..........\"",
-        "PDF p.148: Excessive character repetition detected: \"1111111\"",
-        "PDF p.150: Repeated substring pattern detected: \"..........\"",
-        "PDF p.151: Repeated substring pattern detected: \"............\"",
-        "PDF p.152: Contains 1 abnormally long unbroken word(s) (e.g. \"ccsssscsssssssnnssetssetsvesse...\", length 53)",
-        "PDF p.152: Excessive character repetition detected: \"sssssss\"",
-        "PDF p.154: Repeated substring pattern detected: \"............\"",
-        "PDF p.157: Repeated substring pattern detected: \"............\"",
-        "PDF p.158: Repeated substring pattern detected: \"..........\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 31,
-      "missingPages": []
+      "status": "failed",
+      "sourceSignature": "0fd39df163eb866bff466de3454420b30a6a6aaf0c61f1b392f547ff4cb0cd1b",
+      "lastAttemptAt": "2026-11-14T08:18:51.132Z",
+      "retryAfter": "2026-11-14T08:18:51.132Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"We ___ a party for our little sister nex\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "prep2-student-term1-unit-4": {
-      "status": "blocked_source_review",
-      "sourceSignature": "afa561c17110562420d0064f682addf9dffb5cbdbf14e9c4c050f70b62376a67",
-      "lastAttemptAt": "2026-11-11T07:09:32.355Z",
-      "issues": [
-        "PDF p.58: Repeated substring pattern detected: \"...............\"",
-        "PDF p.61: Contains 1 abnormally long unbroken word(s) (e.g. \"easususasusussasisissasisissis...\", length 64)",
-        "PDF p.61: Excessive character repetition detected: \"000000\"",
-        "PDF p.63: Repeated substring pattern detected: \"............\"",
-        "PDF p.65: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.67: Repeated substring pattern detected: \"............\"",
-        "PDF p.70: Repeated substring pattern detected: \"..........\"",
-        "PDF p.71: Repeated substring pattern detected: \"............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 6,
-      "missingPages": []
+      "status": "generated_needs_review",
+      "sourceSignature": "447825dcaaa0ac4884c6152111eef9692ad702252670ec2bbbf9c6a3f88fc9ba",
+      "lastAttemptAt": "2026-11-14T09:01:38.690Z",
+      "qualityScore": 85,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep3-student-term1-unit-6": {
       "status": "blocked_source_review",
@@ -1122,8 +1171,8 @@
     },
     "secondary1-student-term1-unit-6": {
       "status": "blocked_source_review",
-      "sourceSignature": "0523df910fc5efa06f08d7e9b282e660ae50fd4913f1551b0856632756856388",
-      "lastAttemptAt": "2026-11-14T07:33:33.842Z",
+      "sourceSignature": "1600888b8ca4dfad54f084041bfe164fee658f1c8d17d5d567c02fdd3a9a4a88",
+      "lastAttemptAt": "2026-11-14T08:12:21.967Z",
       "issues": [
         "PDF p.82: Repeated substring pattern detected: \"...............\"",
         "PDF p.86: Repeated substring pattern detected: \"............\"",
@@ -1143,14 +1192,12 @@
         "PDF p.104: Page is empty (zero extractable characters)",
         "PDF p.108: Page content is unusually short (23 chars, 6 words)",
         "PDF p.121: Page content is unusually short (21 chars, 5 words)",
-        "PDF p.128: Page content is unusually short (12 chars, 3 words)",
-        "PDF p.134: Page content is unusually short (9 chars, 2 words)",
         "PDF p.152: Repeated substring pattern detected: \"------------\"",
         "PDF p.153: Repeated substring pattern detected: \"--------\"",
         "PDF p.168: Repeated substring pattern detected: \"----------\""
       ],
       "blockedPageCount": 2,
-      "needsReviewPageCount": 20,
+      "needsReviewPageCount": 18,
       "missingPages": []
     },
     "secondary2-student-term1-unit-4": {
@@ -1491,8 +1538,8 @@
     },
     "secondary3-student-term1-unit-6": {
       "status": "blocked_source_review",
-      "sourceSignature": "067f3552e6728b6ca8a1c0a3175ec51b264d2e708be30917e5cc10150177449c",
-      "lastAttemptAt": "2026-11-14T07:33:34.073Z",
+      "sourceSignature": "9b03a6d9866f2882e95bf578bb93d60d981b4aa715930ed460b4e0e8ffdf9beb",
+      "lastAttemptAt": "2026-11-14T08:12:22.328Z",
       "issues": [
         "PDF p.84: Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 42)",
         "PDF p.84: Repeated substring pattern detected: \"...............\"",
@@ -1515,11 +1562,8 @@
         "PDF p.103: Repeated substring pattern detected: \"............\"",
         "PDF p.104: Repeated substring pattern detected: \"............\"",
         "PDF p.108: Page is empty (zero extractable characters)",
-        "PDF p.114: Page content is unusually short (11 chars, 3 words)",
         "PDF p.119: Page content is unusually short (21 chars, 4 words)",
-        "PDF p.122: Page content is unusually short (12 chars, 3 words)",
         "PDF p.129: Page content is unusually short (22 chars, 4 words)",
-        "PDF p.136: Page content is unusually short (12 chars, 3 words)",
         "PDF p.153: Page is empty (zero extractable characters)",
         "PDF p.156: Contains 3 abnormally long unbroken word(s) (e.g. \".................................\", length 99)",
         "PDF p.156: Repeated substring pattern detected: \"...............\"",
@@ -1620,7 +1664,7 @@
         "PDF p.285: Page is empty (zero extractable characters)"
       ],
       "blockedPageCount": 7,
-      "needsReviewPageCount": 87,
+      "needsReviewPageCount": 84,
       "missingPages": []
     },
     "baccalaureate-y2-first-language-part1-unit-5": {
@@ -1745,8 +1789,8 @@
     },
     "baccalaureate-y2-second-language-part1-unit-2": {
       "status": "blocked_source_review",
-      "sourceSignature": "3d03a3b941b3d79af3779a72b08a44c9238aabb79cb2a4bbf58ec49300aed565",
-      "lastAttemptAt": "2026-11-14T07:33:34.249Z",
+      "sourceSignature": "2651648b486cecfaae0fd85c69838f565f9c4a51378d0fcfce2b1fa5637b3d37",
+      "lastAttemptAt": "2026-11-14T08:12:22.606Z",
       "issues": [
         "PDF p.42: Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
         "PDF p.42: Repeated substring pattern detected: \"...............\"",
@@ -1787,17 +1831,16 @@
         "PDF p.60: Contains 5 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
         "PDF p.60: Repeated substring pattern detected: \"...............\"",
         "PDF p.61: Contains 6 abnormally long unbroken word(s) (e.g. \".................................\", length 125)",
-        "PDF p.61: Repeated substring pattern detected: \"...............\"",
-        "PDF p.62: Page is empty (zero extractable characters)"
+        "PDF p.61: Repeated substring pattern detected: \"...............\""
       ],
-      "blockedPageCount": 3,
+      "blockedPageCount": 2,
       "needsReviewPageCount": 18,
       "missingPages": []
     },
     "baccalaureate-y2-second-language-part1-unit-3": {
       "status": "blocked_source_review",
-      "sourceSignature": "2432cabe8189d0818873220d754d66f0d5c517b08128f76c10353496e6c7837b",
-      "lastAttemptAt": "2026-11-10T07:37:41.142Z",
+      "sourceSignature": "b99c3885d2fe9a7d1c17b4b40f292042aa9266c21492cc714e55a24c16f9d440",
+      "lastAttemptAt": "2026-11-14T08:12:22.615Z",
       "issues": [
         "PDF p.66: Contains 2 abnormally long unbroken word(s) (e.g. \".................................\", length 120)",
         "PDF p.66: Repeated substring pattern detected: \"...............\"",
@@ -1854,11 +1897,10 @@
         "PDF p.93: Contains 4 abnormally long unbroken word(s) (e.g. \".................................\", length 101)",
         "PDF p.93: Repeated substring pattern detected: \"...............\"",
         "PDF p.94: Contains 7 abnormally long unbroken word(s) (e.g. \".................................\", length 52)",
-        "PDF p.94: Repeated substring pattern detected: \"...............\"",
-        "PDF p.96: Page is empty (zero extractable characters)"
+        "PDF p.94: Repeated substring pattern detected: \"...............\""
       ],
-      "blockedPageCount": 29,
-      "needsReviewPageCount": 0,
+      "blockedPageCount": 3,
+      "needsReviewPageCount": 25,
       "missingPages": []
     },
     "primary1-student-term1-unit-1": {
@@ -2141,7 +2183,7 @@
     },
     "connectplus-primary1-supplement-unit-1": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "82ec6574554174d2ec873b500cef1b171ce803cf24bb18fb76a948a0799f2464",
+      "sourceSignature": "5f0aa2d953fa78a91f1697fdb7fe801e2d0f5ca39d313769ae0c8a8c960db983",
       "lastAttemptAt": "2026-11-12T08:03:47.136Z",
       "qualityScore": 85,
       "itemCount": 31,
@@ -2473,10 +2515,12 @@
     },
     "primary2-student-term1-unit-3": {
       "status": "blocked_source_review",
-      "sourceSignature": "e337fd7a771cd169b48a4fd99a7ce12e39f5c713b356c861c7694c0613f36a10",
-      "lastAttemptAt": "2026-11-11T07:09:30.569Z",
+      "sourceSignature": "3b7ebc95d2a697094241b2f5443dcc24b76ef8f3bb4c844718edf8cac28e0183",
+      "lastAttemptAt": "2026-11-14T08:12:19.492Z",
       "issues": [
-        "PDF p.32: Page is empty (zero extractable characters)"
+        "PDF p.32: Contains 1 abnormally long unbroken word(s) (e.g. \"ececccesesesesesesesessseseses...\", length 329)",
+        "PDF p.32: Excessive character repetition detected: \"sssss\"",
+        "PDF p.32: Repeated substring pattern detected: \" م م م م\""
       ],
       "blockedPageCount": 1,
       "needsReviewPageCount": 0,
@@ -2553,7 +2597,7 @@
     },
     "connectplus-primary2-supplement-unit-3": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "7a9e71a3d40f698ee2c81fa9e37b0fd758d11d9c6652af21ec566d008aae3366",
+      "sourceSignature": "63566a1d5c1d0dfa046a6279680a8b219068eb69884ba79415962c7cb55be0d9",
       "lastAttemptAt": "2026-11-12T08:10:50.637Z",
       "qualityScore": 90,
       "itemCount": 30,
@@ -3135,7 +3179,7 @@
       "missingPages": []
     },
     "helloplus-prep1-supplement-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "9c15a4984961792e826a72b17b4dacdc1c963e2bc25549e5773a1e8c56a71b8a",
       "lastAttemptAt": "2026-11-14T08:02:44.809Z",
       "qualityScore": 85,
@@ -3189,155 +3233,166 @@
       }
     },
     "helloplus-prep1-supplement-unit-4": {
-      "status": "blocked_source_review",
-      "sourceSignature": "9b47524afe90321ef8c5510da39361fa45c56accd530c02f87c73eddf124d742",
-      "lastAttemptAt": "2026-11-11T07:09:32.124Z",
-      "issues": [
-        "PDF p.160: Repeated substring pattern detected: \"..........\"",
-        "PDF p.162: Repeated substring pattern detected: \"...............\"",
-        "PDF p.163: Repeated substring pattern detected: \"............\"",
-        "PDF p.168: Repeated substring pattern detected: \"............\"",
-        "PDF p.169: Repeated substring pattern detected: \"............\"",
-        "PDF p.170: Repeated substring pattern detected: \"...............\"",
-        "PDF p.171: Contains 1 abnormally long unbroken word(s) (e.g. \".......cnecssinnsnsentsensinen...\", length 56)",
-        "PDF p.171: Repeated substring pattern detected: \"..........\"",
-        "PDF p.173: Repeated substring pattern detected: \"..........\"",
-        "PDF p.174: Repeated substring pattern detected: \"............\"",
-        "PDF p.175: Repeated substring pattern detected: \"..........\"",
-        "PDF p.178: Repeated substring pattern detected: \"............\"",
-        "PDF p.179: Repeated substring pattern detected: \"...............\"",
-        "PDF p.181: Repeated substring pattern detected: \"............\"",
-        "PDF p.184: Repeated substring pattern detected: \"............\"",
-        "PDF p.185: Repeated substring pattern detected: \"............\"",
-        "PDF p.187: Repeated substring pattern detected: \"..........\"",
-        "PDF p.194: Repeated substring pattern detected: \"..........\"",
-        "PDF p.195: Repeated substring pattern detected: \"..........\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 17,
-      "missingPages": []
+      "status": "generated_needs_review",
+      "sourceSignature": "930b9c1a9ce0237914db475031d5038ad0546633d3cd186c53ff27f60acaf26d",
+      "lastAttemptAt": "2026-11-14T08:21:33.110Z",
+      "qualityScore": 85,
+      "itemCount": 28,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "helloplus-prep1-supplement-unit-6": {
-      "status": "blocked_source_review",
-      "sourceSignature": "7d4846e9d62080600934aa507495b0db34d2843a5cfad2df1a45a3925f2e94a5",
-      "lastAttemptAt": "2026-11-14T07:33:33.448Z",
-      "issues": [
-        "PDF p.266: Excessive character repetition detected: \"000000\"",
-        "PDF p.269: Excessive character repetition detected: \"———————\"",
-        "PDF p.281: Repeated substring pattern detected: \"titititi\"",
-        "PDF p.282: Repeated substring pattern detected: \"............\"",
-        "PDF p.292: Page is empty (zero extractable characters)",
-        "PDF p.295: Repeated substring pattern detected: \"...............\"",
-        "PDF p.296: Repeated substring pattern detected: \"............\"",
-        "PDF p.297: Repeated substring pattern detected: \"..........\"",
-        "PDF p.298: Repeated substring pattern detected: \"........\"",
-        "PDF p.299: Repeated substring pattern detected: \"............\"",
-        "PDF p.300: Repeated substring pattern detected: \"............\"",
-        "PDF p.302: Repeated substring pattern detected: \"..........\"",
-        "PDF p.303: Repeated substring pattern detected: \"............\"",
-        "PDF p.304: Repeated substring pattern detected: \"..........\"",
-        "PDF p.305: Repeated substring pattern detected: \"..........\"",
-        "PDF p.306: Repeated substring pattern detected: \"............\"",
-        "PDF p.307: Repeated substring pattern detected: \"............\"",
-        "PDF p.309: Repeated substring pattern detected: \"............\"",
-        "PDF p.310: Repeated substring pattern detected: \"..........\"",
-        "PDF p.311: Repeated substring pattern detected: \"............\"",
-        "PDF p.312: Repeated substring pattern detected: \"............\"",
-        "PDF p.313: Repeated substring pattern detected: \"..........\"",
-        "PDF p.314: Repeated substring pattern detected: \"..........\"",
-        "PDF p.316: Repeated substring pattern detected: \"..........\"",
-        "PDF p.317: Repeated substring pattern detected: \"..........\"",
-        "PDF p.318: Repeated substring pattern detected: \"........\"",
-        "PDF p.319: Repeated substring pattern detected: \"........\"",
-        "PDF p.320: Repeated substring pattern detected: \"............\"",
-        "PDF p.322: Repeated substring pattern detected: \"............\"",
-        "PDF p.323: Repeated substring pattern detected: \"............\"",
-        "PDF p.325: Repeated substring pattern detected: \"..........\"",
-        "PDF p.326: Repeated substring pattern detected: \"........\"",
-        "PDF p.327: Repeated substring pattern detected: \"..........\"",
-        "PDF p.328: Repeated substring pattern detected: \"............\"",
-        "PDF p.329: Repeated substring pattern detected: \"..........\"",
-        "PDF p.331: Repeated substring pattern detected: \"..........\"",
-        "PDF p.332: Repeated substring pattern detected: \"..........\"",
-        "PDF p.334: Repeated substring pattern detected: \"............\"",
-        "PDF p.335: Repeated substring pattern detected: \"..........\"",
-        "PDF p.336: Repeated substring pattern detected: \"............\"",
-        "PDF p.337: Repeated substring pattern detected: \"............\"",
-        "PDF p.338: Repeated substring pattern detected: \"............\"",
-        "PDF p.339: Repeated substring pattern detected: \"..........\"",
-        "PDF p.340: Repeated substring pattern detected: \"..........\"",
-        "PDF p.341: Repeated substring pattern detected: \"............\"",
-        "PDF p.343: Repeated substring pattern detected: \"............\"",
-        "PDF p.344: Repeated substring pattern detected: \"............\"",
-        "PDF p.346: Repeated substring pattern detected: \"..........\"",
-        "PDF p.347: Repeated substring pattern detected: \"............\"",
-        "PDF p.349: Repeated substring pattern detected: \"............\"",
-        "PDF p.350: Repeated substring pattern detected: \"............\"",
-        "PDF p.352: Repeated substring pattern detected: \"............\"",
-        "PDF p.353: Repeated substring pattern detected: \"............\"",
-        "PDF p.355: Repeated substring pattern detected: \"............\"",
-        "PDF p.356: Repeated substring pattern detected: \"............\"",
-        "PDF p.357: Repeated substring pattern detected: \"............\"",
-        "PDF p.358: Repeated substring pattern detected: \"..........\"",
-        "PDF p.359: Repeated substring pattern detected: \"..........\"",
-        "PDF p.360: Repeated substring pattern detected: \"............\"",
-        "PDF p.361: Repeated substring pattern detected: \"............\"",
-        "PDF p.362: Repeated substring pattern detected: \"..........\"",
-        "PDF p.363: Repeated substring pattern detected: \"............\"",
-        "PDF p.364: Repeated substring pattern detected: \"..........\"",
-        "PDF p.365: Repeated substring pattern detected: \"..........\"",
-        "PDF p.370: Page is empty (zero extractable characters)",
-        "PDF p.375: Repeated substring pattern detected: \"...............\"",
-        "PDF p.377: Repeated substring pattern detected: \"........\"",
-        "PDF p.378: Repeated substring pattern detected: \"...............\"",
-        "PDF p.379: Excessive character repetition detected: \"00000\"",
-        "PDF p.379: Repeated substring pattern detected: \"............\"",
-        "PDF p.380: Repeated substring pattern detected: \"........\"",
-        "PDF p.381: Repeated substring pattern detected: \"..........\"",
-        "PDF p.382: Repeated substring pattern detected: \"..........\"",
-        "PDF p.383: Repeated substring pattern detected: \"..........\"",
-        "PDF p.384: Repeated substring pattern detected: \"........\"",
-        "PDF p.385: Repeated substring pattern detected: \"............\"",
-        "PDF p.386: Repeated substring pattern detected: \"..........\"",
-        "PDF p.387: Repeated substring pattern detected: \"..........\"",
-        "PDF p.388: Repeated substring pattern detected: \"..........\"",
-        "PDF p.389: Repeated substring pattern detected: \"........\"",
-        "PDF p.393: Excessive character repetition detected: \"——————\"",
-        "PDF p.394: Repeated substring pattern detected: \"............\"",
-        "PDF p.395: Repeated substring pattern detected: \"............\"",
-        "PDF p.404: Repeated substring pattern detected: \"...............\"",
-        "PDF p.405: Repeated substring pattern detected: \"............\"",
-        "PDF p.406: Repeated substring pattern detected: \"............\"",
-        "PDF p.407: Repeated substring pattern detected: \"...............\"",
-        "PDF p.408: Excessive character repetition detected: \"000000000\"",
-        "PDF p.408: Repeated substring pattern detected: \"00000000\"",
-        "PDF p.410: Repeated substring pattern detected: \"...............\"",
-        "PDF p.411: Repeated substring pattern detected: \"........\"",
-        "PDF p.412: Repeated substring pattern detected: \"...............\"",
-        "PDF p.413: Excessive character repetition detected: \"111111\"",
-        "PDF p.414: Excessive character repetition detected: \"000000\"",
-        "PDF p.414: Repeated substring pattern detected: \"...............\""
-      ],
-      "blockedPageCount": 2,
-      "needsReviewPageCount": 90,
-      "missingPages": []
+      "status": "generated_needs_review",
+      "sourceSignature": "62ee2e8b0d95ecbf4cc4ee143275f9eb1b4b62bbeefb130a8717bb4a7b17e541",
+      "lastAttemptAt": "2026-11-14T08:28:49.781Z",
+      "qualityScore": 100,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep3-student-term1-unit-1": {
-      "status": "blocked_source_review",
-      "sourceSignature": "62eee0ec53d13451658b7d1ebf78bc914da6a06a5ad44d2d27dd4fbacc0325d3",
-      "lastAttemptAt": "2026-11-11T07:09:32.400Z",
-      "issues": [
-        "PDF p.13: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.16: Excessive character repetition detected: \"00000\"",
-        "PDF p.20: Repeated substring pattern detected: \"0.0.0.0.\"",
-        "PDF p.24: Contains 1 abnormally long unbroken word(s) (e.g. \"oiccceccccccccceccccscsseccscs...\", length 73)",
-        "PDF p.24: Excessive character repetition detected: \"ccccccccc\"",
-        "PDF p.24: Repeated substring pattern detected: \"cccccccc\"",
-        "PDF p.26: Repeated substring pattern detected: \"...............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 4,
-      "missingPages": []
+      "status": "generated_needs_review",
+      "sourceSignature": "348af3a2a421a16607ddad88e21282ce0ff0cfeb0d35a95443ca7c43ef353727",
+      "lastAttemptAt": "2026-11-14T09:06:14.253Z",
+      "qualityScore": 85,
+      "itemCount": 36,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep3-student-term1-unit-3": {
       "status": "complete_draft_needs_review",
@@ -3546,7 +3601,7 @@
     },
     "baccalaureate-y2-first-language-part1-unit-4": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "8eaf86eb2c4f4133f8065810ed4c6f30a9b8b722d67137bf3ca5f4fef1a5d5d8",
+      "sourceSignature": "f8bf80b1dbf7c1bf78e2d49887284345953d14ce9a80b4dbabc69c4ad558e6e9",
       "lastAttemptAt": "2026-11-12T07:42:12.966Z",
       "qualityScore": 85,
       "itemCount": 30,
@@ -4058,7 +4113,7 @@
     },
     "connectplus-primary4-supplement-unit-3": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "05c8f3b05bce8ec5add38fe3b4943985cacd7e42266764ed515dd4d56956d9ff",
+      "sourceSignature": "50f381cfc2e8266ec8306aa2e37851308e5fa7d3ecdda7c4d476fe9d419fa4f6",
       "lastAttemptAt": "2026-11-14T07:21:41.193Z",
       "qualityScore": 85,
       "itemCount": 36,
@@ -4435,8 +4490,8 @@
       }
     },
     "connectplus-primary6-supplement-unit-2": {
-      "status": "generated_needs_review",
-      "sourceSignature": "bff954efd4a44d8192ffd2a73311eb92137cb06bd49e1ff18aec335ef68ab9b3",
+      "status": "complete_draft_needs_review",
+      "sourceSignature": "34c43b54f47599da7544e8b8b32ea4e640c464326993427bbb7c3b6b2a6665af",
       "lastAttemptAt": "2026-11-14T07:34:05.192Z",
       "qualityScore": 100,
       "itemCount": 30,
@@ -4489,7 +4544,7 @@
       }
     },
     "connectplus-primary6-supplement-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "257d61d0a657e70795029f83f919fc2a69aacf01257b39163c941c24859469ab",
       "lastAttemptAt": "2026-11-14T07:34:31.341Z",
       "qualityScore": 85,
@@ -4551,7 +4606,7 @@
       "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\ntest_q8: question contains duplicate options: [\"I went to Alexandria last June.\",\"i went to alexandria last june.\",\"I went to alexandria Last june.\",\"i Went To Alexandria last june.\"]\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "prep1-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "fbc0295d3f352c42189174e72f74e6a88be0b6d1b4d54655080ea8eb72cbcf38",
       "lastAttemptAt": "2026-11-14T07:43:57.914Z",
       "qualityScore": 85,
@@ -4605,7 +4660,7 @@
       }
     },
     "prep1-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "763f66cddd59a9b8518dd6ef8ae44959ce397afd2bf058fc622fb81d351bb4c7",
       "lastAttemptAt": "2026-11-14T07:44:39.165Z",
       "qualityScore": 85,
@@ -4659,7 +4714,7 @@
       }
     },
     "prep1-student-term1-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "5fe49b44a83bf17309b37f40cb08f6ff65788aacbf7a8ac7d37fa6b85f5b900d",
       "lastAttemptAt": "2026-11-14T08:00:39.229Z",
       "qualityScore": 100,
@@ -4713,7 +4768,7 @@
       }
     },
     "prep1-student-term1-unit-6": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "c6953b67046a0db4fd49c5a3a2f811c38c37385cdf41fe45913bacc8ba5be336",
       "lastAttemptAt": "2026-11-14T08:01:41.952Z",
       "qualityScore": 100,
@@ -4767,49 +4822,274 @@
       }
     },
     "helloplus-prep1-supplement-unit-5": {
-      "status": "failed",
-      "sourceSignature": "4756e1d171b0623b3ae48d00681b9dda60cee7857db87c7c0d544060f25ae430",
-      "lastAttemptAt": "2026-11-12T06:52:29.720Z",
-      "attemptCount": 0,
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "827d303a31c35a760600a9f8a9c6fe6cd1045c4f44141ba14b139b21b960ace8",
+      "lastAttemptAt": "2026-11-14T08:28:13.100Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-1": {
-      "status": "failed",
-      "sourceSignature": "9a5a2d1f5f6295c96117344ec2b83560c24897fc672cbf12e046009d6aec0b9e",
-      "lastAttemptAt": "2026-11-12T06:52:29.757Z",
-      "attemptCount": 0,
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "dc170ecfef046f2fca39d3470b806e9faf8053b92763b4ac17f2d2121351da84",
+      "lastAttemptAt": "2026-11-14T08:40:59.127Z",
+      "qualityScore": 90,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-2": {
-      "status": "failed",
-      "sourceSignature": "67a70344dff0fad88a0fd8e86bad636326a1bb48185847f2b8e48fe0726c53ce",
-      "lastAttemptAt": "2026-11-12T06:52:29.793Z",
-      "attemptCount": 0,
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "891ae4113ae429c90f912bf22ebceaafd2753c7879339eeb65a203595d88115e",
+      "lastAttemptAt": "2026-11-14T08:52:57.221Z",
+      "qualityScore": 100,
+      "itemCount": 37,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 8,
+          "validItems": 8,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-3": {
-      "status": "failed",
-      "sourceSignature": "3cef56f974c6d1b6e9511237c82176d20fc09362594f57ba78041fe6102417be",
-      "lastAttemptAt": "2026-11-12T06:52:29.830Z",
-      "attemptCount": 0,
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "8f508f9fbcf0dd37c77d504e4d2c8d6cbb87aac7938c1b764d68eab669f65e73",
+      "lastAttemptAt": "2026-11-14T08:58:50.775Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-5": {
-      "status": "failed",
-      "sourceSignature": "e5094883e25b7db75846e08211a13b0a5ad1b5c11fb528b807e83fa86a1cb7b0",
-      "lastAttemptAt": "2026-11-12T06:52:29.869Z",
-      "attemptCount": 0,
-      "error": "Generator exited with code 1: file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:179\n  console.log(`Generating ${bookId} Unit ${unitNumber} draft from verified source records...`);\n               ^^^^^^^^^^\n\nSyntaxError: Unexpected identifier 'Generating'\n    at compileSourceTextModule (node:internal/modules/esm/utils:346:16)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:110:18)\n    at #translate (node:internal/modules/esm/loader:559:20)\n    at afterLoad (node:internal/modules/esm/loader:612:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:617:12)\n    at #createModuleJob (node:internal/modules/esm/loader:640:36)\n    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)\n    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:25)\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "status": "generated_needs_review",
+      "sourceSignature": "99a462ac47a325ca4da2d84fee8768d55c3b5c68e8aebcd15c47669c8dc5255b",
+      "lastAttemptAt": "2026-11-14T09:04:47.257Z",
+      "qualityScore": 85,
+      "itemCount": 29,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-6": {
       "status": "complete_draft_needs_review",
@@ -5153,7 +5433,7 @@
     },
     "baccalaureate-y2-first-language-part1-unit-2": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "edd1237f5cf605dab8029863c0ac6f1fcc533a732b5f3f8c7a49d89cc085f37b",
+      "sourceSignature": "d7356fea1c679a78ef846abb5920e49a64db29fed7e2fb838ba4a980838826c8",
       "lastAttemptAt": "2026-11-12T07:39:58.321Z",
       "qualityScore": 85,
       "itemCount": 30,
@@ -5207,7 +5487,7 @@
     },
     "baccalaureate-y2-first-language-part1-unit-3": {
       "status": "complete_draft_needs_review",
-      "sourceSignature": "84b990fea1fac0c5f160a9a968a76149540cc2fa17a74ccc43f68203e9fd0595",
+      "sourceSignature": "9c8c2b1f5f3491cee6e4b4cf732264a1d3554f794e065aaedd724d436108947b",
       "lastAttemptAt": "2026-11-12T07:41:23.623Z",
       "qualityScore": 90,
       "itemCount": 31,

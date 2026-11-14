@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T08:40:59.118Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep2-student-term1",
+  "sourceFilename": "English_language_prep2_t1 (1).pdf",
+  "grade": "Preparatory 2",
+  "unitNumber": 1,
+  "unitTitle": "Unit 1 Gen Alpha",
+  "sourcePdfRange": {
+    "start": 13,
+    "end": 26
+  },
+  "sourceCoverage": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "sourceFingerprint": "dc170ecfef046f2fca39d3470b806e9faf8053b92763b4ac17f2d2121351da84",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 1 Gen Alpha",
+    "expectedRange": {
+      "start": 13,
+      "end": 26,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 23,
+      "supplementaryItems": 6,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:40:59.117Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "digital natives",
+            "arabicMeaning": "الأشخاص الذين نشأوا في عصر التكنولوجيا",
+            "example": "Gen Alpha are digital natives because they learn to use technology before they can read.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "screen time",
+            "arabicMeaning": "وقت الشاشة",
+            "example": "Parents are trying to limit screen time for their children.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "emojis",
+            "arabicMeaning": "رموز تعبيرية",
+            "example": "They send emojis instead of words to show feelings.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "balance",
+            "arabicMeaning": "توازن",
+            "example": "It is important to find a balance between online activities and real-life connections.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "curious",
+            "arabicMeaning": "فضولي",
+            "example": "Amal was a curious girl who loved to build things.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What are small digital icons used to express ideas or emotions online called?",
+            "options": [
+              "trends",
+              "emojis",
+              "podcasts",
+              "devices"
+            ],
+            "correctAnswer": "emojis",
+            "reason": "Emojis are small digital images or icons used to express feelings in digital messages.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "People who have grown up with technology like computers and mobile devices are called digital ________.",
+            "options": [
+              "natives",
+              "creators",
+              "inventors",
+              "teachers"
+            ],
+            "correctAnswer": "natives",
+            "reason": "Digital natives refers to individuals who have grown up surrounded by digital technology.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "To manage equal time between online activities and real life means to keep a ________.",
+            "options": [
+              "limit",
+              "trend",
+              "balance",
+              "permission"
+            ],
+            "correctAnswer": "balance",
+            "reason": "Balance means a situation where different things are given equal or proper attention.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Present Continuous Tense",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Present Continuous for Current Actions and Future Arrangements",
+            "explanation": "We use the Present Continuous (am/is/are + verb + -ing) to talk about actions happening right now, temporary actions, or future arranged plans.",
+            "example": "He is writing his posts in English now.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Look! The birds ________ in the sky.",
+            "options": [
+              "fly",
+              "are flying",
+              "flown",
+              "is flying"
+            ],
+            "correctAnswer": "are flying",
+            "reason": "The key word 'Look!' indicates an action happening right now, so we use 'are flying' for plural subject 'birds'.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Right now, Heba ________ social media.",
+            "options": [
+              "is using",
+              "uses",
+              "used",
+              "using"
+            ],
+            "correctAnswer": "is using",
+            "reason": "The phrase 'Right now' signals the present continuous tense (is using).",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "They ________ to Luxor tomorrow at 9 p.m. because the trip is already arranged.",
+            "options": [
+              "travel",
+              "traveled",
+              "are traveling",
+              "travels"
+            ],
+            "correctAnswer": "are traveling",
+            "reason": "Present continuous is used for future arrangements that have been planned and confirmed.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_passage_1",
+          "content": {
+            "passage": "Do you know that you are one of Gen Alpha, who were born from around 2010 to the mid-2020s? Today’s young generation, Gen Alpha, is changing the way we live and communicate. They are digital natives, because they learn to use technology before they can read, and they usually spend a lot of time online, exploring the latest trends. They like creating short videos to show their hobbies or opinions. At the moment, many Gen Alpha children are using social media to learn about the world and to connect with others. They are constantly discovering new trends that quickly spread across their digital communities. For example, they share memes and sometimes send emojis instead of words because they like showing emotions in a creative, fun way. Teachers and parents often wonder how this generation will grow up with so much technology around them. Right now, many parents are trying to limit screen time while also encouraging useful digital skills. Gen Alpha rarely spends a day without using technology, but they are also learning to balance online activities with real-life connections. This generation represents a powerful trend that is shaping the future. Gen Alpha always looks for new ways to express themselves and likes using digital tools to create their identity in the modern world.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "Why is Gen Alpha called 'digital natives'?",
+            "options": [
+              "Because they live in distant places.",
+              "Because they learn to use technology before they can read.",
+              "Because they never use smartphones or tablets.",
+              "Because they prefer playing board games."
+            ],
+            "correctAnswer": "Because they learn to use technology before they can read.",
+            "reason": "The text explicitly states they are called digital natives because they learn to use technology before reading.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "listen_script_1",
+          "content": {
+            "script": "Welcome to our podcast about Gen Alpha. Gen Alpha children were born from 2010 onwards. Many of them learn to use digital devices before they even learn to read. Parents today are trying to limit screen time and encourage healthy digital habits. Screen time isn't all bad, but it is essential for Gen Alpha to balance online activities with real-life connections.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "listen_q1",
+          "content": {
+            "question": "What are parents trying to limit for Gen Alpha according to the podcast?",
+            "options": [
+              "Books",
+              "Screen time",
+              "Sports",
+              "Real-life connections"
+            ],
+            "correctAnswer": "Screen time",
+            "reason": "The listening audio highlights that parents are working to limit screen time for their children.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Host",
+                "text": "Today we’re talking to Saja, a 14-year-old student, about how her generation, often called digital natives, is handling life with technology. Hi, Saja!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Saja",
+                "text": "Hi! Thanks for having me with you today.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Host",
+                "text": "So, how much screen time do you usually have each day?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Saja",
+                "text": "I think around 5 to 6 hours, including homework. I use my smartphone for doing my homework, researching, chatting, and sometimes watching memes or short videos.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 23
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocabulary Master",
+            "description": "Choose the correct target vocabulary word to complete the digital sentence.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Small digital icons used to show feelings in messages are called ________.",
+            "options": [
+              "emojis",
+              "trends",
+              "devices",
+              "fairways"
+            ],
+            "correctAnswer": "emojis",
+            "reason": "Emojis are small icons used in digital messages to represent emotions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Time Challenge",
+            "description": "Pick the correct form of the Present Continuous tense.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Listen! The children ________ in their room right now.",
+            "options": [
+              "sing",
+              "are singing",
+              "sang",
+              "is singing"
+            ],
+            "correctAnswer": "are singing",
+            "reason": "With 'Listen!' and plural 'children', use 'are singing' for present continuous.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "comp_q1",
+          "content": {
+            "question": "Gen Alpha includes children born from around 2010 to the ________.",
+            "options": [
+              "mid-2020s",
+              "year 2000",
+              "late 1990s",
+              "year 1980"
+            ],
+            "correctAnswer": "mid-2020s",
+            "reason": "According to the unit text, Gen Alpha refers to children born from 2010 to the mid-2020s.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q2",
+          "content": {
+            "question": "What is the phrase for the total amount of time spent looking at digital screens?",
+            "options": [
+              "screen time",
+              "digital bridge",
+              "online trend",
+              "real time"
+            ],
+            "correctAnswer": "screen time",
+            "reason": "Screen time is defined as the amount of time spent looking at a screen.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q3",
+          "content": {
+            "question": "At the moment, Nader ________ to help his classmates with technology.",
+            "options": [
+              "is volunteering",
+              "volunteered",
+              "volunteer",
+              "volunteers"
+            ],
+            "correctAnswer": "is volunteering",
+            "reason": "'At the moment' requires the Present Continuous tense (is volunteering).",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q4",
+          "content": {
+            "question": "She ________ her phone away during meals to reduce screen time.",
+            "options": [
+              "puts",
+              "is putting",
+              "put",
+              "putting"
+            ],
+            "correctAnswer": "puts",
+            "reason": "Describing a regular personal habit uses present simple (puts).",
+            "origin": "supplementary",
+            "sourcePdfPage": 23
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "comp_q5",
+          "content": {
+            "question": "In the story 'The Little Inventor', Amal asked for ________ before downloading anything.",
+            "options": [
+              "permission",
+              "money",
+              "hobbies",
+              "emojis"
+            ],
+            "correctAnswer": "permission",
+            "reason": "Amal practiced digital safety by asking for permission before downloading files.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q6",
+          "content": {
+            "question": "Generation Z includes people born between 1997 and ________.",
+            "options": [
+              "2012",
+              "2020",
+              "2005",
+              "2015"
+            ],
+            "correctAnswer": "2012",
+            "reason": "The passage 'The Gen Z-Alpha Bridge' states Gen Z includes people born between 1997 and 2012.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q7",
+          "content": {
+            "question": "Which word means 'having strong feeling or excitement about something'?",
+            "options": [
+              "passionate",
+              "curious",
+              "strange",
+              "far apart"
+            ],
+            "correctAnswer": "passionate",
+            "reason": "'Passionate' describes having a very strong feeling or excitement about something.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q8",
+          "content": {
+            "question": "Look! The students ________ their online project right now.",
+            "options": [
+              "are finishing",
+              "finishes",
+              "finished",
+              "is finishing"
+            ],
+            "correctAnswer": "are finishing",
+            "reason": "'Look!' signals present continuous, and plural subject 'students' takes 'are finishing'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "comp_q9",
+          "content": {
+            "question": "When expressing polite disagreement during a discussion, which phrase can you use?",
+            "options": [
+              "That's true, but in my opinion...",
+              "I completely hate that.",
+              "You are totally wrong.",
+              "Stop talking."
+            ],
+            "correctAnswer": "That's true, but in my opinion...",
+            "reason": "Unit 1 Real Talk tip suggests using polite phrases like 'That's true, but in my opinion...' to express opinions respectfully.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_q10",
+          "content": {
+            "question": "I ________ my grandparents next Monday. It is already arranged.",
+            "options": [
+              "am visiting",
+              "visited",
+              "visits",
+              "visit"
+            ],
+            "correctAnswer": "am visiting",
+            "reason": "Arranged future plans use the present continuous tense (am visiting).",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

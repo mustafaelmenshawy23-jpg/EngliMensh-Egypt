@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T08:21:33.100Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "helloplus-prep1-supplement",
+  "sourceFilename": "المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 4,
+  "unitTitle": "Shopping well",
+  "sourcePdfRange": {
+    "start": 160,
+    "end": 195
+  },
+  "sourceCoverage": [
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+  ],
+  "sourceFingerprint": "930b9c1a9ce0237914db475031d5038ad0546633d3cd186c53ff27f60acaf26d",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Shopping well",
+    "expectedRange": {
+      "start": 160,
+      "end": 195,
+      "totalPages": 36
+    },
+    "recordedCoverage": {
+      "totalPages": 36,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 26,
+      "supplementaryItems": 2,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:21:33.100Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "voc_1",
+          "content": {
+            "word": "store clerk",
+            "arabicMeaning": "بائع في متجر",
+            "example": "The store clerk helped me find the groceries in the supermarket.",
+            "origin": "source",
+            "sourcePdfPage": 163
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_2",
+          "content": {
+            "word": "carbon footprint",
+            "arabicMeaning": "البصمة الكربونية",
+            "example": "Eating less meat is a great way to reduce your carbon footprint.",
+            "origin": "source",
+            "sourcePdfPage": 177
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_3",
+          "content": {
+            "word": "vegetarian",
+            "arabicMeaning": "شخص نباتي",
+            "example": "A vegetarian does not eat any meat or fish.",
+            "origin": "source",
+            "sourcePdfPage": 172
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_4",
+          "content": {
+            "word": "recipe",
+            "arabicMeaning": "وصفة طهي",
+            "example": "She followed a traditional recipe to make mushroom pasta.",
+            "origin": "source",
+            "sourcePdfPage": 173
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "voc_q1",
+          "content": {
+            "question": "The synonym of the word 'expensive' is .......... .",
+            "options": [
+              "valuable",
+              "cheap",
+              "inexpensive",
+              "useless"
+            ],
+            "correctAnswer": "valuable",
+            "reason": "Valuable means worth a lot of money, which is synonymous with expensive.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_q2",
+          "content": {
+            "question": "A person who brings you your food in a restaurant is a .......... .",
+            "options": [
+              "waiter",
+              "vegetarian",
+              "partner",
+              "leader"
+            ],
+            "correctAnswer": "waiter",
+            "reason": "By definition, a waiter is the person who serves food to customers in a restaurant.",
+            "origin": "source",
+            "sourcePdfPage": 173
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "voc_q3",
+          "content": {
+            "question": "Remember to keep your .......... if you want to exchange your purchase.",
+            "options": [
+              "recipe",
+              "receipt",
+              "menu",
+              "advice"
+            ],
+            "correctAnswer": "receipt",
+            "reason": "A receipt is proof of purchase required for exchanging items.",
+            "origin": "source",
+            "sourcePdfPage": 170
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Overview",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "The Present Perfect Tense with key adverbs (already, just, ever, never, yet)",
+            "explanation": "We use the present perfect tense (have/has + past participle) to describe past experiences or recent events. 'Yet' is used in negative sentences and questions, while 'already' and 'just' are used in affirmative sentences.",
+            "example": "I have already visited the market twice.",
+            "origin": "source",
+            "sourcePdfPage": 167
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Have you .......... finished your homework?",
+            "options": [
+              "yet",
+              "already",
+              "never",
+              "since"
+            ],
+            "correctAnswer": "already",
+            "reason": "'Already' can be used in questions to express completion or surprise.",
+            "origin": "source",
+            "sourcePdfPage": 168
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "She hasn't cleaned the kitchen .......... .",
+            "options": [
+              "already",
+              "just",
+              "yet",
+              "ever"
+            ],
+            "correctAnswer": "yet",
+            "reason": "'Yet' is placed at the end of negative sentences in the present perfect tense.",
+            "origin": "source",
+            "sourcePdfPage": 168
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "They have .......... been to China.",
+            "options": [
+              "never",
+              "yet",
+              "ever",
+              "ago"
+            ],
+            "correctAnswer": "never",
+            "reason": "'Never' is used in affirmative sentences to indicate a negative experience up to the present.",
+            "origin": "source",
+            "sourcePdfPage": 168
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_1",
+          "content": {
+            "passage": "When you come to Barcelona, don't forget to visit La Boqueria! You can find amazing fresh food here. There's a lot of fruit and there are a lot of vegetables. There's some meat, chicken, and fish, and there are some cafés and restaurants, too. But there isn't any furniture and there aren't any clothes. La Boqueria is a market just for food! There are more than 200 different places which sell many different types of food.",
+            "origin": "source",
+            "sourcePdfPage": 162
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What type of market is La Boqueria?",
+            "options": [
+              "A market just for food",
+              "A furniture store",
+              "A clothing market",
+              "A book market"
+            ],
+            "correctAnswer": "A market just for food",
+            "reason": "The text explicitly states that La Boqueria is a market dedicated only to food.",
+            "origin": "source",
+            "sourcePdfPage": 162
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_1",
+          "content": {
+            "script": "Hi, this is Lacey. I can't take your call at the moment, so please leave me a message. Hi Lacey, it's me, Callum. I want to make chicken and vegetable soup for dinner tonight and I'm just looking in the fridge. I know you're at the supermarket at the moment. Can you buy a few things for me? There's a little chicken in the fridge. There are a lot of beans, so I can use them. There are a few carrots, too. But there aren't any mushrooms and there isn't any bread to eat with the soup. Can you get some mushrooms and bread, please? Thanks!",
+            "origin": "source",
+            "sourcePdfPage": 163
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "What ingredients does Callum ask Lacey to buy at the supermarket?",
+            "options": [
+              "Chicken and carrots",
+              "Mushrooms and bread",
+              "Beans and soup",
+              "Meat and chips"
+            ],
+            "correctAnswer": "Mushrooms and bread",
+            "reason": "Callum mentions in his message that there are no mushrooms and no bread left, so he asks Lacey to buy them.",
+            "origin": "source",
+            "sourcePdfPage": 163
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Skills",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Customer",
+                "text": "Excuse me, can I see the menu, please?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Waiter",
+                "text": "Of course. Are you ready to order?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Customer",
+                "text": "Yes, I am. I'd like the chicken pasta, please.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Waiter",
+                "text": "OK, and what would you like to drink?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Customer",
+                "text": "Do you have any lemonade?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Waiter",
+                "text": "Yes, we do. A small lemonade, please.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 178
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Food Quiz Show",
+            "description": "Test your understanding of dietary choices.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which item is a popular plant-based alternative to meat?",
+            "options": [
+              "Tofu",
+              "Cheese",
+              "Butter",
+              "Yogurt"
+            ],
+            "correctAnswer": "Tofu",
+            "reason": "Tofu is highlighted in the unit as a great vegetarian alternative to meat.",
+            "origin": "supplementary",
+            "sourcePdfPage": 177
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Tense Builder",
+            "description": "Select the correct verb form in present perfect.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "He has just .......... home from work.",
+            "options": [
+              "arrived",
+              "arrive",
+              "arriving",
+              "arrives"
+            ],
+            "correctAnswer": "arrived",
+            "reason": "Present perfect forms use has/have + past participle (arrived).",
+            "origin": "supplementary",
+            "sourcePdfPage": 167
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "comp_1",
+          "content": {
+            "question": "What is the main task of a store clerk?",
+            "options": [
+              "Help customers find items in a store",
+              "Cook meals in a restaurant",
+              "Drive shoppers home",
+              "Design clothes"
+            ],
+            "correctAnswer": "Help customers find items in a store",
+            "reason": "Store clerks assist shoppers in finding what they need in aisles and shelves.",
+            "origin": "source",
+            "sourcePdfPage": 163
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_2",
+          "content": {
+            "question": "A list of ingredients and step-by-step instructions for cooking is a .......... .",
+            "options": [
+              "recipe",
+              "receipt",
+              "review",
+              "menu"
+            ],
+            "correctAnswer": "recipe",
+            "reason": "A recipe gives instructions and ingredient lists for preparing dishes.",
+            "origin": "source",
+            "sourcePdfPage": 173
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_3",
+          "content": {
+            "question": "Which suffix is added to 'Japan' to form its adjective?",
+            "options": [
+              "-ese",
+              "-ant",
+              "-or",
+              "-er"
+            ],
+            "correctAnswer": "-ese",
+            "reason": "Adding '-ese' to Japan creates the adjective Japanese.",
+            "origin": "source",
+            "sourcePdfPage": 160
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_4",
+          "content": {
+            "question": "Choose the correct sentence in Present Perfect tense:",
+            "options": [
+              "I have already visited the market twice.",
+              "I visit already the market twice.",
+              "I am visiting already the market.",
+              "I visited already twice the market."
+            ],
+            "correctAnswer": "I have already visited the market twice.",
+            "reason": "Present perfect requires subject + have/has + already + past participle.",
+            "origin": "source",
+            "sourcePdfPage": 167
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_5",
+          "content": {
+            "question": "She hasn't finished her homework .......... .",
+            "options": [
+              "yet",
+              "ago",
+              "yesterday",
+              "last week"
+            ],
+            "correctAnswer": "yet",
+            "reason": "'Yet' is used in negative present perfect statements.",
+            "origin": "source",
+            "sourcePdfPage": 168
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_6",
+          "content": {
+            "question": "What does Clare serve on top of her mushroom pasta?",
+            "options": [
+              "Cheese",
+              "Ice cream",
+              "Lemonade",
+              "Soup"
+            ],
+            "correctAnswer": "Cheese",
+            "reason": "Clare explains that after mixing pasta and mushrooms, she serves the dish with cheese on top.",
+            "origin": "source",
+            "sourcePdfPage": 177
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_7",
+          "content": {
+            "question": "Why do Owen's parents prefer using an app to buy food?",
+            "options": [
+              "It saves time and they do not have to carry heavy bags",
+              "They want to travel far",
+              "It is very difficult",
+              "They live in Barcelona"
+            ],
+            "correctAnswer": "It saves time and they do not have to carry heavy bags",
+            "reason": "Owen's parents state that using an app makes life easier by saving time and avoiding carrying shopping bags.",
+            "origin": "source",
+            "sourcePdfPage": 189
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_8",
+          "content": {
+            "question": "Camden Market in London is famous for selling street food, clothes, and .......... .",
+            "options": [
+              "souvenirs",
+              "furniture",
+              "cars",
+              "bicycles"
+            ],
+            "correctAnswer": "souvenirs",
+            "reason": "The reading passage notes that Camden Market sells clothes, home goods, and souvenirs.",
+            "origin": "source",
+            "sourcePdfPage": 191
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_9",
+          "content": {
+            "question": "What is the opposite of the word 'easy'?",
+            "options": [
+              "hard",
+              "simple",
+              "famous",
+              "marvelous"
+            ],
+            "correctAnswer": "hard",
+            "reason": "Hard is the antonym of easy.",
+            "origin": "source",
+            "sourcePdfPage": 190
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "comp_10",
+          "content": {
+            "question": "If a recipe serves 4 people and you need to serve 8 people, you should .......... all ingredient quantities.",
+            "options": [
+              "multiply by 2",
+              "divide by 4",
+              "subtract 2",
+              "multiply by 10"
+            ],
+            "correctAnswer": "multiply by 2",
+            "reason": "Since 8 divided by 4 equals 2, you multiply each component by 2.",
+            "origin": "source",
+            "sourcePdfPage": 193
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

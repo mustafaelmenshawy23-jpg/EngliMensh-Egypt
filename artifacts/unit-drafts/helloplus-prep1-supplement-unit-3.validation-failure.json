@@ -1,0 +1,78 @@
+{
+  "status": "failed_validation",
+  "bookId": "helloplus-prep1-supplement",
+  "unitNumber": 3,
+  "score": 85,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"We ___ a party for our little sister nex\""
+  ],
+  "warnings": [],
+  "report": {
+    "unitTitle": "Unit 3: Activities",
+    "expectedRange": {
+      "start": 91,
+      "end": 159,
+      "totalPages": 69
+    },
+    "recordedCoverage": {
+      "totalPages": 69,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 24,
+      "supplementaryItems": 3,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:18:51.122Z"
+  }
+}
