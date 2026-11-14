@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:21:41.164Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary4-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 4",
+  "unitNumber": 3,
+  "unitTitle": "My world",
+  "sourcePdfRange": {
+    "start": 85,
+    "end": 123
+  },
+  "sourceCoverage": [
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123
+  ],
+  "sourceFingerprint": "81615576c7d33b9ab3c469dd2b6c2a61182212009a5fa1bd4793e4f2837144a9",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "My world",
+    "expectedRange": {
+      "start": 85,
+      "end": 123,
+      "totalPages": 39
+    },
+    "recordedCoverage": {
+      "totalPages": 39,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 36,
+      "sourceItems": 33,
+      "supplementaryItems": 3,
+      "vocabularyCount": 5,
+      "questionsCount": 18
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:21:41.164Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u3_voc_1",
+          "content": {
+            "word": "governorate",
+            "arabicMeaning": "محافظة",
+            "example": "There are 27 governorates in Egypt today.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_2",
+          "content": {
+            "word": "scuba diving",
+            "arabicMeaning": "الغطس تحت الماء",
+            "example": "The Red Sea is very popular for scuba diving.",
+            "origin": "source",
+            "sourcePdfPage": 91
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_3",
+          "content": {
+            "word": "rebaba",
+            "arabicMeaning": "آلة الربابة",
+            "example": "The rebaba is a traditional string instrument.",
+            "origin": "source",
+            "sourcePdfPage": 95
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_4",
+          "content": {
+            "word": "hieroglyphs",
+            "arabicMeaning": "الرموز الهيروغليفية",
+            "example": "Ancient Egyptians wrote down events in hieroglyphs.",
+            "origin": "source",
+            "sourcePdfPage": 90
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_5",
+          "content": {
+            "word": "khayameya",
+            "arabicMeaning": "الخيامية",
+            "example": "Tent makers created khayameya to decorate huge tents.",
+            "origin": "source",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "u3_voc_q1",
+          "content": {
+            "question": "Where do lots of ships sail in and out of in Alexandria?",
+            "options": [
+              "A school",
+              "A port",
+              "A park",
+              "A museum"
+            ],
+            "correctAnswer": "A port",
+            "reason": "Alexandria is an important governorate because ships sail in and out of its port.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_q2",
+          "content": {
+            "question": "Which instrument is a wind instrument used in Saidi music?",
+            "options": [
+              "The oboe",
+              "The violin",
+              "The rebaba",
+              "The simsimeya"
+            ],
+            "correctAnswer": "The oboe",
+            "reason": "The oboe is classified as a wind instrument used by folk musicians in Upper Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_q3",
+          "content": {
+            "question": "Tent makers created __________ to decorate huge tents for weddings.",
+            "options": [
+              "pyramids",
+              "khayameya",
+              "hieroglyphs",
+              "statues"
+            ],
+            "correctAnswer": "khayameya",
+            "reason": "Khayameya is a traditional craft created by tent makers to decorate tents.",
+            "origin": "source",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_voc_q4",
+          "content": {
+            "question": "Who wrote down everything that happened in Ancient Egypt?",
+            "options": [
+              "Engineers",
+              "Scribes",
+              "Dancers",
+              "Musicians"
+            ],
+            "correctAnswer": "Scribes",
+            "reason": "Scribes were very important people in Ancient Egypt responsible for writing down events.",
+            "origin": "source",
+            "sourcePdfPage": 109
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "u3_gram_1",
+          "content": {
+            "rule": "Possessive Pronouns",
+            "explanation": "Possessive pronouns (mine, yours, his, hers, ours, theirs) show ownership and stand alone without a following noun.",
+            "example": "This book is mine.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_2",
+          "content": {
+            "rule": "Past Simple Tense",
+            "explanation": "The past simple tense describes completed actions in the past. Regular verbs add -ed, while irregular verbs take specific past forms.",
+            "example": "She listened to stories yesterday.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_3",
+          "content": {
+            "rule": "Adverbs of Manner",
+            "explanation": "Adverbs of manner describe how an action is performed and are typically formed by adding -ly to an adjective.",
+            "example": "A skilled person can work quickly.",
+            "origin": "source",
+            "sourcePdfPage": 99
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "u3_gram_q1",
+          "content": {
+            "question": "This dress is __________ . My mother bought it for me last week.",
+            "options": [
+              "yours",
+              "mine",
+              "theirs",
+              "his"
+            ],
+            "correctAnswer": "mine",
+            "reason": "'mine' is the correct possessive pronoun referring to something belonging to the speaker.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_q2",
+          "content": {
+            "question": "They __________ to the zoo yesterday.",
+            "options": [
+              "go",
+              "went",
+              "goes",
+              "going"
+            ],
+            "correctAnswer": "went",
+            "reason": "'yesterday' requires the past simple form of the verb, which is 'went'.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_q3",
+          "content": {
+            "question": "These are our bags. They're __________ .",
+            "options": [
+              "ours",
+              "our",
+              "theirs",
+              "her"
+            ],
+            "correctAnswer": "ours",
+            "reason": "'ours' is the possessive pronoun replacing 'our bags'.",
+            "origin": "source",
+            "sourcePdfPage": 88
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_gram_q4",
+          "content": {
+            "question": "A skilled person can work __________ .",
+            "options": [
+              "quick",
+              "quickly",
+              "quicker",
+              "quickest"
+            ],
+            "correctAnswer": "quickly",
+            "reason": "The adverb 'quickly' is used to describe how the person works.",
+            "origin": "source",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u3_read_pass_1",
+          "content": {
+            "passage": "In the past, there were two separate areas in Egypt. Lower Egypt was in the north, where the Nile joins the sea. Upper Egypt was in the south, where the Nile flows through the deserts of Africa. In about 3200 BCE, one pharaoh, Mena joined these two parts to unite the country of Egypt. Egypt controlled the Nile as far as boats could sail on it, so it became very powerful.",
+            "origin": "source",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_read_q1",
+          "content": {
+            "question": "Where was Lower Egypt located in the past?",
+            "options": [
+              "In the south",
+              "In the north",
+              "In the east",
+              "In the west"
+            ],
+            "correctAnswer": "In the north",
+            "reason": "The text explicitly states that Lower Egypt was in the north, where the Nile joins the sea.",
+            "origin": "source",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_read_q2",
+          "content": {
+            "question": "Who joined Upper Egypt and Lower Egypt in about 3200 BCE?",
+            "options": [
+              "Rami",
+              "Mena",
+              "Fares",
+              "Amr"
+            ],
+            "correctAnswer": "Mena",
+            "reason": "The reading passage specifies that Pharaoh Mena joined the two parts to unite Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 89
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "u3_list_script_1",
+          "content": {
+            "script": "I'm Fares, and I live in the Red Sea Governorate. It has a beach which is over 1,000 km. It's a very popular place to visit for scuba diving and water sports. I'm Nadia, and I live in Aswan Governorate. It's the farthest south in Upper Egypt. Its capital is Aswan. In 1970, engineers finished the Aswan High Dam.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_list_q1",
+          "content": {
+            "question": "Which governorate is Nadia talking about?",
+            "options": [
+              "Alexandria Governorate",
+              "Red Sea Governorate",
+              "Aswan Governorate",
+              "Cairo Governorate"
+            ],
+            "correctAnswer": "Aswan Governorate",
+            "reason": "In the listening script, Nadia states that she lives in Aswan Governorate.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_list_q2",
+          "content": {
+            "question": "When did engineers finish the Aswan High Dam?",
+            "options": [
+              "In 1950",
+              "In 1970",
+              "In 1990",
+              "In 2000"
+            ],
+            "correctAnswer": "In 1970",
+            "reason": "The text states that engineers completed the Aswan High Dam in 1970.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "u3_speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Walaa",
+                "text": "Welcome to Cairo. Is it your first visit to Cairo?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Basma",
+                "text": "Yes, it is.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Walaa",
+                "text": "Where do you live?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Basma",
+                "text": "I live in Alexandria.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Walaa",
+                "text": "Why is Alexandria important?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Basma",
+                "text": "Because lots of ships sail in and out of the port.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 93
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Educational Games",
+      "items": [
+        {
+          "itemId": "u3_game_1",
+          "content": {
+            "gameName": "Governorate Match Challenge",
+            "description": "Choose the governorate that matches the given geographic feature.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which governorate is famous for having a major port where many ships sail?",
+            "options": [
+              "Aswan",
+              "Alexandria",
+              "Giza",
+              "Luxor"
+            ],
+            "correctAnswer": "Alexandria",
+            "reason": "Alexandria is a famous port city located on the Mediterranean coast of Egypt.",
+            "origin": "supplementary",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3_game_2",
+          "content": {
+            "gameName": "Grammar Time Traveller",
+            "description": "Select the correct past simple verb form to complete the historical statement.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Engineers __________ the Aswan High Dam in 1970.",
+            "options": [
+              "finish",
+              "finished",
+              "finishing",
+              "will finish"
+            ],
+            "correctAnswer": "finished",
+            "reason": "The past year 1970 requires the past simple tense form 'finished'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 94
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3_game_3",
+          "content": {
+            "gameName": "Folk Dance Quiz",
+            "description": "Test your knowledge of Egyptian musical traditions and folk dances.",
+            "skill": "reading",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which dance is the most famous stick dance from the Saidi musical tradition?",
+            "options": [
+              "Rags Assaya",
+              "Tahtib",
+              "Simsimeya",
+              "Folk Waltz"
+            ],
+            "correctAnswer": "Rags Assaya",
+            "reason": "Rags Assaya is the famous stick dance associated with Upper Egypt's Saidi tradition.",
+            "origin": "supplementary",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "u3_test_q1",
+          "content": {
+            "question": "Not everyone in Ancient Egypt learned to read and write. This was a job for __________ .",
+            "options": [
+              "farmers",
+              "scribes",
+              "dancers",
+              "engineers"
+            ],
+            "correctAnswer": "scribes",
+            "reason": "In Ancient Egypt, reading and writing were specialized tasks performed by scribes.",
+            "origin": "source",
+            "sourcePdfPage": 107
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q2",
+          "content": {
+            "question": "Which governorate is located farthest south in Upper Egypt?",
+            "options": [
+              "Alexandria",
+              "Cairo",
+              "Aswan",
+              "Damietta"
+            ],
+            "correctAnswer": "Aswan",
+            "reason": "Aswan Governorate is the farthest south governorate in Upper Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q3",
+          "content": {
+            "question": "What type of instrument is the violin?",
+            "options": [
+              "A wind instrument",
+              "A string instrument",
+              "A percussion instrument",
+              "A brass instrument"
+            ],
+            "correctAnswer": "A string instrument",
+            "reason": "Violins produce sound from strings and are classified as string instruments.",
+            "origin": "source",
+            "sourcePdfPage": 97
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q4",
+          "content": {
+            "question": "Two of the most popular Egyptian traditional crafts are carpet making and __________ .",
+            "options": [
+              "khayameya",
+              "scuba diving",
+              "swimming",
+              "sailing"
+            ],
+            "correctAnswer": "khayameya",
+            "reason": "Khayameya and carpet making are traditional Egyptian crafts described in the unit.",
+            "origin": "source",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q5",
+          "content": {
+            "question": "This notebook belongs to me. It is __________ .",
+            "options": [
+              "yours",
+              "his",
+              "mine",
+              "hers"
+            ],
+            "correctAnswer": "mine",
+            "reason": "The possessive pronoun 'mine' replaces 'my notebook'.",
+            "origin": "source",
+            "sourcePdfPage": 85
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q6",
+          "content": {
+            "question": "Where __________ you go yesterday?",
+            "options": [
+              "do",
+              "did",
+              "does",
+              "are"
+            ],
+            "correctAnswer": "did",
+            "reason": "Past simple questions with main verbs use the auxiliary verb 'did'.",
+            "origin": "source",
+            "sourcePdfPage": 87
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q7",
+          "content": {
+            "question": "Rami __________ at the Pyramids yesterday.",
+            "options": [
+              "is",
+              "was",
+              "were",
+              "are"
+            ],
+            "correctAnswer": "was",
+            "reason": "The singular past form of verb 'to be' for Rami is 'was'.",
+            "origin": "source",
+            "sourcePdfPage": 87
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q8",
+          "content": {
+            "question": "The dancers carefully perform a dance with sticks that looks like __________ .",
+            "options": [
+              "swimming",
+              "fighting",
+              "running",
+              "cooking"
+            ],
+            "correctAnswer": "fighting",
+            "reason": "In Tahtib, dancers move sticks in a precise way that resembles fighting.",
+            "origin": "source",
+            "sourcePdfPage": 98
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q9",
+          "content": {
+            "question": "Carpet makers make each carpet carefully using Egyptian __________ .",
+            "options": [
+              "wool",
+              "plastic",
+              "glass",
+              "paper"
+            ],
+            "correctAnswer": "wool",
+            "reason": "Egyptian carpets are handcrafted using high-quality Egyptian wool.",
+            "origin": "source",
+            "sourcePdfPage": 103
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3_test_q10",
+          "content": {
+            "question": "Alexandria used to be the __________ city of Egypt.",
+            "options": [
+              "capital",
+              "smallest",
+              "hottest",
+              "farthest"
+            ],
+            "correctAnswer": "capital",
+            "reason": "The city of Alexandria historically served as the capital city of Egypt.",
+            "origin": "source",
+            "sourcePdfPage": 92
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

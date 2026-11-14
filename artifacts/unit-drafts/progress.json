@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-13T06:34:40.954Z",
+  "generatedAt": "2026-11-14T07:19:33.936Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
   "selected": 10,
-  "cursorIndex": 19,
-  "nextCursorIndex": 39,
+  "cursorIndex": 39,
+  "nextCursorIndex": 61,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
   "sourceExtraction": {
@@ -19,69 +19,16 @@
     "ocrErrorPages": 0,
     "pagesNeedingManualVisualReview": 4399
   },
-  "completedDrafts": 35,
+  "completedDrafts": 43,
   "approvedPreserved": 0,
   "blockedSourceReview": 49,
   "excludedUnits": 0,
-  "pendingCandidates": 25,
+  "pendingCandidates": 20,
   "results": [
     {
-      "unitId": "connectplus-primary2-supplement-unit-4",
+      "unitId": "connectplus-primary4-supplement-unit-2",
       "status": "generated_needs_review",
-      "qualityScore": 90,
-      "itemCount": 32,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 6,
-          "validItems": 6,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "connectplus-primary2-supplement-unit-5",
-      "status": "generated_needs_review",
-      "qualityScore": 90,
+      "qualityScore": 85,
       "itemCount": 31,
       "sections": {
         "vocabulary": {
@@ -95,8 +42,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "grammar_questions": {
@@ -105,8 +52,8 @@
           "issues": []
         },
         "reading": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "listening": {
@@ -132,49 +79,39 @@
       }
     },
     {
-      "unitId": "primary3-student-term1-unit-3",
-      "status": "failed",
-      "error": "Generator exited with code 1: Gemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"Where do you go to buy food?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
-    },
-    {
-      "unitId": "connectplus-primary3-supplement-unit-2",
-      "status": "failed",
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_3 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini gemini-3.5-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash-lite did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"What is the largest organ in our body?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
-    },
-    {
-      "unitId": "primary4-student-term1-unit-1",
+      "unitId": "connectplus-primary4-supplement-unit-3",
       "status": "generated_needs_review",
-      "qualityScore": 95,
-      "itemCount": 27,
+      "qualityScore": 85,
+      "itemCount": 36,
       "sections": {
         "vocabulary": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 5,
+          "validItems": 5,
           "issues": []
         },
         "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 4,
+          "validItems": 4,
           "issues": []
         },
         "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
           "itemCount": 3,
           "validItems": 3,
           "issues": []
         },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
         "reading": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "listening": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "speaking": {
@@ -183,8 +120,8 @@
           "issues": []
         },
         "games": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "comprehensive_test": {
@@ -195,39 +132,39 @@
       }
     },
     {
-      "unitId": "primary4-student-term1-unit-2",
+      "unitId": "connectplus-primary4-supplement-unit-4",
       "status": "generated_needs_review",
-      "qualityScore": 100,
-      "itemCount": 27,
+      "qualityScore": 85,
+      "itemCount": 38,
       "sections": {
         "vocabulary": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 8,
+          "validItems": 8,
           "issues": []
         },
         "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 4,
+          "validItems": 4,
           "issues": []
         },
         "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
           "itemCount": 3,
           "validItems": 3,
           "issues": []
         },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
         "listening": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "speaking": {
@@ -236,8 +173,8 @@
           "issues": []
         },
         "games": {
-          "itemCount": 2,
-          "validItems": 2,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "comprehensive_test": {
@@ -248,7 +185,7 @@
       }
     },
     {
-      "unitId": "primary4-student-term1-unit-3",
+      "unitId": "connectplus-primary4-supplement-unit-5",
       "status": "generated_needs_review",
       "qualityScore": 100,
       "itemCount": 27,
@@ -301,7 +238,7 @@
       }
     },
     {
-      "unitId": "primary4-student-term1-unit-4",
+      "unitId": "connectplus-primary5-supplement-unit-1",
       "status": "generated_needs_review",
       "qualityScore": 85,
       "itemCount": 30,
@@ -317,8 +254,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "grammar_questions": {
@@ -327,8 +264,8 @@
           "issues": []
         },
         "reading": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "listening": {
@@ -354,14 +291,14 @@
       }
     },
     {
-      "unitId": "primary4-student-term1-unit-6",
+      "unitId": "connectplus-primary5-supplement-unit-3",
       "status": "generated_needs_review",
       "qualityScore": 100,
       "itemCount": 30,
       "sections": {
         "vocabulary": {
-          "itemCount": 6,
-          "validItems": 6,
+          "itemCount": 5,
+          "validItems": 5,
           "issues": []
         },
         "vocabulary_questions": {
@@ -370,8 +307,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "grammar_questions": {
@@ -407,14 +344,125 @@
       }
     },
     {
-      "unitId": "connectplus-primary4-supplement-unit-1",
+      "unitId": "primary6-student-term1-unit-1",
+      "status": "failed_validation",
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"What do carpenters make in Damietta?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "primary6-student-term1-unit-3",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 40,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "primary6-student-term1-unit-4",
       "status": "generated_needs_review",
       "qualityScore": 85,
-      "itemCount": 30,
+      "itemCount": 33,
       "sections": {
         "vocabulary": {
           "itemCount": 6,
           "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "connectplus-primary6-supplement-unit-1",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 32,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
           "issues": []
         },
         "vocabulary_questions": {
@@ -423,8 +471,8 @@
           "issues": []
         },
         "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "grammar_questions": {
@@ -11883,13 +11931,13 @@
   ],
   "excluded": [],
   "stateTotals": {
-    "generatedNeedsReview": 43,
+    "generatedNeedsReview": 52,
     "approved": 0,
-    "blockedSourceReview": 54,
-    "failed": 28,
-    "waitingForRetry": 3
+    "blockedSourceReview": 53,
+    "failed": 20,
+    "waitingForRetry": 0
   },
-  "waitingForRetry": 3,
+  "waitingForRetry": 0,
   "bookProgress": [
     {
       "bookId": "baccalaureate-y2-first-language-part1",
@@ -11928,8 +11976,7 @@
       "bookId": "connectplus-primary2-supplement",
       "totalUnits": 6,
       "statuses": {
-        "complete_draft_needs_review": 3,
-        "generated_needs_review": 2,
+        "complete_draft_needs_review": 5,
         "blocked_source_review": 1
       }
     },
@@ -11945,9 +11992,8 @@
       "bookId": "connectplus-primary4-supplement",
       "totalUnits": 6,
       "statuses": {
-        "generated_needs_review": 1,
-        "failed_validation": 3,
-        "failed": 1,
+        "complete_draft_needs_review": 1,
+        "generated_needs_review": 4,
         "blocked_source_review": 1
       }
     },
@@ -11955,17 +12001,17 @@
       "bookId": "connectplus-primary5-supplement",
       "totalUnits": 4,
       "statuses": {
-        "failed_validation": 1,
-        "blocked_source_review": 2,
-        "failed": 1
+        "generated_needs_review": 2,
+        "blocked_source_review": 2
       }
     },
     {
       "bookId": "connectplus-primary6-supplement",
       "totalUnits": 4,
       "statuses": {
-        "failed_validation": 2,
+        "generated_needs_review": 1,
         "failed": 1,
+        "failed_validation": 1,
         "blocked_source_review": 1
       }
     },
@@ -12038,7 +12084,7 @@
       "bookId": "primary4-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "generated_needs_review": 5,
+        "complete_draft_needs_review": 5,
         "blocked_source_review": 1
       }
     },
@@ -12053,9 +12099,9 @@
       "bookId": "primary6-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "blocked_source_review": 4,
-        "failed": 1,
-        "failed_validation": 1
+        "failed_validation": 1,
+        "blocked_source_review": 3,
+        "generated_needs_review": 2
       }
     },
     {
@@ -12086,54 +12132,54 @@
   ],
   "sectionCoverage": {
     "vocabulary": {
-      "unitsWithItems": 43,
-      "totalItems": 234,
-      "validItems": 234
+      "unitsWithItems": 52,
+      "totalItems": 288,
+      "validItems": 288
     },
     "vocabulary_questions": {
-      "unitsWithItems": 43,
-      "totalItems": 129,
-      "validItems": 129
+      "unitsWithItems": 52,
+      "totalItems": 160,
+      "validItems": 160
     },
     "grammar": {
-      "unitsWithItems": 43,
-      "totalItems": 65,
-      "validItems": 65
+      "unitsWithItems": 52,
+      "totalItems": 84,
+      "validItems": 84
     },
     "grammar_questions": {
-      "unitsWithItems": 43,
-      "totalItems": 129,
-      "validItems": 129
+      "unitsWithItems": 52,
+      "totalItems": 159,
+      "validItems": 159
     },
     "reading": {
-      "unitsWithItems": 43,
-      "totalItems": 92,
-      "validItems": 92
+      "unitsWithItems": 52,
+      "totalItems": 115,
+      "validItems": 115
     },
     "listening": {
-      "unitsWithItems": 43,
-      "totalItems": 88,
-      "validItems": 88
+      "unitsWithItems": 52,
+      "totalItems": 109,
+      "validItems": 109
     },
     "speaking": {
-      "unitsWithItems": 43,
-      "totalItems": 43,
-      "validItems": 43
+      "unitsWithItems": 52,
+      "totalItems": 52,
+      "validItems": 52
     },
     "games": {
-      "unitsWithItems": 43,
-      "totalItems": 87,
-      "validItems": 87
+      "unitsWithItems": 52,
+      "totalItems": 107,
+      "validItems": 107
     },
     "comprehensive_test": {
-      "unitsWithItems": 43,
-      "totalItems": 430,
-      "validItems": 430
+      "unitsWithItems": 52,
+      "totalItems": 520,
+      "validItems": 520
     }
   },
   "autoContinuation": {
     "scheduled": false,
-    "chainDepth": 2,
+    "chainDepth": 0,
     "reason": "automatic dispatch is unavailable until main is the repository default branch; remaining candidates stay saved"
   }
 }

@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:31:23.195Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.8-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary6-student-term1",
+  "sourceFilename": "English_Primary6_T1 (1).pdf",
+  "grade": "Primary 6",
+  "unitNumber": 3,
+  "unitTitle": "Jobs that Help the Community",
+  "sourcePdfRange": {
+    "start": 37,
+    "end": 53
+  },
+  "sourceCoverage": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+  ],
+  "sourceFingerprint": "a849964185c49808b12a2007773a02c946c6365f75ed3523977e8af097499907",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Jobs that Help the Community",
+    "expectedRange": {
+      "start": 37,
+      "end": 53,
+      "totalPages": 17
+    },
+    "recordedCoverage": {
+      "totalPages": 17,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 40,
+      "sourceItems": 34,
+      "supplementaryItems": 6,
+      "vocabularyCount": 10,
+      "questionsCount": 18
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:31:23.195Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u3-voc-1",
+          "content": {
+            "word": "community",
+            "arabicMeaning": "مجتمع",
+            "example": "A community is a group of people who live or work together in the same place.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-2",
+          "content": {
+            "word": "research",
+            "arabicMeaning": "بحث / يبحث",
+            "example": "Students do research to look for information and learn more about jobs.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-3",
+          "content": {
+            "word": "vehicles",
+            "arabicMeaning": "مركبات",
+            "example": "Cars, buses, and bikes are vehicles that people use to travel.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-4",
+          "content": {
+            "word": "emergency",
+            "arabicMeaning": "حالة طوارئ",
+            "example": "An emergency is a sudden situation that needs quick help.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-5",
+          "content": {
+            "word": "brave",
+            "arabicMeaning": "شجاع",
+            "example": "Paramedics and firefighters are brave because they are not afraid to do difficult things.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-6",
+          "content": {
+            "word": "traffic officer",
+            "arabicMeaning": "ضابط مرور",
+            "example": "The traffic officer helps people cross the road safely.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-7",
+          "content": {
+            "word": "delivery person",
+            "arabicMeaning": "عامل توصيل",
+            "example": "A delivery person brings food or packages to places.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-8",
+          "content": {
+            "word": "mechanic",
+            "arabicMeaning": "ميكانيكي",
+            "example": "A mechanic fixes cars and other vehicles when they break down.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-9",
+          "content": {
+            "word": "water resources engineer",
+            "arabicMeaning": "مهندس موارد مائية",
+            "example": "Water resources engineers make sure people get clean water.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-voc-10",
+          "content": {
+            "word": "tailor",
+            "arabicMeaning": "خياط",
+            "example": "The tailor made a beautiful dress for the celebration.",
+            "origin": "source",
+            "sourcePdfPage": 45
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u3-vq-1",
+          "content": {
+            "question": "A person who brings food or packages to people's homes is a ________.",
+            "options": [
+              "tailor",
+              "delivery person",
+              "mechanic",
+              "traffic officer"
+            ],
+            "correctAnswer": "delivery person",
+            "reason": "A delivery person is responsible for transporting and delivering parcels and meals.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-vq-2",
+          "content": {
+            "question": "Water resources engineers work hard to make sure people get ________.",
+            "options": [
+              "fast cars",
+              "clean water",
+              "new clothes",
+              "quiet roads"
+            ],
+            "correctAnswer": "clean water",
+            "reason": "According to the unit text, water resources engineers provide and ensure clean water.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-vq-3",
+          "content": {
+            "question": "What is the meaning of the word 'vehicles'?",
+            "options": [
+              "Things people wear",
+              "Things people use to travel",
+              "Tools to plant flowers",
+              "Kinds of medicines"
+            ],
+            "correctAnswer": "Things people use to travel",
+            "reason": "Page 37 defines vehicles as things that people use to travel, like cars, buses, and bikes.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-vq-4",
+          "content": {
+            "question": "Paramedics are very important because they help people in ________.",
+            "options": [
+              "emergencies",
+              "holidays",
+              "gardens",
+              "classrooms"
+            ],
+            "correctAnswer": "emergencies",
+            "reason": "Page 38 notes that paramedics help people who face sudden medical emergencies.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Language in Use: Expressing Ability",
+      "items": [
+        {
+          "itemId": "u3-gram-1",
+          "content": {
+            "rule": "Can / Can't + Infinitive",
+            "explanation": "We use 'can' or 'can't' followed by the base form (infinitive) of the verb to talk about present ability or inability.",
+            "example": "I can bring some garbage bags to clean the park.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-gram-2",
+          "content": {
+            "rule": "Verb to be (am/is/are) + able to + Infinitive",
+            "explanation": "We use 'am / is / are + able to' followed by the base infinitive verb to show ability in the present.",
+            "example": "She is able to speak with the traffic officer.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u3-gq-1",
+          "content": {
+            "question": "My sister is ________ ride a bike to school.",
+            "options": [
+              "able to",
+              "can",
+              "able",
+              "can to"
+            ],
+            "correctAnswer": "able to",
+            "reason": "The structure 'is able to' followed by an infinitive is used to express ability with the verb to be.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-gq-2",
+          "content": {
+            "question": "They ________ cross the busy street safely without a traffic officer.",
+            "options": [
+              "can't",
+              "not can",
+              "aren't able",
+              "can't to"
+            ],
+            "correctAnswer": "can't",
+            "reason": "'Can't' is followed directly by the base verb 'cross' without 'to'.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-gq-3",
+          "content": {
+            "question": "________ they clean the playground today? - Yes, they can.",
+            "options": [
+              "Are",
+              "Can",
+              "Do",
+              "Is"
+            ],
+            "correctAnswer": "Can",
+            "reason": "The short answer 'Yes, they can' indicates that the question starts with the modal verb 'Can'.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-gq-4",
+          "content": {
+            "question": "I am able ________ fast because I train every week.",
+            "options": [
+              "run",
+              "to run",
+              "running",
+              "ran"
+            ],
+            "correctAnswer": "to run",
+            "reason": "The phrase 'able' must be followed by 'to' and the infinitive verb form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension: The Proud Rose",
+      "items": [
+        {
+          "itemId": "u3-rd-pass-1",
+          "content": {
+            "passage": "Once upon a time, in a dry desert far away, there lived a beautiful rose. She had soft red petals that sparkled in the sunlight and gave off a sweet, lovely smell. Every creature in the desert admired her beauty, and the rose knew it. She was very proud of how she looked and believed she was the most special plant in the desert. Growing next to the rose was an old, rough cactus. He was covered in long, sharp thorns and didn't have any flowers or bright colors. The rose didn't like the cactus at all. She looked at him every day and thought he was unpleasant to look at. \"Why do you have so many thorns?\" she would ask. \"You're so rough and unpleasant to look at.\" Even though the cactus never said anything mean back, the rose kept making fun of him. Seasons passed, and one year, the summer was much hotter than usual. The sun shone, and the desert grew even drier. All the small plants began to dry up. Soon, the beautiful rose started to lose her color. Her petals became dry and weak. She was very thirsty, but there was no water anywhere. One day, the rose saw a small bird fly down and gently peck at the cactus. The bird drank some water from inside the cactus and flew away, happy and refreshed. The rose was surprised. She didn't know the cactus had water inside. Feeling embarrassed, the rose spoke to the cactus. \"I'm sorry for the way I treated you,\" she said. \"I didn't know you were so strong and helpful. Could you please give me some water?\" The kind cactus smiled and shared his water with the rose. Slowly, the rose came back to life. From that day on, she never judged anyone by how they looked again.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-rd-q-1",
+          "content": {
+            "question": "Why did the rose dislike the cactus at the beginning?",
+            "options": [
+              "Because he took all her water",
+              "Because he had sharp thorns and looked rough",
+              "Because he was taller than her",
+              "Because he refused to talk to her"
+            ],
+            "correctAnswer": "Because he had sharp thorns and looked rough",
+            "reason": "The text states that the rose thought the cactus was unpleasant to look at because of his sharp thorns and rough appearance.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-rd-q-2",
+          "content": {
+            "question": "How did the rose realize that the cactus had water inside?",
+            "options": [
+              "She read about it in a book",
+              "The cactus told her proudly",
+              "She saw a bird peck at him and drink water",
+              "Rain fell on the cactus stems"
+            ],
+            "correctAnswer": "She saw a bird peck at him and drink water",
+            "reason": "The rose watched a small bird fly down, peck gently at the cactus, and drink stored water.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-rd-q-3",
+          "content": {
+            "question": "What is the main moral of 'The Proud Rose'?",
+            "options": [
+              "Cacti cannot survive in the desert",
+              "Never judge others simply by how they look",
+              "Birds always know where to find food",
+              "Roses are more important than other plants"
+            ],
+            "correctAnswer": "Never judge others simply by how they look",
+            "reason": "At the conclusion, the rose learns to never judge anyone by their appearance after the cactus kindly saves her life.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension: Helping Our Community",
+      "items": [
+        {
+          "itemId": "u3-lis-sc-1",
+          "content": {
+            "script": "Hady: Look at the traffic near our school. It is so noisy and dangerous in the morning! Salma: I agree. The cars drive too fast, and students can't cross the road easily. Hady: Let's ask our teacher if we can make posters to hang around the street. Salma: That's a wonderful idea! We can make signs that say 'Drive slowly near the school.' Hady: Yes, and we can also encourage students to walk or ride bikes instead of coming in cars. Salma: When we all help, things get better for our whole community.",
+            "origin": "supplementary",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3-lis-q-1",
+          "content": {
+            "question": "What is the problem with the traffic near the school?",
+            "options": [
+              "It is too quiet",
+              "It is noisy and dangerous",
+              "There are no cars at all",
+              "The street is closed for construction"
+            ],
+            "correctAnswer": "It is noisy and dangerous",
+            "reason": "The speakers describe the traffic near their school as noisy and dangerous.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-lis-q-2",
+          "content": {
+            "question": "What do the students want to make to solve the traffic issue?",
+            "options": [
+              "Posters and warning signs",
+              "A new school playground",
+              "A video documentary",
+              "A set of toy vehicles"
+            ],
+            "correctAnswer": "Posters and warning signs",
+            "reason": "They suggest asking their teacher to let them create posters and signs telling drivers to slow down.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice: Community Roles",
+      "items": [
+        {
+          "itemId": "u3-spk-dia-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Omar",
+                "text": "I am doing research about different jobs that help our community. What kind of job would you like to do, Youssef?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Youssef",
+                "text": "I want to be a mechanic because I really enjoy fixing vehicles and helping people keep their cars safe.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Salma",
+                "text": "That is great! I want to be a paramedic because they are brave and help sick or injured people during emergencies.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Omar",
+                "text": "I want to become a water resources engineer so I can make sure everyone in our community has clean drinking water.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Skill Games",
+      "items": [
+        {
+          "itemId": "u3-game-1",
+          "content": {
+            "gameName": "Job Match Challenge",
+            "description": "Read the community helper clue and pick the correct job title.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Who designs new school buildings, hospitals, and community centers?",
+            "options": [
+              "An architect",
+              "A tailor",
+              "A street cleaner",
+              "A delivery person"
+            ],
+            "correctAnswer": "An architect",
+            "reason": "Architects plan and design buildings like schools and community facilities.",
+            "origin": "supplementary",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3-game-2",
+          "content": {
+            "gameName": "Grammar Power Up",
+            "description": "Choose the grammatically correct phrase showing ability.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which sentence correctly demonstrates present ability?",
+            "options": [
+              "We are able to collect all the plastic bottles.",
+              "We can to collect all the plastic bottles.",
+              "We able collect all the plastic bottles.",
+              "We are can collect all the plastic bottles."
+            ],
+            "correctAnswer": "We are able to collect all the plastic bottles.",
+            "reason": "The correct structure requires 'are able to' followed by the base infinitive 'collect'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 3 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "u3-test-1",
+          "content": {
+            "question": "A person who repairs and fixes broken vehicles is a ________.",
+            "options": [
+              "mechanic",
+              "tailor",
+              "teacher",
+              "traffic officer"
+            ],
+            "correctAnswer": "mechanic",
+            "reason": "Mechanics specialize in inspecting and repairing vehicles such as cars and buses.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-2",
+          "content": {
+            "question": "What is the job of a traffic officer?",
+            "options": [
+              "Deliver letters to houses",
+              "Help people cross the road safely",
+              "Design modern houses",
+              "Provide clean drinking water"
+            ],
+            "correctAnswer": "Help people cross the road safely",
+            "reason": "Page 39 explains that a traffic officer directs traffic and helps pedestrians cross streets safely.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-3",
+          "content": {
+            "question": "She hurt her hand yesterday, so she ________ carry heavy boxes today.",
+            "options": [
+              "can't",
+              "able to",
+              "isn't",
+              "can"
+            ],
+            "correctAnswer": "can't",
+            "reason": "'Can't' correctly shows present inability followed directly by the base verb 'carry'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u3-test-4",
+          "content": {
+            "question": "Salma and Hana ________ able to finish their project before dinner.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "correctAnswer": "are",
+            "reason": "Plural subjects like 'Salma and Hana' take 'are' in the 'are able to' construction.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-5",
+          "content": {
+            "question": "What happened to the rose during the very hot summer in the desert?",
+            "options": [
+              "She grew stronger and grew fruit",
+              "Her petals became dry and she became weak",
+              "She flew away to another garden",
+              "She helped the cactus find water"
+            ],
+            "correctAnswer": "Her petals became dry and she became weak",
+            "reason": "Due to the extreme heat and lack of rain, the rose lost her color and became dry and weak.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-6",
+          "content": {
+            "question": "What did the kind cactus do when the rose apologized?",
+            "options": [
+              "He laughed at her",
+              "He shared his stored water with her",
+              "He asked her to leave the desert",
+              "He turned his back on her"
+            ],
+            "correctAnswer": "He shared his stored water with her",
+            "reason": "The cactus smiled generously and gave water to the thirsty rose.",
+            "origin": "source",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-7",
+          "content": {
+            "question": "Dr. Mostafa El-Sayed used gold nanoparticles to help doctors detect and treat ________.",
+            "options": [
+              "cancer",
+              "broken bones",
+              "eye problems",
+              "heart failure"
+            ],
+            "correctAnswer": "cancer",
+            "reason": "The biography on page 46 states that Dr. Mostafa El-Sayed's research uses gold nanoparticles against cancer.",
+            "origin": "source",
+            "sourcePdfPage": 46
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-8",
+          "content": {
+            "question": "To reduce food waste in the community, families should ________.",
+            "options": [
+              "buy more food than they can eat",
+              "throw away all leftovers immediately",
+              "plan meals and store food properly",
+              "refuse to donate extra food to food banks"
+            ],
+            "correctAnswer": "plan meals and store food properly",
+            "reason": "Page 48 lists planning meals and storing food properly as effective solutions to food waste.",
+            "origin": "source",
+            "sourcePdfPage": 48
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-9",
+          "content": {
+            "question": "Where should people throw their rubbish to keep the community clean?",
+            "options": [
+              "On the grass in the park",
+              "In the trash bin",
+              "Near the school gate",
+              "In the street gutter"
+            ],
+            "correctAnswer": "In the trash bin",
+            "reason": "Page 51 emphasizes throwing rubbish into the trash bin to maintain a clean environment.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u3-test-10",
+          "content": {
+            "question": "________ you speak English well? - Yes, I can.",
+            "options": [
+              "Can",
+              "Are",
+              "Do",
+              "Is"
+            ],
+            "correctAnswer": "Can",
+            "reason": "The modal auxiliary 'Can' matches the affirmative answer 'Yes, I can'.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

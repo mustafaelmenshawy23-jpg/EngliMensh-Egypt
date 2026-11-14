@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:20:52.151Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary4-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_4_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 4",
+  "unitNumber": 2,
+  "unitTitle": "Plants and animals",
+  "sourcePdfRange": {
+    "start": 49,
+    "end": 84
+  },
+  "sourceCoverage": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sourceFingerprint": "50152aa7d19de2f7610988f4d59cc7301c3449673a96051282b06795c71a55eb",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Plants and animals",
+    "expectedRange": {
+      "start": 49,
+      "end": 84,
+      "totalPages": 36
+    },
+    "recordedCoverage": {
+      "totalPages": 36,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 29,
+      "supplementaryItems": 2,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:20:52.151Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_01",
+          "content": {
+            "word": "blue whale",
+            "arabicMeaning": "الحوت الأزرق",
+            "example": "The blue whale is the biggest animal in the world.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_02",
+          "content": {
+            "word": "grasshopper",
+            "arabicMeaning": "الجراد",
+            "example": "A grasshopper can jump more than a meter.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_03",
+          "content": {
+            "word": "predator",
+            "arabicMeaning": "حيوان مفترس",
+            "example": "A predator is an animal that hunts and eats other animals.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_04",
+          "content": {
+            "word": "water lily",
+            "arabicMeaning": "زنبق الماء",
+            "example": "The water lily grows in water and has a flat leaf.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_05",
+          "content": {
+            "word": "echolocation",
+            "arabicMeaning": "تحديد الموقع بالصدى",
+            "example": "Bats fly fast at night using echolocation.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What do we call an animal that hunts and eats other animals?",
+            "options": [
+              "prey",
+              "predator",
+              "habitat",
+              "reptile"
+            ],
+            "correctAnswer": "predator",
+            "reason": "A predator is defined as an animal that hunts and consumes other living creatures.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Animals that do not have a backbone are called...",
+            "options": [
+              "vertebrates",
+              "mammals",
+              "invertebrates",
+              "reptiles"
+            ],
+            "correctAnswer": "invertebrates",
+            "reason": "Invertebrates are defined as animals without a backbone.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Special skills like echolocation allow bats to fly fast and find food at...",
+            "options": [
+              "noon",
+              "night",
+              "morning",
+              "afternoon"
+            ],
+            "correctAnswer": "night",
+            "reason": "Bats hunt for food at night using echolocation to navigate.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "gram_01",
+          "content": {
+            "rule": "Comparative Adjectives",
+            "explanation": "When comparing two people, animals, or things using a short adjective, add -er to the adjective followed by than.",
+            "example": "The African elephant is bigger than the Asian elephant.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_02",
+          "content": {
+            "rule": "Superlative Adjectives",
+            "explanation": "When comparing one item against a whole group using a short adjective, place 'the' before the adjective and add -est to the adjective.",
+            "example": "The blue whale is the biggest animal in the world.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_03",
+          "content": {
+            "rule": "Adverbs of Manner",
+            "explanation": "Adverbs of manner describe how an action happens. Most regular adverbs add -ly to the adjective, while irregular ones like fast or hard keep their form.",
+            "example": "Snails move slowly.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "The cheetah is __________ than the horse.",
+            "options": [
+              "fast",
+              "faster",
+              "fastest",
+              "the fastest"
+            ],
+            "correctAnswer": "faster",
+            "reason": "When comparing two animals, we use short adjective + er + than.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "The bee hummingbird is the __________ bird in the world.",
+            "options": [
+              "small",
+              "smaller",
+              "smallest",
+              "smaller than"
+            ],
+            "correctAnswer": "smallest",
+            "reason": "The superlative structure 'the + short adj + est' is used when comparing one against all.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "Snails move very __________.",
+            "options": [
+              "slow",
+              "slowly",
+              "slower",
+              "slowest"
+            ],
+            "correctAnswer": "slowly",
+            "reason": "An adverb of manner (slowly) is required to describe how the action verb 'move' occurs.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_passage_01",
+          "content": {
+            "passage": "In the natural world, there are some enormous animals, and some tiny ones! The biggest animal on land is a mammal: the African elephant. The African elephant is bigger than the Asian elephant. The biggest animal in the world is also a mammal, but it lives in the sea. It's the blue whale, and it can be up to 30 meters long. In fact, they are the biggest animals that have ever lived on Earth!",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q01",
+          "content": {
+            "question": "Where does the biggest animal in the world live?",
+            "options": [
+              "On land",
+              "In trees",
+              "In the sea",
+              "In caves"
+            ],
+            "correctAnswer": "In the sea",
+            "reason": "The text states that the blue whale lives in the sea and is the biggest animal in the world.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Skills",
+      "items": [
+        {
+          "itemId": "listen_script_01",
+          "content": {
+            "script": "Dad, I don't know what to write for my project! said Sami sadly. I have to find out about some animals, but I don't know which animals to choose. Why don't you write about invertebrates? asked Sami's dad. More than 90% of all animals are invertebrates.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "listen_q01",
+          "content": {
+            "question": "What percentage of all animals are invertebrates?",
+            "options": [
+              "More than 50%",
+              "More than 70%",
+              "More than 90%",
+              "Less than 10%"
+            ],
+            "correctAnswer": "More than 90%",
+            "reason": "Sami's dad mentions that more than 90% of all animals are invertebrates.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_01",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Nourhan",
+                "text": "How are you, Hamza?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Hamza",
+                "text": "Fine. I learned a lot from our lesson today.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Nourhan",
+                "text": "What are vertebrates?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Hamza",
+                "text": "They are animals with a backbone.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_01",
+          "content": {
+            "gameName": "Animal Category Challenge",
+            "description": "Select the correct category for each creature to earn points.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which of these animals is an invertebrate?",
+            "options": [
+              "African elephant",
+              "Jellyfish",
+              "Cheetah",
+              "Ostrich"
+            ],
+            "correctAnswer": "Jellyfish",
+            "reason": "Jellyfish do not have a backbone, which makes them invertebrates.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_02",
+          "content": {
+            "gameName": "Adverb Master",
+            "description": "Choose the right adverb to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Dragonflies can fly very __________.",
+            "options": [
+              "fastly",
+              "fast",
+              "faster",
+              "fastest"
+            ],
+            "correctAnswer": "fast",
+            "reason": "'Fast' is an irregular adverb that stays 'fast' when describing an action.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Evaluation",
+      "items": [
+        {
+          "itemId": "test_q01",
+          "content": {
+            "question": "The African elephant is __________ than the Asian elephant.",
+            "options": [
+              "big",
+              "bigger",
+              "biggest",
+              "the biggest"
+            ],
+            "correctAnswer": "bigger",
+            "reason": "Comparative degree requires 'bigger than' when comparing two land animals.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q02",
+          "content": {
+            "question": "Which bird is the smallest bird in the world?",
+            "options": [
+              "Ostrich",
+              "Bee hummingbird",
+              "Falcon",
+              "Parrot"
+            ],
+            "correctAnswer": "Bee hummingbird",
+            "reason": "The text states the bee hummingbird is about 5.5 cm long and is the smallest bird.",
+            "origin": "source",
+            "sourcePdfPage": 49
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q03",
+          "content": {
+            "question": "An animal that is caught and eaten by another animal is called a...",
+            "options": [
+              "predator",
+              "prey",
+              "mammal",
+              "reptile"
+            ],
+            "correctAnswer": "prey",
+            "reason": "By definition, prey is the animal that is caught and eaten by a predator.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q04",
+          "content": {
+            "question": "Reptiles spend time in the sun because they are...",
+            "options": [
+              "warm-blooded",
+              "cold-blooded",
+              "soft-bodied",
+              "invertebrates"
+            ],
+            "correctAnswer": "cold-blooded",
+            "reason": "Cold-blooded animals rely on the sun to warm their body temperature.",
+            "origin": "source",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q05",
+          "content": {
+            "question": "Spider is not an insect because it has __________ legs.",
+            "options": [
+              "six",
+              "eight",
+              "four",
+              "ten"
+            ],
+            "correctAnswer": "eight",
+            "reason": "Insects have six legs while spiders have eight legs and belong to arachnids.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q06",
+          "content": {
+            "question": "Adding white to a color makes it...",
+            "options": [
+              "darker",
+              "lighter",
+              "brighter",
+              "harder"
+            ],
+            "correctAnswer": "lighter",
+            "reason": "According to the art color mixing rule, white lightens a shade.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q07",
+          "content": {
+            "question": "She plays the piano very __________.",
+            "options": [
+              "good",
+              "well",
+              "better",
+              "best"
+            ],
+            "correctAnswer": "well",
+            "reason": "'Well' is the correct irregular adverb form of 'good' to describe how she plays.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q08",
+          "content": {
+            "question": "The water lily has roots that spread __________ the water.",
+            "options": [
+              "under",
+              "above",
+              "over",
+              "between"
+            ],
+            "correctAnswer": "under",
+            "reason": "Water lily roots grow and spread under the surface of the water.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q09",
+          "content": {
+            "question": "A small habitat like a pond or a single tree is called a...",
+            "options": [
+              "macro-habitat",
+              "micro-habitat",
+              "desert",
+              "forest"
+            ],
+            "correctAnswer": "micro-habitat",
+            "reason": "A micro-habitat is defined as a localized small area like a pond.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "Bats are unique mammals because they can...",
+            "options": [
+              "swim underwater",
+              "fly",
+              "lay eggs",
+              "change colors"
+            ],
+            "correctAnswer": "fly",
+            "reason": "Bats are stated to be the only mammals capable of flying.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

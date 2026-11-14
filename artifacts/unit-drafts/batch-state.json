@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "cursorIndex": 39,
-  "chainDepth": 2,
+  "cursorIndex": 61,
+  "chainDepth": 0,
   "attempts": {
     "connectplus-primary1-supplement-unit-6": {
       "status": "blocked_source_review",
@@ -96,7 +96,7 @@
       "missingPages": []
     },
     "primary4-student-term1-unit-6": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "10a5d403280309dafdf0b616eb76147e441b9e96bbe70556bd1bf03f139f2484",
       "lastAttemptAt": "2026-11-13T07:04:57.846Z",
       "qualityScore": 100,
@@ -479,13 +479,58 @@
       "missingPages": []
     },
     "connectplus-primary6-supplement-unit-1": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "f16997e0184739669f46471c8bd38684aa77de690134f53716b10d56b8cef788",
-      "lastAttemptAt": "2026-11-11T09:33:38.507Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 20/100):\nMissing required section: vocabulary_questions\nMissing required section: grammar\nMissing required section: grammar_questions\nMissing required section: reading\nMissing required section: listening\nMissing required section: speaking\nMissing required section: games\nMissing required section: comprehensive_test\nSection vocabulary_questions requires at least 3 item(s); found 0\nSection grammar requires at least 1 item(s); found 0\nSection grammar_questions requires at least 3 item(s); found 0\nSection reading requires at least 2 item(s); found 0\nSection listening requires at least 2 item(s); found 0\nSection speaking requires at least 1 item(s); found 0\nSection games requires at least 2 item(s); found 0\nSection comprehensive_test requires at least 10 item(s); found 0\nvoc-1: vocabulary phrase is abnormally long (2125 words): \"clayVar clay clay clay clay clay clay cl...\"\nvoc-1: vocabulary word contains corrupted, abnormally long token: \"clayVar clay clay clay clay clay clay clay cl...\" (length 10704)\nvoc-1: missing Arabic meaning\nvoc-1: missing or incomplete English example sentence\nSection reading must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection reading must include at least one comprehension question with an answer key.\nSection listening must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection listening must include at least one comprehension question with an answer key.\nSpeaking section must include at least one dialogue with two or more speaker turns.\nGames section must vary across at least two supported skills.\nDraft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:33:05.935Z",
+      "qualityScore": 100,
+      "itemCount": 32,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 7,
+          "validItems": 7,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary6-supplement-unit-4": {
       "status": "blocked_source_review",
@@ -2595,7 +2640,7 @@
       }
     },
     "connectplus-primary2-supplement-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "4b3b4f4445b76306173ccffade26fa4c073cbd96c39f71387f20342a20bac3a8",
       "lastAttemptAt": "2026-11-13T06:36:06.386Z",
       "qualityScore": 90,
@@ -3080,26 +3125,12 @@
       "missingPages": []
     },
     "primary6-student-term1-unit-1": {
-      "status": "blocked_source_review",
+      "status": "failed_validation",
       "sourceSignature": "52662be7e3c6394f5069d58fe0e9954ef1177835f01c294bc1430c380481a088",
-      "lastAttemptAt": "2026-11-11T07:09:31.579Z",
-      "issues": [
-        "PDF p.9: Excessive character repetition detected: \"EEEEEEEEEE\"",
-        "PDF p.9: Repeated substring pattern detected: \"EEEEEEEEEEEEEEE\"",
-        "PDF p.10: Page content is unusually short (25 chars, 4 words)",
-        "PDF p.12: Repeated substring pattern detected: \"............\"",
-        "PDF p.13: Excessive character repetition detected: \"OOOOOO\"",
-        "PDF p.13: Repeated substring pattern detected: \"e ee ee ee e\"",
-        "PDF p.14: Repeated substring pattern detected: \"............\"",
-        "PDF p.15: Contains 1 abnormally long unbroken word(s) (e.g. \"OIOSOSOOOOTOSOOTOOOeOOTOSOOOSO...\", length 46)",
-        "PDF p.15: Excessive character repetition detected: \"00000\"",
-        "PDF p.17: Repeated substring pattern detected: \"...............\"",
-        "PDF p.19: Repeated substring pattern detected: \"..........\"",
-        "PDF p.22: Repeated substring pattern detected: \"...............\""
-      ],
-      "blockedPageCount": 1,
-      "needsReviewPageCount": 8,
-      "missingPages": []
+      "lastAttemptAt": "2026-11-14T07:25:12.735Z",
+      "retryAfter": "2026-11-14T07:25:12.735Z",
+      "attemptCount": 1,
+      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"What do carpenters make in Damietta?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "primary6-student-term1-unit-2": {
       "status": "blocked_source_review",
@@ -3664,7 +3695,7 @@
       }
     },
     "connectplus-primary2-supplement-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "d085a5d666744091fc723592a3b6c02d0dc4c90abee7d3ba31513484f2b9f940",
       "lastAttemptAt": "2026-11-13T06:35:15.510Z",
       "qualityScore": 90,
@@ -3726,7 +3757,7 @@
       "error": "Generator exited with code 1: Gemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"Where do you go to buy food?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
     },
     "primary4-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "dc48f0ed6884f84b1c8bdef4c50346f031c7c8672380e14ea1dd95faa7706f72",
       "lastAttemptAt": "2026-11-13T06:56:02.994Z",
       "qualityScore": 95,
@@ -3780,7 +3811,7 @@
       }
     },
     "primary4-student-term1-unit-2": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "5b53dda42bbbca56de0d79257be6def4b20ea176f4c354aacb27f0cb917a2eac",
       "lastAttemptAt": "2026-11-13T06:57:27.514Z",
       "qualityScore": 100,
@@ -3834,7 +3865,7 @@
       }
     },
     "primary4-student-term1-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "17a5b0886b04905c760dc4f2a3744f81e946de79040c052df1fe3b6aead9e6ef",
       "lastAttemptAt": "2026-11-13T07:00:32.414Z",
       "qualityScore": 100,
@@ -3888,7 +3919,7 @@
       }
     },
     "primary4-student-term1-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "153dfdfced1e1a0c71bc34c7ead74615f61893b79e27196b97e10f435a34de98",
       "lastAttemptAt": "2026-11-13T07:01:53.273Z",
       "qualityScore": 85,
@@ -3942,7 +3973,7 @@
       }
     },
     "connectplus-primary4-supplement-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "1c7ec7cd965f9cab27cc4a719c31ac620ee4d7cfa96046e34d6bca4d7ddded3d",
       "lastAttemptAt": "2026-11-13T07:05:53.045Z",
       "qualityScore": 85,
@@ -3996,76 +4027,436 @@
       }
     },
     "connectplus-primary4-supplement-unit-2": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "50152aa7d19de2f7610988f4d59cc7301c3449673a96051282b06795c71a55eb",
-      "lastAttemptAt": "2026-11-11T07:57:48.894Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: 051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 40/100):\nSection reading requires at least 2 item(s); found 1\nSection listening requires at least 2 item(s); found 1\nvocab_1: missing Arabic meaning\nvocab_1: missing or incomplete English example sentence\nvocab_2: missing Arabic meaning\nvocab_2: missing or incomplete English example sentence\nvocab_3: missing Arabic meaning\nvocab_3: missing or incomplete English example sentence\nvocab_4: missing Arabic meaning\nvocab_4: missing or incomplete English example sentence\nvocab_5: missing Arabic meaning\nvocab_5: missing or incomplete English example sentence\nvocab_q1: options must be an array\nvocab_q1: missing or incomplete explanation/reason for answer\nvocab_q2: options must be an array\nvocab_q2: missing or incomplete explanation/reason for answer\nvocab_q3: options must be an array\nvocab_q3: missing or incomplete explanation/reason for answer\ngram_1: missing or incomplete grammar explanation\ngram_1: missing or incomplete grammar example\ngram_2: missing or incomplete grammar explanation\ngram_2: missing or incomplete grammar example\ngram_3: missing or incomplete grammar explanation\ngram_3: missing or incomplete grammar example\ngram_q1: options must be an array\ngram_q1: missing or incomplete explanation/reason for answer\ngram_q2: options must be an array\ngram_q2: missing or incomplete explanation/reason for answer\ngram_q3: options must be an array\ngram_q3: missing or incomplete explanation/reason for answer\nGame item game_1 is missing gameName or description\nGame item game_1 has no supported difficulty classification\nGame item game_1 must use the currently supported playable gameMode multiple_choice\ngame_1: question prompt is missing or too short (0 chars)\ngame_1: options must be an array\ngame_1: missing or incomplete explanation/reason for answer\nGame item game_2 is missing gameName or description\nGame item game_2 has no supported difficulty classification\nGame item game_2 must use the currently supported playable gameMode multiple_choice\ngame_2: question prompt is missing or too short (0 chars)\ngame_2: options must be an array\ngame_2: missing or incomplete explanation/reason for answer\ntest_q1: options must be an array\ntest_q1: missing or incomplete explanation/reason for answer\ntest_q2: options must be an array\ntest_q2: missing or incomplete explanation/reason for answer\ntest_q3: options must be an array\ntest_q3: missing or incomplete explanation/reason for answer\ntest_q4: options must be an array\ntest_q4: missing or incomplete explanation/reason for answer\ntest_q5: options must be an array\ntest_q5: missing or incomplete explanation/reason for answer\ntest_q6: options must be an array\ntest_q6: missing or incomplete explanation/reason for answer\ntest_q7: options must be an array\ntest_q7: missing or incomplete explanation/reason for answer\ntest_q8: options must be an array\ntest_q8: missing or incomplete explanation/reason for answer\ntest_q9: options must be an array\ntest_q9: missing or incomplete explanation/reason for answer\ntest_q10: options must be an array\ntest_q10: missing or incomplete explanation/reason for answer\nSection listening must include at least one comprehension question with an answer key.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:20:52.195Z",
+      "qualityScore": 85,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary4-supplement-unit-3": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "81615576c7d33b9ab3c469dd2b6c2a61182212009a5fa1bd4793e4f2837144a9",
-      "lastAttemptAt": "2026-11-11T09:01:02.797Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 20/100):\nMissing required section: vocabulary_questions\nMissing required section: grammar\nMissing required section: grammar_questions\nMissing required section: reading\nMissing required section: listening\nMissing required section: speaking\nMissing required section: games\nMissing required section: comprehensive_test\nSection vocabulary_questions requires at least 3 item(s); found 0\nSection grammar requires at least 1 item(s); found 0\nSection grammar_questions requires at least 3 item(s); found 0\nSection reading requires at least 2 item(s); found 0\nSection listening requires at least 2 item(s); found 0\nSection speaking requires at least 1 item(s); found 0\nSection games requires at least 2 item(s); found 0\nSection comprehensive_test requires at least 10 item(s); found 0\nvocab_1: vocabulary phrase is abnormally long (2091 words): \"governorate Athletic area administrative...\"\nvocab_1: vocabulary word contains corrupted, abnormally long token: \"governorate Athletic area administrative regi...\" (length 19113)\nvocab_1: missing Arabic meaning\nvocab_1: missing or incomplete English example sentence\nSection reading must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection reading must include at least one comprehension question with an answer key.\nSection listening must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection listening must include at least one comprehension question with an answer key.\nSpeaking section must include at least one dialogue with two or more speaker turns.\nGames section must vary across at least two supported skills.\nDraft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:21:41.193Z",
+      "qualityScore": 85,
+      "itemCount": 36,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary4-supplement-unit-4": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "0291d816b7af9d7c70cfe298b3fdd5797dd8300d6285b93550d329f44b5effa2",
-      "lastAttemptAt": "2026-11-11T09:02:16.810Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: rated draft failed quality validation (score: 40/100):\nSection reading requires at least 2 item(s); found 1\nSection listening requires at least 2 item(s); found 1\nu4-voc-1: vocabulary phrase is abnormally long (2930 words): \"wool来源 صوف wool machine machine dyed yar...\"\nu4-voc-1: vocabulary word contains corrupted, abnormally long token: \"wool来源 صوف wool machine machine dyed yarn dye...\" (length 15767)\nu4-voc-1: missing Arabic meaning\nu4-voc-1: missing or incomplete English example sentence\nu4-vocq-1: options must be an array\nu4-vocq-1: missing or incomplete explanation/reason for answer\nu4-vocq-2: options must be an array\nu4-vocq-2: missing or incomplete explanation/reason for answer\nu4-vocq-3: options must be an array\nu4-vocq-3: missing or incomplete explanation/reason for answer\nu4-gram-1: missing or incomplete grammar explanation\nu4-gram-1: missing or incomplete grammar example\nu4-gramq-1: options must be an array\nu4-gramq-1: missing or incomplete explanation/reason for answer\nu4-gramq-2: options must be an array\nu4-gramq-2: missing or incomplete explanation/reason for answer\nu4-gramq-3: options must be an array\nu4-gramq-3: missing or incomplete explanation/reason for answer\nGame item u4-game-1 is missing gameName or description\nGame item u4-game-1 has no supported difficulty classification\nGame item u4-game-1 must use the currently supported playable gameMode multiple_choice\nu4-game-1: question prompt is missing or too short (0 chars)\nu4-game-1: options must be an array\nu4-game-1: missing or incomplete explanation/reason for answer\nGame item u4-game-2 is missing gameName or description\nGame item u4-game-2 has no supported difficulty classification\nGame item u4-game-2 must use the currently supported playable gameMode multiple_choice\nu4-game-2: question prompt is missing or too short (0 chars)\nu4-game-2: options must be an array\nu4-game-2: missing or incomplete explanation/reason for answer\nGame item u4-game-3 is missing gameName or description\nGame item u4-game-3 has no supported difficulty classification\nGame item u4-game-3 must use the currently supported playable gameMode multiple_choice\nu4-game-3: question prompt is missing or too short (0 chars)\nu4-game-3: options must be an array\nu4-game-3: missing or incomplete explanation/reason for answer\nu4-test-1: options must be an array\nu4-test-1: missing or incomplete explanation/reason for answer\nu4-test-2: options must be an array\nu4-test-2: missing or incomplete explanation/reason for answer\nu4-test-3: options must be an array\nu4-test-3: missing or incomplete explanation/reason for answer\nu4-test-4: options must be an array\nu4-test-4: missing or incomplete explanation/reason for answer\nu4-test-5: options must be an array\nu4-test-5: missing or incomplete explanation/reason for answer\nu4-test-6: options must be an array\nu4-test-6: missing or incomplete explanation/reason for answer\nu4-test-7: options must be an array\nu4-test-7: missing or incomplete explanation/reason for answer\nu4-test-8: options must be an array\nu4-test-8: missing or incomplete explanation/reason for answer\nu4-test-9: options must be an array\nu4-test-9: missing or incomplete explanation/reason for answer\nu4-test-10: options must be an array\nu4-test-10: missing or incomplete explanation/reason for answer\nSection listening must include at least one comprehension question with an answer key.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:22:35.709Z",
+      "qualityScore": 85,
+      "itemCount": 38,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 8,
+          "validItems": 8,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary4-supplement-unit-5": {
-      "status": "failed",
+      "status": "generated_needs_review",
       "sourceSignature": "30ce56dc611e585eb9b419e3b3ae2a265ea438d38f6c4b44e4bb5c6c9000eb01",
-      "lastAttemptAt": "2026-11-11T09:06:04.095Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: l fuels - الوقود الحفري - Crude oil...\"\nvoc-03: vocabulary word contains corrupted, abnormally long token: \"Fossil fuels - الوقود الحفري - Crude oil - ال...\" (length 137)\nvoc-03: missing Arabic meaning\nvoc-03: missing or incomplete English example sentence\nvoc-04: vocabulary phrase is abnormally long (33 words): \"transportation - وسائل النقل - desert ci...\"\nvoc-04: vocabulary word contains corrupted, abnormally long token: \"transportation - وسائل النقل - desert city - ...\" (length 176)\nvoc-04: missing Arabic meaning\nvoc-04: missing or incomplete English example sentence\nvoc-q-01: options must be an array\nvoc-q-01: missing or incomplete explanation/reason for answer\nvoc-q-02: options must be an array\nvoc-q-02: missing or incomplete explanation/reason for answer\nvoc-q-03: options must be an array\nvoc-q-03: missing or incomplete explanation/reason for answer\nvoc-q-04: options must be an array\nvoc-q-04: missing or incomplete explanation/reason for answer\ngram-01: missing or incomplete grammar explanation\ngram-01: missing or incomplete grammar example\ngram-02: missing or incomplete grammar explanation\ngram-02: missing or incomplete grammar example\ngram-03: missing or incomplete grammar explanation\ngram-03: missing or incomplete grammar example\ngram-q-01: options must be an array\ngram-q-01: missing or incomplete explanation/reason for answer\ngram-q-02: options must be an array\ngram-q-02: missing or incomplete explanation/reason for answer\ngram-q-03: options must be an array\ngram-q-03: missing or incomplete explanation/reason for answer\ngram-q-04: options must be an array\ngram-q-04: missing or incomplete explanation/reason for answer\ngram-q-05: options must be an array\ngram-q-05: missing or incomplete explanation/reason for answer\nGame item game-01 is missing gameName or description\nGame item game-01 has no supported difficulty classification\ngame-01: options must be an array\ngame-01: missing or incomplete explanation/reason for answer\nGame item game-02 is missing gameName or description\nGame item game-02 has no supported difficulty classification\ngame-02: options must be an array\ngame-02: missing or incomplete explanation/reason for answer\nGame item game-03 is missing gameName or description\nGame item game-03 has no supported difficulty classification\ngame-03: options must be an array\ngame-03: missing or incomplete explanation/reason for answer\ntest-q-01: options must be an array\ntest-q-01: missing or incomplete explanation/reason for answer\ntest-q-02: options must be an array\ntest-q-02: missing or incomplete explanation/reason for answer\ntest-q-03: options must be an array\ntest-q-03: missing or incomplete explanation/reason for answer\ntest-q-04: options must be an array\ntest-q-04: missing or incomplete explanation/reason for answer\ntest-q-05: options must be an array\ntest-q-05: missing or incomplete explanation/reason for answer\ntest-q-06: options must be an array\ntest-q-06: missing or incomplete explanation/reason for answer\ntest-q-07: options must be an array\ntest-q-07: missing or incomplete explanation/reason for answer\ntest-q-08: options must be an array\ntest-q-08: missing or incomplete explanation/reason for answer\ntest-q-09: options must be an array\ntest-q-09: missing or incomplete explanation/reason for answer\ntest-q-10: options must be an array\ntest-q-10: missing or incomplete explanation/reason for answer\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:22:56.974Z",
+      "qualityScore": 100,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary5-supplement-unit-1": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "58d5e8ae93e24e78be322d640bb19a11c41cd06770d8137a8911f097daf6ea4f",
-      "lastAttemptAt": "2026-11-11T09:19:01.622Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: ion was aborted due to timeout. Retrying in 8s...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 40/100):\nSection reading requires at least 2 item(s); found 1\nSection listening requires at least 2 item(s); found 1\nvocab_1: vocabulary phrase is abnormally long (2178 words): \"marine ecosystem protocol ecosystem mari...\"\nvocab_1: vocabulary word contains corrupted, abnormally long token: \"marine ecosystem protocol ecosystem marine ec...\" (length 18743)\nvocab_1: missing Arabic meaning\nvocab_1: missing or incomplete English example sentence\nvocab_2: missing Arabic meaning\nvocab_2: missing or incomplete English example sentence\nvocab_3: missing Arabic meaning\nvocab_3: missing or incomplete English example sentence\nvocab_q1: options must be an array\nvocab_q1: missing or incomplete explanation/reason for answer\nvocab_q2: options must be an array\nvocab_q2: missing or incomplete explanation/reason for answer\nvocab_q3: options must be an array\nvocab_q3: missing or incomplete explanation/reason for answer\ngram_1: missing or incomplete grammar explanation\ngram_1: missing or incomplete grammar example\ngram_2: missing or incomplete grammar explanation\ngram_2: missing or incomplete grammar example\ngram_q1: options must be an array\ngram_q1: missing or incomplete explanation/reason for answer\ngram_q2: options must be an array\ngram_q2: missing or incomplete explanation/reason for answer\ngram_q3: options must be an array\ngram_q3: missing or incomplete explanation/reason for answer\nGame item game_1 is missing gameName or description\nGame item game_1 has no supported difficulty classification\nGame item game_1 must use the currently supported playable gameMode multiple_choice\ngame_1: options must be an array\ngame_1: missing or incomplete explanation/reason for answer\nGame item game_2 is missing gameName or description\nGame item game_2 has no supported difficulty classification\nGame item game_2 must use the currently supported playable gameMode multiple_choice\ngame_2: options must be an array\ngame_2: missing or incomplete explanation/reason for answer\ntest_q1: options must be an array\ntest_q1: missing or incomplete explanation/reason for answer\ntest_q2: options must be an array\ntest_q2: missing or incomplete explanation/reason for answer\ntest_q3: options must be an array\ntest_q3: missing or incomplete explanation/reason for answer\ntest_q4: options must be an array\ntest_q4: missing or incomplete explanation/reason for answer\ntest_q5: options must be an array\ntest_q5: missing or incomplete explanation/reason for answer\ntest_q6: options must be an array\ntest_q6: missing or incomplete explanation/reason for answer\ntest_q7: options must be an array\ntest_q7: missing or incomplete explanation/reason for answer\ntest_q8: options must be an array\ntest_q8: missing or incomplete explanation/reason for answer\ntest_q9: options must be an array\ntest_q9: missing or incomplete explanation/reason for answer\ntest_q10: options must be an array\ntest_q10: missing or incomplete explanation/reason for answer\nSection listening must include at least one comprehension question with an answer key.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:23:32.288Z",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary5-supplement-unit-3": {
-      "status": "failed",
+      "status": "generated_needs_review",
       "sourceSignature": "b0d31c325f3e0009b585e252478e15e3be3caf80faa103b63db265d1b82b50ec",
-      "lastAttemptAt": "2026-11-11T09:20:13.706Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: issing or incomplete explanation/reason for answer\nvq-2: options must be an array\nvq-2: missing or incomplete explanation/reason for answer\nvq-3: options must be an array\nvq-3: missing or incomplete explanation/reason for answer\nvq-4: options must be an array\nvq-4: missing or incomplete explanation/reason for answer\nvq-5: options must be an array\nvq-5: missing or incomplete explanation/reason for answer\nvq-6: options must be an array\nvq-6: missing or incomplete explanation/reason for answer\ngram-1: missing or incomplete grammar explanation\ngram-1: missing or incomplete grammar example\ngram-2: missing or incomplete grammar explanation\ngram-2: missing or incomplete grammar example\ngq-1: options must be an array\ngq-1: missing or incomplete explanation/reason for answer\ngq-2: options must be an array\ngq-2: missing or incomplete explanation/reason for answer\ngq-3: options must be an array\ngq-3: missing or incomplete explanation/reason for answer\ngq-4: options must be an array\ngq-4: missing or incomplete explanation/reason for answer\ngq-5: options must be an array\ngq-5: missing or incomplete explanation/reason for answer\ngq-6: options must be an array\ngq-6: missing or incomplete explanation/reason for answer\ngq-7: options must be an array\ngq-7: missing or incomplete explanation/reason for answer\nGame item game-1 is missing gameName or description\nGame item game-1 has no supported difficulty classification\nGame item game-1 must use the currently supported playable gameMode multiple_choice\ngame-1: question prompt is missing or too short (0 chars)\ngame-1: options must be an array\ngame-1: missing or incomplete explanation/reason for answer\nGame item game-2 is missing gameName or description\nGame item game-2 has no supported difficulty classification\nGame item game-2 must use the currently supported playable gameMode multiple_choice\ngame-2: question prompt is missing or too short (0 chars)\ngame-2: options must be an array\ngame-2: missing or incomplete explanation/reason for answer\nGame item game-3 is missing gameName or description\nGame item game-3 has no supported difficulty classification\nGame item game-3 must use the currently supported playable gameMode multiple_choice\ngame-3: question prompt is missing or too short (0 chars)\ngame-3: options must be an array\ngame-3: missing or incomplete explanation/reason for answer\ntest-1: options must be an array\ntest-1: missing or incomplete explanation/reason for answer\ntest-2: options must be an array\ntest-2: missing or incomplete explanation/reason for answer\ntest-3: options must be an array\ntest-3: missing or incomplete explanation/reason for answer\ntest-4: options must be an array\ntest-4: missing or incomplete explanation/reason for answer\ntest-5: options must be an array\ntest-5: missing or incomplete explanation/reason for answer\ntest-6: options must be an array\ntest-6: missing or incomplete explanation/reason for answer\ntest-7: options must be an array\ntest-7: missing or incomplete explanation/reason for answer\ntest-8: options must be an array\ntest-8: missing or incomplete explanation/reason for answer\ntest-9: options must be an array\ntest-9: missing or incomplete explanation/reason for answer\ntest-10: options must be an array\ntest-10: missing or incomplete explanation/reason for answer\nSection listening must include at least one comprehension question with an answer key.\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:25:00.234Z",
+      "qualityScore": 100,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary6-student-term1-unit-3": {
-      "status": "failed",
+      "status": "generated_needs_review",
       "sourceSignature": "a849964185c49808b12a2007773a02c946c6365f75ed3523977e8af097499907",
-      "lastAttemptAt": "2026-11-11T09:21:50.595Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: vq-2: missing or incomplete explanation/reason for answer\nvq-3: options must be an array\nvq-3: missing or incomplete explanation/reason for answer\nvq-4: options must be an array\nvq-4: missing or incomplete explanation/reason for answer\nvq-5: options must be an array\nvq-5: missing or incomplete explanation/reason for answer\ngram-1: missing or incomplete grammar explanation\ngram-1: missing or incomplete grammar example\ngram-2: missing or incomplete grammar explanation\ngram-2: missing or incomplete grammar example\ngram-3: missing or incomplete grammar explanation\ngram-3: missing or incomplete grammar example\ngq-1: options must be an array\ngq-1: missing or incomplete explanation/reason for answer\ngq-2: options must be an array\ngq-2: missing or incomplete explanation/reason for answer\ngq-3: options must be an array\ngq-3: missing or incomplete explanation/reason for answer\ngq-4: options must be an array\ngq-4: missing or incomplete explanation/reason for answer\nread-2: options must be an array\nread-2: missing or incomplete explanation/reason for answer\nread-3: options must be an array\nread-3: missing or incomplete explanation/reason for answer\nlist-2: options must be an array\nlist-2: missing or incomplete explanation/reason for answer\nlist-3: options must be an array\nlist-3: missing or incomplete explanation/reason for answer\nlist-4: options must be an array\nlist-4: missing or incomplete explanation/reason for answer\nGame item gm-1 is missing gameName or description\nGame item gm-1 has no supported difficulty classification\nGame item gm-1 must use the currently supported playable gameMode multiple_choice\ngm-1: question prompt is missing or too short (0 chars)\ngm-1: options must be an array\ngm-1: missing or incomplete explanation/reason for answer\nGame item gm-2 is missing gameName or description\nGame item gm-2 has no supported difficulty classification\nGame item gm-2 must use the currently supported playable gameMode multiple_choice\ngm-2: question prompt is missing or too short (0 chars)\ngm-2: options must be an array\ngm-2: missing or incomplete explanation/reason for answer\nGame item gm-3 is missing gameName or description\nGame item gm-3 has no supported difficulty classification\nGame item gm-3 must use the currently supported playable gameMode multiple_choice\ngm-3: question prompt is missing or too short (0 chars)\ngm-3: options must be an array\ngm-3: missing or incomplete explanation/reason for answer\ntest-1: options must be an array\ntest-1: missing or incomplete explanation/reason for answer\ntest-2: options must be an array\ntest-2: missing or incomplete explanation/reason for answer\ntest-3: options must be an array\ntest-3: missing or incomplete explanation/reason for answer\ntest-4: options must be an array\ntest-4: missing or incomplete explanation/reason for answer\ntest-5: options must be an array\ntest-5: missing or incomplete explanation/reason for answer\ntest-6: options must be an array\ntest-6: missing or incomplete explanation/reason for answer\ntest-7: options must be an array\ntest-7: missing or incomplete explanation/reason for answer\ntest-8: options must be an array\ntest-8: missing or incomplete explanation/reason for answer\ntest-9: options must be an array\ntest-9: missing or incomplete explanation/reason for answer\ntest-10: options must be an array\ntest-10: missing or incomplete explanation/reason for answer\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:31:23.203Z",
+      "qualityScore": 100,
+      "itemCount": 40,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary6-student-term1-unit-4": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "41e828461507a46ab57c0353f994f29a2882c01459c08dcf75a7df79234d90cd",
-      "lastAttemptAt": "2026-11-11T09:22:01.660Z",
-      "attemptCount": 1,
-      "error": "Generator exited with code 1: Gemini model gemini-3.8-flash unavailable; trying next supported fallback model...\nGemini model gemini-3.6-flash unavailable; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 20/100):\nMissing required section: vocabulary_questions\nMissing required section: grammar\nMissing required section: grammar_questions\nMissing required section: reading\nMissing required section: listening\nMissing required section: speaking\nMissing required section: games\nMissing required section: comprehensive_test\nSection vocabulary_questions requires at least 3 item(s); found 0\nSection grammar requires at least 1 item(s); found 0\nSection grammar_questions requires at least 3 item(s); found 0\nSection reading requires at least 2 item(s); found 0\nSection listening requires at least 2 item(s); found 0\nSection speaking requires at least 1 item(s); found 0\nSection games requires at least 2 item(s); found 0\nSection comprehensive_test requires at least 10 item(s); found 0\nv1: vocabulary word contains corrupted, abnormally long token: \"materialသမုဒ္ဒရာပစ္စည်းများmaterialmaterialma...\" (length 7928)\nv1: missing Arabic meaning\nv1: missing or incomplete English example sentence\nSection reading must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection reading must include at least one comprehension question with an answer key.\nSection listening must include a complete passage/script; use origin=supplementary if none is printed in the book.\nSection listening must include at least one comprehension question with an answer key.\nSpeaking section must include at least one dialogue with two or more speaker turns.\nGames section must vary across at least two supported skills.\nDraft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1051:9\n\nNode.js v22.23.4\n",
-      "requeuedAt": "2026-11-12T00:00:00.000Z",
-      "requeueReason": "Generator prompt/schema and batch retry handling repaired on main; retrying this unit against the same indexed PDF range."
+      "lastAttemptAt": "2026-11-14T07:31:57.085Z",
+      "qualityScore": 85,
+      "itemCount": 33,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "connectplus-primary6-supplement-unit-2": {
       "status": "failed",

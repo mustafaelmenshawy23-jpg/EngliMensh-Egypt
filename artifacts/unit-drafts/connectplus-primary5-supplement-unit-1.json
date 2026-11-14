@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:23:32.250Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary5-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_5_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 5",
+  "unitNumber": 1,
+  "unitTitle": "Life in my world",
+  "sourcePdfRange": {
+    "start": 8,
+    "end": 45
+  },
+  "sourceCoverage": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "sourceFingerprint": "58d5e8ae93e24e78be322d640bb19a11c41cd06770d8137a8911f097daf6ea4f",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Life in my world",
+    "expectedRange": {
+      "start": 8,
+      "end": 45,
+      "totalPages": 38
+    },
+    "recordedCoverage": {
+      "totalPages": 38,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 26,
+      "supplementaryItems": 4,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:23:32.250Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "mangrove trees",
+            "arabicMeaning": "أشجار المانجروف",
+            "example": "Mangrove trees can grow in salt water along the coast.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "ecosystem",
+            "arabicMeaning": "نظام بيئي",
+            "example": "An ecosystem is all the animals and plants in an area.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "shallow water",
+            "arabicMeaning": "مياه ضحلة",
+            "example": "Little fish swim in shallow water to stay safe from bigger fish.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "circulatory system",
+            "arabicMeaning": "الجهاز الدوري",
+            "example": "Our circulatory system carries blood around our bodies.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "pollen",
+            "arabicMeaning": "حبوب اللقاح",
+            "example": "Bees carry pollen from one flower to another to help make seeds.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What do bees carry from flower to flower to help trees make seeds?",
+            "options": [
+              "pollen",
+              "sand",
+              "rocks",
+              "water"
+            ],
+            "correctAnswer": "pollen",
+            "reason": "Bees carry pollen between plants, which enables them to produce seeds.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Water that is not deep is called ____ water.",
+            "options": [
+              "shallow",
+              "hard",
+              "thick",
+              "fresh"
+            ],
+            "correctAnswer": "shallow",
+            "reason": "Shallow water means water that has little depth.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Which of the following is a non-living thing in an ecosystem?",
+            "options": [
+              "rocks",
+              "butterflies",
+              "trees",
+              "lizards"
+            ],
+            "correctAnswer": "rocks",
+            "reason": "Rocks are non-living components, whereas plants and animals are living things.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Explanations",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Relative Pronouns (who / which / where)",
+            "explanation": "Use 'who' for people, 'which' for animals or objects, and 'where' for places to connect two sentences.",
+            "example": "Cairo is a city where my cousin lives.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Linking Words (and, but, so, because)",
+            "explanation": "Use 'and' for addition, 'but' for contrast, 'so' to show results, and 'because' to state reasons.",
+            "example": "Doaa wants to keep her heart healthy, so she does exercise.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Nabq is a National Park ____ you can see mangrove forests.",
+            "options": [
+              "where",
+              "who",
+              "which",
+              "when"
+            ],
+            "correctAnswer": "where",
+            "reason": "The relative pronoun 'where' is used to refer to a location or place.",
+            "origin": "source",
+            "sourcePdfPage": 14
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Noha is the girl ____ has new shoes.",
+            "options": [
+              "who",
+              "which",
+              "where",
+              "whose"
+            ],
+            "correctAnswer": "who",
+            "reason": "The relative pronoun 'who' is used when referring to a person.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "I went to bed early ____ I was very tired.",
+            "options": [
+              "because",
+              "so",
+              "but",
+              "and"
+            ],
+            "correctAnswer": "because",
+            "reason": "'Because' introduces the clause that gives the reason for an action.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "Nabq is a very big National Park in South Sinai. Along the coast here, there are 4.8 kilometers of mangrove forest, which is the largest in the Red Sea. We went there to learn why mangrove forests are so important for the marine ecosystem. When we arrived at the beach, we saw trees growing out of the sea! Most trees can't grow in salt water, but mangrove trees can. They have amazing roots which grow high out of the water. These roots help them get oxygen. When I touched the trees' leaves, they felt very thick! These special leaves stop the plants losing water when it's very hot.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "How do thick leaves help mangrove trees in hot weather?",
+            "options": [
+              "They stop the plants losing water.",
+              "They produce more salt.",
+              "They attract bigger fish.",
+              "They make the ground dry."
+            ],
+            "correctAnswer": "They stop the plants losing water.",
+            "reason": "The text explains that thick leaves prevent water loss during very hot temperature.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Narrator: Keeping your heart healthy is essential for staying strong. When you exercise regularly, such as running, swimming, or riding a bike, your heart works better. Your heart pumps blood throughout your body, supplying minerals, nutrients, and oxygen to all your organs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "According to the listening script, what does regular exercise help your heart do?",
+            "options": [
+              "Work better and pump blood efficiently",
+              "Stop beating",
+              "Lose oxygen",
+              "Get weaker"
+            ],
+            "correctAnswer": "Work better and pump blood efficiently",
+            "reason": "The script notes that regular exercise improves heart function and blood circulation.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Kingfisher",
+                "text": "You look sad. What's the matter?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Lizard",
+                "text": "People came and cut down some trees. The trees protected the worms and the fish we eat, but now it's difficult to find food.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Kingfisher",
+                "text": "Oh no! I'm hungry.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Ecosystem Explorer",
+            "description": "Identify the correct living component of an ecosystem.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which item is a living organism in a marine ecosystem?",
+            "options": [
+              "Fish",
+              "Sand",
+              "Rock",
+              "Sunlight"
+            ],
+            "correctAnswer": "Fish",
+            "reason": "Fish are animals, making them living organisms in a marine ecosystem.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Relative Pronoun Quiz",
+            "description": "Choose the correct relative pronoun to connect sentences.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "This is the car ____ my dad bought last week.",
+            "options": [
+              "which",
+              "who",
+              "where",
+              "when"
+            ],
+            "correctAnswer": "which",
+            "reason": "'Which' is used when connecting sentences about objects like cars.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "Mangrove trees are special because they can grow in ____ water.",
+            "options": [
+              "salt",
+              "cold",
+              "dirty",
+              "frozen"
+            ],
+            "correctAnswer": "salt",
+            "reason": "Unlike most trees, mangroves are adapted to live in salt water.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "The leaves of mangrove trees take four times more ____ from the air than other trees.",
+            "options": [
+              "carbon dioxide",
+              "oxygen",
+              "nitrogen",
+              "water"
+            ],
+            "correctAnswer": "carbon dioxide",
+            "reason": "Mangrove leaves absorb significant amounts of carbon dioxide, aiding against global warming.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "Cairo is the city ____ my cousin lives.",
+            "options": [
+              "where",
+              "who",
+              "which",
+              "when"
+            ],
+            "correctAnswer": "where",
+            "reason": "'Where' connects the sentence by referring back to the place Cairo.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "Which of the following words is an abstract noun?",
+            "options": [
+              "beauty",
+              "flower",
+              "tree",
+              "river"
+            ],
+            "correctAnswer": "beauty",
+            "reason": "'Beauty' represents a quality or concept, making it an abstract noun.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "In our circulatory system, arteries move blood ____ the heart.",
+            "options": [
+              "away from",
+              "into",
+              "towards",
+              "around"
+            ],
+            "correctAnswer": "away from",
+            "reason": "Arteries are responsible for transporting blood away from the heart.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Veins in the human body carry blood ____ the heart.",
+            "options": [
+              "to",
+              "away from",
+              "out of",
+              "far from"
+            ],
+            "correctAnswer": "to",
+            "reason": "Veins carry blood back to the heart.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "Humans can get Vitamin D directly from ____.",
+            "options": [
+              "sunlight",
+              "water",
+              "rocks",
+              "soil"
+            ],
+            "correctAnswer": "sunlight",
+            "reason": "Sunlight helps human bodies synthesize Vitamin D.",
+            "origin": "source",
+            "sourcePdfPage": 27
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "In the story 'Waiting for the rain', why was Mother Lion worried when it didn't rain?",
+            "options": [
+              "Because without rain, the grass won't grow and animals lose food",
+              "Because she hated playing in the sunshine",
+              "Because the river flooded",
+              "Because there were too many trees"
+            ],
+            "correctAnswer": "Because without rain, the grass won't grow and animals lose food",
+            "reason": "Rain is needed for grass to grow, which feeds prey like rabbits.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Seleem does a lot of exercise ____ it is good for his heart.",
+            "options": [
+              "because",
+              "but",
+              "so",
+              "or"
+            ],
+            "correctAnswer": "because",
+            "reason": "'Because' introduces the explanation for doing exercise.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "You ____ look left and right before crossing the road.",
+            "options": [
+              "must",
+              "mustn't",
+              "can't",
+              "won't"
+            ],
+            "correctAnswer": "must",
+            "reason": "'Must' expresses essential obligation for safety.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
