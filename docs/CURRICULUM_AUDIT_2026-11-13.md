@@ -98,7 +98,7 @@ Unit start pages below are the indexed PDF page numbers. A unit end page is deri
 | Preparatory 3 | Commercial supplement | `Hello plus prep 3 كامل(1).pdf` | 6 | Blocked — source review: 6 | U1 My World (PDF p.3; Blocked — source review)<br>U2 Changes (PDF p.66; Blocked — source review)<br>U3 Ambitions (PDF p.106; Blocked — source review)<br>U4 Traditional Stories (PDF p.157; Blocked — source review)<br>U5 News and Media (PDF p.205; Blocked — source review)<br>U6 Literature — The Prisoner of Zenda (PDF p.254; Blocked — source review) |
 | Preparatory 2 | Assessment | `Performance Tasks Prep 2-OnlineMaterials.PDF` | 0 | No unit records | — |
 
-## 4. Interactive-unit draft coverage (before run 43379629520)
+## 5. Historical interactive-unit draft coverage (before run 43379629520)
 
 The saved batch state contained 125 candidate unit records:
 
@@ -129,7 +129,7 @@ Thus, 35/125 units (28%) had a nine-section draft at this snapshot. These are dr
 
 The section counts prove structural coverage only. They do not prove that every OCR transcription is visually correct, every reading passage is complete, every answer is pedagogically correct, or every generated activity has been teacher-approved.
 
-## 5. Source/provenance safeguards
+## 6. Source/provenance safeguards
 
 - Source text is marked `origin=source` only when it is present in the extracted PDF text; newly written explanations, questions, scripts, role-plays, and games are marked `origin=supplementary`.
 - Listening scripts without a printed transcript are supplementary, not represented as original recordings or textbook transcripts.
@@ -137,7 +137,7 @@ The section counts prove structural coverage only. They do not prove that every 
 - Original PDFs are not edited or deleted.
 - The app imports only JSON files from `src/data/approved-unit-drafts/` that have approved status, a named reviewer, a timestamp, a matching source fingerprint, and explicit visual-review confirmation. The 35 generated drafts are not bundled into the student app until this review process is completed.
 
-## 6. TTS, speaking, and microphone audit
+## 7. TTS, speaking, and microphone audit
 
 Current implementation findings:
 
@@ -150,7 +150,7 @@ Current implementation findings:
 
 **Not yet verified:** no physical Android device test has been performed in this audit. The actual voices exposed by the user's installed TTS engine, their audible gender, voice switching, and microphone/TTS interaction must be tested on-device. A successful JavaScript test or APK build is not proof of audible voice matching.
 
-## 7. Current run and reproducible evidence
+## 8. Current run and reproducible evidence
 
 - [Current all-books batch run 43379629520](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43379629520) — started from `main`; processing up to 10 resumable candidates.
 - [Previous completed batch run 43179774166](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43179774166) — successful; its [artifact 13925803983](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43179774166/artifacts/13925803983) contains the full extracted page cache, draft files, batch state, and source-review queue.
@@ -158,7 +158,7 @@ Current implementation findings:
 
 The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, not `main`. GitHub therefore does not allow the current `main` workflow to use `workflow_dispatch` for automatic chaining. Progress is saved on `main`; a safe bounded push-chain is the preferred code-side workaround, rather than silently changing the repository's default branch.
 
-## 8. Remaining work
+## 9. Remaining work
 
 1. Continue the 90 non-complete unit records (56 source-blocked, 19 failed, 15 validation-failed) in resumable batches; retry transient API failures separately from content-validation failures.
 2. Recover or obtain the missing Prep 2 performance-task PDF LFS object.
