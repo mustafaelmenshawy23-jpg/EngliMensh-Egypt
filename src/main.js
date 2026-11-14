@@ -96,6 +96,7 @@ const state = {
   ttsVoicePrefs: { male: '', female: '' },
   availableTtsVoices: [],
   ttsVoiceStatus: 'loading',
+  speechRecognitionActive: false,
   quizAnswers: {},
   shuffledOptions: {},
   game1: { selectedWord: null, selectedPic: null, matches: [], score: 0 },
@@ -398,6 +399,10 @@ function getSpeakerVoice(gender) {
 
 // Use the selected native/browser voice when one is available; otherwise disclose and use the system default.
 async function speakText(text, rate = null, speakerGender = null) {
+  if (state.speechRecognitionActive) {
+    console.warn('Text-to-speech is paused while microphone recognition is active.');
+    return;
+  }
   const phrase = String(text || '').trim();
   if (!phrase) return;
   const speechRate = Number(rate || state.listeningSpeed || 0.85);
@@ -533,6 +538,7 @@ async function runSpeechPractice(button) {
   resultNode.classList.remove('is-success', 'is-retry');
   try {
     await stopAudio();
+    state.speechRecognitionActive = true;
     const transcript = await recognizeSpeechText();
     const match = speechTextMatchPercent(target, transcript);
     resultNode.textContent = 'Recognized: “' + transcript + '” · Word match: ' + match + '% · ' +
@@ -543,6 +549,7 @@ async function runSpeechPractice(button) {
     resultNode.textContent = error?.message || 'Speech recognition could not start. Please try again.';
     resultNode.classList.add('is-retry');
   } finally {
+    state.speechRecognitionActive = false;
     button.disabled = false;
     button.textContent = originalLabel;
   }
