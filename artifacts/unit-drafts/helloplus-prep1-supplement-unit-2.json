@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T08:02:44.801Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "helloplus-prep1-supplement",
+  "sourceFilename": "المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 2,
+  "unitTitle": "The world of work",
+  "sourcePdfRange": {
+    "start": 48,
+    "end": 90
+  },
+  "sourceCoverage": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "sourceFingerprint": "9c15a4984961792e826a72b17b4dacdc1c963e2bc25549e5773a1e8c56a71b8a",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "The world of work",
+    "expectedRange": {
+      "start": 48,
+      "end": 90,
+      "totalPages": 43
+    },
+    "recordedCoverage": {
+      "totalPages": 43,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 24,
+      "supplementaryItems": 5,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:02:44.800Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "re-wilder",
+            "arabicMeaning": "متخصص في إعادة تأهيل الحياة البرية",
+            "example": "Re-wilders look after the countryside and build parks with trees.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "health navigator",
+            "arabicMeaning": "مرشد العناية الصحية",
+            "example": "We will speak to health navigators about new technology in hospitals.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "pilot",
+            "arabicMeaning": "طيار",
+            "example": "A pilot flies a plane to different countries.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "brave",
+            "arabicMeaning": "شجاع",
+            "example": "A firefighter has to be brave because the job is dangerous.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_5",
+          "content": {
+            "word": "vet",
+            "arabicMeaning": "طبيب بيطري",
+            "example": "My friend took her sick cat to the vet.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u2_vq_1",
+          "content": {
+            "question": "A person who flies a plane as a job is a/an .......... .",
+            "options": [
+              "engineer",
+              "pilot",
+              "vet",
+              "store clerk"
+            ],
+            "correctAnswer": "pilot",
+            "reason": "By definition, a pilot is someone who flies a plane.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_2",
+          "content": {
+            "question": "Someone who is good at using their imagination to make or solve things is .......... .",
+            "options": [
+              "creative",
+              "lazy",
+              "unkind",
+              "sick"
+            ],
+            "correctAnswer": "creative",
+            "reason": "Creative describes someone who uses imagination effectively.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_3",
+          "content": {
+            "question": "If your pet animal is sick, you should take it to a .......... .",
+            "options": [
+              "health navigator",
+              "designer",
+              "vet",
+              "police officer"
+            ],
+            "correctAnswer": "vet",
+            "reason": "A vet is a doctor who takes care of sick animals and pets.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Structure: First Conditional",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "First Conditional (If + Present Simple, Will / Won't + Infinitive)",
+            "explanation": "We use the first conditional to talk about possible future actions/events and their likely results. The 'if' clause uses the Present Simple tense, and the main clause uses 'will' or 'won't' followed by the base verb (infinitive).",
+            "example": "If students work hard, they will get good exam results.",
+            "origin": "source",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u2_gq_1",
+          "content": {
+            "question": "If we take a taxi, we .......... there on time.",
+            "options": [
+              "will get",
+              "got",
+              "getting",
+              "were getting"
+            ],
+            "correctAnswer": "will get",
+            "reason": "The main clause of a First Conditional sentence takes 'will + infinitive' when the 'if' clause is present simple.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gq_2",
+          "content": {
+            "question": "Hala will meet her friends if she .......... her work early.",
+            "options": [
+              "finishes",
+              "finished",
+              "finishing",
+              "will finish"
+            ],
+            "correctAnswer": "finishes",
+            "reason": "The 'if' clause in a First Conditional sentence requires the Present Simple tense.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "If it rains tomorrow, we .......... play tennis outdoors.",
+            "options": [
+              "won't",
+              "didn't",
+              "haven't",
+              "couldn't"
+            ],
+            "correctAnswer": "won't",
+            "reason": "We use 'won't' (will not) in the result clause for a negative future outcome under a conditional condition.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u2_read_pass_1",
+          "content": {
+            "passage": "If students work hard, they will get good exam results. Good exam results usually help students to get good jobs, but what type of jobs will there be in the future? Technology is changing jobs in many countries. It is also creating completely new jobs. The jobs of the future will be very different from the jobs we do now. For example, doctors will use robots and not their hands to make people better. Small robots in hospitals will check our health and call for a doctor or a nurse if we have problems. We will speak to health navigators and they will tell us what health technology does and how it helps us. When we finish using things in the home, designers will find ways of using them to make new things. Re-wilders will look after the countryside and build parks with trees and other plants in places where there were factories in the past.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_q_1",
+          "content": {
+            "question": "Who will look after the countryside and build parks where factories used to be?",
+            "options": [
+              "Health navigators",
+              "Re-wilders",
+              "Store clerks",
+              "Taxi drivers"
+            ],
+            "correctAnswer": "Re-wilders",
+            "reason": "The text explicitly states that re-wilders will look after the countryside and build parks in former factory sites.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Skills",
+      "items": [
+        {
+          "itemId": "u2_list_script_1",
+          "content": {
+            "script": "Presenter: Welcome to our podcast on future jobs! Today we are discussing job requirements. Job number 1: This person needs to be careful and helpful. If you have a pet that is sick, you will need to see this person.\nSara: I know this one! Is it a vet?\nPresenter: Yes, it is! Well done! One point.\nPresenter: Here is job number 2. This person needs to be creative and fast. If you read an online magazine, this person probably designed it.\nTyler: Is it a designer?\nPresenter: Yes, it is! Well done. That is a point for each of you.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_list_q_1",
+          "content": {
+            "question": "According to the podcast presenter, what qualities does a designer need to have?",
+            "options": [
+              "Brave and loud",
+              "Creative and fast",
+              "Quiet and lazy",
+              "Strong and slow"
+            ],
+            "correctAnswer": "Creative and fast",
+            "reason": "The presenter specifically says that for job number 2 (designer), the person needs to be creative and fast.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue: Telephone Communication",
+      "items": [
+        {
+          "itemId": "u2_speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Oliver",
+                "text": "Can I speak to Elliot, please?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Elliot's mom",
+                "text": "Who's calling?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Oliver",
+                "text": "It's Oliver.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Elliot's mom",
+                "text": "Oh, hello Oliver. I'm sorry, he isn't here at the moment. He's at his cousin's house. Would you like to leave a message for him?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Oliver",
+                "text": "Yes, please. Could you tell him that it's about our project? I'd like to work on it tomorrow after school.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Job Match Challenge",
+            "description": "Select the correct profession based on the daily work description.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which professional flies an airplane to take passengers to different cities?",
+            "options": [
+              "Pilot",
+              "Chef",
+              "Nurse",
+              "Vet"
+            ],
+            "correctAnswer": "Pilot",
+            "reason": "A pilot's job is to fly aircraft.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Condition Predictor",
+            "description": "Complete the conditional sentence with the appropriate verb form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "If Tamer has enough time, he .......... his homework early.",
+            "options": [
+              "finishes",
+              "will finish",
+              "finished",
+              "would finish"
+            ],
+            "correctAnswer": "will finish",
+            "reason": "First conditional uses 'will + infinitive' in the result clause when the if-clause is in the present simple tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "u2_test_1",
+          "content": {
+            "question": "A .......... is a person whose job is to put out fires in buildings.",
+            "options": [
+              "police officer",
+              "firefighter",
+              "store clerk",
+              "re-wilder"
+            ],
+            "correctAnswer": "firefighter",
+            "reason": "Firefighters are trained to stop and extinguish dangerous fires.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_2",
+          "content": {
+            "question": "Doctors will use .......... in hospitals to assist in making patients better.",
+            "options": [
+              "robots",
+              "factories",
+              "magazines",
+              "airplanes"
+            ],
+            "correctAnswer": "robots",
+            "reason": "The reading passage explains that doctors will use medical robots to assist them in future healthcare.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_3",
+          "content": {
+            "question": "If you study hard, you .......... high marks in your exams.",
+            "options": [
+              "get",
+              "will get",
+              "got",
+              "getting"
+            ],
+            "correctAnswer": "will get",
+            "reason": "First conditional pattern: If + present simple (study) -> will + infinitive (will get).",
+            "origin": "supplementary",
+            "sourcePdfPage": 69
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_4",
+          "content": {
+            "question": "She won't catch the bus if she .......... now.",
+            "options": [
+              "doesn't leave",
+              "won't leave",
+              "didn't leave",
+              "not leave"
+            ],
+            "correctAnswer": "doesn't leave",
+            "reason": "The 'if' clause requires present simple tense (doesn't leave).",
+            "origin": "supplementary",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_5",
+          "content": {
+            "question": "A person who designs website pages and digital media is a .......... .",
+            "options": [
+              "designer",
+              "vet",
+              "pilot",
+              "health navigator"
+            ],
+            "correctAnswer": "designer",
+            "reason": "Designers create layout and artwork for printed or digital media.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_6",
+          "content": {
+            "question": "What will you do if you .......... free time this weekend?",
+            "options": [
+              "have",
+              "will have",
+              "had",
+              "having"
+            ],
+            "correctAnswer": "have",
+            "reason": "In first conditional questions, the 'if' clause takes the present simple form 'have'.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_7",
+          "content": {
+            "question": "A .......... works in a shop helping customers choose items.",
+            "options": [
+              "store clerk",
+              "pilot",
+              "scientist",
+              "engineer"
+            ],
+            "correctAnswer": "store clerk",
+            "reason": "A store clerk assists customers inside a shop.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_8",
+          "content": {
+            "question": "Doctors need good .......... skills to listen carefully to their patients' concerns.",
+            "options": [
+              "listening",
+              "cooking",
+              "driving",
+              "flying"
+            ],
+            "correctAnswer": "listening",
+            "reason": "Good listening skills enable doctors to understand patient health problems effectively.",
+            "origin": "source",
+            "sourcePdfPage": 80
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_9",
+          "content": {
+            "question": "If they travel to London, they .......... many historical places.",
+            "options": [
+              "visited",
+              "will visit",
+              "visiting",
+              "visits"
+            ],
+            "correctAnswer": "will visit",
+            "reason": "First conditional uses 'will + infinitive' for the predicted main outcome.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_10",
+          "content": {
+            "question": "When taking a phone message for a friend, you can politely ask: 'Would you like to .......... a message?'",
+            "options": [
+              "leave",
+              "make",
+              "build",
+              "design"
+            ],
+            "correctAnswer": "leave",
+            "reason": "The standard phone expression is 'leave a message'.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

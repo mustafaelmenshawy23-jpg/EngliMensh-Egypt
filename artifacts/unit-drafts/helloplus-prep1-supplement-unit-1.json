@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T08:02:16.434Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "helloplus-prep1-supplement",
+  "sourceFilename": "المعاصر_هالو_بلس_1_اعدادي_ترم_1_ذاكرولي.pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 1,
+  "unitTitle": "Friends matter",
+  "sourcePdfRange": {
+    "start": 8,
+    "end": 47
+  },
+  "sourceCoverage": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "sourceFingerprint": "ec4bd65ce3109058570ff8ef7c9cae9f1d6b02dbcbac479805392a5add0fc8b1",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Friends matter",
+    "expectedRange": {
+      "start": 8,
+      "end": 47,
+      "totalPages": 40
+    },
+    "recordedCoverage": {
+      "totalPages": 40,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 27,
+      "supplementaryItems": 2,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:02:16.433Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "honest",
+            "arabicMeaning": "أمين",
+            "example": "He is an honest person who always tells the truth.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "buddy",
+            "arabicMeaning": "صديق",
+            "example": "A welcome buddy helps a new student find their way around the school.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "wheelchair",
+            "arabicMeaning": "كرسي متحرك",
+            "example": "Sara uses a wheelchair because she cannot walk after the accident.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "timetable",
+            "arabicMeaning": "جدول مواعيد",
+            "example": "We have seven lessons on our school timetable every day.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q_1",
+          "content": {
+            "question": "A/An ... person always tells the truth.",
+            "options": [
+              "boring",
+              "honest",
+              "cruel",
+              "careless"
+            ],
+            "correctAnswer": "honest",
+            "reason": "By definition, an honest person is someone who tells the truth.",
+            "origin": "source",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q_2",
+          "content": {
+            "question": "A/An ... helps a new student to find out about the school.",
+            "options": [
+              "buddy",
+              "mirror",
+              "accident",
+              "wheelchair"
+            ],
+            "correctAnswer": "buddy",
+            "reason": "A buddy is a friendly student helper assigned to assist new students.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q_3",
+          "content": {
+            "question": "A chair with wheels used by people who cannot walk is called a ...",
+            "options": [
+              "sofa",
+              "wheelchair",
+              "boat",
+              "desk"
+            ],
+            "correctAnswer": "wheelchair",
+            "reason": "A wheelchair is a mobility device for people unable to walk.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Simple Present Tense",
+            "explanation": "Used to express habits, facts, and routines. Singular subjects take verb + s/es, while plural subjects take the base verb form.",
+            "example": "She watches TV every night.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Simple Past Tense",
+            "explanation": "Used to describe completed actions in the past. Regular verbs add -ed, while irregular verbs take their second form.",
+            "example": "We moved to a new flat last month.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram_q_1",
+          "content": {
+            "question": "We ... some sandwiches to eat for dinner yesterday.",
+            "options": [
+              "buy",
+              "bought",
+              "buying",
+              "buys"
+            ],
+            "correctAnswer": "bought",
+            "reason": "The word 'yesterday' indicates the simple past tense form 'bought'.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q_2",
+          "content": {
+            "question": "She ... to the club twice a week.",
+            "options": [
+              "go",
+              "going",
+              "gone",
+              "goes"
+            ],
+            "correctAnswer": "goes",
+            "reason": "Singular subject 'She' with repeated routine 'twice a week' requires 'goes' in simple present.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q_3",
+          "content": {
+            "question": "What ... you usually do on weekends?",
+            "options": [
+              "does",
+              "doing",
+              "are",
+              "do"
+            ],
+            "correctAnswer": "do",
+            "reason": "Simple present question with subject 'you' uses auxiliary verb 'do'.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_passage_1",
+          "content": {
+            "passage": "My friend Sara is one of the most thoughtful people I know. She loves helping others and often spends her weekends volunteering at different places. Sara is also very friendly and enjoys making new friends. In her free time, she loves to read books, especially mysteries. Every Saturday, we play basketball together. Sara is also responsible and always helps her family at home. Sara was in a car accident and now she can't walk. She uses a wheelchair, but it doesn't stop her from having fun. She's interested in everything and she often wants to try new things.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q_1",
+          "content": {
+            "question": "Why does Sara use a wheelchair?",
+            "options": [
+              "Because she was in a car accident and cannot walk.",
+              "Because she prefers sitting down while playing sports.",
+              "Because her school is too large to walk around.",
+              "Because she does not like walking with her family."
+            ],
+            "correctAnswer": "Because she was in a car accident and cannot walk.",
+            "reason": "The passage clearly states that Sara was in a car accident and now cannot walk.",
+            "origin": "source",
+            "sourcePdfPage": 15
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Tom: Hi, Harry. What do you do in your free time?\nHarry: I play board games like chess. I enjoy playing board games very much.\nTom: How often do you play chess?\nHarry: I play chess three times a week.\nTom: Where do you play chess? Do you play chess at the school club?\nHarry: Yes, I do. I play with other students in Grade 7.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "list_q_1",
+          "content": {
+            "question": "How often does Harry play chess?",
+            "options": [
+              "Once a week",
+              "Twice a week",
+              "Three times a week",
+              "Four times a week"
+            ],
+            "correctAnswer": "Three times a week",
+            "reason": "In the dialogue script, Harry states that he plays chess three times a week.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Jack",
+                "text": "Hello, Oscar! There are five new students in our class this year. Mr Jackson wants us to help them.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Oscar",
+                "text": "That's great, Jack. Why don't we give each student a welcome buddy?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Jack",
+                "text": "What's a buddy?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Oscar",
+                "text": "The word buddy means friend. We can choose buddies for the new students. They can show them around the school.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Word Power Challenge",
+            "description": "Choose the correct personality adjective to complete the description.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word describes someone who understands things easily?",
+            "options": [
+              "clever",
+              "boring",
+              "lazy",
+              "careless"
+            ],
+            "correctAnswer": "clever",
+            "reason": "A clever person can understand things easily and quickly.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Tense Master",
+            "description": "Pick the correct past form of the verb to finish the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Choose the correct verb: Last Saturday, we ... our grandparents.",
+            "options": [
+              "visited",
+              "visit",
+              "visiting",
+              "visits"
+            ],
+            "correctAnswer": "visited",
+            "reason": "'Last Saturday' requires the simple past tense verb 'visited'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q_1",
+          "content": {
+            "question": "Fred always tells me what he really thinks. He is ...",
+            "options": [
+              "lazy",
+              "cruel",
+              "honest",
+              "boring"
+            ],
+            "correctAnswer": "honest",
+            "reason": "An honest person is truthful and tells what they really think.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_2",
+          "content": {
+            "question": "We have seven lessons on our school ... each day.",
+            "options": [
+              "library",
+              "map",
+              "concert",
+              "timetable"
+            ],
+            "correctAnswer": "timetable",
+            "reason": "A timetable lists the daily schedule of school lessons.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_3",
+          "content": {
+            "question": "My friend Shady is ... . He always thinks before doing something dangerous.",
+            "options": [
+              "careful",
+              "interesting",
+              "polite",
+              "boring"
+            ],
+            "correctAnswer": "careful",
+            "reason": "Careful people think carefully before taking risks.",
+            "origin": "source",
+            "sourcePdfPage": 9
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_4",
+          "content": {
+            "question": "Did you watch anything interesting on TV last night? - No, I ...",
+            "options": [
+              "didn't",
+              "don't",
+              "wasn't",
+              "haven't"
+            ],
+            "correctAnswer": "didn't",
+            "reason": "The short negative answer to a question starting with 'Did you' is 'No, I didn't.'",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_5",
+          "content": {
+            "question": "Basel ... in his room every night.",
+            "options": [
+              "to sleep",
+              "sleep",
+              "sleeping",
+              "sleeps"
+            ],
+            "correctAnswer": "sleeps",
+            "reason": "Present simple third-person singular 'Basel' takes 'sleeps'.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_6",
+          "content": {
+            "question": "Where did you ... this mirror?",
+            "options": [
+              "buy",
+              "bought",
+              "buying",
+              "buys"
+            ],
+            "correctAnswer": "buy",
+            "reason": "The auxiliary verb 'did' in past simple questions requires the base form of the main verb.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_7",
+          "content": {
+            "question": "The synonym of the word 'kind' is ...",
+            "options": [
+              "cruel",
+              "friendly",
+              "stupid",
+              "lazy"
+            ],
+            "correctAnswer": "friendly",
+            "reason": "'Kind' and 'friendly' have similar positive meanings.",
+            "origin": "source",
+            "sourcePdfPage": 10
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_8",
+          "content": {
+            "question": "Sara is a good example for other people because she ...",
+            "options": [
+              "uses a wheelchair but still has fun and helps others",
+              "never does her schoolwork",
+              "dislikes making new friends",
+              "stays home all weekend"
+            ],
+            "correctAnswer": "uses a wheelchair but still has fun and helps others",
+            "reason": "Sara shows resilience, optimism, and kindness despite her physical challenge.",
+            "origin": "source",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_9",
+          "content": {
+            "question": "The sport where people use big birds to hunt small animals is called ...",
+            "options": [
+              "calligraphy",
+              "falconry",
+              "cricket",
+              "backgammon"
+            ],
+            "correctAnswer": "falconry",
+            "reason": "Falconry is defined as training birds of prey to hunt small animals.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_10",
+          "content": {
+            "question": "When our cousins arrived, we ... a game.",
+            "options": [
+              "play",
+              "played",
+              "playing",
+              "plays"
+            ],
+            "correctAnswer": "played",
+            "reason": "When combining two sequential past actions, simple past 'played' is used.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

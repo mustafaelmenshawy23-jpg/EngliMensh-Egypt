@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:47:46.195Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep1-student-term1",
+  "sourceFilename": "English_Prep1_T1 (1).pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 4,
+  "unitTitle": "Smart Choices",
+  "sourcePdfRange": {
+    "start": 59,
+    "end": 72
+  },
+  "sourceCoverage": [
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+  ],
+  "sourceFingerprint": "4d8002daa3c981fce6841b49598506093f5e5e16b0831dd691f86715557d47d7",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Smart Choices",
+    "expectedRange": {
+      "start": 59,
+      "end": 72,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 29,
+      "supplementaryItems": 4,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:47:46.194Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "decision",
+            "arabicMeaning": "قرار",
+            "example": "Making a smart decision is important for your future.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "evaluate",
+            "arabicMeaning": "يقيم",
+            "example": "We should evaluate all options before making a choice.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "responsible",
+            "arabicMeaning": "مسؤول",
+            "example": "Omar is a responsible student who finishes his work on time.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "careless",
+            "arabicMeaning": "مهمل",
+            "example": "Being careless can cause unnecessary mistakes.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "consequence",
+            "arabicMeaning": "نتيجة",
+            "example": "Every action has a consequence that we must accept.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "injury",
+            "arabicMeaning": "إصابة",
+            "example": "The athlete suffered a foot injury during training.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q_1",
+          "content": {
+            "question": "What is the meaning of 'consequence'?",
+            "options": [
+              "The cause of an action",
+              "The result or effect of an action",
+              "A gift from a friend",
+              "A rule in class"
+            ],
+            "correctAnswer": "The result or effect of an action",
+            "reason": "As shown on page 63, a consequence is defined as the result or effect of an action.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q_2",
+          "content": {
+            "question": "Which word is an antonym of 'wise'?",
+            "options": [
+              "Sensible",
+              "Foolish",
+              "Clever",
+              "Careful"
+            ],
+            "correctAnswer": "Foolish",
+            "reason": "Page 66 lists 'foolish' as the opposite (antonym) of 'wise'.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q_3",
+          "content": {
+            "question": "If someone acts without caring about their actions, they are being _____.",
+            "options": [
+              "responsible",
+              "careless",
+              "polite",
+              "honest"
+            ],
+            "correctAnswer": "careless",
+            "reason": "Page 62 defines careless as not caring about your actions.",
+            "origin": "source",
+            "sourcePdfPage": 62
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "First Conditional",
+            "explanation": "We use the first conditional to talk about probable results of future actions. Structure: If / When + present simple, will / won't + base verb.",
+            "example": "If you study hard, you'll pass the test.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Should / Shouldn't for Advice",
+            "explanation": "We use 'should' and 'shouldn't' followed by the infinitive verb to give advice.",
+            "example": "You should listen to your teacher carefully.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram_q_1",
+          "content": {
+            "question": "If you train well, you _____ the competition.",
+            "options": [
+              "win",
+              "won",
+              "will win",
+              "would win"
+            ],
+            "correctAnswer": "will win",
+            "reason": "The first conditional uses present simple in the if-clause and 'will + infinitive' in the main clause.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q_2",
+          "content": {
+            "question": "What should I _____ to stay healthy?",
+            "options": [
+              "do",
+              "did",
+              "done",
+              "doing"
+            ],
+            "correctAnswer": "do",
+            "reason": "Modal verbs like 'should' are followed by the base form (infinitive without to) of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q_3",
+          "content": {
+            "question": "If he _____ his homework, his teacher will be angry.",
+            "options": [
+              "doesn't do",
+              "didn't do",
+              "won't do",
+              "don't do"
+            ],
+            "correctAnswer": "doesn't do",
+            "reason": "The present simple negative for 'he' in a conditional if-clause is 'doesn't do'.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_passage_1",
+          "content": {
+            "passage": "Youssef was excited about his birthday and planned a small party after school. He invited eight close friends who had been responsible in class and finished their homework. A day before the party, two classmates asked to join. They weren't very close to Youssef, and one had been careless in class. Youssef faced a difficult decision. He thought, and said 'If I let them come, the party may become too big and make others uncomfortable. And if I say no, the two may feel left out.' He carefully thought about the positive and negative sides of each choice. In the end, Youssef made a responsible and polite decision. He explained that the party was only for close friends who had behaved well, and he encouraged the boys to be more responsible in the future. To his surprise, they understood and respected his decision. One even promised to improve. The party was a success, and Youssef felt proud and said, 'If everyone thinks well before taking a decision, they won't make mistakes.'",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q_1",
+          "content": {
+            "question": "How many friends did Youssef initially invite to his party?",
+            "options": [
+              "Two",
+              "Five",
+              "Eight",
+              "Ten"
+            ],
+            "correctAnswer": "Eight",
+            "reason": "The passage clearly states that Youssef invited eight close friends who had been responsible.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q_2",
+          "content": {
+            "question": "What main lesson did Youssef learn from his experience?",
+            "options": [
+              "Never celebrate birthdays after school",
+              "Thinking carefully before taking a decision prevents mistakes",
+              "Always invite everyone regardless of behavior",
+              "Making decisions is not important"
+            ],
+            "correctAnswer": "Thinking carefully before taking a decision prevents mistakes",
+            "reason": "Youssef concludes that thinking well before taking a decision helps avoid making mistakes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Akmal: Yesterday, my friends wanted to go to the park after school. I really wanted to join them, but I knew I had an important test the next day. I evaluated my options and decided to stay home and study. The next day, I passed the test and felt very proud of my smart decision.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q_1",
+          "content": {
+            "question": "Why did Akmal decide to stay home instead of going to the park?",
+            "options": [
+              "He was feeling sick",
+              "He wanted to study for a test",
+              "His parents forced him",
+              "He dislike the park"
+            ],
+            "correctAnswer": "He wanted to study for a test",
+            "reason": "According to the blog post listening activity on page 63, Akmal stayed home to study for his test.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "list_q_2",
+          "content": {
+            "question": "How did Akmal feel after making his choice?",
+            "options": [
+              "He felt sad",
+              "He felt careless",
+              "He passed his test and felt proud",
+              "He failed his test"
+            ],
+            "correctAnswer": "He passed his test and felt proud",
+            "reason": "The text confirms that Akmal passed the test and felt proud of making a smart decision.",
+            "origin": "source",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Interviewer",
+                "text": "Today we are talking to Adam, a young athlete, about a wise decision he had to make. Adam, could you please tell us about it?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Adam",
+                "text": "Last year, I faced a problem before a big race. I injured my foot during training. I had to choose between taking a risk and taking part in the race, or resting and missing it.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Interviewer",
+                "text": "That's tough. What helped you make up your mind?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Adam",
+                "text": "I used problem-solving skills. I talked to my coach, who had a big influence on me. We discussed the possible consequences.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Smart Decision Match",
+            "description": "Select the correct vocabulary term for the result of an action.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What word describes the result or effect of an action?",
+            "options": [
+              "Goal",
+              "Consequence",
+              "Injury",
+              "Option"
+            ],
+            "correctAnswer": "Consequence",
+            "reason": "A consequence is the result or effect that follows an action.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "First Conditional Builder",
+            "description": "Choose the correct verb form to complete the conditional sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "If you eat less sugar, you _____ healthy and strong.",
+            "options": [
+              "will be",
+              "are",
+              "were",
+              "would be"
+            ],
+            "correctAnswer": "will be",
+            "reason": "In the first conditional, the main clause requires 'will + base verb' (will be).",
+            "origin": "supplementary",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q_1",
+          "content": {
+            "question": "What is the synonym of 'consequence'?",
+            "options": [
+              "Cause",
+              "Result",
+              "Rule",
+              "Source"
+            ],
+            "correctAnswer": "Result",
+            "reason": "Page 66 shows that 'result' is a synonym for 'consequence'.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_2",
+          "content": {
+            "question": "What is the antonym of 'positive'?",
+            "options": [
+              "Helpful",
+              "Negative",
+              "Fair",
+              "Careful"
+            ],
+            "correctAnswer": "Negative",
+            "reason": "Page 66 identifies 'negative' as the antonym of 'positive'.",
+            "origin": "source",
+            "sourcePdfPage": 66
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_3",
+          "content": {
+            "question": "If I study hard, I _____ good grades.",
+            "options": [
+              "get",
+              "will get",
+              "got",
+              "would get"
+            ],
+            "correctAnswer": "will get",
+            "reason": "The first conditional sentence uses 'will + base verb' in the main clause.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_4",
+          "content": {
+            "question": "You _____ waste your time on computer games.",
+            "options": [
+              "should",
+              "shouldn't",
+              "will",
+              "must"
+            ],
+            "correctAnswer": "shouldn't",
+            "reason": "We use 'shouldn't' when giving advice against bad habits.",
+            "origin": "source",
+            "sourcePdfPage": 64
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_5",
+          "content": {
+            "question": "Why did Adam choose not to run in the big race?",
+            "options": [
+              "He wanted to rest and avoid worsening his foot injury",
+              "He was lazy",
+              "He lost his shoes",
+              "His coach told him he was bad at running"
+            ],
+            "correctAnswer": "He wanted to rest and avoid worsening his foot injury",
+            "reason": "Adam rested so his foot injury would recover fully for the next race.",
+            "origin": "source",
+            "sourcePdfPage": 65
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_6",
+          "content": {
+            "question": "You should _____ your parents for advice when facing a problem.",
+            "options": [
+              "ask",
+              "asking",
+              "asked",
+              "asks"
+            ],
+            "correctAnswer": "ask",
+            "reason": "The modal verb 'should' is always followed by the base form of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_7",
+          "content": {
+            "question": "In 'Never Give Up', why did Lily feel left out initially?",
+            "options": [
+              "She wasn't allowed to attend school",
+              "Her ideas were ignored",
+              "She didn't want to build a machine",
+              "She arrived late"
+            ],
+            "correctAnswer": "Her ideas were ignored",
+            "reason": "Page 67 states Lily felt left out because Omar ignored her ideas.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_8",
+          "content": {
+            "question": "Which punctuation mark expresses strong emotion or emphasis like excitement or surprise?",
+            "options": [
+              "Period",
+              "Comma",
+              "Exclamation point",
+              "Question mark"
+            ],
+            "correctAnswer": "Exclamation point",
+            "reason": "Page 70 notes that exclamation points express strong emotion or emphasis.",
+            "origin": "source",
+            "sourcePdfPage": 70
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_9",
+          "content": {
+            "question": "Climbing a high mountain without a guide is a big _____.",
+            "options": [
+              "decision",
+              "risk",
+              "consequence",
+              "benefit"
+            ],
+            "correctAnswer": "risk",
+            "reason": "Page 72 specifies that doing dangerous activities without safety measures is a risk.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q_10",
+          "content": {
+            "question": "If she eats too much candy, she _____ sick.",
+            "options": [
+              "feels",
+              "will feel",
+              "felt",
+              "would feel"
+            ],
+            "correctAnswer": "will feel",
+            "reason": "First conditional uses present simple after 'if' and 'will + infinitive' for the result.",
+            "origin": "source",
+            "sourcePdfPage": 72
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

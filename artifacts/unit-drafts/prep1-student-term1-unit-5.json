@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T08:00:39.221Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "prep1-student-term1",
+  "sourceFilename": "English_Prep1_T1 (1).pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 5,
+  "unitTitle": "Unit 5: Future Dreams",
+  "sourcePdfRange": {
+    "start": 73,
+    "end": 86
+  },
+  "sourceCoverage": [
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86
+  ],
+  "sourceFingerprint": "5fe49b44a83bf17309b37f40cb08f6ff65788aacbf7a8ac7d37fa6b85f5b900d",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 5: Future Dreams",
+    "expectedRange": {
+      "start": 73,
+      "end": 86,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 16,
+      "supplementaryItems": 11,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T08:00:39.221Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "profession",
+            "arabicMeaning": "مهنة",
+            "example": "She wants to choose a profession that matches her talent.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "ambition",
+            "arabicMeaning": "طموح",
+            "example": "His main ambition is to become a successful scientist.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "talent",
+            "arabicMeaning": "موهبة",
+            "example": "He has a special talent for playing music.",
+            "origin": "source",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "What does the word 'ambition' mean?",
+            "options": [
+              "A strong desire or hope to achieve something",
+              "A small road or street",
+              "A type of school game",
+              "An old building"
+            ],
+            "correctAnswer": "A strong desire or hope to achieve something",
+            "reason": "Ambition refers to a strong aspiration or goal one strives to accomplish.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Which word is a synonym for 'profession'?",
+            "options": [
+              "Hobby",
+              "Job",
+              "Vacation",
+              "Toy"
+            ],
+            "correctAnswer": "Job",
+            "reason": "A profession is a paid occupation or career, which is synonymous with a job.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "What does 'talent' mean in the context of personal skills?",
+            "options": [
+              "Natural skill or ability",
+              "A physical injury",
+              "Money in the bank",
+              "A heavy machine"
+            ],
+            "correctAnswer": "Natural skill or ability",
+            "reason": "Talent is defined as a natural aptitude or skill to do something well.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Future with (be) + going to",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Future plans and intentions with be going to",
+            "explanation": "We use (is/am/are) + going to + infinitive verb to express future plans, intentions, and predictions based on present evidence.",
+            "example": "I am going to visit my uncle this weekend.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Choose the correct form: He _____ going to watch a movie tonight.",
+            "options": [
+              "am",
+              "is",
+              "are",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "The subject 'He' takes the singular auxiliary verb 'is' before 'going to'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "Complete the sentence: We _____ going to travel to Luxor next week.",
+            "options": [
+              "am",
+              "is",
+              "are",
+              "be"
+            ],
+            "correctAnswer": "are",
+            "reason": "The plural subject 'We' requires the auxiliary verb 'are' with 'going to'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "What is the correct negative form of 'She is going to study'?",
+            "options": [
+              "She is not going to study",
+              "She isn't go to study",
+              "She doesn't going to study",
+              "She not going to study"
+            ],
+            "correctAnswer": "She is not going to study",
+            "reason": "Negatives with 'be going to' are formed by placing 'not' after the verb to be (is/am/are).",
+            "origin": "supplementary",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Hello, my name is Omar, and I am 11 years old. I always think about my future career. I wish to find a profession that matches my talent and makes me happy. I love helping people, so I want to become a doctor one day. I know that I need a good education to reach my dream. After school, I will go to university to study medicine.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "What does Omar want to become when he grows up?",
+            "options": [
+              "An engineer",
+              "A doctor",
+              "A teacher",
+              "A designer"
+            ],
+            "correctAnswer": "A doctor",
+            "reason": "The text states that Omar loves helping people, so he wants to become a doctor.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Narrator: Listen to Malek talking about his future. Malek: Hi everyone! My dream job is to become a software engineer. My new goal is to learn coding every single day. Last summer, I joined a special technology program to build my basic skills.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What is Malek's dream job according to the listening script?",
+            "options": [
+              "A doctor",
+              "A software engineer",
+              "A scientist",
+              "An architect"
+            ],
+            "correctAnswer": "A software engineer",
+            "reason": "The script clearly states that Malek's dream job is to become a software engineer.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Ali",
+                "text": "Hi Sara! What are you going to be in the future?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Sara",
+                "text": "Hi Ali! I'm going to be a doctor. It's my dream profession.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Ali",
+                "text": "Wow! That's great. How are you going to achieve your future goal?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Sara",
+                "text": "I'm going to study hard, read more about science, and keep practicing every day.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game1",
+          "content": {
+            "gameName": "Career Quest",
+            "description": "Choose the correct vocabulary term that matches the definition in this fast challenge.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What do we call a natural skill or ability to do something well?",
+            "options": [
+              "Talent",
+              "Machine",
+              "Road",
+              "Competition"
+            ],
+            "correctAnswer": "Talent",
+            "reason": "A natural skill or ability is defined as a talent.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game2",
+          "content": {
+            "gameName": "Future Tense Challenge",
+            "description": "Select the correct structure for sentences using be going to.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Choose the correct sentence:",
+            "options": [
+              "They is going to play football.",
+              "They am going to play football.",
+              "They are going to play football.",
+              "They be going to play football."
+            ],
+            "correctAnswer": "They are going to play football.",
+            "reason": "The plural pronoun 'they' correctly pairs with 'are' in the 'be going to' structure.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 5 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "Which word means a job or occupation that requires special training?",
+            "options": [
+              "Profession",
+              "Game",
+              "Toy",
+              "Party"
+            ],
+            "correctAnswer": "Profession",
+            "reason": "A profession is a career requiring specific education and training.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "Complete the sentence: She _____ going to bake cookies tomorrow.",
+            "options": [
+              "am",
+              "is",
+              "are",
+              "be"
+            ],
+            "correctAnswer": "is",
+            "reason": "Singular subject 'She' takes 'is' with 'going to'.",
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "What is Omar's biggest dream in the reading text?",
+            "options": [
+              "To help people feel better and make them smile",
+              "To win a video game competition",
+              "To travel to outer space",
+              "To build a large machine"
+            ],
+            "correctAnswer": "To help people feel better and make them smile",
+            "reason": "Omar states that his biggest dream is to help people feel better and make them smile.",
+            "origin": "source",
+            "sourcePdfPage": 79
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "What does the word 'aspiration' mean in the context of the story?",
+            "options": [
+              "A strong hope or ambition",
+              "A sudden accident",
+              "A type of food",
+              "A loud noise"
+            ],
+            "correctAnswer": "A strong hope or ambition",
+            "reason": "An aspiration is synonymous with a strong ambition or goal.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "Choose the correct negative sentence:",
+            "options": [
+              "I am not going to visit my friend.",
+              "I am go not to visit my friend.",
+              "I not am going to visit my friend.",
+              "I am going to not visit my friend."
+            ],
+            "correctAnswer": "I am not going to visit my friend.",
+            "reason": "The negative is formed by adding 'not' directly after the 'to be' verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "What did the Water-Saving Machine use to water plants?",
+            "options": [
+              "Rainwater",
+              "Salty water",
+              "Wastewater",
+              "Juice"
+            ],
+            "correctAnswer": "Rainwater",
+            "reason": "The text explicitly states the machine used rainwater to water plants.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Which of the following is a correct collocation from the unit?",
+            "options": [
+              "Match talent",
+              "Run food",
+              "Eat computer",
+              "Drive sky"
+            ],
+            "correctAnswer": "Match talent",
+            "reason": "'Match talent' is a valid verb-noun collocation taught in the unit.",
+            "origin": "source",
+            "sourcePdfPage": 80
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "What punctuation mark is used to show possession, like 'Noha's book'?",
+            "options": [
+              "An apostrophe",
+              "A comma",
+              "A full stop",
+              "A question mark"
+            ],
+            "correctAnswer": "An apostrophe",
+            "reason": "An apostrophe is used to show possession and form contractions.",
+            "origin": "source",
+            "sourcePdfPage": 84
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "What question word does Ali use to ask about Sara's future method in the dialogue?",
+            "options": [
+              "How",
+              "Where",
+              "Why",
+              "When"
+            ],
+            "correctAnswer": "How",
+            "reason": "Ali asks 'How are you going to achieve your future goal?'",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "Why did the team work late in Chapter Two of the story?",
+            "options": [
+              "To support each other and finish the machine",
+              "To play video games",
+              "To clean their classroom",
+              "To write a long essay"
+            ],
+            "correctAnswer": "To support each other and finish the machine",
+            "reason": "The text describes how the team worked late, supporting each other to get the machine ready.",
+            "origin": "source",
+            "sourcePdfPage": 81
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

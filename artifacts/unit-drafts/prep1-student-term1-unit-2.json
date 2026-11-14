@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:43:57.907Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep1-student-term1",
+  "sourceFilename": "English_Prep1_T1 (1).pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: Learning to Learn",
+  "sourcePdfRange": {
+    "start": 27,
+    "end": 40
+  },
+  "sourceCoverage": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "sourceFingerprint": "fbc0295d3f352c42189174e72f74e6a88be0b6d1b4d54655080ea8eb72cbcf38",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 2: Learning to Learn",
+    "expectedRange": {
+      "start": 27,
+      "end": 40,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 20,
+      "supplementaryItems": 10,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:43:57.907Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "visual",
+            "arabicMeaning": "بصري",
+            "example": "Visual learners like to read books and look at colorful notes.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "auditory",
+            "arabicMeaning": "سمعي",
+            "example": "Auditory learners understand better when listening to explanations.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "kinesthetic",
+            "arabicMeaning": "حركي",
+            "example": "Kinesthetic learners learn best by doing hands-on experiments.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "organize",
+            "arabicMeaning": "ينظم",
+            "example": "I organize my study space to help me learn more efficiently.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_5",
+          "content": {
+            "word": "courage",
+            "arabicMeaning": "شجاعة",
+            "example": "It takes courage to try difficult activities when you feel scared.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "u2_vq_1",
+          "content": {
+            "question": "Which type of learners learn best by seeing diagrams, maps, and pictures?",
+            "options": [
+              "Auditory learners",
+              "Visual learners",
+              "Kinesthetic learners",
+              "Silent learners"
+            ],
+            "correctAnswer": "Visual learners",
+            "reason": "Visual learners absorb information through visual aids such as maps, charts, and pictures.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_2",
+          "content": {
+            "question": "To arrange or put things in a clear, neat order means to ________.",
+            "options": [
+              "organize",
+              "distract",
+              "hesitate",
+              "waste"
+            ],
+            "correctAnswer": "organize",
+            "reason": "Organize means arranging items or ideas in a neat and structured manner.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vq_3",
+          "content": {
+            "question": "Having a strong desire and drive to achieve your goals is called ________.",
+            "options": [
+              "ambition",
+              "distraction",
+              "hesitation",
+              "courage"
+            ],
+            "correctAnswer": "ambition",
+            "reason": "Ambition is defined as having a strong desire to succeed and reach personal goals.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Language Focus: Can / Can't & Present Continuous Tense",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Ability with 'can' and 'cannot / can't'",
+            "explanation": "We use 'can' + base verb to describe abilities or things we are able to do, and 'cannot' / 'can't' + base verb for things we are unable to do.",
+            "example": "I can focus better when my study space is quiet.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_gram_2",
+          "content": {
+            "rule": "Present Continuous Tense",
+            "explanation": "We use the present continuous tense (am/is/are + verb-ing) to talk about actions happening right now at the moment of speaking.",
+            "example": "Layla is using an app to learn words at the moment.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "u2_gq_1",
+          "content": {
+            "question": "Layla ________ a study app to practice new vocabulary right now.",
+            "options": [
+              "uses",
+              "is using",
+              "used",
+              "use"
+            ],
+            "correctAnswer": "is using",
+            "reason": "The time expression 'right now' signals the present continuous tense (is + verb-ing).",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_gq_2",
+          "content": {
+            "question": "We ________ focus well when there are loud noises around us.",
+            "options": [
+              "can",
+              "can't",
+              "are",
+              "could"
+            ],
+            "correctAnswer": "can't",
+            "reason": "'Can't' is used to show inability to concentrate due to noisy surroundings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "Listen! The students ________ English pronunciation in class at the moment.",
+            "options": [
+              "practice",
+              "are practicing",
+              "practiced",
+              "practices"
+            ],
+            "correctAnswer": "are practicing",
+            "reason": "'Listen!' and 'at the moment' require the present continuous form 'are practicing' for a plural subject.",
+            "origin": "supplementary",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u2_rd_pass_1",
+          "content": {
+            "passage": "Every person learns differently. Some people learn best by seeing information. These are visual learners. They like to read books, look at pictures, and use colorful notes. Visual learners often make maps and charts to organize information. Other people learn best by hearing information. These are auditory learners. They like to listen to music while studying, discuss topics with friends, and hear explanations from teachers. Auditory learners often repeat information out loud to remember it. Some people learn best by moving and touching. These are kinesthetic learners. They like to do experiments, build models, and take breaks to move around. Kinesthetic learners often use their hands to help them think. Understanding your learning style helps you study better. When you know how you learn best, you can choose the right methods for yourself. This makes learning easier and more enjoyable.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_rd_q_1",
+          "content": {
+            "question": "What do auditory learners often do to help themselves remember information?",
+            "options": [
+              "They draw colorful mind maps and charts.",
+              "They repeat information out loud.",
+              "They build models with their hands.",
+              "They avoid talking with friends."
+            ],
+            "correctAnswer": "They repeat information out loud.",
+            "reason": "The passage states that auditory learners often repeat information out loud to remember it.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Skills",
+      "items": [
+        {
+          "itemId": "u2_lis_script_1",
+          "content": {
+            "script": "Hello, my name is Ahmed. I want to share my study habits. I used to have trouble focusing because of noise and my phone. Now, I organize my notes using spidergrams and take short five-minute breaks after every thirty minutes of study. This helps my mind stay fresh. Reviewing my lessons regularly has improved my grades significantly.",
+            "origin": "supplementary",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_lis_q_1",
+          "content": {
+            "question": "Why does Ahmed take short breaks while studying?",
+            "options": [
+              "To play mobile games",
+              "To keep his mind fresh and stay focused",
+              "To skip his homework",
+              "To talk on the phone"
+            ],
+            "correctAnswer": "To keep his mind fresh and stay focused",
+            "reason": "Taking brief breaks helps refresh the brain and maintain effective concentration during study sessions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice: Think-Pair-Share",
+      "items": [
+        {
+          "itemId": "u2_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "Which learning style suits you best?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "I learn best by hearing information and discussing topics with friends.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student A",
+                "text": "How are you revising your lessons today?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "I am revising my vocabulary notes right now using mind maps.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Learning Style Matcher",
+            "description": "Identify the correct learning style from the learner's preferences.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "If you remember things best by building models and doing hands-on science experiments, what type of learner are you?",
+            "options": [
+              "Visual learner",
+              "Kinesthetic learner",
+              "Auditory learner",
+              "Silent learner"
+            ],
+            "correctAnswer": "Kinesthetic learner",
+            "reason": "Kinesthetic learners process information through movement, touching, and hands-on activities.",
+            "origin": "supplementary",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Grammar Action Challenge",
+            "description": "Choose the correct ongoing present continuous action.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Look! The teacher ________ a central spidergram on the board right now.",
+            "options": [
+              "draws",
+              "is drawing",
+              "drew",
+              "drawn"
+            ],
+            "correctAnswer": "is drawing",
+            "reason": "The word 'Look!' indicates an action taking place right now, requiring 'is drawing'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 2 Comprehensive Assessment",
+      "items": [
+        {
+          "itemId": "u2_test_1",
+          "content": {
+            "question": "Kinesthetic learners understand concepts best through ________.",
+            "options": [
+              "silent reading",
+              "hands-on activities and movement",
+              "listening to audio recordings",
+              "looking at visual charts"
+            ],
+            "correctAnswer": "hands-on activities and movement",
+            "reason": "Kinesthetic learning involves physical action, experiments, and tactile experience.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_2",
+          "content": {
+            "question": "Teamwork teaches students important life skills such as leadership and ________.",
+            "options": [
+              "cooperation",
+              "distraction",
+              "hesitation",
+              "isolation"
+            ],
+            "correctAnswer": "cooperation",
+            "reason": "Working in teams fosters mutual support, teamwork, and cooperation.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_3",
+          "content": {
+            "question": "I ________ my grammar notes at the moment to prepare for the test.",
+            "options": [
+              "revise",
+              "am revising",
+              "revised",
+              "revises"
+            ],
+            "correctAnswer": "am revising",
+            "reason": "'At the moment' requires the present continuous tense with subject 'I' (am revising).",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_4",
+          "content": {
+            "question": "Students ________ study effectively when there are constant loud distractions around.",
+            "options": [
+              "can",
+              "can't",
+              "are",
+              "do"
+            ],
+            "correctAnswer": "can't",
+            "reason": "'Can't' expresses inability to perform an action under poor study conditions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "u2_test_5",
+          "content": {
+            "question": "In 'The Magic Classroom', what allowed the students to open the golden door at the end of the bridge?",
+            "options": [
+              "Using a physical key",
+              "Singing together in unity",
+              "Running across quickly",
+              "Solving a math puzzle"
+            ],
+            "correctAnswer": "Singing together in unity",
+            "reason": "The story explains that singing together in unity made the golden door open.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_6",
+          "content": {
+            "question": "A diagram with central topic and branching 'legs' used to organize ideas is called a ________.",
+            "options": [
+              "spidergram",
+              "dictionary",
+              "calculator",
+              "paragraph"
+            ],
+            "correctAnswer": "spidergram",
+            "reason": "A spidergram is a diagrammatic organizer that looks like a spider with legs showing supporting details.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_7",
+          "content": {
+            "question": "Which punctuation mark is required at the end of 'How are you feeling today'?",
+            "options": [
+              "A period (.)",
+              "A question mark (?)",
+              "An exclamation mark (!)",
+              "A comma (,)"
+            ],
+            "correctAnswer": "A question mark (?)",
+            "reason": "Direct questions must end with a question mark.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_8",
+          "content": {
+            "question": "The word 'invisible' means something that ________.",
+            "options": [
+              "can be heard clearly",
+              "cannot be seen",
+              "is bright and colorful",
+              "is easy to break"
+            ],
+            "correctAnswer": "cannot be seen",
+            "reason": "'Invisible' describes anything that is hidden from sight or impossible to see.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_9",
+          "content": {
+            "question": "Choose the grammatically correct sentence:",
+            "options": [
+              "She can swims very fast.",
+              "She can swim very fast.",
+              "She can swimming very fast.",
+              "She is can swim very fast."
+            ],
+            "correctAnswer": "She can swim very fast.",
+            "reason": "The modal auxiliary verb 'can' must be followed immediately by the base form of the verb (swim).",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_test_10",
+          "content": {
+            "question": "To avoid study distractions and keep your mind fresh, it is helpful to ________.",
+            "options": [
+              "leave notifications turned on",
+              "take short breaks and study in quiet spaces",
+              "watch TV while practicing math",
+              "never stop studying all day"
+            ],
+            "correctAnswer": "take short breaks and study in quiet spaces",
+            "reason": "Quiet study environments combined with regular short breaks maximize focus and memory retention.",
+            "origin": "supplementary",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    }
+  ]
+}

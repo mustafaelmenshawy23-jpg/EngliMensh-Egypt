@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-14T07:34:05.160Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "connectplus-primary6-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_6_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 6",
+  "unitNumber": 2,
+  "unitTitle": "Home is where the heart is",
+  "sourcePdfRange": {
+    "start": 50,
+    "end": 92
+  },
+  "sourceCoverage": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92
+  ],
+  "sourceFingerprint": "bff954efd4a44d8192ffd2a73311eb92137cb06bd49e1ff18aec335ef68ab9b3",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Home is where the heart is",
+    "expectedRange": {
+      "start": 50,
+      "end": 92,
+      "totalPages": 43
+    },
+    "recordedCoverage": {
+      "totalPages": 43,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 28,
+      "supplementaryItems": 2,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:34:05.159Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "unit2-vocab-1",
+          "content": {
+            "word": "appliance",
+            "arabicMeaning": "آلة - جهاز",
+            "example": "Refrigerators and blenders are useful kitchen appliances.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-2",
+          "content": {
+            "word": "blender",
+            "arabicMeaning": "خلاط",
+            "example": "I use a blender to make a delicious fruit smoothie.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-3",
+          "content": {
+            "word": "vaccine",
+            "arabicMeaning": "لقاح",
+            "example": "The scientist used a blender to help make a vaccine.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-4",
+          "content": {
+            "word": "power outage",
+            "arabicMeaning": "انقطاع التيار الكهربائي",
+            "example": "We had a power outage at school yesterday.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-5",
+          "content": {
+            "word": "scratch post",
+            "arabicMeaning": "عمود خدش",
+            "example": "A cat needs a scratch post to sharpen its claws.",
+            "origin": "source",
+            "sourcePdfPage": 67
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "unit2-vocab-q1",
+          "content": {
+            "question": "Refrigerators, blenders, and toasters are kitchen __________.",
+            "options": [
+              "games",
+              "appliances",
+              "festivals",
+              "places"
+            ],
+            "correctAnswer": "appliances",
+            "reason": "Refrigerators, blenders, and toasters are electrical appliances used in the home.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-q2",
+          "content": {
+            "question": "A __________ is a type of medicine that stops you from getting ill.",
+            "options": [
+              "toaster",
+              "vaccine",
+              "fever",
+              "blade"
+            ],
+            "correctAnswer": "vaccine",
+            "reason": "A vaccine is a medical treatment designed to protect people from getting sick.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-vocab-q3",
+          "content": {
+            "question": "When all the lights went out suddenly, there was a power __________.",
+            "options": [
+              "socket",
+              "outage",
+              "energy",
+              "cable"
+            ],
+            "correctAnswer": "outage",
+            "reason": "A power outage occurs when the supply of electricity unexpectedly stops.",
+            "origin": "source",
+            "sourcePdfPage": 60
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Structure",
+      "items": [
+        {
+          "itemId": "unit2-gram-1",
+          "content": {
+            "rule": "First Conditional (If + Present Simple, Subject + will / can / may + infinitive)",
+            "explanation": "We use the first conditional to talk about possible future situations and their probable results.",
+            "example": "If it is hot tomorrow, I will make a smoothie.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-gram-2",
+          "content": {
+            "rule": "Phrasal Verbs (Verb + Preposition)",
+            "explanation": "A phrasal verb combines a verb with a preposition to create a specific meaning, such as organizing or cleaning.",
+            "example": "Can you help me tidy up my bedroom?",
+            "origin": "source",
+            "sourcePdfPage": 74
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "unit2-gram-q1",
+          "content": {
+            "question": "If it __________ hot tomorrow, I will make a smoothie.",
+            "options": [
+              "be",
+              "will be",
+              "is",
+              "was"
+            ],
+            "correctAnswer": "is",
+            "reason": "In the first conditional, the if-clause uses the present simple tense (is).",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-gram-q2",
+          "content": {
+            "question": "They __________ go to the club if they don't finish their homework.",
+            "options": [
+              "didn't",
+              "won't",
+              "don't",
+              "aren't"
+            ],
+            "correctAnswer": "won't",
+            "reason": "The main result clause in the first conditional uses will/won't followed by an infinitive verb.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-gram-q3",
+          "content": {
+            "question": "Please help me pick __________ all these books from the floor.",
+            "options": [
+              "up",
+              "off",
+              "down",
+              "on"
+            ],
+            "correctAnswer": "up",
+            "reason": "The phrasal verb 'pick up' means to lift or gather things from a surface.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "unit2-read-1",
+          "content": {
+            "passage": "We moved into a new apartment a month ago, and I'm so happy because I have a new bedroom! I love my new room. It's a very light and comfortable room. I share it with my brother, Maged, and we're good friends. We have a long desk for our PCs so we can do our homework in our bedroom. That's much better than doing it in the living room! There's too much noise there from our little sister and the TV!",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-read-q1",
+          "content": {
+            "question": "Why does Seleem prefer doing homework in his bedroom rather than the living room?",
+            "options": [
+              "His room has no desk",
+              "There is too much noise in the living room",
+              "He does not like his brother Maged",
+              "The living room is too dark"
+            ],
+            "correctAnswer": "There is too much noise in the living room",
+            "reason": "Seleem mentions that the living room has too much noise from his sister and the TV.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "unit2-list-1",
+          "content": {
+            "script": "Mom: Hi Mariam, how was your day?\nMariam: Oh, hi Mom! It was a strange day, actually. We had a power outage! My class and I were looking at the interactive whiteboard, when suddenly all the information disappeared.\nMom: Really? That is strange! What did Miss Amira do?\nMariam: Well, first she got an extension cable and tried a different power socket, but that wasn't working either.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-list-q1",
+          "content": {
+            "question": "What happened while Mariam's class was looking at the interactive whiteboard?",
+            "options": [
+              "The teacher left the room",
+              "There was a power outage",
+              "The extension cable broke",
+              "The lesson was finished early"
+            ],
+            "correctAnswer": "There was a power outage",
+            "reason": "Mariam reports that a power outage caused all information on the whiteboard to disappear.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "unit2-speak-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Fatma",
+                "text": "Hello Noha, is this your cat?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Noha",
+                "text": "Yes, it is called Monda.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Fatma",
+                "text": "How can I make a cat feel safe at home?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Noha",
+                "text": "Cats need a lot of attention and a warm comfortable bed to feel safe.",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 78
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "unit2-game-1",
+          "content": {
+            "gameName": "Appliance Matcher",
+            "description": "Identify kitchen appliances by their main function.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which kitchen appliance uses a sharp spinning blade to chop food and prepare smoothies?",
+            "options": [
+              "Toaster",
+              "Blender",
+              "Refrigerator",
+              "Hairdryer"
+            ],
+            "correctAnswer": "Blender",
+            "reason": "A blender features a spinning blade inside a tall cup to chop food and make drinks.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "unit2-game-2",
+          "content": {
+            "gameName": "Conditional Challenge",
+            "description": "Choose the correct modal auxiliary verb in conditional sentences.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "If she hurries, she __________ catch the morning train, but I am not completely sure.",
+            "options": [
+              "may",
+              "would",
+              "did",
+              "was"
+            ],
+            "correctAnswer": "may",
+            "reason": "We use 'may' in the first conditional clause to show uncertainty about a future outcome.",
+            "origin": "supplementary",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "unit2-test-q1",
+          "content": {
+            "question": "Refrigerators, blenders, and toasters are all classified as home __________.",
+            "options": [
+              "appliances",
+              "hobbies",
+              "decorations",
+              "cartoons"
+            ],
+            "correctAnswer": "appliances",
+            "reason": "An appliance is a useful device or machine used in homes.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q2",
+          "content": {
+            "question": "In 1922, Stephen Poplawski invented the blender by fitting a sharp __________ at the bottom of a glass.",
+            "options": [
+              "socket",
+              "blade",
+              "cable",
+              "brick"
+            ],
+            "correctAnswer": "blade",
+            "reason": "The inventor placed a sharp blade at the bottom to chop and blend food.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q3",
+          "content": {
+            "question": "If you put food in the refrigerator, it __________ fresh for longer.",
+            "options": [
+              "stayed",
+              "will stay",
+              "staying",
+              "to stay"
+            ],
+            "correctAnswer": "will stay",
+            "reason": "In the first conditional, the result clause takes 'will' + base form of the verb.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q4",
+          "content": {
+            "question": "Dr. Jonas Salk famously used a blender in 1953 to help produce a life-saving __________.",
+            "options": [
+              "vaccine",
+              "smoothie",
+              "soup",
+              "kettle"
+            ],
+            "correctAnswer": "vaccine",
+            "reason": "Dr. Jonas Salk utilized a blender to manufacture a polio vaccine that saved millions of lives.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q5",
+          "content": {
+            "question": "If he __________ hard, he will pass all his school exams.",
+            "options": [
+              "studies",
+              "study",
+              "studied",
+              "studying"
+            ],
+            "correctAnswer": "studies",
+            "reason": "The if-clause requires the present simple form 'studies' for singular subject 'he'.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q6",
+          "content": {
+            "question": "What sudden event interrupted Mariam's lesson while using the interactive whiteboard?",
+            "options": [
+              "A power outage",
+              "A fire drill",
+              "A computer virus",
+              "A storm"
+            ],
+            "correctAnswer": "A power outage",
+            "reason": "A power outage occurred, making the interactive whiteboard screen go black.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q7",
+          "content": {
+            "question": "Please help me put __________ the dishes after we finish dinner.",
+            "options": [
+              "away",
+              "out",
+              "up",
+              "off"
+            ],
+            "correctAnswer": "away",
+            "reason": "The phrasal verb 'put away' means returning items to their proper place.",
+            "origin": "source",
+            "sourcePdfPage": 75
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q8",
+          "content": {
+            "question": "A strong wooden pole that a cat uses to sharpen its claws is called a __________.",
+            "options": [
+              "scratch post",
+              "extension cable",
+              "power socket",
+              "heat lamp"
+            ],
+            "correctAnswer": "scratch post",
+            "reason": "A scratch post provides a rough wooden surface for cats to keep claws sharp.",
+            "origin": "source",
+            "sourcePdfPage": 68
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q9",
+          "content": {
+            "question": "If you don't invite him to the party, he __________ come.",
+            "options": [
+              "can't",
+              "didn't",
+              "won't",
+              "isn't"
+            ],
+            "correctAnswer": "won't",
+            "reason": "Negative future prediction in the first conditional main clause uses 'won't'.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "unit2-test-q10",
+          "content": {
+            "question": "You should use a soft cloth to __________ dry dirt from plant leaves.",
+            "options": [
+              "dust",
+              "spray",
+              "mop",
+              "chop"
+            ],
+            "correctAnswer": "dust",
+            "reason": "To dust plant leaves means removing dry dirt or residue carefully with a cloth or brush.",
+            "origin": "source",
+            "sourcePdfPage": 73
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

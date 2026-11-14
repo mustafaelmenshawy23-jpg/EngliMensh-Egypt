@@ -1,0 +1,85 @@
+{
+  "status": "failed_validation",
+  "bookId": "prep1-student-term1",
+  "unitNumber": 1,
+  "score": 70,
+  "criticalFailures": [
+    "test_q8: question contains duplicate options: [\"I went to Alexandria last June.\",\"i went to alexandria last june.\",\"I went to alexandria Last june.\",\"i Went To Alexandria last june.\"]"
+  ],
+  "warnings": [
+    "Speaking item speak_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak_1 turn 3 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak_1 turn 4 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 1: Life in a Digital World",
+    "expectedRange": {
+      "start": 13,
+      "end": 26,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 25,
+      "supplementaryItems": 6,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 9,
+        "issues": [
+          "test_q8: question contains duplicate options: [\"I went to Alexandria last June.\",\"i went to alexandria last june.\",\"I went to alexandria Last june.\",\"i Went To Alexandria last june.\"]"
+        ]
+      }
+    },
+    "validationTimestamp": "2026-11-14T07:35:03.927Z"
+  }
+}
