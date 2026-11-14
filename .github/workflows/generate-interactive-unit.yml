@@ -99,6 +99,53 @@ jobs:
           restore-keys: |
             englimensh-source-extraction-
 
+      - name: Find latest successful extraction run
+        id: latest_extraction
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data } = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'extract-books.yml',
+              status: 'success',
+              per_page: 20
+            });
+            const run = data.workflow_runs.find((item) =>
+              item.conclusion === 'success' && item.head_repository?.id === context.repo.id
+            );
+            if (!run) {
+              core.warning('No successful extraction run was found; the restored cache will be used.');
+              core.setOutput('run_id', '');
+              return;
+            }
+            const { data: artifacts } = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: run.id,
+              per_page: 100
+            });
+            const artifact = artifacts.artifacts.find((item) =>
+              item.name === 'englimensh-extracted-books' && !item.expired
+            );
+            if (!artifact) {
+              core.warning('The latest successful extraction run has no available englimensh-extracted-books artifact; the restored cache will be used.');
+              core.setOutput('run_id', '');
+              return;
+            }
+            core.setOutput('run_id', String(run.id));
+            core.notice('Using source extraction artifact from run ' + run.id + ' (' + artifact.size_in_bytes + ' bytes).');
+
+      - name: Download latest all-book extraction artifact
+        if: steps.latest_extraction.outputs.run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: englimensh-extracted-books
+          path: src/data/extracted
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.latest_extraction.outputs.run_id }}
+          github-token: ${{ github.token }}
+
       - name: Assess restored extraction cache coverage
         id: extraction_coverage
         run: node scripts/check-extraction-cache.mjs
