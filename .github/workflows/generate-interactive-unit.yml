@@ -111,9 +111,9 @@ jobs:
               status: 'success',
               per_page: 20
             });
-            const run = data.workflow_runs.find((item) =>
-              item.conclusion === 'success' && item.head_repository?.id === context.repo.id
-            );
+            // The API query is already scoped to this repository; do not compare
+            // head_repository.id with context.repo.id (the latter is not exposed).
+            const run = data.workflow_runs.find((item) => item.conclusion === 'success');
             if (!run) {
               core.warning('No successful extraction run was found; the restored cache will be used.');
               core.setOutput('run_id', '');
