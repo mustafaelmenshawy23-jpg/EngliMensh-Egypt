@@ -152,20 +152,25 @@ Current implementation findings:
 
 ## 8. Current run and reproducible evidence
 
-- [Current all-books batch run 43379629520](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43379629520) — started from `main`; processing up to 10 resumable candidates.
-- [Previous completed batch run 43179774166](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43179774166) — successful; its [artifact 13925803983](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43179774166/artifacts/13925803983) contains the full extracted page cache, draft files, batch state, and source-review queue.
-- [Trigger commit b5b39b0](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/commit/b5b39b053dbb3b7e4c25ae4fcca7beb7691b7d41) — resumed the saved queue on `main`.
+- [All-book extraction run 43382237895](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43382237895) — successful; [artifact 14018499295](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43382237895/artifacts/14018499295) contains the extracted page records and manifest for 33 of 34 PDFs (5,626 pages). One LFS pointer remains blocked.
+- [Completed generation batch 43570517411](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43570517411) — successful; [artifact 14105055036](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43570517411/artifacts/14105055036) contains the latest persisted draft set, batch state, and progress report. It added nine structurally valid unit drafts; one selected unit failed validation and remains retryable.
+- [Current generation batch 43570679945](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43570679945) — still in progress at the time of this snapshot. It successfully downloaded the latest extraction artifact and is processing the next ten eligible/retry candidates; no result is counted until its persistence step completes.
+- [Next generation batch 43572032428](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43572032428) — queued behind the current batch. It uses the updated cache-v3 workflow and will repair watermark-only pages before using the reusable cache.
+- [Validation run 43572178834](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/EngliMensh-Egypt/actions/runs/43572178834) — successful after the TTS/microphone exclusion change.
+- [Android preview build 43572178840](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43572178840) — successful; [artifact 14104697638](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/actions/runs/43572178840/artifacts/14104697638) contains the 7.25 MB debug APK.
+- [Cache-v3 source extraction fix](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/commit/b842342661ed322222df24e71c69a790c1553f32) — avoids overwriting a repaired cache with an older extraction artifact and triggers watermark repair on cache migration.
+- [TTS/microphone exclusion fix](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/commit/216b3008ff38f6a7f1bd9b0b1794fa98c771ba5f) and [its regression test](https://github.com/mustafaelmenshawy23-jpg/EngliMensh-Egypt/commit/910941c2101823cf6a3cdad115a31261087a3bdf) — TTS will not start while speech recognition is active; the lock is released on success or error.
 
-The repository default branch is currently `feature/primary-connect-connect-plus-2026-2027`, not `main`. GitHub therefore does not allow the current `main` workflow to use `workflow_dispatch` for automatic chaining. Progress is saved on `main`; a safe bounded push-chain is the preferred code-side workaround, rather than silently changing the repository's default branch.
+The repository default branch remains `feature/primary-connect-connect-plus-2026-2027`; the active work and all edits in this audit are on `main` only. The workflow's automatic dispatch guard therefore remains disabled. A next batch is queued, but further chained batches still need a trigger commit or the repository default branch must be changed to `main` in GitHub settings.
 
 ## 9. Remaining work
 
-1. Continue the 90 non-complete unit records (56 source-blocked, 19 failed, 15 validation-failed) in resumable batches; retry transient API failures separately from content-validation failures.
-2. Recover or obtain the missing Prep 2 performance-task PDF LFS object.
-3. Visually inspect the 552 flagged OCR pages, prioritizing pages that block unit ranges; do not guess unreadable words.
-4. Build separate book/term assessment packages for the nine assessment PDFs and inspect the reader; do not invent unit boundaries.
-5. Add per-turn playback voice metadata to speaking and listening content, backfill saved drafts without changing their source text, and test actual voices on an Android device.
-6. Complete teacher review and explicit approval before any draft is included in the student app.
-7. Verify all nine sections through the actual app UI, including navigation, persistence, TTS, games, answer feedback, and comprehensive tests.
+1. Finish the current generation batch and the queued cache-v3 batch; retry the 20 failed/validation candidates recorded in the last persisted snapshot. Do not count in-progress work as complete.
+2. Resolve the 53 units blocked by source-quality review. The current extracted artifact identifies 205 pages needing visual review (132 unreliable OCR pages and 73 empty pages); the Hello Plus Prep 2 supplement has 288 watermark-only pages queued for the cache-v3 OCR repair.
+3. Recover the Git LFS object for `Performance Tasks Prep 2-OnlineMaterials.PDF`; it is the only PDF not extracted.
+4. Build separate book/term assessment packages for the nine assessment PDFs, process the reader's ten indexed chapters, and recover verified unit boundaries for the Hello Plus Prep 2 supplement. Do not invent unit numbers or boundaries.
+5. Review the 52 structurally valid unit drafts against their exact PDF pages. All remain `needs_review`; zero are approved or published. The learner app imports only explicitly approved drafts.
+6. Resolve speaker-gender metadata only where the source supports it, and test the actual male/female voices exposed by a real Android device. The app now prevents TTS and microphone recognition from running together, but actual device voice availability has not been verified.
+7. Verify every approved section in the running app, including navigation, search, persistence, dialogue replay, games, answer feedback, and comprehensive tests.
 
-**Completion is not declared.** The current run and this audit document a resumable partial state; the app is not complete until all available books/units have reviewed content and the approved content is verified working in the application.
+**Completion is not declared.** The latest persisted snapshot is partial; the current batch is still running, the next batch is queued, and assessment/reader content plus source-review blockers remain. The app is not complete until reviewed content is approved and verified working in the learner application.
