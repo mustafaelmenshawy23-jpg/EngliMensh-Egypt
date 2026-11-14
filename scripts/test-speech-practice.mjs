@@ -22,5 +22,16 @@ assert.ok(main.includes('the app checks which words it recognizes, not your acce
   'Speaking feedback must clearly distinguish word recognition from pronunciation scoring and audio storage.');
 assert.ok(main.includes('window.SpeechRecognition || window.webkitSpeechRecognition'),
   'Browser speech-recognition fallback is missing.');
+assert.ok(main.includes('speechRecognitionActive: false') && main.includes('state.speechRecognitionActive = true;') && main.includes('state.speechRecognitionActive = false;'),
+  'Microphone recognition must hold and release a shared speech lock on every exit path.');
+const speakStart = main.indexOf('async function speakText');
+const ttsLock = main.indexOf('if (state.speechRecognitionActive)', speakStart);
+assert.ok(speakStart >= 0 && ttsLock > speakStart && ttsLock < main.indexOf('const phrase', speakStart),
+  'TTS must refuse to start while microphone recognition is active.');
+const practiceStart = main.indexOf('async function runSpeechPractice');
+const lockStart = main.indexOf('state.speechRecognitionActive = true;', practiceStart);
+const recognitionStart = main.indexOf('await recognizeSpeechText()', practiceStart);
+assert.ok(lockStart >= 0 && recognitionStart > lockStart,
+  'The microphone lock must be set before speech recognition starts.');
 
 console.log('Speech-practice integration checks passed.');
