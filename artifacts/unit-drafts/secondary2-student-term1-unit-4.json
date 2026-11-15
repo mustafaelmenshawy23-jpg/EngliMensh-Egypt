@@ -1,0 +1,662 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T07:00:35.271Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary2-student-term1",
+  "sourceFilename": "English_language_2sec_t1 (1).pdf",
+  "grade": "Secondary 2",
+  "unitNumber": 4,
+  "unitTitle": "Natural Disasters",
+  "sourcePdfRange": {
+    "start": 48,
+    "end": 59
+  },
+  "sourceCoverage": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "sourceFingerprint": "1b384cb6cfb0f7aa3b4c70fbcb12b60d8cd1824698cbc0198efbba8bf4be58bd",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Natural Disasters",
+    "expectedRange": {
+      "start": 48,
+      "end": 59,
+      "totalPages": 12
+    },
+    "recordedCoverage": {
+      "totalPages": 12,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 26,
+      "supplementaryItems": 4,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T07:00:35.271Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "meteorologist",
+            "arabicMeaning": "خبير الأرصاد الجوية",
+            "example": "A meteorologist studies atmospheric conditions to forecast weather events.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "humidity",
+            "arabicMeaning": "رطوبة",
+            "example": "High humidity makes hot weather feel even more uncomfortable.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "tectonic plates",
+            "arabicMeaning": "الصفائح التكتونية",
+            "example": "Earthquakes happen when tectonic plates shift beneath the Earth surface.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "preparedness",
+            "arabicMeaning": "جاهزية / استعداد",
+            "example": "Emergency preparedness reduces casualties during natural disasters.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "waterproof",
+            "arabicMeaning": "مقاوم للماء",
+            "example": "Keep essential family records in a waterproof case during flood warnings.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "evacuate",
+            "arabicMeaning": "إجلاء / يخلي",
+            "example": "Authorities advised residents to evacuate before the severe hurricane struck.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "Scientists who study atmosphere patterns and forecast the weather are called __________.",
+            "options": [
+              "meteorologists",
+              "geologists",
+              "biologists",
+              "archaeologists"
+            ],
+            "correctAnswer": "meteorologists",
+            "reason": "Meteorologists are atmospheric scientists who analyze weather data to predict storms and temperature shifts.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "To protect important documents from flood water, you should keep them in a __________ container.",
+            "options": [
+              "paper",
+              "cardboard",
+              "waterproof",
+              "wooden"
+            ],
+            "correctAnswer": "waterproof",
+            "reason": "Waterproof containers prevent moisture and water from ruining paper documents.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "The level of water moisture present in the air is known as __________.",
+            "options": [
+              "intensity",
+              "humidity",
+              "accuracy",
+              "preparedness"
+            ],
+            "correctAnswer": "humidity",
+            "reason": "Humidity measures atmospheric moisture content.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Comparative and Superlative Adjectives",
+            "explanation": "Use comparative adjectives (ending in -er or preceded by 'more') to compare two people or things. Use superlative adjectives (ending in -est or preceded by 'most') to compare one entity against a group of three or more.",
+            "example": "Hurricanes are more predictable than earthquakes, but earthquakes are the most sudden disasters.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "The Nile is the __________ river in the world.",
+            "options": [
+              "long",
+              "longer",
+              "longest",
+              "most long"
+            ],
+            "correctAnswer": "longest",
+            "reason": "Superlative 'longest' compares the Nile to all other rivers in the world.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Cairo is __________ than many other African cities.",
+            "options": [
+              "busy",
+              "busier",
+              "busiest",
+              "the busier"
+            ],
+            "correctAnswer": "busier",
+            "reason": "Comparative 'busier' compares Cairo with other cities using 'than'.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "This earthquake was __________ than the previous one.",
+            "options": [
+              "deadly",
+              "deadlier",
+              "deadliest",
+              "most deadly"
+            ],
+            "correctAnswer": "deadlier",
+            "reason": "Two-syllable adjectives ending in -y change to -ier in comparative comparisons.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_pass_1",
+          "content": {
+            "passage": "Scientists have made remarkable progress in weather prediction over the past century. Thanks to advanced technology and improved understanding of atmospheric science, modern forecasting systems can now predict many weather patterns with impressive accuracy —sometimes days or even weeks in advance. Meteorologists use hi-tech tools like satellites, radar systems, and computer models to monitor temperature, wind, pressure, and humidity. This data helps them track storms, predict rainfall, and issue early warnings. For example, the ability to forecast a hurricane’s path has improved greatly in recent decades. As a result, governments can organize evacuations, hospitals can prepare for emergencies, and lives can be saved. However, while weather events are becoming easier to predict, the exact intensity and timing of natural disasters still pose major challenges. Earthquakes, in particular, remain largely unpredictable because seismic activity occurs deep beneath the Earth’s surface. Tectonic plates shift silently, and there are usually no clear warning signs before a quake strikes.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "Why are earthquakes significantly harder to predict than weather storms?",
+            "options": [
+              "Seismic activity occurs deep underground with no clear warning signs",
+              "Satellites are blocked by mountain ranges",
+              "Meteorologists do not measure earthquakes",
+              "Computers cannot record ground vibrations"
+            ],
+            "correctAnswer": "Seismic activity occurs deep underground with no clear warning signs",
+            "reason": "Unlike surface weather systems tracked by radar, tectonic plate movement occurs deep underground without surface warnings.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Welcome to Stay Safe, the emergency readiness broadcast. I am your host, and with us today is Sami Naguib, an emergency preparedness expert. Sami emphasizes that every household must organize an emergency kit well before a crisis occurs. Families should store four liters of water per person each day for at least three days. Remember to pack non-perishable food, flashlights, and complete first aid kits. Furthermore, essential documents such as identity cards must be sealed inside waterproof containers. Finally, select a contact person outside your local area because long-distance lines remain functional during local network collapses.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "According to Sami Naguib, why should families choose a non-local contact person?",
+            "options": [
+              "Long-distance telephone lines often work when local lines are overloaded",
+              "Non-local contacts live in larger houses",
+              "Local contacts do not have phones",
+              "Non-local contacts can arrive in minutes"
+            ],
+            "correctAnswer": "Long-distance telephone lines often work when local lines are overloaded",
+            "reason": "Local disasters overload local cell towers, whereas long-distance connections are less affected.",
+            "origin": "source",
+            "sourcePdfPage": 53
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Government Official",
+                "text": "What went wrong during the recent severe storm and urban flooding?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Scientist",
+                "text": "We issued advance warnings, but many residents failed to evacuate in time. They should have taken the flood warnings seriously.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Local Citizen",
+                "text": "Many families lacked emergency kits and stored water. We could have avoided many problems with better advance preparation.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Disaster Prep Master",
+            "description": "Choose the correct term associated with emergency survival kits.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which item is essential in a standard emergency kit to keep paper records safe?",
+            "options": [
+              "Cardboard folder",
+              "Waterproof container",
+              "Open tray",
+              "Plastic bag with holes"
+            ],
+            "correctAnswer": "Waterproof container",
+            "reason": "Waterproof containers prevent water damage during flooding or storms.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Comparative Challenge",
+            "description": "Select the correct comparative or superlative form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Japan possesses some of the __________ emergency warning systems in the world.",
+            "options": [
+              "more advanced",
+              "most advanced",
+              "advanced",
+              "as advanced"
+            ],
+            "correctAnswer": "most advanced",
+            "reason": "Superlative 'most advanced' is required after 'some of the' to compare Japan against all other nations.",
+            "origin": "supplementary",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "Which tool allows meteorologists to monitor cloud movement and track storm progress from space?",
+            "options": [
+              "Seismograph",
+              "Satellite",
+              "Microscope",
+              "Thermometer"
+            ],
+            "correctAnswer": "Satellite",
+            "reason": "Satellites provide orbital imagery used to monitor weather systems globally.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "Earthquakes happen when tectonic plates __________ beneath the crust of the Earth.",
+            "options": [
+              "evacuate",
+              "shift",
+              "evaporate",
+              "freeze"
+            ],
+            "correctAnswer": "shift",
+            "reason": "The shifting of tectonic plates releases energy that causes earthquakes.",
+            "origin": "source",
+            "sourcePdfPage": 50
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "According to emergency guidelines, how many liters of water should be stored per person per day?",
+            "options": [
+              "One liter",
+              "Two liters",
+              "Four liters",
+              "Ten liters"
+            ],
+            "correctAnswer": "Four liters",
+            "reason": "Guidelines recommend four liters per person daily for hydration and sanitation.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "This is the __________ phone I have ever owned.",
+            "options": [
+              "good",
+              "better",
+              "best",
+              "most good"
+            ],
+            "correctAnswer": "best",
+            "reason": "Superlative form 'best' is used when comparing one item against all others experienced.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "Hurricanes are usually __________ to forecast than earthquakes because satellite systems track them.",
+            "options": [
+              "more predictable",
+              "most predictable",
+              "predictable",
+              "as predictable"
+            ],
+            "correctAnswer": "more predictable",
+            "reason": "Comparative 'more predictable' compares hurricane predictability against earthquake predictability.",
+            "origin": "source",
+            "sourcePdfPage": 54
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "The phrase 'They should have listened to the early warnings' indicates that people __________.",
+            "options": [
+              "made the correct choice",
+              "made a mistake in the past",
+              "evacuated in time",
+              "ignored no warnings"
+            ],
+            "correctAnswer": "made a mistake in the past",
+            "reason": "The structure 'should have + past participle' expresses criticism or regret about a past action.",
+            "origin": "source",
+            "sourcePdfPage": 56
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "Why should important identification papers be stored in a waterproof container?",
+            "options": [
+              "To protect them from fire only",
+              "To prevent flood waters from damaging them",
+              "To make them easy to recycle",
+              "To keep them heavy"
+            ],
+            "correctAnswer": "To prevent flood waters from damaging them",
+            "reason": "Waterproof sealing shields paper documents against flood water exposure.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "Which key feature of a formal report presents the discovered facts and data?",
+            "options": [
+              "Title",
+              "Recommendations",
+              "Findings",
+              "Conclusion"
+            ],
+            "correctAnswer": "Findings",
+            "reason": "The findings section presents verified information and observations collected.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Which of the following language practices should be strictly avoided in a formal report?",
+            "options": [
+              "Clear headings",
+              "Informal contractions like don't",
+              "Bullet points",
+              "Neutral objective tone"
+            ],
+            "correctAnswer": "Informal contractions like don't",
+            "reason": "Formal register requires full uncontracted verb forms such as 'do not'.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "The proverb 'Better safe than sorry' highlights the critical value of __________.",
+            "options": [
+              "ignoring risks",
+              "early preparation and action",
+              "relying on luck",
+              "delaying emergency planning"
+            ],
+            "correctAnswer": "early preparation and action",
+            "reason": "The proverb means taking precautions in advance avoids future regret.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

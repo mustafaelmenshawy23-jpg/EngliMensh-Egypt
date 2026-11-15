@@ -1,0 +1,718 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T06:39:18.673Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "helloplus-prep3-supplement",
+  "sourceFilename": "Hello plus prep 3 كامل(1).pdf",
+  "grade": "Preparatory 3",
+  "unitNumber": 1,
+  "unitTitle": "Unit 1: My World",
+  "sourcePdfRange": {
+    "start": 3,
+    "end": 65
+  },
+  "sourceCoverage": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "sourceFingerprint": "dc59f9931ff0cfada53fabd9344629a2f69a7667072ada8bc66cf8f04f0f0135",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 1: My World",
+    "expectedRange": {
+      "start": 3,
+      "end": 65,
+      "totalPages": 63
+    },
+    "recordedCoverage": {
+      "totalPages": 63,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 27,
+      "supplementaryItems": 3,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T06:39:18.673Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "prep3_u1_v1",
+          "content": {
+            "word": "sociable",
+            "arabicMeaning": "اجتماعي / ودود",
+            "example": "He is very sociable and enjoys making new friends at every event.",
+            "origin": "source",
+            "sourcePdfPage": 4
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_v2",
+          "content": {
+            "word": "generations",
+            "arabicMeaning": "أجيال",
+            "example": "In our family, we have three generations living together.",
+            "origin": "source",
+            "sourcePdfPage": 4
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_v3",
+          "content": {
+            "word": "get-together",
+            "arabicMeaning": "تجمع عائلي / لقاء",
+            "example": "Every summer, our family has a big get-together where everyone meets.",
+            "origin": "source",
+            "sourcePdfPage": 4
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_v4",
+          "content": {
+            "word": "courtyard",
+            "arabicMeaning": "فناء داخلي",
+            "example": "The building has a pretty courtyard and small balconies.",
+            "origin": "source",
+            "sourcePdfPage": 4
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_v5",
+          "content": {
+            "word": "census",
+            "arabicMeaning": "تعداد سكاني",
+            "example": "The government conducts a national census every ten years to count the population.",
+            "origin": "source",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice Questions",
+      "items": [
+        {
+          "itemId": "prep3_u1_vq1",
+          "content": {
+            "question": "People in our neighborhood are very ..........; they often talk and help each other.",
+            "options": [
+              "quiet",
+              "shy",
+              "sociable",
+              "silent"
+            ],
+            "correctAnswer": "sociable",
+            "reason": "Sociable describes friendly people who enjoy meeting, chatting, and spending time with others.",
+            "origin": "source",
+            "sourcePdfPage": 6
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_vq2",
+          "content": {
+            "question": "In our family, we have three ..........: grandparents, parents, and children.",
+            "options": [
+              "relatives",
+              "neighbors",
+              "generations",
+              "cousins"
+            ],
+            "correctAnswer": "generations",
+            "reason": "Grandparents, parents, and children represent three distinct age groups or generations in a family.",
+            "origin": "source",
+            "sourcePdfPage": 6
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_vq3",
+          "content": {
+            "question": "An official count of the people in a country is called a ..........",
+            "options": [
+              "census",
+              "record",
+              "certificate",
+              "list"
+            ],
+            "correctAnswer": "census",
+            "reason": "A census is the official government survey that counts population details and occupations.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Explanations",
+      "items": [
+        {
+          "itemId": "prep3_u1_g1",
+          "content": {
+            "rule": "The Present Perfect Progressive Tense",
+            "explanation": "Use have/has + been + verb-ing to describe actions or situations that began in the past and are still continuing now.",
+            "example": "We have been living in this neighborhood for ten years.",
+            "origin": "source",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_g2",
+          "content": {
+            "rule": "Present Perfect Simple vs Present Perfect Progressive",
+            "explanation": "Use the Present Perfect Simple for completed results or stative verbs, and the Present Perfect Progressive for ongoing temporary actions.",
+            "example": "I have known my friend for a long time, but we have been working together recently.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice Questions",
+      "items": [
+        {
+          "itemId": "prep3_u1_gq1",
+          "content": {
+            "question": "We .......... in this neighborhood for ten years and we still live here.",
+            "options": [
+              "lived",
+              "live",
+              "have been living",
+              "are living"
+            ],
+            "correctAnswer": "have been living",
+            "reason": "The Present Perfect Progressive (have been living) is used for an action that started in the past and continues in the present.",
+            "origin": "source",
+            "sourcePdfPage": 20
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_gq2",
+          "content": {
+            "question": "She hasn't seen her father .......... she was a child.",
+            "options": [
+              "ever",
+              "since",
+              "for",
+              "yet"
+            ],
+            "correctAnswer": "since",
+            "reason": "'Since' is used to introduce a specific starting point in time, such as a past clause.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_gq3",
+          "content": {
+            "question": "How long have you been .......... outside in the cold weather?",
+            "options": [
+              "wait",
+              "waited",
+              "waiting",
+              "waits"
+            ],
+            "correctAnswer": "waiting",
+            "reason": "The Present Perfect Progressive structure is have/has + been + verb-ing.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "prep3_u1_r1",
+          "content": {
+            "passage": "I live in an apartment on the second floor of an old, traditional building in the city center. It has a pretty courtyard and small balconies that look over the street. It also has high ceilings, so although my family's large, it doesn't feel too small. I live with my twin sisters, my parents, and my great-grandmother. She came to live with us a year ago when her son, my grandfather, died. She was 103 last month. When people ask her how she's lived so long, she answers 'honey, sweet potatoes, and a positive attitude'. She's sometimes a little sad that she's lost many friends and relatives of her generation lately, but generally she's very cheerful. I'm similar to her in many ways. Like her, I love reading.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_r2",
+          "content": {
+            "question": "Why doesn't the apartment feel too small despite the large family size?",
+            "options": [
+              "It has small balconies.",
+              "It has high ceilings.",
+              "It is in the city center.",
+              "It has a public library."
+            ],
+            "correctAnswer": "It has high ceilings.",
+            "reason": "The text explicitly states that high ceilings make the apartment feel spacious for the large family.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "prep3_u1_l1",
+          "content": {
+            "script": "Interviewer: Hi everyone! Today's podcast episode is about community projects and my guest is Rasha. You're Egyptian, aren't you, Rasha?\nRasha: Hello. Yes, I am. I live in Cairo.\nInterviewer: Please tell us about your community project.\nRasha: Sure. In my neighborhood, we have a community garden.\nInterviewer: A community garden?\nRasha: Yes. They're very common here. People love them. They're big gardens that lots of people share. Most people in my city live in apartments and don't have their own gardens. My family is the same - we don't have our own garden. So we applied to join a local community garden a few years ago. It's fantastic; everyone in my family loves it. We've been growing our own vegetables there for three years.",
+            "origin": "source",
+            "sourcePdfPage": 12
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_l2",
+          "content": {
+            "question": "How long has Rasha's family been growing vegetables in the community garden?",
+            "options": [
+              "For one year",
+              "For two years",
+              "For three years",
+              "For ten years"
+            ],
+            "correctAnswer": "For three years",
+            "reason": "In the podcast interview, Rasha clearly specifies that they have been growing vegetables for three years.",
+            "origin": "source",
+            "sourcePdfPage": 13
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "prep3_u1_s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Karim",
+                "text": "Hi, Rowan. I thought football practice was great tonight.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Rowan",
+                "text": "Hey, Karim. Yeah, me too. You're really good, by the way. How long have you been playing?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Karim",
+                "text": "Thanks. I've been playing football all my life ... I'm Egyptian!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Rowan",
+                "text": "Does everyone in Egypt play football?",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "prep3_u1_game1",
+          "content": {
+            "gameName": "Vocabulary Challenge",
+            "description": "Select the correct definition word to score points.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "An informal meeting or gathering of family members is called a ..........",
+            "options": [
+              "get-together",
+              "census",
+              "courtyard",
+              "balcony"
+            ],
+            "correctAnswer": "get-together",
+            "reason": "A get-together refers to an informal party or meeting among friends or relatives.",
+            "origin": "supplementary",
+            "sourcePdfPage": 5
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "prep3_u1_game2",
+          "content": {
+            "gameName": "Grammar Quest",
+            "description": "Choose the correct verb construction for continuous present perfect actions.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which sentence correctly expresses an ongoing action starting in the past?",
+            "options": [
+              "I am living here since five years.",
+              "I have been living here for five years.",
+              "I lived here for five years ago.",
+              "I have lived here yesterday."
+            ],
+            "correctAnswer": "I have been living here for five years.",
+            "reason": "The Present Perfect Progressive requires 'have been' + verb-ing combined with 'for' to show duration.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "End-of-Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "prep3_u1_test1",
+          "content": {
+            "question": "What is the term for people of about the same age in a family or society?",
+            "options": [
+              "Neighbors",
+              "Generations",
+              "Ancestors",
+              "Passengers"
+            ],
+            "correctAnswer": "Generations",
+            "reason": "Generations refers to groups of people born and living around the same era.",
+            "origin": "source",
+            "sourcePdfPage": 5
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test2",
+          "content": {
+            "question": "The building where my family lives has a small .......... looking over the street.",
+            "options": [
+              "ceiling",
+              "balcony",
+              "courtyard",
+              "basement"
+            ],
+            "correctAnswer": "balcony",
+            "reason": "A balcony is an outside platform attached to a building room overlooking the street.",
+            "origin": "source",
+            "sourcePdfPage": 6
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test3",
+          "content": {
+            "question": "He has been studying English .......... nine o'clock this morning.",
+            "options": [
+              "for",
+              "since",
+              "ago",
+              "already"
+            ],
+            "correctAnswer": "since",
+            "reason": "'Since' specifies the exact starting point of a continuous time period.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "prep3_u1_test4",
+          "content": {
+            "question": "They have .......... finished their homework, so they can go out to play now.",
+            "options": [
+              "yet",
+              "already",
+              "ever",
+              "never"
+            ],
+            "correctAnswer": "already",
+            "reason": "'Already' highlights that an action has been completed prior to the present moment.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test5",
+          "content": {
+            "question": "Which suffix changes the adjective 'happy' into a noun?",
+            "options": [
+              "-ful",
+              "-ness",
+              "-able",
+              "-ment"
+            ],
+            "correctAnswer": "-ness",
+            "reason": "Adding the suffix '-ness' to the adjective 'happy' forms the noun 'happiness'.",
+            "origin": "source",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test6",
+          "content": {
+            "question": "An official count of a population that includes names and occupations is a ..........",
+            "options": [
+              "census",
+              "certificate",
+              "ticket",
+              "journal"
+            ],
+            "correctAnswer": "census",
+            "reason": "A census is a national record keeping track of population counts and demographic details.",
+            "origin": "source",
+            "sourcePdfPage": 26
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test7",
+          "content": {
+            "question": "How long .......... you been waiting for the bus?",
+            "options": [
+              "has",
+              "have",
+              "are",
+              "were"
+            ],
+            "correctAnswer": "have",
+            "reason": "The subject pronoun 'you' requires the auxiliary verb 'have' in present perfect tenses.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test8",
+          "content": {
+            "question": "My great-grandmother says her long life is due to honey, sweet potatoes, and a positive ..........",
+            "options": [
+              "attitude",
+              "courtyard",
+              "census",
+              "occupation"
+            ],
+            "correctAnswer": "attitude",
+            "reason": "In the unit reading text, the great-grandmother attributes her age to honey, sweet potatoes, and a positive attitude.",
+            "origin": "source",
+            "sourcePdfPage": 11
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test9",
+          "content": {
+            "question": "In Supai village, how does the mail arrive every day?",
+            "options": [
+              "By train",
+              "By helicopter",
+              "On a donkey",
+              "By car"
+            ],
+            "correctAnswer": "On a donkey",
+            "reason": "The text explains that post reaches Supai on a donkey because there are no roads for cars.",
+            "origin": "source",
+            "sourcePdfPage": 48
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "prep3_u1_test10",
+          "content": {
+            "question": "Which word is an antonym for 'wealthy'?",
+            "options": [
+              "Rich",
+              "Poor",
+              "Cheerful",
+              "Sociable"
+            ],
+            "correctAnswer": "Poor",
+            "reason": "'Poor' is the exact opposite (antonym) of 'wealthy'.",
+            "origin": "source",
+            "sourcePdfPage": 7
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

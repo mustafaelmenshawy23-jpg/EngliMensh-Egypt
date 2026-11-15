@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T06:31:37.595Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "prep3-student-term1",
+  "sourceFilename": "English_language_prep3_t1 (1).pdf",
+  "grade": "Preparatory 3",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: Communication with Family and Friends",
+  "sourcePdfRange": {
+    "start": 27,
+    "end": 40
+  },
+  "sourceCoverage": [
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "sourceFingerprint": "fd472647f64718ae83db188145dc9933ad0d46177601ff1aa74bd10a35846d43",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 2: Communication with Family and Friends",
+    "expectedRange": {
+      "start": 27,
+      "end": 40,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 27,
+      "supplementaryItems": 3,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T06:31:37.595Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary List",
+      "items": [
+        {
+          "itemId": "vocab-1",
+          "content": {
+            "word": "misunderstanding",
+            "arabicMeaning": "سوء فهم",
+            "example": "A simple misunderstanding can cause distance between friends.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-2",
+          "content": {
+            "word": "bond",
+            "arabicMeaning": "رابطة",
+            "example": "Being honest helps to strengthen the bond between people.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-3",
+          "content": {
+            "word": "resolve",
+            "arabicMeaning": "يحل أو ينهي خلافاً",
+            "example": "The best way to resolve conflicts is through calm discussion.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-4",
+          "content": {
+            "word": "distraction",
+            "arabicMeaning": "تشتيت الذهن",
+            "example": "Phone distractions can affect effective communication.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-5",
+          "content": {
+            "word": "gesture",
+            "arabicMeaning": "إيماءة أو حركة تعبيرية",
+            "example": "A simple smile is a warm gesture of kindness.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-6",
+          "content": {
+            "word": "determination",
+            "arabicMeaning": "إصرار أو عزيمة",
+            "example": "Zeina showed great determination during her project presentation.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab-q-1",
+          "content": {
+            "question": "What term describes a failure to understand something correctly?",
+            "options": [
+              "Misunderstanding",
+              "Gesture",
+              "Silence",
+              "Talent"
+            ],
+            "correctAnswer": "Misunderstanding",
+            "reason": "Page 30 defines a misunderstanding as a failure to understand correctly.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-2",
+          "content": {
+            "question": "Which word means a strong connection between people?",
+            "options": [
+              "Proposal",
+              "Bond",
+              "Distraction",
+              "Conflict"
+            ],
+            "correctAnswer": "Bond",
+            "reason": "Page 30 defines a bond as a strong connection between people.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab-q-3",
+          "content": {
+            "question": "Which word means to find a solution to a problem or conflict?",
+            "options": [
+              "reconnect",
+              "resolve",
+              "ignore",
+              "distract"
+            ],
+            "correctAnswer": "resolve",
+            "reason": "Page 30 defines resolve as finding a solution to a problem or conflict.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Rules",
+      "items": [
+        {
+          "itemId": "grammar-1",
+          "content": {
+            "rule": "The Third Conditional",
+            "explanation": "The Third Conditional is used to talk about unreal situations in the past and their hypothetical results. Form: If + past perfect (had + past participle) + would have + past participle.",
+            "example": "If they had scored one more goal, they wouldn't have lost the match.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "grammar-q-1",
+          "content": {
+            "question": "If he had driven carefully, he ______ the accident.",
+            "options": [
+              "would avoid",
+              "would have avoided",
+              "had avoided",
+              "will avoid"
+            ],
+            "correctAnswer": "would have avoided",
+            "reason": "The third conditional main clause uses 'would have + past participle' after a past perfect if-clause.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "grammar-q-2",
+          "content": {
+            "question": "If we had gone to the museum, we ______ the new exhibition.",
+            "options": [
+              "would see",
+              "saw",
+              "would have seen",
+              "see"
+            ],
+            "correctAnswer": "would have seen",
+            "reason": "Third conditional result clauses require 'would have + past participle'.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "grammar-q-3",
+          "content": {
+            "question": "If she ______ the instructions, she wouldn't have done it incorrectly.",
+            "options": [
+              "had read",
+              "hadn't done",
+              "reads",
+              "read"
+            ],
+            "correctAnswer": "had read",
+            "reason": "The if-clause in the third conditional requires the past perfect structure (had + past participle).",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "reading-1",
+          "content": {
+            "passage": "Good communication is the key to strong relationships. Whether it’s with your parents, siblings, or friends, the way you talk and listen affects your connection with others. Communication isn’t only about words — it includes your tone of voice, facial expressions, and body language. Even a simple smile or a text message can show someone you care. In today’s fast world, many young people find it hard to make time for meaningful conversations. Social media and texting make it easy to stay in touch, but sometimes messages are misunderstood. Miscommunication can lead to conflict or distance between people. Having open and respectful conversations helps to solve problems and build trust. If you’re feeling stressed or upset, talking to a friend or a family member can help. It’s important to listen carefully and try to understand the other person’s point of view. Being honest and supportive also helps to strengthen the bond between people. Sometimes, conflicts happen even in close relationships. The best way to resolve them is through calm, honest discussion. When people feel heard and respected, they are more likely to forgive and move forward. Communication is not just about speaking — it’s about listening and caring, too. To sum up, strong communication creates stronger relationships. Taking time to connect with others through kind words, active listening, and thoughtful messages helps you feel closer and more supported in your daily life.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "reading-2",
+          "content": {
+            "question": "What is the best way to resolve conflicts in close relationships according to the passage?",
+            "options": [
+              "Through calm, honest discussion",
+              "By avoiding serious topics",
+              "By arguing loudly",
+              "Through texting quickly"
+            ],
+            "correctAnswer": "Through calm, honest discussion",
+            "reason": "The passage explicitly states that the best way to resolve conflicts is through calm, honest discussion.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "listening-1",
+          "content": {
+            "script": "Mariam: Last week, I had a misunderstanding with my friend because we only communicated through text messages instead of talking face-to-face. Things got confused, but once we sat down together, stayed calm, and really listened to each other, we solved the problem. I realized that listening carefully and being honest is just as important as talking.",
+            "origin": "supplementary",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "listening-2",
+          "content": {
+            "question": "What caused the misunderstanding with Mariam's friend?",
+            "options": [
+              "They had different opinions.",
+              "They didn't talk face-to-face.",
+              "They forgot to turn in a project.",
+              "They were both late."
+            ],
+            "correctAnswer": "They didn't talk face-to-face.",
+            "reason": "Mariam mentions that communicating through texts instead of talking face-to-face caused the confusion.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speaking-1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Mona",
+                "text": "Hi Naglaa, you seemed sad yesterday. Everything okay?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Naglaa",
+                "text": "Yes, I’m all right now. Just had a little misunderstanding with my cousin, Noha, last weekend.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mona",
+                "text": "Oh, that’s tough. Did you solve the problem ?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Naglaa",
+                "text": "We did. Honestly, if we had communicated better, we wouldn’t have argued at all.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Mona",
+                "text": "I totally agree. If I had been more honest with my sister last week, we wouldn’t have ended up upset with each other either. Right?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Naglaa",
+                "text": "For sure. I feel like we’ve finally reconnected. It just took a real conversation.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game-1",
+          "content": {
+            "gameName": "Vocabulary Master",
+            "description": "Select the correct term to describe helpful behavior in relationships.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Giving help or encouragement to someone means being ______.",
+            "options": [
+              "supportive",
+              "frustrated",
+              "awkward",
+              "distant"
+            ],
+            "correctAnswer": "supportive",
+            "reason": "Being supportive means giving help or encouragement to others.",
+            "origin": "supplementary",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game-2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Pick the correct conditional structure to complete the past imaginary scenario.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "If I had brought my umbrella, I ______ wet.",
+            "options": [
+              "would not have gotten",
+              "will not get",
+              "would not get",
+              "didn't get"
+            ],
+            "correctAnswer": "would not have gotten",
+            "reason": "The third conditional main clause uses 'would not have + past participle'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 2 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test-q-1",
+          "content": {
+            "question": "What is the meaning of 'bond' in a relationship context?",
+            "options": [
+              "A strong connection between people",
+              "A severe argument",
+              "A silent dinner",
+              "A school project"
+            ],
+            "correctAnswer": "A strong connection between people",
+            "reason": "Page 30 defines a bond as a strong connection between people.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-2",
+          "content": {
+            "question": "Which word means a movement or action that shows emotion or intent?",
+            "options": [
+              "gesture",
+              "silence",
+              "proposal",
+              "distraction"
+            ],
+            "correctAnswer": "gesture",
+            "reason": "Page 34 defines a gesture as a movement or action showing feeling or intent.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-3",
+          "content": {
+            "question": "If she had left early, she ______ the train.",
+            "options": [
+              "would have caught",
+              "will catch",
+              "caught",
+              "would catch"
+            ],
+            "correctAnswer": "would have caught",
+            "reason": "Third conditional requires 'would have + past participle' in the result clause.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-4",
+          "content": {
+            "question": "If I ______ hard, I would have passed the exam.",
+            "options": [
+              "had studied",
+              "study",
+              "have studied",
+              "will study"
+            ],
+            "correctAnswer": "had studied",
+            "reason": "The third conditional if-clause takes the past perfect verb form (had + past participle).",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-5",
+          "content": {
+            "question": "If we had brought the map, we ______ lost.",
+            "options": [
+              "would not have gotten",
+              "won't get",
+              "don't get",
+              "would not get"
+            ],
+            "correctAnswer": "would not have gotten",
+            "reason": "The negative third conditional result clause is formed with 'would not have + past participle'.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-6",
+          "content": {
+            "question": "What broke the silence during Omar's family dinner in the story?",
+            "options": [
+              "Omar's honest words about missing their conversations",
+              "A phone call",
+              "A loud argument",
+              "A television show"
+            ],
+            "correctAnswer": "Omar's honest words about missing their conversations",
+            "reason": "On page 33, Omar spoke honestly about missing how they used to talk, which broke the silence.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-7",
+          "content": {
+            "question": "Why did Zeina write a proposal for the school garden project?",
+            "options": [
+              "To share her plan and ask for help",
+              "To complain about her teachers",
+              "To avoid doing homework",
+              "To win a prize"
+            ],
+            "correctAnswer": "To share her plan and ask for help",
+            "reason": "Zeina researched school gardens and wrote a proposal to share her idea and ask for assistance (page 35).",
+            "origin": "source",
+            "sourcePdfPage": 35
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-8",
+          "content": {
+            "question": "According to Mariam, what helps communication when there is a problem?",
+            "options": [
+              "Listening, being honest, and staying calm",
+              "Speaking loudly to win",
+              "Avoiding face-to-face talks",
+              "Ignoring the problem completely"
+            ],
+            "correctAnswer": "Listening, being honest, and staying calm",
+            "reason": "Mariam emphasizes on page 31 that listening, being honest, and staying calm help communication.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-9",
+          "content": {
+            "question": "What does the conversational phrase 'For sure' mean?",
+            "options": [
+              "No doubt",
+              "That's nice",
+              "Be real",
+              "I completely understand"
+            ],
+            "correctAnswer": "No doubt",
+            "reason": "Page 38 matches the conversational phrase 'For sure' to 'no doubt'.",
+            "origin": "source",
+            "sourcePdfPage": 38
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test-q-10",
+          "content": {
+            "question": "They ______ the game if they had practiced more.",
+            "options": [
+              "would have won",
+              "will win",
+              "win",
+              "had won"
+            ],
+            "correctAnswer": "would have won",
+            "reason": "The third conditional main clause takes 'would have + past participle'.",
+            "origin": "source",
+            "sourcePdfPage": 40
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

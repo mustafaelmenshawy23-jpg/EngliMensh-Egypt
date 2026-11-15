@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-14T08:12:22.615Z",
+  "generatedAt": "2026-11-15T06:30:56.773Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
   "selected": 10,
-  "cursorIndex": 72,
-  "nextCursorIndex": 83,
+  "cursorIndex": 83,
+  "nextCursorIndex": 104,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
   "sourceExtraction": {
@@ -19,284 +19,14 @@
     "ocrErrorPages": 0,
     "pagesNeedingManualVisualReview": 4399
   },
-  "completedDrafts": 61,
+  "completedDrafts": 70,
   "approvedPreserved": 0,
   "blockedSourceReview": 15,
   "excludedUnits": 0,
   "pendingCandidates": 10,
   "results": [
     {
-      "unitId": "helloplus-prep1-supplement-unit-3",
-      "status": "failed",
-      "error": "Generator exited with code 1: Gemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_2 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"We ___ a party for our little sister nex\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-4",
-      "status": "generated_needs_review",
-      "qualityScore": 85,
-      "itemCount": 28,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 4,
-          "validItems": 4,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-5",
-      "status": "generated_needs_review",
-      "qualityScore": 85,
-      "itemCount": 30,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "helloplus-prep1-supplement-unit-6",
-      "status": "generated_needs_review",
-      "qualityScore": 100,
-      "itemCount": 27,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep2-student-term1-unit-1",
-      "status": "generated_needs_review",
-      "qualityScore": 90,
-      "itemCount": 29,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep2-student-term1-unit-2",
-      "status": "generated_needs_review",
-      "qualityScore": 100,
-      "itemCount": 37,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 8,
-          "validItems": 8,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 4,
-          "validItems": 4,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 4,
-          "validItems": 4,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep2-student-term1-unit-3",
+      "unitId": "prep3-student-term1-unit-2",
       "status": "generated_needs_review",
       "qualityScore": 85,
       "itemCount": 30,
@@ -349,9 +79,231 @@
       }
     },
     {
-      "unitId": "prep2-student-term1-unit-4",
+      "unitId": "prep3-student-term1-unit-6",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-1",
       "status": "generated_needs_review",
       "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-2",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 5,
+          "validItems": 5,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-3",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
+      "itemCount": 28,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 4,
+          "validItems": 4,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-4",
+      "status": "failed",
+      "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.8-flash; trying another configured key.\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini gemini-3.8-flash with GEMINI_API_KEY_BACKUP_3 attempt 2/3 failed: The operation was aborted due to timeout. Retrying in 8s...\nGEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.6-flash; trying another configured key.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"A traditional story passed down through \"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-5",
+      "status": "failed_validation",
+      "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.8-flash; trying another configured key.\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.6-flash; trying another configured key.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 70/100):\nDuplicate question prompt detected: \"An event like an earthquake or flood tha\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:996:9\n\nNode.js v22.23.4\n"
+    },
+    {
+      "unitId": "helloplus-prep3-supplement-unit-6",
+      "status": "generated_needs_review",
+      "qualityScore": 100,
       "itemCount": 29,
       "sections": {
         "vocabulary": {
@@ -402,63 +354,10 @@
       }
     },
     {
-      "unitId": "prep2-student-term1-unit-5",
+      "unitId": "secondary2-student-term1-unit-3",
       "status": "generated_needs_review",
-      "qualityScore": 85,
-      "itemCount": 29,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 5,
-          "validItems": 5,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
-    },
-    {
-      "unitId": "prep3-student-term1-unit-1",
-      "status": "generated_needs_review",
-      "qualityScore": 85,
-      "itemCount": 36,
+      "qualityScore": 90,
+      "itemCount": 31,
       "sections": {
         "vocabulary": {
           "itemCount": 7,
@@ -466,28 +365,81 @@
           "issues": []
         },
         "vocabulary_questions": {
-          "itemCount": 4,
-          "validItems": 4,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
           "itemCount": 2,
           "validItems": 2,
           "issues": []
         },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
+    },
+    {
+      "unitId": "secondary2-student-term1-unit-4",
+      "status": "generated_needs_review",
+      "qualityScore": 85,
+      "itemCount": 30,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
         "grammar_questions": {
-          "itemCount": 4,
-          "validItems": 4,
+          "itemCount": 3,
+          "validItems": 3,
           "issues": []
         },
         "reading": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "listening": {
-          "itemCount": 3,
-          "validItems": 3,
+          "itemCount": 2,
+          "validItems": 2,
           "issues": []
         },
         "speaking": {
@@ -3985,9 +3937,9 @@
   ],
   "excluded": [],
   "stateTotals": {
-    "generatedNeedsReview": 70,
+    "generatedNeedsReview": 78,
     "approved": 0,
-    "blockedSourceReview": 45,
+    "blockedSourceReview": 37,
     "failed": 10,
     "waitingForRetry": 0
   },
@@ -4070,16 +4022,17 @@
       "bookId": "helloplus-prep1-supplement",
       "totalUnits": 6,
       "statuses": {
-        "complete_draft_needs_review": 2,
-        "failed": 1,
-        "generated_needs_review": 3
+        "complete_draft_needs_review": 5,
+        "failed": 1
       }
     },
     {
       "bookId": "helloplus-prep3-supplement",
       "totalUnits": 6,
       "statuses": {
-        "blocked_source_review": 6
+        "generated_needs_review": 4,
+        "failed": 1,
+        "failed_validation": 1
       }
     },
     {
@@ -4094,18 +4047,15 @@
       "bookId": "prep2-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "generated_needs_review": 5,
-        "complete_draft_needs_review": 1
+        "complete_draft_needs_review": 6
       }
     },
     {
       "bookId": "prep3-student-term1",
       "totalUnits": 6,
       "statuses": {
-        "generated_needs_review": 1,
-        "failed_validation": 1,
-        "complete_draft_needs_review": 3,
-        "blocked_source_review": 1
+        "complete_draft_needs_review": 4,
+        "generated_needs_review": 2
       }
     },
     {
@@ -4169,8 +4119,8 @@
       "totalUnits": 6,
       "statuses": {
         "complete_draft_needs_review": 3,
-        "failed_validation": 1,
-        "blocked_source_review": 2
+        "generated_needs_review": 2,
+        "blocked_source_review": 1
       }
     },
     {
@@ -4184,49 +4134,49 @@
   ],
   "sectionCoverage": {
     "vocabulary": {
-      "unitsWithItems": 70,
-      "totalItems": 382,
-      "validItems": 382
+      "unitsWithItems": 78,
+      "totalItems": 426,
+      "validItems": 426
     },
     "vocabulary_questions": {
-      "unitsWithItems": 70,
-      "totalItems": 216,
-      "validItems": 216
+      "unitsWithItems": 78,
+      "totalItems": 240,
+      "validItems": 240
     },
     "grammar": {
-      "unitsWithItems": 70,
-      "totalItems": 112,
-      "validItems": 112
+      "unitsWithItems": 78,
+      "totalItems": 122,
+      "validItems": 122
     },
     "grammar_questions": {
-      "unitsWithItems": 70,
-      "totalItems": 215,
-      "validItems": 215
+      "unitsWithItems": 78,
+      "totalItems": 239,
+      "validItems": 239
     },
     "reading": {
-      "unitsWithItems": 70,
-      "totalItems": 154,
-      "validItems": 154
+      "unitsWithItems": 78,
+      "totalItems": 170,
+      "validItems": 170
     },
     "listening": {
-      "unitsWithItems": 70,
-      "totalItems": 148,
-      "validItems": 148
+      "unitsWithItems": 78,
+      "totalItems": 164,
+      "validItems": 164
     },
     "speaking": {
-      "unitsWithItems": 70,
-      "totalItems": 70,
-      "validItems": 70
+      "unitsWithItems": 78,
+      "totalItems": 78,
+      "validItems": 78
     },
     "games": {
-      "unitsWithItems": 70,
-      "totalItems": 143,
-      "validItems": 143
+      "unitsWithItems": 78,
+      "totalItems": 159,
+      "validItems": 159
     },
     "comprehensive_test": {
-      "unitsWithItems": 70,
-      "totalItems": 700,
-      "validItems": 700
+      "unitsWithItems": 78,
+      "totalItems": 780,
+      "validItems": 780
     }
   },
   "autoContinuation": {

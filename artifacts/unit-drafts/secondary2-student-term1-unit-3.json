@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T06:57:39.058Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "secondary2-student-term1",
+  "sourceFilename": "English_language_2sec_t1 (1).pdf",
+  "grade": "Secondary 2",
+  "unitNumber": 3,
+  "unitTitle": "Sustainable Development Goals (SDG)",
+  "sourcePdfRange": {
+    "start": 30,
+    "end": 47
+  },
+  "sourceCoverage": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "sourceFingerprint": "f7ff8f52c1e7c284f8b1e2967ab41c8a25fa16278575e671db6ab5c8a2f1a2b6",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Sustainable Development Goals (SDG)",
+    "expectedRange": {
+      "start": 30,
+      "end": 47,
+      "totalPages": 18
+    },
+    "recordedCoverage": {
+      "totalPages": 18,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 31,
+      "sourceItems": 21,
+      "supplementaryItems": 10,
+      "vocabularyCount": 7,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 7,
+        "validItems": 7,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T06:57:39.057Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "sustainable",
+            "arabicMeaning": "مستدام",
+            "example": "We need sustainable development to protect natural resources for future generations.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "vision",
+            "arabicMeaning": "رؤية",
+            "example": "Egypt Vision 2030 is a long-term plan for comprehensive national progress.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "comprehensive",
+            "arabicMeaning": "شامل",
+            "example": "The strategy presents a comprehensive plan for economic and social development.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "pillars",
+            "arabicMeaning": "أركان / ركائز",
+            "example": "The strategy focuses on three main pillars: economy, society, and environment.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "affordable",
+            "arabicMeaning": "ميسور التكلفة",
+            "example": "The initiative aims to provide quality and affordable healthcare for all citizens.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "cornerstone",
+            "arabicMeaning": "حجر الزاوية",
+            "example": "Education is a cornerstone of national development and citizen empowerment.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_7",
+          "content": {
+            "word": "illiteracy",
+            "arabicMeaning": "الأمية",
+            "example": "Educational reforms aim at reducing illiteracy across all regions.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What is the main goal of Egypt Vision 2030?",
+            "options": [
+              "To focus only on tourism",
+              "To build prosperity through growth and fairness",
+              "To depend only on international partners",
+              "To reduce education opportunities"
+            ],
+            "correctAnswer": "To build prosperity through growth and fairness",
+            "reason": "The passage specifies that Egypt Vision 2030 aims to build prosperity through economic growth and social fairness.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Who participated in designing the Sustainable Development Strategy (SDS) plan?",
+            "options": [
+              "Only the government",
+              "Only foreign investors",
+              "Civil society, government, and partners",
+              "Only university professors"
+            ],
+            "correctAnswer": "Civil society, government, and partners",
+            "reason": "The text states that civil society, government agencies, and local and international partners worked together to design the strategy.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "Which three main pillars does Egypt Vision 2030 focus on?",
+            "options": [
+              "Health, tourism, and culture",
+              "Education, transportation, and technology",
+              "Economy, society, and environment",
+              "Politics, security, and religion"
+            ],
+            "correctAnswer": "Economy, society, and environment",
+            "reason": "The passage explicitly lists the economy, society, and the environment as the three main pillars of SDS.",
+            "origin": "source",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Adjectives vs. Adverbs",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Adjectives vs. Adverbs Usage",
+            "explanation": "Adjectives describe or give more information about nouns (people, places, things). Adverbs describe or give more information about verbs, adjectives, or other adverbs, answering questions such as How, When, Where, and To what extent.",
+            "example": "Adjective: She has a unique personality. Adverb: He speaks clearly.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "She speaks __________ English.",
+            "options": [
+              "fluent",
+              "fluently",
+              "fluency",
+              "more fluent"
+            ],
+            "correctAnswer": "fluent",
+            "reason": "The word 'fluent' acts as an adjective describing the noun 'English'.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "He ran __________ to catch the bus.",
+            "options": [
+              "quick",
+              "quickly",
+              "quickness",
+              "quicker"
+            ],
+            "correctAnswer": "quickly",
+            "reason": "The adverb 'quickly' is used to modify the verb 'ran'.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "The soup tastes ______________.",
+            "options": [
+              "delicious",
+              "deliciously",
+              "delicacy",
+              "more deliciously"
+            ],
+            "correctAnswer": "delicious",
+            "reason": "Sense verbs like 'taste' take an adjective (delicious) to describe the subject rather than an adverb.",
+            "origin": "source",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_pass_1",
+          "content": {
+            "passage": "Sustainable Development Strategy (SDS) means a long-term plan that focuses on improving people’s lives in a fair and balanced way. It aims to grow the economy, support social justice, and protect the environment so that every person and future generations can enjoy a good quality of life. In Egypt, this vision is called Egypt Vision 2030. Egypt Vision 2030 is a step towards comprehensive national development. Its goal is to build prosperity through economic growth, social fairness, and stronger regional leadership. SDS acts as a roadmap to help Egypt make the most of its strengths and face the hopes of its people for a better life. The strategy depends on the participation of all classes, which means that civil society, government agencies, and local and international partners all worked together to design the plan. Because of Egypt’s unique position in the region and the world, the SDS gives the country an advantage in addressing global changes. The SDS follows the principle of sustainable development, which is about improving people’s quality of life while also protecting the rights of future generations. It focuses on three main pillars: the economy, society, and the environment. In addition, the SDS is built on the ideas of inclusive and balanced development. This means that every person should take part in development, benefit from it equally, and have fair opportunities. The strategy also aims to close gaps between regions, use resources wisely, and guarantee a better future for the next generation.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What is the primary definition of Sustainable Development Strategy (SDS) in the passage?",
+            "options": [
+              "A short-term commercial investment program",
+              "A long-term plan focusing on improving lives fairly and sustainably",
+              "A strategy aimed solely at developing international airports",
+              "A program designed exclusively for urban cities"
+            ],
+            "correctAnswer": "A long-term plan focusing on improving lives fairly and sustainably",
+            "reason": "The text defines SDS as a long-term plan that focuses on improving people's lives in a fair and balanced way while protecting future generations.",
+            "origin": "source",
+            "sourcePdfPage": 32
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Skills",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Welcome to today's presentation on healthcare reform in Egypt. Under Egypt Vision 2030, the government is committed to providing quality healthcare services to all citizens across the nation. A key pillar of this plan is the Universal Health Insurance System, designed to improve medical funding and service delivery. Additionally, national campaigns such as the '100 Million Healthy Lives' initiative have successfully screened millions of people for chronic diseases, ensuring early detection and better long-term treatment.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "What does Egypt Vision 2030 aim to achieve regarding national healthcare?",
+            "options": [
+              "Build more schools",
+              "Improve roads and transportation",
+              "Provide quality healthcare to all",
+              "Reduce internet costs"
+            ],
+            "correctAnswer": "Provide quality healthcare to all",
+            "reason": "The listening audio and unit exercises highlight that Egypt Vision 2030 aims to provide quality healthcare to all citizens.",
+            "origin": "source",
+            "sourcePdfPage": 35
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "How can young people help achieve comprehensive development in Egypt by 2030?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "We can participate by focusing on modern skills, using natural resources wisely, and volunteering in community health projects.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "SDG Vocabulary Match",
+            "description": "Choose the word that matches the target definition from the unit.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which term describes a strategy capable of continuing over time without harming the environment or future generations?",
+            "options": [
+              "Sustainable",
+              "Temporary",
+              "Chronic",
+              "Random"
+            ],
+            "correctAnswer": "Sustainable",
+            "reason": "'Sustainable' means able to continue over time without causing long-term damage.",
+            "origin": "supplementary",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Sprint: Adjective or Adverb?",
+            "description": "Select the correct form of the word to modify verbs or nouns accurately.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Select the correct word: 'The teacher explained the complex lesson __________.'",
+            "options": [
+              "clearly",
+              "clear",
+              "clarity",
+              "clearness"
+            ],
+            "correctAnswer": "clearly",
+            "reason": "An adverb ('clearly') is required to modify the action verb 'explained'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What is the meaning of the word 'pillar' in the context of sustainable development?",
+            "options": [
+              "An important support or core part of a system",
+              "A temporary road closure",
+              "A type of chronic illness",
+              "A short-term financial loan"
+            ],
+            "correctAnswer": "An important support or core part of a system",
+            "reason": "In strategy contexts, 'pillars' refer to the central supporting ideas or foundation.",
+            "origin": "supplementary",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "What does 'affordable' mean when describing public healthcare services?",
+            "options": [
+              "Not too expensive and within budget",
+              "Free only for international tourists",
+              "Extremely costly and high-end",
+              "Unavailable to the general public"
+            ],
+            "correctAnswer": "Not too expensive and within budget",
+            "reason": "'Affordable' means priced reasonably so that people can access it without financial hardship.",
+            "origin": "supplementary",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "What is a main objective of reducing 'illiteracy' in Egypt Vision 2030?",
+            "options": [
+              "To ensure citizens have essential reading and writing skills",
+              "To eliminate math from secondary education",
+              "To lower university admission numbers",
+              "To replace digital technology with memorization"
+            ],
+            "correctAnswer": "To ensure citizens have essential reading and writing skills",
+            "reason": "Reducing illiteracy ensures all citizens acquire basic reading and writing abilities for personal and national growth.",
+            "origin": "supplementary",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "Which sentence correctly uses an adverb to modify a verb?",
+            "options": [
+              "He ran quickly to catch the school bus.",
+              "He ran quick to catch the school bus.",
+              "He ran quickness to catch the school bus.",
+              "He ran more quick to catch the school bus."
+            ],
+            "correctAnswer": "He ran quickly to catch the school bus.",
+            "reason": "'Quickly' is an adverb of manner correctly modifying the verb 'ran'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "Which sentence uses an adjective correctly after a sensory verb?",
+            "options": [
+              "The fresh soup tastes delicious.",
+              "The fresh soup tastes deliciously.",
+              "The fresh soup taste deliciousness.",
+              "The fresh soup tasting deliciously."
+            ],
+            "correctAnswer": "The fresh soup tastes delicious.",
+            "reason": "Verbs of sense take adjectives ('delicious') to modify the subject.",
+            "origin": "supplementary",
+            "sourcePdfPage": 36
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Choose the correct word: 'She speaks English __________ during international conferences.'",
+            "options": [
+              "fluently",
+              "fluent",
+              "fluency",
+              "more fluent"
+            ],
+            "correctAnswer": "fluently",
+            "reason": "The adverb 'fluently' describes how she performs the verb 'speaks'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 43
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "According to the passage on educational development, modern curricula focus on creativity instead of __________.",
+            "options": [
+              "rote memorization",
+              "critical thinking",
+              "problem solving",
+              "teacher training"
+            ],
+            "correctAnswer": "rote memorization",
+            "reason": "The text states that curricula are redesigned to focus on creativity rather than rote memorization.",
+            "origin": "source",
+            "sourcePdfPage": 37
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "What health initiative in Egypt focuses on disease screening and early detection?",
+            "options": [
+              "100 Million Healthy Lives",
+              "Benban Solar Park Initiative",
+              "Suez Canal Expansion Project",
+              "Grand Egyptian Museum Project"
+            ],
+            "correctAnswer": "100 Million Healthy Lives",
+            "reason": "The '100 Million Healthy Lives' initiative specifically targets early detection and screening of diseases.",
+            "origin": "source",
+            "sourcePdfPage": 35
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "Where is the Grand Egyptian Museum (GEM) located?",
+            "options": [
+              "Near the Pyramids of Giza",
+              "In the center of Alexandria",
+              "Inside Benban Solar Park",
+              "Along the Red Sea coast"
+            ],
+            "correctAnswer": "Near the Pyramids of Giza",
+            "reason": "The blog text on page 39 notes that the museum is located near the Pyramids of Giza.",
+            "origin": "source",
+            "sourcePdfPage": 39
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "What is a correct synonym for the word 'boosted' in an economic context?",
+            "options": [
+              "Increased",
+              "Worsened",
+              "Decreased",
+              "Reduced"
+            ],
+            "correctAnswer": "Increased",
+            "reason": "In Review 1, 'boosted' is defined as synonymous with 'increased'.",
+            "origin": "source",
+            "sourcePdfPage": 41
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}
