@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T07:01:50.667Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "baccalaureate-y2-first-language-part1",
+  "sourceFilename": "Eng-L1-EB-Part1 (1).pdf",
+  "grade": "Baccalaureate Year 2",
+  "unitNumber": 1,
+  "unitTitle": "Unit 1: Living Well in a Complex World",
+  "sourcePdfRange": {
+    "start": 12,
+    "end": 38
+  },
+  "sourceCoverage": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+  ],
+  "sourceFingerprint": "da9aa62f363ca74defa4ad2225c475edf41225194f2d8227eab43c46bc3d7481",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 1: Living Well in a Complex World",
+    "expectedRange": {
+      "start": 12,
+      "end": 38,
+      "totalPages": 27
+    },
+    "recordedCoverage": {
+      "totalPages": 27,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 32,
+      "sourceItems": 24,
+      "supplementaryItems": 8,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T07:01:50.667Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "sedentary",
+            "arabicMeaning": "قليل الحركة / يتطلب الجلوس",
+            "example": "Teenagers who adopt a sedentary lifestyle spending hours on screens face higher health risks.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "mindfulness",
+            "arabicMeaning": "اليقظة الذهنية",
+            "example": "Daily mindfulness practice helps students manage stress and stay focused.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "self-efficacy",
+            "arabicMeaning": "الاعتقاد بالكفاءة الذاتية",
+            "example": "High self-efficacy encourages individuals to stick to healthy daily routines.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v4",
+          "content": {
+            "word": "agency",
+            "arabicMeaning": "القدرة على الاختيار والعمل المستقل",
+            "example": "Personal agency allows individuals to make independent choices about their well-being.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v5",
+          "content": {
+            "word": "nudge",
+            "arabicMeaning": "توجيه لطيف / دفع خفيف",
+            "example": "Placing healthier food options at eye level is a subtle nudge toward better choices.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "v6",
+          "content": {
+            "word": "disempowering",
+            "arabicMeaning": "سالب للقوة أو القدرة",
+            "example": "Blaming only external circumstances for one's habits can feel disempowering.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice Questions",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "Which term describes a lifestyle involving very little physical movement?",
+            "options": [
+              "sedentary",
+              "mindful",
+              "resilient",
+              "evaluative"
+            ],
+            "correctAnswer": "sedentary",
+            "reason": "The text explicitly defines sedentary as involving little physical movement.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "What is defined as an individual's belief in their own capacity to succeed and maintain healthy choices?",
+            "options": [
+              "locus of control",
+              "self-efficacy",
+              "structural barrier",
+              "hedging"
+            ],
+            "correctAnswer": "self-efficacy",
+            "reason": "Self-efficacy refers to the belief in one's capacity to execute behaviors necessary to produce specific performance attainments.",
+            "origin": "source",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "In public health policy, what concept refers to small changes in context that guide choices without enforcing bans?",
+            "options": [
+              "nudge",
+              "intensifier",
+              "agency",
+              "locus of control"
+            ],
+            "correctAnswer": "nudge",
+            "reason": "Richard Thaler introduced nudge theory as a way to encourage better choices gently while preserving free choice.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar & Structure",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Participial Phrases",
+            "explanation": "A participial phrase begins with an -ing or -ed verb form to pack additional evidence or context into a single main sentence cleanly.",
+            "example": "Exercising regularly, adolescents significantly reduce their risk of stress.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "g2",
+          "content": {
+            "rule": "Relative Clauses",
+            "explanation": "Relative clauses starting with who, which, or that clarify, define, or provide evidence about a noun in academic writing.",
+            "example": "Adolescents who sleep fewer than seven hours are more likely to experience anxiety.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "g3",
+          "content": {
+            "rule": "Conditional Structures for Hedging",
+            "explanation": "Conditional structures (if-clauses) are used in academic writing to express caution, nuances, and hypothetical possibilities without making over-generalized claims.",
+            "example": "If schools offer accessible counseling, student stress levels may decrease.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice Questions",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Choose the correctly structured sentence using a participial phrase to present evidence.",
+            "options": [
+              "Motivated by their health goals, many individuals choose an active lifestyle.",
+              "Many individuals who are motivated by health goals choosing active lifestyle.",
+              "Motivate by their health goals, active lifestyles are chosen by individuals.",
+              "They motivated by health goals and choose active lifestyles."
+            ],
+            "correctAnswer": "Motivated by their health goals, many individuals choose an active lifestyle.",
+            "reason": "The participial phrase starting with the past participle 'Motivated' modifies 'many individuals' correctly.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "Which relative pronoun correctly completes the relative clause defining teenagers in this context? 'Teenagers _____ maintain regular sleep schedules demonstrate higher focus.'",
+            "options": [
+              "who",
+              "which",
+              "where",
+              "whose"
+            ],
+            "correctAnswer": "who",
+            "reason": "The relative pronoun 'who' is required when referring to human subjects ('Teenagers').",
+            "origin": "supplementary",
+            "sourcePdfPage": 25
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "Which conditional structure expresses a cautious academic hedge regarding hypothetical school interventions?",
+            "options": [
+              "If more schools offered counseling, students would most likely feel supported.",
+              "If schools offered counseling, students always feel happy.",
+              "Unless schools offer counseling, all students destroy their future.",
+              "If schools offering counseling, stress is completely finished."
+            ],
+            "correctAnswer": "If more schools offered counseling, students would most likely feel supported.",
+            "reason": "The second conditional structure paired with hedging words like 'most likely' forms a precise academic statement.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Health experts regularly recommend that teenagers do at least 60 minutes of moderate-to-hard physical activity every day. This doesn’t necessarily mean competitive sport. Activities such as cycling to school, swimming, or even a brisk walk, all count towards the daily target. What makes exercise particularly powerful is its effect on the brain: physical activity causes the release of endorphins, chemicals that reduce feelings of stress and anxiety at the same time as boosting mood and self-confidence. Furthermore, teenagers who exercise regularly tend to sleep more deeply and report higher levels of concentration during school hours. Despite these well-documented benefits, a landmark WHO-led study found that more than 80% of teenagers worldwide fail to meet the recommended daily activity levels, largely due to sedentary screen-based habits.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "According to the passage, why is physical exercise particularly beneficial for mental well-being?",
+            "options": [
+              "It forces teenagers to join competitive sports teams.",
+              "It releases endorphins that reduce stress and elevate mood.",
+              "It guarantees perfect academic scores in all subjects.",
+              "It eliminates the need for proper sleep and nutrition."
+            ],
+            "correctAnswer": "It releases endorphins that reduce stress and elevate mood.",
+            "reason": "The text states that physical activity triggers endorphin release which lowers stress and boosts mood.",
+            "origin": "source",
+            "sourcePdfPage": 21
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Host: Welcome to today's student broadcast on modern stress and mental health. Today we discuss findings from a recent Egyptian school health survey involving 450 students aged 14 to 17. The data revealed that over 65 percent of respondents experienced elevated stress levels during major examination periods. Interestingly, students who engaged in at least thirty minutes of daily physical activity reported noticeably lower anxiety levels, even when controlling for academic workload. Furthermore, the report highlighted distinct coping mechanisms between urban and rural cohorts, emphasizing the necessity of accessible school-based counseling services.",
+            "origin": "supplementary",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What percentage of surveyed students reported high stress levels during exam periods in the health survey?",
+            "options": [
+              "Over 65 percent",
+              "Less than 20 percent",
+              "Exactly 45 percent",
+              "Over 90 percent"
+            ],
+            "correctAnswer": "Over 65 percent",
+            "reason": "The script explicitly mentions that over 65 percent of surveyed students reported elevated stress during examinations.",
+            "origin": "supplementary",
+            "sourcePdfPage": 33
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "sp1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "Do you think individual choices or social environments have a greater influence on a teenager's lifestyle?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "While personal agency is essential, structural barriers like lack of local sports facilities can make healthy choices very difficult.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student A",
+                "text": "That makes sense. Shared responsibility between governments and individuals might be the most balanced perspective.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 28
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Learning Games",
+      "items": [
+        {
+          "itemId": "gme1",
+          "content": {
+            "gameName": "Vocab Builder Blitz",
+            "description": "Select the correct academic vocabulary word that completes the definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What term describes external obstacles in an environment that restrict genuine free choice?",
+            "options": [
+              "structural barriers",
+              "internal locus",
+              "hedging terms",
+              "evaluative tools"
+            ],
+            "correctAnswer": "structural barriers",
+            "reason": "Structural barriers are obstacles built into social or economic environments that limit options.",
+            "origin": "supplementary",
+            "sourcePdfPage": 31
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gme2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Identify the proper hedging structure used in evidence-based writing.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which word in the sentence acts as a hedging device? 'Research indicates that excessive screen time might negatively influence sleep.'",
+            "options": [
+              "might",
+              "excessive",
+              "screen",
+              "sleep"
+            ],
+            "correctAnswer": "might",
+            "reason": "Modal verbs like 'might' are used as hedging devices to express uncertainty and avoid absolute statements.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "What is the psychological term for selectively sharing only best or perfect life moments online?",
+            "options": [
+              "highlight-reel effect",
+              "internal locus of control",
+              "hedging technique",
+              "nudge framework"
+            ],
+            "correctAnswer": "highlight-reel effect",
+            "reason": "The highlight-reel effect refers to the practice of posting only curated positive experiences.",
+            "origin": "source",
+            "sourcePdfPage": 18
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "According to World Health Organization estimates cited in the text, what proportion of global teenagers fail to meet daily activity recommendations?",
+            "options": [
+              "More than 80%",
+              "Around 50%",
+              "Less than 25%",
+              "Nearly 100%"
+            ],
+            "correctAnswer": "More than 80%",
+            "reason": "The text states that over 80% of teenagers worldwide fail to reach recommended physical activity levels.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "How many hours of sleep per night do health guidelines recommend for adolescent brain development and recovery?",
+            "options": [
+              "8 to 10 hours",
+              "5 to 6 hours",
+              "11 to 12 hours",
+              "4 to 5 hours"
+            ],
+            "correctAnswer": "8 to 10 hours",
+            "reason": "The reading passage explicitly recommends 8 to 10 hours of sleep per night for teenagers.",
+            "origin": "source",
+            "sourcePdfPage": 22
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "What is an internal locus of control?",
+            "options": [
+              "The belief that one's own actions dictate life outcomes.",
+              "The idea that society is entirely responsible for personal choices.",
+              "A government regulation restricting junk food sales.",
+              "A method of biased media reporting."
+            ],
+            "correctAnswer": "The belief that one's own actions dictate life outcomes.",
+            "reason": "An internal locus of control means believing one's personal decisions control one's path.",
+            "origin": "source",
+            "sourcePdfPage": 29
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "Which sentence contains an absolute bias word that should be revised in neutral academic writing?",
+            "options": [
+              "Social media completely destroys every teenager's mental health.",
+              "Some research suggests screen time may affect sleep quality.",
+              "Studies indicate physical activity can reduce stress levels.",
+              "Many teenagers report using digital apps daily."
+            ],
+            "correctAnswer": "Social media completely destroys every teenager's mental health.",
+            "reason": "Words like 'completely' and 'every' express non-neutral, exaggerated absolute bias.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "What grammatical construction is used here? 'Teenagers who exercise regularly tend to sleep more deeply.'",
+            "options": [
+              "Relative clause",
+              "Participial phrase",
+              "Third conditional",
+              "Intensifier"
+            ],
+            "correctAnswer": "Relative clause",
+            "reason": "'who exercise regularly' is a relative clause modifying 'Teenagers'.",
+            "origin": "source",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Identify the participial phrase in this sentence: 'Motivated by health goals, students adopted regular exercise habits.'",
+            "options": [
+              "Motivated by health goals",
+              "students adopted",
+              "regular exercise habits",
+              "adopted regular exercise"
+            ],
+            "correctAnswer": "Motivated by health goals",
+            "reason": "'Motivated by health goals' is a past-participial phrase functioning as an adjectival modifier.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "Why do academic writers use hedging language such as 'suggests', 'may', or 'could'?",
+            "options": [
+              "To present claims with appropriate caution and objective distance.",
+              "To make their sentences as dramatic as possible.",
+              "To confuse the reader about basic statistical facts.",
+              "To eliminate all grammar rules from the text."
+            ],
+            "correctAnswer": "To present claims with appropriate caution and objective distance.",
+            "reason": "Hedging allows researchers to state findings cautiously without over-generalizing.",
+            "origin": "source",
+            "sourcePdfPage": 17
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "What is the primary objective of a 'nudge' intervention in public health?",
+            "options": [
+              "To gently encourage healthy behavior without removing personal freedom.",
+              "To penalize individuals severely for poor lifestyle choices.",
+              "To force everyone to participate in competitive sports.",
+              "To ban all digital media devices for young people."
+            ],
+            "correctAnswer": "To gently encourage healthy behavior without removing personal freedom.",
+            "reason": "Nudge policy alters environmental contexts to make healthy decisions easier without coercion.",
+            "origin": "source",
+            "sourcePdfPage": 30
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "Which conditional form is correctly constructed for expressing a past hypothetical situation?",
+            "options": [
+              "If the school had offered counseling, stress levels would have fallen.",
+              "If the school offer counseling, stress levels fall.",
+              "If the school offering counseling, stress levels would fall.",
+              "If the school will offer counseling, stress levels falling."
+            ],
+            "correctAnswer": "If the school had offered counseling, stress levels would have fallen.",
+            "reason": "The third conditional ('if + past perfect, would have + past participle') expresses unfulfilled past conditions.",
+            "origin": "source",
+            "sourcePdfPage": 34
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

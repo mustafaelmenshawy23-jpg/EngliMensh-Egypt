@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-15T07:11:20.443Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary2-student-term1",
+  "sourceFilename": "English_language_prim2_t1 (1).pdf",
+  "grade": "Primary 2",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Everyday Life",
+  "sourcePdfRange": {
+    "start": 51,
+    "end": 104
+  },
+  "sourceCoverage": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "sourceFingerprint": "80fe41ed99ff5bc800d021039f68206415e2efae8c97edd0be0663e5e4a6812b",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Everyday Life",
+    "expectedRange": {
+      "start": 51,
+      "end": 104,
+      "totalPages": 54
+    },
+    "recordedCoverage": {
+      "totalPages": 54,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 26,
+      "supplementaryItems": 7,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-15T07:11:20.443Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "father",
+            "arabicMeaning": "أب",
+            "example": "This is my father.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "mother",
+            "arabicMeaning": "أم",
+            "example": "This is my mother.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "brush teeth",
+            "arabicMeaning": "ينظف أسنانه بالفرشاة",
+            "example": "I brush my teeth in the morning.",
+            "origin": "source",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "wake up",
+            "arabicMeaning": "يستيقظ",
+            "example": "I wake up at seven o'clock.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "wash face",
+            "arabicMeaning": "يغسل وجهه",
+            "example": "He washes his face after waking up.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "living room",
+            "arabicMeaning": "غرفة المعيشة",
+            "example": "We watch TV in the living room.",
+            "origin": "source",
+            "sourcePdfPage": 83
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What do you do first when you get out of bed in the morning?",
+            "options": [
+              "I wake up",
+              "I sleep",
+              "I cook dinner"
+            ],
+            "correctAnswer": "I wake up",
+            "reason": "Waking up is the first activity when you stop sleeping in the morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "Which phrase means cleaning your teeth with a toothbrush?",
+            "options": [
+              "wash my face",
+              "brush my teeth",
+              "read a book"
+            ],
+            "correctAnswer": "brush my teeth",
+            "reason": "Brushing teeth means cleaning them using a toothbrush and toothpaste.",
+            "origin": "supplementary",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "In which room do family members usually prepare and cook food?",
+            "options": [
+              "kitchen",
+              "bedroom",
+              "garden"
+            ],
+            "correctAnswer": "kitchen",
+            "reason": "The kitchen is the standard room in a house for cooking food.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Possessive Adjectives: my and your",
+            "explanation": "We use 'my' when an object or relationship belongs to the speaker, and 'your' when it belongs to the person being spoken to.",
+            "example": "This is my sister and this is your bag.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Present Simple Tense for Daily Routines",
+            "explanation": "We use the present simple tense to describe actions we do regularly every day.",
+            "example": "I wake up at 7:00 am.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Choose the correct word: 'This is ___ bag.' (belonging to the listener)",
+            "options": [
+              "my",
+              "your",
+              "he"
+            ],
+            "correctAnswer": "your",
+            "reason": "'Your' is the possessive adjective used for something belonging to the person you are talking to.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Complete the sentence: 'I ___ up at 7:00 am every morning.'",
+            "options": [
+              "wake",
+              "wakes",
+              "waking"
+            ],
+            "correctAnswer": "wake",
+            "reason": "With the subject pronoun 'I' in the present simple, we use the base form of the verb 'wake'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "Complete the sentence: 'He ___ breakfast in the morning.'",
+            "options": [
+              "eat",
+              "eats",
+              "eating"
+            ],
+            "correctAnswer": "eats",
+            "reason": "Third-person singular subjects such as 'He' require the verb to end in '-s' in the present simple tense.",
+            "origin": "source",
+            "sourcePdfPage": 58
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "My name is Sara. I wake up at seven. Then, I brush my teeth and eat breakfast in the morning.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "What time does Sara wake up?",
+            "options": [
+              "At six",
+              "At seven",
+              "At eight"
+            ],
+            "correctAnswer": "At seven",
+            "reason": "The text explicitly states that Sara wakes up at seven.",
+            "origin": "source",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q2",
+          "content": {
+            "question": "What does Sara do after waking up?",
+            "options": [
+              "She sleeps again",
+              "She brushes her teeth and eats breakfast",
+              "She plays football"
+            ],
+            "correctAnswer": "She brushes her teeth and eats breakfast",
+            "reason": "According to the passage, after waking up Sara brushes her teeth and eats breakfast.",
+            "origin": "supplementary",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "My name is Laila. I sit with my family in the living room. My mom and dad watch TV and I read a book. At 9 o'clock, we go to bed.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "Where does Laila sit with her family?",
+            "options": [
+              "In the kitchen",
+              "In the living room",
+              "In the garden"
+            ],
+            "correctAnswer": "In the living room",
+            "reason": "Laila states in the listening passage that she sits with her family in the living room.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "list_q2",
+          "content": {
+            "question": "What does Laila do while her parents watch TV?",
+            "options": [
+              "She reads a book",
+              "She cooks dinner",
+              "She sleeps"
+            ],
+            "correctAnswer": "She reads a book",
+            "reason": "The text explicitly mentions that Laila reads a book while her parents watch TV.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Student A",
+                "text": "Who is this?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "This is my father. He is tall.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student A",
+                "text": "Where do you eat dinner?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Student B",
+                "text": "We eat in the dining room.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Routine Action Challenge",
+            "description": "Select the correct action verb for your morning routine.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which action do you do to clean your teeth in the morning?",
+            "options": [
+              "brush",
+              "cook",
+              "sleep"
+            ],
+            "correctAnswer": "brush",
+            "reason": "You use a toothbrush to brush your teeth every morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 57
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Possessive Pronoun Quest",
+            "description": "Choose the correct word to complete the family sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "This is ___ brother. He belongs to my family.",
+            "options": [
+              "my",
+              "your",
+              "they"
+            ],
+            "correctAnswer": "my",
+            "reason": "'My' shows ownership or family connection to the speaker.",
+            "origin": "supplementary",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_q1",
+          "content": {
+            "question": "What is the Arabic meaning of the word 'mother'?",
+            "options": [
+              "أخت",
+              "أم",
+              "جدة"
+            ],
+            "correctAnswer": "أم",
+            "reason": "The English word 'mother' translates to 'أم' in Arabic.",
+            "origin": "source",
+            "sourcePdfPage": 52
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q2",
+          "content": {
+            "question": "Complete the sentence: 'This is ___ car. It belongs to Ahmed.'",
+            "options": [
+              "Ahmed's",
+              "Ahmed",
+              "Ahmed is"
+            ],
+            "correctAnswer": "Ahmed's",
+            "reason": "An apostrophe 's' is added to a name to indicate possession.",
+            "origin": "source",
+            "sourcePdfPage": 51
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q3",
+          "content": {
+            "question": "Complete: 'I ___ my face in the morning.'",
+            "options": [
+              "wash",
+              "washes",
+              "washing"
+            ],
+            "correctAnswer": "wash",
+            "reason": "The pronoun 'I' takes the base form of the verb 'wash' in simple present tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 59
+          },
+          "reviewStatus": "needs_review",
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+        },
+        {
+          "itemId": "test_q4",
+          "content": {
+            "question": "Where do people sleep at night in a house?",
+            "options": [
+              "In the bedroom",
+              "In the kitchen",
+              "In the hall"
+            ],
+            "correctAnswer": "In the bedroom",
+            "reason": "The bedroom is designed and used for sleeping.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q5",
+          "content": {
+            "question": "Which word contains the long 'o' phonics sound?",
+            "options": [
+              "rose",
+              "net",
+              "cup"
+            ],
+            "correctAnswer": "rose",
+            "reason": "'Rose' contains the long 'o' vowel sound as presented in the phonics focus.",
+            "origin": "source",
+            "sourcePdfPage": 55
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q6",
+          "content": {
+            "question": "Which word begins with the 'th' digraph sound?",
+            "options": [
+              "thin",
+              "cat",
+              "pin"
+            ],
+            "correctAnswer": "thin",
+            "reason": "'Thin' starts with the 'th' digraph consonant sound.",
+            "origin": "source",
+            "sourcePdfPage": 61
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q7",
+          "content": {
+            "question": "Choose the correct option: '___ is a table in my room.'",
+            "options": [
+              "There is",
+              "There are",
+              "This are"
+            ],
+            "correctAnswer": "There is",
+            "reason": "'There is' is used before singular nouns like 'a table'.",
+            "origin": "source",
+            "sourcePdfPage": 71
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q8",
+          "content": {
+            "question": "Choose the correct option: 'There ___ two chairs in the kitchen.'",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "are",
+            "reason": "'Are' is used with plural nouns such as 'two chairs'.",
+            "origin": "source",
+            "sourcePdfPage": 88
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q9",
+          "content": {
+            "question": "What activity does the family do in the living room?",
+            "options": [
+              "We watch TV",
+              "We wash clothes",
+              "We take a shower"
+            ],
+            "correctAnswer": "We watch TV",
+            "reason": "Watching TV is the living room activity described in the lesson text.",
+            "origin": "source",
+            "sourcePdfPage": 86
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "test_q10",
+          "content": {
+            "question": "Complete: 'My sister ___ TV after school.'",
+            "options": [
+              "watch",
+              "watches",
+              "watching"
+            ],
+            "correctAnswer": "watches",
+            "reason": "Singular third-person subject 'My sister' requires 'watches' with '-es' in present simple.",
+            "origin": "source",
+            "sourcePdfPage": 76
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    }
+  ]
+}

@@ -2,13 +2,15 @@
   "status": "failed_validation",
   "bookId": "connectplus-primary1-supplement",
   "unitNumber": 3,
-  "score": 75,
+  "score": 70,
   "criticalFailures": [
-    "Duplicate question prompt detected: \"____ to your teacher.\""
+    "Duplicate question prompt detected: \"Where do children play games at school?\""
   ],
   "warnings": [
-    "Speaking item s1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
-    "Speaking item s1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+    "Speaking item speak-1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak-1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak-1 turn 3 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak-1 turn 4 gender is unknown; no gender-matched TTS voice can be assumed"
   ],
   "report": {
     "unitTitle": "In my community",
@@ -24,15 +26,15 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 11,
-      "supplementaryItems": 19,
-      "vocabularyCount": 4,
+      "sourceItems": 28,
+      "supplementaryItems": 2,
+      "vocabularyCount": 5,
       "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 4,
-        "validItems": 4,
+        "itemCount": 5,
+        "validItems": 5,
         "issues": []
       },
       "vocabulary_questions": {
@@ -41,8 +43,8 @@
         "issues": []
       },
       "grammar": {
-        "itemCount": 3,
-        "validItems": 3,
+        "itemCount": 1,
+        "validItems": 1,
         "issues": []
       },
       "grammar_questions": {
@@ -51,8 +53,8 @@
         "issues": []
       },
       "reading": {
-        "itemCount": 2,
-        "validItems": 2,
+        "itemCount": 3,
+        "validItems": 3,
         "issues": []
       },
       "listening": {
@@ -76,6 +78,6 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-12T08:06:51.253Z"
+    "validationTimestamp": "2026-11-15T07:05:21.508Z"
   }
 }
