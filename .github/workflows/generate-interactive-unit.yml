@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate-interactive-curriculum-batch.mjs'
+      - 'scripts/lib/provenance-audit.mjs'
       - 'scripts/extract-pdfs.mjs'
       - 'scripts/ocr-scanned-pages.py'
       - 'scripts/build-source-review-queue.mjs'
@@ -283,7 +284,7 @@ jobs:
           START_INDEX: ${{ github.event.inputs.start_index || '' }}
           BATCH_SIZE: ${{ github.event.inputs.batch_size || '10' }}
           CHAIN_DEPTH: ${{ steps.batch_chain.outputs.value || '0' }}
-          DISPATCH_AVAILABLE: ${{ steps.dispatch_capability.outputs.available == 'true' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+          DISPATCH_AVAILABLE: ${{ steps.dispatch_capability.outputs.available == 'true' }}
         run: node scripts/generate-interactive-curriculum-batch.mjs
 
       - name: Persist unapproved drafts and resumable queue state
@@ -348,11 +349,11 @@ jobs:
           if [ "$SHOULD_CONTINUE" = "true" ] && [ "${{ steps.dispatch_capability.outputs.available }}" = "true" ]; then
             echo "::notice::A validated batch is queued for automatic workflow_dispatch on main."
           elif [ "$SHOULD_CONTINUE" = "true" ] && [ "$GITHUB_EVENT_NAME" = "push" ] && [ "$GITHUB_REF" = "refs/heads/main" ]; then
-            echo "::notice::The next validated batch will be queued by the persisted batch-trigger commit on main."
+            echo "::warning::The next batch state is saved, but a push made with GITHUB_TOKEN does not start another workflow. Automatic workflow_dispatch requires main to be the repository default branch."
           elif [ "$SHOULD_CONTINUE" = "true" ]; then
             echo "::warning::The next batch is saved. Automatic continuation requires a main-branch push or main as the repository default branch."
           else
-            echo "::notice::No automatic batch continuation is queued. Remaining blockers and retry times are preserved in progress.json and batch-state.json."
+            echo "::notice::No automatic batch continuation is queued. The next run can resume from batch-state.json; automatic workflow_dispatch requires main to be the repository default branch. Remaining blockers and retry times are preserved."
           fi
 
       - name: Dispatch the next resumable curriculum batch

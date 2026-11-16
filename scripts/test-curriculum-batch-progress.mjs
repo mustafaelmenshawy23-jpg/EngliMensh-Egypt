@@ -3,7 +3,8 @@ import {
   isTransientGenerationError,
   summarizeCandidateProgress,
   hasFatalBatchFailures,
-  shouldAutoContinueBatch
+  shouldAutoContinueBatch,
+  reopenRecoveredSourceBlock
 } from "./lib/curriculum-batch-progress.mjs";
 
 const now = Date.parse("2026-11-10T08:00:00.000Z");
@@ -39,3 +40,21 @@ assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 
 assert.equal(shouldAutoContinueBatch([{ status: "generated_needs_review" }], 5, 0, 3, false), false);
 
 console.log("Curriculum batch retry and pending-candidate tests passed.");
+
+
+const recoveredAttempts = {
+  "unit-recovered": {
+    status: "blocked_source_review",
+    sourceSignature: "old",
+    issues: ["previous OCR corruption"]
+  }
+};
+assert.equal(reopenRecoveredSourceBlock(recoveredAttempts, "unit-recovered", "new", now), true);
+assert.equal(recoveredAttempts["unit-recovered"].status, "pending");
+assert.equal(recoveredAttempts["unit-recovered"].sourceSignature, "new");
+assert.deepEqual(
+  summarizeCandidateProgress([{ unitId: "unit-recovered" }], recoveredAttempts, now),
+  { pendingCandidates: 1, waitingForRetry: 0 }
+);
+assert.equal(reopenRecoveredSourceBlock(recoveredAttempts, "unit-recovered", "newer", now), false);
+console.log("Recovered source-block retry tests passed.");

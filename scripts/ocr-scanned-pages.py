@@ -71,11 +71,13 @@ def save_manifest(records):
     totals["ocrUnreliablePages"] = sum(status == "ocr_unreliable_needs_visual_review" for status in statuses)
     totals["ocrEmptyPages"] = sum(status == "ocr_empty_needs_manual_review" for status in statuses)
     totals["ocrErrorPages"] = sum(status.startswith("ocr_error") for status in statuses)
-    totals["pagesNeedingOcrOrReviewAfterOcr"] = sum(
-        status in OCR_REVIEW_STATUSES or status.startswith("ocr_error")
-        for status in statuses
+    manual_review_pages = (
+        totals["ocrUnreliablePages"] +
+        totals["ocrEmptyPages"] +
+        totals["ocrErrorPages"]
     )
-    totals["pagesNeedingManualVisualReview"] = totals["pagesNeedingOcrOrReviewAfterOcr"]
+    totals["pagesNeedingOcrOrReviewAfterOcr"] = manual_review_pages
+    totals["pagesNeedingManualVisualReview"] = manual_review_pages
 
     manifest["ocr"] = {
         "engine": "Tesseract",

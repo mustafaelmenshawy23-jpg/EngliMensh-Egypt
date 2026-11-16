@@ -6,7 +6,8 @@ import { validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/sourc
 import { validateUnitDraftQuality } from './lib/content-quality-validator.mjs';
 import { sortUnitCandidates } from './lib/curriculum-order.mjs';
 import { getConfiguredGeminiKeys, getSupportedGeminiModels } from './lib/gemini-config.mjs';
-import { isTransientGenerationError, summarizeCandidateProgress, shouldAutoContinueBatch } from './lib/curriculum-batch-progress.mjs';
+import { isTransientGenerationError, summarizeCandidateProgress, shouldAutoContinueBatch, reopenRecoveredSourceBlock } from './lib/curriculum-batch-progress.mjs';
+import { reclassifyUnverifiableSourceClaims } from './lib/provenance-audit.mjs';
 
 const index = JSON.parse(await fs.readFile('data/curriculum/source-book-index.draft.json', 'utf8'));
 
@@ -103,6 +104,69 @@ try {
 const requestedChainDepth = Number(process.env.CHAIN_DEPTH ?? batchState.chainDepth ?? 0);
 batchState.chainDepth = Number.isInteger(requestedChainDepth) && requestedChainDepth >= 0 ? requestedChainDepth : 0;
 const modelSequence = getSupportedGeminiModels(model);
+const provenanceAuditByUnit = new Map();
+
+function auditDraftForUnit(draft, rows, unitId) {
+  const result = reclassifyUnverifiableSourceClaims(draft, rows);
+  draft.provenanceAudit = {
+    policyVersion: 1,
+    auditedAt: new Date().toISOString(),
+    ...result.summary,
+    reclassifiedToSupplementary: result.reclassifiedCount
+  };
+  if (draft.qualityReport?.itemTotals) {
+    let sourceItems = 0;
+    let supplementaryItems = 0;
+    for (const section of draft.sections || []) {
+      for (const item of section.items || []) {
+        if (item.content?.origin === 'source') sourceItems++;
+        else if (item.content?.origin === 'supplementary') supplementaryItems++;
+      }
+    }
+    draft.qualityReport.itemTotals.sourceItems = sourceItems;
+    draft.qualityReport.itemTotals.supplementaryItems = supplementaryItems;
+  }
+  return {
+    summary: result.summary,
+    reclassifiedCount: result.reclassifiedCount,
+    items: result.items.map(({ item, ...entry }) => ({ unitId, ...entry }))
+  };
+}
+
+async function writeProvenanceReport() {
+  const audits = [...provenanceAuditByUnit.values()];
+  let sourceReviewQueueSummary = {};
+try {
+  sourceReviewQueueSummary = JSON.parse(await fs.readFile('artifacts/source-review-queue.json', 'utf8')).summary || {};
+} catch {}
+const fallbackManualReviewPages =
+  Number(manifest.totals?.ocrUnreliablePages || 0) +
+  Number(manifest.totals?.ocrEmptyPages || 0) +
+  Number(manifest.totals?.ocrErrorPages || 0);
+const manualReviewPages = Number.isFinite(Number(sourceReviewQueueSummary.pagesNeedingVisualReview))
+  ? Number(sourceReviewQueueSummary.pagesNeedingVisualReview)
+  : fallbackManualReviewPages;
+
+const summary = {
+    draftsScanned: audits.length,
+    sourceClaims: audits.reduce((sum, audit) => sum + audit.summary.sourceClaims, 0),
+    verifiedSourceClaims: audits.reduce((sum, audit) => sum + audit.summary.verifiedSourceClaims, 0),
+    unverifiableSourceClaims: audits.reduce((sum, audit) => sum + audit.summary.unverifiableSourceClaims, 0),
+    reclassifiedToSupplementary: audits.reduce((sum, audit) => sum + audit.reclassifiedCount, 0),
+    citationWarnings: audits.reduce((sum, audit) => sum + audit.summary.citationWarnings, 0),
+    itemsAudited: audits.reduce((sum, audit) => sum + audit.summary.itemsAudited, 0)
+  };
+  const report = {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    repository: 'mustafaelmenshawy23-jpg/EngliMensh-Egypt',
+    policy: 'An item is source only when every learner-facing field is verifiably present in the unit PDF text. Otherwise the aggregate origin is supplementary; fieldOrigins preserves source-matched subfields. OCR matches still require visual teacher review.',
+    summary: { ...summary, sourceBlockedUnits: blockedCandidates.length },
+    items: audits.flatMap((audit) => audit.items)
+  };
+  await fs.writeFile('artifacts/unit-drafts/provenance-audit.json', JSON.stringify(report, null, 2) + '\n');
+  return report.summary;
+}
 
 let extractedPages;
 try {
@@ -159,6 +223,12 @@ for (let i = 0; i < orderedCandidates.length; i++) {
     continue;
   }
 
+  if (priorAttempt?.status === 'blocked_source_review') {
+    const reopened = reopenRecoveredSourceBlock(batchState.attempts, unitId, sourceSignature);
+    if (reopened) console.log('Source quality gate now passes for ' + unitId + '; reopening it for generation.');
+  }
+  const effectivePriorAttempt = batchState.attempts[unitId] || priorAttempt;
+
   let priorDraft = null;
   try {
     priorDraft = JSON.parse(await fs.readFile(file, 'utf8'));
@@ -167,7 +237,7 @@ for (let i = 0; i < orderedCandidates.length; i++) {
   if (priorDraft?.reviewStatus === 'approved') {
     completedCandidates.push({ unitId, status: 'approved_preserved' });
     batchState.attempts[unitId] = {
-      ...(priorAttempt || {}),
+      ...(effectivePriorAttempt || {}),
       status: 'approved_preserved',
       sourceSignature,
       lastAttemptAt: priorAttempt?.lastAttemptAt || null
@@ -177,11 +247,14 @@ for (let i = 0; i < orderedCandidates.length; i++) {
   }
 
   if (priorDraft && Array.isArray(priorDraft.sections)) {
+    const provenanceAudit = auditDraftForUnit(priorDraft, rows, unitId);
+    provenanceAuditByUnit.set(unitId, provenanceAudit);
+    await fs.writeFile(file, JSON.stringify(priorDraft, null, 2) + '\n');
     const audit = validateUnitDraftQuality(priorDraft, { start: unit.start, end: unit.end }, rows);
     if (audit.isValid) {
       completedCandidates.push({ unitId, status: 'complete_draft_needs_review', qualityScore: audit.score });
       batchState.attempts[unitId] = {
-        ...(priorAttempt || {}),
+        ...(effectivePriorAttempt || {}),
         status: 'complete_draft_needs_review',
         sourceSignature,
         lastAttemptAt: priorAttempt?.lastAttemptAt || null,
@@ -194,7 +267,7 @@ for (let i = 0; i < orderedCandidates.length; i++) {
     }
   }
 
-  const retryAt = priorAttempt?.retryAfter ? Date.parse(priorAttempt.retryAfter) : 0;
+  const retryAt = effectivePriorAttempt?.retryAfter ? Date.parse(effectivePriorAttempt.retryAfter) : 0;
   if (priorAttempt?.sourceSignature === sourceSignature && retryAt > Date.now()) {
     sourceCache.set(unitId, { ...unit, unitId, rows, gate, sourceSignature, file, index: i, eligible: false, waitingForRetry: true });
     continue;
@@ -238,11 +311,14 @@ const summary = {
     ocrUnreliablePages: manifest.totals?.ocrUnreliablePages ?? 0,
     ocrEmptyPages: manifest.totals?.ocrEmptyPages ?? 0,
     ocrErrorPages: manifest.totals?.ocrErrorPages ?? 0,
-    pagesNeedingManualVisualReview: manifest.totals?.pagesNeedingManualVisualReview ?? 0
+    pagesNeedingManualVisualReview: manualReviewPages,
+    pagesNeedingOcrOrReviewAfterOcr: manualReviewPages,
+    watermarkDetectedPages: manifest.totals?.watermarkDetectedPages ?? 0
   },
   completedDrafts: completedCandidates.filter((item) => item.status === 'complete_draft_needs_review').length,
   approvedPreserved: completedCandidates.filter((item) => item.status === 'approved_preserved').length,
   blockedSourceReview: blockedCandidates.length,
+  currentBatchBlocked: blockedCandidates.length,
   excludedUnits: excludedUnits.length,
   pendingCandidates: eligibleCandidates.length,
   results: [],
@@ -252,6 +328,7 @@ const summary = {
 
 const persist = async () => {
   await fs.writeFile(stateFile, JSON.stringify(batchState, null, 2) + '\n');
+  summary.provenanceAudit = await writeProvenanceReport();
   await fs.writeFile(progressFile, JSON.stringify(summary, null, 2) + '\n');
 };
 await persist();
@@ -290,6 +367,9 @@ for (const unit of selected) {
     });
 
     const draft = JSON.parse(await fs.readFile(unit.file, 'utf8'));
+    const provenanceAudit = auditDraftForUnit(draft, unit.rows, unit.unitId);
+    provenanceAuditByUnit.set(unit.unitId, provenanceAudit);
+    await fs.writeFile(unit.file, JSON.stringify(draft, null, 2) + '\n');
     const audit = validateUnitDraftQuality(draft, { start: unit.start, end: unit.end }, unit.rows);
     if (!audit.isValid) {
       throw new Error('Post-generation quality validation failed: ' + audit.criticalFailures.join('; '));
@@ -334,20 +414,25 @@ for (const unit of selected) {
 }
 
 const attemptStatuses = Object.values(batchState.attempts);
-summary.stateTotals = {
-  generatedNeedsReview: attemptStatuses.filter((item) => item.status === 'generated_needs_review' || item.status === 'complete_draft_needs_review').length,
-  approved: attemptStatuses.filter((item) => item.status === 'approved_preserved').length,
-  blockedSourceReview: attemptStatuses.filter((item) => item.status === 'blocked_source_review').length,
-  failed: attemptStatuses.filter((item) => item.status === 'failed' || item.status === 'failed_validation').length
-};
 const progressState = summarizeCandidateProgress(
   orderedCandidates.map((candidate) => ({ unitId: candidate.bookId + '-unit-' + candidate.unitNumber })),
   batchState.attempts,
   Date.now()
 );
+const totalFailedAttempts = attemptStatuses.filter((item) => item.status === 'failed' || item.status === 'failed_validation').length;
+summary.stateTotals = {
+  generatedNeedsReview: attemptStatuses.filter((item) => item.status === 'generated_needs_review' || item.status === 'complete_draft_needs_review').length,
+  approved: attemptStatuses.filter((item) => item.status === 'approved_preserved').length,
+  blockedSourceReview: attemptStatuses.filter((item) => item.status === 'blocked_source_review').length,
+  failed: Math.max(0, totalFailedAttempts - progressState.waitingForRetry),
+  waitingForRetry: progressState.waitingForRetry
+};
+summary.completedDrafts = summary.stateTotals.generatedNeedsReview;
+summary.approvedPreserved = summary.stateTotals.approved;
+summary.blockedSourceReview = summary.stateTotals.blockedSourceReview;
+summary.failedCandidates = totalFailedAttempts;
 summary.pendingCandidates = progressState.pendingCandidates;
 summary.waitingForRetry = progressState.waitingForRetry;
-summary.stateTotals.waitingForRetry = progressState.waitingForRetry;
 
 const bookProgress = new Map();
 for (const candidate of orderedCandidates) {

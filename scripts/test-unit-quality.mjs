@@ -13,6 +13,7 @@
 
 import { validatePageText, validateUnitSourceCoverage, summarizeUnitSourceGate } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
+import { auditDraftProvenance, reclassifyUnverifiableSourceClaims } from './lib/provenance-audit.mjs';
 
 let passed = 0;
 let failed = 0;
@@ -482,6 +483,65 @@ console.log('\n--- TEST 6: High-Quality Valid Draft Passes ---');
   assert(audit.criticalFailures.length === 0, 'No critical failures for valid draft');
   assert(audit.score >= 85, `Valid draft achieves score of ${audit.score}/100`);
   assert(audit.status === 'ready_for_teacher_review', 'Review status is ready_for_teacher_review');
+}
+
+
+console.log('\n--- TEST 7: Source vs Supplementary Provenance ---');
+{
+  const sourceRows = [{
+    pdfPage: 10,
+    text: 'The word consumer means a person who buys goods. Modern consumers face choices in supermarkets every day.'
+  }];
+  const draft = {
+    sections: [
+      { type: 'vocabulary', items: [{ itemId: 'v1', content: {
+        word: 'consumer', arabicMeaning: 'مستهلك',
+        example: 'A consumer compares prices before buying.',
+        origin: 'source', sourcePdfPage: 10
+      }}]},
+      { type: 'reading', items: [{ itemId: 'r1', content: {
+        passage: 'Modern consumers face choices in supermarkets every day.',
+        origin: 'source', sourcePdfPage: 10
+      }}]},
+      { type: 'vocabulary_questions', items: [{ itemId: 'q1', content: {
+        question: 'Which person buys goods for personal use?',
+        options: ['consumer', 'producer', 'seller'],
+        correctAnswer: 'consumer', reason: 'A consumer buys goods for personal use.',
+        origin: 'source', sourcePdfPage: 10
+      }}]},
+      { type: 'listening', items: [{ itemId: 'l1', content: {
+        script: 'Host: Today we discuss smart shopping habits.',
+        origin: 'source', sourcePdfPage: 10
+      }}]},
+      { type: 'speaking', items: [{ itemId: 's1', content: {
+        dialogue: [
+          { speaker: 'Student A', text: 'I compare prices before I buy.', speakerGender: 'unknown' },
+          { speaker: 'Student B', text: 'I check the quality too.', speakerGender: 'unknown' }
+        ],
+        origin: 'source', sourcePdfPage: 10
+      }}]},
+      { type: 'games', items: [{ itemId: 'g1', content: {
+        gameName: 'Vocabulary Match', description: 'Choose the right meaning.',
+        skill: 'vocabulary', difficulty: 'easy', gameMode: 'multiple_choice',
+        question: 'Which word means a buyer?', options: ['consumer', 'producer', 'seller'],
+        correctAnswer: 'consumer', reason: 'A consumer buys goods.',
+        origin: 'source', sourcePdfPage: 10
+      }}]}
+    ]
+  };
+  const initial = auditDraftProvenance(draft, sourceRows);
+  assert(initial.summary.sourceClaims === 6, 'All declared source claims are counted');
+  assert(initial.summary.verifiedSourceClaims === 1, 'Only verbatim source reading passage is verified as a complete source item');
+  const result = reclassifyUnverifiableSourceClaims(draft, sourceRows);
+  assert(result.reclassifiedCount === 5, 'Unverifiable generated items are relabelled supplementary');
+  assert(draft.sections[0].items[0].content.origin === 'supplementary', 'Vocabulary item is supplementary when its example/meaning is generated');
+  assert(draft.sections[0].items[0].content.fieldOrigins.word === 'source', 'Source vocabulary word remains identified as source');
+  assert(draft.sections[0].items[0].content.fieldOrigins.example === 'supplementary', 'Generated vocabulary example is identified as supplementary');
+  assert(draft.sections[1].items[0].content.origin === 'source', 'Verbatim reading passage retains source origin');
+  assert(draft.sections[2].items[0].content.origin === 'supplementary', 'Generated question and answer key are supplementary');
+  assert(draft.sections[3].items[0].content.origin === 'supplementary', 'Unprinted listening script is supplementary');
+  assert(draft.sections[4].items[0].content.origin === 'supplementary', 'Generated role-play is supplementary');
+  assert(draft.sections[5].items[0].content.origin === 'supplementary', 'Games are always supplementary');
 }
 
 console.log('\n=======================================');

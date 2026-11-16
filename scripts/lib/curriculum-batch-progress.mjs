@@ -45,3 +45,19 @@ export function shouldAutoContinueBatch(results = [], pendingCandidates = 0, cha
     Number(chainDepth) < Number(maxChainDepth) &&
     hasValidatedDraft;
 }
+
+
+export function reopenRecoveredSourceBlock(attempts, unitId, sourceSignature, now = Date.now()) {
+  if (!attempts || typeof attempts !== "object") return false;
+  const previous = attempts[unitId];
+  if (previous?.status !== "blocked_source_review") return false;
+  attempts[unitId] = {
+    status: "pending",
+    sourceSignature,
+    lastAttemptAt: previous.lastAttemptAt || null,
+    recoveredAt: new Date(now).toISOString(),
+    recoveredFrom: "source_quality_gate_passed",
+    previousSourceIssues: Array.isArray(previous.issues) ? previous.issues.slice(0, 20) : []
+  };
+  return true;
+}

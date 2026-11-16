@@ -1,3 +1,5 @@
+import { auditDraftProvenance } from './provenance-audit.mjs';
+
 /**
  * Comprehensive Content Quality Validator for EngliMensh Curriculum Drafts
  * 
@@ -453,6 +455,24 @@ export function validateUnitDraftQuality(draft, expectedRange, sourcePageRows = 
     criticalFailures.push('Unit draft is completely empty across all 9 modules');
   } else if (questionsTotal === 0 && sourceItemCount > 0) {
     criticalFailures.push('Draft contains source material but completely empty practice question banks (vocabulary_questions, grammar_questions, and comprehensive_test all have 0 items)');
+  }
+
+  if (Array.isArray(sourcePageRows) && sourcePageRows.length > 0) {
+    const provenanceAudit = auditDraftProvenance(draft, sourcePageRows);
+    for (const entry of provenanceAudit.items) {
+      if (entry.declaredOrigin === 'source' && !entry.verifiedSource) {
+        criticalFailures.push(
+          entry.sectionType + ' item ' + entry.itemId +
+          ' claims source origin but fields [' + entry.unmatchedFields.join(', ') +
+          '] are not verifiably verbatim in the supplied unit pages; relabel as supplementary or correct from the PDF.'
+        );
+      } else if (entry.declaredOrigin === 'source' && entry.citationWarning) {
+        warnings.push(
+          entry.sectionType + ' item ' + entry.itemId +
+          ' has a sourcePdfPage that does not contain the opening text of its source claim.'
+        );
+      }
+    }
   }
 
   // 5. Calculate Transparent Quality Score (0 - 100)

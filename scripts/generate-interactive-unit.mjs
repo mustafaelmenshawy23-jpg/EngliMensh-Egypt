@@ -3,6 +3,7 @@ import { validateUnitSourceCoverage } from './lib/source-quality-gate.mjs';
 import { validateUnitDraftQuality, REQUIRED_MODULE_TYPES } from './lib/content-quality-validator.mjs';
 import { getConfiguredGeminiKeys, getSupportedGeminiModels, isGeminiModelUnavailable } from './lib/gemini-config.mjs';
 import { buildInteractiveUnitSchema } from './lib/interactive-unit-schema.mjs';
+import { reclassifyUnverifiableSourceClaims } from './lib/provenance-audit.mjs';
 
 const required = REQUIRED_MODULE_TYPES;
 const bookId = process.env.BOOK_ID;
@@ -108,6 +109,7 @@ OUTPUT CONTRACT:
 SOURCE AND PROVENANCE:
 - origin="source" only for text or information actually visible in the supplied PDF pages. Transcribe source reading passages and dialogues completely; do not shorten or rewrite them.
 - origin="supplementary" for every newly written explanation, question, example, listening script, role-play, or game. Never label generated content as source.
+- One origin value applies to the whole item: use source only when every learner-facing field in that item is copied verbatim from the PDF. If any meaning, example, question, option, answer reason, explanation, script, or dialogue line is generated or paraphrased, use supplementary for the whole item. The pipeline records field-level provenance separately.
 - If a listening activity has no printed transcript, do not invent a source transcript. Write a useful supplementary script and label it supplementary.
 - If a page is unreadable or OCR is ambiguous, do not guess its words. Use only clear evidence from other pages in this unit and label any new practice supplementary.
 - A supplementary item must cite a relevant supporting page from this unit, but its origin must remain supplementary.
@@ -973,6 +975,10 @@ try {
 // Source page coverage is deterministic from the verified PDF boundary; do not ask the model to invent it.
 generated.unitTitle = typeof generated.unitTitle === 'string' && generated.unitTitle.trim() ? generated.unitTitle : unit.title;
 generated.sourceCoverage = Array.from({ length: end - start + 1 }, (_, index) => start + index);
+const provenanceAudit = reclassifyUnverifiableSourceClaims(generated, rows);
+if (provenanceAudit.reclassifiedCount > 0) {
+  console.warn('Conservatively relabelled ' + provenanceAudit.reclassifiedCount + ' unverifiable source-origin item(s) as supplementary.');
+}
 
 // 4. Strict Content Quality Validation
 console.log('Running content quality validator on generated unit draft...');
