@@ -1,0 +1,81 @@
+{
+  "status": "failed_validation",
+  "bookId": "connectplus-primary3-supplement",
+  "unitNumber": 5,
+  "score": 75,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"Mona has [...] an oasis in Egypt.\""
+  ],
+  "warnings": [
+    "Speaking item spk-1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item spk-1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 5: All about water",
+    "expectedRange": {
+      "start": 167,
+      "end": 203,
+      "totalPages": 37
+    },
+    "recordedCoverage": {
+      "totalPages": 37,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 33,
+      "sourceItems": 1,
+      "supplementaryItems": 32,
+      "vocabularyCount": 7,
+      "questionsCount": 17
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 7,
+        "validItems": 7,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-16T06:45:26.714Z"
+  }
+}

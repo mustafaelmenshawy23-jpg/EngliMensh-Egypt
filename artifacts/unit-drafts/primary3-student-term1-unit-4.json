@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-16T06:37:45.648Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary3-student-term1",
+  "sourceFilename": "English_language_prim3_t1 (1).pdf",
+  "grade": "Primary 3",
+  "unitNumber": 4,
+  "unitTitle": "Unit 4: Let’s Tell Stories!",
+  "sourcePdfRange": {
+    "start": 71,
+    "end": 120
+  },
+  "sourceCoverage": [
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120
+  ],
+  "sourceFingerprint": "b6ff33c1ec49f9a5f9a764c8ad0e983d46b5659a4896baf0accbb1faad960c37",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 4: Let’s Tell Stories!",
+    "expectedRange": {
+      "start": 71,
+      "end": 120,
+      "totalPages": 50
+    },
+    "recordedCoverage": {
+      "totalPages": 50,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 2,
+      "supplementaryItems": 26,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-16T06:37:45.648Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "u4_v1",
+          "content": {
+            "word": "proud",
+            "arabicMeaning": "فخور",
+            "example": "The boys felt proud after saving the cat.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_v2",
+          "content": {
+            "word": "bored",
+            "arabicMeaning": "شاعر بالملل",
+            "example": "Sara went to the park because she was bored.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_v3",
+          "content": {
+            "word": "nervous",
+            "arabicMeaning": "متوتر",
+            "example": "Omar was nervous before his first football match.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_v4",
+          "content": {
+            "word": "worried",
+            "arabicMeaning": "قلق",
+            "example": "He was worried about making mistakes during the game.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "u4_vq1",
+          "content": {
+            "question": "How did Omar feel before his first football match?",
+            "options": [
+              "nervous",
+              "hungry",
+              "sleepy"
+            ],
+            "correctAnswer": "nervous",
+            "reason": "The text states that Omar felt nervous before starting his first football match.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_vq2",
+          "content": {
+            "question": "What does 'proud' mean when you do something good?",
+            "options": [
+              "Feeling happy and pleased with an achievement",
+              "Feeling scared of the dark",
+              "Feeling very tired"
+            ],
+            "correctAnswer": "Feeling happy and pleased with an achievement",
+            "reason": "Feeling proud means feeling happy and satisfied about something good you achieved or helped with.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_vq3",
+          "content": {
+            "question": "Sara felt __________ when she fell down and hurt her knee.",
+            "options": [
+              "sad and scared",
+              "excited and happy",
+              "proud and strong"
+            ],
+            "correctAnswer": "sad and scared",
+            "reason": "In the story, Sara felt sad and scared right after falling and hurting her knee.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "u4_g1",
+          "content": {
+            "rule": "Past Simple Tense with Irregular Verbs",
+            "explanation": "We use the past simple tense to talk about actions completed in the past. Irregular verbs change their form instead of adding -ed (e.g., go -> went, see -> saw, feel -> felt).",
+            "example": "She went to the park and saw a cat.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "u4_gq1",
+          "content": {
+            "question": "What is the past tense of the verb 'go'?",
+            "options": [
+              "went",
+              "goed",
+              "going"
+            ],
+            "correctAnswer": "went",
+            "reason": "'Go' is an irregular verb whose past simple form is 'went'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_gq2",
+          "content": {
+            "question": "Adam and Omar __________ a cat in trouble yesterday.",
+            "options": [
+              "saw",
+              "see",
+              "seeing"
+            ],
+            "correctAnswer": "saw",
+            "reason": "The past simple form of 'see' is 'saw'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_gq3",
+          "content": {
+            "question": "Sara __________ a beautiful picture with her pencil.",
+            "options": [
+              "drew",
+              "draw",
+              "draws"
+            ],
+            "correctAnswer": "drew",
+            "reason": "The sentence describes a past event, so we use the past tense 'drew'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "u4_r1",
+          "content": {
+            "passage": "One sunny day, Sara went to the park because she was bored. She drew a picture with her pencil. She was happy and smiled at her friend. Then she fell and hurt her knee. Sara felt sad and scared. Her friend helped her stand up. Sara said, \"Thank you\", and smiled again. Now she was tired, but she felt better.",
+            "origin": "source",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "passage": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4_r2",
+          "content": {
+            "question": "Who helped Sara stand up after she fell?",
+            "options": [
+              "Her friend",
+              "Her teacher",
+              "Her brother"
+            ],
+            "correctAnswer": "Her friend",
+            "reason": "The passage explicitly states that her friend helped her stand up.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "u4_l1",
+          "content": {
+            "script": "One sunny day, Sara went to the park with her friend. She played on the swings. Then, she fell and hurt her knee. Her friend helped her. Sara smiled.",
+            "origin": "source",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "script": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u4_l2",
+          "content": {
+            "question": "What did Sara play on at the park?",
+            "options": [
+              "The swings",
+              "The slide",
+              "The bicycle"
+            ],
+            "correctAnswer": "The swings",
+            "reason": "According to the listening text, Sara played on the swings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "u4_sp1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child A",
+                "text": "I was excited when I went to the zoo.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Child B",
+                "text": "I felt scared when I watched a scary movie.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "u4_gm1",
+          "content": {
+            "gameName": "Past Tense Match",
+            "description": "Choose the correct past simple form of the verb to complete the story sentence.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which verb correctly completes the sentence: 'Omar __________ proud after scoring a goal'?",
+            "options": [
+              "felt",
+              "feels",
+              "feeling"
+            ],
+            "correctAnswer": "felt",
+            "reason": "'Felt' is the correct past simple tense of 'feel'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_gm2",
+          "content": {
+            "gameName": "Emotion Explorer",
+            "description": "Pick the word that describes how the character feels.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "How do you feel when you are worried about making mistakes before a match?",
+            "options": [
+              "nervous",
+              "excited",
+              "glad"
+            ],
+            "correctAnswer": "nervous",
+            "reason": "Feeling worried about making mistakes before an event is called being nervous.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u4_ct1",
+          "content": {
+            "question": "What is the past simple form of 'see'?",
+            "options": [
+              "saw",
+              "seen",
+              "seeing"
+            ],
+            "correctAnswer": "saw",
+            "reason": "The past simple form of the irregular verb 'see' is 'saw'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct2",
+          "content": {
+            "question": "Why did Sara go to the park on a sunny day?",
+            "options": [
+              "Because she was bored",
+              "Because she was hungry",
+              "Because she was sleepy"
+            ],
+            "correctAnswer": "Because she was bored",
+            "reason": "The story mentions that Sara went to the park because she was bored.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct3",
+          "content": {
+            "question": "Which word means feeling happy about an achievement?",
+            "options": [
+              "proud",
+              "sad",
+              "scared"
+            ],
+            "correctAnswer": "proud",
+            "reason": "'Proud' describes the feeling of satisfaction after doing something well.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct4",
+          "content": {
+            "question": "What is the past simple form of 'fall'?",
+            "options": [
+              "fell",
+              "falled",
+              "falling"
+            ],
+            "correctAnswer": "fell",
+            "reason": "'Fall' is an irregular verb and its past tense form is 'fell'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct5",
+          "content": {
+            "question": "How did Sara react when her friend helped her stand up?",
+            "options": [
+              "She said 'Thank you' and smiled",
+              "She cried loudly",
+              "She ran away"
+            ],
+            "correctAnswer": "She said 'Thank you' and smiled",
+            "reason": "Sara thanked her friend and smiled after being helped.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct6",
+          "content": {
+            "question": "What is the past simple form of 'win'?",
+            "options": [
+              "won",
+              "winned",
+              "winning"
+            ],
+            "correctAnswer": "won",
+            "reason": "The past simple form of 'win' is 'won'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct7",
+          "content": {
+            "question": "Omar was __________ before his first football match.",
+            "options": [
+              "nervous",
+              "bored",
+              "angry"
+            ],
+            "correctAnswer": "nervous",
+            "reason": "According to the story, Omar felt nervous before the football match.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct8",
+          "content": {
+            "question": "What did Omar and Adam save in the park?",
+            "options": [
+              "A cat stuck in a fence",
+              "A bird on a tree",
+              "A lost dog"
+            ],
+            "correctAnswer": "A cat stuck in a fence",
+            "reason": "Adam and Omar helped free a cat stuck in a fence.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct9",
+          "content": {
+            "question": "What is the past simple form of 'draw'?",
+            "options": [
+              "drew",
+              "drawed",
+              "drawing"
+            ],
+            "correctAnswer": "drew",
+            "reason": "The past tense form of 'draw' is 'drew'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u4_ct10",
+          "content": {
+            "question": "Complete the sentence: 'They worked as a team, so they felt __________.'",
+            "options": [
+              "happy and proud",
+              "sad and bored",
+              "scared and angry"
+            ],
+            "correctAnswer": "happy and proud",
+            "reason": "Working together to solve a problem made them feel happy and proud.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:37:45.679Z",
+    "itemsAudited": 28,
+    "sourceClaims": 2,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 0
+  }
+}

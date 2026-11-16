@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-16T06:41:36.961Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "connectplus-primary3-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_3_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 3",
+  "unitNumber": 1,
+  "unitTitle": "At the track",
+  "sourcePdfRange": {
+    "start": 12,
+    "end": 57
+  },
+  "sourceCoverage": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57
+  ],
+  "sourceFingerprint": "9a5c80701122e0583ab74d0c425957784c2d9c87d831f365dcefd3fc129dd726",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "At the track",
+    "expectedRange": {
+      "start": 12,
+      "end": 57,
+      "totalPages": 46
+    },
+    "recordedCoverage": {
+      "totalPages": 46,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-16T06:41:36.960Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "runner",
+            "arabicMeaning": "عداء / متسابق",
+            "example": "Sara is a fast runner.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "support a friend",
+            "arabicMeaning": "يساند صديق",
+            "example": "I train with my friend to support her.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "warm up",
+            "arabicMeaning": "يقوم بعملية الإحماء",
+            "example": "We warm up together before the race.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "medal",
+            "arabicMeaning": "ميدالية",
+            "example": "The winner will get a medal today.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vocab_q_1",
+          "content": {
+            "question": "We __________ up before the race to get ready.",
+            "options": [
+              "sleep",
+              "look",
+              "warm"
+            ],
+            "correctAnswer": "warm",
+            "reason": "'Warm up' means to get your body ready for exercise.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_q_2",
+          "content": {
+            "question": "Sara is a __________ and she has a big competition.",
+            "options": [
+              "doctor",
+              "farmer",
+              "runner"
+            ],
+            "correctAnswer": "runner",
+            "reason": "Sara competes in running events, so she is a runner.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_q_3",
+          "content": {
+            "question": "It is good to __________ your friends when they train.",
+            "options": [
+              "support",
+              "make fun of",
+              "pressure"
+            ],
+            "correctAnswer": "support",
+            "reason": "Supporting friends helps them build confidence and do their best.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Notes",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Using 'will' and 'won't' for future predictions",
+            "explanation": "We use Subject + will / won't + infinitive verb to make predictions about the future.",
+            "example": "I think our school will get a medal today.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Comparative and Superlative Adjectives and Adverbs",
+            "explanation": "Add -er + than to form comparatives and the + -est for superlatives with short adjectives and adverbs.",
+            "example": "Lara is faster than Mariam, but Talia is the fastest.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q_1",
+          "content": {
+            "question": "We will __________ the next race.",
+            "options": [
+              "wins",
+              "win",
+              "won"
+            ],
+            "correctAnswer": "win",
+            "reason": "The modal verb 'will' must be followed by the base form of the verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q_2",
+          "content": {
+            "question": "Soha jumped __________ than Amira.",
+            "options": [
+              "high",
+              "higher",
+              "highest"
+            ],
+            "correctAnswer": "higher",
+            "reason": "When comparing two people, we add -er to short adverbs followed by 'than'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q_3",
+          "content": {
+            "question": "Who was the __________ runner in the race?",
+            "options": [
+              "fast",
+              "faster",
+              "fastest"
+            ],
+            "correctAnswer": "fastest",
+            "reason": "We use 'the' followed by the superlative form ending in -est when comparing three or more.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_1",
+          "content": {
+            "passage": "Hello! My name's Nesma and I'm at the track with my friend, Sara. Sara is an athlete, so she does a lot of exercise. We come here three times a week. She comes with her parents once on the weekend, too. Sara is a runner, and she has a big competition next month. I think she'll win! I'm training with her to support her, and it helps me get fit. We warm up together and we have fun! I record her race times, too. Her best event is the 200-meter race. She's a very fast! Sara was in a race last month, but she didn't win. She came second, so she wants to try harder. She finished in 35 seconds. She wants to be faster next time. Sara always eats healthy food. We bring some fruit to the track to have a snack, and we drink lots of water. I like helping Sara because she's a really good friend to me. She always listens when I have a problem, or if I'm worried about something. So that's why I want to help her as much as I can!",
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read_q_1",
+          "content": {
+            "question": "Why is Nesma training with Sara?",
+            "options": [
+              "To support her and get fit",
+              "To prepare for a swim competition",
+              "To sit in the office"
+            ],
+            "correctAnswer": "To support her and get fit",
+            "reason": "The passage explicitly states that Nesma trains with Sara to support her friend and to get fit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read_q_2",
+          "content": {
+            "question": "What is Sara's best event?",
+            "options": [
+              "The high jump",
+              "The 200-meter race",
+              "The long jump"
+            ],
+            "correctAnswer": "The 200-meter race",
+            "reason": "According to the reading text, Sara's best event is the 200-meter race.",
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "listen_1",
+          "content": {
+            "script": "Boy: How far can you jump, Ali? Ali: I can jump two meters! Boy: That's great! Can Mona jump high too? Ali: Yes, Mona can jump one meter high, but Dalia jumped the highest today.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "listen_q_1",
+          "content": {
+            "question": "How far can Ali jump?",
+            "options": [
+              "One meter",
+              "Two meters",
+              "Three meters"
+            ],
+            "correctAnswer": "Two meters",
+            "reason": "Ali states directly in the audio script that he can jump two meters.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Aya",
+                "text": "Will it be a good competition today?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Dina",
+                "text": "Yes, it will. I think the athlete wearing red will win.",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Aya",
+                "text": "How fast can he run?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Dina",
+                "text": "He can run 100 meters in 15 seconds!",
+                "speakerGender": "female"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "source",
+                "source"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Track Speed Challenge",
+            "description": "Choose the correct comparative adverb to speed past your opponent!",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Lara is __________ than Mariam.",
+            "options": [
+              "fast",
+              "faster",
+              "fastest"
+            ],
+            "correctAnswer": "faster",
+            "reason": "Comparing two athletes requires the comparative form 'faster than'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Vocabulary Runner",
+            "description": "Identify the pre-workout exercise word to win the sprint!",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What do athletes do before a race to prepare their body?",
+            "options": [
+              "warm up",
+              "sleep late",
+              "tell secrets"
+            ],
+            "correctAnswer": "warm up",
+            "reason": "'Warm up' means preparing muscles and body before running or jumping.",
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "comp_q_1",
+          "content": {
+            "question": "The winner of the competition will get a __________ today.",
+            "options": [
+              "medal",
+              "snack",
+              "secret"
+            ],
+            "correctAnswer": "medal",
+            "reason": "Athletes receive medals when winning sports events.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_2",
+          "content": {
+            "question": "I think our team __________ get a medal today.",
+            "options": [
+              "will",
+              "is",
+              "was"
+            ],
+            "correctAnswer": "will",
+            "reason": "'Will' is used after 'I think' to express future predictions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_3",
+          "content": {
+            "question": "How __________ can he run? - He can run 100 meters in 15 seconds.",
+            "options": [
+              "high",
+              "far",
+              "fast"
+            ],
+            "correctAnswer": "fast",
+            "reason": "When asking about speed in seconds per distance, we use 'How fast'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_4",
+          "content": {
+            "question": "Nader jumped __________ than Hassan.",
+            "options": [
+              "far",
+              "farther",
+              "farthest"
+            ],
+            "correctAnswer": "farther",
+            "reason": "Comparing distance jumped between two people requires the comparative form 'farther'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_5",
+          "content": {
+            "question": "Amira jumped the __________ in the whole competition.",
+            "options": [
+              "high",
+              "higher",
+              "highest"
+            ],
+            "correctAnswer": "highest",
+            "reason": "Comparing among all participants requires the superlative form 'the highest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_6",
+          "content": {
+            "question": "It is bad to make __________ of your friends.",
+            "options": [
+              "fun",
+              "help",
+              "plans"
+            ],
+            "correctAnswer": "fun",
+            "reason": "'Make fun of' means laughing at someone in an unkind way.",
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_7",
+          "content": {
+            "question": "Mohamed Salah set a world record by scoring 32 __________ in one season.",
+            "options": [
+              "goals",
+              "points",
+              "races"
+            ],
+            "correctAnswer": "goals",
+            "reason": "Mohamed Salah scored 32 goals in a single English Premier League season.",
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_8",
+          "content": {
+            "question": "Ali ran very fast, __________ he didn't win a medal.",
+            "options": [
+              "and",
+              "but",
+              "so"
+            ],
+            "correctAnswer": "but",
+            "reason": "'But' is used to show contrast between running fast and not winning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_9",
+          "content": {
+            "question": "The Egyptian Mau is the __________ cat in the world.",
+            "options": [
+              "fastest",
+              "biggest",
+              "oldest"
+            ],
+            "correctAnswer": "fastest",
+            "reason": "The Egyptian Mau cat holds a record for being the fastest cat species.",
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_q_10",
+          "content": {
+            "question": "Sara came second in the race, __________ she wants to try harder.",
+            "options": [
+              "because",
+              "so",
+              "or"
+            ],
+            "correctAnswer": "so",
+            "reason": "'So' is a conjunction used to introduce a result.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:41:36.990Z",
+    "itemsAudited": 30,
+    "sourceClaims": 0,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 0
+  }
+}

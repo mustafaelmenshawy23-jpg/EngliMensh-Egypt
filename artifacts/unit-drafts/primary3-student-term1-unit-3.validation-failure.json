@@ -2,11 +2,14 @@
   "status": "failed_validation",
   "bookId": "primary3-student-term1",
   "unitNumber": 3,
-  "score": 85,
+  "score": 75,
   "criticalFailures": [
-    "Duplicate question prompt detected: \"Where do you go to buy food?\""
+    "Duplicate question prompt detected: \"Where do you go to read books?\""
   ],
-  "warnings": [],
+  "warnings": [
+    "Speaking item u3_spk_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item u3_spk_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
   "report": {
     "unitTitle": "Unit 3: New Adventures",
     "expectedRange": {
@@ -21,15 +24,15 @@
     },
     "itemTotals": {
       "totalItems": 32,
-      "sourceItems": 27,
-      "supplementaryItems": 5,
-      "vocabularyCount": 6,
+      "sourceItems": 2,
+      "supplementaryItems": 30,
+      "vocabularyCount": 5,
       "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 6,
-        "validItems": 6,
+        "itemCount": 5,
+        "validItems": 5,
         "issues": []
       },
       "vocabulary_questions": {
@@ -53,8 +56,8 @@
         "issues": []
       },
       "listening": {
-        "itemCount": 2,
-        "validItems": 2,
+        "itemCount": 3,
+        "validItems": 3,
         "issues": []
       },
       "speaking": {
@@ -73,6 +76,6 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-13T06:38:51.078Z"
+    "validationTimestamp": "2026-11-16T06:34:09.210Z"
   }
 }

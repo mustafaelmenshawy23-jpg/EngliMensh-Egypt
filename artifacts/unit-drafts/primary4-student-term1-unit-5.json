@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-16T06:47:30.088Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary4-student-term1",
+  "sourceFilename": "English_language_prim4_t1 (1).pdf",
+  "grade": "Primary 4",
+  "unitNumber": 5,
+  "unitTitle": "Unit 5: A Day at Work",
+  "sourcePdfRange": {
+    "start": 80,
+    "end": 95
+  },
+  "sourceCoverage": [
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95
+  ],
+  "sourceFingerprint": "693d4736c6cdd5a28bc8049496b42af659d4a02fdd2534621546ab709c760db4",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 5: A Day at Work",
+    "expectedRange": {
+      "start": 80,
+      "end": 95,
+      "totalPages": 16
+    },
+    "recordedCoverage": {
+      "totalPages": 16,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-16T06:47:30.088Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "firefighter",
+            "arabicMeaning": "رجل إطفاء",
+            "example": "A firefighter stops fires and saves people.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "engineer",
+            "arabicMeaning": "مهندس",
+            "example": "An engineer designs new buildings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "wildlife photographer",
+            "arabicMeaning": "مصور الحياة البرية",
+            "example": "Amr is a wildlife photographer who takes pictures of wild animals.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "voice-over actor",
+            "arabicMeaning": "ممثل أداء صوتي",
+            "example": "Adel is a voice-over actor who makes voices for cartoons.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "carpenter",
+            "arabicMeaning": "نجار",
+            "example": "Sami was a skilled carpenter who built wooden furniture.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vocab_q1",
+          "content": {
+            "question": "What does an engineer do at their job?",
+            "options": [
+              "designs new buildings",
+              "stops fires",
+              "helps sick people",
+              "takes photos of wild animals"
+            ],
+            "correctAnswer": "designs new buildings",
+            "reason": "According to page 81 of the textbook, an engineer's job is to design new buildings.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_q2",
+          "content": {
+            "question": "What does a mentor like Noha do for young students?",
+            "options": [
+              "helps them learn and grow",
+              "builds wooden houses",
+              "fights dangerous fires",
+              "makes cartoon voices"
+            ],
+            "correctAnswer": "helps them learn and grow",
+            "reason": "Page 83 explains that Noha is a mentor who helps young students learn and grow.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_q3",
+          "content": {
+            "question": "What material does a carpenter primarily work with?",
+            "options": [
+              "wood",
+              "glass",
+              "paper",
+              "plastic"
+            ],
+            "correctAnswer": "wood",
+            "reason": "As shown in the story of Sami the carpenter on page 86, a carpenter works with wood.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Superlative Adjectives",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Superlative Adjectives (-est)",
+            "explanation": "Use superlative adjectives to show the greatest degree of something. To make superlative adjectives, add -est to regular adjectives (tall -> the tallest). For CVC adjectives, double the final consonant (big -> the biggest). For -e endings, add -st (nice -> the nicest). For -y endings, change -y to -i and add -est (happy -> the happiest).",
+            "example": "This tree is the tallest tree in the park.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Superlative Adjectives ending in -y",
+            "explanation": "If an adjective ends in a consonant and -y, change -y to -i and add -est to form the superlative.",
+            "example": "Nora is the happiest girl in the class.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "August is the ________ month of the year.",
+            "options": [
+              "hottest",
+              "hotter than",
+              "hot",
+              "hotter"
+            ],
+            "correctAnswer": "hottest",
+            "reason": "The superlative form of 'hot' requires doubling the final consonant before adding -est, making it 'hottest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "My grandpa is the ________ person I know.",
+            "options": [
+              "wisest",
+              "wiser",
+              "wiser than",
+              "wise"
+            ],
+            "correctAnswer": "wisest",
+            "reason": "The superlative form of 'wise' ends in -e, so we add -st to get 'wisest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "Ahmed told us the ________ story at the party.",
+            "options": [
+              "funniest",
+              "funnier",
+              "funny",
+              "fun"
+            ],
+            "correctAnswer": "funniest",
+            "reason": "For adjectives ending in -y like 'funny', change -y to -i and add -est to get 'funniest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_pass_1",
+          "content": {
+            "passage": "Sami was a skilled carpenter who lived in a quiet village. For many years, he built strong houses and beautiful furniture. People admired his work, and some traveled from far away just to see his wooden chairs and tables. After a lifetime of hard work, Sami grew tired. He decided it was time to rest and stop building. But before he could retire, the village king came to him with a request. 'Please build one last house,' the king said. 'It will be your final gift to the village.' Sami agreed, but his heart was not in it. He used weak wood. He didn't check the windows or the doors. The windows didn't fit. The doors were crooked. The house looked nothing like his usual careful work. When the house was finished, Sami gave the keys to the king. The king smiled kindly and said, 'This house is for you, Sami. It's a gift for all your wonderful work over the years.' Sami stood in shock. His own poor work was now his home.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "Why was Sami shocked when he finished the last house?",
+            "options": [
+              "The house was given to him as a gift by the king.",
+              "The king refused to pay him for his work.",
+              "The house collapsed completely.",
+              "The king asked him to build ten more houses."
+            ],
+            "correctAnswer": "The house was given to him as a gift by the king.",
+            "reason": "Sami was shocked because he had built the house carelessly, only to discover that the king was gifting it to him.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_script_1",
+          "content": {
+            "script": "Ms. Hala is talking to her students about what they want to be when they grow up. Student 1 says, 'I'm a doctor. I wear a white coat and check sick people's health.' Student 2 says, 'I'm an engineer. I wear a yellow helmet and design new buildings.' Student 3 says, 'I'm a nurse. I wear a blue uniform and care for patients.' Student 4 says, 'I'm a firefighter. I wear a blue uniform and red helmet to stop fires and save people.' Ms. Hala tells them all their jobs are very important.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "What does the firefighter student wear according to the classroom talk?",
+            "options": [
+              "A blue uniform and a red helmet",
+              "A white coat and glasses",
+              "A yellow helmet and a vest",
+              "A black uniform"
+            ],
+            "correctAnswer": "A blue uniform and a red helmet",
+            "reason": "In the classroom dialogue on page 81, the firefighter wears a blue uniform and a red helmet.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Teacher",
+                "text": "What do you do at your job?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Doctor",
+                "text": "I help sick people and check their health.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Teacher",
+                "text": "What do you wear?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Doctor",
+                "text": "I wear a white coat.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Learning Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Job Match Challenge",
+            "description": "Match the career with its main duty!",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Who takes photographs of wild animals in faraway places?",
+            "options": [
+              "A wildlife photographer",
+              "A voice-over actor",
+              "A mentor",
+              "A carpenter"
+            ],
+            "correctAnswer": "A wildlife photographer",
+            "reason": "A wildlife photographer travels to nature reserves to capture photos of wild animals.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Superlative Star",
+            "description": "Choose the sentence with the correct superlative adjective structure.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which sentence correctly uses a superlative adjective?",
+            "options": [
+              "She is the kindest mentor in the school.",
+              "She is the kinder mentor in the school.",
+              "She is kindest than the other mentor.",
+              "She is more kind mentor in the school."
+            ],
+            "correctAnswer": "She is the kindest mentor in the school.",
+            "reason": "The superlative of 'kind' is 'the kindest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "comp_1",
+          "content": {
+            "question": "What does a firefighter wear to stay safe on the job?",
+            "options": [
+              "A protective uniform and a helmet",
+              "A white lab coat",
+              "A green suit",
+              "A wooden vest"
+            ],
+            "correctAnswer": "A protective uniform and a helmet",
+            "reason": "Firefighters wear heavy protective uniforms and helmets to stay safe from fire and smoke.",
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_2",
+          "content": {
+            "question": "What is the main role of a nurse?",
+            "options": [
+              "To help doctors and care for patients",
+              "To design new buildings",
+              "To put out fires",
+              "To make cartoon voices"
+            ],
+            "correctAnswer": "To help doctors and care for patients",
+            "reason": "As stated on page 81, nurses help doctors and take care of patients.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_3",
+          "content": {
+            "question": "What does Adel do as a voice-over actor?",
+            "options": [
+              "He makes voices for cartoons.",
+              "He photographs wild lions.",
+              "He performs with wooden puppets.",
+              "He builds chairs and tables."
+            ],
+            "correctAnswer": "He makes voices for cartoons.",
+            "reason": "Page 83 explains that Adel is a voice-over actor who makes high and low voices for cartoons.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_4",
+          "content": {
+            "question": "How does Salma entertain children in her job?",
+            "options": [
+              "She uses puppets to tell stories.",
+              "She draws pictures of animals.",
+              "She plays sports with them.",
+              "She sings songs on the radio."
+            ],
+            "correctAnswer": "She uses puppets to tell stories.",
+            "reason": "Salma works with puppets and uses them to perform storytelling shows for children.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_5",
+          "content": {
+            "question": "Choose the correct superlative: 'This tree is the ________ tree in the park.'",
+            "options": [
+              "tallest",
+              "taller",
+              "tall",
+              "tallest than"
+            ],
+            "correctAnswer": "tallest",
+            "reason": "'Tall' becomes 'the tallest' when comparing more than two objects in superlative form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_6",
+          "content": {
+            "question": "What is the superlative form of the adjective 'heavy'?",
+            "options": [
+              "heaviest",
+              "heavier",
+              "heaviest than",
+              "more heavy"
+            ],
+            "correctAnswer": "heaviest",
+            "reason": "Adjectives ending in consonant + y change -y to -i and add -est, becoming 'heaviest'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_7",
+          "content": {
+            "question": "Why did Sami build the last house carelessly?",
+            "options": [
+              "His heart was not in it and he felt tired.",
+              "He wanted to trick the king.",
+              "He did not know how to build houses.",
+              "He did not have proper tools."
+            ],
+            "correctAnswer": "His heart was not in it and he felt tired.",
+            "reason": "Sami was tired and did not put effort into the work because his heart was not in it.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_8",
+          "content": {
+            "question": "What moral lesson did Sami learn at the end of the story?",
+            "options": [
+              "Always give your best work in everything you do.",
+              "Never build houses for royalty.",
+              "Stop working whenever you are tired.",
+              "Use weak wood for quick projects."
+            ],
+            "correctAnswer": "Always give your best work in everything you do.",
+            "reason": "Sami realized that doing poor work hurts oneself and promised to always give his best effort.",
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_9",
+          "content": {
+            "question": "Which word features a silent '-e' that makes the vowel before it long?",
+            "options": [
+              "slide",
+              "cut",
+              "hop",
+              "pen"
+            ],
+            "correctAnswer": "slide",
+            "reason": "'Slide' ends with a silent -e, which creates a long vowel 'i' sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_10",
+          "content": {
+            "question": "What key feature defines a non-fiction text?",
+            "options": [
+              "It contains true facts and real-life details.",
+              "It features imaginary fairy tale creatures.",
+              "It tells stories about magical powers.",
+              "It is completely made up."
+            ],
+            "correctAnswer": "It contains true facts and real-life details.",
+            "reason": "Non-fiction writing focuses on factual, real-life information without making things up.",
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:47:30.098Z",
+    "itemsAudited": 30,
+    "sourceClaims": 0,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 18,
+    "reclassifiedToSupplementary": 0
+  }
+}

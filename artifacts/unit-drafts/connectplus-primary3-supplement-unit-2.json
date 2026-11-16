@@ -1,0 +1,931 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-16T06:42:07.357Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary3-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_3_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 3",
+  "unitNumber": 2,
+  "unitTitle": "Body matters",
+  "sourcePdfRange": {
+    "start": 58,
+    "end": 89
+  },
+  "sourceCoverage": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+  ],
+  "sourceFingerprint": "9633b8fef0022fb030a87ae0f0a5f301e8c3284bd694a0b37d234623a50f8a04",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Body matters",
+    "expectedRange": {
+      "start": 58,
+      "end": 89,
+      "totalPages": 32
+    },
+    "recordedCoverage": {
+      "totalPages": 32,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 30,
+      "sourceItems": 4,
+      "supplementaryItems": 26,
+      "vocabularyCount": 6,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-16T06:42:07.357Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "u2_vocab_1",
+          "content": {
+            "word": "skeleton",
+            "arabicMeaning": "هيكل عظمي",
+            "example": "Our skeleton is all the bones that keep us strong.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_vocab_2",
+          "content": {
+            "word": "muscles",
+            "arabicMeaning": "عضلات",
+            "example": "We need muscles to move our bones.",
+            "origin": "source",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_3",
+          "content": {
+            "word": "jaw",
+            "arabicMeaning": "فك",
+            "example": "The jaw is a bone in your face.",
+            "origin": "source",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_vocab_4",
+          "content": {
+            "word": "protect",
+            "arabicMeaning": "يحمي",
+            "example": "Bones protect our soft organs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_vocab_5",
+          "content": {
+            "word": "sunscreen",
+            "arabicMeaning": "كريم واق من الشمس",
+            "example": "It is important to wear sunscreen to protect our skin.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_vocab_6",
+          "content": {
+            "word": "saliva",
+            "arabicMeaning": "لعاب",
+            "example": "We need saliva to help us chew food.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice Questions",
+      "items": [
+        {
+          "itemId": "u2_vq_1",
+          "content": {
+            "question": "What protects our soft organs like the heart and brain?",
+            "options": [
+              "Bones",
+              "Sweets",
+              "Video games"
+            ],
+            "correctAnswer": "Bones",
+            "reason": "Bones are hard and protect soft internal organs from harm.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_vq_2",
+          "content": {
+            "question": "Which organ is the largest organ in the human body?",
+            "options": [
+              "Brain",
+              "Skin",
+              "Heart"
+            ],
+            "correctAnswer": "Skin",
+            "reason": "Our skin covers the entire outer body, making it the largest organ.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_vq_3",
+          "content": {
+            "question": "What liquid in the mouth helps us chew food?",
+            "options": [
+              "Water",
+              "Soda",
+              "Saliva"
+            ],
+            "correctAnswer": "Saliva",
+            "reason": "Saliva is the liquid produced in the mouth that aids in chewing and swallowing.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Expressing Future Plans with 'be going to'",
+      "items": [
+        {
+          "itemId": "u2_gram_1",
+          "content": {
+            "rule": "Using 'be going to' for future plans",
+            "explanation": "We use am / is / are + going to + infinitive verb to express planned actions in the future.",
+            "example": "He is going to ride a bike.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice Questions",
+      "items": [
+        {
+          "itemId": "u2_gq_1",
+          "content": {
+            "question": "She _____ going to visit her uncle this evening.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "is",
+            "reason": "The singular subject pronoun 'She' requires 'is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_gq_2",
+          "content": {
+            "question": "Are they going to go to the park?",
+            "options": [
+              "Yes, they are.",
+              "Yes, they is.",
+              "Yes, they do."
+            ],
+            "correctAnswer": "Yes, they are.",
+            "reason": "A Yes/No question starting with 'Are they' takes 'Yes, they are' in short answers.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_gq_3",
+          "content": {
+            "question": "What _____ you going to do tomorrow?",
+            "options": [
+              "is",
+              "are",
+              "do"
+            ],
+            "correctAnswer": "are",
+            "reason": "The subject 'you' takes 'are' in 'be going to' questions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "u2_read_1",
+          "content": {
+            "passage": "Our skin is the largest organ in our body, and it's very important. It protects us from the sun, as well as from dirt and germs. It keeps you cool in hot weather, and warm in cold weather. We need to look after our skin to keep it healthy.",
+            "origin": "source",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "passage": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_read_2",
+          "content": {
+            "question": "What does our skin protect us from?",
+            "options": [
+              "Food and water",
+              "Dirt and germs",
+              "Bones and muscles"
+            ],
+            "correctAnswer": "Dirt and germs",
+            "reason": "The reading passage explicitly mentions that skin protects us from the sun, dirt, and germs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Comprehension",
+      "items": [
+        {
+          "itemId": "u2_list_1",
+          "content": {
+            "script": "When I find things difficult at school, or I have arguments with my friends, I try to stay positive. I like taking a walk outside, because it helps me feel happy and calm.",
+            "origin": "source",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "script": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "u2_list_2",
+          "content": {
+            "question": "Why does Adam like taking a walk outside?",
+            "options": [
+              "It makes him cross",
+              "It helps him feel happy and calm",
+              "It helps him play video games"
+            ],
+            "correctAnswer": "It helps him feel happy and calm",
+            "reason": "According to the listening script, walking outside helps Adam feel happy and calm.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "u2_spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Speaker 1",
+                "text": "How often do you drink water?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Speaker 2",
+                "text": "I drink about six glasses a day.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Speaker 1",
+                "text": "How much sleep do you get every night?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Speaker 2",
+                "text": "I usually sleep for seven hours.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Review Games",
+      "items": [
+        {
+          "itemId": "u2_game_1",
+          "content": {
+            "gameName": "Body Builder Quiz",
+            "description": "Select the correct body part described in the question.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which organ pumps blood around your body?",
+            "options": [
+              "Heart",
+              "Skin",
+              "Jaw"
+            ],
+            "correctAnswer": "Heart",
+            "reason": "The heart is the main organ that pumps blood throughout the body.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_game_2",
+          "content": {
+            "gameName": "Future Planner Challenge",
+            "description": "Choose the correct form of 'be going to' to complete the sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Look! He _____ going to climb the rock.",
+            "options": [
+              "is",
+              "are",
+              "am"
+            ],
+            "correctAnswer": "is",
+            "reason": "The pronoun 'He' requires the singular auxiliary verb 'is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit 2 Comprehensive Test",
+      "items": [
+        {
+          "itemId": "u2_test_1",
+          "content": {
+            "question": "Our skeleton is made of all the _____ in our body.",
+            "options": [
+              "muscles",
+              "bones",
+              "organs"
+            ],
+            "correctAnswer": "bones",
+            "reason": "The skeleton is defined as all the bones that support our body.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_2",
+          "content": {
+            "question": "We need _____ to move our bones.",
+            "options": [
+              "muscles",
+              "hats",
+              "pads"
+            ],
+            "correctAnswer": "muscles",
+            "reason": "Muscles attach to bones and enable them to lift and turn.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_3",
+          "content": {
+            "question": "He is going to _____ a bike tomorrow.",
+            "options": [
+              "ride",
+              "rides",
+              "riding"
+            ],
+            "correctAnswer": "ride",
+            "reason": "The structure 'be going to' is followed by the base form of the verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_4",
+          "content": {
+            "question": "_____ she going to wear a helmet?",
+            "options": [
+              "Is",
+              "Are",
+              "Am"
+            ],
+            "correctAnswer": "Is",
+            "reason": "The subject 'she' requires the singular auxiliary verb 'Is'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_5",
+          "content": {
+            "question": "When you swallow food, it goes directly to your _____.",
+            "options": [
+              "brain",
+              "stomach",
+              "knee"
+            ],
+            "correctAnswer": "stomach",
+            "reason": "Swallowed food travels down from the mouth into the stomach.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_6",
+          "content": {
+            "question": "A special liquid called stomach _____ breaks down food in the stomach.",
+            "options": [
+              "water",
+              "acid",
+              "saliva"
+            ],
+            "correctAnswer": "acid",
+            "reason": "Stomach acid is the liquid that breaks down food inside the stomach.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_7",
+          "content": {
+            "question": "They _____ going to go to the park today.",
+            "options": [
+              "aren't",
+              "isn't",
+              "am not"
+            ],
+            "correctAnswer": "aren't",
+            "reason": "The plural subject 'They' takes 'aren't' in negative 'be going to' sentences.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_8",
+          "content": {
+            "question": "It is important to wear _____ to protect our skin from the sun.",
+            "options": [
+              "sunscreen",
+              "candy",
+              "shoes"
+            ],
+            "correctAnswer": "sunscreen",
+            "reason": "Sunscreen guards skin against damage caused by sun exposure.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_9",
+          "content": {
+            "question": "Which of the following is a healthy choice?",
+            "options": [
+              "Eating lots of candy",
+              "Sleeping 8 hours at night",
+              "Skipping breakfast"
+            ],
+            "correctAnswer": "Sleeping 8 hours at night",
+            "reason": "Getting 8 hours of sleep at night helps keep the body rested and healthy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "u2_test_10",
+          "content": {
+            "question": "We use muscles when we _____ food to move the jaw up and down.",
+            "options": [
+              "chew",
+              "wear",
+              "climb"
+            ],
+            "correctAnswer": "chew",
+            "reason": "Chewing food requires jaw muscles to move up and down.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:42:07.386Z",
+    "itemsAudited": 30,
+    "sourceClaims": 4,
+    "verifiedSourceClaims": 4,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 1,
+    "itemsWithSourceSubfields": 25,
+    "reclassifiedToSupplementary": 0
+  }
+}
