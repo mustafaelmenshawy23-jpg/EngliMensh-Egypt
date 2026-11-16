@@ -135,18 +135,6 @@ function auditDraftForUnit(draft, rows, unitId) {
 
 async function writeProvenanceReport() {
   const audits = [...provenanceAuditByUnit.values()];
-  let sourceReviewQueueSummary = {};
-try {
-  sourceReviewQueueSummary = JSON.parse(await fs.readFile('artifacts/source-review-queue.json', 'utf8')).summary || {};
-} catch {}
-const fallbackManualReviewPages =
-  Number(manifest.totals?.ocrUnreliablePages || 0) +
-  Number(manifest.totals?.ocrEmptyPages || 0) +
-  Number(manifest.totals?.ocrErrorPages || 0);
-const manualReviewPages = Number.isFinite(Number(sourceReviewQueueSummary.pagesNeedingVisualReview))
-  ? Number(sourceReviewQueueSummary.pagesNeedingVisualReview)
-  : fallbackManualReviewPages;
-
 const summary = {
     draftsScanned: audits.length,
     sourceClaims: audits.reduce((sum, audit) => sum + audit.summary.sourceClaims, 0),
@@ -291,6 +279,18 @@ while (totalCandidates > 0 && scanned < totalCandidates && selected.length < bat
   if (candidate?.eligible) selected.push(candidate);
 }
 batchState.cursorIndex = totalCandidates > 0 ? (startIndex + scanned) % totalCandidates : 0;
+
+let sourceReviewQueueSummary = {};
+try {
+  sourceReviewQueueSummary = JSON.parse(await fs.readFile('artifacts/source-review-queue.json', 'utf8')).summary || {};
+} catch {}
+const fallbackManualReviewPages =
+  Number(manifest.totals?.ocrUnreliablePages || 0) +
+  Number(manifest.totals?.ocrEmptyPages || 0) +
+  Number(manifest.totals?.ocrErrorPages || 0);
+const manualReviewPages = Number.isFinite(Number(sourceReviewQueueSummary.pagesNeedingVisualReview))
+  ? Number(sourceReviewQueueSummary.pagesNeedingVisualReview)
+  : fallbackManualReviewPages;
 
 const summary = {
   generatedAt: new Date().toISOString(),
