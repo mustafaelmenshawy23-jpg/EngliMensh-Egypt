@@ -57,8 +57,8 @@
     },
     "itemTotals": {
       "totalItems": 34,
-      "sourceItems": 12,
-      "supplementaryItems": 22,
+      "sourceItems": 1,
+      "supplementaryItems": 33,
       "vocabularyCount": 7,
       "questionsCount": 16
     },
@@ -125,11 +125,16 @@
             "word": "father",
             "arabicMeaning": "أب",
             "example": "This is my father.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -137,11 +142,16 @@
             "word": "mother",
             "arabicMeaning": "أم",
             "example": "This is my mother.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -149,11 +159,16 @@
             "word": "brother",
             "arabicMeaning": "أخ",
             "example": "I have one brother.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -161,11 +176,16 @@
             "word": "sister",
             "arabicMeaning": "أخت",
             "example": "This is my sister.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -173,11 +193,16 @@
             "word": "parents",
             "arabicMeaning": "والدان",
             "example": "They are my parents.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-6",
@@ -185,11 +210,16 @@
             "word": "grandfather",
             "arabicMeaning": "جد",
             "example": "My grandfather is kind.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-7",
@@ -197,11 +227,16 @@
             "word": "grandmother",
             "arabicMeaning": "جدة",
             "example": "My grandmother is helpful.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -221,7 +256,17 @@
             "correctAnswer": "parents",
             "reason": "Mother and father combined are referred to as parents.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -238,7 +283,17 @@
             "correctAnswer": "grandmother",
             "reason": "Your mother's mother is your grandmother.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -255,7 +310,17 @@
             "correctAnswer": "nurse",
             "reason": "Nurse begins with the letter Nn as shown in the phonics lesson.",
             "origin": "supplementary",
-            "sourcePdfPage": 47
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -272,11 +337,16 @@
             "rule": "Asking 'Who's this?' and answering 'This is my...'",
             "explanation": "Use 'Who's this?' to ask about a person nearby, and answer with 'This is my...' followed by the family member name.",
             "example": "Who's this? This is my father.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar-2",
@@ -284,11 +354,16 @@
             "rule": "Expressing quantity with 'There is' and 'There are'",
             "explanation": "Use 'There is' for single items (1) and 'There are' for plural items (2-5).",
             "example": "There is 1 butterfly. There are 4 books.",
-            "origin": "source",
-            "sourcePdfPage": 53
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -308,7 +383,17 @@
             "correctAnswer": "Who",
             "reason": "We use 'Who' when asking about a person.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -325,7 +410,17 @@
             "correctAnswer": "This",
             "reason": "We respond to 'Who's this?' with 'This is my...'.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -342,7 +437,17 @@
             "correctAnswer": "are",
             "reason": "'3 books' is plural, so we use 'are'.",
             "origin": "supplementary",
-            "sourcePdfPage": 53
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -357,11 +462,14 @@
           "itemId": "reading-p-1",
           "content": {
             "passage": "Maya: Hi, Sara! Sara: Hi, Maya! Maya: Who is this? Sara: This is my father. And this is my mother. They are my parents. Maya: Oh, nice! Do you have any brothers? Sara: Yes! I have 1 brother. Maya: Cool! I have 2 sisters. Can you show me their pictures? Sara: Sure, I will show you pictures of my whole family.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "reading-q-1",
@@ -375,7 +483,17 @@
             "correctAnswer": "1 brother",
             "reason": "In the dialogue, Sara explicitly states 'I have 1 brother.'",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -392,7 +510,17 @@
             "correctAnswer": "2 sisters",
             "reason": "Maya says 'I have 2 sisters.' in the reading text.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -407,11 +535,14 @@
           "itemId": "listening-s-1",
           "content": {
             "script": "Omar: How many books do you have? Aly: Let's see... 1, 2, 3. There are 3 books. Omar: Can you count the flowers? Aly: Okay! 1, 2, 3, 4. There are 4 flowers! Omar: What else can you see? Aly: There is 1 sun. Omar: Aly, look! I have 5 apples. Do you want one? Aly: Yes, please! I have 1 apple now. Thank you!",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "listening-q-1",
@@ -425,7 +556,17 @@
             "correctAnswer": "4 flowers",
             "reason": "Aly counts '1, 2, 3, 4. There are 4 flowers!'.",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -442,7 +583,17 @@
             "correctAnswer": "3 books",
             "reason": "Aly counts '1, 2, 3. There are 3 books.'",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -479,7 +630,15 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -507,7 +666,19 @@
             "correctAnswer": "brother",
             "reason": "A male sibling is called a brother.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -529,7 +700,19 @@
             "correctAnswer": "is",
             "reason": "Singular items use 'is' with 'There'.",
             "origin": "supplementary",
-            "sourcePdfPage": 53
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -552,7 +735,17 @@
             "correctAnswer": "father",
             "reason": "Your mother's husband is your father.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -569,7 +762,17 @@
             "correctAnswer": "u",
             "reason": "The correct spelling is 'nurse'.",
             "origin": "supplementary",
-            "sourcePdfPage": 47
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -586,7 +789,17 @@
             "correctAnswer": "Pp",
             "reason": "Parrot begins with the letter Pp.",
             "origin": "supplementary",
-            "sourcePdfPage": 49
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -603,7 +816,17 @@
             "correctAnswer": "are",
             "reason": "5 apples is plural, so we use 'are'.",
             "origin": "supplementary",
-            "sourcePdfPage": 53
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -620,7 +843,17 @@
             "correctAnswer": "hat",
             "reason": "Hat begins with the letter Hh.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -637,7 +870,17 @@
             "correctAnswer": "duck",
             "reason": "Duck begins with the letter Dd.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -654,7 +897,17 @@
             "correctAnswer": "2",
             "reason": "Maya states in Lesson 1 dialogue that she has 2 sisters.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -671,7 +924,17 @@
             "correctAnswer": "Who",
             "reason": "'Who' is used to ask about people.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -688,7 +951,17 @@
             "correctAnswer": "brother",
             "reason": "The number 1 requires a singular noun 'brother'.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -705,12 +978,33 @@
             "correctAnswer": "is",
             "reason": "Singular noun '1 sun' takes 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:24.966Z",
+    "itemsAudited": 34,
+    "sourceClaims": 12,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 11,
+    "citationWarnings": 5,
+    "itemsWithSourceSubfields": 28,
+    "reclassifiedToSupplementary": 11
+  }
 }

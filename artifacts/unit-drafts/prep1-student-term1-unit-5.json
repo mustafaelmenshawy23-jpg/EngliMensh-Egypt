@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 16,
-      "supplementaryItems": 11,
+      "sourceItems": 0,
+      "supplementaryItems": 27,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -116,11 +116,16 @@
             "word": "profession",
             "arabicMeaning": "مهنة",
             "example": "She wants to choose a profession that matches her talent.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -128,11 +133,16 @@
             "word": "ambition",
             "arabicMeaning": "طموح",
             "example": "His main ambition is to become a successful scientist.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -140,11 +150,16 @@
             "word": "talent",
             "arabicMeaning": "موهبة",
             "example": "He has a special talent for playing music.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -165,7 +180,18 @@
             "correctAnswer": "A strong desire or hope to achieve something",
             "reason": "Ambition refers to a strong aspiration or goal one strives to accomplish.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -183,7 +209,18 @@
             "correctAnswer": "Job",
             "reason": "A profession is a paid occupation or career, which is synonymous with a job.",
             "origin": "supplementary",
-            "sourcePdfPage": 75
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -201,7 +238,18 @@
             "correctAnswer": "Natural skill or ability",
             "reason": "Talent is defined as a natural aptitude or skill to do something well.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -218,11 +266,16 @@
             "rule": "Future plans and intentions with be going to",
             "explanation": "We use (is/am/are) + going to + infinitive verb to express future plans, intentions, and predictions based on present evidence.",
             "example": "I am going to visit my uncle this weekend.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -243,7 +296,18 @@
             "correctAnswer": "is",
             "reason": "The subject 'He' takes the singular auxiliary verb 'is' before 'going to'.",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -261,7 +325,18 @@
             "correctAnswer": "are",
             "reason": "The plural subject 'We' requires the auxiliary verb 'are' with 'going to'.",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -279,7 +354,18 @@
             "correctAnswer": "She is not going to study",
             "reason": "Negatives with 'be going to' are formed by placing 'not' after the verb to be (is/am/are).",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -294,11 +380,14 @@
           "itemId": "r1",
           "content": {
             "passage": "Hello, my name is Omar, and I am 11 years old. I always think about my future career. I wish to find a profession that matches my talent and makes me happy. I love helping people, so I want to become a doctor one day. I know that I need a good education to reach my dream. After school, I will go to university to study medicine.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -312,11 +401,22 @@
             ],
             "correctAnswer": "A doctor",
             "reason": "The text states that Omar loves helping people, so he wants to become a doctor.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -329,7 +429,10 @@
           "content": {
             "script": "Narrator: Listen to Malek talking about his future. Malek: Hi everyone! My dream job is to become a software engineer. My new goal is to learn coding every single day. Last summer, I joined a special technology program to build my basic skills.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -347,7 +450,18 @@
             "correctAnswer": "A software engineer",
             "reason": "The script clearly states that Malek's dream job is to become a software engineer.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -383,11 +497,19 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -413,7 +535,20 @@
             "correctAnswer": "Talent",
             "reason": "A natural skill or ability is defined as a talent.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -436,7 +571,20 @@
             "correctAnswer": "They are going to play football.",
             "reason": "The plural pronoun 'they' correctly pairs with 'are' in the 'be going to' structure.",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -459,11 +607,22 @@
             ],
             "correctAnswer": "Profession",
             "reason": "A profession is a career requiring specific education and training.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -477,11 +636,22 @@
             ],
             "correctAnswer": "is",
             "reason": "Singular subject 'She' takes 'is' with 'going to'.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -495,11 +665,22 @@
             ],
             "correctAnswer": "To help people feel better and make them smile",
             "reason": "Omar states that his biggest dream is to help people feel better and make them smile.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -513,11 +694,22 @@
             ],
             "correctAnswer": "A strong hope or ambition",
             "reason": "An aspiration is synonymous with a strong ambition or goal.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -532,7 +724,18 @@
             "correctAnswer": "I am not going to visit my friend.",
             "reason": "The negative is formed by adding 'not' directly after the 'to be' verb.",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -549,11 +752,22 @@
             ],
             "correctAnswer": "Rainwater",
             "reason": "The text explicitly states the machine used rainwater to water plants.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -567,11 +781,22 @@
             ],
             "correctAnswer": "Match talent",
             "reason": "'Match talent' is a valid verb-noun collocation taught in the unit.",
-            "origin": "source",
-            "sourcePdfPage": 80
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -585,11 +810,22 @@
             ],
             "correctAnswer": "An apostrophe",
             "reason": "An apostrophe is used to show possession and form contractions.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -603,11 +839,22 @@
             ],
             "correctAnswer": "How",
             "reason": "Ali asks 'How are you going to achieve your future goal?'",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -621,13 +868,35 @@
             ],
             "correctAnswer": "To support each other and finish the machine",
             "reason": "The text describes how the team worked late, supporting each other to get the machine ready.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.699Z",
+    "itemsAudited": 27,
+    "sourceClaims": 16,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 16,
+    "citationWarnings": 12,
+    "itemsWithSourceSubfields": 16,
+    "reclassifiedToSupplementary": 16
+  }
 }

@@ -47,8 +47,8 @@
     },
     "itemTotals": {
       "totalItems": 28,
-      "sourceItems": 7,
-      "supplementaryItems": 21,
+      "sourceItems": 2,
+      "supplementaryItems": 26,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -115,11 +115,16 @@
             "word": "fragile",
             "arabicMeaning": "هش أو سريع العطب",
             "example": "Coral reefs are very fragile ecosystems that can be easily damaged by pollution.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit4_vocab_2",
@@ -127,11 +132,16 @@
             "word": "erosion",
             "arabicMeaning": "تآكل أو انجراف",
             "example": "Strong ocean waves cause coastal erosion over time.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit4_vocab_3",
@@ -139,11 +149,16 @@
             "word": "thrive",
             "arabicMeaning": "يزدهر أو ينشط",
             "example": "Marine creatures thrive in clean, protected ocean waters.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit4_vocab_4",
@@ -151,11 +166,16 @@
             "word": "entangled",
             "arabicMeaning": "متشابك أو عالق",
             "example": "The sea turtle became entangled in an abandoned fishing net.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -176,7 +196,18 @@
             "correctAnswer": "Easily damaged or broken",
             "reason": "Fragile describes something delicate that can be easily harmed by environmental changes.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -194,7 +225,18 @@
             "correctAnswer": "Thrive",
             "reason": "Thrive means to grow and flourish healthily under good conditions.",
             "origin": "supplementary",
-            "sourcePdfPage": 57
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -212,7 +254,18 @@
             "correctAnswer": "entangled",
             "reason": "Entangled means caught or twisted in a complicated structure like a net or rope.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -229,11 +282,16 @@
             "rule": "Compound Adjectives Formation and Hyphenation",
             "explanation": "Compound adjectives are made up of two or more words acting as a single descriptive unit before a noun. They use a hyphen when placed before a noun (e.g., 'a three-hour meeting'), but do not take a hyphen when placed after the noun or linking verb (e.g., 'The meeting was three hours'). Common structures include Number + Noun, Adjective + Participle, and Noun + Adjective.",
             "example": "Mohamed Salah is a well-known footballer, but as a player he is well known.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -254,7 +312,18 @@
             "correctAnswer": "We went on a ten-mile walk.",
             "reason": "When a number and noun modify another noun, the noun in the modifier remains singular ('mile') and takes a hyphen.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -272,7 +341,18 @@
             "correctAnswer": "He is a world-famous scientist.",
             "reason": "Compound adjectives are hyphenated when placed before the noun they describe.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -290,7 +370,18 @@
             "correctAnswer": "full-time",
             "reason": "'Full-time' is a compound adjective modifying 'job' before the noun, requiring a hyphen.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -306,7 +397,10 @@
           "content": {
             "passage": "Beneath the surface of the warm, crystal-clear ocean lies a breathtaking, world known as the coral reef. Often called a “colorful underwater city,” the reef is home to thousands of marine species, from graceful sea turtles to tiny, brightly-colored fish. These ecosystems are incredibly diverse and provide essential shelter, food, and protection for ocean life. Coral reefs grow slowly over thousands of years, but they are surprisingly fragile. Pollution, climate change, and destructive fishing practices pose serious threats to these natural wonders. When conditions are poor, corals bleach, losing their vivid colors, and becoming lifeless. In contrast, a healthy reef is alive with motion and brilliant colors. Marine biologists work tirelessly to protect coral reefs. Their efforts include educating communities and promoting eco-friendly tourism. As the saying goes, “a stitch in time saves nine”—acting early can prevent long-term damage. We must act now, before the reefs become a thing of the past. Some people may underestimate the importance of coral reefs, but they are priceless. They not only support marine life, but also protect coastal areas from storms and erosion. With renewed effort and widespread awareness, we can help these underwater cities recover and thrive again. Every little action makes a difference—because in the ocean, everything is connected.",
             "origin": "source",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -324,7 +418,18 @@
             "correctAnswer": "Because they provide shelter and food for thousands of marine species",
             "reason": "The text explicitly describes coral reefs as underwater cities because they serve as home, shelter, and food sources for thousands of ocean species.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -340,7 +445,10 @@
           "content": {
             "script": "Host: Welcome to today's podcast on marine conservation. Today we are talking about saving the whales. Dr. Sarah, what are the primary threats to these ocean giants? Dr. Sarah: Whales face severe human-made dangers. Heavy ship traffic creates noise pollution that disrupts their communication, while abandoned fishing gear leaves them entangled. Fortunately, dedicated scientists now use non-invasive drones to observe and protect whale pods without causing them distress.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -358,7 +466,18 @@
             "correctAnswer": "By using non-invasive drones",
             "reason": "Dr. Sarah states that scientists use non-invasive drones to monitor whales safely without causing stress.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -385,7 +504,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -414,7 +539,20 @@
             "correctAnswer": "They bleach",
             "reason": "Coral bleaching occurs when corals lose their vivid colors under stressful environmental conditions.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -437,7 +575,20 @@
             "correctAnswer": "a three-hour meeting",
             "reason": "Compound adjectives formed with a number and noun use a singular noun and a hyphen before the modified noun.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -461,7 +612,18 @@
             "correctAnswer": "Fixing a small environmental problem early prevents greater damage later.",
             "reason": "The idiom means that addressing a problem immediately prevents severe long-term complications.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -479,7 +641,18 @@
             "correctAnswer": "erosion",
             "reason": "Erosion refers to the gradual wearing away of land or soil by natural elements like water and wind.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -497,7 +670,18 @@
             "correctAnswer": "Haunting",
             "reason": "Haunting describes something beautiful yet sad that lingers in memory, such as whale songs.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -515,7 +699,18 @@
             "correctAnswer": "time-saving",
             "reason": "Noun + Present Participle creates the compound adjective 'time-saving'.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -533,7 +728,18 @@
             "correctAnswer": "The famous footballer is well known.",
             "reason": "Compound adjectives coming after a linking verb (like 'is well known') do not require hyphens.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -551,7 +757,18 @@
             "correctAnswer": "well-behaved",
             "reason": "'Well-behaved' is the established Adverb + Past Participle compound adjective.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -569,7 +786,18 @@
             "correctAnswer": "Because they harbor thousands of diverse species like rainforests do on land",
             "reason": "Coral reefs host high biodiversity, making them analogous to terrestrial rainforests.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -587,7 +815,18 @@
             "correctAnswer": "A dangerous journey across the sand to reach the sea",
             "reason": "After hatching, baby sea turtles must navigate a perilous trek across the shore to the water.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -605,7 +844,18 @@
             "correctAnswer": "It creates noise pollution that disrupts their communication.",
             "reason": "Ship noise interferes with whale echolocation and long-distance vocal communication.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -623,12 +873,34 @@
             "correctAnswer": "In serious trouble or difficulty",
             "reason": "The idiom 'in deep water' figuratively means being in a dangerous or difficult situation.",
             "origin": "supplementary",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.087Z",
+    "itemsAudited": 28,
+    "sourceClaims": 7,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 5,
+    "citationWarnings": 1,
+    "itemsWithSourceSubfields": 13,
+    "reclassifiedToSupplementary": 5
+  }
 }

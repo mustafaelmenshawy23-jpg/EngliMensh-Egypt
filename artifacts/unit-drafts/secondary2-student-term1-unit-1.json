@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 26,
-      "supplementaryItems": 5,
+      "sourceItems": 1,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "gateway",
             "arabicMeaning": "بوابة / منفذ",
             "example": "Egypt serves as a strategic gateway to the African continent.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -126,11 +131,16 @@
             "word": "infrastructure",
             "arabicMeaning": "بنية تحتية",
             "example": "The government is investing heavily in infrastructure projects across the region.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -138,11 +148,16 @@
             "word": "partnership",
             "arabicMeaning": "شراكة",
             "example": "Strong partnerships between African countries boost economic growth.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -150,11 +165,16 @@
             "word": "manufactured goods",
             "arabicMeaning": "بضائع مصنعة",
             "example": "Egypt exports manufactured goods to several African markets.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -162,11 +182,16 @@
             "word": "integration",
             "arabicMeaning": "تكامل / اندماج",
             "example": "Regional integration helps different systems work together efficiently.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -174,11 +199,16 @@
             "word": "enhance",
             "arabicMeaning": "يعزز / يحسن",
             "example": "Modern irrigation techniques help enhance crop yields.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -198,11 +228,22 @@
             ],
             "correctAnswer": "Infrastructure",
             "reason": "Infrastructure describes basic physical and organizational structures needed for operations.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -216,11 +257,22 @@
             ],
             "correctAnswer": "manufactured goods",
             "reason": "The text states that Egypt exports manufactured goods, textiles, and agricultural products.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -234,11 +286,22 @@
             ],
             "correctAnswer": "integration",
             "reason": "Integration is defined as combining separate units or systems into a unified whole.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,11 +315,16 @@
             "rule": "Present Continuous Active Voice",
             "explanation": "We use subject + am/is/are + verb-ing to describe actions or situations going on right now or planned future arrangements.",
             "example": "We are working on a new project right now.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -264,11 +332,16 @@
             "rule": "Present Continuous Passive Voice",
             "explanation": "We use subject + am/is/are + being + past participle to focus on actions happening now that are being done to the subject.",
             "example": "New projects are being launched across Africa.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -288,11 +361,22 @@
             ],
             "correctAnswer": "are building",
             "reason": "The plural subject 'They' takes 'are building' in the present continuous active for an action occurring now.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -306,11 +390,22 @@
             ],
             "correctAnswer": "are being carried",
             "reason": "The passive form 'are being carried' is required because the plural subject 'projects' receives the action.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -324,11 +419,22 @@
             ],
             "correctAnswer": "is being taught",
             "reason": "The singular subject 'English' requires 'is being taught' in the present continuous passive.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -341,7 +447,10 @@
           "content": {
             "passage": "Egypt occupies a unique position as Africa’s northeastern gateway, serving as a bridge among the African continent, the Middle East, and Europe. This strategic location has shaped Egypt’s role in African cooperation for decades. Currently, Egypt is strengthening its ties with Sub-Saharan African countries through various initiatives. The government is investing heavily in infrastructure projects that connect Egypt with its southern neighbors. These projects include road networks, telecommunications systems, and energy partnerships that benefit the entire region.",
             "origin": "source",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -358,11 +467,22 @@
             ],
             "correctAnswer": "Road networks, telecommunications systems, and energy partnerships",
             "reason": "The reading passage explicitly mentions road networks, telecommunications systems, and energy partnerships as key infrastructure investments.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -375,7 +495,10 @@
           "content": {
             "script": "Speaker 1: Currently, trade relationships with African countries are expanding rapidly, with trade volume reaching eight billion dollars annually. Our goal is to increase trade by 20% by 2026, although infrastructure limitations remain our main challenge. Speaker 2: I am Dr. James Nyambura. We have been working alongside Egyptian scientists for three years on a solar-powered irrigation project in Kenya, which has greatly increased local crop yields.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -393,7 +516,18 @@
             "correctAnswer": "Infrastructure limitations",
             "reason": "The speaker explicitly identifies infrastructure limitations as the main obstacle to boosting trade volume.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -425,7 +559,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -454,7 +595,20 @@
             "correctAnswer": "gateway",
             "reason": "A gateway is a point of entry connecting different geographical regions.",
             "origin": "supplementary",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -477,7 +631,20 @@
             "correctAnswer": "are being established",
             "reason": "'Are being established' correctly uses the present continuous passive structure.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -500,11 +667,22 @@
             ],
             "correctAnswer": "gateway",
             "reason": "The unit text highlights Egypt's role as Africa's northeastern gateway connecting continents.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -518,11 +696,22 @@
             ],
             "correctAnswer": "By training local doctors and nurses in advanced techniques",
             "reason": "Egypt supports capacity building by training African medical professionals.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -536,11 +725,22 @@
             ],
             "correctAnswer": "integration",
             "reason": "Integration means process of bringing systems together into a unified system.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -554,11 +754,22 @@
             ],
             "correctAnswer": "is being paved",
             "reason": "The present continuous passive 'is being paved' fits the singular receiver of action happening now.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -572,11 +783,22 @@
             ],
             "correctAnswer": "are investing",
             "reason": "The active plural form 'are investing' expresses an action ongoing at present.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -590,11 +812,22 @@
             ],
             "correctAnswer": "Malaria, hepatitis, and COVID-19",
             "reason": "The reading passage explicitly mentions malaria, hepatitis, and COVID-19.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -608,11 +841,22 @@
             ],
             "correctAnswer": "35%",
             "reason": "Page 14 states that modern irrigation techniques resulted in a 35% increase in food production.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -626,11 +870,22 @@
             ],
             "correctAnswer": "are being built",
             "reason": "The present continuous passive 'are being built' matches the plural noun 'houses'.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -644,11 +899,22 @@
             ],
             "correctAnswer": "25",
             "reason": "The passage notes that the festival features films from 25 African nations.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -662,13 +928,35 @@
             ],
             "correctAnswer": "thesis statement",
             "reason": "The writing guide defines the thesis statement as the sentence in the introduction telling the reader what the essay will be about.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.879Z",
+    "itemsAudited": 31,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 25
+  }
 }

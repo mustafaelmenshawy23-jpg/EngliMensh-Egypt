@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 26,
-      "supplementaryItems": 4,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "meteorologist",
             "arabicMeaning": "خبير الأرصاد الجوية",
             "example": "A meteorologist studies atmospheric conditions to forecast weather events.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -126,11 +131,16 @@
             "word": "humidity",
             "arabicMeaning": "رطوبة",
             "example": "High humidity makes hot weather feel even more uncomfortable.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -138,11 +148,16 @@
             "word": "tectonic plates",
             "arabicMeaning": "الصفائح التكتونية",
             "example": "Earthquakes happen when tectonic plates shift beneath the Earth surface.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -150,11 +165,16 @@
             "word": "preparedness",
             "arabicMeaning": "جاهزية / استعداد",
             "example": "Emergency preparedness reduces casualties during natural disasters.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -162,11 +182,16 @@
             "word": "waterproof",
             "arabicMeaning": "مقاوم للماء",
             "example": "Keep essential family records in a waterproof case during flood warnings.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -174,11 +199,16 @@
             "word": "evacuate",
             "arabicMeaning": "إجلاء / يخلي",
             "example": "Authorities advised residents to evacuate before the severe hurricane struck.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -198,11 +228,22 @@
             ],
             "correctAnswer": "meteorologists",
             "reason": "Meteorologists are atmospheric scientists who analyze weather data to predict storms and temperature shifts.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -216,11 +257,22 @@
             ],
             "correctAnswer": "waterproof",
             "reason": "Waterproof containers prevent moisture and water from ruining paper documents.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -234,11 +286,22 @@
             ],
             "correctAnswer": "humidity",
             "reason": "Humidity measures atmospheric moisture content.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,11 +315,16 @@
             "rule": "Comparative and Superlative Adjectives",
             "explanation": "Use comparative adjectives (ending in -er or preceded by 'more') to compare two people or things. Use superlative adjectives (ending in -est or preceded by 'most') to compare one entity against a group of three or more.",
             "example": "Hurricanes are more predictable than earthquakes, but earthquakes are the most sudden disasters.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -276,11 +344,22 @@
             ],
             "correctAnswer": "longest",
             "reason": "Superlative 'longest' compares the Nile to all other rivers in the world.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -294,11 +373,22 @@
             ],
             "correctAnswer": "busier",
             "reason": "Comparative 'busier' compares Cairo with other cities using 'than'.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -312,11 +402,22 @@
             ],
             "correctAnswer": "deadlier",
             "reason": "Two-syllable adjectives ending in -y change to -ier in comparative comparisons.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -328,11 +429,14 @@
           "itemId": "read_pass_1",
           "content": {
             "passage": "Scientists have made remarkable progress in weather prediction over the past century. Thanks to advanced technology and improved understanding of atmospheric science, modern forecasting systems can now predict many weather patterns with impressive accuracy —sometimes days or even weeks in advance. Meteorologists use hi-tech tools like satellites, radar systems, and computer models to monitor temperature, wind, pressure, and humidity. This data helps them track storms, predict rainfall, and issue early warnings. For example, the ability to forecast a hurricane’s path has improved greatly in recent decades. As a result, governments can organize evacuations, hospitals can prepare for emergencies, and lives can be saved. However, while weather events are becoming easier to predict, the exact intensity and timing of natural disasters still pose major challenges. Earthquakes, in particular, remain largely unpredictable because seismic activity occurs deep beneath the Earth’s surface. Tectonic plates shift silently, and there are usually no clear warning signs before a quake strikes.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -346,11 +450,22 @@
             ],
             "correctAnswer": "Seismic activity occurs deep underground with no clear warning signs",
             "reason": "Unlike surface weather systems tracked by radar, tectonic plate movement occurs deep underground without surface warnings.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -363,7 +478,10 @@
           "content": {
             "script": "Welcome to Stay Safe, the emergency readiness broadcast. I am your host, and with us today is Sami Naguib, an emergency preparedness expert. Sami emphasizes that every household must organize an emergency kit well before a crisis occurs. Families should store four liters of water per person each day for at least three days. Remember to pack non-perishable food, flashlights, and complete first aid kits. Furthermore, essential documents such as identity cards must be sealed inside waterproof containers. Finally, select a contact person outside your local area because long-distance lines remain functional during local network collapses.",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -380,11 +498,22 @@
             ],
             "correctAnswer": "Long-distance telephone lines often work when local lines are overloaded",
             "reason": "Local disasters overload local cell towers, whereas long-distance connections are less affected.",
-            "origin": "source",
-            "sourcePdfPage": 53
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -413,7 +542,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 51
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -442,7 +578,20 @@
             "correctAnswer": "Waterproof container",
             "reason": "Waterproof containers prevent water damage during flooding or storms.",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -465,7 +614,20 @@
             "correctAnswer": "most advanced",
             "reason": "Superlative 'most advanced' is required after 'some of the' to compare Japan against all other nations.",
             "origin": "supplementary",
-            "sourcePdfPage": 54
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -488,11 +650,22 @@
             ],
             "correctAnswer": "Satellite",
             "reason": "Satellites provide orbital imagery used to monitor weather systems globally.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -506,11 +679,22 @@
             ],
             "correctAnswer": "shift",
             "reason": "The shifting of tectonic plates releases energy that causes earthquakes.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -524,11 +708,22 @@
             ],
             "correctAnswer": "Four liters",
             "reason": "Guidelines recommend four liters per person daily for hydration and sanitation.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -542,11 +737,22 @@
             ],
             "correctAnswer": "best",
             "reason": "Superlative form 'best' is used when comparing one item against all others experienced.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -560,11 +766,22 @@
             ],
             "correctAnswer": "more predictable",
             "reason": "Comparative 'more predictable' compares hurricane predictability against earthquake predictability.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -578,11 +795,22 @@
             ],
             "correctAnswer": "made a mistake in the past",
             "reason": "The structure 'should have + past participle' expresses criticism or regret about a past action.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -596,11 +824,22 @@
             ],
             "correctAnswer": "To prevent flood waters from damaging them",
             "reason": "Waterproof sealing shields paper documents against flood water exposure.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -614,11 +853,22 @@
             ],
             "correctAnswer": "Findings",
             "reason": "The findings section presents verified information and observations collected.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -632,11 +882,22 @@
             ],
             "correctAnswer": "Informal contractions like don't",
             "reason": "Formal register requires full uncontracted verb forms such as 'do not'.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -650,13 +911,35 @@
             ],
             "correctAnswer": "early preparation and action",
             "reason": "The proverb means taking precautions in advance avoids future regret.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.947Z",
+    "itemsAudited": 30,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 20,
+    "reclassifiedToSupplementary": 26
+  }
 }

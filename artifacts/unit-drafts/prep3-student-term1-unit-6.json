@@ -64,8 +64,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 28,
-      "supplementaryItems": 2,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -132,11 +132,16 @@
             "word": "aware",
             "arabicMeaning": "واعي / مدرك",
             "example": "We should be aware of how reading helps our mind and imagination grow.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -144,11 +149,16 @@
             "word": "critically",
             "arabicMeaning": "بشكل نقدي / بتفكير ناقد",
             "example": "Stories help us think critically about our choices and actions in life.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -156,11 +166,16 @@
             "word": "empathy",
             "arabicMeaning": "تعاطف / مراعاة مشاعر الآخرين",
             "example": "Reading stories helps us develop empathy for characters from different cultures.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -168,11 +183,16 @@
             "word": "spark",
             "arabicMeaning": "يشعل / يثير",
             "example": "Good stories can spark our imagination and make learning enjoyable.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -180,11 +200,16 @@
             "word": "ambition",
             "arabicMeaning": "طموح",
             "example": "Her ambition was to help all students believe they could change their school.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -192,11 +217,16 @@
             "word": "courage",
             "arabicMeaning": "شجاعة",
             "example": "It takes courage to try something new when things are difficult.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -216,11 +246,22 @@
             ],
             "correctAnswer": "The ability to understand and share someone else's feelings",
             "reason": "Empathy is defined as the ability to understand and share the feelings of another person.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_2",
@@ -234,11 +275,22 @@
             ],
             "correctAnswer": "In a careful and thoughtful way",
             "reason": "Thinking critically means analyzing things carefully and thoughtfully rather than accepting them without question.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_3",
@@ -252,11 +304,22 @@
             ],
             "correctAnswer": "ambition",
             "reason": "Ambition refers to a strong desire or determination to accomplish major goals.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -270,11 +333,16 @@
             "rule": "Reported Statements",
             "explanation": "When reporting what someone said without using their exact words, we use reported speech. We change present tenses into past tenses, update pronouns, and change time expressions (e.g., today becomes that day, tomorrow becomes the following day).",
             "example": "Direct: She said, 'I love reading stories.' -> Reported: She said that she loved reading stories.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -294,11 +362,22 @@
             ],
             "correctAnswer": "Sama said that Rody helped her understand the lessons.",
             "reason": "In reported speech, present simple 'helps' changes to past simple 'helped', and the pronoun 'me' changes to 'her'.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_2",
@@ -312,11 +391,22 @@
             ],
             "correctAnswer": "him",
             "reason": "The pronoun changes to the objective form 'him' to refer back to Abdulrahman in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_3",
@@ -330,11 +420,22 @@
             ],
             "correctAnswer": "could",
             "reason": "The modal verb 'can' changes to 'could' when converted into reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -347,7 +448,10 @@
           "content": {
             "passage": "Stories shape our Thinking: Reading stories can greatly improve the way we think and understand the world around us. Through stories, we enter the minds of different characters, face their challenges, and see how they respond to difficult situations. This allows us to explore various types of problems—emotional, social, or even moral—without having to go through them ourselves. Stories also introduce us to different points of view, cultures, and lifestyles. As we read, we begin to develop empathy and learn that problems can have more than one solution. Seeing how characters solve conflicts or make decisions helps us think about our own lives and think critically about our choices. Moreover, stories spark our imagination and make learning more enjoyable. We often remember lessons better when they are part of a story. That’s why many of us love reading stories—they entertain us, teach us important life skills, and help us grow mentally and emotionally. In the end, reading stories is not just fun; it's also a powerful way to become wiser and more aware of the world.",
             "origin": "source",
-            "sourcePdfPage": 87
+            "sourcePdfPage": 87,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -364,11 +468,22 @@
             ],
             "correctAnswer": "By allowing us to enter the minds of characters and explore their challenges",
             "reason": "The text explains that entering the minds of different characters and facing their challenges allows readers to develop empathy.",
-            "origin": "source",
-            "sourcePdfPage": 87
+            "origin": "supplementary",
+            "sourcePdfPage": 87,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -380,11 +495,14 @@
           "itemId": "listen_1",
           "content": {
             "script": "Omar: Hey Ali, you looked really calm during the class debate today. I thought you'd be nervous about speaking up. Ali: Honestly, I was nervous at first. But I remembered a story I read last month that helped me. Omar: Really? What was it? Ali: It was a narrative story where the main character stayed calm and respectful even when people were being unfair. That stuck with me. Omar: So how did that help you today? Ali: Well, during the debate, someone strongly disagreed with me. Normally, I might get upset. But I took a deep breath and responded calmly. Omar: That's smart. So reading that story actually helped you in real life. Ali: Exactly. It taught me that staying respectful and calm can make your argument stronger. Stories can really teach you more than you expect. Omar: I guess I need to read more! Do you have any recommendations?",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "listen_q_1",
@@ -398,11 +516,22 @@
             ],
             "correctAnswer": "A narrative story he read the previous month",
             "reason": "Ali explained that remembering a narrative story about a character who stayed calm helped him stay composed during the class debate.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -435,11 +564,19 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 95
+            "origin": "supplementary",
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -465,7 +602,20 @@
             "correctAnswer": "Fable",
             "reason": "A fable is defined as a short tale that teaches a moral lesson, often using animal characters.",
             "origin": "supplementary",
-            "sourcePdfPage": 91
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -488,7 +638,20 @@
             "correctAnswer": "Sara said that she would visit her grandmother the following day.",
             "reason": "In reported speech, 'will' changes to 'would', 'I' becomes 'she', 'my' becomes 'her', and 'tomorrow' changes to 'the following day'.",
             "origin": "supplementary",
-            "sourcePdfPage": 90
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -511,11 +674,22 @@
             ],
             "correctAnswer": "courage",
             "reason": "Courage means bravery to do something new, difficult, or scary.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_2",
@@ -529,11 +703,22 @@
             ],
             "correctAnswer": "fiction",
             "reason": "Fiction refers to stories made up with imaginary characters and invented events.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_3",
@@ -547,11 +732,22 @@
             ],
             "correctAnswer": "aware",
             "reason": "Being aware means knowing or noticing something.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_4",
@@ -565,11 +761,22 @@
             ],
             "correctAnswer": "could",
             "reason": "The modal verb 'can' changes to 'could' in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_5",
@@ -583,11 +790,22 @@
             ],
             "correctAnswer": "the day before",
             "reason": "Time expressions referring to past events like 'yesterday' become 'the day before' or 'the previous day' in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_6",
@@ -601,11 +819,22 @@
             ],
             "correctAnswer": "was",
             "reason": "Present continuous 'is studying' changes to past continuous 'was studying' in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_7",
@@ -619,11 +848,22 @@
             ],
             "correctAnswer": "By flattering the crow so she opened her beak to sing",
             "reason": "The fox flattered the crow's voice, causing her to open her beak to sing, which made the cheese drop.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_8",
@@ -637,11 +877,22 @@
             ],
             "correctAnswer": "Leadership means helping others and not doing everything alone",
             "reason": "Zeina learned that being a real leader means helping others and working together with respect.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_9",
@@ -655,11 +906,22 @@
             ],
             "correctAnswer": "To stay calm and respectful during arguments",
             "reason": "Ali learned from the story that staying calm and respectful makes your point of view stronger.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_10",
@@ -673,13 +935,35 @@
             ],
             "correctAnswer": "were going",
             "reason": "Present continuous 'are going' changes to past continuous 'were going' in reported speech, and 'today' changes to 'that day'.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.394Z",
+    "itemsAudited": 30,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 27
+  }
 }

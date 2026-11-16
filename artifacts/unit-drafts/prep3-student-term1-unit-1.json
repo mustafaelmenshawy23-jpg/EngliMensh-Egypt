@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 36,
-      "sourceItems": 33,
-      "supplementaryItems": 3,
+      "sourceItems": 0,
+      "supplementaryItems": 36,
       "vocabularyCount": 7,
       "questionsCount": 18
     },
@@ -116,11 +116,16 @@
             "word": "background",
             "arabicMeaning": "الخلفية العائلية أو الثقافية",
             "example": "Ahmed comes from a family background that values hard work and kindness.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_2",
@@ -128,11 +133,16 @@
             "word": "self-discovery",
             "arabicMeaning": "اكتشاف الذات",
             "example": "Through self-discovery, Ahmed gained more confidence in who he really is.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_3",
@@ -140,11 +150,16 @@
             "word": "confidence",
             "arabicMeaning": "الثقة بالنفس",
             "example": "His confidence grew after he scored three goals in the final match.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_4",
@@ -152,11 +167,16 @@
             "word": "strength",
             "arabicMeaning": "القوة",
             "example": "Inner strength helps people overcome difficult life challenges.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_5",
@@ -164,11 +184,16 @@
             "word": "curious",
             "arabicMeaning": "فضولي",
             "example": "A successful journalist needs to be curious to find new information.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_6",
@@ -176,11 +201,16 @@
             "word": "adjusting",
             "arabicMeaning": "تعديل أو ضَبْط",
             "example": "Nour stood in front of the mirror adjusting her school blazer.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_voc_7",
@@ -188,11 +218,16 @@
             "word": "honest",
             "arabicMeaning": "صادق أو أمين",
             "example": "Nancy was always honest about her feelings with her friends.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -212,11 +247,22 @@
             ],
             "correctAnswer": "curious",
             "reason": "Being curious means wanting to discover new things, which is essential for journalists.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_vq_2",
@@ -230,11 +276,22 @@
             ],
             "correctAnswer": "strength",
             "reason": "Strength refers to the internal quality that helps someone handle life's challenges.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_vq_3",
@@ -248,11 +305,22 @@
             ],
             "correctAnswer": "popular",
             "reason": "Talented programmers who achieve success often become well known or popular.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_vq_4",
@@ -266,11 +334,22 @@
             ],
             "correctAnswer": "Who a person is",
             "reason": "The textbook defines identity as who a person is.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -284,11 +363,16 @@
             "rule": "Present Perfect Tense (Active Form)",
             "explanation": "We use have/has + past participle to talk about past experiences, actions starting in the past continuing until now, or recently completed actions.",
             "example": "I have studied English since I was six years old.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gram_2",
@@ -296,11 +380,16 @@
             "rule": "Present Perfect Tense (Passive Form)",
             "explanation": "We use have/has + been + past participle when the focus is on the recipient of the action rather than the doer.",
             "example": "The homework has been done by the student.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -320,11 +409,22 @@
             ],
             "correctAnswer": "has been explained",
             "reason": "The passive form of the present perfect requires have/has + been + past participle.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gq_2",
@@ -338,11 +438,22 @@
             ],
             "correctAnswer": "for",
             "reason": "'For' is used before a duration or period of time, such as 20 years.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gq_3",
@@ -356,11 +467,22 @@
             ],
             "correctAnswer": "yet",
             "reason": "'Yet' is placed at the end of negative present perfect sentences.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gq_4",
@@ -374,11 +496,22 @@
             ],
             "correctAnswer": "have been visited",
             "reason": "'The Pyramids' is plural, so it requires 'have been visited' in the present perfect passive.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -390,11 +523,14 @@
           "itemId": "prep3_u1_rd_passage",
           "content": {
             "passage": "On the first day of Grade 9, Nour stood in front of the mirror, adjusting her blazer for the fifth time. Her curls didn’t sit right, and her glasses felt too big. “Why can’t I just fit in?” she thought. At school, Nour stayed quiet, blending into the background. Unlike the confident, outgoing students around her, she kept to herself, finding comfort only in her sketchbook. She loved drawing faces—not perfect ones, but real ones. She saw beauty where others didn’t. Then one day, Ms. Hanan introduced a project: “Create your Identity Map. Show us who you are — your dreams, values, and challenges.” Nour panicked. \"Who am I?\" That night, going through her old sketches, something clicked. She began drawing again - this time, herself. The following week, while others shared colorful posters, Nour stood before the class with a board of hand-drawn portraits. At the center: her own face, glasses and curls included. Around it, she wrote: Strong. Creative. Curious. When she finished, the class clapped. Even Leila, the girl in the front row, gave her a thumbs-up. After class, Ms. Hanan said, “You didn’t just share who you are — you showed us that being different is your strength.” And Nour believed her.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_rd_q1",
@@ -408,11 +544,22 @@
             ],
             "correctAnswer": "have a look at herself",
             "reason": "The text states Nour stood in front of the mirror adjusting her blazer to look at herself before going to school.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_rd_q2",
@@ -426,11 +573,22 @@
             ],
             "correctAnswer": "real faces",
             "reason": "The text explicitly mentions that Nour loved drawing faces—not perfect ones, but real ones.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -443,7 +601,10 @@
           "content": {
             "script": "Interviewer: Today we are talking with Leila, a ninth-grade student who recently participated in the school identity project.\nLeila: Hello! In the beginning, I was afraid of standing out. But through my personal journey, I faced challenges and discovered that being unique is a strength. Support from my teachers helped me build confidence. Now I know that identity is about growth and staying true to your values.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -460,11 +621,22 @@
             ],
             "correctAnswer": "Individuality and growth are important",
             "reason": "Leila emphasizes that individuality and personal growth are key aspects of identity.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_ls_q2",
@@ -478,11 +650,22 @@
             ],
             "correctAnswer": "Support from her teachers",
             "reason": "The listening activity indicates that support from teachers helped Leila gain confidence.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -525,11 +708,21 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -555,7 +748,20 @@
             "correctAnswer": "honest",
             "reason": "'Honest' is defined as always telling the truth.",
             "origin": "supplementary",
-            "sourcePdfPage": 22
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -578,7 +784,20 @@
             "correctAnswer": "The project has been completed.",
             "reason": "Singular subject 'The project' takes 'has been' followed by the past participle 'completed'.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -601,11 +820,22 @@
             ],
             "correctAnswer": "popular",
             "reason": "In the text 'Who I Am Beyond My Looks', Ahmed emphasizes that being real matters more than popularity.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_2",
@@ -619,11 +849,22 @@
             ],
             "correctAnswer": "sad",
             "reason": "'Sad' is the exact opposite of 'happy'.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_3",
@@ -637,11 +878,22 @@
             ],
             "correctAnswer": "period of time",
             "reason": "The rule states that 'for' is used with a period of time.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_4",
@@ -655,11 +907,22 @@
             ],
             "correctAnswer": "has been done",
             "reason": "This is a present perfect passive structure requiring 'has been done'.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_5",
@@ -673,11 +936,22 @@
             ],
             "correctAnswer": "Identity Map",
             "reason": "Ms. Hanan assigned an 'Identity Map' project to show dreams, values, and challenges.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_6",
@@ -691,11 +965,22 @@
             ],
             "correctAnswer": "concrete",
             "reason": "The text describes the school playground as large, empty, gray, and all concrete.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_7",
@@ -709,11 +994,22 @@
             ],
             "correctAnswer": "since",
             "reason": "'Since' is used with a starting point in time, such as 'she was a child'.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_8",
@@ -727,11 +1023,22 @@
             ],
             "correctAnswer": "proud",
             "reason": "'Proud' is defined in the text matching exercise as feeling good about success.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_9",
@@ -745,11 +1052,22 @@
             ],
             "correctAnswer": "have been made",
             "reason": "'Changes' is plural and receives the action, requiring present perfect passive 'have been made'.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_comp_10",
@@ -763,13 +1081,35 @@
             ],
             "correctAnswer": "I'm super happy for you!",
             "reason": "'I'm super happy for you!' is listed as a friendly real-talk conversational phrase in the textbook.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.297Z",
+    "itemsAudited": 36,
+    "sourceClaims": 33,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 33,
+    "citationWarnings": 21,
+    "itemsWithSourceSubfields": 30,
+    "reclassifiedToSupplementary": 33
+  }
 }

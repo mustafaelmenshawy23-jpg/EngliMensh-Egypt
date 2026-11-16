@@ -45,8 +45,8 @@
     },
     "itemTotals": {
       "totalItems": 28,
-      "sourceItems": 18,
-      "supplementaryItems": 10,
+      "sourceItems": 1,
+      "supplementaryItems": 27,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -113,11 +113,16 @@
             "word": "fluency",
             "arabicMeaning": "طلاقة",
             "example": "She speaks English with great fluency.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -125,11 +130,16 @@
             "word": "tolerance",
             "arabicMeaning": "تسامح",
             "example": "Learning new languages promotes tolerance between cultures.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -137,11 +147,16 @@
             "word": "anxious",
             "arabicMeaning": "قلق",
             "example": "He felt anxious before his first flight abroad.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v4",
@@ -149,11 +164,16 @@
             "word": "complicated",
             "arabicMeaning": "معقد",
             "example": "The instructions were too complicated to understand.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -174,7 +194,18 @@
             "correctAnswer": "The ability to speak easily and accurately",
             "reason": "Fluency refers to the ease and accuracy of speech.",
             "origin": "supplementary",
-            "sourcePdfPage": 71
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -192,7 +223,18 @@
             "correctAnswer": "Anxious",
             "reason": "Anxious means feeling worried or nervous about something.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -210,7 +252,18 @@
             "correctAnswer": "Difficult to understand",
             "reason": "Complicated means having many parts and being hard to deal with.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -227,11 +280,16 @@
             "rule": "Countable and Uncountable Nouns",
             "explanation": "Countable nouns can be counted (e.g., cars). Uncountable nouns cannot be counted and have only one form (e.g., money, advice).",
             "example": "I have many friends (countable), but I need some advice (uncountable).",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,7 +310,18 @@
             "correctAnswer": "much",
             "reason": "Homework is an uncountable noun, so we use 'much' in negative sentences.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -270,7 +339,18 @@
             "correctAnswer": "much",
             "reason": "Milk is an uncountable noun, so we use 'much' in questions.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -288,7 +368,18 @@
             "correctAnswer": "many",
             "reason": "Ideas is a countable plural noun, so we use 'many'.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -304,7 +395,10 @@
           "content": {
             "passage": "Ramy had always dreamed of traveling abroad. One summer, he finally flew to Liverpool, England. At first, he was excited, but soon he felt anxious. His biggest difficulty was that he couldn’t speak English. At the airport, he struggled to understand the officer’s questions. He only smiled and showed his passport, hoping for the best. In the city, life became more complicated. When he tried to buy a bus ticket, he couldn’t explain himself. People behind him grew impatient, and he felt embarrassed. Later, at a restaurant, he wanted chickens but accidentally received fish. That night, Ramy decided something important: he must learn English.",
             "origin": "source",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -321,11 +415,22 @@
             ],
             "correctAnswer": "He couldn't speak English",
             "reason": "The passage states his biggest difficulty was that he couldn't speak English.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -338,7 +443,10 @@
           "content": {
             "script": "Interviewer: Salma, how did you feel when you moved to Spain? Salma: It was challenging at first because I didn't know the language. Interviewer: Did you learn Spanish before moving? Salma: No, I learned it by interacting with locals and practicing every day. It helped me make friends from different cultures.",
             "origin": "supplementary",
-            "sourcePdfPage": 73
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -356,7 +464,18 @@
             "correctAnswer": "By practicing with locals in Spain",
             "reason": "The script mentions she learned by interacting with locals and practicing every day.",
             "origin": "supplementary",
-            "sourcePdfPage": 73
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -382,11 +501,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -412,7 +537,20 @@
             "correctAnswer": "Making larger",
             "reason": "Expanding means to increase in size or importance.",
             "origin": "supplementary",
-            "sourcePdfPage": 71
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -435,7 +573,20 @@
             "correctAnswer": "some",
             "reason": "Apples is a countable plural noun, so 'some' is used in affirmative sentences.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -458,11 +609,22 @@
             ],
             "correctAnswer": "Global citizens",
             "reason": "The text states learning a language is a key to becoming a global citizen.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -476,11 +638,22 @@
             ],
             "correctAnswer": "Money",
             "reason": "Money is an uncountable noun.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -494,11 +667,22 @@
             ],
             "correctAnswer": "Willingness to accept differences",
             "reason": "Tolerance is the ability to accept different opinions or cultures.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -512,11 +696,22 @@
             ],
             "correctAnswer": "many",
             "reason": "Bags is a countable noun.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -530,11 +725,22 @@
             ],
             "correctAnswer": "Embarrassed",
             "reason": "The text says he felt embarrassed when he couldn't explain himself.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -548,11 +754,22 @@
             ],
             "correctAnswer": "Much",
             "reason": "Much is used with uncountable nouns in negative sentences.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -566,11 +783,22 @@
             ],
             "correctAnswer": "He downloaded an app",
             "reason": "The text says he downloaded a language app to practice.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -584,11 +812,22 @@
             ],
             "correctAnswer": "Confident",
             "reason": "Confident means feeling sure of your abilities.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -602,11 +841,22 @@
             ],
             "correctAnswer": "Better fluency",
             "reason": "The text states that regular practice improves fluency.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -620,13 +870,35 @@
             ],
             "correctAnswer": "Friend",
             "reason": "Friend is a countable noun.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.819Z",
+    "itemsAudited": 28,
+    "sourceClaims": 18,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 17,
+    "citationWarnings": 10,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 17
+  }
 }

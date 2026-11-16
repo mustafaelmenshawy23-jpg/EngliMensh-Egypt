@@ -72,8 +72,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 25,
-      "supplementaryItems": 5,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -140,11 +140,16 @@
             "word": "storage",
             "arabicMeaning": "تخزين",
             "example": "Good storage keeps fresh food like bread and vegetables from spoiling quickly.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_2",
@@ -152,11 +157,16 @@
             "word": "loss aversion",
             "arabicMeaning": "تجنب الخسارة",
             "example": "Loss aversion makes shoppers feel that missing a discount is a personal loss.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_3",
@@ -164,11 +174,16 @@
             "word": "brand loyalty",
             "arabicMeaning": "الولاء للعلامة التجارية",
             "example": "Brand loyalty occurs when consumers consistently purchase from the same company.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_4",
@@ -176,11 +191,16 @@
             "word": "leftover",
             "arabicMeaning": "بقايا الطعام",
             "example": "Shops should donate safe leftover food to local food banks.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_5",
@@ -188,11 +208,16 @@
             "word": "urgency",
             "arabicMeaning": "شعور بالاستعجال",
             "example": "Countdown clocks on shopping websites create a sense of urgency for buyers.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -212,11 +237,22 @@
             ],
             "correctAnswer": "The tendency to fear losing an opportunity more than gaining something",
             "reason": "Loss aversion is a cognitive framework where people feel that missing out on a deal is losing money.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_q2",
@@ -230,11 +266,22 @@
             ],
             "correctAnswer": "Food remains that have not been eaten after a meal",
             "reason": "Leftover refers to uneaten food remaining after a meal is finished.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_q3",
@@ -248,11 +295,22 @@
             ],
             "correctAnswer": "Consistently choosing one brand over others",
             "reason": "Brand loyalty means repeatedly choosing the same brand and resisting alternatives.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -266,11 +324,16 @@
             "rule": "Present Perfect Tense with Time Markers",
             "explanation": "The present perfect tense (have/has + past participle) connects past actions to present results. It is frequently used with markers like since, for, just, already, yet, never, and ever.",
             "example": "Researchers have found that bread waste is very high in Egyptian cities.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -278,11 +341,16 @@
             "rule": "Fronting for Emphasis in Formal Writing",
             "explanation": "Fronting involves placing a time phrase, result/cause clause, or contrasting phrase at the beginning of a sentence to add emphasis and variety in formal texts.",
             "example": "As a result of poor storage, bread goes bad quickly.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -302,11 +370,22 @@
             ],
             "correctAnswer": "Researchers have found that bread waste is high.",
             "reason": "The present perfect requires 'have/has' followed by the past participle verb 'found'.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -320,11 +399,22 @@
             ],
             "correctAnswer": "As a result of poor storage, bread goes bad quickly.",
             "reason": "Fronting places the prepositional result phrase at the start of the sentence followed by a comma.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -338,11 +428,22 @@
             ],
             "correctAnswer": "yet",
             "reason": "'Yet' is used at the end of negative present perfect statements.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -354,11 +455,14 @@
           "itemId": "read_1",
           "content": {
             "passage": "Every year, millions of people around the world wait for events like Black Friday to go shopping. They feel excited as they plan their purchases in advance and believe they are making smart choices. But are they really saving money, or are they falling for a set of very clever tricks? One of the most common tricks is called loss aversion. Imagine a jacket that costs 400 Egyptian pounds. You do not really need it. Then a sign appears: 'Was 800 LE, Now 400 LE, Save 50%!' Suddenly, the jacket feels much more attractive. Your brain tells you, 'If I don't buy it, I will lose the chance to save 400 pounds.' Of course, you have not lost anything, but that is how our brains work. Not buying something feels like a loss.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -372,11 +476,22 @@
             ],
             "correctAnswer": "Because loss aversion tricks the brain into viewing not buying it as losing 400 LE",
             "reason": "The text explains that loss aversion causes the brain to interpret missing a discount as an actual financial loss.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -389,7 +504,10 @@
           "content": {
             "script": "Welcome to Digital Awareness. Today we explore how mobile applications manage user attention. While many platforms appear free, they monetize user engagement by collecting data on habits and preferences. Features like infinite scroll and autoplay are deliberately engineered to keep users scrolling without interruption. Studies indicate that even unread notifications cause cognitive disruption, reducing concentration while studying. Recognizing the value of your attention is the essential first step toward healthier digital choices.",
             "origin": "supplementary",
-            "sourcePdfPage": 117
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -407,7 +525,18 @@
             "correctAnswer": "They disrupt concentration even if they are not opened.",
             "reason": "The script specifies that simply receiving a notification disrupts concentration even if left unread.",
             "origin": "supplementary",
-            "sourcePdfPage": 118
+            "sourcePdfPage": 118,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -444,7 +573,15 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -473,7 +610,20 @@
             "correctAnswer": "Countdown clock",
             "reason": "A countdown clock visually displays remaining seconds to create urgency.",
             "origin": "supplementary",
-            "sourcePdfPage": 124
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -496,7 +646,20 @@
             "correctAnswer": "Some schools have already started teaching food literacy.",
             "reason": "The plural subject 'schools' takes auxiliary 'have' and past participle 'started'.",
             "origin": "supplementary",
-            "sourcePdfPage": 127
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -519,11 +682,22 @@
             ],
             "correctAnswer": "'Best before' refers to food quality, whereas 'use by' indicates when food is no longer safe to eat.",
             "reason": "The report clarifies that 'best before' relates to taste or quality, while 'use by' indicates safety.",
-            "origin": "source",
-            "sourcePdfPage": 106
+            "origin": "supplementary",
+            "sourcePdfPage": 106,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q2",
@@ -537,11 +711,22 @@
             ],
             "correctAnswer": "A strong brand connects products to personal identity and emotional belonging.",
             "reason": "Brands create emotional identity and feelings of belonging that influence consumer decisions.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q3",
@@ -555,11 +740,22 @@
             ],
             "correctAnswer": "As a result of poor storage, bread goes bad quickly.",
             "reason": "Fronting moves the result phrase to the beginning of the sentence for emphasis.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q4",
@@ -573,11 +769,22 @@
             ],
             "correctAnswer": "The brain region linked to personal identity becomes more active.",
             "reason": "Brain research shows that viewing a favorite brand logo activates areas tied to self-identity.",
-            "origin": "source",
-            "sourcePdfPage": 112
+            "origin": "supplementary",
+            "sourcePdfPage": 112,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q5",
@@ -591,11 +798,22 @@
             ],
             "correctAnswer": "Supermarkets haven't changed their habits yet.",
             "reason": "'Yet' is placed at the end of negative present perfect statements with plural verb 'haven't'.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q6",
@@ -609,11 +827,22 @@
             ],
             "correctAnswer": "They are engineered to keep users online and scrolling longer.",
             "reason": "App designers use infinite scroll and autoplay mechanisms to maximize screen time.",
-            "origin": "source",
-            "sourcePdfPage": 117
+            "origin": "supplementary",
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q7",
@@ -627,11 +856,22 @@
             ],
             "correctAnswer": "They spend more money overall despite believing they saved money.",
             "reason": "Research shows that sale shoppers spend more overall because sales encourage additional buying.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q8",
@@ -645,11 +885,22 @@
             ],
             "correctAnswer": "generosity",
             "reason": "Generosity refers to the quality of being kind and sharing freely with others.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q9",
@@ -663,11 +914,22 @@
             ],
             "correctAnswer": "Food waste has become a serious problem in recent years.",
             "reason": "'Food waste' requires the singular auxiliary verb 'has' plus past participle 'become'.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q10",
@@ -681,13 +943,35 @@
             ],
             "correctAnswer": "Education in schools, better storage habits, and clearer food labeling",
             "reason": "The report highlights school education, better storage, and clearer labels as primary recommendations.",
-            "origin": "source",
-            "sourcePdfPage": 106
+            "origin": "supplementary",
+            "sourcePdfPage": 106,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.361Z",
+    "itemsAudited": 30,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 20,
+    "itemsWithSourceSubfields": 9,
+    "reclassifiedToSupplementary": 25
+  }
 }

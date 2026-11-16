@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 28,
-      "sourceItems": 6,
-      "supplementaryItems": 22,
+      "sourceItems": 0,
+      "supplementaryItems": 28,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "triangle",
             "arabicMeaning": "مثلث",
             "example": "This is a yellow triangle.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -126,11 +131,16 @@
             "word": "square",
             "arabicMeaning": "مربع",
             "example": "This is a blue square.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -138,11 +148,16 @@
             "word": "circle",
             "arabicMeaning": "دائرة",
             "example": "This is a red circle.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -150,11 +165,16 @@
             "word": "pencil",
             "arabicMeaning": "قلم رصاص",
             "example": "I have one pencil.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -175,7 +195,18 @@
             "correctAnswer": "triangle",
             "reason": "A triangle is a geometric shape with three sides.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -193,7 +224,18 @@
             "correctAnswer": "circle",
             "reason": "A circle is a round shape without straight lines or corners.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -211,7 +253,18 @@
             "correctAnswer": "green",
             "reason": "Green is a color word taught in this unit.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -228,11 +281,16 @@
             "rule": "Singular and Plural Nouns",
             "explanation": "Use the singular form for one item. Add -s to the noun to make it plural when there is more than one item.",
             "example": "I have one book. I have two chairs.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -253,7 +311,18 @@
             "correctAnswer": "book",
             "reason": "We use the singular form 'book' after the number one.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -271,7 +340,18 @@
             "correctAnswer": "bags",
             "reason": "We add -s to form a plural noun when counting more than one item.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -289,7 +369,18 @@
             "correctAnswer": "How many pencils are there?",
             "reason": "The structure 'How many' takes a plural noun followed by 'are there?'.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -305,7 +396,10 @@
           "content": {
             "passage": "Look at my classroom. This is a red circle on the wall. This is a blue square on the desk. I have six pencils and eight books.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -323,7 +417,18 @@
             "correctAnswer": "square",
             "reason": "The reading passage states that the blue square is on the desk.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -339,7 +444,10 @@
           "content": {
             "script": "Teacher: How many pens do you have? Student: I have five pens. Teacher: Great! Let's count the desks. How many desks are there? Student: I see four desks.",
             "origin": "supplementary",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -357,7 +465,18 @@
             "correctAnswer": "five pens",
             "reason": "In the conversation, the student explicitly says 'I have five pens.'",
             "origin": "supplementary",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -383,11 +502,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -413,7 +538,20 @@
             "correctAnswer": "circle",
             "reason": "A circle is a round shape with no corners, like a wheel.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -436,7 +574,20 @@
             "correctAnswer": "students",
             "reason": "The plural form 'students' is required when counting ten people.",
             "origin": "supplementary",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -460,7 +611,18 @@
             "correctAnswer": "triangle",
             "reason": "A triangle is defined by its three straight sides.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -478,7 +640,18 @@
             "correctAnswer": "square",
             "reason": "A square has four straight sides of equal length.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -496,7 +669,18 @@
             "correctAnswer": "fox",
             "reason": "The word 'fox' features the short 'o' sound.",
             "origin": "supplementary",
-            "sourcePdfPage": 21
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -514,7 +698,18 @@
             "correctAnswer": "cup",
             "reason": "The word 'cup' features the short 'u' sound.",
             "origin": "supplementary",
-            "sourcePdfPage": 22
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -532,7 +727,18 @@
             "correctAnswer": "pencils",
             "reason": "Numbers greater than one require a plural noun ending in -s.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -550,7 +756,18 @@
             "correctAnswer": "books",
             "reason": "Regular singular nouns form their plural by adding -s.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -568,7 +785,18 @@
             "correctAnswer": "How many pens are there?",
             "reason": "'How many' is the standard question phrase used to inquire about quantity.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -586,7 +814,18 @@
             "correctAnswer": "four",
             "reason": "Adding 1 board and 3 bags equals 4 items in total.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -604,7 +843,18 @@
             "correctAnswer": "snake",
             "reason": "The word 'snake' contains the long 'a' sound.",
             "origin": "supplementary",
-            "sourcePdfPage": 28
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -622,12 +872,34 @@
             "correctAnswer": "50",
             "reason": "The sequence counting by tens is 10, 20, 30, 40, 50.",
             "origin": "supplementary",
-            "sourcePdfPage": 29
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.119Z",
+    "itemsAudited": 28,
+    "sourceClaims": 6,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 6,
+    "citationWarnings": 1,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 6
+  }
 }

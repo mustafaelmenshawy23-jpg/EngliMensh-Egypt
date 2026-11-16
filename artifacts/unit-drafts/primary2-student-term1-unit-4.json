@@ -88,8 +88,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 26,
-      "supplementaryItems": 7,
+      "sourceItems": 0,
+      "supplementaryItems": 33,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -156,11 +156,16 @@
             "word": "father",
             "arabicMeaning": "أب",
             "example": "This is my father.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -168,11 +173,16 @@
             "word": "mother",
             "arabicMeaning": "أم",
             "example": "This is my mother.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -180,11 +190,16 @@
             "word": "brush teeth",
             "arabicMeaning": "ينظف أسنانه بالفرشاة",
             "example": "I brush my teeth in the morning.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "word": "supplementary",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -192,11 +207,16 @@
             "word": "wake up",
             "arabicMeaning": "يستيقظ",
             "example": "I wake up at seven o'clock.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -204,11 +224,16 @@
             "word": "wash face",
             "arabicMeaning": "يغسل وجهه",
             "example": "He washes his face after waking up.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "word": "supplementary",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -216,11 +241,16 @@
             "word": "living room",
             "arabicMeaning": "غرفة المعيشة",
             "example": "We watch TV in the living room.",
-            "origin": "source",
-            "sourcePdfPage": 83
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -240,7 +270,17 @@
             "correctAnswer": "I wake up",
             "reason": "Waking up is the first activity when you stop sleeping in the morning.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -257,7 +297,17 @@
             "correctAnswer": "brush my teeth",
             "reason": "Brushing teeth means cleaning them using a toothbrush and toothpaste.",
             "origin": "supplementary",
-            "sourcePdfPage": 57
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -273,11 +323,21 @@
             ],
             "correctAnswer": "kitchen",
             "reason": "The kitchen is the standard room in a house for cooking food.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -291,11 +351,16 @@
             "rule": "Possessive Adjectives: my and your",
             "explanation": "We use 'my' when an object or relationship belongs to the speaker, and 'your' when it belongs to the person being spoken to.",
             "example": "This is my sister and this is your bag.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -303,11 +368,16 @@
             "rule": "Present Simple Tense for Daily Routines",
             "explanation": "We use the present simple tense to describe actions we do regularly every day.",
             "example": "I wake up at 7:00 am.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -326,11 +396,21 @@
             ],
             "correctAnswer": "your",
             "reason": "'Your' is the possessive adjective used for something belonging to the person you are talking to.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -344,7 +424,17 @@
             "correctAnswer": "wake",
             "reason": "With the subject pronoun 'I' in the present simple, we use the base form of the verb 'wake'.",
             "origin": "supplementary",
-            "sourcePdfPage": 58
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -360,11 +450,21 @@
             ],
             "correctAnswer": "eats",
             "reason": "Third-person singular subjects such as 'He' require the verb to end in '-s' in the present simple tense.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -376,11 +476,14 @@
           "itemId": "read_p1",
           "content": {
             "passage": "My name is Sara. I wake up at seven. Then, I brush my teeth and eat breakfast in the morning.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -393,11 +496,21 @@
             ],
             "correctAnswer": "At seven",
             "reason": "The text explicitly states that Sara wakes up at seven.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q2",
@@ -411,7 +524,17 @@
             "correctAnswer": "She brushes her teeth and eats breakfast",
             "reason": "According to the passage, after waking up Sara brushes her teeth and eats breakfast.",
             "origin": "supplementary",
-            "sourcePdfPage": 59
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -426,11 +549,14 @@
           "itemId": "list_s1",
           "content": {
             "script": "My name is Laila. I sit with my family in the living room. My mom and dad watch TV and I read a book. At 9 o'clock, we go to bed.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q1",
@@ -443,11 +569,21 @@
             ],
             "correctAnswer": "In the living room",
             "reason": "Laila states in the listening passage that she sits with her family in the living room.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q2",
@@ -460,11 +596,21 @@
             ],
             "correctAnswer": "She reads a book",
             "reason": "The text explicitly mentions that Laila reads a book while her parents watch TV.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -497,11 +643,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -526,7 +680,19 @@
             "correctAnswer": "brush",
             "reason": "You use a toothbrush to brush your teeth every morning.",
             "origin": "supplementary",
-            "sourcePdfPage": 57
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -548,7 +714,19 @@
             "correctAnswer": "my",
             "reason": "'My' shows ownership or family connection to the speaker.",
             "origin": "supplementary",
-            "sourcePdfPage": 51
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -570,11 +748,21 @@
             ],
             "correctAnswer": "أم",
             "reason": "The English word 'mother' translates to 'أم' in Arabic.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -587,11 +775,21 @@
             ],
             "correctAnswer": "Ahmed's",
             "reason": "An apostrophe 's' is added to a name to indicate possession.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -605,7 +803,17 @@
             "correctAnswer": "wash",
             "reason": "The pronoun 'I' takes the base form of the verb 'wash' in simple present tense.",
             "origin": "supplementary",
-            "sourcePdfPage": 59
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -621,11 +829,21 @@
             ],
             "correctAnswer": "In the bedroom",
             "reason": "The bedroom is designed and used for sleeping.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -638,11 +856,21 @@
             ],
             "correctAnswer": "rose",
             "reason": "'Rose' contains the long 'o' vowel sound as presented in the phonics focus.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -655,11 +883,21 @@
             ],
             "correctAnswer": "thin",
             "reason": "'Thin' starts with the 'th' digraph consonant sound.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -672,11 +910,21 @@
             ],
             "correctAnswer": "There is",
             "reason": "'There is' is used before singular nouns like 'a table'.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -689,11 +937,21 @@
             ],
             "correctAnswer": "are",
             "reason": "'Are' is used with plural nouns such as 'two chairs'.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -706,11 +964,21 @@
             ],
             "correctAnswer": "We watch TV",
             "reason": "Watching TV is the living room activity described in the lesson text.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -723,13 +991,34 @@
             ],
             "correctAnswer": "watches",
             "reason": "Singular third-person subject 'My sister' requires 'watches' with '-es' in present simple.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.140Z",
+    "itemsAudited": 33,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 23,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 26
+  }
 }

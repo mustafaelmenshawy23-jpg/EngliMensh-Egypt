@@ -69,8 +69,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 25,
-      "supplementaryItems": 5,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -137,11 +137,16 @@
             "word": "mindful",
             "arabicMeaning": "واعٍ / منتبه",
             "example": "A mindful student thinks carefully before sharing personal photos online.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -149,11 +154,16 @@
             "word": "boundaries",
             "arabicMeaning": "حدود",
             "example": "Setting clear screen-time boundaries helps maintain a healthy lifestyle.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -161,11 +171,16 @@
             "word": "cognitive",
             "arabicMeaning": "إدراكي / معرفي",
             "example": "Creative activities stimulate cognitive development and critical thinking.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -173,11 +188,16 @@
             "word": "authentic",
             "arabicMeaning": "حقيقي / أصيل",
             "example": "Art provides a safe space for authentic self-expression.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -185,11 +205,16 @@
             "word": "rehearsal",
             "arabicMeaning": "بروفة / تدريب",
             "example": "The musicians attended several rehearsals before the final concert.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -197,11 +222,16 @@
             "word": "shimmered",
             "arabicMeaning": "يتلألأ / يلمع ببريق خفيف",
             "example": "The water of the Nile shimmered softly under the morning sun.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -222,7 +252,18 @@
             "correctAnswer": "Paying conscious attention to the present moment",
             "reason": "Being mindful involves being aware of one's choices and staying present.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -239,11 +280,22 @@
             ],
             "correctAnswer": "Rehearsal",
             "reason": "A rehearsal is a practice run before an actual stage performance.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -257,11 +309,22 @@
             ],
             "correctAnswer": "Careless",
             "reason": "Careless is the opposite of being careful and attentive.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -275,11 +338,16 @@
             "rule": "Gerunds and Infinitives after Verbs",
             "explanation": "Certain verbs are followed by gerunds (-ing form) such as enjoy, practice, avoid, suggest; others are followed by infinitives (to + base verb) such as decide, want, hope, plan. Some verbs can take both with a change in meaning (e.g., stop, remember, try).",
             "example": "Nour decided to join the school orchestra, but she avoids practicing late at night.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -299,11 +367,22 @@
             ],
             "correctAnswer": "taking",
             "reason": "The verb 'suggest' is followed by a gerund (-ing form).",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -317,11 +396,22 @@
             ],
             "correctAnswer": "to join",
             "reason": "The verb 'decide' is followed by a to-infinitive.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -335,11 +425,22 @@
             ],
             "correctAnswer": "to buy",
             "reason": "Stop + to-infinitive indicates stopping an action in order to perform another action.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -351,11 +452,14 @@
           "itemId": "read_pass_1",
           "content": {
             "passage": "Ask anyone who has ever lost themselves in a painting, a song, or a story, and they will tell you: creative activity is unlike anything else. Time slows down, worries fade, and there is only the work in front of you. Psychologists call this state 'flow': a condition of complete absorption in a meaningful task. Research suggests that even thirty minutes of creative engagement per day can measurably reduce levels of the stress hormone cortisol, offering young people a natural, accessible form of emotional recovery. Unlike passive screen-based entertainment, creative activity demands that the brain produce rather than merely consume.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -369,11 +473,22 @@
             ],
             "correctAnswer": "Flow",
             "reason": "Psychologists define 'flow' as complete absorption in a meaningful task.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -386,7 +501,10 @@
           "content": {
             "script": "Presenter: Welcome to today's research report on screen time and well-being. Studies show that teenagers spend an average of seven hours per day on screens, excluding school work. Heavy social media use is often linked to feelings of anxiety and social comparison. However, experts emphasize that eliminating screens completely is not necessary. Instead, adopting the 20-20-20 rule—looking at an object 20 feet away every 20 minutes—and setting clear boundaries before bedtime can restore balance and improve overall mental health.",
             "origin": "supplementary",
-            "sourcePdfPage": 42
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -403,11 +521,22 @@
             ],
             "correctAnswer": "Balance between screen use and offline activities is crucial",
             "reason": "The audio highlights finding a healthy balance between screen use and real-life activities.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -441,7 +570,15 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -470,7 +607,20 @@
             "correctAnswer": "Boundaries",
             "reason": "Boundaries refer to acceptable limits or guidelines.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -493,7 +643,20 @@
             "correctAnswer": "She suggested taking a short break.",
             "reason": "'Suggest' requires a gerund object.",
             "origin": "supplementary",
-            "sourcePdfPage": 68
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -516,11 +679,22 @@
             ],
             "correctAnswer": "The state of being healthy, comfortable and happy",
             "reason": "Well-being refers to general health, happiness, and life satisfaction.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_2",
@@ -534,11 +708,22 @@
             ],
             "correctAnswer": "At least 60 minutes",
             "reason": "WHO recommends at least 60 minutes of daily physical activity for ages 5-17.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_3",
@@ -552,11 +737,22 @@
             ],
             "correctAnswer": "Gerund (-ing)",
             "reason": "The verb 'avoid' takes a gerund.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_4",
@@ -570,11 +766,22 @@
             ],
             "correctAnswer": "To prevent eye strain during screen use",
             "reason": "Looking 20 feet away every 20 minutes gives eyes a rest from screen glare.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_5",
@@ -588,11 +795,22 @@
             ],
             "correctAnswer": "Pride and curiosity to see if he could finish",
             "reason": "The narrator felt pride and curiosity about completing the trip.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_6",
@@ -606,11 +824,22 @@
             ],
             "correctAnswer": "Teenagers who practice mindfulness often manage stress more effectively.",
             "reason": "Relative pronoun 'who' correctly refers to people ('teenagers').",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_7",
@@ -624,11 +853,22 @@
             ],
             "correctAnswer": "Judging yourself by comparing your life with other people's posts",
             "reason": "Social comparison is evaluating oneself against online portrayals of others.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_8",
@@ -642,11 +882,22 @@
             ],
             "correctAnswer": "It helps build emotional resilience and learning from mistakes",
             "reason": "Art shows that mistakes are lessons, fostering emotional resilience.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_9",
@@ -660,11 +911,22 @@
             ],
             "correctAnswer": "Real confidence comes from self-acceptance rather than online likes",
             "reason": "Nadia realized online images are curated and true confidence comes from self-acceptance.",
-            "origin": "source",
-            "sourcePdfPage": 69
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_10",
@@ -678,13 +940,35 @@
             ],
             "correctAnswer": "significant",
             "reason": "The adjective 'significant' correctly modifies the noun 'impact'.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.296Z",
+    "itemsAudited": 30,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 19,
+    "reclassifiedToSupplementary": 25
+  }
 }

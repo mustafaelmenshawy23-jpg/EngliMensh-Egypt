@@ -47,8 +47,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 28,
-      "supplementaryItems": 5,
+      "sourceItems": 2,
+      "supplementaryItems": 31,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -115,11 +115,16 @@
             "word": "prototype",
             "arabicMeaning": "نموذج أولي",
             "example": "Designers test a simple prototype before making the final product.",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -127,11 +132,16 @@
             "word": "stylish",
             "arabicMeaning": "أنيق",
             "example": "Her new outfit was very stylish and comfortable.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -139,11 +149,16 @@
             "word": "ideation",
             "arabicMeaning": "توليد الأفكار",
             "example": "Ideation is the process of coming up with many creative ideas.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -151,11 +166,16 @@
             "word": "practical",
             "arabicMeaning": "عملي",
             "example": "Ali provided practical solutions to fix daily school problems.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -163,11 +183,16 @@
             "word": "dedicated",
             "arabicMeaning": "مخلص / متفانٍ",
             "example": "She is dedicated to her studies and completes her work on time.",
-            "origin": "source",
-            "sourcePdfPage": 80
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -175,11 +200,16 @@
             "word": "agriculture",
             "arabicMeaning": "الزراعة",
             "example": "Farmers work in the field of agriculture to grow fresh food.",
-            "origin": "source",
-            "sourcePdfPage": 80
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -199,11 +229,22 @@
             ],
             "correctAnswer": "prototype",
             "reason": "A prototype is a simple model created to test ideas before building the final design.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -217,11 +258,22 @@
             ],
             "correctAnswer": "practical",
             "reason": "Practical describes solutions or ideas that are useful and work well in actual situations.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -235,11 +287,22 @@
             ],
             "correctAnswer": "agriculture",
             "reason": "Agriculture refers to farming and cultivating land to produce food and crops.",
-            "origin": "source",
-            "sourcePdfPage": 80
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -253,11 +316,16 @@
             "rule": "Imperatives (Commands and Instructions)",
             "explanation": "Imperatives are used to give orders, instructions, or advice. Positive imperatives start with the base form of the verb. Negative imperatives start with 'Don't' or 'Never' followed by the base verb.",
             "example": "Don't open the window. It is very cold outside.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -265,11 +333,16 @@
             "rule": "Sequence Adverbs",
             "explanation": "Sequence adverbs show the order of steps in a process or project. Common words include First, Next, Then, After that, and Finally.",
             "example": "First, identify the problem; next, brainstorm ideas; finally, test your prototype.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -289,11 +362,22 @@
             ],
             "correctAnswer": "Don't",
             "reason": "Negative imperatives start with 'Don't' followed by the main verb.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -307,11 +391,22 @@
             ],
             "correctAnswer": "try",
             "reason": "'Never' is followed by the base form of the verb to express strong prohibition.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -325,11 +420,22 @@
             ],
             "correctAnswer": "Save",
             "reason": "Positive imperative sentences begin directly with the base form of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -342,7 +448,10 @@
           "content": {
             "passage": "Omar loved designing things. One day, his teacher gave the class a challenge: “How can we make life easier for new students at school?” Omar had a few ideas, but his teacher stopped him. “First, see through their eyes,” she said. “You need to understand how they feel.” So Omar spent a day with a new student named Karim. He watched Karim closely. Karim didn’t talk much. He looked confused and nervous. He didn’t know where to sit or what to do during the break. Omar felt sorry. He remembered how hard it was when he was new. Later, Omar and his group wrote down everything they noticed. Then they brainstormed ideas. They created a “Welcome Buddy” plan, a school map for new students, and a break-time corner for newcomers. When they tested the idea, the new students smiled and felt more relaxed. Omar learned something important: Good design starts with real people—and real feelings.",
             "origin": "source",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -359,11 +468,22 @@
             ],
             "correctAnswer": "Good design starts with real people.",
             "reason": "The text directly states that Omar learned good design starts with real people and real feelings.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q2",
@@ -377,11 +497,22 @@
             ],
             "correctAnswer": "To understand how new students feel",
             "reason": "Omar's teacher advised him to see through new students' eyes and understand their feelings.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -394,7 +525,10 @@
           "content": {
             "script": "Welcome back to my blog! Today, our class took on a fast design sprint to make our school library cleaner and better organized. First, we defined the main problem: books were often left on the wrong shelves. Next, we started ideation and brainstormed over 50 different ideas! Some were practical, and a few were completely crazy, like building a book-sorting robot. Then, we chose a simple color-coded shelf plan, created a prototype chart, and tested it with real students. It worked amazingly well!",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -412,7 +546,18 @@
             "correctAnswer": "Books were left on the wrong shelves.",
             "reason": "In the blog script, Sara explains that their design sprint target was organizing books left on wrong shelves.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -494,7 +639,24 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 81
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -523,7 +685,20 @@
             "correctAnswer": "ideation",
             "reason": "Ideation is the brainstorming phase where developers generate multiple problem-solving concepts.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -546,7 +721,20 @@
             "correctAnswer": "Don't",
             "reason": "'Don't' followed by the infinitive verb is the standard negative imperative form.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -569,7 +757,20 @@
             "correctAnswer": "Finally",
             "reason": "'Finally' or 'Lastly' marks the concluding step in sequence writing.",
             "origin": "supplementary",
-            "sourcePdfPage": 76
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -592,11 +793,22 @@
             ],
             "correctAnswer": "prototypes",
             "reason": "A prototype is a simple preliminary model used to test design functionality.",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -610,11 +822,22 @@
             ],
             "correctAnswer": "Don't",
             "reason": "Negative imperatives start with 'Don't' before base verbs.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -628,11 +851,22 @@
             ],
             "correctAnswer": "A Welcome Buddy plan",
             "reason": "Omar's group created a Welcome Buddy plan, a map, and a break corner for newcomers.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -646,11 +880,22 @@
             ],
             "correctAnswer": "perfect",
             "reason": "The unit vocabulary matches 'perfect' with being as good as possible.",
-            "origin": "source",
-            "sourcePdfPage": 82
+            "origin": "supplementary",
+            "sourcePdfPage": 82,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -664,11 +909,22 @@
             ],
             "correctAnswer": "Save",
             "reason": "Imperative statements start directly with the base form of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -682,11 +938,22 @@
             ],
             "correctAnswer": "Understand the users and their needs",
             "reason": "Design thinking begins by empathizing with users and understanding their needs.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -700,11 +967,22 @@
             ],
             "correctAnswer": "agriculture",
             "reason": "In the story 'The Impact of Growth', Nancy wanted to pursue agricultural studies.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -718,11 +996,22 @@
             ],
             "correctAnswer": "First",
             "reason": "'First' or 'Firstly' introduces the initial step of a process.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -736,11 +1025,22 @@
             ],
             "correctAnswer": "It is logically correct and clear",
             "reason": "Page 82 defines 'make sense' as logically correct and easy to understand.",
-            "origin": "source",
-            "sourcePdfPage": 82
+            "origin": "supplementary",
+            "sourcePdfPage": 82,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -754,13 +1054,35 @@
             ],
             "correctAnswer": "honest",
             "reason": "Zeina realized being honest about limits builds genuine trust with others.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.366Z",
+    "itemsAudited": 33,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 26
+  }
 }

@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 20,
-      "supplementaryItems": 10,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -116,11 +116,16 @@
             "word": "visual",
             "arabicMeaning": "بصري",
             "example": "Visual learners like to read books and look at colorful notes.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_2",
@@ -128,11 +133,16 @@
             "word": "auditory",
             "arabicMeaning": "سمعي",
             "example": "Auditory learners understand better when listening to explanations.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_3",
@@ -140,11 +150,16 @@
             "word": "kinesthetic",
             "arabicMeaning": "حركي",
             "example": "Kinesthetic learners learn best by doing hands-on experiments.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_4",
@@ -152,11 +167,16 @@
             "word": "organize",
             "arabicMeaning": "ينظم",
             "example": "I organize my study space to help me learn more efficiently.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_5",
@@ -164,11 +184,16 @@
             "word": "courage",
             "arabicMeaning": "شجاعة",
             "example": "It takes courage to try difficult activities when you feel scared.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -188,11 +213,22 @@
             ],
             "correctAnswer": "Visual learners",
             "reason": "Visual learners absorb information through visual aids such as maps, charts, and pictures.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vq_2",
@@ -206,11 +242,22 @@
             ],
             "correctAnswer": "organize",
             "reason": "Organize means arranging items or ideas in a neat and structured manner.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vq_3",
@@ -224,11 +271,22 @@
             ],
             "correctAnswer": "ambition",
             "reason": "Ambition is defined as having a strong desire to succeed and reach personal goals.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -242,11 +300,16 @@
             "rule": "Ability with 'can' and 'cannot / can't'",
             "explanation": "We use 'can' + base verb to describe abilities or things we are able to do, and 'cannot' / 'can't' + base verb for things we are unable to do.",
             "example": "I can focus better when my study space is quiet.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_gram_2",
@@ -254,11 +317,16 @@
             "rule": "Present Continuous Tense",
             "explanation": "We use the present continuous tense (am/is/are + verb-ing) to talk about actions happening right now at the moment of speaking.",
             "example": "Layla is using an app to learn words at the moment.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -279,7 +347,18 @@
             "correctAnswer": "is using",
             "reason": "The time expression 'right now' signals the present continuous tense (is + verb-ing).",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -297,7 +376,18 @@
             "correctAnswer": "can't",
             "reason": "'Can't' is used to show inability to concentrate due to noisy surroundings.",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -315,7 +405,18 @@
             "correctAnswer": "are practicing",
             "reason": "'Listen!' and 'at the moment' require the present continuous form 'are practicing' for a plural subject.",
             "origin": "supplementary",
-            "sourcePdfPage": 40
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -331,7 +432,10 @@
           "content": {
             "passage": "Every person learns differently. Some people learn best by seeing information. These are visual learners. They like to read books, look at pictures, and use colorful notes. Visual learners often make maps and charts to organize information. Other people learn best by hearing information. These are auditory learners. They like to listen to music while studying, discuss topics with friends, and hear explanations from teachers. Auditory learners often repeat information out loud to remember it. Some people learn best by moving and touching. These are kinesthetic learners. They like to do experiments, build models, and take breaks to move around. Kinesthetic learners often use their hands to help them think. Understanding your learning style helps you study better. When you know how you learn best, you can choose the right methods for yourself. This makes learning easier and more enjoyable.",
             "origin": "source",
-            "sourcePdfPage": 30
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -348,11 +452,22 @@
             ],
             "correctAnswer": "They repeat information out loud.",
             "reason": "The passage states that auditory learners often repeat information out loud to remember it.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -365,7 +480,10 @@
           "content": {
             "script": "Hello, my name is Ahmed. I want to share my study habits. I used to have trouble focusing because of noise and my phone. Now, I organize my notes using spidergrams and take short five-minute breaks after every thirty minutes of study. This helps my mind stay fresh. Reviewing my lessons regularly has improved my grades significantly.",
             "origin": "supplementary",
-            "sourcePdfPage": 31
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -383,7 +501,18 @@
             "correctAnswer": "To keep his mind fresh and stay focused",
             "reason": "Taking brief breaks helps refresh the brain and maintain effective concentration during study sessions.",
             "origin": "supplementary",
-            "sourcePdfPage": 31
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -419,11 +548,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -449,7 +586,20 @@
             "correctAnswer": "Kinesthetic learner",
             "reason": "Kinesthetic learners process information through movement, touching, and hands-on activities.",
             "origin": "supplementary",
-            "sourcePdfPage": 30
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -472,7 +622,20 @@
             "correctAnswer": "is drawing",
             "reason": "The word 'Look!' indicates an action taking place right now, requiring 'is drawing'.",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -495,11 +658,22 @@
             ],
             "correctAnswer": "hands-on activities and movement",
             "reason": "Kinesthetic learning involves physical action, experiments, and tactile experience.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_2",
@@ -513,11 +687,22 @@
             ],
             "correctAnswer": "cooperation",
             "reason": "Working in teams fosters mutual support, teamwork, and cooperation.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_3",
@@ -532,7 +717,18 @@
             "correctAnswer": "am revising",
             "reason": "'At the moment' requires the present continuous tense with subject 'I' (am revising).",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -550,7 +746,18 @@
             "correctAnswer": "can't",
             "reason": "'Can't' expresses inability to perform an action under poor study conditions.",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -567,11 +774,22 @@
             ],
             "correctAnswer": "Singing together in unity",
             "reason": "The story explains that singing together in unity made the golden door open.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_6",
@@ -585,11 +803,22 @@
             ],
             "correctAnswer": "spidergram",
             "reason": "A spidergram is a diagrammatic organizer that looks like a spider with legs showing supporting details.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_7",
@@ -603,11 +832,22 @@
             ],
             "correctAnswer": "A question mark (?)",
             "reason": "Direct questions must end with a question mark.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_8",
@@ -621,11 +861,22 @@
             ],
             "correctAnswer": "cannot be seen",
             "reason": "'Invisible' describes anything that is hidden from sight or impossible to see.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_9",
@@ -639,11 +890,22 @@
             ],
             "correctAnswer": "She can swim very fast.",
             "reason": "The modal auxiliary verb 'can' must be followed immediately by the base form of the verb (swim).",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_10",
@@ -658,12 +920,34 @@
             "correctAnswer": "take short breaks and study in quiet spaces",
             "reason": "Quiet study environments combined with regular short breaks maximize focus and memory retention.",
             "origin": "supplementary",
-            "sourcePdfPage": 31
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.651Z",
+    "itemsAudited": 30,
+    "sourceClaims": 20,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 19,
+    "citationWarnings": 12,
+    "itemsWithSourceSubfields": 20,
+    "reclassifiedToSupplementary": 19
+  }
 }

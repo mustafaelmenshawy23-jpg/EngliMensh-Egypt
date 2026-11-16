@@ -61,8 +61,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 21,
-      "supplementaryItems": 6,
+      "sourceItems": 1,
+      "supplementaryItems": 26,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -129,11 +129,16 @@
             "word": "sister",
             "arabicMeaning": "أخت",
             "example": "I have a sister.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -142,7 +147,12 @@
             "arabicMeaning": "أخ",
             "example": "He is my brother.",
             "origin": "source",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -153,11 +163,16 @@
             "word": "grandma",
             "arabicMeaning": "جدة",
             "example": "This is my grandma.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -177,7 +192,17 @@
             "correctAnswer": "grandma",
             "reason": "Grandma is the mother of your mom or dad.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -194,7 +219,17 @@
             "correctAnswer": "brother",
             "reason": "A brother is a male sibling.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -211,7 +246,17 @@
             "correctAnswer": "aunt",
             "reason": "An aunt is the sister of your parent.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -228,11 +273,16 @@
             "rule": "Using This is and These are",
             "explanation": "Use 'This is' for a singular noun and 'These are' for a plural noun.",
             "example": "This is my sister. These are my cousins.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -251,11 +301,21 @@
             ],
             "correctAnswer": "is",
             "reason": "Dad is singular, so we use 'is'.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq2",
@@ -268,11 +328,21 @@
             ],
             "correctAnswer": "These",
             "reason": "Brothers is plural, so we use 'These'.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq3",
@@ -285,11 +355,21 @@
             ],
             "correctAnswer": "have",
             "reason": "After does/doesn't, we use the base verb 'have'.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -301,11 +381,14 @@
           "itemId": "r1",
           "content": {
             "passage": "I love my family. I have one brother. His name is Ahmed. I have a sister. She's a baby. Her name is Esraa.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -318,11 +401,21 @@
             ],
             "correctAnswer": "Ahmed",
             "reason": "The passage explicitly states his name is Ahmed.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -334,11 +427,14 @@
           "itemId": "l1",
           "content": {
             "script": "This is my cousin, Talia. She's tall. She has straight hair. She's kind.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "l2",
@@ -351,11 +447,21 @@
             ],
             "correctAnswer": "Tall",
             "reason": "The script states that Talia is tall.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -378,11 +484,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -407,7 +519,19 @@
             "correctAnswer": "sister",
             "reason": "Sister refers to a female sibling.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -429,7 +553,19 @@
             "correctAnswer": "has",
             "reason": "Singular third-person pronouns take 'has'.",
             "origin": "supplementary",
-            "sourcePdfPage": 49
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -451,11 +587,21 @@
             ],
             "correctAnswer": "is",
             "reason": "Dad is a singular noun.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -468,11 +614,21 @@
             ],
             "correctAnswer": "is",
             "reason": "Name is singular, requiring 'is'.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -486,7 +642,17 @@
             "correctAnswer": "grandma",
             "reason": "Grandma is the mother of your parent.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -502,11 +668,21 @@
             ],
             "correctAnswer": "These",
             "reason": "Brothers is plural, so we use 'These'.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -519,11 +695,21 @@
             ],
             "correctAnswer": "doesn't",
             "reason": "Negative short answer for 'Does she' is 'doesn't'.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -536,11 +722,21 @@
             ],
             "correctAnswer": "baby",
             "reason": "A very young child is a baby.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -553,11 +749,21 @@
             ],
             "correctAnswer": "do",
             "reason": "Affirmative short answer to a 'Do you' question is 'do'.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -570,11 +776,21 @@
             ],
             "correctAnswer": "has",
             "reason": "Pronoun 'He' takes 'has'.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -587,11 +803,21 @@
             ],
             "correctAnswer": "is",
             "reason": "We use 'is' when asking about a single person with 'Who'.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -604,13 +830,34 @@
             ],
             "correctAnswer": "smaller",
             "reason": "Comparatives use '-er than'.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.023Z",
+    "itemsAudited": 27,
+    "sourceClaims": 21,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 20,
+    "citationWarnings": 18,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 20
+  }
 }

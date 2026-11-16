@@ -146,8 +146,8 @@
     },
     "itemTotals": {
       "totalItems": 37,
-      "sourceItems": 35,
-      "supplementaryItems": 2,
+      "sourceItems": 5,
+      "supplementaryItems": 32,
       "vocabularyCount": 8,
       "questionsCount": 18
     },
@@ -214,11 +214,16 @@
             "word": "monuments",
             "arabicMeaning": "آثار",
             "example": "It is important to look after our monuments.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -226,11 +231,16 @@
             "word": "citadel",
             "arabicMeaning": "قلعة",
             "example": "You can visit the citadel and take photos.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -239,7 +249,12 @@
             "arabicMeaning": "أهرامات",
             "example": "Lots of people come to visit the Giza Pyramids.",
             "origin": "source",
-            "sourcePdfPage": 216
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -251,7 +266,12 @@
             "arabicMeaning": "تمثال",
             "example": "This statue is made of stone.",
             "origin": "source",
-            "sourcePdfPage": 212
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -263,7 +283,12 @@
             "arabicMeaning": "متحف",
             "example": "There are lots of old things in a museum.",
             "origin": "source",
-            "sourcePdfPage": 216
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -275,7 +300,12 @@
             "arabicMeaning": "سائل",
             "example": "Water is a liquid.",
             "origin": "source",
-            "sourcePdfPage": 210
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -286,11 +316,16 @@
             "word": "transparent",
             "arabicMeaning": "شفاف",
             "example": "Glass is transparent, so we can see through it.",
-            "origin": "source",
-            "sourcePdfPage": 211
+            "origin": "supplementary",
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_8",
@@ -298,11 +333,16 @@
             "word": "opaque",
             "arabicMeaning": "غير شفاف",
             "example": "Concrete is opaque, so we cannot see through it.",
-            "origin": "source",
-            "sourcePdfPage": 211
+            "origin": "supplementary",
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -322,11 +362,22 @@
             ],
             "correctAnswer": "see through",
             "reason": "Transparent materials allow light to pass so that we can see through them.",
-            "origin": "source",
-            "sourcePdfPage": 211
+            "origin": "supplementary",
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -340,11 +391,22 @@
             ],
             "correctAnswer": "gas",
             "reason": "Water turns into steam when heated to 100°C, and steam is a gas.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -358,11 +420,22 @@
             ],
             "correctAnswer": "museum",
             "reason": "A museum stores and displays historical objects and artifacts.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q4",
@@ -376,11 +449,22 @@
             ],
             "correctAnswer": "ice",
             "reason": "Freezing liquid water converts it into solid ice.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -394,11 +478,16 @@
             "rule": "Past Simple Tense (Questions and Short Answers)",
             "explanation": "Use 'Did + subject + main verb (base form)?' to ask questions about completed past actions, and answer with 'Yes, I did' or 'No, I didn't'.",
             "example": "Did you go on a boat trip? Yes, I did.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -406,11 +495,16 @@
             "rule": "Modal Verbs for Rules: Can and Can't",
             "explanation": "Use 'can' to state permitted actions and 'can't' to state forbidden actions at historic sites.",
             "example": "You can take photos, but you can't climb on the pyramids.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -430,11 +524,22 @@
             ],
             "correctAnswer": "went",
             "reason": "The keyword 'yesterday' indicates the past simple tense, so we use the past form 'went'.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -448,11 +553,22 @@
             ],
             "correctAnswer": "eat",
             "reason": "After the auxiliary verb 'did', the main verb must be in its base infinitive form 'eat'.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -466,11 +582,22 @@
             ],
             "correctAnswer": "can't",
             "reason": "Touching museum objects is prohibited to protect them.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q4",
@@ -484,11 +611,22 @@
             ],
             "correctAnswer": "Did",
             "reason": "We use 'Did' to start a past simple question about a completed event.",
-            "origin": "source",
-            "sourcePdfPage": 207
+            "origin": "supplementary",
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -500,11 +638,14 @@
           "itemId": "read_passage_1",
           "content": {
             "passage": "It's important to look after our monuments. Lots of monuments are protected. This means we can't change or damage them. We want people to see them and enjoy them in the future.\nLots of people come to visit the Giza Pyramids. You can take photos. You can go inside. You can't climb on the pyramids.\nThere are lots of old things in a museum. You can visit a museum. You can look at the things inside. You can't touch them.\nYou can visit the citadel. You can go inside. You can take photos. You can't drop trash.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -518,11 +659,22 @@
             ],
             "correctAnswer": "So people cannot change or damage them",
             "reason": "The passage clearly states that protected means we cannot change or damage them.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q2",
@@ -536,11 +688,22 @@
             ],
             "correctAnswer": "Climb on the pyramids",
             "reason": "The passage explicitly states: 'You can't climb on the pyramids.'",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -553,7 +716,10 @@
           "content": {
             "script": "Yesterday, Ahmed traveled to Alexandria with his friends. They traveled by car. They stayed in a big hotel. They saw a castle and a fountain. They went on a boat trip. They also took some photos.",
             "origin": "source",
-            "sourcePdfPage": 207
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "script": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -570,11 +736,22 @@
             ],
             "correctAnswer": "By car",
             "reason": "The text states that 'They traveled by car.'",
-            "origin": "source",
-            "sourcePdfPage": 207
+            "origin": "supplementary",
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q2",
@@ -588,11 +765,22 @@
             ],
             "correctAnswer": "In a big hotel",
             "reason": "The passage explicitly mentions 'They stayed in a big hotel.'",
-            "origin": "source",
-            "sourcePdfPage": 207
+            "origin": "supplementary",
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -615,11 +803,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 207
+            "origin": "supplementary",
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -645,7 +839,20 @@
             "correctAnswer": "hard",
             "reason": "Hard materials like wood resist bending and moving.",
             "origin": "supplementary",
-            "sourcePdfPage": 211
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -668,7 +875,20 @@
             "correctAnswer": "took",
             "reason": "'Took' is the past simple form of 'take'.",
             "origin": "supplementary",
-            "sourcePdfPage": 208
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -691,11 +911,22 @@
             ],
             "correctAnswer": "Steam",
             "reason": "When liquid water boils at 100°C, it turns into steam, which is a gas.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -709,11 +940,22 @@
             ],
             "correctAnswer": "opaque",
             "reason": "Opaque materials block light, so we cannot see through them.",
-            "origin": "source",
-            "sourcePdfPage": 211
+            "origin": "supplementary",
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -727,11 +969,22 @@
             ],
             "correctAnswer": "To Cairo",
             "reason": "In the mini dialogue, Omar responds: 'We went to Cairo.'",
-            "origin": "source",
-            "sourcePdfPage": 207
+            "origin": "supplementary",
+            "sourcePdfPage": 207,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -745,11 +998,22 @@
             ],
             "correctAnswer": "You can't touch the old things.",
             "reason": "Museum guidelines state that visitors cannot touch preserved historical artifacts.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -763,11 +1027,22 @@
             ],
             "correctAnswer": "made",
             "reason": "The signal word 'yesterday' requires the simple past tense verb 'made'.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -781,11 +1056,22 @@
             ],
             "correctAnswer": "bend",
             "reason": "Soft materials like cloth can be moved and bent easily.",
-            "origin": "source",
-            "sourcePdfPage": 211
+            "origin": "supplementary",
+            "sourcePdfPage": 211,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -799,11 +1085,22 @@
             ],
             "correctAnswer": "bend",
             "reason": "Hot metal becomes malleable, allowing it to be bent into shapes.",
-            "origin": "source",
-            "sourcePdfPage": 212
+            "origin": "supplementary",
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -817,11 +1114,22 @@
             ],
             "correctAnswer": "drop trash",
             "reason": "The text states: 'You can't drop trash' at the citadel.",
-            "origin": "source",
-            "sourcePdfPage": 216
+            "origin": "supplementary",
+            "sourcePdfPage": 216,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -835,11 +1143,22 @@
             ],
             "correctAnswer": "saw",
             "reason": "'Saw' is the correct past simple form of 'see'.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -853,13 +1172,35 @@
             ],
             "correctAnswer": "cold",
             "reason": "Water freezes into ice at 0°C when cold.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.326Z",
+    "itemsAudited": 37,
+    "sourceClaims": 35,
+    "verifiedSourceClaims": 5,
+    "unverifiableSourceClaims": 30,
+    "citationWarnings": 24,
+    "itemsWithSourceSubfields": 29,
+    "reclassifiedToSupplementary": 30
+  }
 }

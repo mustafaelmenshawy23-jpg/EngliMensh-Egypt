@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 23,
-      "supplementaryItems": 6,
+      "sourceItems": 2,
+      "supplementaryItems": 27,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "administer",
             "arabicMeaning": "يقدم علاجاً أو دواء",
             "example": "The nurse will administer the medication to the patient on time.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_voc_2",
@@ -126,11 +131,16 @@
             "word": "shift",
             "arabicMeaning": "فترة عمل",
             "example": "Nurse Sarah started her twelve-hour shift early in the morning.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_voc_3",
@@ -138,11 +148,16 @@
             "word": "chaos",
             "arabicMeaning": "فوضى عارمة",
             "example": "Despite the chaos in the emergency room, the team remained calm.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_voc_4",
@@ -150,11 +165,16 @@
             "word": "paramedics",
             "arabicMeaning": "مسعفون",
             "example": "The paramedics arrived quickly to give emergency care to the injured driver.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_voc_5",
@@ -162,11 +182,16 @@
             "word": "groan",
             "arabicMeaning": "أنين من الألم",
             "example": "The injured man began to groan while waiting for the emergency doctor.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -186,11 +211,22 @@
             ],
             "correctAnswer": "To suddenly begin working or responding quickly",
             "reason": "The text explicitly defines 'spring into action' as starting to act or respond quickly during an emergency.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_vq_2",
@@ -204,11 +240,22 @@
             ],
             "correctAnswer": "Fear, shock, or severe illness",
             "reason": "The idiom 'pale as a ghost' refers to someone looking very pale due to shock, pain, or illness.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_vq_3",
@@ -222,11 +269,22 @@
             ],
             "correctAnswer": "Cardiopulmonary Resuscitation",
             "reason": "CPR is defined in the source text as Cardiopulmonary Resuscitation, an emergency procedure using chest compressions.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -240,11 +298,16 @@
             "rule": "Present Perfect Simple vs Present Perfect Continuous",
             "explanation": "Use the Present Perfect Simple (have/has + past participle) to focus on completed actions, life experiences, or specific quantities/results. Use the Present Perfect Continuous (have/has + been + -ing) to emphasize the duration of an action that started in the past and is still ongoing or has just recently finished with a visible result.",
             "example": "She has visited Paris three times, but she has been working in the ER all morning.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -264,11 +327,22 @@
             ],
             "correctAnswer": "have worked",
             "reason": "Plural subject 'Many doctors' takes 'have worked' in the Present Perfect Simple to show completed experience over time.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_gq_2",
@@ -282,11 +356,22 @@
             ],
             "correctAnswer": "have been working",
             "reason": "The time expression 'since early morning' paired with continuous action requires the Present Perfect Continuous form 'have been working'.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_gq_3",
@@ -300,11 +385,22 @@
             ],
             "correctAnswer": "A new hospital has been built recently.",
             "reason": "The passive form of Present Perfect Simple uses 'has/have + been + past participle'.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -317,7 +413,10 @@
           "content": {
             "passage": "Every morning, Nurse Sarah kicks off her day with a strong cup of coffee before her 12-hour shift begins. She is always preparing herself mentally for the challenges ahead. As soon as she arrives, she checks patients’ charts and reviews updates from the night shift. The hospital is buzzing with activity—doctors rushing, monitors beeping, and patients waiting. Sarah’s first task is administering medication to her patients. Some have been waiting anxiously, while others are resting quietly. She has cared for many patients over the years, but each day brings new surprises. One elderly patient, Mr. Ramy, has been recovering from surgery and needs extra attention. Sarah makes sure he is comfortable before moving on. By midday, emergencies arise—a car accident victim is rushed in, and the team springs into action. Sarah assists the doctors, ensuring everything runs smoothly. Despite the chaos, she remains calm and focuses on her duties. 'Teamwork makes the dream work,' she often says, relying on her colleagues for support. By evening, Sarah has checked on all her patients and has documented their progress. She feels exhausted but fulfilled. As she heads home, she reflects on the day—some moments were heartbreaking, but many were rewarding. Nursing is a never-ending rollercoaster, but Sarah wouldn’t trade it for anything.",
             "origin": "source",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -334,11 +433,22 @@
             ],
             "correctAnswer": "Because helping her patients and seeing their progress makes her hard work rewarding",
             "reason": "The passage explains that despite exhaustion and chaos, helping patients and reflecting on positive outcomes makes nursing a rewarding career for Sarah.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -351,7 +461,10 @@
           "content": {
             "script": "Emergency Operator: 123 Emergency Service, what is your location?\nCaller: Please help! My neighbor collapsed on the floor in front of his apartment!\nEmergency Operator: Stay calm. Is he conscious or responding to you?\nCaller: No, he is not awake at all! I checked for a pulse on his wrist, but it feels very faint. He isn't breathing normally.\nEmergency Operator: Paramedics are on their way. I need you to place him flat on his back and begin CPR immediately. Push hard and fast in the center of his chest until the ambulance arrives.",
             "origin": "supplementary",
-            "sourcePdfPage": 16
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -369,7 +482,18 @@
             "correctAnswer": "To begin CPR immediately by pressing on the center of the chest",
             "reason": "The operator instructs the caller to place the unresponsive person on his back and perform CPR chest compressions immediately.",
             "origin": "supplementary",
-            "sourcePdfPage": 16
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -396,7 +520,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -425,7 +555,20 @@
             "correctAnswer": "shift",
             "reason": "A 'shift' is a fixed period of working hours assigned to employees.",
             "origin": "supplementary",
-            "sourcePdfPage": 14
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -448,7 +591,20 @@
             "correctAnswer": "has been running",
             "reason": "The Present Perfect Continuous 'has been running' explains a present physical result resulting from recent activity.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -471,11 +627,22 @@
             ],
             "correctAnswer": "Very heavily",
             "reason": "'Rained cats and dogs' is an idiom meaning heavy downpour.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_2",
@@ -489,11 +656,22 @@
             ],
             "correctAnswer": "To provide immediate emergency care and transport patients to hospital",
             "reason": "Paramedics are trained professionals who provide pre-hospital emergency care and transport victims.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_3",
@@ -508,7 +686,18 @@
             "correctAnswer": "have been working",
             "reason": "Present Perfect Continuous ('have been working') emphasizes ongoing continuous labor causing present fatigue.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -526,7 +715,18 @@
             "correctAnswer": "All patients have been checked by the nurse.",
             "reason": "Plural object 'All patients' takes 'have been checked' in the Present Perfect passive.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -543,11 +743,22 @@
             ],
             "correctAnswer": "Using a flexible scope carefully",
             "reason": "The text states that the medical team used a flexible scope to carefully remove the coin from the child's throat.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_6",
@@ -561,11 +772,22 @@
             ],
             "correctAnswer": "To introduce the topic and hook the reader's attention",
             "reason": "The blog post guide notes that an introduction serves to introduce the topic and engage the reader early.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_7",
@@ -579,11 +801,22 @@
             ],
             "correctAnswer": "How many times have you been seeing that movie?",
             "reason": "Stating how many times an action occurred requires Present Perfect Simple ('have you seen'), not Present Perfect Continuous.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_8",
@@ -597,11 +830,22 @@
             ],
             "correctAnswer": "The state of being awake and aware of surroundings",
             "reason": "'Consciousness' is defined as the state of being awake and aware of what is happening around you.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_9",
@@ -615,11 +859,22 @@
             ],
             "correctAnswer": "It contributes directly to patient safety and coordinated care",
             "reason": "Interprofessional communication ensures patient safety and smooth coordination among healthcare teams.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_test_10",
@@ -633,13 +888,35 @@
             ],
             "correctAnswer": "Patient condition, treatments given, and critical follow-up actions",
             "reason": "A shift note must detail patient updates, medications administered, and instructions for ongoing care.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.024Z",
+    "itemsAudited": 29,
+    "sourceClaims": 23,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 21,
+    "citationWarnings": 14,
+    "itemsWithSourceSubfields": 14,
+    "reclassifiedToSupplementary": 21
+  }
 }

@@ -74,8 +74,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 27,
-      "supplementaryItems": 3,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -142,11 +142,16 @@
             "word": "Artificial Intelligence",
             "arabicMeaning": "الذكاء الاصطناعي",
             "example": "Artificial Intelligence is changing the way people work and study.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -154,11 +159,16 @@
             "word": "chatbot",
             "arabicMeaning": "برنامج محادثة آلية",
             "example": "A chatbot can answer customer service questions instantly.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -166,11 +176,16 @@
             "word": "virtual reality headset",
             "arabicMeaning": "سماعة الواقع الافتراضي",
             "example": "He wore a virtual reality headset to explore the art exhibition online.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -178,11 +193,16 @@
             "word": "microchip",
             "arabicMeaning": "شريحة إلكترونية دقيقة",
             "example": "Microchips are essential components inside smartphones and laptops.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -190,11 +210,16 @@
             "word": "influencer",
             "arabicMeaning": "مؤثر على وسائل التواصل",
             "example": "She hopes to become a social media influencer to share her fashion tips.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -214,11 +239,22 @@
             ],
             "correctAnswer": "chatbot",
             "reason": "A chatbot is an AI computer program designed to have conversations with human users online.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_2",
@@ -232,11 +268,22 @@
             ],
             "correctAnswer": "microchips",
             "reason": "Microchips power small electronic devices, automation systems, and wearable technology.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_3",
@@ -250,11 +297,22 @@
             ],
             "correctAnswer": "headset",
             "reason": "A VR headset is worn on the head to project virtual reality environments to the user.",
-            "origin": "source",
-            "sourcePdfPage": 95
+            "origin": "supplementary",
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -268,11 +326,16 @@
             "rule": "The Future Progressive Tense (will + be + v-ing)",
             "explanation": "Used to describe an action that will be in progress at a specific time in the future.",
             "example": "At five o'clock next Friday, I will be visiting my grandparents in Cairo.",
-            "origin": "source",
-            "sourcePdfPage": 69
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -280,11 +343,16 @@
             "rule": "Was / Were going to + infinitive",
             "explanation": "Used to express future plans or intentions made in the past that changed or were not completed.",
             "example": "We were going to take the bus, but we decided to take the train instead.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -305,7 +373,18 @@
             "correctAnswer": "will be studying",
             "reason": "The temporal expression 'This time tomorrow afternoon' specifies an action in progress in the future, requiring the future progressive tense.",
             "origin": "supplementary",
-            "sourcePdfPage": 69
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -322,11 +401,22 @@
             ],
             "correctAnswer": "were",
             "reason": "The plural subject 'They' coupled with a changed past intention uses 'were going to'.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_3",
@@ -340,11 +430,22 @@
             ],
             "correctAnswer": "be doing",
             "reason": "Future progressive questions take the form: Wh-word + will + subject + be + verb-ing.",
-            "origin": "source",
-            "sourcePdfPage": 69
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -356,11 +457,14 @@
           "itemId": "read_passage_1",
           "content": {
             "passage": "Science and technology work together to make changes to our lives. Our scientific knowledge makes it possible for us to create and build new technologies. Then, these technologies often help us to discover new things about our world. And this can add to our existing scientific knowledge, which might then mean we create a new technology, and so it continues. If we don't have a certain technology, then we may not be able to develop in science. Let's look at an example. In the 1800s, a new technology was invented called the cathode-ray tube. By passing electricity through a glass tube, scientists were able to see something called electrons. Without the cathode-ray tube, we wouldn't have TVs, computers or phone screens today. In 1895, scientist Wilhelm Röntgen noticed that his cathode-ray tube was producing other rays that passed through paper, some metals and skin, but not through bone. With this scientific knowledge, scientists invented the X-ray machine, which we now use in hospitals all over the world. In 1914, father and son, William Henry Bragg and William Lawrence Bragg, used this technology to pass X-rays through crystals, so that they could see the atoms in the crystal. It was this scientific knowledge that allowed Rosalind Franklin to discover the shape of DNA in 1952.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q_1",
@@ -374,11 +478,22 @@
             ],
             "correctAnswer": "Rosalind Franklin",
             "reason": "The text explicitly states that scientific knowledge gained from X-rays allowed Rosalind Franklin to discover the shape of DNA in 1952.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -390,11 +505,14 @@
           "itemId": "list_script_1",
           "content": {
             "script": "Hello and welcome to the lecture. So, social media really started in 2003 with LinkedIn and was followed one year later by Facebook. Twenty years later, over 3.5 billion people are on social media. So, what is the future of social media? We share information about ourselves online all the time by researching and buying things, and companies use that information to connect with us and sell us products. This will continue, and social media will be used more and more by companies to get information about us. Nowadays, most social media sites cover a wide range of topics, but in the future we're likely to see an increase in more specific sites. For instance, sites where people have similar interests will become more common. They'll become more like online clubs.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q_1",
@@ -408,11 +526,22 @@
             ],
             "correctAnswer": "over 3.5 billion",
             "reason": "The lecture transcript states that twenty years after social media started, over 3.5 billion people were on social media.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -445,11 +574,19 @@
                 "speakerGender": "male"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 83
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -475,7 +612,20 @@
             "correctAnswer": "VR headset",
             "reason": "A VR headset covers the eyes to present virtual reality environments to the wearer.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -498,7 +648,20 @@
             "correctAnswer": "will be watching",
             "reason": "The future progressive structure 'will be + v-ing' describes an action in progress at a specific future moment.",
             "origin": "supplementary",
-            "sourcePdfPage": 69
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -521,11 +684,22 @@
             ],
             "correctAnswer": "800 million",
             "reason": "The reading passage on the changing world of work notes that experts predict up to 800 million jobs could be lost.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_2",
@@ -539,11 +713,22 @@
             ],
             "correctAnswer": "Journalists and lawyers",
             "reason": "Page 81 states that chatbots can write articles and contracts quickly, affecting journalists and lawyers.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_3",
@@ -557,11 +742,22 @@
             ],
             "correctAnswer": "will be traveling",
             "reason": "A specific time reference in the future requires the future progressive tense (will be + v-ing).",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_4",
@@ -575,11 +771,22 @@
             ],
             "correctAnswer": "were",
             "reason": "The plural pronoun 'We' combined with a changed past intention takes 'were going to'.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_5",
@@ -593,11 +800,22 @@
             ],
             "correctAnswer": "The cathode-ray tube",
             "reason": "Wilhelm Röntgen noticed his cathode-ray tube produced rays passing through skin, leading to X-ray machines.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_6",
@@ -611,11 +829,22 @@
             ],
             "correctAnswer": "Microchips",
             "reason": "Microchips enable computer automation, wearable tech, and internal ID cards.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_7",
@@ -629,11 +858,22 @@
             ],
             "correctAnswer": "to call",
             "reason": "The past structure 'was/were going' is followed by the infinitive preposition 'to' and base verb.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_8",
@@ -647,11 +887,22 @@
             ],
             "correctAnswer": "abnormal",
             "reason": "The opposite/antonym of normal is abnormal.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_9",
@@ -665,11 +916,22 @@
             ],
             "correctAnswer": "book doctor's appointments",
             "reason": "Page 67 states that Chinese social media apps allow users to store ID, pay bills, and book medical appointments.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_10",
@@ -683,13 +945,35 @@
             ],
             "correctAnswer": "Patients will always prefer to be looked after by kind human staff.",
             "reason": "Page 82 notes that patients prefer the kindness and empathy of human healthcare staff.",
-            "origin": "source",
-            "sourcePdfPage": 82
+            "origin": "supplementary",
+            "sourcePdfPage": 82,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.516Z",
+    "itemsAudited": 30,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 21,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 27
+  }
 }

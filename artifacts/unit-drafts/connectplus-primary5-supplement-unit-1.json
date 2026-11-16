@@ -72,8 +72,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 26,
-      "supplementaryItems": 4,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -140,11 +140,16 @@
             "word": "mangrove trees",
             "arabicMeaning": "أشجار المانجروف",
             "example": "Mangrove trees can grow in salt water along the coast.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -152,11 +157,16 @@
             "word": "ecosystem",
             "arabicMeaning": "نظام بيئي",
             "example": "An ecosystem is all the animals and plants in an area.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -164,11 +174,16 @@
             "word": "shallow water",
             "arabicMeaning": "مياه ضحلة",
             "example": "Little fish swim in shallow water to stay safe from bigger fish.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -176,11 +191,16 @@
             "word": "circulatory system",
             "arabicMeaning": "الجهاز الدوري",
             "example": "Our circulatory system carries blood around our bodies.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -188,11 +208,16 @@
             "word": "pollen",
             "arabicMeaning": "حبوب اللقاح",
             "example": "Bees carry pollen from one flower to another to help make seeds.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -212,11 +237,22 @@
             ],
             "correctAnswer": "pollen",
             "reason": "Bees carry pollen between plants, which enables them to produce seeds.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -230,11 +266,22 @@
             ],
             "correctAnswer": "shallow",
             "reason": "Shallow water means water that has little depth.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -248,11 +295,22 @@
             ],
             "correctAnswer": "rocks",
             "reason": "Rocks are non-living components, whereas plants and animals are living things.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -266,11 +324,16 @@
             "rule": "Relative Pronouns (who / which / where)",
             "explanation": "Use 'who' for people, 'which' for animals or objects, and 'where' for places to connect two sentences.",
             "example": "Cairo is a city where my cousin lives.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -278,11 +341,16 @@
             "rule": "Linking Words (and, but, so, because)",
             "explanation": "Use 'and' for addition, 'but' for contrast, 'so' to show results, and 'because' to state reasons.",
             "example": "Doaa wants to keep her heart healthy, so she does exercise.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -302,11 +370,22 @@
             ],
             "correctAnswer": "where",
             "reason": "The relative pronoun 'where' is used to refer to a location or place.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -320,11 +399,22 @@
             ],
             "correctAnswer": "who",
             "reason": "The relative pronoun 'who' is used when referring to a person.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -338,11 +428,22 @@
             ],
             "correctAnswer": "because",
             "reason": "'Because' introduces the clause that gives the reason for an action.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -354,11 +455,14 @@
           "itemId": "read_p1",
           "content": {
             "passage": "Nabq is a very big National Park in South Sinai. Along the coast here, there are 4.8 kilometers of mangrove forest, which is the largest in the Red Sea. We went there to learn why mangrove forests are so important for the marine ecosystem. When we arrived at the beach, we saw trees growing out of the sea! Most trees can't grow in salt water, but mangrove trees can. They have amazing roots which grow high out of the water. These roots help them get oxygen. When I touched the trees' leaves, they felt very thick! These special leaves stop the plants losing water when it's very hot.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -372,11 +476,22 @@
             ],
             "correctAnswer": "They stop the plants losing water.",
             "reason": "The text explains that thick leaves prevent water loss during very hot temperature.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -389,7 +504,10 @@
           "content": {
             "script": "Narrator: Keeping your heart healthy is essential for staying strong. When you exercise regularly, such as running, swimming, or riding a bike, your heart works better. Your heart pumps blood throughout your body, supplying minerals, nutrients, and oxygen to all your organs.",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -407,7 +525,18 @@
             "correctAnswer": "Work better and pump blood efficiently",
             "reason": "The script notes that regular exercise improves heart function and blood circulation.",
             "origin": "supplementary",
-            "sourcePdfPage": 32
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -438,11 +567,18 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -468,7 +604,20 @@
             "correctAnswer": "Fish",
             "reason": "Fish are animals, making them living organisms in a marine ecosystem.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -491,7 +640,20 @@
             "correctAnswer": "which",
             "reason": "'Which' is used when connecting sentences about objects like cars.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -514,11 +676,22 @@
             ],
             "correctAnswer": "salt",
             "reason": "Unlike most trees, mangroves are adapted to live in salt water.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -532,11 +705,22 @@
             ],
             "correctAnswer": "carbon dioxide",
             "reason": "Mangrove leaves absorb significant amounts of carbon dioxide, aiding against global warming.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -550,11 +734,22 @@
             ],
             "correctAnswer": "where",
             "reason": "'Where' connects the sentence by referring back to the place Cairo.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -568,11 +763,22 @@
             ],
             "correctAnswer": "beauty",
             "reason": "'Beauty' represents a quality or concept, making it an abstract noun.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -586,11 +792,22 @@
             ],
             "correctAnswer": "away from",
             "reason": "Arteries are responsible for transporting blood away from the heart.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -604,11 +821,22 @@
             ],
             "correctAnswer": "to",
             "reason": "Veins carry blood back to the heart.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -622,11 +850,22 @@
             ],
             "correctAnswer": "sunlight",
             "reason": "Sunlight helps human bodies synthesize Vitamin D.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -640,11 +879,22 @@
             ],
             "correctAnswer": "Because without rain, the grass won't grow and animals lose food",
             "reason": "Rain is needed for grass to grow, which feeds prey like rabbits.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -658,11 +908,22 @@
             ],
             "correctAnswer": "because",
             "reason": "'Because' introduces the explanation for doing exercise.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -676,13 +937,35 @@
             ],
             "correctAnswer": "must",
             "reason": "'Must' expresses essential obligation for safety.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.132Z",
+    "itemsAudited": 30,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 23,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 26
+  }
 }

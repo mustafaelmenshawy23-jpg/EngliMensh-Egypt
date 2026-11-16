@@ -77,8 +77,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 28,
-      "supplementaryItems": 2,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -145,11 +145,16 @@
             "word": "appliance",
             "arabicMeaning": "آلة - جهاز",
             "example": "Refrigerators and blenders are useful kitchen appliances.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-2",
@@ -157,11 +162,16 @@
             "word": "blender",
             "arabicMeaning": "خلاط",
             "example": "I use a blender to make a delicious fruit smoothie.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-3",
@@ -169,11 +179,16 @@
             "word": "vaccine",
             "arabicMeaning": "لقاح",
             "example": "The scientist used a blender to help make a vaccine.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-4",
@@ -181,11 +196,16 @@
             "word": "power outage",
             "arabicMeaning": "انقطاع التيار الكهربائي",
             "example": "We had a power outage at school yesterday.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-5",
@@ -194,7 +214,12 @@
             "arabicMeaning": "عمود خدش",
             "example": "A cat needs a scratch post to sharpen its claws.",
             "origin": "source",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -217,11 +242,22 @@
             ],
             "correctAnswer": "appliances",
             "reason": "Refrigerators, blenders, and toasters are electrical appliances used in the home.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-q2",
@@ -235,11 +271,22 @@
             ],
             "correctAnswer": "vaccine",
             "reason": "A vaccine is a medical treatment designed to protect people from getting sick.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-vocab-q3",
@@ -253,11 +300,22 @@
             ],
             "correctAnswer": "outage",
             "reason": "A power outage occurs when the supply of electricity unexpectedly stops.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -271,11 +329,16 @@
             "rule": "First Conditional (If + Present Simple, Subject + will / can / may + infinitive)",
             "explanation": "We use the first conditional to talk about possible future situations and their probable results.",
             "example": "If it is hot tomorrow, I will make a smoothie.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-gram-2",
@@ -283,11 +346,16 @@
             "rule": "Phrasal Verbs (Verb + Preposition)",
             "explanation": "A phrasal verb combines a verb with a preposition to create a specific meaning, such as organizing or cleaning.",
             "example": "Can you help me tidy up my bedroom?",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -307,11 +375,22 @@
             ],
             "correctAnswer": "is",
             "reason": "In the first conditional, the if-clause uses the present simple tense (is).",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-gram-q2",
@@ -325,11 +404,22 @@
             ],
             "correctAnswer": "won't",
             "reason": "The main result clause in the first conditional uses will/won't followed by an infinitive verb.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-gram-q3",
@@ -343,11 +433,22 @@
             ],
             "correctAnswer": "up",
             "reason": "The phrasal verb 'pick up' means to lift or gather things from a surface.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -359,11 +460,14 @@
           "itemId": "unit2-read-1",
           "content": {
             "passage": "We moved into a new apartment a month ago, and I'm so happy because I have a new bedroom! I love my new room. It's a very light and comfortable room. I share it with my brother, Maged, and we're good friends. We have a long desk for our PCs so we can do our homework in our bedroom. That's much better than doing it in the living room! There's too much noise there from our little sister and the TV!",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-read-q1",
@@ -377,11 +481,22 @@
             ],
             "correctAnswer": "There is too much noise in the living room",
             "reason": "Seleem mentions that the living room has too much noise from his sister and the TV.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -393,11 +508,14 @@
           "itemId": "unit2-list-1",
           "content": {
             "script": "Mom: Hi Mariam, how was your day?\nMariam: Oh, hi Mom! It was a strange day, actually. We had a power outage! My class and I were looking at the interactive whiteboard, when suddenly all the information disappeared.\nMom: Really? That is strange! What did Miss Amira do?\nMariam: Well, first she got an extension cable and tried a different power socket, but that wasn't working either.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-list-q1",
@@ -411,11 +529,22 @@
             ],
             "correctAnswer": "There was a power outage",
             "reason": "Mariam reports that a power outage caused all information on the whiteboard to disappear.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -448,11 +577,19 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -478,7 +615,20 @@
             "correctAnswer": "Blender",
             "reason": "A blender features a spinning blade inside a tall cup to chop food and make drinks.",
             "origin": "supplementary",
-            "sourcePdfPage": 52
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -501,7 +651,20 @@
             "correctAnswer": "may",
             "reason": "We use 'may' in the first conditional clause to show uncertainty about a future outcome.",
             "origin": "supplementary",
-            "sourcePdfPage": 56
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -524,11 +687,22 @@
             ],
             "correctAnswer": "appliances",
             "reason": "An appliance is a useful device or machine used in homes.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q2",
@@ -542,11 +716,22 @@
             ],
             "correctAnswer": "blade",
             "reason": "The inventor placed a sharp blade at the bottom to chop and blend food.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q3",
@@ -560,11 +745,22 @@
             ],
             "correctAnswer": "will stay",
             "reason": "In the first conditional, the result clause takes 'will' + base form of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q4",
@@ -578,11 +774,22 @@
             ],
             "correctAnswer": "vaccine",
             "reason": "Dr. Jonas Salk utilized a blender to manufacture a polio vaccine that saved millions of lives.",
-            "origin": "source",
-            "sourcePdfPage": 55
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q5",
@@ -596,11 +803,22 @@
             ],
             "correctAnswer": "studies",
             "reason": "The if-clause requires the present simple form 'studies' for singular subject 'he'.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q6",
@@ -614,11 +832,22 @@
             ],
             "correctAnswer": "A power outage",
             "reason": "A power outage occurred, making the interactive whiteboard screen go black.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q7",
@@ -632,11 +861,22 @@
             ],
             "correctAnswer": "away",
             "reason": "The phrasal verb 'put away' means returning items to their proper place.",
-            "origin": "source",
-            "sourcePdfPage": 75
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q8",
@@ -650,11 +890,22 @@
             ],
             "correctAnswer": "scratch post",
             "reason": "A scratch post provides a rough wooden surface for cats to keep claws sharp.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q9",
@@ -668,11 +919,22 @@
             ],
             "correctAnswer": "won't",
             "reason": "Negative future prediction in the first conditional main clause uses 'won't'.",
-            "origin": "source",
-            "sourcePdfPage": 56
+            "origin": "supplementary",
+            "sourcePdfPage": 56,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "unit2-test-q10",
@@ -686,13 +948,35 @@
             ],
             "correctAnswer": "dust",
             "reason": "To dust plant leaves means removing dry dirt or residue carefully with a cloth or brush.",
-            "origin": "source",
-            "sourcePdfPage": 73
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.457Z",
+    "itemsAudited": 30,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 21,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 27
+  }
 }

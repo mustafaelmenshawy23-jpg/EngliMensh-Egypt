@@ -75,8 +75,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 28,
-      "supplementaryItems": 2,
+      "sourceItems": 3,
+      "supplementaryItems": 27,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -143,11 +143,16 @@
             "word": "natural resources",
             "arabicMeaning": "مواد طبيعية",
             "example": "Natural resources are raw materials that we get from nature.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -155,11 +160,16 @@
             "word": "dinosaur",
             "arabicMeaning": "ديناصور",
             "example": "Dinosaurs died out millions of years ago.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -167,11 +177,16 @@
             "word": "solar energy",
             "arabicMeaning": "طاقة شمسية",
             "example": "The sun gives us solar energy to make electricity.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -179,11 +194,16 @@
             "word": "renewable",
             "arabicMeaning": "متجدد",
             "example": "Solar energy is a renewable resource.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -192,7 +212,12 @@
             "arabicMeaning": "نبات الكتان",
             "example": "People used flax to make linen for clothes.",
             "origin": "source",
-            "sourcePdfPage": 100
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -215,11 +240,22 @@
             ],
             "correctAnswer": "fossil",
             "reason": "Fossil fuels are non-renewable energy sources formed from organic matter over millions of years.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -233,11 +269,22 @@
             ],
             "correctAnswer": "archaeologist",
             "reason": "Archaeologists study ancient human history and remains.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -251,11 +298,22 @@
             ],
             "correctAnswer": "odor",
             "reason": "Odor refers specifically to the smell of a substance.",
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -269,11 +327,16 @@
             "rule": "Second Conditional (If + Past Simple, would + infinitive)",
             "explanation": "Used to describe imaginary, hypothetical, or unlikely situations in the present or future.",
             "example": "If I found dinosaur bones, I would call the museum.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -281,11 +344,16 @@
             "rule": "Reported Speech for Statements",
             "explanation": "When reporting what someone said in the past, change present tense verbs to past tense forms and adjust pronouns.",
             "example": "Omar said that he liked reading comics.",
-            "origin": "source",
-            "sourcePdfPage": 115
+            "origin": "supplementary",
+            "sourcePdfPage": 115,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -305,11 +373,22 @@
             ],
             "correctAnswer": "would be",
             "reason": "The second conditional uses past simple in the if-clause and 'would + infinitive' in the main clause.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -323,11 +402,22 @@
             ],
             "correctAnswer": "was",
             "reason": "In the second conditional if-clause, the verb is in the past simple tense.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -341,11 +431,22 @@
             ],
             "correctAnswer": "worked",
             "reason": "In reported speech with a past reporting verb ('said'), present simple verbs change to past simple.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -357,11 +458,14 @@
           "itemId": "read_passage_1",
           "content": {
             "passage": "Natural resources are raw materials that we get from nature. We use natural resources to make the things we need. For example, we use wood to make tables, stone to build houses, and plants for food. The sun is a natural resource because it gives us solar energy to make electricity. Some natural resources like solar energy are renewable - this means that we can get more of the resource naturally after we use it. But some natural resources are non-renewable.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -375,11 +479,22 @@
             ],
             "correctAnswer": "Because we can get more of it naturally after we use it.",
             "reason": "Renewable energy means that the resource can be naturally replenished after use.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -392,7 +507,10 @@
           "content": {
             "script": "In science class today, our teacher put some water in a pan. She heated the water until it boiled. Some of the water turned to steam. Then we poured the water into a container, and put it in a freezer. The water froze and turned to ice.",
             "origin": "source",
-            "sourcePdfPage": 94
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "script": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -409,11 +527,22 @@
             ],
             "correctAnswer": "It turns into steam which is a gas.",
             "reason": "Boiling liquid water causes it to change state into steam, which is a gas.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -442,7 +571,14 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -471,7 +607,20 @@
             "correctAnswer": "Flax",
             "reason": "Flax was processed in Ancient Egypt to make linen fabric for clothing.",
             "origin": "supplementary",
-            "sourcePdfPage": 103
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -494,7 +643,20 @@
             "correctAnswer": "would take",
             "reason": "The second conditional uses 'would + base verb' in the result clause.",
             "origin": "supplementary",
-            "sourcePdfPage": 96
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -517,11 +679,22 @@
             ],
             "correctAnswer": "fossil fuels",
             "reason": "Coal and gas are fossil fuels extracted from the earth.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -535,11 +708,22 @@
             ],
             "correctAnswer": "Texture",
             "reason": "Texture describes how something feels when touched.",
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -553,11 +737,22 @@
             ],
             "correctAnswer": "detergent",
             "reason": "Dish detergent is the liquid cleanser used for washing dishes.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -571,11 +766,22 @@
             ],
             "correctAnswer": "will",
             "reason": "First conditional uses present simple after 'if' and 'will + verb' in the main clause for probable future actions.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -589,11 +795,22 @@
             ],
             "correctAnswer": "were",
             "reason": "'If I were you' is a standard second conditional structure for giving advice.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -607,11 +824,22 @@
             ],
             "correctAnswer": "liked",
             "reason": "In reported speech with past tense reporting verbs, present simple changes to past simple.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -625,11 +853,22 @@
             ],
             "correctAnswer": "was",
             "reason": "'Is going to' changes to 'was going to' in indirect reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -643,11 +882,22 @@
             ],
             "correctAnswer": "salt",
             "reason": "Salt was an important resource in Ancient Egypt used for food preservation and medicine.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -661,11 +911,22 @@
             ],
             "correctAnswer": "tunnel",
             "reason": "The text states that water travels from the oasis to the lake through an underground tunnel.",
-            "origin": "source",
-            "sourcePdfPage": 113
+            "origin": "supplementary",
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -679,13 +940,35 @@
             ],
             "correctAnswer": "freezes into solid ice",
             "reason": "Freezing liquid water changes its state to solid ice.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.203Z",
+    "itemsAudited": 30,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 3,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 21,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 25
+  }
 }

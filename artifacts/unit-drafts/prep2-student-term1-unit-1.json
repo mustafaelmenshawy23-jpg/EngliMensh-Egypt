@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 23,
-      "supplementaryItems": 6,
+      "sourceItems": 1,
+      "supplementaryItems": 28,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -116,11 +116,16 @@
             "word": "digital natives",
             "arabicMeaning": "الأشخاص الذين نشأوا في عصر التكنولوجيا",
             "example": "Gen Alpha are digital natives because they learn to use technology before they can read.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -128,11 +133,16 @@
             "word": "screen time",
             "arabicMeaning": "وقت الشاشة",
             "example": "Parents are trying to limit screen time for their children.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -140,11 +150,16 @@
             "word": "emojis",
             "arabicMeaning": "رموز تعبيرية",
             "example": "They send emojis instead of words to show feelings.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -152,11 +167,16 @@
             "word": "balance",
             "arabicMeaning": "توازن",
             "example": "It is important to find a balance between online activities and real-life connections.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -164,11 +184,16 @@
             "word": "curious",
             "arabicMeaning": "فضولي",
             "example": "Amal was a curious girl who loved to build things.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -188,11 +213,22 @@
             ],
             "correctAnswer": "emojis",
             "reason": "Emojis are small digital images or icons used to express feelings in digital messages.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -206,11 +242,22 @@
             ],
             "correctAnswer": "natives",
             "reason": "Digital natives refers to individuals who have grown up surrounded by digital technology.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -224,11 +271,22 @@
             ],
             "correctAnswer": "balance",
             "reason": "Balance means a situation where different things are given equal or proper attention.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -242,11 +300,16 @@
             "rule": "Present Continuous for Current Actions and Future Arrangements",
             "explanation": "We use the Present Continuous (am/is/are + verb + -ing) to talk about actions happening right now, temporary actions, or future arranged plans.",
             "example": "He is writing his posts in English now.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -266,11 +329,22 @@
             ],
             "correctAnswer": "are flying",
             "reason": "The key word 'Look!' indicates an action happening right now, so we use 'are flying' for plural subject 'birds'.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -284,11 +358,22 @@
             ],
             "correctAnswer": "is using",
             "reason": "The phrase 'Right now' signals the present continuous tense (is using).",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -302,11 +387,22 @@
             ],
             "correctAnswer": "are traveling",
             "reason": "Present continuous is used for future arrangements that have been planned and confirmed.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -319,7 +415,10 @@
           "content": {
             "passage": "Do you know that you are one of Gen Alpha, who were born from around 2010 to the mid-2020s? Today’s young generation, Gen Alpha, is changing the way we live and communicate. They are digital natives, because they learn to use technology before they can read, and they usually spend a lot of time online, exploring the latest trends. They like creating short videos to show their hobbies or opinions. At the moment, many Gen Alpha children are using social media to learn about the world and to connect with others. They are constantly discovering new trends that quickly spread across their digital communities. For example, they share memes and sometimes send emojis instead of words because they like showing emotions in a creative, fun way. Teachers and parents often wonder how this generation will grow up with so much technology around them. Right now, many parents are trying to limit screen time while also encouraging useful digital skills. Gen Alpha rarely spends a day without using technology, but they are also learning to balance online activities with real-life connections. This generation represents a powerful trend that is shaping the future. Gen Alpha always looks for new ways to express themselves and likes using digital tools to create their identity in the modern world.",
             "origin": "source",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -336,11 +435,22 @@
             ],
             "correctAnswer": "Because they learn to use technology before they can read.",
             "reason": "The text explicitly states they are called digital natives because they learn to use technology before reading.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -353,7 +463,10 @@
           "content": {
             "script": "Welcome to our podcast about Gen Alpha. Gen Alpha children were born from 2010 onwards. Many of them learn to use digital devices before they even learn to read. Parents today are trying to limit screen time and encourage healthy digital habits. Screen time isn't all bad, but it is essential for Gen Alpha to balance online activities with real-life connections.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -371,7 +484,18 @@
             "correctAnswer": "Screen time",
             "reason": "The listening audio highlights that parents are working to limit screen time for their children.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -407,11 +531,19 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -437,7 +569,20 @@
             "correctAnswer": "emojis",
             "reason": "Emojis are small icons used in digital messages to represent emotions.",
             "origin": "supplementary",
-            "sourcePdfPage": 16
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -460,7 +605,20 @@
             "correctAnswer": "are singing",
             "reason": "With 'Listen!' and plural 'children', use 'are singing' for present continuous.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -483,11 +641,22 @@
             ],
             "correctAnswer": "mid-2020s",
             "reason": "According to the unit text, Gen Alpha refers to children born from 2010 to the mid-2020s.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q2",
@@ -501,11 +670,22 @@
             ],
             "correctAnswer": "screen time",
             "reason": "Screen time is defined as the amount of time spent looking at a screen.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q3",
@@ -519,11 +699,22 @@
             ],
             "correctAnswer": "is volunteering",
             "reason": "'At the moment' requires the Present Continuous tense (is volunteering).",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q4",
@@ -538,7 +729,18 @@
             "correctAnswer": "puts",
             "reason": "Describing a regular personal habit uses present simple (puts).",
             "origin": "supplementary",
-            "sourcePdfPage": 23
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -555,11 +757,22 @@
             ],
             "correctAnswer": "permission",
             "reason": "Amal practiced digital safety by asking for permission before downloading files.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q6",
@@ -573,11 +786,22 @@
             ],
             "correctAnswer": "2012",
             "reason": "The passage 'The Gen Z-Alpha Bridge' states Gen Z includes people born between 1997 and 2012.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q7",
@@ -591,11 +815,22 @@
             ],
             "correctAnswer": "passionate",
             "reason": "'Passionate' describes having a very strong feeling or excitement about something.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q8",
@@ -610,7 +845,18 @@
             "correctAnswer": "are finishing",
             "reason": "'Look!' signals present continuous, and plural subject 'students' takes 'are finishing'.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -627,11 +873,22 @@
             ],
             "correctAnswer": "That's true, but in my opinion...",
             "reason": "Unit 1 Real Talk tip suggests using polite phrases like 'That's true, but in my opinion...' to express opinions respectfully.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_q10",
@@ -645,13 +902,35 @@
             ],
             "correctAnswer": "am visiting",
             "reason": "Arranged future plans use the present continuous tense (am visiting).",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.170Z",
+    "itemsAudited": 29,
+    "sourceClaims": 23,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 22,
+    "citationWarnings": 16,
+    "itemsWithSourceSubfields": 25,
+    "reclassifiedToSupplementary": 22
+  }
 }

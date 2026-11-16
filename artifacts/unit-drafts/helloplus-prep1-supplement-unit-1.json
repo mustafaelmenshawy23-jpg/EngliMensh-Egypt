@@ -74,8 +74,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 27,
-      "supplementaryItems": 2,
+      "sourceItems": 0,
+      "supplementaryItems": 29,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -142,11 +142,16 @@
             "word": "honest",
             "arabicMeaning": "أمين",
             "example": "He is an honest person who always tells the truth.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -154,11 +159,16 @@
             "word": "buddy",
             "arabicMeaning": "صديق",
             "example": "A welcome buddy helps a new student find their way around the school.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -166,11 +176,16 @@
             "word": "wheelchair",
             "arabicMeaning": "كرسي متحرك",
             "example": "Sara uses a wheelchair because she cannot walk after the accident.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -178,11 +193,16 @@
             "word": "timetable",
             "arabicMeaning": "جدول مواعيد",
             "example": "We have seven lessons on our school timetable every day.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -202,11 +222,22 @@
             ],
             "correctAnswer": "honest",
             "reason": "By definition, an honest person is someone who tells the truth.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_2",
@@ -220,11 +251,22 @@
             ],
             "correctAnswer": "buddy",
             "reason": "A buddy is a friendly student helper assigned to assist new students.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_3",
@@ -238,11 +280,22 @@
             ],
             "correctAnswer": "wheelchair",
             "reason": "A wheelchair is a mobility device for people unable to walk.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -256,11 +309,16 @@
             "rule": "Simple Present Tense",
             "explanation": "Used to express habits, facts, and routines. Singular subjects take verb + s/es, while plural subjects take the base verb form.",
             "example": "She watches TV every night.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -268,11 +326,16 @@
             "rule": "Simple Past Tense",
             "explanation": "Used to describe completed actions in the past. Regular verbs add -ed, while irregular verbs take their second form.",
             "example": "We moved to a new flat last month.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -292,11 +355,22 @@
             ],
             "correctAnswer": "bought",
             "reason": "The word 'yesterday' indicates the simple past tense form 'bought'.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_2",
@@ -310,11 +384,22 @@
             ],
             "correctAnswer": "goes",
             "reason": "Singular subject 'She' with repeated routine 'twice a week' requires 'goes' in simple present.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_3",
@@ -328,11 +413,22 @@
             ],
             "correctAnswer": "do",
             "reason": "Simple present question with subject 'you' uses auxiliary verb 'do'.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -344,11 +440,14 @@
           "itemId": "read_passage_1",
           "content": {
             "passage": "My friend Sara is one of the most thoughtful people I know. She loves helping others and often spends her weekends volunteering at different places. Sara is also very friendly and enjoys making new friends. In her free time, she loves to read books, especially mysteries. Every Saturday, we play basketball together. Sara is also responsible and always helps her family at home. Sara was in a car accident and now she can't walk. She uses a wheelchair, but it doesn't stop her from having fun. She's interested in everything and she often wants to try new things.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q_1",
@@ -362,11 +461,22 @@
             ],
             "correctAnswer": "Because she was in a car accident and cannot walk.",
             "reason": "The passage clearly states that Sara was in a car accident and now cannot walk.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -378,11 +488,14 @@
           "itemId": "list_script_1",
           "content": {
             "script": "Tom: Hi, Harry. What do you do in your free time?\nHarry: I play board games like chess. I enjoy playing board games very much.\nTom: How often do you play chess?\nHarry: I play chess three times a week.\nTom: Where do you play chess? Do you play chess at the school club?\nHarry: Yes, I do. I play with other students in Grade 7.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q_1",
@@ -396,11 +509,22 @@
             ],
             "correctAnswer": "Three times a week",
             "reason": "In the dialogue script, Harry states that he plays chess three times a week.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -433,11 +557,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -463,7 +595,20 @@
             "correctAnswer": "clever",
             "reason": "A clever person can understand things easily and quickly.",
             "origin": "supplementary",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -486,7 +631,20 @@
             "correctAnswer": "visited",
             "reason": "'Last Saturday' requires the simple past tense verb 'visited'.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -509,11 +667,22 @@
             ],
             "correctAnswer": "honest",
             "reason": "An honest person is truthful and tells what they really think.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_2",
@@ -527,11 +696,22 @@
             ],
             "correctAnswer": "timetable",
             "reason": "A timetable lists the daily schedule of school lessons.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_3",
@@ -545,11 +725,22 @@
             ],
             "correctAnswer": "careful",
             "reason": "Careful people think carefully before taking risks.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_4",
@@ -563,11 +754,22 @@
             ],
             "correctAnswer": "didn't",
             "reason": "The short negative answer to a question starting with 'Did you' is 'No, I didn't.'",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_5",
@@ -581,11 +783,22 @@
             ],
             "correctAnswer": "sleeps",
             "reason": "Present simple third-person singular 'Basel' takes 'sleeps'.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_6",
@@ -599,11 +812,22 @@
             ],
             "correctAnswer": "buy",
             "reason": "The auxiliary verb 'did' in past simple questions requires the base form of the main verb.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_7",
@@ -617,11 +841,22 @@
             ],
             "correctAnswer": "friendly",
             "reason": "'Kind' and 'friendly' have similar positive meanings.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_8",
@@ -635,11 +870,22 @@
             ],
             "correctAnswer": "uses a wheelchair but still has fun and helps others",
             "reason": "Sara shows resilience, optimism, and kindness despite her physical challenge.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_9",
@@ -653,11 +899,22 @@
             ],
             "correctAnswer": "falconry",
             "reason": "Falconry is defined as training birds of prey to hunt small animals.",
-            "origin": "source",
-            "sourcePdfPage": 41
+            "origin": "supplementary",
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_10",
@@ -671,13 +928,35 @@
             ],
             "correctAnswer": "played",
             "reason": "When combining two sequential past actions, simple past 'played' is used.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.771Z",
+    "itemsAudited": 29,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 16,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 27
+  }
 }

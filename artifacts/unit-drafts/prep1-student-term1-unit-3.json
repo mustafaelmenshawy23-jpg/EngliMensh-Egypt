@@ -52,8 +52,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 25,
-      "supplementaryItems": 4,
+      "sourceItems": 1,
+      "supplementaryItems": 28,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -120,11 +120,16 @@
             "word": "hero",
             "arabicMeaning": "بطل",
             "example": "Dr. Samira Moussa was a true hero who helped her community.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -132,11 +137,16 @@
             "word": "determined",
             "arabicMeaning": "عازم / مصمم",
             "example": "She was determined to study physics and succeed.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -144,11 +154,16 @@
             "word": "achievement",
             "arabicMeaning": "إنجاز",
             "example": "Winning the science prize was a great achievement for him.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -156,11 +171,16 @@
             "word": "role model",
             "arabicMeaning": "قدوة",
             "example": "My teacher is my role model because she works hard.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -168,11 +188,16 @@
             "word": "inspire",
             "arabicMeaning": "يلهم",
             "example": "Her dedication inspires young girls to follow their dreams.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -192,11 +217,22 @@
             ],
             "correctAnswer": "hero",
             "reason": "According to the unit text, a hero is a person who performs noble actions and helps their community.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -210,11 +246,22 @@
             ],
             "correctAnswer": "determined",
             "reason": "The unit defines 'determined' as not giving up easily and continuing to work toward a goal.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -228,11 +275,22 @@
             ],
             "correctAnswer": "achievement",
             "reason": "An achievement is a success in reaching a goal through hard work.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -246,11 +304,16 @@
             "rule": "Past Simple Tense",
             "explanation": "We use the past simple tense to talk about actions that started and completed in the past. Regular verbs add '-ed', while irregular verbs change their form.",
             "example": "Dr. Samira Moussa showed a great love for science from a young age.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -270,11 +333,22 @@
             ],
             "correctAnswer": "was",
             "reason": "We use 'was' with singular subjects (he/she/it/Dr. Samira Moussa) in the past simple tense.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-2",
@@ -288,11 +362,22 @@
             ],
             "correctAnswer": "moved",
             "reason": "The time expression 'three years ago' requires the past simple form 'moved'.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-3",
@@ -306,11 +391,22 @@
             ],
             "correctAnswer": "did",
             "reason": "'Did' is the auxiliary verb used to form questions in the past simple tense.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -323,7 +419,10 @@
           "content": {
             "passage": "Dr. Samira Moussa was a true hero who continues to inspire people today. She was born in Egypt in 1917 and showed a great love for science from a young age. She was determined to study physics and became one of the first Egyptian women to get a PhD in Atomic Radiation. Samira was kind and always wanted to help her community. She believed that science should be used for peace and to improve people’s lives. She often said, “My wish for cancer treatment is to be as cheap as aspirin.” She worked hard in research and taught students at Cairo University. She traveled to the United States to continue her research and to share knowledge with other scientists. Her achievement in science and her moving spirit made her a symbol of hope for many Egyptian girls. Sadly, she died in a car accident in 1952, but her work still inspires scientists around the world. Dr. Samira Moussa’s story teaches us to be brave, caring, and determined in helping our community.",
             "origin": "source",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -340,11 +439,22 @@
             ],
             "correctAnswer": "Her achievements in science and moving spirit inspired them.",
             "reason": "The reading passage explicitly states that her achievement in science and her moving spirit made her a symbol of hope.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -357,7 +467,10 @@
           "content": {
             "script": "Noha: My role model is my mother. She works hard every day as a nurse and helps many patients in our community. She never gives up when things are difficult. She always shows kindness and respect to everyone. I admire her dedication and hope to be as brave and caring as she is when I grow up.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -375,7 +488,18 @@
             "correctAnswer": "She works hard as a nurse and helps patients in the community.",
             "reason": "The listening text mentions that Noha admires her mother for working hard as a nurse and helping people in her community.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -411,11 +535,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -441,7 +573,20 @@
             "correctAnswer": "role model",
             "reason": "A role model is someone you look up to and wish to imitate.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -464,7 +609,20 @@
             "correctAnswer": "got",
             "reason": "The word 'yesterday' signals the past simple tense, so the irregular past form 'got' is required.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -487,11 +645,22 @@
             ],
             "correctAnswer": "Atomic Radiation",
             "reason": "The biography on page 43 highlights her PhD in Atomic Radiation.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -505,11 +674,22 @@
             ],
             "correctAnswer": "kind",
             "reason": "Page 44 matches 'kind' with 'friendly and caring'.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -523,11 +703,22 @@
             ],
             "correctAnswer": "-ful",
             "reason": "Adding '-ful' to 'power' creates the adjective 'powerful' as shown in the word-building section.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -541,11 +732,22 @@
             ],
             "correctAnswer": "The Personality of Egypt",
             "reason": "Page 47 states that Dr. Gamal Hemdan wrote 'The Personality of Egypt'.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-5",
@@ -559,11 +761,22 @@
             ],
             "correctAnswer": "incorrect",
             "reason": "Adding the prefix 'in-' to 'correct' forms 'incorrect', which means not correct.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -577,11 +790,22 @@
             ],
             "correctAnswer": "spent",
             "reason": "'Yesterday' requires the past simple form of the verb 'spend', which is 'spent'.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -595,11 +819,22 @@
             ],
             "correctAnswer": "listing items in a series",
             "reason": "The punctuation tip on page 52 notes that commas are used when listing items.",
-            "origin": "source",
-            "sourcePdfPage": 52
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -613,11 +848,22 @@
             ],
             "correctAnswer": "Responsibility, curiosity, teamwork, and respect",
             "reason": "The magical book in story time displayed values like responsibility, curiosity, teamwork, and respect.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -631,11 +877,22 @@
             ],
             "correctAnswer": "kidney diseases",
             "reason": "Page 51 states Dr. Mohamed Ghoniem developed new methods for treating kidney diseases.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -649,13 +906,35 @@
             ],
             "correctAnswer": "17",
             "reason": "The reading passage on page 54 specifies that Malak went to the Olympics at age 17.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.669Z",
+    "itemsAudited": 29,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 24
+  }
 }

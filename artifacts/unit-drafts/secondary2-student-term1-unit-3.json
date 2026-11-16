@@ -52,8 +52,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 21,
-      "supplementaryItems": 10,
+      "sourceItems": 0,
+      "supplementaryItems": 31,
       "vocabularyCount": 7,
       "questionsCount": 16
     },
@@ -120,11 +120,16 @@
             "word": "sustainable",
             "arabicMeaning": "مستدام",
             "example": "We need sustainable development to protect natural resources for future generations.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -132,11 +137,16 @@
             "word": "vision",
             "arabicMeaning": "رؤية",
             "example": "Egypt Vision 2030 is a long-term plan for comprehensive national progress.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -144,11 +154,16 @@
             "word": "comprehensive",
             "arabicMeaning": "شامل",
             "example": "The strategy presents a comprehensive plan for economic and social development.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -156,11 +171,16 @@
             "word": "pillars",
             "arabicMeaning": "أركان / ركائز",
             "example": "The strategy focuses on three main pillars: economy, society, and environment.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -168,11 +188,16 @@
             "word": "affordable",
             "arabicMeaning": "ميسور التكلفة",
             "example": "The initiative aims to provide quality and affordable healthcare for all citizens.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -180,11 +205,16 @@
             "word": "cornerstone",
             "arabicMeaning": "حجر الزاوية",
             "example": "Education is a cornerstone of national development and citizen empowerment.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_7",
@@ -192,11 +222,16 @@
             "word": "illiteracy",
             "arabicMeaning": "الأمية",
             "example": "Educational reforms aim at reducing illiteracy across all regions.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -216,11 +251,22 @@
             ],
             "correctAnswer": "To build prosperity through growth and fairness",
             "reason": "The passage specifies that Egypt Vision 2030 aims to build prosperity through economic growth and social fairness.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -234,11 +280,22 @@
             ],
             "correctAnswer": "Civil society, government, and partners",
             "reason": "The text states that civil society, government agencies, and local and international partners worked together to design the strategy.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -252,11 +309,22 @@
             ],
             "correctAnswer": "Economy, society, and environment",
             "reason": "The passage explicitly lists the economy, society, and the environment as the three main pillars of SDS.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -270,11 +338,16 @@
             "rule": "Adjectives vs. Adverbs Usage",
             "explanation": "Adjectives describe or give more information about nouns (people, places, things). Adverbs describe or give more information about verbs, adjectives, or other adverbs, answering questions such as How, When, Where, and To what extent.",
             "example": "Adjective: She has a unique personality. Adverb: He speaks clearly.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -294,11 +367,22 @@
             ],
             "correctAnswer": "fluent",
             "reason": "The word 'fluent' acts as an adjective describing the noun 'English'.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -312,11 +396,22 @@
             ],
             "correctAnswer": "quickly",
             "reason": "The adverb 'quickly' is used to modify the verb 'ran'.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -330,11 +425,22 @@
             ],
             "correctAnswer": "delicious",
             "reason": "Sense verbs like 'taste' take an adjective (delicious) to describe the subject rather than an adverb.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -346,11 +452,14 @@
           "itemId": "read_pass_1",
           "content": {
             "passage": "Sustainable Development Strategy (SDS) means a long-term plan that focuses on improving people’s lives in a fair and balanced way. It aims to grow the economy, support social justice, and protect the environment so that every person and future generations can enjoy a good quality of life. In Egypt, this vision is called Egypt Vision 2030. Egypt Vision 2030 is a step towards comprehensive national development. Its goal is to build prosperity through economic growth, social fairness, and stronger regional leadership. SDS acts as a roadmap to help Egypt make the most of its strengths and face the hopes of its people for a better life. The strategy depends on the participation of all classes, which means that civil society, government agencies, and local and international partners all worked together to design the plan. Because of Egypt’s unique position in the region and the world, the SDS gives the country an advantage in addressing global changes. The SDS follows the principle of sustainable development, which is about improving people’s quality of life while also protecting the rights of future generations. It focuses on three main pillars: the economy, society, and the environment. In addition, the SDS is built on the ideas of inclusive and balanced development. This means that every person should take part in development, benefit from it equally, and have fair opportunities. The strategy also aims to close gaps between regions, use resources wisely, and guarantee a better future for the next generation.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -364,11 +473,22 @@
             ],
             "correctAnswer": "A long-term plan focusing on improving lives fairly and sustainably",
             "reason": "The text defines SDS as a long-term plan that focuses on improving people's lives in a fair and balanced way while protecting future generations.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -381,7 +501,10 @@
           "content": {
             "script": "Welcome to today's presentation on healthcare reform in Egypt. Under Egypt Vision 2030, the government is committed to providing quality healthcare services to all citizens across the nation. A key pillar of this plan is the Universal Health Insurance System, designed to improve medical funding and service delivery. Additionally, national campaigns such as the '100 Million Healthy Lives' initiative have successfully screened millions of people for chronic diseases, ensuring early detection and better long-term treatment.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -398,11 +521,22 @@
             ],
             "correctAnswer": "Provide quality healthcare to all",
             "reason": "The listening audio and unit exercises highlight that Egypt Vision 2030 aims to provide quality healthcare to all citizens.",
-            "origin": "source",
-            "sourcePdfPage": 35
+            "origin": "supplementary",
+            "sourcePdfPage": 35,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -426,7 +560,13 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 33
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -455,7 +595,20 @@
             "correctAnswer": "Sustainable",
             "reason": "'Sustainable' means able to continue over time without causing long-term damage.",
             "origin": "supplementary",
-            "sourcePdfPage": 33
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -478,7 +631,20 @@
             "correctAnswer": "clearly",
             "reason": "An adverb ('clearly') is required to modify the action verb 'explained'.",
             "origin": "supplementary",
-            "sourcePdfPage": 36
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -502,7 +668,18 @@
             "correctAnswer": "An important support or core part of a system",
             "reason": "In strategy contexts, 'pillars' refer to the central supporting ideas or foundation.",
             "origin": "supplementary",
-            "sourcePdfPage": 33
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -520,7 +697,18 @@
             "correctAnswer": "Not too expensive and within budget",
             "reason": "'Affordable' means priced reasonably so that people can access it without financial hardship.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -538,7 +726,18 @@
             "correctAnswer": "To ensure citizens have essential reading and writing skills",
             "reason": "Reducing illiteracy ensures all citizens acquire basic reading and writing abilities for personal and national growth.",
             "origin": "supplementary",
-            "sourcePdfPage": 37
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -556,7 +755,18 @@
             "correctAnswer": "He ran quickly to catch the school bus.",
             "reason": "'Quickly' is an adverb of manner correctly modifying the verb 'ran'.",
             "origin": "supplementary",
-            "sourcePdfPage": 36
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -574,7 +784,18 @@
             "correctAnswer": "The fresh soup tastes delicious.",
             "reason": "Verbs of sense take adjectives ('delicious') to modify the subject.",
             "origin": "supplementary",
-            "sourcePdfPage": 36
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -592,7 +813,18 @@
             "correctAnswer": "fluently",
             "reason": "The adverb 'fluently' describes how she performs the verb 'speaks'.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -609,11 +841,22 @@
             ],
             "correctAnswer": "rote memorization",
             "reason": "The text states that curricula are redesigned to focus on creativity rather than rote memorization.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -627,11 +870,22 @@
             ],
             "correctAnswer": "100 Million Healthy Lives",
             "reason": "The '100 Million Healthy Lives' initiative specifically targets early detection and screening of diseases.",
-            "origin": "source",
-            "sourcePdfPage": 35
+            "origin": "supplementary",
+            "sourcePdfPage": 35,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -645,11 +899,22 @@
             ],
             "correctAnswer": "Near the Pyramids of Giza",
             "reason": "The blog text on page 39 notes that the museum is located near the Pyramids of Giza.",
-            "origin": "source",
-            "sourcePdfPage": 39
+            "origin": "supplementary",
+            "sourcePdfPage": 39,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -663,13 +928,35 @@
             ],
             "correctAnswer": "Increased",
             "reason": "In Review 1, 'boosted' is defined as synonymous with 'increased'.",
-            "origin": "source",
-            "sourcePdfPage": 41
+            "origin": "supplementary",
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.932Z",
+    "itemsAudited": 31,
+    "sourceClaims": 21,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 21,
+    "citationWarnings": 9,
+    "itemsWithSourceSubfields": 19,
+    "reclassifiedToSupplementary": 21
+  }
 }

@@ -73,8 +73,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 28,
-      "supplementaryItems": 3,
+      "sourceItems": 2,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -141,11 +141,16 @@
             "word": "boarding school",
             "arabicMeaning": "مدرسة داخلية",
             "example": "Some children in Northern Siberia go away to boarding school.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -154,7 +159,12 @@
             "arabicMeaning": "جدول مواعيد",
             "example": "The timetable is flexible at the nomadic school.",
             "origin": "source",
-            "sourcePdfPage": 94
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -165,11 +175,16 @@
             "word": "Eco-playground",
             "arabicMeaning": "ملعب صديق للبيئة",
             "example": "The climbing frame in the Eco-playground is made with recycled materials.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -177,11 +192,16 @@
             "word": "principal",
             "arabicMeaning": "مدير المدرسة",
             "example": "Parents watch a presentation made by the school principal.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -189,11 +209,16 @@
             "word": "scribe",
             "arabicMeaning": "كاتب",
             "example": "In Ancient Egypt, a scribe wrote about everything that happened in court.",
-            "origin": "source",
-            "sourcePdfPage": 112
+            "origin": "supplementary",
+            "sourcePdfPage": 112,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -213,11 +238,22 @@
             ],
             "correctAnswer": "timetable",
             "reason": "A timetable lists the specific times and subjects for school lessons.",
-            "origin": "source",
-            "sourcePdfPage": 95
+            "origin": "supplementary",
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -231,11 +267,22 @@
             ],
             "correctAnswer": "principal",
             "reason": "The principal is the administrative head or person in charge of a school.",
-            "origin": "source",
-            "sourcePdfPage": 104
+            "origin": "supplementary",
+            "sourcePdfPage": 104,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -249,11 +296,22 @@
             ],
             "correctAnswer": "Eco-playground",
             "reason": "An Eco-playground uses eco-friendly and recycled materials to protect nature.",
-            "origin": "source",
-            "sourcePdfPage": 104
+            "origin": "supplementary",
+            "sourcePdfPage": 104,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -267,11 +325,16 @@
             "rule": "Adverbs of Frequency (always, usually, often, sometimes, never)",
             "explanation": "We use adverbs of frequency with the present simple to show how often an action occurs. They come before main verbs but after verb to be.",
             "example": "She often walks to school, but he is never late.",
-            "origin": "source",
-            "sourcePdfPage": 99
+            "origin": "supplementary",
+            "sourcePdfPage": 99,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-2",
@@ -279,11 +342,16 @@
             "rule": "Expressing feelings with 'make me + adjective / verb'",
             "explanation": "We use make/makes + object + adjective or verb to describe how an activity or person makes someone feel.",
             "example": "Playing tennis makes me feel healthy and relaxed.",
-            "origin": "source",
-            "sourcePdfPage": 108
+            "origin": "supplementary",
+            "sourcePdfPage": 108,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-3",
@@ -291,11 +359,16 @@
             "rule": "Reported Speech (Statements)",
             "explanation": "To report what someone said, we use reporting verbs like said or told, and shift present or future tenses into the past tense.",
             "example": "Ali said that he liked reading.",
-            "origin": "source",
-            "sourcePdfPage": 119
+            "origin": "supplementary",
+            "sourcePdfPage": 119,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -315,11 +388,22 @@
             ],
             "correctAnswer": "always",
             "reason": "Since he never takes the bus, he always walks.",
-            "origin": "source",
-            "sourcePdfPage": 100
+            "origin": "supplementary",
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-2",
@@ -333,11 +417,22 @@
             ],
             "correctAnswer": "feel",
             "reason": "The structure 'make + object' is followed by a base verb or an adjective.",
-            "origin": "source",
-            "sourcePdfPage": 109
+            "origin": "supplementary",
+            "sourcePdfPage": 109,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-3",
@@ -351,11 +446,22 @@
             ],
             "correctAnswer": "had",
             "reason": "In reported speech, present perfect 'has collapsed' shifts back to past perfect 'had collapsed'.",
-            "origin": "source",
-            "sourcePdfPage": 120
+            "origin": "supplementary",
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -367,11 +473,14 @@
           "itemId": "read-passage-1",
           "content": {
             "passage": "In Egypt, some classes have their lessons in a garden on the roof of the school! The Shagara at School project designs gardens and green roofs for schools in Egypt. Green roofs are gardens on the top of a building. They bring nature into the city. They also clean and cool the air. That means that they are great for the environment. The project teaches students and teachers how to plant a roof garden. They learn about which plants grow well in the hot, dry weather.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read-q-1",
@@ -385,11 +494,22 @@
             ],
             "correctAnswer": "They clean and cool the air.",
             "reason": "The text explicitly states that green roofs clean and cool the air, making them great for the environment.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -402,7 +522,10 @@
           "content": {
             "script": "Hi, my name's Lilly, and I go to middle school in San Francisco, USA. I started school in Kindergarten when I was six. Now I'm eleven, and I'm in Grade 6. I like my school. In Kindergarten, we played a lot, and there were always lots of toys in the classroom. We do more writing now in Grade 6, and we do more interesting subjects, like ICT. I like using computers! We go to school from Monday to Friday. I don't have to wear a school uniform, but my clothes and shoes have to be neat.",
             "origin": "source",
-            "sourcePdfPage": 99
+            "sourcePdfPage": 99,
+            "fieldOrigins": {
+              "script": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -419,11 +542,22 @@
             ],
             "correctAnswer": "ICT",
             "reason": "Lilly mentions that she likes using computers in ICT.",
-            "origin": "source",
-            "sourcePdfPage": 99
+            "origin": "supplementary",
+            "sourcePdfPage": 99,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -461,11 +595,20 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -491,7 +634,20 @@
             "correctAnswer": "cafeteria",
             "reason": "A cafeteria is the dedicated dining area at school.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -514,7 +670,20 @@
             "correctAnswer": "would",
             "reason": "In reported speech, 'will' changes to 'would'.",
             "origin": "supplementary",
-            "sourcePdfPage": 120
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -537,11 +706,22 @@
             ],
             "correctAnswer": "tents",
             "reason": "Nomadic people travel on ice and snow and study in tents or mobile rooms on wheels.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -555,11 +735,22 @@
             ],
             "correctAnswer": "boarding school",
             "reason": "Boarding school is defined as a school where students live during term time.",
-            "origin": "source",
-            "sourcePdfPage": 95
+            "origin": "supplementary",
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -573,11 +764,22 @@
             ],
             "correctAnswer": "clean and cool the air",
             "reason": "Green roofs bring nature into cities and clean and cool the surrounding air.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -592,7 +794,18 @@
             "correctAnswer": "never",
             "reason": "Friday is a weekend day, so students never go to school on Friday.",
             "origin": "supplementary",
-            "sourcePdfPage": 100
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -609,11 +822,22 @@
             ],
             "correctAnswer": "feel",
             "reason": "The causative structure 'make + pronoun' takes the base verb 'feel'.",
-            "origin": "source",
-            "sourcePdfPage": 109
+            "origin": "supplementary",
+            "sourcePdfPage": 109,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -627,11 +851,22 @@
             ],
             "correctAnswer": "solar panels",
             "reason": "The Green Library gets its electricity from solar panels on the roof.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -645,11 +880,22 @@
             ],
             "correctAnswer": "liked",
             "reason": "Present simple 'like' shifts to past simple 'liked' in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 119
+            "origin": "supplementary",
+            "sourcePdfPage": 119,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -663,11 +909,22 @@
             ],
             "correctAnswer": "tablets",
             "reason": "Ancient Egyptian students used wooden tablets covered in plaster or wax for writing.",
-            "origin": "source",
-            "sourcePdfPage": 113
+            "origin": "supplementary",
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -681,11 +938,22 @@
             ],
             "correctAnswer": "herbs",
             "reason": "The doctor mixed herbs into a bottle of oil to put on the bite.",
-            "origin": "source",
-            "sourcePdfPage": 118
+            "origin": "supplementary",
+            "sourcePdfPage": 118,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -699,13 +967,35 @@
             ],
             "correctAnswer": "To sum up",
             "reason": "'To sum up' or 'In conclusion' introduces the summary paragraph in opinion writing.",
-            "origin": "source",
-            "sourcePdfPage": 120
+            "origin": "supplementary",
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.504Z",
+    "itemsAudited": 31,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 20,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 26
+  }
 }

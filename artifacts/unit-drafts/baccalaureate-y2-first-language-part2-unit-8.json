@@ -68,8 +68,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 25,
-      "supplementaryItems": 4,
+      "sourceItems": 2,
+      "supplementaryItems": 27,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -136,11 +136,16 @@
             "word": "vocational education",
             "arabicMeaning": "التعليم الفني والمهني",
             "example": "Vocational education equips young people with practical skills needed for specific careers.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vocab-2",
@@ -148,11 +153,16 @@
             "word": "economic development",
             "arabicMeaning": "التنمية الاقتصادية",
             "example": "Investing in modern industries supports national economic development and improves living standards.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vocab-3",
@@ -160,11 +170,16 @@
             "word": "hands-on experience",
             "arabicMeaning": "خبرة عملية تطبيقية",
             "example": "Students gain hands-on experience by practicing tasks in workshops and training centers.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vocab-4",
@@ -172,11 +187,16 @@
             "word": "cybersecurity",
             "arabicMeaning": "الأمن السيبراني",
             "example": "Cybersecurity professionals protect computer networks and digital systems from cyberattacks.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vocab-5",
@@ -184,11 +204,16 @@
             "word": "employability",
             "arabicMeaning": "القابلية للتوظيف",
             "example": "Developing problem-solving and teamwork skills greatly increases a graduate's employability.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -208,11 +233,22 @@
             ],
             "correctAnswer": "Cybersecurity",
             "reason": "Cybersecurity is defined as the study and practice of protecting digital systems and computer networks.",
-            "origin": "source",
-            "sourcePdfPage": 76
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vq-2",
@@ -226,11 +262,22 @@
             ],
             "correctAnswer": "Doing real practical tasks",
             "reason": "Hands-on experience means learning by doing practical, real-world tasks rather than studying theory alone.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-vq-3",
@@ -244,11 +291,22 @@
             ],
             "correctAnswer": "adaptable",
             "reason": "Being adaptable means having the ability to adjust effectively to new situations and changing work environments.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -262,11 +320,16 @@
             "rule": "The Present Continuous Tense for Current Trends and Changing Situations",
             "explanation": "We use the present continuous (am/is/are + verb-ing) to describe actions happening right now, temporary situations, and ongoing trends in the workplace or society.",
             "example": "Employers are looking for candidates with strong soft skills.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -286,11 +349,22 @@
             ],
             "correctAnswer": "Many companies are seeking flexible workers this year.",
             "reason": "The plural subject 'Many companies' takes the auxiliary verb 'are' followed by the verb ending in -ing ('seeking').",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-gq-2",
@@ -304,11 +378,22 @@
             ],
             "correctAnswer": "The students are learning new workplace skills.",
             "reason": "Plural subject 'The students' requires 'are' + present participle 'learning'.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-gq-3",
@@ -322,11 +407,22 @@
             ],
             "correctAnswer": "is preparing",
             "reason": "Singular subject 'Sara' uses 'is' + verb-ing ('preparing') to show an action happening right now.",
-            "origin": "source",
-            "sourcePdfPage": 78
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -339,7 +435,10 @@
           "content": {
             "passage": "Ahmed (Egypt): Hello, everyone! My name is Ahmed, and I am from Egypt. I'm studying at an agricultural vocational school. We learn about modern farming techniques, irrigation systems, crop production, and livestock care. I chose this field because agriculture is essential for Egypt's future. Our country is undertaking large-scale development projects in desert areas to expand agricultural land, increase food production, and raise livestock. Skilled agricultural workers are needed to support these projects. I enjoy the practical side of my studies because, as we say, practice makes perfect. You cannot become a successful farmer or agricultural technician through theory alone.",
             "origin": "source",
-            "sourcePdfPage": 73
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -356,11 +455,22 @@
             ],
             "correctAnswer": "Agriculture is vital for national land expansion and food production projects.",
             "reason": "Ahmed explains that agriculture is essential for Egypt's future as the country expands agricultural land and increases food production.",
-            "origin": "source",
-            "sourcePdfPage": 73
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -373,7 +483,10 @@
           "content": {
             "script": "Narrator: Modern employers look beyond academic certificates when hiring young professionals. In a recent workforce report, managers emphasized that technical qualifications get an applicant an interview, but soft skills such as adaptability, teamwork, and communication secure long-term career success. Educational institutions are responding by incorporating practical projects and collaborative tasks into daily lessons.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -391,7 +504,18 @@
             "correctAnswer": "They help employees succeed and collaborate effectively in the workplace.",
             "reason": "The script notes that while technical skills qualify applicants, soft skills enable them to collaborate and achieve long-term success.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -423,7 +547,14 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 73
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -452,7 +583,20 @@
             "correctAnswer": "vocational education",
             "reason": "Vocational education provides practical training specifically designed for careers and technical jobs.",
             "origin": "supplementary",
-            "sourcePdfPage": 71
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -475,7 +619,20 @@
             "correctAnswer": "are emphasizing",
             "reason": "Plural subject 'systems' takes 'are emphasizing' to show an ongoing educational trend.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -498,11 +655,22 @@
             ],
             "correctAnswer": "To equip students with practical skills for specific careers",
             "reason": "Vocational education centers on practical skills and career preparation.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-2",
@@ -516,11 +684,22 @@
             ],
             "correctAnswer": "Present continuous",
             "reason": "The verb form 'is changing' consists of 'is' + verb-ing, which forms the present continuous tense.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-3",
@@ -534,11 +713,22 @@
             ],
             "correctAnswer": "Cleaning Time (Soji)",
             "reason": "Cleaning Time (Soji) encourages students to clean shared school spaces, fostering teamwork and responsibility.",
-            "origin": "source",
-            "sourcePdfPage": 82
+            "origin": "supplementary",
+            "sourcePdfPage": 82,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-4",
@@ -552,11 +742,22 @@
             ],
             "correctAnswer": "Marine engineering",
             "reason": "Marine engineering focuses on ship mechanics, engines, and maritime technology.",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-5",
@@ -570,11 +771,22 @@
             ],
             "correctAnswer": "The ability to gain and maintain suitable employment",
             "reason": "Employability encompasses the skills, attributes, and knowledge that make a person qualified for jobs.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-6",
@@ -588,11 +800,22 @@
             ],
             "correctAnswer": "Employers aren't looking for candidates with poor soft skills.",
             "reason": "Plural subject 'Employers' requires 'aren't' + present participle 'looking'.",
-            "origin": "source",
-            "sourcePdfPage": 77
+            "origin": "supplementary",
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-7",
@@ -606,11 +829,22 @@
             ],
             "correctAnswer": "They take longer to develop than simple technical knowledge",
             "reason": "Core personal qualities and habits take time and practice to build compared to routine technical procedures.",
-            "origin": "source",
-            "sourcePdfPage": 81
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-8",
@@ -624,11 +858,22 @@
             ],
             "correctAnswer": "To work together to achieve a shared goal",
             "reason": "Collaborating means working co-operatively with others towards a common objective.",
-            "origin": "source",
-            "sourcePdfPage": 83
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-9",
@@ -642,11 +887,22 @@
             ],
             "correctAnswer": "Formal tone with objective language and clear evidence",
             "reason": "A recommendation report is a formal document requiring clear, objective suggestions supported by facts.",
-            "origin": "source",
-            "sourcePdfPage": 84
+            "origin": "supplementary",
+            "sourcePdfPage": 84,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u8-test-10",
@@ -660,13 +916,35 @@
             ],
             "correctAnswer": "To identify skills to improve and outline action steps",
             "reason": "A PDP helps individuals identify target skills and construct practical steps to achieve career growth.",
-            "origin": "source",
-            "sourcePdfPage": 89
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.482Z",
+    "itemsAudited": 29,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 23,
+    "citationWarnings": 18,
+    "itemsWithSourceSubfields": 16,
+    "reclassifiedToSupplementary": 23
+  }
 }

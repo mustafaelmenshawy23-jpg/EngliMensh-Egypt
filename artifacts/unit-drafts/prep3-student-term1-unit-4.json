@@ -47,8 +47,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 27,
-      "supplementaryItems": 4,
+      "sourceItems": 1,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -115,11 +115,16 @@
             "word": "screen time",
             "arabicMeaning": "وقت الشاشة",
             "example": "Screen time means the total time a person spends looking at screens.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -127,11 +132,16 @@
             "word": "entertainment",
             "arabicMeaning": "أنشطة ترفيهية",
             "example": "Young people should limit entertainment screen time to two hours daily.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -139,11 +149,16 @@
             "word": "expert",
             "arabicMeaning": "خبير",
             "example": "An expert is a person who knows a lot about a subject.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -151,11 +166,16 @@
             "word": "distraction",
             "arabicMeaning": "تشتيت الانتباه",
             "example": "Too much screen time can be a big distraction when studying.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -163,11 +183,16 @@
             "word": "eco-friendly",
             "arabicMeaning": "صديق للبيئة",
             "example": "The students used eco-friendly methods to grow vegetables in the garden.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-6",
@@ -175,11 +200,16 @@
             "word": "blame",
             "arabicMeaning": "يلوم",
             "example": "A good leader does not blame others when mistakes happen.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -199,11 +229,22 @@
             ],
             "correctAnswer": "eco-friendly",
             "reason": "Eco-friendly refers to practices that protect the natural environment.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q2",
@@ -217,11 +258,22 @@
             ],
             "correctAnswer": "distraction",
             "reason": "A distraction diverts focus away from the main task.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q3",
@@ -235,11 +287,22 @@
             ],
             "correctAnswer": "relaxed",
             "reason": "Relaxed means calm and free from stress.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -253,11 +316,16 @@
             "rule": "Modal Verbs for Obligation, Permission, Prohibition, and Advice",
             "explanation": "We use 'must' for obligation, 'can' and 'can't' for permission, 'mustn't' for prohibition, and 'should' / 'shouldn't' for advice.",
             "example": "You must follow safety rules, and you shouldn't spend too much time on screens.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-2",
@@ -265,11 +333,16 @@
             "rule": "Connectors of Contrast and Balance",
             "explanation": "We use 'While', 'Although', and 'Even though' to show contrast. We use 'On one hand' and 'On the other hand' to express balance.",
             "example": "Although he was tired, he finished his homework.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -289,11 +362,22 @@
             ],
             "correctAnswer": "mustn't",
             "reason": "We use 'mustn't' to express prohibition.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q2",
@@ -307,11 +391,22 @@
             ],
             "correctAnswer": "can",
             "reason": "We use 'can' to give permission.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q3",
@@ -325,11 +420,22 @@
             ],
             "correctAnswer": "Although",
             "reason": "'Although' introduces a clause of contrast.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -342,7 +448,10 @@
           "content": {
             "passage": "Screen time means the total time a person spends looking at screens. These screens can include phones, computers, tablets, or TVs. Today, almost everyone uses screens for many activities. Students use laptops for homework, teenagers scroll through social media, and families watch movies on the weekend. But not all screen time is the same. Some of it is useful, like doing schoolwork or learning a new skill online. Other screen time, such as watching videos or playing games for hours, may not be helpful. Experts say young people should not spend more than two hours a day on entertainment screen time. It’s important to balance screen use with physical activity, face-to-face time with friends, and rest. Spending too much time on screens can also affect your health physically and mentally. It causes tired eyes, headaches, and trouble sleeping. Moreover, it can also make it harder to focus and may make you stressed. So, to avoid these side effects, you should take short breaks during meals, before bedtime, and while doing your homework.",
             "origin": "source",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -359,11 +468,22 @@
             ],
             "correctAnswer": "Two hours",
             "reason": "The text explicitly states experts recommend not spending more than two hours a day on entertainment screen time.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -376,7 +496,10 @@
           "content": {
             "script": "Welcome to today's talk on Smart Habits for Egypt's Smart Future. Egypt is building modern smart cities and advanced transportation systems like the Monorail. To build a great future, young people need to build smart habits today. Using technology wisely helps us learn and innovate. However, spending too much screen time on games or social media causes distractions and makes us lose energy and focus. By staying focused and balancing technology with daily exercise, young people prepare to lead Egypt into a bright future.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -394,7 +517,18 @@
             "correctAnswer": "They lose energy and focus",
             "reason": "The listening script explains that excessive screen time causes distractions and loss of energy and focus.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -435,11 +569,20 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -465,7 +608,20 @@
             "correctAnswer": "should",
             "reason": "'Should' is used to offer helpful advice.",
             "origin": "supplementary",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -488,7 +644,20 @@
             "correctAnswer": "natural fertilizers",
             "reason": "Natural fertilizers feed plants organically without artificial chemicals.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -511,11 +680,22 @@
             ],
             "correctAnswer": "Total time a person spends looking at screens",
             "reason": "Screen time is defined as the total time spent using electronic screens.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-2",
@@ -529,11 +709,22 @@
             ],
             "correctAnswer": "not",
             "reason": "The prefix 'dis-' conveys negation.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-3",
@@ -547,11 +738,22 @@
             ],
             "correctAnswer": "must",
             "reason": "'Must' indicates essential obligation for online security.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-4",
@@ -565,11 +767,22 @@
             ],
             "correctAnswer": "mustn't",
             "reason": "'Mustn't' expresses prohibition against posting photos without permission.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-5",
@@ -583,11 +796,22 @@
             ],
             "correctAnswer": "On the other hand",
             "reason": "'On the other hand' balances two opposing perspectives.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-6",
@@ -601,11 +825,22 @@
             ],
             "correctAnswer": "Leadership means being responsible for both successes and mistakes",
             "reason": "Zeina learned leadership involves taking full responsibility rather than blaming others.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-7",
@@ -619,11 +854,22 @@
             ],
             "correctAnswer": "Tired eyes and headaches",
             "reason": "The text lists eye strain and headaches as side effects of prolonged screen use.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-8",
@@ -637,11 +883,22 @@
             ],
             "correctAnswer": "expert",
             "reason": "An expert is someone who knows a lot about a subject.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-9",
@@ -655,11 +912,22 @@
             ],
             "correctAnswer": "make",
             "reason": "Modal verbs like 'shouldn't' are followed by the base form of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp-10",
@@ -673,13 +941,35 @@
             ],
             "correctAnswer": "Turning off social media notifications",
             "reason": "Disabling notifications prevents sudden interruptions during study sessions.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.350Z",
+    "itemsAudited": 31,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 26
+  }
 }

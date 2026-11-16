@@ -97,8 +97,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 27,
-      "supplementaryItems": 3,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -165,11 +165,16 @@
             "word": "sociable",
             "arabicMeaning": "اجتماعي / ودود",
             "example": "He is very sociable and enjoys making new friends at every event.",
-            "origin": "source",
-            "sourcePdfPage": 4
+            "origin": "supplementary",
+            "sourcePdfPage": 4,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_v2",
@@ -177,11 +182,16 @@
             "word": "generations",
             "arabicMeaning": "أجيال",
             "example": "In our family, we have three generations living together.",
-            "origin": "source",
-            "sourcePdfPage": 4
+            "origin": "supplementary",
+            "sourcePdfPage": 4,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_v3",
@@ -189,11 +199,16 @@
             "word": "get-together",
             "arabicMeaning": "تجمع عائلي / لقاء",
             "example": "Every summer, our family has a big get-together where everyone meets.",
-            "origin": "source",
-            "sourcePdfPage": 4
+            "origin": "supplementary",
+            "sourcePdfPage": 4,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_v4",
@@ -201,11 +216,16 @@
             "word": "courtyard",
             "arabicMeaning": "فناء داخلي",
             "example": "The building has a pretty courtyard and small balconies.",
-            "origin": "source",
-            "sourcePdfPage": 4
+            "origin": "supplementary",
+            "sourcePdfPage": 4,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_v5",
@@ -213,11 +233,16 @@
             "word": "census",
             "arabicMeaning": "تعداد سكاني",
             "example": "The government conducts a national census every ten years to count the population.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -237,11 +262,22 @@
             ],
             "correctAnswer": "sociable",
             "reason": "Sociable describes friendly people who enjoy meeting, chatting, and spending time with others.",
-            "origin": "source",
-            "sourcePdfPage": 6
+            "origin": "supplementary",
+            "sourcePdfPage": 6,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_vq2",
@@ -255,11 +291,22 @@
             ],
             "correctAnswer": "generations",
             "reason": "Grandparents, parents, and children represent three distinct age groups or generations in a family.",
-            "origin": "source",
-            "sourcePdfPage": 6
+            "origin": "supplementary",
+            "sourcePdfPage": 6,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_vq3",
@@ -273,11 +320,22 @@
             ],
             "correctAnswer": "census",
             "reason": "A census is the official government survey that counts population details and occupations.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -291,11 +349,16 @@
             "rule": "The Present Perfect Progressive Tense",
             "explanation": "Use have/has + been + verb-ing to describe actions or situations that began in the past and are still continuing now.",
             "example": "We have been living in this neighborhood for ten years.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_g2",
@@ -303,11 +366,16 @@
             "rule": "Present Perfect Simple vs Present Perfect Progressive",
             "explanation": "Use the Present Perfect Simple for completed results or stative verbs, and the Present Perfect Progressive for ongoing temporary actions.",
             "example": "I have known my friend for a long time, but we have been working together recently.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -327,11 +395,22 @@
             ],
             "correctAnswer": "have been living",
             "reason": "The Present Perfect Progressive (have been living) is used for an action that started in the past and continues in the present.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gq2",
@@ -345,11 +424,22 @@
             ],
             "correctAnswer": "since",
             "reason": "'Since' is used to introduce a specific starting point in time, such as a past clause.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_gq3",
@@ -363,11 +453,22 @@
             ],
             "correctAnswer": "waiting",
             "reason": "The Present Perfect Progressive structure is have/has + been + verb-ing.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -379,11 +480,14 @@
           "itemId": "prep3_u1_r1",
           "content": {
             "passage": "I live in an apartment on the second floor of an old, traditional building in the city center. It has a pretty courtyard and small balconies that look over the street. It also has high ceilings, so although my family's large, it doesn't feel too small. I live with my twin sisters, my parents, and my great-grandmother. She came to live with us a year ago when her son, my grandfather, died. She was 103 last month. When people ask her how she's lived so long, she answers 'honey, sweet potatoes, and a positive attitude'. She's sometimes a little sad that she's lost many friends and relatives of her generation lately, but generally she's very cheerful. I'm similar to her in many ways. Like her, I love reading.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_r2",
@@ -397,11 +501,22 @@
             ],
             "correctAnswer": "It has high ceilings.",
             "reason": "The text explicitly states that high ceilings make the apartment feel spacious for the large family.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -413,11 +528,14 @@
           "itemId": "prep3_u1_l1",
           "content": {
             "script": "Interviewer: Hi everyone! Today's podcast episode is about community projects and my guest is Rasha. You're Egyptian, aren't you, Rasha?\nRasha: Hello. Yes, I am. I live in Cairo.\nInterviewer: Please tell us about your community project.\nRasha: Sure. In my neighborhood, we have a community garden.\nInterviewer: A community garden?\nRasha: Yes. They're very common here. People love them. They're big gardens that lots of people share. Most people in my city live in apartments and don't have their own gardens. My family is the same - we don't have our own garden. So we applied to join a local community garden a few years ago. It's fantastic; everyone in my family loves it. We've been growing our own vegetables there for three years.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_l2",
@@ -431,11 +549,22 @@
             ],
             "correctAnswer": "For three years",
             "reason": "In the podcast interview, Rasha clearly specifies that they have been growing vegetables for three years.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -469,7 +598,15 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 40
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -498,7 +635,20 @@
             "correctAnswer": "get-together",
             "reason": "A get-together refers to an informal party or meeting among friends or relatives.",
             "origin": "supplementary",
-            "sourcePdfPage": 5
+            "sourcePdfPage": 5,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -521,7 +671,20 @@
             "correctAnswer": "I have been living here for five years.",
             "reason": "The Present Perfect Progressive requires 'have been' + verb-ing combined with 'for' to show duration.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -544,11 +707,22 @@
             ],
             "correctAnswer": "Generations",
             "reason": "Generations refers to groups of people born and living around the same era.",
-            "origin": "source",
-            "sourcePdfPage": 5
+            "origin": "supplementary",
+            "sourcePdfPage": 5,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test2",
@@ -562,11 +736,22 @@
             ],
             "correctAnswer": "balcony",
             "reason": "A balcony is an outside platform attached to a building room overlooking the street.",
-            "origin": "source",
-            "sourcePdfPage": 6
+            "origin": "supplementary",
+            "sourcePdfPage": 6,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test3",
@@ -581,7 +766,18 @@
             "correctAnswer": "since",
             "reason": "'Since' specifies the exact starting point of a continuous time period.",
             "origin": "supplementary",
-            "sourcePdfPage": 16
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -598,11 +794,22 @@
             ],
             "correctAnswer": "already",
             "reason": "'Already' highlights that an action has been completed prior to the present moment.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test5",
@@ -616,11 +823,22 @@
             ],
             "correctAnswer": "-ness",
             "reason": "Adding the suffix '-ness' to the adjective 'happy' forms the noun 'happiness'.",
-            "origin": "source",
-            "sourcePdfPage": 7
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test6",
@@ -634,11 +852,22 @@
             ],
             "correctAnswer": "census",
             "reason": "A census is a national record keeping track of population counts and demographic details.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test7",
@@ -652,11 +881,22 @@
             ],
             "correctAnswer": "have",
             "reason": "The subject pronoun 'you' requires the auxiliary verb 'have' in present perfect tenses.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test8",
@@ -670,11 +910,22 @@
             ],
             "correctAnswer": "attitude",
             "reason": "In the unit reading text, the great-grandmother attributes her age to honey, sweet potatoes, and a positive attitude.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test9",
@@ -688,11 +939,22 @@
             ],
             "correctAnswer": "On a donkey",
             "reason": "The text explains that post reaches Supai on a donkey because there are no roads for cars.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep3_u1_test10",
@@ -706,13 +968,35 @@
             ],
             "correctAnswer": "Poor",
             "reason": "'Poor' is the exact opposite (antonym) of 'wealthy'.",
-            "origin": "source",
-            "sourcePdfPage": 7
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.461Z",
+    "itemsAudited": 30,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 26
+  }
 }

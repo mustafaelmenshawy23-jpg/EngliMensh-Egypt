@@ -151,8 +151,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 29,
-      "supplementaryItems": 4,
+      "sourceItems": 2,
+      "supplementaryItems": 31,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -220,7 +220,12 @@
             "arabicMeaning": "واحة",
             "example": "An oasis is a place in the desert with trees and water.",
             "origin": "source",
-            "sourcePdfPage": 190
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -231,11 +236,16 @@
             "word": "sand dunes",
             "arabicMeaning": "كثبان رملية",
             "example": "There are big sand dunes in the desert.",
-            "origin": "source",
-            "sourcePdfPage": 189
+            "origin": "supplementary",
+            "sourcePdfPage": 189,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_vocab_3",
@@ -244,7 +254,12 @@
             "arabicMeaning": "شعاب مرجانية",
             "example": "There are coral reefs in Dahab.",
             "origin": "source",
-            "sourcePdfPage": 190
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -255,11 +270,16 @@
             "word": "High Dam",
             "arabicMeaning": "السد العالي",
             "example": "The High Dam holds water for cities and farms.",
-            "origin": "source",
-            "sourcePdfPage": 195
+            "origin": "supplementary",
+            "sourcePdfPage": 195,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_vocab_5",
@@ -267,11 +287,16 @@
             "word": "faucet",
             "arabicMeaning": "صنبور مياه",
             "example": "We can turn off faucets to save water.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_vocab_6",
@@ -279,11 +304,16 @@
             "word": "windcatcher",
             "arabicMeaning": "ملقف الهواء / مصيدة الرياح",
             "example": "A windcatcher keeps buildings cool in the heat.",
-            "origin": "source",
-            "sourcePdfPage": 197
+            "origin": "supplementary",
+            "sourcePdfPage": 197,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -302,11 +332,21 @@
             ],
             "correctAnswer": "An oasis",
             "reason": "An oasis is defined as a place in the desert that contains water and trees.",
-            "origin": "source",
-            "sourcePdfPage": 190
+            "origin": "supplementary",
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_vocab_q2",
@@ -319,11 +359,21 @@
             ],
             "correctAnswer": "The High Dam",
             "reason": "The text states that the High Dam holds water for cities, towns, villages, and farms.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_vocab_q3",
@@ -336,11 +386,21 @@
             ],
             "correctAnswer": "In Dahab",
             "reason": "Dahab is known for coral reefs where people go snorkeling.",
-            "origin": "source",
-            "sourcePdfPage": 190
+            "origin": "supplementary",
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -354,11 +414,16 @@
             "rule": "Describing things using 'It's + adjective' and 'It isn't + adjective'",
             "explanation": "Use 'It's' followed by an adjective to describe a place or object, and 'It isn't' to state what quality it does not have.",
             "example": "It's wide. It isn't tall.",
-            "origin": "source",
-            "sourcePdfPage": 182
+            "origin": "supplementary",
+            "sourcePdfPage": 182,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_gram_2",
@@ -366,11 +431,16 @@
             "rule": "Comparing places with comparative adjectives (-er than)",
             "explanation": "Add '-er than' to short adjectives when comparing two places such as a city, town, or village.",
             "example": "A city is bigger than a town.",
-            "origin": "source",
-            "sourcePdfPage": 185
+            "origin": "supplementary",
+            "sourcePdfPage": 185,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_gram_3",
@@ -378,11 +448,16 @@
             "rule": "Asking where someone lives using 'Where do you live?'",
             "explanation": "Use 'Where do you live?' to ask about a person's place of residence, answered with 'I live in...'.",
             "example": "Where do you live? - I live in Luxor.",
-            "origin": "source",
-            "sourcePdfPage": 184
+            "origin": "supplementary",
+            "sourcePdfPage": 184,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -401,11 +476,21 @@
             ],
             "correctAnswer": "A city is bigger than a town.",
             "reason": "We add '-er than' to 'big' (bigger than) when comparing a city to a town.",
-            "origin": "source",
-            "sourcePdfPage": 185
+            "origin": "supplementary",
+            "sourcePdfPage": 185,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_gram_q2",
@@ -418,11 +503,21 @@
             ],
             "correctAnswer": "isn't",
             "reason": "We use 'isn't' to form the negative description for a singular item.",
-            "origin": "source",
-            "sourcePdfPage": 182
+            "origin": "supplementary",
+            "sourcePdfPage": 182,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_gram_q3",
@@ -435,11 +530,21 @@
             ],
             "correctAnswer": "Where",
             "reason": "We use 'Where' to ask about location or place of living.",
-            "origin": "source",
-            "sourcePdfPage": 187
+            "origin": "supplementary",
+            "sourcePdfPage": 187,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -451,11 +556,14 @@
           "itemId": "u6_read_1",
           "content": {
             "passage": "In Egypt there isn't a lot of rain. There is a lot of desert. It's important to save water. The High Dam holds water for cities, towns, villages, and farms. Farmers use irrigation to water plants. We can turn off faucets to save water.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_read_q1",
@@ -468,11 +576,21 @@
             ],
             "correctAnswer": "It holds water for cities, towns, and farms.",
             "reason": "The passage explicitly states that the High Dam holds water for cities, towns, villages, and farms.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_read_q2",
@@ -485,11 +603,21 @@
             ],
             "correctAnswer": "By turning off faucets",
             "reason": "The passage states that we can turn off faucets to save water.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -502,7 +630,10 @@
           "content": {
             "script": "Egypt is a hot country. In the summer, people try to stay cool in the heat. They drink lots of water and wear sunscreen when they go outside. Old houses in the desert have thick walls to keep the rooms cool.",
             "origin": "supplementary",
-            "sourcePdfPage": 197
+            "sourcePdfPage": 197,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -519,7 +650,17 @@
             "correctAnswer": "Lots of water",
             "reason": "The listening text advises people to drink lots of water to stay cool in the heat.",
             "origin": "supplementary",
-            "sourcePdfPage": 197
+            "sourcePdfPage": 197,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -555,11 +696,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 186
+            "origin": "supplementary",
+            "sourcePdfPage": 186,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -584,7 +733,19 @@
             "correctAnswer": "An oasis",
             "reason": "An oasis is a special spot in the desert where water and trees are found.",
             "origin": "supplementary",
-            "sourcePdfPage": 190
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -606,7 +767,19 @@
             "correctAnswer": "smaller",
             "reason": "A village has fewer buildings and people, so it is smaller than a town.",
             "origin": "supplementary",
-            "sourcePdfPage": 185
+            "sourcePdfPage": 185,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -628,11 +801,21 @@
             ],
             "correctAnswer": "In Giza",
             "reason": "The Pyramids are located in Giza.",
-            "origin": "source",
-            "sourcePdfPage": 186
+            "origin": "supplementary",
+            "sourcePdfPage": 186,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q2",
@@ -645,11 +828,21 @@
             ],
             "correctAnswer": "bigger",
             "reason": "A city is larger in size and population compared to a village.",
-            "origin": "source",
-            "sourcePdfPage": 185
+            "origin": "supplementary",
+            "sourcePdfPage": 185,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q3",
@@ -662,11 +855,21 @@
             ],
             "correctAnswer": "Irrigation",
             "reason": "Farmers use irrigation systems to water plants and crops.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q4",
@@ -679,11 +882,21 @@
             ],
             "correctAnswer": "No, there isn't.",
             "reason": "Luxor does not have a sea beach, though it is on the River Nile.",
-            "origin": "source",
-            "sourcePdfPage": 186
+            "origin": "supplementary",
+            "sourcePdfPage": 186,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q5",
@@ -696,11 +909,21 @@
             ],
             "correctAnswer": "ee",
             "reason": "The letter combination 'ee' makes the /i:/ sound as taught in the phonics lesson.",
-            "origin": "source",
-            "sourcePdfPage": 193
+            "origin": "supplementary",
+            "sourcePdfPage": 193,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q6",
@@ -713,11 +936,21 @@
             ],
             "correctAnswer": "Thick walls made of mud",
             "reason": "Old desert houses have thick mud walls that block external heat.",
-            "origin": "source",
-            "sourcePdfPage": 197
+            "origin": "supplementary",
+            "sourcePdfPage": 197,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q7",
@@ -730,11 +963,21 @@
             ],
             "correctAnswer": "Faucets",
             "reason": "Turning off water faucets prevents wasting water.",
-            "origin": "source",
-            "sourcePdfPage": 196
+            "origin": "supplementary",
+            "sourcePdfPage": 196,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q8",
@@ -747,11 +990,21 @@
             ],
             "correctAnswer": "In Dahab",
             "reason": "Dahab is located by the Red Sea and is famous for coral reefs.",
-            "origin": "source",
-            "sourcePdfPage": 190
+            "origin": "supplementary",
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q9",
@@ -764,11 +1017,21 @@
             ],
             "correctAnswer": "isn't",
             "reason": "We use 'isn't' to express that a singular condition does not apply.",
-            "origin": "source",
-            "sourcePdfPage": 182
+            "origin": "supplementary",
+            "sourcePdfPage": 182,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test_q10",
@@ -781,13 +1044,34 @@
             ],
             "correctAnswer": "Sandboarding",
             "reason": "Sandboarding is sliding down sand dunes in the desert.",
-            "origin": "source",
-            "sourcePdfPage": 190
+            "origin": "supplementary",
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.104Z",
+    "itemsAudited": 33,
+    "sourceClaims": 29,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 23,
+    "itemsWithSourceSubfields": 26,
+    "reclassifiedToSupplementary": 27
+  }
 }

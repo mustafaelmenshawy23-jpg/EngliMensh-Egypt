@@ -89,8 +89,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 27,
-      "supplementaryItems": 3,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -157,11 +157,16 @@
             "word": "pharmacist",
             "arabicMeaning": "طبيب صيدلي",
             "example": "The pharmacist gave me medicine for my cough.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -169,11 +174,16 @@
             "word": "appointment",
             "arabicMeaning": "موعد",
             "example": "I have to make an appointment before going to the doctor.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -181,11 +191,16 @@
             "word": "recovery",
             "arabicMeaning": "تعافي / شفاء",
             "example": "During his treatment, Anwar focused on his complete recovery.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v4",
@@ -193,11 +208,16 @@
             "word": "headache",
             "arabicMeaning": "صداع",
             "example": "She took an aspirin because she had a severe headache.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v5",
@@ -205,11 +225,16 @@
             "word": "inspiring",
             "arabicMeaning": "ملهم",
             "example": "Anwar El Kamony is an inspiring person for many young athletes.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -229,11 +254,22 @@
             ],
             "correctAnswer": "pharmacy",
             "reason": "Medicines are purchased from a pharmacy.",
-            "origin": "source",
-            "sourcePdfPage": 203
+            "origin": "supplementary",
+            "sourcePdfPage": 203,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq2",
@@ -247,11 +283,22 @@
             ],
             "correctAnswer": "injury",
             "reason": "Painful describes physical hurt resulting from an injury or illness.",
-            "origin": "source",
-            "sourcePdfPage": 204
+            "origin": "supplementary",
+            "sourcePdfPage": 204,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq3",
@@ -265,11 +312,22 @@
             ],
             "correctAnswer": "overcome",
             "reason": "Overcome means to successfully deal with or defeat a difficulty.",
-            "origin": "source",
-            "sourcePdfPage": 203
+            "origin": "supplementary",
+            "sourcePdfPage": 203,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -283,11 +341,16 @@
             "rule": "Modal Verbs for Advice and Ability (should, can, be able to)",
             "explanation": "We use 'should' and 'shouldn't' to give advice or say something is a good idea. We use 'can' and 'be able to' to express present ability.",
             "example": "You should get lots of rest when you feel sick.",
-            "origin": "source",
-            "sourcePdfPage": 212
+            "origin": "supplementary",
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "g2",
@@ -295,11 +358,16 @@
             "rule": "Modal Verbs for Possibility and Obligation (might, may, must, have to)",
             "explanation": "We use 'may' or 'might' to express possibility when we are not completely sure. We use 'must' or 'have to' to express necessity or obligation.",
             "example": "You might need to make an appointment with the doctor.",
-            "origin": "source",
-            "sourcePdfPage": 213
+            "origin": "supplementary",
+            "sourcePdfPage": 213,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -319,11 +387,22 @@
             ],
             "correctAnswer": "might",
             "reason": "'Might' is used to express uncertainty or possibility.",
-            "origin": "source",
-            "sourcePdfPage": 214
+            "origin": "supplementary",
+            "sourcePdfPage": 214,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq2",
@@ -337,11 +416,22 @@
             ],
             "correctAnswer": "to visit",
             "reason": "The expression 'be able to' is followed by an infinitive verb (to + verb).",
-            "origin": "source",
-            "sourcePdfPage": 214
+            "origin": "supplementary",
+            "sourcePdfPage": 214,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq3",
@@ -355,11 +445,22 @@
             ],
             "correctAnswer": "should",
             "reason": "'Should' is used here to give medical advice.",
-            "origin": "source",
-            "sourcePdfPage": 214
+            "origin": "supplementary",
+            "sourcePdfPage": 214,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -371,11 +472,14 @@
           "itemId": "r1",
           "content": {
             "passage": "Anwar El Kamony is an inspiring person known for his incredible journey to overcome adversity. When Anwar, a young tennis player from Egypt, was diagnosed with cancer, he faced a life-changing challenge. The news was devastating, but Anwar knew he must stay determined to fight the disease. Throughout his treatment, Anwar understood that he should stay positive and focused on his recovery. He continued to train as much as he could and stayed mentally strong by visualizing his return to the tennis court. His family and friends provided great support, helping him on his journey. After months of treatment, Anwar not only beat cancer but also returned to professional tennis. He took part in international tournaments and became a symbol of hope and strength for many.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -389,11 +493,22 @@
             ],
             "correctAnswer": "Visualizing his return to the tennis court",
             "reason": "The text states that Anwar stayed mentally strong by visualizing his return to the tennis court.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -405,11 +520,14 @@
           "itemId": "l1",
           "content": {
             "script": "Ashley: Hi, Lacey, are you OK?\nLacey: Oh, hi, Ashley. No, not really. I'm not feeling great - I have a cold and a headache - it really hurts!\nAshley: Oh, no! Have you taken any medicine?\nLacey: Yes, I had some this morning, but it isn't working yet.\nAshley: Well, it's probably a good idea for you to get some rest.",
-            "origin": "source",
-            "sourcePdfPage": 209
+            "origin": "supplementary",
+            "sourcePdfPage": 209,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "l2",
@@ -423,11 +541,22 @@
             ],
             "correctAnswer": "She has a cold and a headache.",
             "reason": "In the dialogue, Lacey explicitly tells Ashley that she has a cold and a headache.",
-            "origin": "source",
-            "sourcePdfPage": 209
+            "origin": "supplementary",
+            "sourcePdfPage": 209,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -465,11 +594,20 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 223
+            "origin": "supplementary",
+            "sourcePdfPage": 223,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -495,7 +633,20 @@
             "correctAnswer": "The skull",
             "reason": "The skull is the bone structure in our head that keeps the brain safe.",
             "origin": "supplementary",
-            "sourcePdfPage": 223
+            "sourcePdfPage": 223,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -518,7 +669,20 @@
             "correctAnswer": "should",
             "reason": "'Should' is used to give strong advice when someone is unwell.",
             "origin": "supplementary",
-            "sourcePdfPage": 212
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -541,11 +705,22 @@
             ],
             "correctAnswer": "cancer",
             "reason": "According to the reading passage on page 210, Anwar was diagnosed with cancer.",
-            "origin": "source",
-            "sourcePdfPage": 210
+            "origin": "supplementary",
+            "sourcePdfPage": 210,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -559,11 +734,22 @@
             ],
             "correctAnswer": "pharmacy",
             "reason": "Pharmacies are dedicated places for selling medical supplies and medicines.",
-            "origin": "source",
-            "sourcePdfPage": 203
+            "origin": "supplementary",
+            "sourcePdfPage": 203,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -577,11 +763,22 @@
             ],
             "correctAnswer": "might",
             "reason": "'Might' expresses possibility when the speaker is not sure.",
-            "origin": "source",
-            "sourcePdfPage": 213
+            "origin": "supplementary",
+            "sourcePdfPage": 213,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -595,11 +792,22 @@
             ],
             "correctAnswer": "300",
             "reason": "Babies are born with around 300 bones, which fuse together over time.",
-            "origin": "source",
-            "sourcePdfPage": 222
+            "origin": "supplementary",
+            "sourcePdfPage": 222,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -613,11 +821,22 @@
             ],
             "correctAnswer": "Water",
             "reason": "Water moves blood cells carrying oxygen around the body.",
-            "origin": "source",
-            "sourcePdfPage": 233
+            "origin": "supplementary",
+            "sourcePdfPage": 233,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -631,11 +850,22 @@
             ],
             "correctAnswer": "shouldn't",
             "reason": "'Shouldn't' is used to advise against unhealthy actions.",
-            "origin": "source",
-            "sourcePdfPage": 212
+            "origin": "supplementary",
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -649,11 +879,22 @@
             ],
             "correctAnswer": "arm",
             "reason": "In the text on page 208, Darine's grandma broke her arm.",
-            "origin": "source",
-            "sourcePdfPage": 208
+            "origin": "supplementary",
+            "sourcePdfPage": 208,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -667,11 +908,22 @@
             ],
             "correctAnswer": "crucial",
             "reason": "'Crucial' means extremely important or essential.",
-            "origin": "source",
-            "sourcePdfPage": 229
+            "origin": "supplementary",
+            "sourcePdfPage": 229,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -685,11 +937,22 @@
             ],
             "correctAnswer": "appointment",
             "reason": "An appointment is an arranged meeting with a doctor.",
-            "origin": "source",
-            "sourcePdfPage": 202
+            "origin": "supplementary",
+            "sourcePdfPage": 202,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -704,12 +967,34 @@
             "correctAnswer": "able",
             "reason": "'Able' completes the structure 'was not able to + verb' indicating past inability.",
             "origin": "supplementary",
-            "sourcePdfPage": 212
+            "sourcePdfPage": 212,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.971Z",
+    "itemsAudited": 30,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 27
+  }
 }

@@ -62,8 +62,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 28,
-      "supplementaryItems": 2,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -130,11 +130,16 @@
             "word": "impact",
             "arabicMeaning": "تأثير قوي",
             "example": "Her speech made a strong impact on the audience.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vocab_2",
@@ -142,11 +147,16 @@
             "word": "complex",
             "arabicMeaning": "معقد",
             "example": "Inventions do not have to be complex to be useful.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vocab_3",
@@ -154,11 +164,16 @@
             "word": "sensors",
             "arabicMeaning": "أجهزة استشعار",
             "example": "Biomedical engineers use sensors to help patients with movement difficulties.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vocab_4",
@@ -166,11 +181,16 @@
             "word": "solar-powered",
             "arabicMeaning": "يعمل بالطاقة الشمسية",
             "example": "She wants to design a solar-powered backpack for school.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vocab_5",
@@ -178,11 +198,16 @@
             "word": "water saving",
             "arabicMeaning": "موفِّر للمياه",
             "example": "A student created a water saving device for her town.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -202,11 +227,22 @@
             ],
             "correctAnswer": "A strong effect or influence",
             "reason": "Impact refers to the strong effect or meaningful difference something makes.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vq_2",
@@ -220,11 +256,22 @@
             ],
             "correctAnswer": "sensors",
             "reason": "Sensors are tools used to measure biological signals and assist patients.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_vq_3",
@@ -238,11 +285,22 @@
             ],
             "correctAnswer": "complex",
             "reason": "Complex is defined as having many parts that may be difficult to understand.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -256,11 +314,16 @@
             "rule": "First Conditional",
             "explanation": "We use the first conditional (If + present simple, will + infinitive) to express real or possible situations in the future.",
             "example": "If it rains tomorrow, we will stay home.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_gram_2",
@@ -268,11 +331,16 @@
             "rule": "Second Conditional",
             "explanation": "We use the second conditional (If + past simple, would + infinitive) to express unreal or imaginary situations in the present or future.",
             "example": "If I had wings, I would fly.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -292,11 +360,22 @@
             ],
             "correctAnswer": "will",
             "reason": "The first conditional uses Present Simple in the if-clause and 'will + infinitive' for real future outcomes.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_gq_2",
@@ -310,11 +389,22 @@
             ],
             "correctAnswer": "had",
             "reason": "The second conditional uses Past Simple ('had') in the if-clause for imaginary scenarios.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_gq_3",
@@ -328,11 +418,22 @@
             ],
             "correctAnswer": "could",
             "reason": "Second conditional structures use modal past forms like 'could' or 'would' in the main clause.",
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -345,7 +446,10 @@
           "content": {
             "passage": "Hany Azer is a famous Egyptian engineer who made a great impact in the world of civil engineering. He was born in Tanta, Egypt, and later moved to Germany. He worked as the chief engineer for the Berlin Main Station, one of the largest train stations in Europe. Hany Azer has a relative who works as a biomedical engineer. Together, they believe in using science and technology to help people live better lives. Biomedical engineers use special tools like sensors to help patients. These sensors can help people with problems such as poor hearing or movement difficulties. Technology like this can change lives and support those in need. Hany Azer is not only known for his buildings, but also for his support of science and young inventors. He is a role model for many students in Egypt and around the world.",
             "origin": "source",
-            "sourcePdfPage": 93
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -362,11 +466,22 @@
             ],
             "correctAnswer": "Berlin Main Station",
             "reason": "The passage states that Hany Azer worked as the chief engineer for the Berlin Main Station in Germany.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -378,11 +493,14 @@
           "itemId": "prep2_u6_ls_script",
           "content": {
             "script": "Ahmed Zewail was one of the most important Egyptian scientists in modern history. He was born in Damanhur in 1946 and grew up in Alexandria. From a young age, he loved learning and showed great interest in science. He studied at Alexandria University. Zewail worked very hard and became a professor of chemistry at the California Institute of Technology. His most famous discovery was the femtosecond. With this new science discovery, he was able to study chemical reactions in an extremely short time, measured in femtoseconds (a femtosecond is one millionth of a billionth of a second!). This invention changed the world of chemistry and opened the door for new scientific research. Because of this great achievement, Ahmed Zewail won the Nobel Prize in Chemistry in 1999. He was the first Egyptian and Arab scientist to receive the Nobel Prize in this field.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_ls_q1",
@@ -396,11 +514,22 @@
             ],
             "correctAnswer": "The femtosecond",
             "reason": "The text explains that Zewail's most famous discovery was the femtosecond, which allowed scientists to study chemical reactions.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -433,11 +562,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 96
+            "origin": "supplementary",
+            "sourcePdfPage": 96,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -463,7 +600,20 @@
             "correctAnswer": "solar-powered",
             "reason": "Solar-powered means operated using light and heat energy from the sun.",
             "origin": "supplementary",
-            "sourcePdfPage": 97
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -486,7 +636,20 @@
             "correctAnswer": "had",
             "reason": "Second conditional requires past simple tense in the if-clause.",
             "origin": "supplementary",
-            "sourcePdfPage": 92
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -509,11 +672,22 @@
             ],
             "correctAnswer": "Finding a problem",
             "reason": "Inventors begin by looking at the world and asking what could be better, finding a problem to solve.",
-            "origin": "source",
-            "sourcePdfPage": 89
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_2",
@@ -527,11 +701,22 @@
             ],
             "correctAnswer": "To test if the idea works",
             "reason": "A model is built so that inventors can test its safety and functionality.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_3",
@@ -545,11 +730,22 @@
             ],
             "correctAnswer": "will",
             "reason": "The first conditional uses Present Simple ('rains') and 'will' for possible future situations.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_4",
@@ -563,11 +759,22 @@
             ],
             "correctAnswer": "would",
             "reason": "Second conditional sentences use 'would + infinitive' in the result clause.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_5",
@@ -581,11 +788,22 @@
             ],
             "correctAnswer": "Chemistry",
             "reason": "Ahmed Zewail was awarded the Nobel Prize in Chemistry for his groundbreaking research.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_6",
@@ -599,11 +817,22 @@
             ],
             "correctAnswer": "The Nubian language",
             "reason": "Ahmed Idris suggested using the unwritten Nubian language as a secret military code.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_7",
@@ -617,11 +846,22 @@
             ],
             "correctAnswer": "movement difficulties",
             "reason": "Sensors can assist patients who face physical movement or hearing challenges.",
-            "origin": "source",
-            "sourcePdfPage": 93
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_8",
@@ -635,11 +875,22 @@
             ],
             "correctAnswer": "The impact it has on people",
             "reason": "The text emphasizes that an invention's value comes from its impact and how it solves problems.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_9",
@@ -653,11 +904,22 @@
             ],
             "correctAnswer": "will",
             "reason": "First conditional uses Present Simple ('help') + 'will' + infinitive ('finish').",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "prep2_u6_test_10",
@@ -671,13 +933,35 @@
             ],
             "correctAnswer": "would",
             "reason": "Second conditional uses Past Simple ('studied') + 'would' + infinitive ('pass').",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.277Z",
+    "itemsAudited": 30,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 18,
+    "itemsWithSourceSubfields": 26,
+    "reclassifiedToSupplementary": 27
+  }
 }

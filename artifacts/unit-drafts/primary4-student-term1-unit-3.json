@@ -56,8 +56,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 17,
-      "supplementaryItems": 10,
+      "sourceItems": 2,
+      "supplementaryItems": 25,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -124,11 +124,16 @@
             "word": "elephant",
             "arabicMeaning": "فيل",
             "example": "The elephant is a large gray animal with a long trunk.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -136,11 +141,16 @@
             "word": "giraffe",
             "arabicMeaning": "زرافة",
             "example": "The giraffe eats leaves from tall trees.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -148,11 +158,16 @@
             "word": "endangered",
             "arabicMeaning": "مهدد بالانقراض",
             "example": "The Arabian Leopard is an endangered animal in Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -173,7 +188,18 @@
             "correctAnswer": "Giraffe",
             "reason": "The text describes the giraffe as having a long neck and eating leaves from tall trees.",
             "origin": "supplementary",
-            "sourcePdfPage": 40
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -191,7 +217,18 @@
             "correctAnswer": "Endangered",
             "reason": "Endangered species are those at risk of disappearing from the wild.",
             "origin": "supplementary",
-            "sourcePdfPage": 50
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -209,7 +246,18 @@
             "correctAnswer": "Zebra",
             "reason": "The zebra is characterized by its distinct striped coat.",
             "origin": "supplementary",
-            "sourcePdfPage": 40
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -226,11 +274,16 @@
             "rule": "Comparative Adjectives",
             "explanation": "We use comparative adjectives to compare two things. For short adjectives, we add -er. If it ends in a consonant-vowel-consonant, we double the last letter. If it ends in -y, we change it to -ier.",
             "example": "A zebra is shorter than a giraffe.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -251,7 +304,18 @@
             "correctAnswer": "bigger",
             "reason": "When comparing two things with a short adjective, we add -er and double the consonant.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -269,7 +333,18 @@
             "correctAnswer": "healthier",
             "reason": "For adjectives ending in -y, we change the y to i and add -er.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -287,7 +362,18 @@
             "correctAnswer": "colder",
             "reason": "We add -er to the short adjective 'cold' to form the comparative.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -303,7 +389,10 @@
           "content": {
             "passage": "Animals need our help to stay healthy and safe. Some animals live in the wild, while others live in zoos or homes. Each animal needs special care to live well. Zoo animals need special attention. Elephants need bigger spaces than monkeys to move around. Lions eat a lot of food to stay stronger than other animals. Giraffes need taller trees to reach their food.",
             "origin": "source",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -321,7 +410,18 @@
             "correctAnswer": "To move around",
             "reason": "The text explicitly states that elephants need bigger spaces than monkeys to move around.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -336,11 +436,14 @@
           "itemId": "l1",
           "content": {
             "script": "Omar: Hi, Nadia! What does your dad do at the forest park? Nadia: He works as a forest guide. He shows visitors the animals. Omar: Do you usually go with him? Nadia: Sometimes. Omar: What animals do visitors see? Nadia: Lots of them! They see elephants drinking water and monkeys climbing trees.",
-            "origin": "source",
-            "sourcePdfPage": 41
+            "origin": "supplementary",
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "l2",
@@ -355,7 +458,18 @@
             "correctAnswer": "Forest guide",
             "reason": "Nadia states that her father works as a forest guide at the park.",
             "origin": "supplementary",
-            "sourcePdfPage": 41
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -382,7 +496,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 41
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -410,7 +530,19 @@
             "correctAnswer": "Lion",
             "reason": "Lions are often called the king of the jungle and are known to hunt at night.",
             "origin": "supplementary",
-            "sourcePdfPage": 42
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -432,7 +564,19 @@
             "correctAnswer": "faster",
             "reason": "We use the comparative form 'faster' to compare the speed of two animals.",
             "origin": "supplementary",
-            "sourcePdfPage": 55
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -454,11 +598,21 @@
             ],
             "correctAnswer": "Elephant",
             "reason": "Elephants are known for their long trunks used to spray water.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -471,11 +625,21 @@
             ],
             "correctAnswer": "bigger",
             "reason": "For short adjectives ending in CVC, we double the consonant and add -er.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -488,11 +652,21 @@
             ],
             "correctAnswer": "They protect animals and their homes",
             "reason": "Forest officers work hard to protect animals and their habitats.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -505,11 +679,21 @@
             ],
             "correctAnswer": "To act like something is true when it is not",
             "reason": "The lion pretended to be sick to trick the other animals.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -522,11 +706,21 @@
             ],
             "correctAnswer": "Arabian Leopard",
             "reason": "The text identifies the Arabian Leopard as an endangered animal in Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -539,11 +733,21 @@
             ],
             "correctAnswer": "Fresh vegetables",
             "reason": "The text mentions that rabbits eat fresh vegetables to stay healthy.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -556,11 +760,21 @@
             ],
             "correctAnswer": "He saw no footprints coming out",
             "reason": "The fox realized the danger because he saw footprints going in but none coming out.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -573,11 +787,21 @@
             ],
             "correctAnswer": "safer",
             "reason": "For adjectives ending in -e, we add -r to form the comparative.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -590,11 +814,21 @@
             ],
             "correctAnswer": "Sea grass",
             "reason": "The text states that Red Sea Dugongs are gentle sea animals that eat sea grass.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -607,13 +841,34 @@
             ],
             "correctAnswer": "The lesson a story teaches us",
             "reason": "A moral is the lesson or message that a story conveys to the reader.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.723Z",
+    "itemsAudited": 27,
+    "sourceClaims": 17,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 15,
+    "citationWarnings": 11,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 15
+  }
 }

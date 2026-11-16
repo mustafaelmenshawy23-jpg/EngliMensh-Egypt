@@ -76,8 +76,8 @@
     },
     "itemTotals": {
       "totalItems": 38,
-      "sourceItems": 32,
-      "supplementaryItems": 6,
+      "sourceItems": 0,
+      "supplementaryItems": 38,
       "vocabularyCount": 8,
       "questionsCount": 18
     },
@@ -144,11 +144,16 @@
             "word": "wool",
             "arabicMeaning": "صوف",
             "example": "Her coat is made of wool, so it keeps her warm.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_2",
@@ -156,11 +161,16 @@
             "word": "machine",
             "arabicMeaning": "ماكينة",
             "example": "He invented a new machine that worked very well.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_3",
@@ -168,11 +178,16 @@
             "word": "dyed yarn",
             "arabicMeaning": "غزل مصبوغ",
             "example": "The artisans dye the yarn to color the carpets.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_4",
@@ -180,11 +195,16 @@
             "word": "artisans",
             "arabicMeaning": "حرفيون",
             "example": "The artisans make beautiful carpets by hand.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_5",
@@ -192,11 +212,16 @@
             "word": "carpet",
             "arabicMeaning": "سجادة",
             "example": "She picked out a colorful carpet for her bedroom.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_6",
@@ -204,11 +229,16 @@
             "word": "loom",
             "arabicMeaning": "نول",
             "example": "The artisans weave carpets using a machine called a loom.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_7",
@@ -216,11 +246,16 @@
             "word": "transportation",
             "arabicMeaning": "وسائل المواصلات",
             "example": "Buses and trains are forms of public transportation.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_8",
@@ -228,11 +263,16 @@
             "word": "port",
             "arabicMeaning": "ميناء",
             "example": "Alexandria has an important port for trading ships.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,11 +292,22 @@
             ],
             "correctAnswer": "wool",
             "reason": "Wool is a natural fiber from sheep that provides warmth.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_q2",
@@ -270,11 +321,22 @@
             ],
             "correctAnswer": "loom",
             "reason": "A loom is a traditional frame or machine used for weaving textiles and carpets.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_q3",
@@ -288,11 +350,22 @@
             ],
             "correctAnswer": "port",
             "reason": "A port is a harbor location where ships dock for trade and transportation.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_vocab_q4",
@@ -306,11 +379,22 @@
             ],
             "correctAnswer": "transportation",
             "reason": "Transportation refers to vehicles used for travel and moving goods.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -324,11 +408,16 @@
             "rule": "Subordinating Conjunctions of Time, Cause, and Purpose",
             "explanation": "We use subordinating conjunctions such as 'after', 'before', 'as soon as', 'while', 'although', 'even though', and 'so that' to join two clauses expressing time sequences, contrasts, or reasons.",
             "example": "I did my homework as soon as I got home from school.",
-            "origin": "source",
-            "sourcePdfPage": 130
+            "origin": "supplementary",
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_grammar_2",
@@ -336,11 +425,16 @@
             "rule": "Irregular Plural Nouns",
             "explanation": "Some nouns form their plurals irregularly without adding -s or -es, such as child/children, man/men, woman/women, person/people, foot/feet, tooth/teeth, goose/geese, mouse/mice, and sheep/sheep.",
             "example": "Three women are waiting in a line.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -360,11 +454,22 @@
             ],
             "correctAnswer": "as soon as",
             "reason": "'As soon as' links two sequential actions occurring immediately one after another.",
-            "origin": "source",
-            "sourcePdfPage": 131
+            "origin": "supplementary",
+            "sourcePdfPage": 131,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_grammar_q2",
@@ -378,11 +483,22 @@
             ],
             "correctAnswer": "so that",
             "reason": "'So that' introduces a purpose or intended goal.",
-            "origin": "source",
-            "sourcePdfPage": 135
+            "origin": "supplementary",
+            "sourcePdfPage": 135,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_grammar_q3",
@@ -396,11 +512,22 @@
             ],
             "correctAnswer": "women",
             "reason": "'Women' is the correct irregular plural noun for 'woman'.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_grammar_q4",
@@ -414,11 +541,22 @@
             ],
             "correctAnswer": "Although",
             "reason": "'Although' shows a contrast between being tired and still completing the task.",
-            "origin": "source",
-            "sourcePdfPage": 131
+            "origin": "supplementary",
+            "sourcePdfPage": 131,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -430,11 +568,14 @@
           "itemId": "u4_reading_p1",
           "content": {
             "passage": "Last summer I really wanted to learn about traditional Egyptian crafts. So, my grandma took me to a spinning and weaving workshop so that I could learn about this craft. The guide explained how the artisans make the carpets while we watched them weave. First, they collect the wool from sheep. They have to clean, wash, and dry the wool before they can use it. The artisans spin the wool to make it into yarn after they clean it. Then, they need to dye the yarn-that is how it gets its color. I think the bright colors are the most beautiful ones even though some people prefer dark colors. These artisans only use natural vegetable dyes, although some other workshops use synthetic dyes. My grandma and I like the natural vegetable dyes as they are more traditional. So, now I guess you're wondering how they dye the wool. Well, I learned that different plants and roots are first grown in a rural village. Then they use these plants and roots to make beautiful dyes to color the wool. They have to boil the yarn with the dyes, and then let it dry. As soon as the yarn is dry, they can use it to weave a carpet.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_reading_q1",
@@ -448,11 +589,22 @@
             ],
             "correctAnswer": "To dye the yarn with natural colors",
             "reason": "The text explains that plants and roots are boiled with the yarn to color it naturally.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_reading_q2",
@@ -466,11 +618,22 @@
             ],
             "correctAnswer": "Yarn",
             "reason": "The text states that artisans spin the wool to turn it into yarn after cleaning it.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -483,7 +646,10 @@
           "content": {
             "script": "Hello, my name is Dina. I live in Alexandria with my family in an apartment in a neighborhood called Amrya. Alexandria is a beautiful city on the Mediterranean Sea. It is the second largest city in Egypt with a population of more than 5 million people. My city has an important port and lots of services like schools, hospitals, and shops. My favorite place to visit is Montaza Palace because of its beautiful gardens.",
             "origin": "supplementary",
-            "sourcePdfPage": 137
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -501,7 +667,18 @@
             "correctAnswer": "In Alexandria",
             "reason": "Dina states in the listening passage that she lives in Alexandria.",
             "origin": "supplementary",
-            "sourcePdfPage": 137
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -519,7 +696,18 @@
             "correctAnswer": "Montaza Palace",
             "reason": "Dina mentions that her favorite place is Montaza Palace due to its beautiful gardens.",
             "origin": "supplementary",
-            "sourcePdfPage": 137
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -565,11 +753,21 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 139
+            "origin": "supplementary",
+            "sourcePdfPage": 139,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -595,7 +793,20 @@
             "correctAnswer": "Loom",
             "reason": "A loom is the machine used by carpet weavers to hold warp threads and interweave yarn.",
             "origin": "supplementary",
-            "sourcePdfPage": 128
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -618,7 +829,20 @@
             "correctAnswer": "before",
             "reason": "'Before' expresses an action that must happen prior to another action.",
             "origin": "supplementary",
-            "sourcePdfPage": 130
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -641,7 +865,20 @@
             "correctAnswer": "Smart growth",
             "reason": "Smart growth focuses on walkable neighborhoods, public transport, and green spaces.",
             "origin": "supplementary",
-            "sourcePdfPage": 137
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -664,11 +901,22 @@
             ],
             "correctAnswer": "loom",
             "reason": "A loom is the traditional machine used for carpet weaving.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_2",
@@ -682,11 +930,22 @@
             ],
             "correctAnswer": "port",
             "reason": "A port is a harbor town or area where cargo ships dock.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_3",
@@ -700,11 +959,22 @@
             ],
             "correctAnswer": "wool",
             "reason": "Wool is collected from sheep to spin into yarn.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_4",
@@ -718,11 +988,22 @@
             ],
             "correctAnswer": "sheep",
             "reason": "The word 'sheep' retains the same spelling in singular and plural forms.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_5",
@@ -736,11 +1017,22 @@
             ],
             "correctAnswer": "mice",
             "reason": "'Mice' is the correct irregular plural form of 'mouse'.",
-            "origin": "source",
-            "sourcePdfPage": 124
+            "origin": "supplementary",
+            "sourcePdfPage": 124,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_6",
@@ -754,11 +1046,22 @@
             ],
             "correctAnswer": "after",
             "reason": "'After' indicates an action completed following a previous action.",
-            "origin": "source",
-            "sourcePdfPage": 130
+            "origin": "supplementary",
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_7",
@@ -772,11 +1075,22 @@
             ],
             "correctAnswer": "so that",
             "reason": "'So that' introduces purpose and intention.",
-            "origin": "source",
-            "sourcePdfPage": 130
+            "origin": "supplementary",
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_8",
@@ -790,11 +1104,22 @@
             ],
             "correctAnswer": "although",
             "reason": "'Although' introduces a contrasting idea.",
-            "origin": "source",
-            "sourcePdfPage": 130
+            "origin": "supplementary",
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_9",
@@ -808,11 +1133,22 @@
             ],
             "correctAnswer": "Greater Cairo",
             "reason": "Fareeda states in the reading passage that she lives in Greater Cairo.",
-            "origin": "source",
-            "sourcePdfPage": 125
+            "origin": "supplementary",
+            "sourcePdfPage": 125,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4_test_10",
@@ -826,13 +1162,35 @@
             ],
             "correctAnswer": "Providing good public transportation and green spaces",
             "reason": "Smart growth aims to create walkable cities with green areas and reliable public transit.",
-            "origin": "source",
-            "sourcePdfPage": 137
+            "origin": "supplementary",
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.920Z",
+    "itemsAudited": 38,
+    "sourceClaims": 32,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 32,
+    "citationWarnings": 23,
+    "itemsWithSourceSubfields": 29,
+    "reclassifiedToSupplementary": 32
+  }
 }

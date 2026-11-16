@@ -92,8 +92,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 19,
-      "supplementaryItems": 10,
+      "sourceItems": 0,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -160,11 +160,16 @@
             "word": "coronation",
             "arabicMeaning": "حفل تتويج",
             "example": "Rudolf decided to visit Ruritania to see the coronation of King Rudolf V.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-2",
@@ -172,11 +177,16 @@
             "word": "ambassador",
             "arabicMeaning": "سفير",
             "example": "An ambassador is an important person who represents his country abroad.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-3",
@@ -184,11 +194,16 @@
             "word": "castle",
             "arabicMeaning": "قلعة",
             "example": "The Castle of Zenda was surrounded by a deep moat.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-4",
@@ -196,11 +211,16 @@
             "word": "moat",
             "arabicMeaning": "خندق مائي",
             "example": "Rudolf swam across the moat to reach the castle and rescue the King.",
-            "origin": "source",
-            "sourcePdfPage": 270
+            "origin": "supplementary",
+            "sourcePdfPage": 270,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-5",
@@ -208,11 +228,16 @@
             "word": "chancellor",
             "arabicMeaning": "مستشار",
             "example": "The chancellor brought official papers for the King to sign.",
-            "origin": "source",
-            "sourcePdfPage": 264
+            "origin": "supplementary",
+            "sourcePdfPage": 264,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -232,11 +257,22 @@
             ],
             "correctAnswer": "coronation",
             "reason": "A coronation is the official ceremony in which a monarch is crowned.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-q-2",
@@ -250,11 +286,22 @@
             ],
             "correctAnswer": "ambassador",
             "reason": "An ambassador is a high-ranking official representing their state abroad.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-q-3",
@@ -268,11 +315,22 @@
             ],
             "correctAnswer": "moat",
             "reason": "A moat is a deep water-filled trench surrounding a castle for defense.",
-            "origin": "source",
-            "sourcePdfPage": 270
+            "origin": "supplementary",
+            "sourcePdfPage": 270,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -287,7 +345,12 @@
             "explanation": "When reporting requests, advice, or past obligations in narrative stories, reporting verbs like 'ask', 'tell', or 'order' are followed by an object and an infinitive with 'to'. Past modal verbs express historical necessity.",
             "example": "Colonel Sapt asked Rassendyll to take the King's place at the coronation.",
             "origin": "supplementary",
-            "sourcePdfPage": 260
+            "sourcePdfPage": 260,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -311,7 +374,18 @@
             "correctAnswer": "to take",
             "reason": "The structure 'ask someone + to infinitive' is used to report requests and instructions.",
             "origin": "supplementary",
-            "sourcePdfPage": 260
+            "sourcePdfPage": 260,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -329,7 +403,18 @@
             "correctAnswer": "were",
             "reason": "When reporting past continuous statements, present auxiliary verbs shift to past tense 'were'.",
             "origin": "supplementary",
-            "sourcePdfPage": 265
+            "sourcePdfPage": 265,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -347,7 +432,18 @@
             "correctAnswer": "had not drunk",
             "reason": "The third conditional uses 'had + past participle' in the if-clause to describe impossible past conditions.",
             "origin": "supplementary",
-            "sourcePdfPage": 259
+            "sourcePdfPage": 259,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -362,11 +458,14 @@
           "itemId": "read-p-1",
           "content": {
             "passage": "I was enjoying breakfast in the dining room of my brother's house, when his wife Rose came into the room. 'When are you going to do anything useful, Rudolf?' she asked. 'My dear Rose, why should I do anything? I have money and a good family. My brother is Lord Burlesdon and you are his charming wife. It is enough!' 'You are twenty-nine, and all you have done is-' 'Travel? That's true. But our family doesn't need to do things.' Rose looked annoyed. She thought that I was lazy. This was true, but I had traveled and learned a lot. I spoke German perfectly. I was a good swordsman, and I could ride a horse well. Now, Sir Jacob Borrodaile was offering me work as an ambassador in six months' time. I decided to visit Ruritania, where King Rudolf V was soon to be crowned.",
-            "origin": "source",
-            "sourcePdfPage": 258
+            "origin": "supplementary",
+            "sourcePdfPage": 258,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read-q-1",
@@ -380,11 +479,22 @@
             ],
             "correctAnswer": "To see the coronation of King Rudolf V",
             "reason": "Rudolf wanted to witness the coronation in Ruritania because his family had historical ties to the Elphberg royal family.",
-            "origin": "source",
-            "sourcePdfPage": 258
+            "origin": "supplementary",
+            "sourcePdfPage": 258,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -397,7 +507,10 @@
           "content": {
             "script": "Presenter: Welcome to today's literature overview of 'The Prisoner of Zenda' by Anthony Hope. The novel tells the thrilling adventure of Rudolf Rassendyll, an English gentleman who travels to Ruritania. Upon arrival, he meets the real King, Rudolf V, who looks almost identical to him. When the King is drugged by his half-brother Duke Michael on the eve of the coronation, Rudolf is persuaded by loyal officers Sapt and Fritz to impersonate the King at Strelsau to save the crown.",
             "origin": "supplementary",
-            "sourcePdfPage": 255
+            "sourcePdfPage": 255,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -415,7 +528,18 @@
             "correctAnswer": "To prevent Duke Michael from taking the crown",
             "reason": "If the real King was absent from the coronation, Duke Michael would seize the throne for himself.",
             "origin": "supplementary",
-            "sourcePdfPage": 255
+            "sourcePdfPage": 255,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -441,11 +565,17 @@
                 "speakerGender": "male"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 259
+            "origin": "supplementary",
+            "sourcePdfPage": 259,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -471,7 +601,20 @@
             "correctAnswer": "Colonel",
             "reason": "A colonel is a senior officer rank in the army.",
             "origin": "supplementary",
-            "sourcePdfPage": 257
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -494,7 +637,20 @@
             "correctAnswer": "He held a small metal table in front of him",
             "reason": "Rudolf picked up a small metal table to shield himself against the three gunshots.",
             "origin": "supplementary",
-            "sourcePdfPage": 265
+            "sourcePdfPage": 265,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -517,11 +673,22 @@
             ],
             "correctAnswer": "Anthony Hope",
             "reason": "Anthony Hope wrote 'The Prisoner of Zenda' in 1894.",
-            "origin": "source",
-            "sourcePdfPage": 255
+            "origin": "supplementary",
+            "sourcePdfPage": 255,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -535,11 +702,22 @@
             ],
             "correctAnswer": "Red hair and blue eyes",
             "reason": "The Rassendyll family shared red hair and blue eyes due to distant royal connections.",
-            "origin": "source",
-            "sourcePdfPage": 257
+            "origin": "supplementary",
+            "sourcePdfPage": 257,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -553,11 +731,22 @@
             ],
             "correctAnswer": "The coffee he drank contained something bad",
             "reason": "Duke Michael sent coffee containing a drug that put the King into a deep sleep.",
-            "origin": "source",
-            "sourcePdfPage": 259
+            "origin": "supplementary",
+            "sourcePdfPage": 259,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -571,11 +760,22 @@
             ],
             "correctAnswer": "Strelsau",
             "reason": "Strelsau is identified in the text as the capital city of Ruritania.",
-            "origin": "source",
-            "sourcePdfPage": 255
+            "origin": "supplementary",
+            "sourcePdfPage": 255,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-5",
@@ -589,11 +789,22 @@
             ],
             "correctAnswer": "Princess Flavia",
             "reason": "Princess Flavia warned Rudolf to be careful because Duke Michael was dangerous.",
-            "origin": "source",
-            "sourcePdfPage": 259
+            "origin": "supplementary",
+            "sourcePdfPage": 259,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -607,11 +818,22 @@
             ],
             "correctAnswer": "a deep area of water around a castle",
             "reason": "A moat is a protective water trench constructed around castle walls.",
-            "origin": "source",
-            "sourcePdfPage": 270
+            "origin": "supplementary",
+            "sourcePdfPage": 270,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -625,11 +847,22 @@
             ],
             "correctAnswer": "He returned quietly to England",
             "reason": "After finishing his duty, Rudolf returned home to live quietly in England.",
-            "origin": "source",
-            "sourcePdfPage": 273
+            "origin": "supplementary",
+            "sourcePdfPage": 273,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -644,7 +877,18 @@
             "correctAnswer": "had to",
             "reason": "Modal past obligation 'had to' expresses necessity in reported narrative events.",
             "origin": "supplementary",
-            "sourcePdfPage": 273
+            "sourcePdfPage": 273,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -662,7 +906,18 @@
             "correctAnswer": "gave",
             "reason": "Second conditional structures use past simple 'gave' in the condition clause.",
             "origin": "supplementary",
-            "sourcePdfPage": 271
+            "sourcePdfPage": 271,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -679,13 +934,35 @@
             ],
             "correctAnswer": "Duke Michael",
             "reason": "A servant announced that Duke Michael was dead, killed by Rupert Hentzau.",
-            "origin": "source",
-            "sourcePdfPage": 270
+            "origin": "supplementary",
+            "sourcePdfPage": 270,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.717Z",
+    "itemsAudited": 29,
+    "sourceClaims": 19,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 19,
+    "citationWarnings": 12,
+    "itemsWithSourceSubfields": 20,
+    "reclassifiedToSupplementary": 19
+  }
 }

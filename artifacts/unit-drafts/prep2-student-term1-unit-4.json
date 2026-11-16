@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 26,
-      "supplementaryItems": 3,
+      "sourceItems": 1,
+      "supplementaryItems": 28,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -116,11 +116,16 @@
             "word": "artwork",
             "arabicMeaning": "عمل فني",
             "example": "An artwork can express an artist's personal ideas and emotions.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -128,11 +133,16 @@
             "word": "sculpture",
             "arabicMeaning": "تمثال / منحوتة",
             "example": "The sculpture was made from smooth stone and shiny metal.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -140,11 +150,16 @@
             "word": "creativity",
             "arabicMeaning": "إبداع",
             "example": "Creativity is a valuable life skill that helps us solve problems.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -152,11 +167,16 @@
             "word": "gallery",
             "arabicMeaning": "معرض فني",
             "example": "We visited an art gallery to see the new paintings.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -164,11 +184,16 @@
             "word": "sculptor",
             "arabicMeaning": "نحات",
             "example": "Mahmoud Mokhtar was a famous Egyptian sculptor.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -188,11 +213,22 @@
             ],
             "correctAnswer": "To express personal thoughts and feelings",
             "reason": "The text states that an artwork is created by an artist to express their ideas and emotions.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -206,11 +242,22 @@
             ],
             "correctAnswer": "sculptors",
             "reason": "Mahmoud Mokhtar is recognized in the text as a pioneer Egyptian sculptor.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -224,11 +271,22 @@
             ],
             "correctAnswer": "gallery",
             "reason": "An art gallery is a public space dedicated to displaying works of art.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -242,11 +300,16 @@
             "rule": "Using Connectors (because, so, but, although)",
             "explanation": "Connectors link sentences to show cause (because), result (so), or contrast (but, although).",
             "example": "I kept trying although I was tired.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -266,11 +329,22 @@
             ],
             "correctAnswer": "because",
             "reason": "'Because' introduces the reason/cause for not giving up.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-2",
@@ -284,11 +358,22 @@
             ],
             "correctAnswer": "so",
             "reason": "'So' expresses the result of working hard.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-3",
@@ -302,11 +387,22 @@
             ],
             "correctAnswer": "Although",
             "reason": "'Although' shows contrast between the difficulty of the exam and getting high marks.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -319,7 +415,10 @@
           "content": {
             "passage": "Mahmoud Mokhtar (born in 1891) was a very important national artist. He was one of the famous Egyptian sculptors. He mixed old Egyptian art with new European styles. Mokhtar learned to sculpt as a child. He later went to art schools in Egypt and Paris. His most famous work is Nahdat Misr Statue. This sculpture shows a woman and a Sphinx, symbolizing Egypt's history and agriculture. It became a big symbol for Egypt and was put in a public square in Cairo in 1928. Mokhtar actively participated in the art movement, using his art to promote Egyptian identity. He also wrote articles to encourage art appreciation. He gained international recognition, exhibiting his work in Paris. His piece, al-Khamaseen, shows a peasant woman battling sandstorms. He died in 1934. Later, a museum was opened in Cairo to show his art. Mokhtar is still known as Egypt's most famous sculptor, and his art played a big part in modern Egyptian art history.",
             "origin": "source",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -336,11 +435,22 @@
             ],
             "correctAnswer": "A woman and a Sphinx",
             "reason": "The text explicitly mentions that the sculpture shows a woman and a Sphinx symbolizing Egypt's history and agriculture.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -353,7 +463,10 @@
           "content": {
             "script": "Interviewer: Welcome Youssef. Can you tell us about your artwork?\nYoussef: Hello! I love creating sculptures using different materials like clay and shiny metal.\nInterviewer: Do you like sharing your studio?\nYoussef: Yes, I enjoy sharing my studio with others and making interactive art that lets people engage directly with the message.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -370,11 +483,22 @@
             ],
             "correctAnswer": "clay",
             "reason": "In the listening context, Youssef identifies clay as a key material for shaping his art.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -407,11 +531,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -437,7 +569,20 @@
             "correctAnswer": "sculpture",
             "reason": "A sculpture is a three-dimensional artwork created by shaping materials such as clay or stone.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -460,7 +605,20 @@
             "correctAnswer": "because",
             "reason": "'Because' introduces the reason for Rodayna staying home.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -483,11 +641,22 @@
             ],
             "correctAnswer": "digital natives",
             "reason": "Digital natives refers to people who grew up in the era of digital technology.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -501,11 +670,22 @@
             ],
             "correctAnswer": "empathy",
             "reason": "Empathy is defined as the capacity to understand and share the feelings of others.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -519,11 +699,22 @@
             ],
             "correctAnswer": "al-Khamaseen",
             "reason": "Al-Khamaseen is Mokhtar's renowned sculpture depicting a peasant woman in a storm.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -537,11 +728,22 @@
             ],
             "correctAnswer": "Cairo",
             "reason": "The text confirms the Nahdat Misr Statue was erected in a Cairo public square in 1928.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-5",
@@ -555,11 +757,22 @@
             ],
             "correctAnswer": "but",
             "reason": "'But' is used to connect two contrasting clauses.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -573,11 +786,22 @@
             ],
             "correctAnswer": "because",
             "reason": "'Because' provides the reason for taking an art class.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -591,11 +815,22 @@
             ],
             "correctAnswer": "emotions",
             "reason": "The text defines artwork as a means of expressing personal ideas and emotions.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -609,11 +844,22 @@
             ],
             "correctAnswer": "compass",
             "reason": "A compass was listed among the practical items packed for their exploration.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -627,11 +873,22 @@
             ],
             "correctAnswer": "European",
             "reason": "The passage highlights how Mokhtar combined traditional Egyptian art with European technique.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -645,13 +902,35 @@
             ],
             "correctAnswer": "drawing",
             "reason": "The text states that Malik loved drawing and sketched the scenery along the journey.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.230Z",
+    "itemsAudited": 29,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 16,
+    "itemsWithSourceSubfields": 26,
+    "reclassifiedToSupplementary": 25
+  }
 }

@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 25,
-      "supplementaryItems": 4,
+      "sourceItems": 1,
+      "supplementaryItems": 28,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "dynasty",
             "arabicMeaning": "سلالة حاكمة",
             "example": "The ancient dynasty ruled the country for several generations.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_2",
@@ -126,11 +131,16 @@
             "word": "infrastructure",
             "arabicMeaning": "البنية التحتية",
             "example": "The government is investing heavily in modern infrastructure.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_3",
@@ -138,11 +148,16 @@
             "word": "troubleshoot",
             "arabicMeaning": "إصلاح الأعطال",
             "example": "The IT team worked quickly to troubleshoot the printer error.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_4",
@@ -150,11 +165,16 @@
             "word": "automated",
             "arabicMeaning": "آلي / ميكانيكي",
             "example": "The factory uses an automated system to pack products efficiently.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -174,11 +194,22 @@
             ],
             "correctAnswer": "dynasty",
             "reason": "By definition in the unit text, a dynasty refers to a ruling family holding power across generations.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vq_2",
@@ -192,11 +223,22 @@
             ],
             "correctAnswer": "It is not connected to the network",
             "reason": "'Offline' refers to a device that is currently disconnected from the network or system.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vq_3",
@@ -210,11 +252,22 @@
             ],
             "correctAnswer": "drivers",
             "reason": "Drivers are specialized software components that enable hardware devices to operate with an operating system.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -228,11 +281,16 @@
             "rule": "Reported Speech: Statements",
             "explanation": "When reporting statements, the verb tense usually shifts back into the past tense (e.g., present simple becomes past simple, present perfect becomes past perfect). Pronouns also change as needed.",
             "example": "Dr. Ali said that machines helped people work faster.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_gram_2",
@@ -240,11 +298,16 @@
             "rule": "Reported Speech: Commands and Requests",
             "explanation": "To report commands or requests, use a reporting verb like told, asked, ordered, or warned followed by an object and 'to' or 'not to' + infinitive.",
             "example": "The supervisor told me to turn off the machine.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -264,11 +327,22 @@
             ],
             "correctAnswer": "had built",
             "reason": "In reported speech, past or present perfect forms backshift to the past perfect 'had built'.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_gq_2",
@@ -282,11 +356,22 @@
             ],
             "correctAnswer": "not to drive",
             "reason": "Negative commands in reported speech follow the pattern: object + not to + infinitive.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_gq_3",
@@ -300,11 +385,22 @@
             ],
             "correctAnswer": "to write",
             "reason": "Reported requests use the reporting verb + object + to + infinitive verb.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -317,7 +413,10 @@
           "content": {
             "passage": "Egypt, a land rich in ancient wonders, has a long and fascinating history with machines. From the very basic tools of the early dynasties to the sophisticated devices of today, machines have played an important role in shaping the nation. In ancient times, Egyptians relied heavily on simple machines like levers and ramps to build their monumental pyramids and temples. Historians believe that these early innovations laid the groundwork for future engineering marvels. One expert noted, “The Egyptians were masters of mechanics long before the modern era.” During the Industrial Revolution, Egypt began importing advanced machinery from Europe. Cotton gins and steam engines revolutionized agriculture and transportation. However, not all changes were smooth—some traditional crafts disappeared as machines took over. Today, Egypt continues to adopt modern technology, from computerized factories to renewable energy systems. While some fear that machines may replace human labor, others argue they enhance productivity. As one engineer remarked, “Machines are tools, not replacements for human skills.”",
             "origin": "source",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -334,11 +433,22 @@
             ],
             "correctAnswer": "Levers and ramps",
             "reason": "The text explicitly states that ancient Egyptians relied on simple machines like levers and ramps.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -351,7 +461,10 @@
           "content": {
             "script": "Customer: Hello, I am calling from Egypt Technologies. I need help with my office printer. It shows that it is offline, and I urgently need to print a project report.\nTechnician: Hello! Let's troubleshoot this together. First, please check if the printer cable is securely connected to your computer.\nCustomer: Yes, the cable is plugged in tightly.\nTechnician: Great. Next, right-click on the printer icon on your computer screen and check the printer settings. You might need to update your printer drivers to the latest version.\nCustomer: I see the option now. Updating drivers solved the issue! Thank you so much.\nTechnician: You are welcome. To prevent this issue in the future, make sure your operating system updates hardware drivers automatically.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -369,7 +482,18 @@
             "correctAnswer": "The printer driver needed an update",
             "reason": "Updating the printer drivers to the latest version resolved the offline status.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -405,11 +529,19 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -435,7 +567,20 @@
             "correctAnswer": "lay the groundwork",
             "reason": "The idiom 'lay the groundwork' means to make necessary preparations for future success.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -458,7 +603,20 @@
             "correctAnswer": "The engineer said that they used solar energy.",
             "reason": "Present simple 'use' changes to past simple 'used' and pronoun 'we' changes to 'they'.",
             "origin": "supplementary",
-            "sourcePdfPage": 29
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -481,11 +639,22 @@
             ],
             "correctAnswer": "Levers and ramps",
             "reason": "Ancient Egyptians relied on levers and ramps for monumental construction projects.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_2",
@@ -499,11 +668,22 @@
             ],
             "correctAnswer": "Cotton gin",
             "reason": "The cotton gin quickly separated cotton fibers from seeds, revolutionizing agriculture.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_3",
@@ -517,11 +697,22 @@
             ],
             "correctAnswer": "To proceed with as much speed and energy as possible",
             "reason": "The idiom tip defines 'full steam ahead' as proceeding with maximum speed and energy.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_4",
@@ -535,11 +726,22 @@
             ],
             "correctAnswer": "Software that helps devices work properly with a computer system",
             "reason": "Drivers are software programs designed to help hardware devices communicate with operating systems.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_5",
@@ -553,11 +755,22 @@
             ],
             "correctAnswer": "Dr. Ali said that machines helped people work faster.",
             "reason": "Present simple 'help' changes to past simple 'helped' in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_6",
@@ -571,11 +784,22 @@
             ],
             "correctAnswer": "The guide warned us not to touch the ancient statue.",
             "reason": "Negative imperative commands report as reporting verb + object + not to + infinitive.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_7",
@@ -589,11 +813,22 @@
             ],
             "correctAnswer": "to do",
             "reason": "Reported commands/requests take 'to + infinitive'.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_8",
@@ -607,11 +842,22 @@
             ],
             "correctAnswer": "Stop completely",
             "reason": "The context explains that if technology fails completely, activities stop entirely (come to a standstill).",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_9",
@@ -625,11 +871,22 @@
             ],
             "correctAnswer": "Opposing View",
             "reason": "The opposing view paragraph presents the counterargument and explains why the author disagrees.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_10",
@@ -643,13 +900,35 @@
             ],
             "correctAnswer": "In conclusion",
             "reason": "'In conclusion' signals the final summary and restatement of the thesis in writing.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.041Z",
+    "itemsAudited": 29,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 15,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 24
+  }
 }

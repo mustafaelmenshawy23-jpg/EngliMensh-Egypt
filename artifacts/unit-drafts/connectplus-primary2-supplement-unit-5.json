@@ -83,8 +83,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 10,
-      "supplementaryItems": 21,
+      "sourceItems": 1,
+      "supplementaryItems": 30,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -151,11 +151,16 @@
             "word": "stork",
             "arabicMeaning": "طائر اللقلق",
             "example": "There were storks next to the river.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_vocab_2",
@@ -163,11 +168,16 @@
             "word": "turtle",
             "arabicMeaning": "سلحفاة",
             "example": "There was a big turtle in the water.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_vocab_3",
@@ -175,11 +185,16 @@
             "word": "rainforest",
             "arabicMeaning": "غابة مطيرة",
             "example": "Monkeys live in the rainforest.",
-            "origin": "source",
-            "sourcePdfPage": 170
+            "origin": "supplementary",
+            "sourcePdfPage": 170,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_vocab_4",
@@ -187,11 +202,16 @@
             "word": "desert",
             "arabicMeaning": "صحراء",
             "example": "In the desert, it is hot and dry.",
-            "origin": "source",
-            "sourcePdfPage": 171
+            "origin": "supplementary",
+            "sourcePdfPage": 171,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_vocab_5",
@@ -199,11 +219,16 @@
             "word": "vet",
             "arabicMeaning": "طبيب بيطري",
             "example": "Take your pet to the vet if it is sick.",
-            "origin": "source",
-            "sourcePdfPage": 180
+            "origin": "supplementary",
+            "sourcePdfPage": 180,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -223,7 +248,17 @@
             "correctAnswer": "Penguin",
             "reason": "Penguins live in the Antarctic tundra habitat where it is cold.",
             "origin": "supplementary",
-            "sourcePdfPage": 171
+            "sourcePdfPage": 171,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -240,7 +275,17 @@
             "correctAnswer": "vet",
             "reason": "A vet is a doctor who takes care of sick animals.",
             "origin": "supplementary",
-            "sourcePdfPage": 180
+            "sourcePdfPage": 180,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -257,7 +302,17 @@
             "correctAnswer": "rainforest",
             "reason": "Rainforests have many trees where monkeys make their home.",
             "origin": "supplementary",
-            "sourcePdfPage": 170
+            "sourcePdfPage": 170,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -274,11 +329,16 @@
             "rule": "There was / There were in the past simple",
             "explanation": "Use 'There was' with singular nouns and 'There were' with plural nouns to describe what existed in the past.",
             "example": "There was a big turtle and there were lots of birds.",
-            "origin": "source",
-            "sourcePdfPage": 161
+            "origin": "supplementary",
+            "sourcePdfPage": 161,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_gram_2",
@@ -286,11 +346,16 @@
             "rule": "Asking 'Was that...?' in the past simple",
             "explanation": "Ask 'Was that a...?' to identify something in the past. Answer with 'Yes, it was' or 'No, it wasn't'.",
             "example": "Was that a hippo? No, it wasn't. It was an owl.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -310,7 +375,17 @@
             "correctAnswer": "were",
             "reason": "'Birds' is a plural noun, so 'were' is required in the past simple.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -327,7 +402,17 @@
             "correctAnswer": "was",
             "reason": "'A big turtle' is singular, so we use 'was' in the past simple.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -344,7 +429,17 @@
             "correctAnswer": "was",
             "reason": "The affirmative short answer to 'Was that...?' is 'Yes, it was.'",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -359,11 +454,14 @@
           "itemId": "u5_rd_p1",
           "content": {
             "passage": "We were on a boat trip yesterday! It was great fun. It was a sunny day. There were lots of birds next to the river. There were storks, parrots, and flamingos. There weren't any owls. We usually see owls at nighttime. There were turtles and fish in the river too. There was a big turtle. It was brown and green. There were lots of big fish and small fish in the water. There weren't any crocodiles.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_rd_q1",
@@ -377,7 +475,17 @@
             "correctAnswer": "It was a sunny day.",
             "reason": "The text directly states: 'It was a sunny day.'",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -394,7 +502,17 @@
             "correctAnswer": "Owls are usually seen at nighttime.",
             "reason": "The text explains: 'We usually see owls at nighttime.'",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -409,11 +527,14 @@
           "itemId": "u5_ls_s1",
           "content": {
             "script": "Speaker 1: Look! I think that was a stork! Speaker 2: Was it a turtle? Speaker 1: No, it wasn't! It was a hippo!",
-            "origin": "source",
-            "sourcePdfPage": 159
+            "origin": "supplementary",
+            "sourcePdfPage": 159,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u5_ls_q1",
@@ -427,7 +548,17 @@
             "correctAnswer": "A hippo",
             "reason": "Speaker 1 clarifies by saying 'No, it wasn't! It was a hippo!'",
             "origin": "supplementary",
-            "sourcePdfPage": 159
+            "sourcePdfPage": 159,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -454,7 +585,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -482,7 +619,19 @@
             "correctAnswer": "In the Antarctic tundra",
             "reason": "Polar bears live in cold tundra environments with snow and ice.",
             "origin": "supplementary",
-            "sourcePdfPage": 171
+            "sourcePdfPage": 171,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -504,7 +653,19 @@
             "correctAnswer": "weren't",
             "reason": "'Crocodiles' is plural, so 'weren't' is the correct negative past form.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -527,7 +688,17 @@
             "correctAnswer": "Flamingo",
             "reason": "Flamingos are pink birds found near rivers and lakes.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -544,7 +715,17 @@
             "correctAnswer": "was",
             "reason": "'A big turtle' is singular, requiring 'was' in the past simple.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -561,7 +742,17 @@
             "correctAnswer": "weren't",
             "reason": "'Snakes' is plural, requiring 'weren't' in the past simple negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 161
+            "sourcePdfPage": 161,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -578,7 +769,17 @@
             "correctAnswer": "desert",
             "reason": "Camels live in hot, dry deserts.",
             "origin": "supplementary",
-            "sourcePdfPage": 171
+            "sourcePdfPage": 171,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -595,7 +796,17 @@
             "correctAnswer": "71%",
             "reason": "Seas and oceans cover 71% of the Earth's surface.",
             "origin": "supplementary",
-            "sourcePdfPage": 170
+            "sourcePdfPage": 170,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -612,7 +823,17 @@
             "correctAnswer": "was",
             "reason": "The affirmative past simple short answer to 'Was that...?' is 'Yes, it was.'",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -629,7 +850,17 @@
             "correctAnswer": "Take it to the vet",
             "reason": "A vet provides medical care for sick pets.",
             "origin": "supplementary",
-            "sourcePdfPage": 180
+            "sourcePdfPage": 180,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -646,7 +877,17 @@
             "correctAnswer": "sick",
             "reason": "Pollution and plastic trash harm animals and make them sick.",
             "origin": "supplementary",
-            "sourcePdfPage": 176
+            "sourcePdfPage": 176,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -663,7 +904,17 @@
             "correctAnswer": "Rowing boat",
             "reason": "You need to row a rowing boat using oars.",
             "origin": "supplementary",
-            "sourcePdfPage": 181
+            "sourcePdfPage": 181,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -680,12 +931,33 @@
             "correctAnswer": "were",
             "reason": "'Lots of small fish' functions as plural, using 'were' in the past context.",
             "origin": "supplementary",
-            "sourcePdfPage": 160
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.278Z",
+    "itemsAudited": 31,
+    "sourceClaims": 10,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 9,
+    "citationWarnings": 3,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 9
+  }
 }

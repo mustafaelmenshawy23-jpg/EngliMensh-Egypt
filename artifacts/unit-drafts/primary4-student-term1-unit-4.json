@@ -52,8 +52,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 26,
-      "supplementaryItems": 4,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -120,11 +120,16 @@
             "word": "oasis",
             "arabicMeaning": "واحة",
             "example": "The Siwa Oasis has lots of trees and water.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -132,11 +137,16 @@
             "word": "bazaar",
             "arabicMeaning": "سوق تجاري",
             "example": "We went to Khan Al-Khalili Bazaar to buy gifts.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -144,11 +154,16 @@
             "word": "hospital",
             "arabicMeaning": "مستشفى",
             "example": "Doctors and nurses help sick people feel better at the hospital.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -156,11 +171,16 @@
             "word": "museum",
             "arabicMeaning": "متحف",
             "example": "The museum is full of history and ancient treasures.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -168,11 +188,16 @@
             "word": "monastery",
             "arabicMeaning": "دير",
             "example": "At the top of the mountain, tourists visit the old monastery.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -192,11 +217,22 @@
             ],
             "correctAnswer": "Khan Al-Khalili Bazaar",
             "reason": "Khan Al-Khalili Bazaar is a famous market where tourists buy gifts.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -210,11 +246,22 @@
             ],
             "correctAnswer": "Post office",
             "reason": "The post office is the place in the city where people send letters and packages.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -228,11 +275,22 @@
             ],
             "correctAnswer": "Oasis",
             "reason": "An oasis is a fertile spot in a desert where water and trees are found.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -246,11 +304,16 @@
             "rule": "Prepositions of Place",
             "explanation": "Prepositions of place show where things or people are located. Common prepositions include in, on, in front of, behind, next to, and between.",
             "example": "The cat is next to the box.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -270,11 +333,22 @@
             ],
             "correctAnswer": "behind",
             "reason": "When something is hidden behind an object, it cannot be seen directly.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar-q-2",
@@ -288,11 +362,22 @@
             ],
             "correctAnswer": "on",
             "reason": "We use the preposition 'on' for objects attached to a vertical surface like a wall.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar-q-3",
@@ -306,11 +391,22 @@
             ],
             "correctAnswer": "between",
             "reason": "'Between' indicates a position in the space separating two objects.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -323,7 +419,10 @@
           "content": {
             "passage": "Many tourists visit St. Catherine Mountain in South Sinai, Egypt. They wake up early to climb, and wear warm clothes because it's cold. Along the way, they see colorful rocks and small plants, and some take pictures. At the top, they visit the old monastery and learn about its history. St. Catherine is a popular place for nature, adventure, and fun with friends and family. People can learn about history and enjoy the natural world.",
             "origin": "source",
-            "sourcePdfPage": 70
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -340,11 +439,22 @@
             ],
             "correctAnswer": "South Sinai, Egypt",
             "reason": "The text explicitly states that St. Catherine Mountain is in South Sinai, Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "reading-q-2",
@@ -358,11 +468,22 @@
             ],
             "correctAnswer": "Because it is cold",
             "reason": "The text explains that tourists wear warm clothes because it's cold on the mountain.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -375,7 +496,10 @@
           "content": {
             "script": "Speaker 1: Adam is talking about sending a package. He is standing near the building where people mail letters. It is the post office!\nSpeaker 2: Dina and Wafaa are looking at ancient artifacts and learning about history inside the museum.\nSpeaker 3: Ola and Farah are going to the library because they want to borrow some interesting books to read.",
             "origin": "supplementary",
-            "sourcePdfPage": 66
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -393,7 +517,18 @@
             "correctAnswer": "Museum",
             "reason": "According to the conversation script, Dina and Wafaa are inside the museum looking at historical artifacts.",
             "origin": "supplementary",
-            "sourcePdfPage": 66
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -434,11 +569,20 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -464,7 +608,20 @@
             "correctAnswer": "School",
             "reason": "School is the community place where children go to learn and meet friends.",
             "origin": "supplementary",
-            "sourcePdfPage": 65
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -487,7 +644,20 @@
             "correctAnswer": "on",
             "reason": "'On' describes something situated directly on top of a surface like a chair seat.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -510,11 +680,22 @@
             ],
             "correctAnswer": "Nile River",
             "reason": "The Nile River is the famous long river in Egypt mentioned in the unit.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -528,11 +709,22 @@
             ],
             "correctAnswer": "Cairo Tower",
             "reason": "The Cairo Tower is very tall and lets visitors look out over the city.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -546,11 +738,22 @@
             ],
             "correctAnswer": "Hospital",
             "reason": "Hospitals are built to treat and care for sick people.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -564,11 +767,22 @@
             ],
             "correctAnswer": "Library",
             "reason": "A library is a place designed for reading and borrowing books.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-5",
@@ -582,11 +796,22 @@
             ],
             "correctAnswer": "Museum",
             "reason": "Museums hold historical treasures and artifacts that show our history.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -600,11 +825,22 @@
             ],
             "correctAnswer": "next to",
             "reason": "'Next to' is used when an object is beside another object.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -618,11 +854,22 @@
             ],
             "correctAnswer": "One billion",
             "reason": "By mathematical definition in the lesson, 1,000,000,000 (one billion) is a thousand million.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -636,11 +883,22 @@
             ],
             "correctAnswer": "/b/",
             "reason": "The phonics lesson clarifies that /b/ is voiced while /p/ is voiceless.",
-            "origin": "source",
-            "sourcePdfPage": 69
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -654,11 +912,22 @@
             ],
             "correctAnswer": "An old monastery",
             "reason": "The text states that tourists visit the old monastery at the top of the mountain.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -672,13 +941,35 @@
             ],
             "correctAnswer": "Salt Lake",
             "reason": "The leaflet specifies that visitors swim and take photos at the Salt Lake in Siwa Oasis.",
-            "origin": "source",
-            "sourcePdfPage": 74
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.733Z",
+    "itemsAudited": 30,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 25,
+    "reclassifiedToSupplementary": 25
+  }
 }

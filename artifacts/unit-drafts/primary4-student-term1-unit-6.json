@@ -60,8 +60,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 16,
-      "supplementaryItems": 14,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -128,11 +128,16 @@
             "word": "faded",
             "arabicMeaning": "باهت",
             "example": "Wanda always wore a faded blue dress to school.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_v2",
@@ -140,11 +145,16 @@
             "word": "popular",
             "arabicMeaning": "محبوب",
             "example": "Peggy was a popular girl in the classroom.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_v3",
@@ -152,11 +162,16 @@
             "word": "annoying",
             "arabicMeaning": "مزعج",
             "example": "Making fun of others is annoying and unkind.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_v4",
@@ -164,11 +179,16 @@
             "word": "absent",
             "arabicMeaning": "غائب",
             "example": "Wanda was absent from school for several days.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_v5",
@@ -176,11 +196,16 @@
             "word": "apologize",
             "arabicMeaning": "يعتذر",
             "example": "The girls wrote a letter to apologize to Wanda.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_v6",
@@ -188,11 +213,16 @@
             "word": "behavior",
             "arabicMeaning": "سلوك",
             "example": "They said sorry for their bad behavior.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -213,7 +243,18 @@
             "correctAnswer": "Not present at school",
             "reason": "'Absent' means not present in a place such as school.",
             "origin": "supplementary",
-            "sourcePdfPage": 97
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -231,7 +272,18 @@
             "correctAnswer": "apologize",
             "reason": "To apologize means to say sorry for a mistake or bad action.",
             "origin": "supplementary",
-            "sourcePdfPage": 97
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -249,7 +301,18 @@
             "correctAnswer": "bullying",
             "reason": "Bullying means hurting, scaring, or making fun of others.",
             "origin": "supplementary",
-            "sourcePdfPage": 97
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -266,11 +329,16 @@
             "rule": "Superlative Adjectives",
             "explanation": "We use superlative adjectives with 'the' and '-est' (or 'the most') to compare one person or thing with a whole group.",
             "example": "She is the smartest student in our class.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -291,7 +359,18 @@
             "correctAnswer": "the most beautiful",
             "reason": "We use 'the most' before long adjectives to form the superlative degree.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -309,7 +388,18 @@
             "correctAnswer": "the smartest",
             "reason": "The superlative form of short adjective 'smart' is 'the smartest'.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -327,7 +417,18 @@
             "correctAnswer": "between",
             "reason": "'Between' is used when an object or location is situated in the middle of two places.",
             "origin": "supplementary",
-            "sourcePdfPage": 116
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -342,11 +443,14 @@
           "itemId": "u6_r_p1",
           "content": {
             "passage": "In a small school, there was a girl named Wanda. She was a quiet girl who sat in the back of the classroom. Wanda always wore the same faded blue dress every day. Despite this, Wanda told everyone she had a hundred beautiful dresses at home, all lined up in her closet. One day, Miss Mason announced the annual drawing competition. Wanda won the competition with a hundred beautiful drawings of dresses.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_r_q1",
@@ -361,7 +465,18 @@
             "correctAnswer": "A hundred beautiful drawings of dresses",
             "reason": "Wanda drew a hundred dress designs for the contest instead of owning real ones.",
             "origin": "supplementary",
-            "sourcePdfPage": 100
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -377,7 +492,10 @@
           "content": {
             "script": "Miss Mason stood in front of the class and announced the results of the annual contest. She said, 'I will choose one boy and one girl as winners. To everyone's surprise, Wanda won the competition with her hundred drawings.'",
             "origin": "supplementary",
-            "sourcePdfPage": 100
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -395,7 +513,18 @@
             "correctAnswer": "One boy and one girl",
             "reason": "Miss Mason announced she would choose one boy and one girl as winners.",
             "origin": "supplementary",
-            "sourcePdfPage": 100
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -426,11 +555,18 @@
                 "speakerGender": "female"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 99
+            "origin": "supplementary",
+            "sourcePdfPage": 99,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -456,7 +592,20 @@
             "correctAnswer": "faded",
             "reason": "'Faded' describes something that lost color from age or use.",
             "origin": "supplementary",
-            "sourcePdfPage": 97
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -479,7 +628,20 @@
             "correctAnswer": "This computer is the biggest in the lab.",
             "reason": "Short adjectives like 'big' double the final consonant and add '-est' with 'the'.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -502,11 +664,22 @@
             ],
             "correctAnswer": "A faded blue dress",
             "reason": "The story states Wanda always wore the same faded blue dress.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test2",
@@ -520,11 +693,22 @@
             ],
             "correctAnswer": "So they wouldn't face unkindness",
             "reason": "Wanda's dad wrote that they moved so they wouldn't experience unkindness.",
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test3",
@@ -538,11 +722,22 @@
             ],
             "correctAnswer": "To say 'I am sorry'",
             "reason": "Apologize means expressing regret by saying 'I am sorry'.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test4",
@@ -557,7 +752,18 @@
             "correctAnswer": "the best",
             "reason": "'The best' is the superlative form of 'good'.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -575,7 +781,18 @@
             "correctAnswer": "between",
             "reason": "'Between' indicates positioning in the space separating two places.",
             "origin": "supplementary",
-            "sourcePdfPage": 116
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -592,11 +809,22 @@
             ],
             "correctAnswer": "the shortest",
             "reason": "Superlative form uses 'the' + short adjective + '-est'.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test7",
@@ -610,11 +838,22 @@
             ],
             "correctAnswer": "Kindness matters more than expensive clothes",
             "reason": "The text explicitly states they learned that kindness matters more than expensive clothes.",
-            "origin": "source",
-            "sourcePdfPage": 102
+            "origin": "supplementary",
+            "sourcePdfPage": 102,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test8",
@@ -628,11 +867,22 @@
             ],
             "correctAnswer": "They wrote her a letter of apology",
             "reason": "Peggy and Maddie wrote a letter saying they were sorry for their behavior.",
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test9",
@@ -646,11 +896,22 @@
             ],
             "correctAnswer": "Miss Mason",
             "reason": "Miss Mason read the letter from Wanda's father aloud.",
-            "origin": "source",
-            "sourcePdfPage": 101
+            "origin": "supplementary",
+            "sourcePdfPage": 101,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u6_test10",
@@ -665,12 +926,34 @@
             "correctAnswer": "Thank you, I accept your apology.",
             "reason": "Accepting an apology politely promotes positive relationships and kindness.",
             "origin": "supplementary",
-            "sourcePdfPage": 103
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.758Z",
+    "itemsAudited": 30,
+    "sourceClaims": 16,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 16,
+    "citationWarnings": 8,
+    "itemsWithSourceSubfields": 17,
+    "reclassifiedToSupplementary": 16
+  }
 }

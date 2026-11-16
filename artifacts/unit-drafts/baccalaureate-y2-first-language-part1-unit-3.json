@@ -62,8 +62,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 9,
-      "supplementaryItems": 22,
+      "sourceItems": 1,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -130,11 +130,16 @@
             "word": "massive",
             "arabicMeaning": "ضخم",
             "example": "The Hypostyle Hall contains massive columns built thousands of years ago.",
-            "origin": "source",
-            "sourcePdfPage": 79
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_2",
@@ -142,11 +147,16 @@
             "word": "artifact",
             "arabicMeaning": "قطعة أثرية",
             "example": "The museum houses more than 100,000 ancient artifacts.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_3",
@@ -154,11 +164,16 @@
             "word": "curators",
             "arabicMeaning": "أمناء المتاحف",
             "example": "Curators make careful decisions about which objects to display.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_4",
@@ -166,11 +181,16 @@
             "word": "chronological",
             "arabicMeaning": "مرتب زمنياً",
             "example": "The royal statues are arranged in chronological order.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_5",
@@ -178,11 +198,16 @@
             "word": "media literacy",
             "arabicMeaning": "الثقافة الإعلامية",
             "example": "Media literacy helps citizens evaluate historical claims shared online.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_6",
@@ -190,11 +215,16 @@
             "word": "verify",
             "arabicMeaning": "يتأكد / يتحقق من",
             "example": "Historians must verify the accuracy of old photographs before publishing them.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -215,7 +245,18 @@
             "correctAnswer": "To look after and organize the contents of an exhibition",
             "reason": "According to the unit vocabulary definitions, curators are professionals who preserve and organize museum displays.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -233,7 +274,18 @@
             "correctAnswer": "Chronological",
             "reason": "'Chronological' means arranged according to the temporal sequence of occurrence.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -251,7 +303,18 @@
             "correctAnswer": "Media literacy",
             "reason": "Media literacy is defined in the text as the practice of critically reading and evaluating media sources for accuracy.",
             "origin": "supplementary",
-            "sourcePdfPage": 91
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -268,11 +331,16 @@
             "rule": "Prepositional Phrases of Place and Time",
             "explanation": "Prepositional phrases of place (e.g. 'at the entrance', 'in Luxor') and time (e.g. 'during the reign', 'for more than two thousand years') establish spatial location, sequence, and duration in descriptive writing.",
             "example": "Ahmed and his family arrived in Luxor in the morning and walked along the Nile.",
-            "origin": "source",
-            "sourcePdfPage": 80
+            "origin": "supplementary",
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_2",
@@ -280,11 +348,16 @@
             "rule": "Concession Clauses",
             "explanation": "Concession clauses use linkers such as 'Although', 'Even though', 'Despite', and 'While it is true that' to acknowledge an opposing viewpoint before introducing the main argument.",
             "example": "Although the GEM is very modern, it places ancient history at its heart.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -305,7 +378,18 @@
             "correctAnswer": "in",
             "reason": "The preposition 'in' is used before names of cities, countries, and large geographical areas.",
             "origin": "supplementary",
-            "sourcePdfPage": 80
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -323,7 +407,18 @@
             "correctAnswer": "Although the GEM is modern, it places ancient history at its heart.",
             "reason": "'Although' correctly introduces a sub-clause expressing concession between modern architecture and ancient content.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -341,7 +436,18 @@
             "correctAnswer": "during the reign of Ramesses II",
             "reason": "'During' is used with a time period or historical reign to indicate duration.",
             "origin": "supplementary",
-            "sourcePdfPage": 80
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -357,7 +463,10 @@
           "content": {
             "passage": "Since the Grand Egyptian Museum (GEM) opened its doors to the public on 4 November 2025, it has been described as the largest archaeological museum in the world. Located near the famous Pyramids of Giza, the museum covers 45,000 square meters and houses more than 100,000 artifacts from ancient Egypt. Among these treasures is the complete collection of Tutankhamun, displayed together for the first time in history. The impressive Grand Staircase alone features 87 colossal royal statues, arranged in chronological order, offering visitors a breathtaking introduction to thousands of years of Egyptian civilization.",
             "origin": "source",
-            "sourcePdfPage": 83
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -375,7 +484,18 @@
             "correctAnswer": "The entire collection is displayed together for the first time.",
             "reason": "The reading passage specifies that Tutankhamun's complete collection is shown together for the first time in history.",
             "origin": "supplementary",
-            "sourcePdfPage": 83
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -391,7 +511,10 @@
           "content": {
             "script": "Welcome to Karnak Temple. As we stand near the entrance in the early morning before the tour groups arrive, notice the calm atmosphere surrounding these ancient stones. Walking along the avenue of ram-headed sphinxes brings us to the Hypostyle Hall, which contains 134 massive columns. These giant pillars were designed not simply to impress, but to communicate the sacred power of the pharaoh across generations.",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -409,7 +532,18 @@
             "correctAnswer": "134",
             "reason": "The listening transcript explicitly states that the Hypostyle Hall contains 134 massive columns.",
             "origin": "supplementary",
-            "sourcePdfPage": 78
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -436,7 +570,13 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 81
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -465,7 +605,20 @@
             "correctAnswer": "An object made or used by humans in the past",
             "reason": "An artifact is an object of historical interest constructed or used by human beings.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -488,7 +641,20 @@
             "correctAnswer": "Despite the heavy rain, we explored Karnak Temple.",
             "reason": "'Despite' takes a noun phrase ('the heavy rain') rather than a full finite clause.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -512,7 +678,18 @@
             "correctAnswer": "4 November 2025",
             "reason": "The text confirms that the GEM opened to the public on 4 November 2025.",
             "origin": "supplementary",
-            "sourcePdfPage": 83
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -530,7 +707,18 @@
             "correctAnswer": "87",
             "reason": "Page 83 notes that the Grand Staircase displays 87 colossal royal statues in chronological order.",
             "origin": "supplementary",
-            "sourcePdfPage": 83
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -548,7 +736,18 @@
             "correctAnswer": "Emotional engagement",
             "reason": "The article explains that social media algorithms prioritize emotional engagement such as surprise or pride over accuracy.",
             "origin": "supplementary",
-            "sourcePdfPage": 90
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -566,7 +765,18 @@
             "correctAnswer": "in",
             "reason": "'In' is the correct preposition when referring to a city or region like Luxor.",
             "origin": "supplementary",
-            "sourcePdfPage": 80
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -584,7 +794,18 @@
             "correctAnswer": "To acknowledge counter-arguments politely before giving a main viewpoint",
             "reason": "Concession structures allow writers to show awareness of opposing perspectives before presenting their own argument.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -602,7 +823,18 @@
             "correctAnswer": "Citizen journalism",
             "reason": "Page 95 defines citizen journalism as news reporting carried out by ordinary public members.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -620,7 +852,18 @@
             "correctAnswer": "Choosing specific details to shape the audience's understanding while excluding others",
             "reason": "Selective framing involves purposefully selecting or omitting information to guide how an audience perceives an issue.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -638,7 +881,18 @@
             "correctAnswer": "during",
             "reason": "'During' is used to show that an action occurred throughout the period of a historical reign.",
             "origin": "supplementary",
-            "sourcePdfPage": 80
+            "sourcePdfPage": 80,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -656,7 +910,18 @@
             "correctAnswer": "It distorts public understanding of national identity and history.",
             "reason": "Page 90 highlights that false historical claims risk distorting the public's understanding of their shared past and identity.",
             "origin": "supplementary",
-            "sourcePdfPage": 90
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -674,12 +939,34 @@
             "correctAnswer": "While it is true that",
             "reason": "'While it is true that' opens a concession clause acknowledging a limitation before stating the main positive point.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.325Z",
+    "itemsAudited": 31,
+    "sourceClaims": 9,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 8,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 8
+  }
 }

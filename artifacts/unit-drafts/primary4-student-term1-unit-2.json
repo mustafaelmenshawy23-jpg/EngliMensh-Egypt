@@ -50,8 +50,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 20,
-      "supplementaryItems": 7,
+      "sourceItems": 0,
+      "supplementaryItems": 27,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -118,11 +118,16 @@
             "word": "volunteer",
             "arabicMeaning": "يتطوع",
             "example": "I volunteer to help in the park.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -130,11 +135,16 @@
             "word": "collect",
             "arabicMeaning": "يجمع",
             "example": "We collect bottles and trash.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -142,11 +152,16 @@
             "word": "traffic",
             "arabicMeaning": "مرور / ازدحام مروري",
             "example": "Cars don't move quickly in the morning traffic.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -167,7 +182,18 @@
             "correctAnswer": "volunteer",
             "reason": "To volunteer means to offer your time to help your community without getting paid.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -185,7 +211,18 @@
             "correctAnswer": "collect",
             "reason": "To collect means to bring things together, such as collecting bottles or old clothes.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -203,7 +240,18 @@
             "correctAnswer": "traffic",
             "reason": "Traffic refers to the vehicles moving along a road or stuck in congestion.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -220,11 +268,16 @@
             "rule": "Present Simple Negative and Questions",
             "explanation": "We use don't with I, you, we, they and doesn't with he, she, it. For questions, we use Do or Does followed by the subject and the infinitive verb.",
             "example": "Cars don't move quickly in the morning.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -244,11 +297,22 @@
             ],
             "correctAnswer": "doesn't",
             "reason": "With third-person singular pronouns like 'She', we use 'doesn't' in the negative present simple.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq2",
@@ -262,11 +326,22 @@
             ],
             "correctAnswer": "Does",
             "reason": "Questions with third-person singular subjects ('he') in the present simple start with 'Does'.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq3",
@@ -281,7 +356,18 @@
             "correctAnswer": "don't",
             "reason": "With plural subjects like 'They', we use 'don't' to form the negative in the present simple.",
             "origin": "supplementary",
-            "sourcePdfPage": 29
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -296,11 +382,14 @@
           "itemId": "r1",
           "content": {
             "passage": "Our community has many problems, so let's talk about them. The first problem is traffic. Cars don't move quickly in the morning, especially near schools. The second problem is trash. Some people don't put trash in bins, so the streets look dirty. We put new bins everywhere, and now our street is very clean!",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -314,11 +403,22 @@
             ],
             "correctAnswer": "People not putting trash in bins",
             "reason": "The passage notes that some people do not put trash in bins, causing the streets to look dirty.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -331,7 +431,10 @@
           "content": {
             "script": "Amira: Hello, Adam! What do you do to help our community? Adam: I clean trash from the streets with my friends every Saturday. I also plant trees in the park and feed the dogs and cats.",
             "origin": "supplementary",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -348,11 +451,22 @@
             ],
             "correctAnswer": "Every Saturday",
             "reason": "Adam states in the dialogue that he cleans trash from the streets with his friends every Saturday.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -375,11 +489,17 @@
                 "speakerGender": "male"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -405,7 +525,20 @@
             "correctAnswer": "don't",
             "reason": "The subject 'We' takes 'don't' in present simple negative sentences.",
             "origin": "supplementary",
-            "sourcePdfPage": 29
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -428,7 +561,20 @@
             "correctAnswer": "trees",
             "reason": "People plant flowers and trees to make the park nice and green.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -451,11 +597,22 @@
             ],
             "correctAnswer": "clothes",
             "reason": "Amira mentions collecting clothes and giving them to people who need them.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -469,11 +626,22 @@
             ],
             "correctAnswer": "Nubia",
             "reason": "The text about Egypt states that houses in Nubia are painted in bright colors and have special designs.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -487,11 +655,22 @@
             ],
             "correctAnswer": "helps",
             "reason": "With third-person singular subjects ('She') in the present simple, verbs take an 's' ending.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -505,11 +684,22 @@
             ],
             "correctAnswer": "Use the school bus",
             "reason": "Taking the school bus reduces the number of cars on the road and helps fix traffic problems.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -523,11 +713,22 @@
             ],
             "correctAnswer": "Do",
             "reason": "Questions with the subject 'you' in the present simple use 'Do'.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -541,11 +742,22 @@
             ],
             "correctAnswer": "rice and cotton",
             "reason": "The text explains that farmers grow rice and cotton in the Delta region.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -559,11 +771,22 @@
             ],
             "correctAnswer": "il",
             "reason": "The prefix 'il-' is added to words starting with 'l' like 'legal' to form 'illegal'.",
-            "origin": "source",
-            "sourcePdfPage": 33
+            "origin": "supplementary",
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -577,11 +800,22 @@
             ],
             "correctAnswer": "An old market with wooden stalls",
             "reason": "Hana's diary states that where the supermarket stands now, there was a beautiful old market with wooden stalls.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -595,11 +829,22 @@
             ],
             "correctAnswer": "Walk or cycle to school",
             "reason": "Walking or cycling instead of driving helps stop air pollution.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -613,13 +858,35 @@
             ],
             "correctAnswer": "With the date and a greeting",
             "reason": "Guidelines for writing a diary entry state that you must start with the date at the top and a greeting like 'Dear diary'.",
-            "origin": "source",
-            "sourcePdfPage": 35
+            "origin": "supplementary",
+            "sourcePdfPage": 35,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.711Z",
+    "itemsAudited": 27,
+    "sourceClaims": 20,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 20,
+    "citationWarnings": 16,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 20
+  }
 }

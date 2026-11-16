@@ -64,8 +64,8 @@
     },
     "itemTotals": {
       "totalItems": 32,
-      "sourceItems": 28,
-      "supplementaryItems": 4,
+      "sourceItems": 1,
+      "supplementaryItems": 31,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -132,11 +132,16 @@
             "word": "planet",
             "arabicMeaning": "كوكب",
             "example": "Mars is a red planet.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -144,11 +149,16 @@
             "word": "constellation",
             "arabicMeaning": "كوكبة نجمية",
             "example": "A constellation is a group of stars in the sky.",
-            "origin": "source",
-            "sourcePdfPage": 133
+            "origin": "supplementary",
+            "sourcePdfPage": 133,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -156,11 +166,16 @@
             "word": "shadow",
             "arabicMeaning": "ظل",
             "example": "The shadow is dark and moves with you.",
-            "origin": "source",
-            "sourcePdfPage": 133
+            "origin": "supplementary",
+            "sourcePdfPage": 133,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -168,11 +183,16 @@
             "word": "vapor",
             "arabicMeaning": "بخار",
             "example": "Hot water turns into vapor.",
-            "origin": "source",
-            "sourcePdfPage": 133
+            "origin": "supplementary",
+            "sourcePdfPage": 133,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -180,11 +200,16 @@
             "word": "orbit",
             "arabicMeaning": "يدور في مدار",
             "example": "The Earth orbits the Sun.",
-            "origin": "source",
-            "sourcePdfPage": 141
+            "origin": "supplementary",
+            "sourcePdfPage": 141,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -192,11 +217,16 @@
             "word": "reflect",
             "arabicMeaning": "يعكس",
             "example": "The Moon reflects light from the Sun.",
-            "origin": "source",
-            "sourcePdfPage": 141
+            "origin": "supplementary",
+            "sourcePdfPage": 141,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -215,11 +245,21 @@
             ],
             "correctAnswer": "planet",
             "reason": "Mars is one of the eight planets in our solar system and is known as the red planet.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -232,11 +272,21 @@
             ],
             "correctAnswer": "constellation",
             "reason": "A constellation is defined as a group of stars forming a pattern or shape in the sky.",
-            "origin": "source",
-            "sourcePdfPage": 134
+            "origin": "supplementary",
+            "sourcePdfPage": 134,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -249,11 +299,21 @@
             ],
             "correctAnswer": "vapor",
             "reason": "When water gets heated, it evaporates and turns into water vapor.",
-            "origin": "source",
-            "sourcePdfPage": 135
+            "origin": "supplementary",
+            "sourcePdfPage": 135,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -267,11 +327,16 @@
             "rule": "Comparative and Superlative Adjectives with Consonant Doubling",
             "explanation": "When an adjective ends with a single vowel followed by a consonant, double the consonant before adding -er or -est.",
             "example": "Jupiter is bigger than Earth, and it is the biggest planet.",
-            "origin": "source",
-            "sourcePdfPage": 130
+            "origin": "supplementary",
+            "sourcePdfPage": 130,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -279,11 +344,16 @@
             "rule": "Asking about the weather",
             "explanation": "To ask about weather conditions, use 'What's the weather like?'. Respond with 'It's + adjective'.",
             "example": "What's the weather like? It's rainy.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -302,11 +372,21 @@
             ],
             "correctAnswer": "hotter",
             "reason": "We use comparative form '-er than' when comparing two planets.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -319,11 +399,21 @@
             ],
             "correctAnswer": "biggest",
             "reason": "We use superlative form 'the -est' when comparing one item to all others in a group.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -336,11 +426,21 @@
             ],
             "correctAnswer": "like",
             "reason": "The correct phrase to ask about weather is 'What's the weather like?'.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -353,7 +453,10 @@
           "content": {
             "passage": "Venus is the hottest planet. It is 465°C ! Mercury is closer to the Sun than Venus, but Venus is hotter. Neptune is the farthest planet from the Sun. It is also the coldest.",
             "origin": "source",
-            "sourcePdfPage": 129
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -369,11 +472,21 @@
             ],
             "correctAnswer": "Neptune",
             "reason": "The text explicitly states that Neptune is the farthest planet from the Sun.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q2",
@@ -386,11 +499,21 @@
             ],
             "correctAnswer": "465°C",
             "reason": "The passage states that Venus is 465°C.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -403,7 +526,10 @@
           "content": {
             "script": "Child: What is that in the night sky? Teacher: That is the Moon! It does not make its own light. It reflects light from the Sun.",
             "origin": "supplementary",
-            "sourcePdfPage": 144
+            "sourcePdfPage": 144,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -420,7 +546,17 @@
             "correctAnswer": "No, it reflects light from the Sun",
             "reason": "As stated in the listening text, the Moon does not make light; it reflects light from the Sun.",
             "origin": "supplementary",
-            "sourcePdfPage": 144
+            "sourcePdfPage": 144,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -446,11 +582,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -475,7 +617,19 @@
             "correctAnswer": "The Moon",
             "reason": "The Moon orbits Earth and takes about 27 days to complete one orbit.",
             "origin": "supplementary",
-            "sourcePdfPage": 144
+            "sourcePdfPage": 144,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -497,7 +651,19 @@
             "correctAnswer": "closer",
             "reason": "'Closer' is the correct comparative adjective used when comparing two items.",
             "origin": "supplementary",
-            "sourcePdfPage": 128
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -519,11 +685,21 @@
             ],
             "correctAnswer": "Eight",
             "reason": "There are eight planets in our solar system.",
-            "origin": "source",
-            "sourcePdfPage": 134
+            "origin": "supplementary",
+            "sourcePdfPage": 134,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -536,11 +712,21 @@
             ],
             "correctAnswer": "smaller",
             "reason": "We use comparative '-er than' when comparing Earth to Jupiter.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -553,11 +739,21 @@
             ],
             "correctAnswer": "Neptune",
             "reason": "Neptune is both the farthest planet from the Sun and the coldest.",
-            "origin": "source",
-            "sourcePdfPage": 129
+            "origin": "supplementary",
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -570,11 +766,21 @@
             ],
             "correctAnswer": "vapor",
             "reason": "When water becomes hot, it turns into water vapor.",
-            "origin": "source",
-            "sourcePdfPage": 135
+            "origin": "supplementary",
+            "sourcePdfPage": 135,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -587,11 +793,21 @@
             ],
             "correctAnswer": "Light cannot go through solid objects",
             "reason": "When light reaches a solid object, it cannot pass through, creating a shadow.",
-            "origin": "source",
-            "sourcePdfPage": 142
+            "origin": "supplementary",
+            "sourcePdfPage": 142,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -604,11 +820,21 @@
             ],
             "correctAnswer": "straight",
             "reason": "Light travels in straight lines from light sources.",
-            "origin": "source",
-            "sourcePdfPage": 142
+            "origin": "supplementary",
+            "sourcePdfPage": 142,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -621,11 +847,21 @@
             ],
             "correctAnswer": "365 days",
             "reason": "It takes Earth 365 days (one year) to orbit the Sun.",
-            "origin": "source",
-            "sourcePdfPage": 143
+            "origin": "supplementary",
+            "sourcePdfPage": 143,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -638,11 +874,21 @@
             ],
             "correctAnswer": "rainy",
             "reason": "We use an adjective like 'rainy' to describe weather.",
-            "origin": "source",
-            "sourcePdfPage": 136
+            "origin": "supplementary",
+            "sourcePdfPage": 136,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -655,11 +901,21 @@
             ],
             "correctAnswer": "shape",
             "reason": "Solid objects have a definite shape, unlike gases or liquids.",
-            "origin": "source",
-            "sourcePdfPage": 139
+            "origin": "supplementary",
+            "sourcePdfPage": 139,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -672,13 +928,34 @@
             ],
             "correctAnswer": "reflects",
             "reason": "The Moon reflects light shining on it from the Sun.",
-            "origin": "source",
-            "sourcePdfPage": 144
+            "origin": "supplementary",
+            "sourcePdfPage": 144,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.249Z",
+    "itemsAudited": 32,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 20,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 27
+  }
 }

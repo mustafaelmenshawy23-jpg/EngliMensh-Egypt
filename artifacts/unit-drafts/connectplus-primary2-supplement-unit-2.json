@@ -65,8 +65,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 10,
-      "supplementaryItems": 23,
+      "sourceItems": 1,
+      "supplementaryItems": 32,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -133,11 +133,16 @@
             "word": "short",
             "arabicMeaning": "قصير",
             "example": "He is short and fast.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_2",
@@ -145,11 +150,16 @@
             "word": "fast",
             "arabicMeaning": "سريع",
             "example": "The cat is small and fast.",
-            "origin": "source",
-            "sourcePdfPage": 59
+            "origin": "supplementary",
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_3",
@@ -157,11 +167,16 @@
             "word": "athlete",
             "arabicMeaning": "لاعب رياضي",
             "example": "Habiba Marzouk is a famous athlete.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_4",
@@ -170,7 +185,12 @@
             "arabicMeaning": "جمباز",
             "example": "She does gymnastics every day.",
             "origin": "source",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -181,11 +201,16 @@
             "word": "vegetables",
             "arabicMeaning": "خضروات",
             "example": "We eat fresh vegetables to stay healthy.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_6",
@@ -193,11 +218,16 @@
             "word": "fresh air",
             "arabicMeaning": "هواء نقي",
             "example": "Go outside to get some fresh air.",
-            "origin": "source",
-            "sourcePdfPage": 71
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -218,7 +248,18 @@
             "correctAnswer": "athlete",
             "reason": "An athlete is a person who trains and competes in sports.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -236,7 +277,18 @@
             "correctAnswer": "vegetables",
             "reason": "Vegetables are healthy food that gives our body vitamins.",
             "origin": "supplementary",
-            "sourcePdfPage": 71
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -254,7 +306,18 @@
             "correctAnswer": "slow",
             "reason": "Slow means moving at a low speed, which is the direct opposite of fast.",
             "origin": "supplementary",
-            "sourcePdfPage": 59
+            "sourcePdfPage": 59,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -271,11 +334,16 @@
             "rule": "Asking about frequency with 'How often do you...?'",
             "explanation": "Use 'How often do you + verb?' to ask how frequently someone performs an action. Answer using adverbs of frequency such as always, usually, often, sometimes, or never.",
             "example": "How often do you walk to school? - I usually walk to school.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_gram_2",
@@ -283,11 +351,16 @@
             "rule": "Present simple tense for routines and habits",
             "explanation": "Use the present simple tense to talk about daily healthy routines. Singular subjects take verbs ending in -s or does.",
             "example": "She does gymnastics every day and eats healthy food.",
-            "origin": "source",
-            "sourcePdfPage": 73
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -308,7 +381,18 @@
             "correctAnswer": "do",
             "reason": "In present simple questions, we use 'do' with the subject pronoun 'you'.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -326,7 +410,18 @@
             "correctAnswer": "eats",
             "reason": "Third-person singular subjects (she) take a verb with '-s' in the present simple tense.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -344,7 +439,18 @@
             "correctAnswer": "don't",
             "reason": "The short negative answer for a present simple question starting with 'Do they' is 'No, they don't.'",
             "origin": "supplementary",
-            "sourcePdfPage": 77
+            "sourcePdfPage": 77,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -359,11 +465,14 @@
           "itemId": "u2_read_pass_1",
           "content": {
             "passage": "Habiba Marzouk is an athlete. She does gymnastics. She does gymnastics every day. Habiba is healthy. She always eats healthy food. She always has healthy drinks.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_read_q_1",
@@ -378,7 +487,18 @@
             "correctAnswer": "gymnastics",
             "reason": "The text explicitly states that Habiba does gymnastics every day.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -396,7 +516,18 @@
             "correctAnswer": "always",
             "reason": "The passage confirms that she always eats healthy food.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -412,7 +543,10 @@
           "content": {
             "script": "My name is Noha. I usually walk to school. On Wednesday, I take the bus. I often eat breakfast and I always do my homework.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -430,7 +564,18 @@
             "correctAnswer": "she walks",
             "reason": "In the listening audio, Noha mentions that she usually walks to school.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -448,7 +593,18 @@
             "correctAnswer": "takes the bus",
             "reason": "Noha states that on Wednesday she takes the bus.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -474,11 +630,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -504,7 +666,20 @@
             "correctAnswer": "drinking lots of water",
             "reason": "Drinking plenty of water is essential for staying fit and healthy.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -527,7 +702,20 @@
             "correctAnswer": "always",
             "reason": "'Always' expresses a continuous positive habit needed for health.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -551,7 +739,18 @@
             "correctAnswer": "bird",
             "reason": "A hoopoe is classified as a small bird.",
             "origin": "supplementary",
-            "sourcePdfPage": 57
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -569,7 +768,18 @@
             "correctAnswer": "four",
             "reason": "Butterflies are insects that have four wings.",
             "origin": "supplementary",
-            "sourcePdfPage": 65
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -587,7 +797,18 @@
             "correctAnswer": "no",
             "reason": "Snakes are reptiles that have no legs.",
             "origin": "supplementary",
-            "sourcePdfPage": 65
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -605,7 +826,18 @@
             "correctAnswer": "often",
             "reason": "'Often' is an adverb of frequency answering 'How often'.",
             "origin": "supplementary",
-            "sourcePdfPage": 60
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -623,7 +855,18 @@
             "correctAnswer": "every",
             "reason": "'Every day' indicates a daily routine.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -641,7 +884,18 @@
             "correctAnswer": "10",
             "reason": "10 hours of sleep each night supports healthy physical growth.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -659,7 +913,18 @@
             "correctAnswer": "leaves",
             "reason": "Giraffes use their long necks to eat leaves from trees.",
             "origin": "supplementary",
-            "sourcePdfPage": 65
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -677,7 +942,18 @@
             "correctAnswer": "wash",
             "reason": "Washing fruit and vegetables is an essential hygiene practice.",
             "origin": "supplementary",
-            "sourcePdfPage": 72
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -695,7 +971,18 @@
             "correctAnswer": "feet",
             "reason": "Cats walk on four feet (paws).",
             "origin": "supplementary",
-            "sourcePdfPage": 57
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -713,12 +1000,34 @@
             "correctAnswer": "unhealthy",
             "reason": "Lack of physical activity and poor diet make a person unhealthy.",
             "origin": "supplementary",
-            "sourcePdfPage": 74
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.185Z",
+    "itemsAudited": 33,
+    "sourceClaims": 10,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 9,
+    "citationWarnings": 3,
+    "itemsWithSourceSubfields": 25,
+    "reclassifiedToSupplementary": 9
+  }
 }

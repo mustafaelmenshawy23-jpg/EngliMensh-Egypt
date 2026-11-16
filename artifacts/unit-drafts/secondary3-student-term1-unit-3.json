@@ -53,8 +53,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 24,
-      "supplementaryItems": 6,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -121,11 +121,16 @@
             "word": "climate justice",
             "arabicMeaning": "العدالة المناخية",
             "example": "Climate justice focuses on protecting low-income communities from environmental damage.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_2",
@@ -133,11 +138,16 @@
             "word": "bear the brunt",
             "arabicMeaning": "يتحمل العبء الأكبر",
             "example": "Developing countries often bear the brunt of severe climate impacts.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_3",
@@ -145,11 +155,16 @@
             "word": "greenhouse gas emissions",
             "arabicMeaning": "انبعاثات غازات الاحتباس الحراري",
             "example": "Industrialized nations are responsible for high greenhouse gas emissions.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_4",
@@ -157,11 +172,16 @@
             "word": "meteorologist",
             "arabicMeaning": "عالم الأرصاد الجوية",
             "example": "The meteorologist predicted heavy rain across the northern coast.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_5",
@@ -169,11 +189,16 @@
             "word": "thermal expansion",
             "arabicMeaning": "التمدد الحراري",
             "example": "Thermal expansion of seawater contributes significantly to global sea level rise.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -193,11 +218,22 @@
             ],
             "correctAnswer": "suffer the worst part of something bad",
             "reason": "The idiom 'bear the brunt' specifically means to endure the worst or main force of an unpleasant event.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_q2",
@@ -211,11 +247,22 @@
             ],
             "correctAnswer": "heat wave",
             "reason": "A heat wave refers to a long period of dangerously hot weather.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_vocab_q3",
@@ -229,11 +276,22 @@
             ],
             "correctAnswer": "mitigate",
             "reason": "To mitigate means to lessen or make the severe effects of something milder.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -247,11 +305,16 @@
             "rule": "Modals of Present & Past Deduction",
             "explanation": "Use 'must (+ base verb / have + p.p.)' when nearly 100% sure something is true. Use 'can't (+ base verb / have + p.p.)' when nearly 100% sure it is impossible. Use 'might / may / could' for uncertain possibilities.",
             "example": "The streets are completely flooded; there must have been a heavy storm last night.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_2",
@@ -259,11 +322,16 @@
             "rule": "Expressing Blame and Regret in the Past",
             "explanation": "Use 'should have + past participle' to criticize an action that was not taken in the past, or 'shouldn't have + past participle' to express regret for an action that did happen.",
             "example": "Fishermen should have prepared earlier for the unexpected changes in the sea.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -283,11 +351,22 @@
             ],
             "correctAnswer": "must",
             "reason": "'Must' is used for a strong logical present deduction when evidence indicates high certainty.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_q2",
@@ -301,11 +380,22 @@
             ],
             "correctAnswer": "must",
             "reason": "'Must have + past participle' expresses strong deduction about a past event.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_q3",
@@ -319,11 +409,22 @@
             ],
             "correctAnswer": "can't",
             "reason": "'Can't' expresses a near-certain negative logical deduction in the present based on visual proof.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -336,7 +437,10 @@
           "content": {
             "passage": "Climate change must be seen not only as an environmental crisis but also as a profound issue of global justice. While industrialized nations are largely responsible for the majority of greenhouse gas emissions, it is often low-income and marginalized communities—particularly in the Global South—that bear the brunt of its consequences. These populations might face rising sea levels, long droughts, food shortage, and extreme weather events that threaten their health, and safety. Climate justice emphasizes that we cannot ignore these effects. It calls for fair policies, shared decisions, and cooperation to fix the unequal burdens of climate change. People who cause the least damage must not suffer the most. Youth around the world are actively working to stop climate change, showing great leadership and creativity. One initiative is the 'Youth Climate Lab' which empowers young innovators to develop solutions for climate challenges, such as creating sustainable energy projects or designing waste reduction programs. Their efforts have resulted in tangible changes, like the implementation of community solar projects and successful recycling campaigns in various regions. At its core, climate justice is about equity, responsibility, and giving a voice to those who are often unheard in global debates. Without justice, there can be no true solution to the climate crisis.",
             "origin": "source",
-            "sourcePdfPage": 37
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -354,7 +458,18 @@
             "correctAnswer": "Communities causing the least pollution should not endure the worst climate consequences.",
             "reason": "The text explicitly states that climate justice emphasizes fairness so that those who cause the least damage do not suffer the most.",
             "origin": "supplementary",
-            "sourcePdfPage": 37
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -370,7 +485,10 @@
           "content": {
             "script": "Host: Welcome back to Global Weather Today. Today, we are joined by Tamer, an experienced meteorologist, to discuss how global climate shifts are affecting local weather patterns in Egypt.\nTamer: Thank you. In recent years, our observations show noticeable shifts. Temperatures during the summer season are increasingly scorching, and we are experiencing longer periods of humid heat waves than a decade ago.\nHost: How far ahead can modern meteorologists accurately predict these weather events?\nTamer: Short-term forecasts up to five days are remarkably reliable now. However, long-term trends confirm that coastal regions must build defenses quickly against rising sea levels to avoid catastrophic urban flooding.",
             "origin": "supplementary",
-            "sourcePdfPage": 39
+            "sourcePdfPage": 39,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -388,7 +506,18 @@
             "correctAnswer": "Periods of humid heat waves are lasting longer than in previous decades.",
             "reason": "Tamer notes that summer temperatures are scorching and humid heat waves last longer than ten years ago.",
             "origin": "supplementary",
-            "sourcePdfPage": 39
+            "sourcePdfPage": 39,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -414,11 +543,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -444,7 +579,20 @@
             "correctAnswer": "Carbon footprint",
             "reason": "'Carbon footprint' is the compound noun representing total greenhouse emissions caused by an individual or organization.",
             "origin": "supplementary",
-            "sourcePdfPage": 38
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -467,7 +615,20 @@
             "correctAnswer": "must",
             "reason": "'Must have' indicates strong certainty regarding a past event based on physical evidence.",
             "origin": "supplementary",
-            "sourcePdfPage": 42
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -490,11 +651,22 @@
             ],
             "correctAnswer": "Low-income and marginalized communities",
             "reason": "The text explains that vulnerable, marginalized communities suffer the worst impacts of global warming despite contributing least to emissions.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q2",
@@ -508,11 +680,22 @@
             ],
             "correctAnswer": "The increase in seawater volume as ocean temperatures rise",
             "reason": "Thermal expansion refers to water expanding as it absorbs heat, driving sea level rise.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q3",
@@ -526,11 +709,22 @@
             ],
             "correctAnswer": "accept the unpleasant results of your actions",
             "reason": "'Face the music' is an informal idiom meaning to confront the consequences of one's conduct.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q4",
@@ -545,7 +739,18 @@
             "correctAnswer": "can't",
             "reason": "'Can't have + past participle' expresses logical certainty that a past event did not occur.",
             "origin": "supplementary",
-            "sourcePdfPage": 42
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -562,11 +767,22 @@
             ],
             "correctAnswer": "must have",
             "reason": "'Must have' expresses strong logical deduction about a completed past action.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q6",
@@ -580,11 +796,22 @@
             ],
             "correctAnswer": "should have",
             "reason": "'Should have + past participle' expresses constructive criticism or regret regarding past behavior.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q7",
@@ -598,11 +825,22 @@
             ],
             "correctAnswer": "2100",
             "reason": "Scientific text projections in Lesson 4 specify a rise of 0.2 to 2 meters by 2100.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q8",
@@ -616,11 +854,22 @@
             ],
             "correctAnswer": "Rainfall pattern",
             "reason": "'Rainfall pattern' consists of two nouns combined to form a single compound noun concept.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q9",
@@ -634,11 +883,22 @@
             ],
             "correctAnswer": "It aims to convince the reader using clear opinions and calls to action.",
             "reason": "Persuasive writing focuses on convincing readers through opinions, clear arguments, and calls to action.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q10",
@@ -652,13 +912,35 @@
             ],
             "correctAnswer": "amphibious",
             "reason": "Amphibious architecture is specifically mentioned as an innovative engineering solution for flood-prone zones.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.066Z",
+    "itemsAudited": 30,
+    "sourceClaims": 24,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 23,
+    "citationWarnings": 16,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 23
+  }
 }

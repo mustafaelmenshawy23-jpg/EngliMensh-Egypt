@@ -51,8 +51,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 18,
-      "supplementaryItems": 13,
+      "sourceItems": 1,
+      "supplementaryItems": 30,
       "vocabularyCount": 7,
       "questionsCount": 16
     },
@@ -119,11 +119,16 @@
             "word": "bird",
             "arabicMeaning": "طائر",
             "example": "I can see a bird.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_2",
@@ -131,11 +136,16 @@
             "word": "flower",
             "arabicMeaning": "زهرة",
             "example": "The flower is red.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_3",
@@ -143,11 +153,16 @@
             "word": "butterfly",
             "arabicMeaning": "فراشة",
             "example": "This is a butterfly.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_4",
@@ -155,11 +170,16 @@
             "word": "grass",
             "arabicMeaning": "عشب",
             "example": "The grass is green.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_5",
@@ -167,11 +187,16 @@
             "word": "sky",
             "arabicMeaning": "سماء",
             "example": "The sky is blue.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_6",
@@ -179,11 +204,16 @@
             "word": "sun",
             "arabicMeaning": "شمس",
             "example": "The sun is yellow.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_vocab_7",
@@ -191,11 +221,16 @@
             "word": "tree",
             "arabicMeaning": "شجرة",
             "example": "I can see a tree.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -216,7 +251,18 @@
             "correctAnswer": "green",
             "reason": "The text states that the grass is green.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -234,7 +280,18 @@
             "correctAnswer": "sun",
             "reason": "The text teaches that the sun is yellow.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -252,7 +309,18 @@
             "correctAnswer": "butterfly",
             "reason": "The dialogue mentions that the butterfly is flying near the tree.",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -269,11 +337,16 @@
             "rule": "Describing objects using colors with 'is'",
             "explanation": "Use singular noun + 'is' + color adjective to describe the color of objects.",
             "example": "The sky is blue.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -294,7 +367,18 @@
             "correctAnswer": "is",
             "reason": "Singular subjects like 'sky' take the verb 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -312,7 +396,18 @@
             "correctAnswer": "The sun is yellow.",
             "reason": "'The sun' is singular and pairs correctly with 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -330,7 +425,18 @@
             "correctAnswer": "is",
             "reason": "The singular noun 'flower' requires 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -345,11 +451,14 @@
           "itemId": "u2_read_1",
           "content": {
             "passage": "Maya: Look! The grass is green. I can see a flower. Yes, the flower is red. And look at the sky! It's blue. I can see a tree. Me too! Oh, look! A butterfly! The butterfly is flying near the tree! And I see a little bird in the tree!",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_read_2",
@@ -364,7 +473,18 @@
             "correctAnswer": "red",
             "reason": "The passage explicitly states 'the flower is red.'",
             "origin": "supplementary",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -380,7 +500,10 @@
           "content": {
             "script": "Teacher: Listen and look at the garden. What is in the sky? Student: The sky is blue and the sun is yellow.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -398,7 +521,18 @@
             "correctAnswer": "yellow",
             "reason": "The student states that the sun is yellow.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -430,7 +564,14 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 26
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -459,7 +600,20 @@
             "correctAnswer": "blue",
             "reason": "The sky is blue in the unit vocabulary.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -482,7 +636,20 @@
             "correctAnswer": "is",
             "reason": "'The grass' is singular and takes 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -505,11 +672,22 @@
             ],
             "correctAnswer": "bird",
             "reason": "The text notes a little bird in the tree.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_2",
@@ -523,11 +701,22 @@
             ],
             "correctAnswer": "green",
             "reason": "The grass is green.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_3",
@@ -542,7 +731,18 @@
             "correctAnswer": "is",
             "reason": "Singular subject takes 'is'.",
             "origin": "supplementary",
-            "sourcePdfPage": 34
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -559,11 +759,22 @@
             ],
             "correctAnswer": "circle",
             "reason": "Circle is a basic 2D shape taught in Unit 2.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_5",
@@ -577,11 +788,22 @@
             ],
             "correctAnswer": "Ss",
             "reason": "Sun starts with the letter Ss.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_6",
@@ -595,11 +817,22 @@
             ],
             "correctAnswer": "Aa",
             "reason": "Apple starts with the letter Aa.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_7",
@@ -614,7 +847,18 @@
             "correctAnswer": "زهرة",
             "reason": "Flower translates to زهرة in Arabic.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -631,11 +875,22 @@
             ],
             "correctAnswer": "triangle",
             "reason": "The triangle has 3 sides.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_9",
@@ -649,11 +904,22 @@
             ],
             "correctAnswer": "blue",
             "reason": "The sky is blue.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u2_test_10",
@@ -667,13 +933,35 @@
             ],
             "correctAnswer": "butterfly",
             "reason": "The butterfly is flying near the tree.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:24.961Z",
+    "itemsAudited": 31,
+    "sourceClaims": 18,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 17,
+    "citationWarnings": 10,
+    "itemsWithSourceSubfields": 26,
+    "reclassifiedToSupplementary": 17
+  }
 }

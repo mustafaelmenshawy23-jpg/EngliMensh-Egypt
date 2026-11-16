@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 32,
-      "sourceItems": 11,
-      "supplementaryItems": 21,
+      "sourceItems": 1,
+      "supplementaryItems": 31,
       "vocabularyCount": 7,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "desk",
             "arabicMeaning": "مكتب",
             "example": "This is a desk.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -126,11 +131,16 @@
             "word": "teacher",
             "arabicMeaning": "معلم",
             "example": "My teacher is kind.",
-            "origin": "source",
-            "sourcePdfPage": 7
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -138,11 +148,16 @@
             "word": "chair",
             "arabicMeaning": "كرسي",
             "example": "This is a chair.",
-            "origin": "source",
-            "sourcePdfPage": 8
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -150,11 +165,16 @@
             "word": "board",
             "arabicMeaning": "سبورة",
             "example": "This is a board.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -162,11 +182,16 @@
             "word": "window",
             "arabicMeaning": "نافذة",
             "example": "That is a window.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -174,11 +199,16 @@
             "word": "door",
             "arabicMeaning": "باب",
             "example": "That is a door.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_7",
@@ -186,11 +216,16 @@
             "word": "circle",
             "arabicMeaning": "دائرة",
             "example": "This is a red circle.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -211,7 +246,18 @@
             "correctAnswer": "board",
             "reason": "A board is used in the classroom for writing notes and lessons.",
             "origin": "supplementary",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -229,7 +275,18 @@
             "correctAnswer": "teacher",
             "reason": "A teacher is the person who helps students learn at school.",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -247,7 +304,18 @@
             "correctAnswer": "circle",
             "reason": "A circle is a round geometric shape.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -264,11 +332,16 @@
             "rule": "Demonstrative Pronoun: This is",
             "explanation": "Use 'This is' when pointing to a single person or object that is close to you.",
             "example": "This is a desk.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -276,11 +349,16 @@
             "rule": "Demonstrative Pronoun: That is",
             "explanation": "Use 'That is' when pointing to a single object that is far from you.",
             "example": "That is a door.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -301,7 +379,18 @@
             "correctAnswer": "This",
             "reason": "'This' is used for a singular object near the speaker.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -319,7 +408,18 @@
             "correctAnswer": "is",
             "reason": "'is' is the singular verb used with 'this'.",
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -337,7 +437,18 @@
             "correctAnswer": "That",
             "reason": "'That' is used for a singular object at a distance.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -352,11 +463,14 @@
           "itemId": "read_p1",
           "content": {
             "passage": "Hello. My name is Ahmed. I sit on a chair at school. My teacher is kind. She helps me learn. At the end of the day, I say goodbye.",
-            "origin": "source",
-            "sourcePdfPage": 7
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -371,7 +485,18 @@
             "correctAnswer": "Ahmed",
             "reason": "The text explicitly states 'My name is Ahmed.'",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -387,7 +512,10 @@
           "content": {
             "script": "Teacher: Where is the door? Student: It’s over there.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -405,7 +533,18 @@
             "correctAnswer": "It’s over there.",
             "reason": "The student responds that the door is over there.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -432,7 +571,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -461,7 +606,20 @@
             "correctAnswer": "chair",
             "reason": "You sit on a chair.",
             "origin": "supplementary",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -484,7 +642,20 @@
             "correctAnswer": "That",
             "reason": "'That' refers to a single distant object.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -508,7 +679,18 @@
             "correctAnswer": "board",
             "reason": "'Board' means سبورة in Arabic.",
             "origin": "supplementary",
-            "sourcePdfPage": 8
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -526,7 +708,18 @@
             "correctAnswer": "teacher",
             "reason": "A teacher guides students and helps them learn.",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -544,7 +737,18 @@
             "correctAnswer": "square",
             "reason": "A square is a geometric shape.",
             "origin": "supplementary",
-            "sourcePdfPage": 18
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -562,7 +766,18 @@
             "correctAnswer": "eraser",
             "reason": "An eraser is used to remove pencil marks.",
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -580,7 +795,18 @@
             "correctAnswer": "This",
             "reason": "'This' is used for singular objects near the speaker.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -598,7 +824,18 @@
             "correctAnswer": "That",
             "reason": "'That' points to a singular object that is far.",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -616,7 +853,18 @@
             "correctAnswer": "is",
             "reason": "'is' is the correct singular form of 'to be' used with 'this'.",
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -634,7 +882,18 @@
             "correctAnswer": "kind",
             "reason": "The text says 'My teacher is kind.'",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -652,7 +911,18 @@
             "correctAnswer": "It’s over there.",
             "reason": "Student B points out the location by saying 'It's over there.'",
             "origin": "supplementary",
-            "sourcePdfPage": 12
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -670,12 +940,34 @@
             "correctAnswer": "Goodbye",
             "reason": "Ahmed says goodbye at the end of the day.",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.114Z",
+    "itemsAudited": 32,
+    "sourceClaims": 11,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 10,
+    "citationWarnings": 3,
+    "itemsWithSourceSubfields": 27,
+    "reclassifiedToSupplementary": 10
+  }
 }

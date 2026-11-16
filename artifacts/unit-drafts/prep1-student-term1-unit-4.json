@@ -48,8 +48,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 29,
-      "supplementaryItems": 4,
+      "sourceItems": 0,
+      "supplementaryItems": 33,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -116,11 +116,16 @@
             "word": "decision",
             "arabicMeaning": "قرار",
             "example": "Making a smart decision is important for your future.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -128,11 +133,16 @@
             "word": "evaluate",
             "arabicMeaning": "يقيم",
             "example": "We should evaluate all options before making a choice.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -140,11 +150,16 @@
             "word": "responsible",
             "arabicMeaning": "مسؤول",
             "example": "Omar is a responsible student who finishes his work on time.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -152,11 +167,16 @@
             "word": "careless",
             "arabicMeaning": "مهمل",
             "example": "Being careless can cause unnecessary mistakes.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -164,11 +184,16 @@
             "word": "consequence",
             "arabicMeaning": "نتيجة",
             "example": "Every action has a consequence that we must accept.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -176,11 +201,16 @@
             "word": "injury",
             "arabicMeaning": "إصابة",
             "example": "The athlete suffered a foot injury during training.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -200,11 +230,22 @@
             ],
             "correctAnswer": "The result or effect of an action",
             "reason": "As shown on page 63, a consequence is defined as the result or effect of an action.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_2",
@@ -218,11 +259,22 @@
             ],
             "correctAnswer": "Foolish",
             "reason": "Page 66 lists 'foolish' as the opposite (antonym) of 'wise'.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_3",
@@ -236,11 +288,22 @@
             ],
             "correctAnswer": "careless",
             "reason": "Page 62 defines careless as not caring about your actions.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -254,11 +317,16 @@
             "rule": "First Conditional",
             "explanation": "We use the first conditional to talk about probable results of future actions. Structure: If / When + present simple, will / won't + base verb.",
             "example": "If you study hard, you'll pass the test.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -266,11 +334,16 @@
             "rule": "Should / Shouldn't for Advice",
             "explanation": "We use 'should' and 'shouldn't' followed by the infinitive verb to give advice.",
             "example": "You should listen to your teacher carefully.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -290,11 +363,22 @@
             ],
             "correctAnswer": "will win",
             "reason": "The first conditional uses present simple in the if-clause and 'will + infinitive' in the main clause.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_2",
@@ -308,11 +392,22 @@
             ],
             "correctAnswer": "do",
             "reason": "Modal verbs like 'should' are followed by the base form (infinitive without to) of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q_3",
@@ -326,11 +421,22 @@
             ],
             "correctAnswer": "doesn't do",
             "reason": "The present simple negative for 'he' in a conditional if-clause is 'doesn't do'.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -342,11 +448,14 @@
           "itemId": "read_passage_1",
           "content": {
             "passage": "Youssef was excited about his birthday and planned a small party after school. He invited eight close friends who had been responsible in class and finished their homework. A day before the party, two classmates asked to join. They weren't very close to Youssef, and one had been careless in class. Youssef faced a difficult decision. He thought, and said 'If I let them come, the party may become too big and make others uncomfortable. And if I say no, the two may feel left out.' He carefully thought about the positive and negative sides of each choice. In the end, Youssef made a responsible and polite decision. He explained that the party was only for close friends who had behaved well, and he encouraged the boys to be more responsible in the future. To his surprise, they understood and respected his decision. One even promised to improve. The party was a success, and Youssef felt proud and said, 'If everyone thinks well before taking a decision, they won't make mistakes.'",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q_1",
@@ -360,11 +469,22 @@
             ],
             "correctAnswer": "Eight",
             "reason": "The passage clearly states that Youssef invited eight close friends who had been responsible.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q_2",
@@ -379,7 +499,18 @@
             "correctAnswer": "Thinking carefully before taking a decision prevents mistakes",
             "reason": "Youssef concludes that thinking well before taking a decision helps avoid making mistakes.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -395,7 +526,10 @@
           "content": {
             "script": "Akmal: Yesterday, my friends wanted to go to the park after school. I really wanted to join them, but I knew I had an important test the next day. I evaluated my options and decided to stay home and study. The next day, I passed the test and felt very proud of my smart decision.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -412,11 +546,22 @@
             ],
             "correctAnswer": "He wanted to study for a test",
             "reason": "According to the blog post listening activity on page 63, Akmal stayed home to study for his test.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q_2",
@@ -430,11 +575,22 @@
             ],
             "correctAnswer": "He passed his test and felt proud",
             "reason": "The text confirms that Akmal passed the test and felt proud of making a smart decision.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -467,11 +623,19 @@
                 "speakerGender": "male"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -497,7 +661,20 @@
             "correctAnswer": "Consequence",
             "reason": "A consequence is the result or effect that follows an action.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -520,7 +697,20 @@
             "correctAnswer": "will be",
             "reason": "In the first conditional, the main clause requires 'will + base verb' (will be).",
             "origin": "supplementary",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -543,11 +733,22 @@
             ],
             "correctAnswer": "Result",
             "reason": "Page 66 shows that 'result' is a synonym for 'consequence'.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_2",
@@ -561,11 +762,22 @@
             ],
             "correctAnswer": "Negative",
             "reason": "Page 66 identifies 'negative' as the antonym of 'positive'.",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_3",
@@ -579,11 +791,22 @@
             ],
             "correctAnswer": "will get",
             "reason": "The first conditional sentence uses 'will + base verb' in the main clause.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_4",
@@ -597,11 +820,22 @@
             ],
             "correctAnswer": "shouldn't",
             "reason": "We use 'shouldn't' when giving advice against bad habits.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_5",
@@ -615,11 +849,22 @@
             ],
             "correctAnswer": "He wanted to rest and avoid worsening his foot injury",
             "reason": "Adam rested so his foot injury would recover fully for the next race.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_6",
@@ -633,11 +878,22 @@
             ],
             "correctAnswer": "ask",
             "reason": "The modal verb 'should' is always followed by the base form of the verb.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_7",
@@ -651,11 +907,22 @@
             ],
             "correctAnswer": "Her ideas were ignored",
             "reason": "Page 67 states Lily felt left out because Omar ignored her ideas.",
-            "origin": "source",
-            "sourcePdfPage": 67
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_8",
@@ -669,11 +936,22 @@
             ],
             "correctAnswer": "Exclamation point",
             "reason": "Page 70 notes that exclamation points express strong emotion or emphasis.",
-            "origin": "source",
-            "sourcePdfPage": 70
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_9",
@@ -687,11 +965,22 @@
             ],
             "correctAnswer": "risk",
             "reason": "Page 72 specifies that doing dangerous activities without safety measures is a risk.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_10",
@@ -705,13 +994,35 @@
             ],
             "correctAnswer": "will feel",
             "reason": "First conditional uses present simple after 'if' and 'will + infinitive' for the result.",
-            "origin": "source",
-            "sourcePdfPage": 72
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.684Z",
+    "itemsAudited": 33,
+    "sourceClaims": 29,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 29,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 25,
+    "reclassifiedToSupplementary": 29
+  }
 }

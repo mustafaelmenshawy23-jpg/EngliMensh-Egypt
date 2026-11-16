@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 28,
-      "supplementaryItems": 5,
+      "sourceItems": 0,
+      "supplementaryItems": 33,
       "vocabularyCount": 8,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "institution",
             "arabicMeaning": "مؤسسة",
             "example": "Bank Misr is a major financial institution established in Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -126,11 +131,16 @@
             "word": "inspire",
             "arabicMeaning": "يلهم",
             "example": "Talaat Harb's success story continues to inspire young entrepreneurs.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -138,11 +148,16 @@
             "word": "independence",
             "arabicMeaning": "استقلال",
             "example": "Achieving economic independence is vital for national growth.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -150,11 +165,16 @@
             "word": "founder",
             "arabicMeaning": "مؤسس",
             "example": "The young founder presented a pitch to secure investment.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_5",
@@ -162,11 +182,16 @@
             "word": "evolve",
             "arabicMeaning": "يتطور",
             "example": "The business scene has evolved dramatically over the last few decades.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_6",
@@ -174,11 +199,16 @@
             "word": "commitment",
             "arabicMeaning": "التزام",
             "example": "Building a national business requires untiring commitment.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_7",
@@ -186,11 +216,16 @@
             "word": "inventory",
             "arabicMeaning": "مخزون / قائمة بضائع",
             "example": "The business manager checked the store inventory before placing a new order.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_8",
@@ -198,11 +233,16 @@
             "word": "flax",
             "arabicMeaning": "كتان",
             "example": "Shubra Mellas is known for exporting high-quality flax to foreign markets.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -222,11 +262,22 @@
             ],
             "correctAnswer": "founder",
             "reason": "As defined on page 21, a founder is a person who starts or creates a business, organization, or company.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_2",
@@ -240,11 +291,22 @@
             ],
             "correctAnswer": "A list or count of all goods and products available for sale",
             "reason": "Page 22 defines inventory as a list or count of all the goods, items, or products a business has for sale.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q_3",
@@ -258,11 +320,22 @@
             ],
             "correctAnswer": "jasmine",
             "reason": "Page 26 explicitly states that Shubra Beloula produces a large portion of the world's jasmine for perfumes.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -276,11 +349,16 @@
             "rule": "Past Perfect Active (had + past participle)",
             "explanation": "Use the past perfect (had + past participle) to talk about an action that happened before another action in the past.",
             "example": "Omar had developed a small startup before he reached twenty-five.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar_2",
@@ -288,11 +366,16 @@
             "rule": "Past Perfect Passive (had been + past participle)",
             "explanation": "Use the past perfect passive (had been + past participle) to talk about things that happened before another action in the past when the agent is unimportant or unknown.",
             "example": "Several agreements had been signed before the company received external funding.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -312,11 +395,22 @@
             ],
             "correctAnswer": "had developed",
             "reason": "The past perfect 'had developed' is required because the action was completed prior to a past time reference (age 25).",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar_q_2",
@@ -330,11 +424,22 @@
             ],
             "correctAnswer": "had been banned",
             "reason": "The passive form of past perfect ('had been banned') shows an action completed upon the object before another past event.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar_q_3",
@@ -348,11 +453,22 @@
             ],
             "correctAnswer": "had studied",
             "reason": "'Had studied' correctly marks the earlier past action before the launching of his business.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -364,11 +480,14 @@
           "itemId": "reading_p_1",
           "content": {
             "passage": "At just 20 years old, Talaat Harb launched Bank Misr, a bank created with completely Egyptian capital, during a time when foreign institutions dominated the financial scene. His story inspires countless people to achieve economic independence and contribute to national development. But what does it really take to build a successful national institution at a young age? Young founders of national enterprises face unique challenges. However, they have significant advantages. They are deeply connected to their homeland, understanding its needs and culture well. They are also not afraid to take risks to achieve a greater national vision. Talaat Harb is an example of how young entrepreneurs could establish a wholly Egyptian bank at the age of 20. He could convince more than 120 Egyptians to invest in the project and secure the necessary capital. He then worked with his team to use Egyptian capital to support various industries including shipping, aviation, and filmmaking.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "reading_q_1",
@@ -382,11 +501,22 @@
             ],
             "correctAnswer": "more than 120",
             "reason": "The text explicitly mentions that Talaat Harb convinced more than 120 Egyptians to invest in the project.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -399,7 +529,10 @@
           "content": {
             "script": "Entrepreneur 1 (Monir Magdi): Hello everyone. Food waste in restaurants is a massive financial and environmental issue. My startup has developed an AI-powered inventory management system to help restaurant owners accurately predict food ordering and minimize waste. We are seeking $50,000 in seed funding to expand our platform.",
             "origin": "supplementary",
-            "sourcePdfPage": 23
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -416,11 +549,22 @@
             ],
             "correctAnswer": "Food waste in restaurants",
             "reason": "As listed in the pitch summaries on page 23, Pitch 1 addresses food waste in restaurants.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -449,7 +593,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 23
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -478,7 +629,20 @@
             "correctAnswer": "Staying dedicated and working hard to achieve a goal",
             "reason": "Commitment refers to being dedicated and working hard even when things get difficult.",
             "origin": "supplementary",
-            "sourcePdfPage": 21
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -501,7 +665,20 @@
             "correctAnswer": "had been prepared",
             "reason": "Past perfect passive is required for an action completed on the object prior to another past event.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -524,11 +701,22 @@
             ],
             "correctAnswer": "20 years old",
             "reason": "Page 20 states that Talaat Harb launched Bank Misr at just 20 years old.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_2",
@@ -542,11 +730,22 @@
             ],
             "correctAnswer": "about 57%",
             "reason": "Page 26 explicitly states that 4,740 villages house about 57% of Egypt's population.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_3",
@@ -560,11 +759,22 @@
             ],
             "correctAnswer": "Sidi Heneish",
             "reason": "Page 27 notes that Sidi Heneish is famous for its organic figs grown without pesticides.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_4",
@@ -578,11 +788,22 @@
             ],
             "correctAnswer": "flax",
             "reason": "Page 27 highlights Shubra Mellas as Egypt's largest flax-producing village.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_5",
@@ -597,7 +818,18 @@
             "correctAnswer": "had sent",
             "reason": "Past perfect active ('had sent') is used for an action completed before another past event.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -614,11 +846,22 @@
             ],
             "correctAnswer": "had been revised",
             "reason": "Past perfect passive ('had been revised') is required when the agent is unknown or unneeded.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_7",
@@ -632,11 +875,22 @@
             ],
             "correctAnswer": "To think creatively in non-traditional ways",
             "reason": "Page 22 introduces the idiom 'think outside the box' as a creative problem-solving approach.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_8",
@@ -650,11 +904,22 @@
             ],
             "correctAnswer": "Yours sincerely,",
             "reason": "Page 28 specifies using 'Yours sincerely' when you know the recipient's name.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_9",
@@ -668,11 +933,22 @@
             ],
             "correctAnswer": "date palms",
             "reason": "Page 27 specifies that Baharif is recognized for its date palms (around 300,000 trees).",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q_10",
@@ -686,13 +962,35 @@
             ],
             "correctAnswer": "To give a short, persuasive talk to persuade investors or partners",
             "reason": "Page 22 defines pitching as giving a short, persuasive talk for investors, partners, or customers.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.908Z",
+    "itemsAudited": 33,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 28,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 28
+  }
 }

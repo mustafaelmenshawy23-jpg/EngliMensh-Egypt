@@ -52,8 +52,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 16,
-      "supplementaryItems": 11,
+      "sourceItems": 1,
+      "supplementaryItems": 26,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -120,11 +120,16 @@
             "word": "artificial intelligence",
             "arabicMeaning": "الذكاء الاصطناعي",
             "example": "Artificial intelligence helps computers learn and make decisions.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -132,11 +137,16 @@
             "word": "advanced",
             "arabicMeaning": "متطور",
             "example": "Some robots are very advanced and can walk and run.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -144,11 +154,16 @@
             "word": "behavior",
             "arabicMeaning": "سلوك",
             "example": "The robot can learn from actions and change its behavior.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -169,7 +184,18 @@
             "correctAnswer": "Very modern, developed, or complex",
             "reason": "Advanced refers to technology that is highly developed and complex, not basic.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -187,7 +213,18 @@
             "correctAnswer": "الذكاء الاصطناعي",
             "reason": "Artificial intelligence translates directly to الذكاء الاصطناعي.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -205,7 +242,18 @@
             "correctAnswer": "Behavior",
             "reason": "Behavior is defined as the way someone or something acts or responds.",
             "origin": "supplementary",
-            "sourcePdfPage": 44
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -222,11 +270,16 @@
             "rule": "Future Simple Passive",
             "explanation": "The future simple passive is used to describe actions that will be done in the future. Form: object + will be + past participle.",
             "example": "The test will be corrected by the teacher.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -247,7 +300,18 @@
             "correctAnswer": "will be checked",
             "reason": "The future simple passive requires 'will be' plus the past participle 'checked'.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -265,7 +329,18 @@
             "correctAnswer": "will be discovered",
             "reason": "It is a future passive statement where medicine receives the action.",
             "origin": "supplementary",
-            "sourcePdfPage": 53
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -283,7 +358,18 @@
             "correctAnswer": "The problem will be solved by the engineer.",
             "reason": "Option b correctly uses 'will be solved' to form the future passive voice.",
             "origin": "supplementary",
-            "sourcePdfPage": 46
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -299,7 +385,10 @@
           "content": {
             "passage": "Many people think robots and Artificial Intelligence (Al) are the same, but they are different. A robot is a machine that can move and do tasks. Some robots are very simple, like a machine in a factory that puts bottles in a box. Other robots are more advanced, like robot dogs that can walk, run, and even play with people. Al is the “brain” that can go inside a robot. Al allows the robot to make decisions, learn from actions, and change its behavior. For example, a robot vacuum cleaner with Al can learn the shape of your room and clean it better each time. Without Al, the robot can only follow basic orders. Some robots with Al are used in hospitals. They can bring medicine to patients or help during surgery. In schools, robots can help students learn new languages or solve math problems. Still, robots and Al have limits. They can’t truly understand emotions, and they often need humans to help or program them. Also, making smart robots can be very expensive. As technology improves, we will see more robots in our daily lives. But it’s important to know: not all Al is in robots, and not all robots are smart.",
             "origin": "source",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -317,7 +406,18 @@
             "correctAnswer": "Artificial Intelligence (AI)",
             "reason": "The text explicitly states that AI is the 'brain' that can go inside a robot.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -333,7 +433,10 @@
           "content": {
             "script": "Adham: Have you read about how AI can help us create art and stories, Lina? Lina: Yes! AI can actually create pictures, songs, and even stories. Adham: That is fascinating. But remember, AI is just a tool, not a replacement for human creativity. Lina: Exactly, humans still control it to ensure it is used safely.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -351,7 +454,18 @@
             "correctAnswer": "Pictures, songs, and stories",
             "reason": "Lina mentions that AI can actually create pictures, songs, and even stories.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -387,11 +501,19 @@
                 "speakerGender": "male"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -417,7 +539,20 @@
             "correctAnswer": "To change something to make it the way you want",
             "reason": "Customize means adjusting or modifying something to suit specific needs.",
             "origin": "supplementary",
-            "sourcePdfPage": 48
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -440,7 +575,20 @@
             "correctAnswer": "will be driven",
             "reason": "The future passive requires 'will be' + past participle ('driven').",
             "origin": "supplementary",
-            "sourcePdfPage": 53
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -463,11 +611,22 @@
             ],
             "correctAnswer": "A machine that can move and do tasks",
             "reason": "A robot is defined in the text as a machine that can move and do tasks.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -481,11 +640,22 @@
             ],
             "correctAnswer": "They can’t truly understand emotions.",
             "reason": "The text states that AI and robots have limits, such as not truly understanding emotions.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -499,11 +669,22 @@
             ],
             "correctAnswer": "will be returned",
             "reason": "Future simple passive uses 'will be' + past participle for future actions.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -517,11 +698,22 @@
             ],
             "correctAnswer": "Without any delay",
             "reason": "Instantly means immediately or without any delay.",
-            "origin": "source",
-            "sourcePdfPage": 48
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -535,11 +727,22 @@
             ],
             "correctAnswer": "Initiative and determination",
             "reason": "Zeina showed initiative by seeking donations and determination by not giving up.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -553,11 +756,22 @@
             ],
             "correctAnswer": "The test will be corrected by the teacher.",
             "reason": "Correct future passive formation requires 'will be corrected'.",
-            "origin": "source",
-            "sourcePdfPage": 46
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q7",
@@ -571,11 +785,22 @@
             ],
             "correctAnswer": "It helps customize lessons for individual students.",
             "reason": "AI helps teachers customize lessons and provide personalized support.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -589,11 +814,22 @@
             ],
             "correctAnswer": "The usual weather in a place",
             "reason": "Climate is defined as the usual weather in a particular place.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -607,11 +843,22 @@
             ],
             "correctAnswer": "be made",
             "reason": "Future passive voice structure needs 'will be' + past participle ('made').",
-            "origin": "source",
-            "sourcePdfPage": 53
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -625,13 +872,35 @@
             ],
             "correctAnswer": "AI is powerful but will be controlled by humans.",
             "reason": "Ali and Eman agree that even though AI is powerful, it will be controlled by humans for safety.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.334Z",
+    "itemsAudited": 27,
+    "sourceClaims": 16,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 15,
+    "citationWarnings": 11,
+    "itemsWithSourceSubfields": 17,
+    "reclassifiedToSupplementary": 15
+  }
 }

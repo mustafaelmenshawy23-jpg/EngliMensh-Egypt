@@ -55,8 +55,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 25,
-      "supplementaryItems": 5,
+      "sourceItems": 1,
+      "supplementaryItems": 29,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -123,11 +123,16 @@
             "word": "wolves in sheep's clothing",
             "arabicMeaning": "ذئاب في ثياب حملان",
             "example": "Some dishonest people act friendly at first, but turn out to be wolves in sheep's clothing.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_2",
@@ -135,11 +140,16 @@
             "word": "deceive",
             "arabicMeaning": "يخدع",
             "example": "Scammers try to deceive people to gain money or personal data.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_3",
@@ -147,11 +157,16 @@
             "word": "misinformation",
             "arabicMeaning": "معلومات ضالة",
             "example": "We should check reliable sources to stop the spread of misinformation.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_4",
@@ -159,11 +174,16 @@
             "word": "reputation",
             "arabicMeaning": "سمعة",
             "example": "Spreading false stories can damage a person's reputation.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -183,11 +203,22 @@
             ],
             "correctAnswer": "Dangerous people who appear kind",
             "reason": "The idiom describes deceitful people who pretend to be friendly to hide bad intentions.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q2",
@@ -201,11 +232,22 @@
             ],
             "correctAnswer": "deceive",
             "reason": "To deceive means to trick someone into believing something that is not true.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab_q3",
@@ -219,11 +261,22 @@
             ],
             "correctAnswer": "betrayed",
             "reason": "Feeling betrayed happens when someone breaks your trust or reveals a secret.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -237,11 +290,16 @@
             "rule": "Zero Conditional",
             "explanation": "Used for general truths and scientific facts. Structure: If + present simple, present simple.",
             "example": "If water boils, it turns to steam.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -249,11 +307,16 @@
             "rule": "First Conditional",
             "explanation": "Used for real future possibilities. Structure: If + present simple, will + infinitive.",
             "example": "If it rains tomorrow, we will stay at home.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_3",
@@ -261,11 +324,16 @@
             "rule": "Second Conditional",
             "explanation": "Used for unreal or hypothetical situations in the present/future. Structure: If + past simple, would + infinitive.",
             "example": "If I had enough money, I would buy a new car.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -285,11 +353,22 @@
             ],
             "correctAnswer": "comes",
             "reason": "Zero conditional takes present simple in both clauses for automatic or routine actions.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -303,11 +382,22 @@
             ],
             "correctAnswer": "were",
             "reason": "Second conditional uses 'were' for hypothetical advice across all subject pronouns.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -321,11 +411,22 @@
             ],
             "correctAnswer": "will cancel",
             "reason": "First conditional uses 'will + infinitive' in the result clause for realistic future plans.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -338,7 +439,10 @@
           "content": {
             "passage": "Trust is one of the most valuable things in our lives, yet it is not always easy to know whom we can rely on. While many people act with honesty and kindness, there are also those who hide their true intentions behind a friendly smile. In life, not everyone we meet is truly honest. Some people put on a friendly face, but are in fact \" wolves in sheep's clothing \". They may deceive us to gain money, favors, or private information. This can happen anywhere–at school, in the workplace, or even among people we once considered close friends.",
             "origin": "source",
-            "sourcePdfPage": 37
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -355,11 +459,22 @@
             ],
             "correctAnswer": "To gain money, favors, or private information",
             "reason": "The text states that deceitful individuals pretend to be friendly specifically to gain money, favors, or private information.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -372,7 +487,10 @@
           "content": {
             "script": "Host: Welcome Dr. Sarah. Can you explain how scammers exploit teenagers online?\nDr. Sarah: Scammers often target young people with fake job offers or quick profits. They intentionally build emotional urgency to prevent victims from thinking clearly. My top advice is to guard your personal data, time, and trust, and always double-check facts before making any agreement.",
             "origin": "supplementary",
-            "sourcePdfPage": 40
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -389,11 +507,22 @@
             ],
             "correctAnswer": "To stop the victim from thinking clearly",
             "reason": "High emotional pressure confuses victims and stops them from logically analyzing facts.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -417,7 +546,13 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 41
+            "sourcePdfPage": 41,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -446,7 +581,20 @@
             "correctAnswer": "Misinformation",
             "reason": "Misinformation refers to untruthful or inaccurate information spread to mislead others.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -469,7 +617,20 @@
             "correctAnswer": "will avoid",
             "reason": "First conditional uses present simple after 'if' and 'will + verb' in the main clause.",
             "origin": "supplementary",
-            "sourcePdfPage": 43
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -492,11 +653,22 @@
             ],
             "correctAnswer": "Dangerous people who appear kind",
             "reason": "The idiom means people who act friendly to hide harmful intentions.",
-            "origin": "source",
-            "sourcePdfPage": 49
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q2",
@@ -510,11 +682,22 @@
             ],
             "correctAnswer": "stop",
             "reason": "Zero conditional expresses a general rule using present simple in both clauses.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q3",
@@ -528,11 +711,22 @@
             ],
             "correctAnswer": "would learn",
             "reason": "Second conditional uses 'would + infinitive' to express imaginary situations.",
-            "origin": "source",
-            "sourcePdfPage": 42
+            "origin": "supplementary",
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q4",
@@ -546,11 +740,22 @@
             ],
             "correctAnswer": "To damage trust",
             "reason": "The text explains that the goal of modern lie-based conflicts is damaging trust rather than physical destruction.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q5",
@@ -564,11 +769,22 @@
             ],
             "correctAnswer": "betrayed",
             "reason": "Betrayed describes the emotional distress caused by broken trust.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q6",
@@ -583,7 +799,18 @@
             "correctAnswer": "turns",
             "reason": "Zero conditional is used for scientific facts with present simple tenses.",
             "origin": "supplementary",
-            "sourcePdfPage": 42
+            "sourcePdfPage": 42,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -600,11 +827,22 @@
             ],
             "correctAnswer": "Confirm facts carefully before believing suspicious information",
             "reason": "The proverb advises maintaining optimism while critically verifying information.",
-            "origin": "source",
-            "sourcePdfPage": 38
+            "origin": "supplementary",
+            "sourcePdfPage": 38,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q8",
@@ -618,11 +856,22 @@
             ],
             "correctAnswer": "studies",
             "reason": "First conditional requires present simple (studies) after 'if'.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q9",
@@ -636,11 +885,22 @@
             ],
             "correctAnswer": "To prevent targets from thinking critically",
             "reason": "Urgency forces quick decisions without proper investigation.",
-            "origin": "source",
-            "sourcePdfPage": 40
+            "origin": "supplementary",
+            "sourcePdfPage": 40,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_q10",
@@ -654,13 +914,35 @@
             ],
             "correctAnswer": "reputation",
             "reason": "Reputation is the public opinion or trust regarding a person's character.",
-            "origin": "source",
-            "sourcePdfPage": 37
+            "origin": "supplementary",
+            "sourcePdfPage": 37,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.784Z",
+    "itemsAudited": 30,
+    "sourceClaims": 25,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 24
+  }
 }

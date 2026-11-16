@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 12,
-      "supplementaryItems": 15,
+      "sourceItems": 2,
+      "supplementaryItems": 25,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "misinformation",
             "arabicMeaning": "معلومات مضللة",
             "example": "The internet is full of misinformation that can confuse people.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -126,11 +131,16 @@
             "word": "sensational",
             "arabicMeaning": "مثير",
             "example": "The newspaper used a sensational headline to attract more readers.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -138,11 +148,16 @@
             "word": "algorithms",
             "arabicMeaning": "خوارزميات",
             "example": "Social media algorithms decide which posts you see in your feed.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -163,7 +178,18 @@
             "correctAnswer": "False information",
             "reason": "Misinformation refers to false or inaccurate information spread to deceive.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -181,7 +207,18 @@
             "correctAnswer": "Sensational",
             "reason": "Sensational headlines are meant to shock or excite readers to get clicks.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -199,7 +236,18 @@
             "correctAnswer": "Echo chambers",
             "reason": "Algorithms show users content that matches their existing views, creating echo chambers.",
             "origin": "supplementary",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -216,11 +264,16 @@
             "rule": "Tag questions",
             "explanation": "A tag question is a short phrase at the end of a statement. A positive statement takes a negative tag, and a negative statement takes a positive tag.",
             "example": "You are a student, aren't you?",
-            "origin": "source",
-            "sourcePdfPage": 66
+            "origin": "supplementary",
+            "sourcePdfPage": 66,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -241,7 +294,18 @@
             "correctAnswer": "doesn't she",
             "reason": "The statement is positive and in present simple, so the tag must be negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -259,7 +323,18 @@
             "correctAnswer": "are they",
             "reason": "The statement is negative, so the tag must be positive.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -277,7 +352,18 @@
             "correctAnswer": "can't you",
             "reason": "The statement is positive with a modal verb, so the tag is negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -293,7 +379,10 @@
           "content": {
             "passage": "In today’s digital age, misinformation spreads faster than wildfire. A recent study found that false news stories spread six times faster on social media than true stories. But how can ordinary readers distinguish between reliable sources and fake news?",
             "origin": "source",
-            "sourcePdfPage": 62
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -310,11 +399,22 @@
             ],
             "correctAnswer": "Six times",
             "reason": "The text explicitly states that false news stories spread six times faster than true stories.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -327,7 +427,10 @@
           "content": {
             "script": "Dr. Park: I believe we need better media literacy education. Professor Chen: I agree, but we also need to regulate platforms to stop verifiably false claims.",
             "origin": "supplementary",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -345,7 +448,18 @@
             "correctAnswer": "Media literacy education",
             "reason": "Dr. Park suggests media literacy education is a better long-term solution than censorship.",
             "origin": "supplementary",
-            "sourcePdfPage": 64
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -372,7 +486,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -401,7 +521,20 @@
             "correctAnswer": "isn't he",
             "reason": "The statement is positive, so the tag must be negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -424,7 +557,20 @@
             "correctAnswer": "Mistakes in written text",
             "reason": "Misprints are errors in printing or writing.",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -447,11 +593,22 @@
             ],
             "correctAnswer": "Citing information",
             "reason": "Reliable sources always cite their information.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -466,7 +623,18 @@
             "correctAnswer": "didn't they",
             "reason": "The statement is positive past simple, so the tag is negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -483,11 +651,22 @@
             ],
             "correctAnswer": "A social media algorithm effect",
             "reason": "Algorithms create echo chambers where users only see content they agree with.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -502,7 +681,18 @@
             "correctAnswer": "will she",
             "reason": "The statement is negative, so the tag must be positive.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -519,11 +709,22 @@
             ],
             "correctAnswer": "Media shapes thoughts using psychological techniques",
             "reason": "The text explains how media uses techniques to influence behavior.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -538,7 +739,18 @@
             "correctAnswer": "am I",
             "reason": "The statement is negative, so the tag is positive.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -555,11 +767,22 @@
             ],
             "correctAnswer": "Using words to spark strong feelings",
             "reason": "Emotional manipulation uses words to override critical thinking.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -574,7 +797,18 @@
             "correctAnswer": "haven't we",
             "reason": "The statement is positive, so the tag is negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -591,11 +825,22 @@
             ],
             "correctAnswer": "Because companies profit when users click",
             "reason": "Companies profit when users click, watch, or share content.",
-            "origin": "source",
-            "sourcePdfPage": 69
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -610,12 +855,34 @@
             "correctAnswer": "isn't he",
             "reason": "The statement is positive, so the tag is negative.",
             "origin": "supplementary",
-            "sourcePdfPage": 67
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.963Z",
+    "itemsAudited": 27,
+    "sourceClaims": 12,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 10,
+    "citationWarnings": 6,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 10
+  }
 }

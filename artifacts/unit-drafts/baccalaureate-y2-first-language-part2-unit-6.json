@@ -68,8 +68,8 @@
     },
     "itemTotals": {
       "totalItems": 32,
-      "sourceItems": 26,
-      "supplementaryItems": 6,
+      "sourceItems": 1,
+      "supplementaryItems": 31,
       "vocabularyCount": 7,
       "questionsCount": 16
     },
@@ -136,11 +136,16 @@
             "word": "staggering",
             "arabicMeaning": "مذهل / هائل",
             "example": "The curlew makes a staggering journey across several thousand kilometers.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_2",
@@ -148,11 +153,16 @@
             "word": "stopover",
             "arabicMeaning": "محطة توقف",
             "example": "Migratory birds rely on coastal wetlands for a short stopover during their migration.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_3",
@@ -160,11 +170,16 @@
             "word": "poaching",
             "arabicMeaning": "الصيد غير المشروع",
             "example": "Elephants face serious threats from habitat loss and illegal poaching.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_4",
@@ -172,11 +187,16 @@
             "word": "corridor",
             "arabicMeaning": "ممر بيئي",
             "example": "A wildlife corridor allows animals to travel safely between separated habitats.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_5",
@@ -184,11 +204,16 @@
             "word": "compromise",
             "arabicMeaning": "تسوية / حل وسط",
             "example": "Reaching a fair compromise helped both the fishermen and the conservationists.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_6",
@@ -196,11 +221,16 @@
             "word": "livelihood",
             "arabicMeaning": "مصدر رزق",
             "example": "Fishing is the main livelihood for many families along the coast.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_7",
@@ -208,11 +238,16 @@
             "word": "paralysis",
             "arabicMeaning": "شلل / عجز عن التصرف",
             "example": "Feeling overwhelmed by global environmental crises can lead to inaction and paralysis.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -232,11 +267,22 @@
             ],
             "correctAnswer": "Extremely surprising or impressive in scale",
             "reason": "In the text, staggering describes something massive and deeply impressive in scale.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq_2",
@@ -250,11 +296,22 @@
             ],
             "correctAnswer": "Compromise",
             "reason": "A compromise is a settlement reached by mutual concession.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq_3",
@@ -268,11 +325,22 @@
             ],
             "correctAnswer": "A person's main way of earning money to support themselves",
             "reason": "Livelihood means the means of securing the necessities of life.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -286,11 +354,16 @@
             "rule": "Reported Speech Backshifting",
             "explanation": "When reporting statements introduced by a past tense verb like 'said' or 'told', verb tenses usually move back into the past unless reporting permanent facts or ongoing truths.",
             "example": "The farmer said that he needed more land for his crops.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_2",
@@ -298,11 +371,16 @@
             "rule": "Reported Speech: Say vs. Tell",
             "explanation": "The verb 'say' is not followed directly by a personal object without 'to', whereas 'tell' must be followed directly by a person.",
             "example": "He told the officer that his livelihood was at risk.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -322,11 +400,22 @@
             ],
             "correctAnswer": "The fishermen said that fishing was their livelihood.",
             "reason": "'Said' is used without a direct personal object, and 'is' backshifts to 'was'.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq_2",
@@ -340,11 +429,22 @@
             ],
             "correctAnswer": "My friend asked if I was happy to have a pet.",
             "reason": "Reported Yes/No questions use 'if' or 'whether' followed by subject + verb order.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gq_3",
@@ -358,11 +458,22 @@
             ],
             "correctAnswer": "Because the statement expresses a permanent general fact that remains true",
             "reason": "General facts and scientific truths do not require tense backshifting in reported speech.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -375,7 +486,10 @@
           "content": {
             "passage": "Every fall, several billion birds leave their breeding grounds in northern Europe and Asia. They travel south without passports or awareness of the borders they cross. Many of them fly directly over Egypt. Their route is so reliable that birdwatchers can predict, almost to the week, when the sky above certain wetlands will fill with birds. The journey is staggering by any measure. A single Eurasian curlew may cover several thousand kilometers in just a few weeks. It depends on a chain of wetlands, river deltas, and coastal marshes, and each one belongs to a different country, with its own laws and priorities. If a single link in that chain disappears because a wetland is drained for agriculture, built over for housing, or simply left too polluted to support the insects and fish that migratory birds depend on — the consequences are felt not by the country that made the decision, but by ecosystems thousands of kilometers away that never had any say in the matter.",
             "origin": "source",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -392,11 +506,22 @@
             ],
             "correctAnswer": "Ecosystems thousands of kilometers away suffer the consequences.",
             "reason": "The text explains that destroying one link in the chain affects distant ecosystems along the migration route.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -409,7 +534,10 @@
           "content": {
             "script": "Narrator: In a farming village bordering a wildlife reserve, local communities face daily challenges as elephant herds cross onto farmlands looking for food. Grace, a local farmer, lost half her maize crop in a single night. She explains that while she respects the wild animals, her farm is her family's only source of income. Conservationists are now working to establish safe wildlife corridors and install bee-hive fencing to deter elephants without harming them, emphasizing that farms and reserves must be managed as one interconnected landscape.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -427,7 +555,18 @@
             "correctAnswer": "Managing farms and reserves together as one interconnected landscape",
             "reason": "The report emphasizes managing farms and reserves as one interconnected system to support both humans and wildlife.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -459,7 +598,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -488,7 +634,20 @@
             "correctAnswer": "Poaching",
             "reason": "Poaching specifically means the illegal hunting or taking of wild animals.",
             "origin": "supplementary",
-            "sourcePdfPage": 19
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -511,7 +670,20 @@
             "correctAnswer": "The volunteers promised that they would protect the coastline.",
             "reason": "In reported speech with a past reporting verb, 'will' backshifts to 'would'.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -535,7 +707,18 @@
             "correctAnswer": "Sharing finite planet resources requires cross-border cooperation and mutual responsibility.",
             "reason": "The unit focuses on shared responsibility, migratory species, and managing common resources across borders.",
             "origin": "supplementary",
-            "sourcePdfPage": 7
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -552,11 +735,22 @@
             ],
             "correctAnswer": "Migratory species suffer consequences across their entire journey and distant ecosystems.",
             "reason": "Migratory birds depend on an unbroken chain of stopover habitats across international borders.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_3",
@@ -570,11 +764,22 @@
             ],
             "correctAnswer": "She established a fund from donations to help cover the cost of safer net attachments.",
             "reason": "Nour listened to their concerns and created a practical fund to support equipment transition.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_4",
@@ -588,11 +793,22 @@
             ],
             "correctAnswer": "The farmer said that his livelihood was at risk.",
             "reason": "The possessive pronoun 'my' changes to 'his' and 'is' shifts back to 'was'.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_5",
@@ -606,11 +822,22 @@
             ],
             "correctAnswer": "Nada asked Dina what her favorite hobby was.",
             "reason": "Wh- questions in reported speech use statement word order (subject before verb).",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_6",
@@ -624,11 +851,22 @@
             ],
             "correctAnswer": "Ordinary citizens volunteering to collect scientific data for local projects",
             "reason": "Citizen science refers to public participation in gathering scientific data for community projects.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_7",
@@ -642,11 +880,22 @@
             ],
             "correctAnswer": "Coastal erosion",
             "reason": "Coastal erosion is explicitly defined as the wearing away of land along coastlines by wind and water.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_8",
@@ -660,11 +909,22 @@
             ],
             "correctAnswer": "Because it oversimplifies a complex issue using absolute emotional language without evidence.",
             "reason": "Exaggerated absolute claims distort complex reality by lacking supporting evidence.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_9",
@@ -678,11 +938,22 @@
             ],
             "correctAnswer": "Tell",
             "reason": "Unlike 'say', the verb 'tell' requires a direct personal object.",
-            "origin": "source",
-            "sourcePdfPage": 12
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct_10",
@@ -696,13 +967,35 @@
             ],
             "correctAnswer": "Clear structure, respectful tone, specific request, and formal salutation/sign-off",
             "reason": "Formal emails rely on structured layout, polite tone, clear asks, and standard professional greetings.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.419Z",
+    "itemsAudited": 32,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 18,
+    "itemsWithSourceSubfields": 13,
+    "reclassifiedToSupplementary": 25
+  }
 }

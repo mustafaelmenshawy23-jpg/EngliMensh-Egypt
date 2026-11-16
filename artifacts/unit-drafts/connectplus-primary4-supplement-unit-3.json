@@ -73,8 +73,8 @@
     },
     "itemTotals": {
       "totalItems": 36,
-      "sourceItems": 33,
-      "supplementaryItems": 3,
+      "sourceItems": 4,
+      "supplementaryItems": 32,
       "vocabularyCount": 5,
       "questionsCount": 18
     },
@@ -142,7 +142,12 @@
             "arabicMeaning": "محافظة",
             "example": "There are 27 governorates in Egypt today.",
             "origin": "source",
-            "sourcePdfPage": 91
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -153,11 +158,16 @@
             "word": "scuba diving",
             "arabicMeaning": "الغطس تحت الماء",
             "example": "The Red Sea is very popular for scuba diving.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_3",
@@ -165,11 +175,16 @@
             "word": "rebaba",
             "arabicMeaning": "آلة الربابة",
             "example": "The rebaba is a traditional string instrument.",
-            "origin": "source",
-            "sourcePdfPage": 95
+            "origin": "supplementary",
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_4",
@@ -177,11 +192,16 @@
             "word": "hieroglyphs",
             "arabicMeaning": "الرموز الهيروغليفية",
             "example": "Ancient Egyptians wrote down events in hieroglyphs.",
-            "origin": "source",
-            "sourcePdfPage": 90
+            "origin": "supplementary",
+            "sourcePdfPage": 90,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_5",
@@ -190,7 +210,12 @@
             "arabicMeaning": "الخيامية",
             "example": "Tent makers created khayameya to decorate huge tents.",
             "origin": "source",
-            "sourcePdfPage": 103
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -213,11 +238,22 @@
             ],
             "correctAnswer": "A port",
             "reason": "Alexandria is an important governorate because ships sail in and out of its port.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_q2",
@@ -231,11 +267,22 @@
             ],
             "correctAnswer": "The oboe",
             "reason": "The oboe is classified as a wind instrument used by folk musicians in Upper Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_q3",
@@ -249,11 +296,22 @@
             ],
             "correctAnswer": "khayameya",
             "reason": "Khayameya is a traditional craft created by tent makers to decorate tents.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_voc_q4",
@@ -267,11 +325,22 @@
             ],
             "correctAnswer": "Scribes",
             "reason": "Scribes were very important people in Ancient Egypt responsible for writing down events.",
-            "origin": "source",
-            "sourcePdfPage": 109
+            "origin": "supplementary",
+            "sourcePdfPage": 109,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -285,11 +354,16 @@
             "rule": "Possessive Pronouns",
             "explanation": "Possessive pronouns (mine, yours, his, hers, ours, theirs) show ownership and stand alone without a following noun.",
             "example": "This book is mine.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_2",
@@ -297,11 +371,16 @@
             "rule": "Past Simple Tense",
             "explanation": "The past simple tense describes completed actions in the past. Regular verbs add -ed, while irregular verbs take specific past forms.",
             "example": "She listened to stories yesterday.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_3",
@@ -309,11 +388,16 @@
             "rule": "Adverbs of Manner",
             "explanation": "Adverbs of manner describe how an action is performed and are typically formed by adding -ly to an adjective.",
             "example": "A skilled person can work quickly.",
-            "origin": "source",
-            "sourcePdfPage": 99
+            "origin": "supplementary",
+            "sourcePdfPage": 99,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -333,11 +417,22 @@
             ],
             "correctAnswer": "mine",
             "reason": "'mine' is the correct possessive pronoun referring to something belonging to the speaker.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_q2",
@@ -351,11 +446,22 @@
             ],
             "correctAnswer": "went",
             "reason": "'yesterday' requires the past simple form of the verb, which is 'went'.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_q3",
@@ -369,11 +475,22 @@
             ],
             "correctAnswer": "ours",
             "reason": "'ours' is the possessive pronoun replacing 'our bags'.",
-            "origin": "source",
-            "sourcePdfPage": 88
+            "origin": "supplementary",
+            "sourcePdfPage": 88,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_gram_q4",
@@ -387,11 +504,22 @@
             ],
             "correctAnswer": "quickly",
             "reason": "The adverb 'quickly' is used to describe how the person works.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -404,7 +532,10 @@
           "content": {
             "passage": "In the past, there were two separate areas in Egypt. Lower Egypt was in the north, where the Nile joins the sea. Upper Egypt was in the south, where the Nile flows through the deserts of Africa. In about 3200 BCE, one pharaoh, Mena joined these two parts to unite the country of Egypt. Egypt controlled the Nile as far as boats could sail on it, so it became very powerful.",
             "origin": "source",
-            "sourcePdfPage": 89
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -421,11 +552,22 @@
             ],
             "correctAnswer": "In the north",
             "reason": "The text explicitly states that Lower Egypt was in the north, where the Nile joins the sea.",
-            "origin": "source",
-            "sourcePdfPage": 89
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_read_q2",
@@ -439,11 +581,22 @@
             ],
             "correctAnswer": "Mena",
             "reason": "The reading passage specifies that Pharaoh Mena joined the two parts to unite Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 89
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -455,11 +608,14 @@
           "itemId": "u3_list_script_1",
           "content": {
             "script": "I'm Fares, and I live in the Red Sea Governorate. It has a beach which is over 1,000 km. It's a very popular place to visit for scuba diving and water sports. I'm Nadia, and I live in Aswan Governorate. It's the farthest south in Upper Egypt. Its capital is Aswan. In 1970, engineers finished the Aswan High Dam.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_list_q1",
@@ -473,11 +629,22 @@
             ],
             "correctAnswer": "Aswan Governorate",
             "reason": "In the listening script, Nadia states that she lives in Aswan Governorate.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_list_q2",
@@ -491,11 +658,22 @@
             ],
             "correctAnswer": "In 1970",
             "reason": "The text states that engineers completed the Aswan High Dam in 1970.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -539,7 +717,17 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 93
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -568,7 +756,20 @@
             "correctAnswer": "Alexandria",
             "reason": "Alexandria is a famous port city located on the Mediterranean coast of Egypt.",
             "origin": "supplementary",
-            "sourcePdfPage": 92
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -591,7 +792,20 @@
             "correctAnswer": "finished",
             "reason": "The past year 1970 requires the past simple tense form 'finished'.",
             "origin": "supplementary",
-            "sourcePdfPage": 94
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -614,7 +828,20 @@
             "correctAnswer": "Rags Assaya",
             "reason": "Rags Assaya is the famous stick dance associated with Upper Egypt's Saidi tradition.",
             "origin": "supplementary",
-            "sourcePdfPage": 98
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -637,11 +864,22 @@
             ],
             "correctAnswer": "scribes",
             "reason": "In Ancient Egypt, reading and writing were specialized tasks performed by scribes.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q2",
@@ -655,11 +893,22 @@
             ],
             "correctAnswer": "Aswan",
             "reason": "Aswan Governorate is the farthest south governorate in Upper Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q3",
@@ -673,11 +922,22 @@
             ],
             "correctAnswer": "A string instrument",
             "reason": "Violins produce sound from strings and are classified as string instruments.",
-            "origin": "source",
-            "sourcePdfPage": 97
+            "origin": "supplementary",
+            "sourcePdfPage": 97,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q4",
@@ -691,11 +951,22 @@
             ],
             "correctAnswer": "khayameya",
             "reason": "Khayameya and carpet making are traditional Egyptian crafts described in the unit.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q5",
@@ -709,11 +980,22 @@
             ],
             "correctAnswer": "mine",
             "reason": "The possessive pronoun 'mine' replaces 'my notebook'.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q6",
@@ -727,11 +1009,22 @@
             ],
             "correctAnswer": "did",
             "reason": "Past simple questions with main verbs use the auxiliary verb 'did'.",
-            "origin": "source",
-            "sourcePdfPage": 87
+            "origin": "supplementary",
+            "sourcePdfPage": 87,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q7",
@@ -745,11 +1038,22 @@
             ],
             "correctAnswer": "was",
             "reason": "The singular past form of verb 'to be' for Rami is 'was'.",
-            "origin": "source",
-            "sourcePdfPage": 87
+            "origin": "supplementary",
+            "sourcePdfPage": 87,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q8",
@@ -763,11 +1067,22 @@
             ],
             "correctAnswer": "fighting",
             "reason": "In Tahtib, dancers move sticks in a precise way that resembles fighting.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q9",
@@ -781,11 +1096,22 @@
             ],
             "correctAnswer": "wool",
             "reason": "Egyptian carpets are handcrafted using high-quality Egyptian wool.",
-            "origin": "source",
-            "sourcePdfPage": 103
+            "origin": "supplementary",
+            "sourcePdfPage": 103,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u3_test_q10",
@@ -799,13 +1125,35 @@
             ],
             "correctAnswer": "capital",
             "reason": "The city of Alexandria historically served as the capital city of Egypt.",
-            "origin": "source",
-            "sourcePdfPage": 92
+            "origin": "supplementary",
+            "sourcePdfPage": 92,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.879Z",
+    "itemsAudited": 36,
+    "sourceClaims": 33,
+    "verifiedSourceClaims": 4,
+    "unverifiableSourceClaims": 29,
+    "citationWarnings": 21,
+    "itemsWithSourceSubfields": 30,
+    "reclassifiedToSupplementary": 29
+  }
 }

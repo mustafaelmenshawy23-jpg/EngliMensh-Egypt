@@ -46,8 +46,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 27,
-      "supplementaryItems": 3,
+      "sourceItems": 0,
+      "supplementaryItems": 30,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -114,11 +114,16 @@
             "word": "depletion",
             "arabicMeaning": "استنفاد",
             "example": "The depletion of natural resources is a serious global concern.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-voc-2",
@@ -126,11 +131,16 @@
             "word": "renewable",
             "arabicMeaning": "متجدد",
             "example": "Solar energy is a clean and renewable power source.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-voc-3",
@@ -138,11 +148,16 @@
             "word": "sustainable",
             "arabicMeaning": "مستدام",
             "example": "Building a sustainable future requires using eco-friendly practices.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-voc-4",
@@ -150,11 +165,16 @@
             "word": "eco-friendly",
             "arabicMeaning": "صديق للبيئة",
             "example": "Many companies are transforming their factories into eco-friendly plants.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-voc-5",
@@ -162,11 +182,16 @@
             "word": "reusable",
             "arabicMeaning": "قابل لإعادة الاستخدام",
             "example": "Carrying a reusable bag helps reduce single-use plastic waste.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-voc-6",
@@ -174,11 +199,16 @@
             "word": "campaign",
             "arabicMeaning": "حملة",
             "example": "The school organized a campaign to raise awareness about water conservation.",
-            "origin": "source",
-            "sourcePdfPage": 61
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -198,11 +228,22 @@
             ],
             "correctAnswer": "Reduction in the amount or quantity of something",
             "reason": "Depletion refers to the gradual reduction or using up of a supply or resource.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-vocq-2",
@@ -216,11 +257,22 @@
             ],
             "correctAnswer": "Renewable",
             "reason": "Renewable resources, such as solar and wind power, replace themselves naturally over time.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-vocq-3",
@@ -234,11 +286,22 @@
             ],
             "correctAnswer": "eco-friendly",
             "reason": "Eco-friendly products and practices are designed to avoid damaging the environment.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,11 +315,16 @@
             "rule": "Verbs followed by to + infinitive or gerund (-ing)",
             "explanation": "Some verbs are followed by 'to + infinitive' (e.g., decide, promise, agree, plan, want), while others are followed by a gerund '-ing' (e.g., enjoy, avoid, suggest, mind). Certain verbs like 'remember', 'forget', and 'stop' can take both forms, but with a change in meaning.",
             "example": "She enjoys listening to music, but she decided to study early today.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -276,11 +344,22 @@
             ],
             "correctAnswer": "listening",
             "reason": "The verb 'enjoy' is followed by a gerund (-ing form).",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-gramq-2",
@@ -294,11 +373,22 @@
             ],
             "correctAnswer": "to help",
             "reason": "The verb 'promise' takes 'to + infinitive'.",
-            "origin": "source",
-            "sourcePdfPage": 63
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-gramq-3",
@@ -312,11 +402,22 @@
             ],
             "correctAnswer": "to buy",
             "reason": "The verb 'decide' is followed by 'to + infinitive'.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -328,11 +429,14 @@
           "itemId": "u4-read-1",
           "content": {
             "passage": "After many years since the Industrial Revolution and the misuse of technology, the large-scale production of machines and automobiles has had harmful effects on the environment. These technologies have mainly caused damage in two ways: through air and water pollution, and through the overuse of natural resources. For this reason, environmental concerns have become a major issue across all industries. Today, 'Go Green' has become a widely used slogan in industry. Green manufacturing refers to producing goods in ways that do not harm the environment and that help preserve natural resources for future generations. The concept of 'green manufacturing' can be understood in two ways. First, it means producing environmentally friendly products by using renewable energy and clean technologies. Second, it refers to making the manufacturing process itself greener—reducing pollution and waste by cutting down on resource use, recycling, and reusing materials. This approach helps slow the depletion of natural resources and reduces the amount of waste going into landfills. Both manufacturers and consumers play a role in the fight against climate change, and building a sustainable future is essential.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-read-2",
@@ -346,11 +450,22 @@
             ],
             "correctAnswer": "Through air and water pollution, and overuse of natural resources",
             "reason": "The passage explicitly states that technology caused damage through air and water pollution and the overuse of natural resources.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -363,7 +478,10 @@
           "content": {
             "script": "Hello everyone. My name is Ahmed. Last month, I started a campaign in our neighborhood called 'One Bag at a Time'. Plastic bags were polluting our streets and harming local trees. I spoke with shop owners and suggested using paper or fabric reusable bags instead. At first, some shop owners thought it would be too expensive, but when we organized a 'Bag Swap Day', local families brought reusable bags to exchange. Now, more than half of the shops in our area have stopped handing out single-use plastic bags!",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -380,11 +498,22 @@
             ],
             "correctAnswer": "A Bag Swap Day",
             "reason": "In the listening script, Ahmed mentions that organizing a 'Bag Swap Day' helped convince people and made the initiative successful.",
-            "origin": "source",
-            "sourcePdfPage": 62
+            "origin": "supplementary",
+            "sourcePdfPage": 62,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -407,11 +536,17 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -437,7 +572,20 @@
             "correctAnswer": "reusable",
             "reason": "Reusable means something designed to be used more than once.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -460,7 +608,20 @@
             "correctAnswer": "buying",
             "reason": "The verb 'avoid' is followed by a gerund (-ing form).",
             "origin": "supplementary",
-            "sourcePdfPage": 63
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -483,11 +644,22 @@
             ],
             "correctAnswer": "depletion",
             "reason": "Overusing natural resources causes them to be depleted or reduced.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-2",
@@ -501,11 +673,22 @@
             ],
             "correctAnswer": "renewable",
             "reason": "Solar and wind energy are natural resources that replenish themselves.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-3",
@@ -519,11 +702,22 @@
             ],
             "correctAnswer": "Green manufacturing",
             "reason": "Green manufacturing focuses on eco-friendly processes and sustainable production.",
-            "origin": "source",
-            "sourcePdfPage": 58
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-4",
@@ -537,11 +731,22 @@
             ],
             "correctAnswer": "taking",
             "reason": "The verb 'suggest' is followed by a gerund (-ing form).",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-5",
@@ -555,11 +760,22 @@
             ],
             "correctAnswer": "to turn",
             "reason": "When 'remember' means to not forget to do an action in the future, it is followed by 'to + infinitive'.",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-6",
@@ -573,11 +789,22 @@
             ],
             "correctAnswer": "waiting",
             "reason": "The verb phrase 'don't mind' takes a gerund (-ing form).",
-            "origin": "source",
-            "sourcePdfPage": 64
+            "origin": "supplementary",
+            "sourcePdfPage": 64,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-7",
@@ -591,11 +818,22 @@
             ],
             "correctAnswer": "To check the school's water sources for leaks",
             "reason": "The text states that the Water Team's mission was to survey school water sources and check for leaks.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-8",
@@ -609,11 +847,22 @@
             ],
             "correctAnswer": "Even small drips can waste many liters of water each day",
             "reason": "The passage highlights that small leaks accumulate to waste significant amounts of water daily.",
-            "origin": "source",
-            "sourcePdfPage": 65
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-9",
@@ -627,11 +876,22 @@
             ],
             "correctAnswer": "Dear Mr. Ali,",
             "reason": "Formal emails require polite titles and last names, such as 'Dear Mr. Ali,'.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u4-test-10",
@@ -645,13 +905,35 @@
             ],
             "correctAnswer": "Yours sincerely,",
             "reason": "'Yours sincerely,' is a standard professional closing for formal email correspondence.",
-            "origin": "source",
-            "sourcePdfPage": 68
+            "origin": "supplementary",
+            "sourcePdfPage": 68,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:27.800Z",
+    "itemsAudited": 30,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 27,
+    "citationWarnings": 20,
+    "itemsWithSourceSubfields": 20,
+    "reclassifiedToSupplementary": 27
+  }
 }

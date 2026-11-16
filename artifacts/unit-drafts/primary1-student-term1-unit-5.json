@@ -53,8 +53,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 18,
-      "supplementaryItems": 11,
+      "sourceItems": 2,
+      "supplementaryItems": 27,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -121,11 +121,16 @@
             "word": "cow",
             "arabicMeaning": "بقرة",
             "example": "The cow is big.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_002",
@@ -133,11 +138,16 @@
             "word": "duck",
             "arabicMeaning": "بطة",
             "example": "The duck is small.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_003",
@@ -145,11 +155,16 @@
             "word": "horse",
             "arabicMeaning": "حصان",
             "example": "The horse is big.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_004",
@@ -157,11 +172,16 @@
             "word": "chicken",
             "arabicMeaning": "دجاجة",
             "example": "The chicken is small.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -181,7 +201,17 @@
             "correctAnswer": "cow",
             "reason": "The unit describes the cow as a big animal.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -198,7 +228,17 @@
             "correctAnswer": "duck",
             "reason": "The unit describes the duck as a small animal.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -215,7 +255,17 @@
             "correctAnswer": "mouse",
             "reason": "Mouse is a word that begins with the letter M.",
             "origin": "supplementary",
-            "sourcePdfPage": 89
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -232,11 +282,16 @@
             "rule": "Using adjectives to describe size",
             "explanation": "We use 'big' and 'small' to describe the size of animals.",
             "example": "The cow is big.",
-            "origin": "source",
-            "sourcePdfPage": 86
+            "origin": "supplementary",
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_002",
@@ -244,11 +299,16 @@
             "rule": "Counting numbers 6 to 10",
             "explanation": "We use numbers to count how many animals we see.",
             "example": "I can see 7 horses.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -268,7 +328,17 @@
             "correctAnswer": "big",
             "reason": "The unit teaches that the horse is big.",
             "origin": "supplementary",
-            "sourcePdfPage": 86
+            "sourcePdfPage": 86,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -285,7 +355,17 @@
             "correctAnswer": "9",
             "reason": "The sequence ends at 9.",
             "origin": "supplementary",
-            "sourcePdfPage": 94
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -302,7 +382,17 @@
             "correctAnswer": "H",
             "reason": "H follows G in the alphabet.",
             "origin": "supplementary",
-            "sourcePdfPage": 91
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -318,7 +408,10 @@
           "content": {
             "passage": "Look at the cow! Wow! The cow is big! And look at the duck! The duck is small. Do you see the horse? Yes! The horse is big, too. What about the chicken? The chicken is small.",
             "origin": "source",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -335,7 +428,17 @@
             "correctAnswer": "small",
             "reason": "The passage states the chicken is small.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -351,7 +454,10 @@
           "content": {
             "script": "Teacher: Listen and repeat the numbers. 6, 7, 8, 9, 10. How many cows do you see? Student: I see 6 cows.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -368,7 +474,17 @@
             "correctAnswer": "9",
             "reason": "In the counting sequence, 9 follows 8.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -395,7 +511,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 94
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -423,7 +545,19 @@
             "correctAnswer": "big",
             "reason": "The cow is described as big in the unit.",
             "origin": "supplementary",
-            "sourcePdfPage": 85
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -445,7 +579,19 @@
             "correctAnswer": "7",
             "reason": "7 comes after 6 in the counting sequence.",
             "origin": "supplementary",
-            "sourcePdfPage": 95
+            "sourcePdfPage": 95,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -467,11 +613,21 @@
             ],
             "correctAnswer": "big",
             "reason": "The unit describes the cow as big.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_002",
@@ -484,11 +640,21 @@
             ],
             "correctAnswer": "duck",
             "reason": "The duck is described as small.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_003",
@@ -501,11 +667,21 @@
             ],
             "correctAnswer": "7",
             "reason": "Tamer says he can see 7 horses.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_004",
@@ -518,11 +694,21 @@
             ],
             "correctAnswer": "M",
             "reason": "Mango starts with the letter M.",
-            "origin": "source",
-            "sourcePdfPage": 89
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_005",
@@ -535,11 +721,21 @@
             ],
             "correctAnswer": "G",
             "reason": "Girl starts with the letter G.",
-            "origin": "source",
-            "sourcePdfPage": 91
+            "origin": "supplementary",
+            "sourcePdfPage": 91,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_006",
@@ -552,11 +748,21 @@
             ],
             "correctAnswer": "F",
             "reason": "Fork starts with the letter F.",
-            "origin": "source",
-            "sourcePdfPage": 100
+            "origin": "supplementary",
+            "sourcePdfPage": 100,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_007",
@@ -569,11 +775,21 @@
             ],
             "correctAnswer": "O",
             "reason": "Olive starts with the letter O.",
-            "origin": "source",
-            "sourcePdfPage": 98
+            "origin": "supplementary",
+            "sourcePdfPage": 98,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_008",
@@ -586,11 +802,21 @@
             ],
             "correctAnswer": "10",
             "reason": "10 follows 9 in the counting sequence.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_009",
@@ -603,11 +829,21 @@
             ],
             "correctAnswer": "small",
             "reason": "The chicken is described as small.",
-            "origin": "source",
-            "sourcePdfPage": 85
+            "origin": "supplementary",
+            "sourcePdfPage": 85,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test_010",
@@ -620,13 +856,34 @@
             ],
             "correctAnswer": "9",
             "reason": "The dialogue mentions there are 9 ducks.",
-            "origin": "source",
-            "sourcePdfPage": 94
+            "origin": "supplementary",
+            "sourcePdfPage": 94,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:24.976Z",
+    "itemsAudited": 29,
+    "sourceClaims": 18,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 16,
+    "citationWarnings": 11,
+    "itemsWithSourceSubfields": 18,
+    "reclassifiedToSupplementary": 16
+  }
 }

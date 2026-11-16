@@ -70,8 +70,8 @@
     },
     "itemTotals": {
       "totalItems": 28,
-      "sourceItems": 26,
-      "supplementaryItems": 2,
+      "sourceItems": 0,
+      "supplementaryItems": 28,
       "vocabularyCount": 4,
       "questionsCount": 16
     },
@@ -138,11 +138,16 @@
             "word": "store clerk",
             "arabicMeaning": "بائع في متجر",
             "example": "The store clerk helped me find the groceries in the supermarket.",
-            "origin": "source",
-            "sourcePdfPage": 163
+            "origin": "supplementary",
+            "sourcePdfPage": 163,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_2",
@@ -150,11 +155,16 @@
             "word": "carbon footprint",
             "arabicMeaning": "البصمة الكربونية",
             "example": "Eating less meat is a great way to reduce your carbon footprint.",
-            "origin": "source",
-            "sourcePdfPage": 177
+            "origin": "supplementary",
+            "sourcePdfPage": 177,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_3",
@@ -162,11 +172,16 @@
             "word": "vegetarian",
             "arabicMeaning": "شخص نباتي",
             "example": "A vegetarian does not eat any meat or fish.",
-            "origin": "source",
-            "sourcePdfPage": 172
+            "origin": "supplementary",
+            "sourcePdfPage": 172,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_4",
@@ -174,11 +189,16 @@
             "word": "recipe",
             "arabicMeaning": "وصفة طهي",
             "example": "She followed a traditional recipe to make mushroom pasta.",
-            "origin": "source",
-            "sourcePdfPage": 173
+            "origin": "supplementary",
+            "sourcePdfPage": 173,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -198,11 +218,22 @@
             ],
             "correctAnswer": "valuable",
             "reason": "Valuable means worth a lot of money, which is synonymous with expensive.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_q2",
@@ -216,11 +247,22 @@
             ],
             "correctAnswer": "waiter",
             "reason": "By definition, a waiter is the person who serves food to customers in a restaurant.",
-            "origin": "source",
-            "sourcePdfPage": 173
+            "origin": "supplementary",
+            "sourcePdfPage": 173,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc_q3",
@@ -234,11 +276,22 @@
             ],
             "correctAnswer": "receipt",
             "reason": "A receipt is proof of purchase required for exchanging items.",
-            "origin": "source",
-            "sourcePdfPage": 170
+            "origin": "supplementary",
+            "sourcePdfPage": 170,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -252,11 +305,16 @@
             "rule": "The Present Perfect Tense with key adverbs (already, just, ever, never, yet)",
             "explanation": "We use the present perfect tense (have/has + past participle) to describe past experiences or recent events. 'Yet' is used in negative sentences and questions, while 'already' and 'just' are used in affirmative sentences.",
             "example": "I have already visited the market twice.",
-            "origin": "source",
-            "sourcePdfPage": 167
+            "origin": "supplementary",
+            "sourcePdfPage": 167,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -276,11 +334,22 @@
             ],
             "correctAnswer": "already",
             "reason": "'Already' can be used in questions to express completion or surprise.",
-            "origin": "source",
-            "sourcePdfPage": 168
+            "origin": "supplementary",
+            "sourcePdfPage": 168,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q2",
@@ -294,11 +363,22 @@
             ],
             "correctAnswer": "yet",
             "reason": "'Yet' is placed at the end of negative sentences in the present perfect tense.",
-            "origin": "source",
-            "sourcePdfPage": 168
+            "origin": "supplementary",
+            "sourcePdfPage": 168,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram_q3",
@@ -312,11 +392,22 @@
             ],
             "correctAnswer": "never",
             "reason": "'Never' is used in affirmative sentences to indicate a negative experience up to the present.",
-            "origin": "source",
-            "sourcePdfPage": 168
+            "origin": "supplementary",
+            "sourcePdfPage": 168,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -328,11 +419,14 @@
           "itemId": "read_1",
           "content": {
             "passage": "When you come to Barcelona, don't forget to visit La Boqueria! You can find amazing fresh food here. There's a lot of fruit and there are a lot of vegetables. There's some meat, chicken, and fish, and there are some cafés and restaurants, too. But there isn't any furniture and there aren't any clothes. La Boqueria is a market just for food! There are more than 200 different places which sell many different types of food.",
-            "origin": "source",
-            "sourcePdfPage": 162
+            "origin": "supplementary",
+            "sourcePdfPage": 162,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "read_q1",
@@ -346,11 +440,22 @@
             ],
             "correctAnswer": "A market just for food",
             "reason": "The text explicitly states that La Boqueria is a market dedicated only to food.",
-            "origin": "source",
-            "sourcePdfPage": 162
+            "origin": "supplementary",
+            "sourcePdfPage": 162,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -362,11 +467,14 @@
           "itemId": "list_1",
           "content": {
             "script": "Hi, this is Lacey. I can't take your call at the moment, so please leave me a message. Hi Lacey, it's me, Callum. I want to make chicken and vegetable soup for dinner tonight and I'm just looking in the fridge. I know you're at the supermarket at the moment. Can you buy a few things for me? There's a little chicken in the fridge. There are a lot of beans, so I can use them. There are a few carrots, too. But there aren't any mushrooms and there isn't any bread to eat with the soup. Can you get some mushrooms and bread, please? Thanks!",
-            "origin": "source",
-            "sourcePdfPage": 163
+            "origin": "supplementary",
+            "sourcePdfPage": 163,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "list_q1",
@@ -380,11 +488,22 @@
             ],
             "correctAnswer": "Mushrooms and bread",
             "reason": "Callum mentions in his message that there are no mushrooms and no bread left, so he asks Lacey to buy them.",
-            "origin": "source",
-            "sourcePdfPage": 163
+            "origin": "supplementary",
+            "sourcePdfPage": 163,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -427,11 +546,21 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 178
+            "origin": "supplementary",
+            "sourcePdfPage": 178,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -457,7 +586,20 @@
             "correctAnswer": "Tofu",
             "reason": "Tofu is highlighted in the unit as a great vegetarian alternative to meat.",
             "origin": "supplementary",
-            "sourcePdfPage": 177
+            "sourcePdfPage": 177,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -480,7 +622,20 @@
             "correctAnswer": "arrived",
             "reason": "Present perfect forms use has/have + past participle (arrived).",
             "origin": "supplementary",
-            "sourcePdfPage": 167
+            "sourcePdfPage": 167,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -503,11 +658,22 @@
             ],
             "correctAnswer": "Help customers find items in a store",
             "reason": "Store clerks assist shoppers in finding what they need in aisles and shelves.",
-            "origin": "source",
-            "sourcePdfPage": 163
+            "origin": "supplementary",
+            "sourcePdfPage": 163,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_2",
@@ -521,11 +687,22 @@
             ],
             "correctAnswer": "recipe",
             "reason": "A recipe gives instructions and ingredient lists for preparing dishes.",
-            "origin": "source",
-            "sourcePdfPage": 173
+            "origin": "supplementary",
+            "sourcePdfPage": 173,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_3",
@@ -539,11 +716,22 @@
             ],
             "correctAnswer": "-ese",
             "reason": "Adding '-ese' to Japan creates the adjective Japanese.",
-            "origin": "source",
-            "sourcePdfPage": 160
+            "origin": "supplementary",
+            "sourcePdfPage": 160,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_4",
@@ -557,11 +745,22 @@
             ],
             "correctAnswer": "I have already visited the market twice.",
             "reason": "Present perfect requires subject + have/has + already + past participle.",
-            "origin": "source",
-            "sourcePdfPage": 167
+            "origin": "supplementary",
+            "sourcePdfPage": 167,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_5",
@@ -575,11 +774,22 @@
             ],
             "correctAnswer": "yet",
             "reason": "'Yet' is used in negative present perfect statements.",
-            "origin": "source",
-            "sourcePdfPage": 168
+            "origin": "supplementary",
+            "sourcePdfPage": 168,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_6",
@@ -593,11 +803,22 @@
             ],
             "correctAnswer": "Cheese",
             "reason": "Clare explains that after mixing pasta and mushrooms, she serves the dish with cheese on top.",
-            "origin": "source",
-            "sourcePdfPage": 177
+            "origin": "supplementary",
+            "sourcePdfPage": 177,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_7",
@@ -611,11 +832,22 @@
             ],
             "correctAnswer": "It saves time and they do not have to carry heavy bags",
             "reason": "Owen's parents state that using an app makes life easier by saving time and avoiding carrying shopping bags.",
-            "origin": "source",
-            "sourcePdfPage": 189
+            "origin": "supplementary",
+            "sourcePdfPage": 189,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_8",
@@ -629,11 +861,22 @@
             ],
             "correctAnswer": "souvenirs",
             "reason": "The reading passage notes that Camden Market sells clothes, home goods, and souvenirs.",
-            "origin": "source",
-            "sourcePdfPage": 191
+            "origin": "supplementary",
+            "sourcePdfPage": 191,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_9",
@@ -647,11 +890,22 @@
             ],
             "correctAnswer": "hard",
             "reason": "Hard is the antonym of easy.",
-            "origin": "source",
-            "sourcePdfPage": 190
+            "origin": "supplementary",
+            "sourcePdfPage": 190,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "comp_10",
@@ -665,13 +919,35 @@
             ],
             "correctAnswer": "multiply by 2",
             "reason": "Since 8 divided by 4 equals 2, you multiply each component by 2.",
-            "origin": "source",
-            "sourcePdfPage": 193
+            "origin": "supplementary",
+            "sourcePdfPage": 193,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:26.913Z",
+    "itemsAudited": 28,
+    "sourceClaims": 26,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 26,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 26
+  }
 }

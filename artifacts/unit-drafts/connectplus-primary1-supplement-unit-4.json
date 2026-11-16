@@ -71,8 +71,8 @@
     },
     "itemTotals": {
       "totalItems": 33,
-      "sourceItems": 27,
-      "supplementaryItems": 6,
+      "sourceItems": 3,
+      "supplementaryItems": 30,
       "vocabularyCount": 9,
       "questionsCount": 16
     },
@@ -139,11 +139,16 @@
             "word": "duck",
             "arabicMeaning": "بطة",
             "example": "A duck has two wings.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -151,11 +156,16 @@
             "word": "goat",
             "arabicMeaning": "معزة",
             "example": "A goat lives on the farm.",
-            "origin": "source",
-            "sourcePdfPage": 113
+            "origin": "supplementary",
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -164,7 +174,12 @@
             "arabicMeaning": "حصان",
             "example": "A horse is big.",
             "origin": "source",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -175,11 +190,16 @@
             "word": "chicken",
             "arabicMeaning": "دجاجة",
             "example": "A chicken lives on the farm.",
-            "origin": "source",
-            "sourcePdfPage": 113
+            "origin": "supplementary",
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -187,11 +207,16 @@
             "word": "tail",
             "arabicMeaning": "ذيل",
             "example": "A horse has a long tail.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-6",
@@ -200,7 +225,12 @@
             "arabicMeaning": "عشب",
             "example": "A cow eats grass.",
             "origin": "source",
-            "sourcePdfPage": 113
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -211,11 +241,16 @@
             "word": "hay",
             "arabicMeaning": "قش",
             "example": "Horses eat hay.",
-            "origin": "source",
-            "sourcePdfPage": 132
+            "origin": "supplementary",
+            "sourcePdfPage": 132,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-8",
@@ -223,11 +258,16 @@
             "word": "shelter",
             "arabicMeaning": "مأوى",
             "example": "Animals need shelter.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-9",
@@ -235,11 +275,16 @@
             "word": "soil",
             "arabicMeaning": "تربة",
             "example": "The roots are in the soil.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -258,11 +303,21 @@
             ],
             "correctAnswer": "grass",
             "reason": "Cows are herbivores on the farm that feed on grass.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -275,11 +330,21 @@
             ],
             "correctAnswer": "in the soil",
             "reason": "Plant roots grow underground inside the soil to absorb nutrients.",
-            "origin": "source",
-            "sourcePdfPage": 128
+            "origin": "supplementary",
+            "sourcePdfPage": 128,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -292,11 +357,21 @@
             ],
             "correctAnswer": "fish",
             "reason": "Fish live and swim in water.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -310,11 +385,16 @@
             "rule": "Present Simple Tense with Singular Subjects",
             "explanation": "We add -s, -es, or -ies to the verb when the subject pronoun is singular (He, She, It) or a singular noun.",
             "example": "It swims in the water.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -333,11 +413,21 @@
             ],
             "correctAnswer": "eats",
             "reason": "With a singular subject like 'A goat', we add '-s' to the verb in the present simple tense.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-2",
@@ -350,11 +440,21 @@
             ],
             "correctAnswer": "flies",
             "reason": "For verbs ending in consonant + y, we drop 'y' and add '-ies' for singular subjects.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-3",
@@ -367,11 +467,21 @@
             ],
             "correctAnswer": "are",
             "reason": "'Chickens' is a plural subject, so it takes the plural verb 'are'.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -384,7 +494,10 @@
           "content": {
             "passage": "There are many animals on the farm. A horse is big. It has brown hair and a long tail. A duck has two wings and one beak.",
             "origin": "source",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -400,11 +513,21 @@
             ],
             "correctAnswer": "brown",
             "reason": "The passage explicitly states that the horse has brown hair.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -417,7 +540,10 @@
           "content": {
             "script": "Look at the farm! The cow is big and eats green grass. The little duck swims near the water and has two wings.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -434,7 +560,17 @@
             "correctAnswer": "green grass",
             "reason": "The speaker mentions that the cow eats green grass.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -461,7 +597,13 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 113
+            "sourcePdfPage": 113,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -489,7 +631,19 @@
             "correctAnswer": "duck",
             "reason": "A duck is a bird with wings and a beak.",
             "origin": "supplementary",
-            "sourcePdfPage": 110
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -511,7 +665,19 @@
             "correctAnswer": "swims",
             "reason": "'A fish' is a singular subject requiring the verb ending '-s'.",
             "origin": "supplementary",
-            "sourcePdfPage": 114
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -533,11 +699,21 @@
             ],
             "correctAnswer": "wings",
             "reason": "Ducks have wings that help them move and fly.",
-            "origin": "source",
-            "sourcePdfPage": 110
+            "origin": "supplementary",
+            "sourcePdfPage": 110,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -550,11 +726,21 @@
             ],
             "correctAnswer": "runs",
             "reason": "Singular third-person subject 'A horse' takes 'runs'.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -567,11 +753,21 @@
             ],
             "correctAnswer": "live",
             "reason": "Plural subject 'Chickens' uses the base verb 'live'.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-4",
@@ -585,7 +781,17 @@
             "correctAnswer": "water and nutrients",
             "reason": "Plant roots grow in the soil to absorb water and essential nutrients.",
             "origin": "supplementary",
-            "sourcePdfPage": 129
+            "sourcePdfPage": 129,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -601,11 +807,21 @@
             ],
             "correctAnswer": "sandy",
             "reason": "Deserts are characterized by hot weather and large sandy areas.",
-            "origin": "source",
-            "sourcePdfPage": 133
+            "origin": "supplementary",
+            "sourcePdfPage": 133,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -618,11 +834,21 @@
             ],
             "correctAnswer": "fresh",
             "reason": "Rivers like the Nile provide fresh water, unlike oceans which have salt water.",
-            "origin": "source",
-            "sourcePdfPage": 133
+            "origin": "supplementary",
+            "sourcePdfPage": 133,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -635,11 +861,21 @@
             ],
             "correctAnswer": "litter",
             "reason": "To care for our environment, we must avoid dropping trash or litter.",
-            "origin": "source",
-            "sourcePdfPage": 120
+            "origin": "supplementary",
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -652,11 +888,21 @@
             ],
             "correctAnswer": "stem",
             "reason": "In plant anatomy, leaves sprout and grow along the stem.",
-            "origin": "source",
-            "sourcePdfPage": 126
+            "origin": "supplementary",
+            "sourcePdfPage": 126,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -669,11 +915,21 @@
             ],
             "correctAnswer": "antlers",
             "reason": "Goats feature small horns or antlers on their heads.",
-            "origin": "source",
-            "sourcePdfPage": 137
+            "origin": "supplementary",
+            "sourcePdfPage": 137,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -686,13 +942,34 @@
             ],
             "correctAnswer": "shelter",
             "reason": "Basic biological needs of animals include food, water, and safe shelter.",
-            "origin": "source",
-            "sourcePdfPage": 127
+            "origin": "supplementary",
+            "sourcePdfPage": 127,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.049Z",
+    "itemsAudited": 33,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 3,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 14,
+    "itemsWithSourceSubfields": 28,
+    "reclassifiedToSupplementary": 24
+  }
 }

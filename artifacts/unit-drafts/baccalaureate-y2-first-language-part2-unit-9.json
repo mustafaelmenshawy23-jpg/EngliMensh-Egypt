@@ -59,8 +59,8 @@
     },
     "itemTotals": {
       "totalItems": 36,
-      "sourceItems": 28,
-      "supplementaryItems": 8,
+      "sourceItems": 0,
+      "supplementaryItems": 36,
       "vocabularyCount": 7,
       "questionsCount": 18
     },
@@ -127,11 +127,16 @@
             "word": "belonging",
             "arabicMeaning": "الانتماء",
             "example": "Belonging is a basic human need that helps students thrive mentally and academically.",
-            "origin": "source",
-            "sourcePdfPage": 104
+            "origin": "supplementary",
+            "sourcePdfPage": 104,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-2",
@@ -139,11 +144,16 @@
             "word": "afterthought",
             "arabicMeaning": "فكرة مضافة لاحقاً",
             "example": "She asked about my old school almost as an afterthought while helping with the plant.",
-            "origin": "source",
-            "sourcePdfPage": 105
+            "origin": "supplementary",
+            "sourcePdfPage": 105,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-3",
@@ -151,11 +161,16 @@
             "word": "resilient",
             "arabicMeaning": "مرن وقادر على التعافي",
             "example": "A growth relationship helps a young person become more confident and resilient.",
-            "origin": "source",
-            "sourcePdfPage": 109
+            "origin": "supplementary",
+            "sourcePdfPage": 109,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-4",
@@ -163,11 +178,16 @@
             "word": "mentor",
             "arabicMeaning": "مرشد أو موجه",
             "example": "An experienced mentor can guide students through major life and academic challenges.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-5",
@@ -175,11 +195,16 @@
             "word": "exclusion",
             "arabicMeaning": "استبعاد أو إقصاء",
             "example": "Quiet exclusion occurs when a student is repeatedly overlooked in small everyday ways.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-6",
@@ -187,11 +212,16 @@
             "word": "initiative",
             "arabicMeaning": "مبادرة",
             "example": "The Buddy Bench is a small initiative designed to reduce loneliness in the playground.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vocab-7",
@@ -199,11 +229,16 @@
             "word": "mobilize",
             "arabicMeaning": "يحشد أو يجند",
             "example": "Social media allows ordinary people to mobilize community support very quickly.",
-            "origin": "source",
-            "sourcePdfPage": 119
+            "origin": "supplementary",
+            "sourcePdfPage": 119,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -223,11 +258,22 @@
             ],
             "correctAnswer": "Something thought of or mentioned later without prior planning",
             "reason": "An afterthought refers to something added or mentioned secondary to the main action without advance preparation.",
-            "origin": "source",
-            "sourcePdfPage": 107
+            "origin": "supplementary",
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vq-2",
@@ -241,11 +287,22 @@
             ],
             "correctAnswer": "Resilient",
             "reason": "Resilient means capable of adapting well and recovering quickly from hardship or stress.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vq-3",
@@ -259,11 +316,22 @@
             ],
             "correctAnswer": "A new plan or action intended to solve a problem",
             "reason": "An initiative is an introductory act or strategy developed to address a specific issue like exclusion.",
-            "origin": "source",
-            "sourcePdfPage": 116
+            "origin": "supplementary",
+            "sourcePdfPage": 116,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-vq-4",
@@ -277,11 +345,22 @@
             ],
             "correctAnswer": "To organize people quickly to take action for a shared purpose",
             "reason": "Mobilizing involves gathering and organizing people and resources swiftly to achieve a goal.",
-            "origin": "source",
-            "sourcePdfPage": 120
+            "origin": "supplementary",
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -295,11 +374,16 @@
             "rule": "Causative Form: Have / Get Something Done",
             "explanation": "We use have or get + object + past participle to indicate that someone arranges for another person to perform a service or action for them.",
             "example": "The school had the counseling room redesigned to feel more welcoming.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-gram-2",
@@ -307,11 +391,16 @@
             "rule": "Result Clauses: So...that and Such...that",
             "explanation": "We use so + adjective/adverb + that and such + (a/an) + adjective + noun + that to express the result or consequence of an extreme quality.",
             "example": "It was such a small idea that few people expected it to work.",
-            "origin": "source",
-            "sourcePdfPage": 117
+            "origin": "supplementary",
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -331,11 +420,22 @@
             ],
             "correctAnswer": "We had our school uniforms made by a local tailor.",
             "reason": "The causative structure requires have/had + object + past participle (had + our school uniforms + made).",
-            "origin": "source",
-            "sourcePdfPage": 112
+            "origin": "supplementary",
+            "sourcePdfPage": 112,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-gq-2",
@@ -349,11 +449,22 @@
             ],
             "correctAnswer": "printed",
             "reason": "The causative form 'get + object + past participle' takes the past participle verb 'printed'.",
-            "origin": "source",
-            "sourcePdfPage": 112
+            "origin": "supplementary",
+            "sourcePdfPage": 112,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-gq-3",
@@ -367,11 +478,22 @@
             ],
             "correctAnswer": "The basic idea was so simple that everyone understood it immediately.",
             "reason": "'So' is placed directly before an adjective ('simple') followed by 'that' and a result clause.",
-            "origin": "source",
-            "sourcePdfPage": 117
+            "origin": "supplementary",
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-gq-4",
@@ -385,11 +507,22 @@
             ],
             "correctAnswer": "such",
             "reason": "'Such' precedes 'a + adjective + singular countable noun' ('a small gesture') before 'that'.",
-            "origin": "source",
-            "sourcePdfPage": 117
+            "origin": "supplementary",
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -401,11 +534,14 @@
           "itemId": "u9-read-1",
           "content": {
             "passage": "When my family moved from Alexandria to a new city in the middle of the first term of the school year, I remember standing at the gate of my new school feeling like a stranger in my own country. Everyone already had their groups, their inside jokes, and their fixed seats in the cafeteria. For the first two weeks, I ate lunch alone, reading the same page of a book repeatedly without understanding a word of it. I told myself it did not matter. I was used to being independent, but by the end of each day, I felt strangely tired, as if pretending not to mind had used up more energy than the schoolwork itself. Belonging, I learned, is not something that is given to you on the first day. It is built slowly, through small and often unplanned moments. Mine began in the school garden, where a classmate noticed I was trying, badly, to identify a plant for a biology assignment. She corrected me, laughed, and then sat down to help, asking questions about my old school almost as an afterthought, as though getting to know me were the easiest thing in the world. That single conversation did not solve everything, but it cracked open a door. Psychologists describe belonging as a basic human need, not a luxury, positioned close to safety and listed among the things a person cannot easily do without. When students feel they belong, they take more risks in class and are less likely to withdraw when things go wrong. The opposite is also true: a student who feels unseen often stops raising their hand long before they stop caring about the subject. By the end of that first term, I had joined the school’s environmental club, mostly because of that one conversation in the garden, and I started arriving early to help set up the planting trays before class. I was no longer the new student who ate alone; I was someone with a seat, a role, and people who would notice if I were absent. What I now understand is that belonging is rarely about fitting into a group perfectly. It is about finding even one connection that quietly says, 'You are seen here.'",
-            "origin": "source",
-            "sourcePdfPage": 104
+            "origin": "supplementary",
+            "sourcePdfPage": 104,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-read-2",
@@ -419,11 +555,22 @@
             ],
             "correctAnswer": "Pretending not to mind being isolated used up immense mental energy.",
             "reason": "The text explicitly notes that pretending not to care about eating alone consumed more energy than the actual schoolwork.",
-            "origin": "source",
-            "sourcePdfPage": 104
+            "origin": "supplementary",
+            "sourcePdfPage": 104,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-read-3",
@@ -437,11 +584,22 @@
             ],
             "correctAnswer": "It served as the initial step toward building social connection and inclusion.",
             "reason": "The figurative phrase 'cracked open a door' implies creating an initial opportunity for meaningful connection.",
-            "origin": "source",
-            "sourcePdfPage": 105
+            "origin": "supplementary",
+            "sourcePdfPage": 105,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -454,7 +612,10 @@
           "content": {
             "script": "Presenter: Welcome to our media report on community well-being initiatives. Over the past five years, how local communities organize mutual aid has transformed significantly. In the past, families needing emergency assistance had to submit paper applications through formal municipal offices, taking weeks to process. Today, grassroots volunteer channels allow ordinary citizens to mobilize blankets, meals, and medical supplies within hours of a crisis. However, media organizers caution that while rapid online threads accelerate aid, unverified posts can sometimes spread incorrect addresses or false donation claims. Consequently, experts conclude that informal community networks work best when operating alongside official relief institutions rather than replacing them completely.",
             "origin": "supplementary",
-            "sourcePdfPage": 121
+            "sourcePdfPage": 121,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -472,7 +633,18 @@
             "correctAnswer": "Unverified posts can spread false donation details or inaccurate information.",
             "reason": "The script highlights that rapid social media updates can accidentally spread unverified claims or wrong addresses.",
             "origin": "supplementary",
-            "sourcePdfPage": 121
+            "sourcePdfPage": 121,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -504,7 +676,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 107
+            "sourcePdfPage": 107,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -533,7 +712,20 @@
             "correctAnswer": "mentor",
             "reason": "A mentor is an experienced person who provides guidance and support to help someone grow.",
             "origin": "supplementary",
-            "sourcePdfPage": 111
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -556,7 +748,20 @@
             "correctAnswer": "The principal had the playground bench painted yesterday.",
             "reason": "The causative structure is formed with had + object (the playground bench) + past participle (painted).",
             "origin": "supplementary",
-            "sourcePdfPage": 111
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -579,7 +784,20 @@
             "correctAnswer": "such",
             "reason": "'Such' is required before 'a + adjective + singular noun' ('a powerful initiative') followed by 'that'.",
             "origin": "supplementary",
-            "sourcePdfPage": 117
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -602,11 +820,22 @@
             ],
             "correctAnswer": "It is an essential requirement for mental health and well-being, similar to safety.",
             "reason": "The passage states psychologists rank belonging alongside safety and basic needs necessary for healthy human function.",
-            "origin": "source",
-            "sourcePdfPage": 105
+            "origin": "supplementary",
+            "sourcePdfPage": 105,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-2",
@@ -620,11 +849,22 @@
             ],
             "correctAnswer": "A relationship that actively helps a person become more capable, confident, and resilient",
             "reason": "Lesson 9.2 defines growth relationships as those that actively foster personal development, confidence, and resilience.",
-            "origin": "source",
-            "sourcePdfPage": 109
+            "origin": "supplementary",
+            "sourcePdfPage": 109,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-3",
@@ -638,11 +878,22 @@
             ],
             "correctAnswer": "Nothing appears to be wrong on the surface because the person is simply overlooked.",
             "reason": "Quiet exclusion happens subtly through being overlooked rather than through overt, dramatic conflict.",
-            "origin": "source",
-            "sourcePdfPage": 114
+            "origin": "supplementary",
+            "sourcePdfPage": 114,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-4",
@@ -656,11 +907,22 @@
             ],
             "correctAnswer": "The club has its new member packs prepared every September.",
             "reason": "The causative structure 'has + object + past participle' is 'has + its new member packs + prepared'.",
-            "origin": "source",
-            "sourcePdfPage": 111
+            "origin": "supplementary",
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-5",
@@ -674,11 +936,22 @@
             ],
             "correctAnswer": "They were such caring volunteers that the whole school noticed.",
             "reason": "'Such' is used before adjective + plural noun ('caring volunteers') followed by 'that'.",
-            "origin": "source",
-            "sourcePdfPage": 117
+            "origin": "supplementary",
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-6",
@@ -692,11 +965,22 @@
             ],
             "correctAnswer": "By correcting a plant identification assignment and engaging in easy conversation",
             "reason": "The story explains that the classmate helped with the biology plant task and asked friendly questions naturally.",
-            "origin": "source",
-            "sourcePdfPage": 105
+            "origin": "supplementary",
+            "sourcePdfPage": 105,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-7",
@@ -710,11 +994,22 @@
             ],
             "correctAnswer": "It provides a clear, low-pressure signal that invites others to offer inclusion without asking twice.",
             "reason": "Sitting on the bench signals that a child wants to join an activity, removing the embarrassment of asking.",
-            "origin": "source",
-            "sourcePdfPage": 115
+            "origin": "supplementary",
+            "sourcePdfPage": 115,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-8",
@@ -728,11 +1023,22 @@
             ],
             "correctAnswer": "A movement or effort organized by ordinary people at a local level",
             "reason": "Grassroots initiatives originate directly from ordinary community members rather than official authorities.",
-            "origin": "source",
-            "sourcePdfPage": 120
+            "origin": "supplementary",
+            "sourcePdfPage": 120,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u9-test-9",
@@ -747,7 +1053,18 @@
             "correctAnswer": "had",
             "reason": "'Had + object + past participle' forms the past simple causative.",
             "origin": "supplementary",
-            "sourcePdfPage": 111
+            "sourcePdfPage": 111,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -765,12 +1082,34 @@
             "correctAnswer": "so",
             "reason": "'So' modifies the standalone adjective 'popular' before 'that'.",
             "origin": "supplementary",
-            "sourcePdfPage": 117
+            "sourcePdfPage": 117,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.511Z",
+    "itemsAudited": 36,
+    "sourceClaims": 28,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 28,
+    "citationWarnings": 20,
+    "itemsWithSourceSubfields": 15,
+    "reclassifiedToSupplementary": 28
+  }
 }

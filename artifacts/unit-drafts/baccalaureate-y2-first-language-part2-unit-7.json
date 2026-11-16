@@ -61,8 +61,8 @@
     },
     "itemTotals": {
       "totalItems": 29,
-      "sourceItems": 23,
-      "supplementaryItems": 6,
+      "sourceItems": 0,
+      "supplementaryItems": 29,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -129,11 +129,16 @@
             "word": "wonky",
             "arabicMeaning": "مائل / غير مستقيم",
             "example": "At thirteen, Mariam spent Friday afternoons piping wonky flowers onto cupcakes.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-2",
@@ -141,11 +146,16 @@
             "word": "accumulation",
             "arabicMeaning": "تراكم تدريجي",
             "example": "Her growth was not a single dramatic moment but a slow accumulation of small ones.",
-            "origin": "source",
-            "sourcePdfPage": 43
+            "origin": "supplementary",
+            "sourcePdfPage": 43,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-3",
@@ -153,11 +163,16 @@
             "word": "drain the joy",
             "arabicMeaning": "يسلب البهجة",
             "example": "Turning a hobby into paid work can occasionally drain the joy from it.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-4",
@@ -165,11 +180,16 @@
             "word": "derailleur",
             "arabicMeaning": "مغير التروس في الدراجة",
             "example": "Youssef learned how to repair a broken derailleur on an old bicycle.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-5",
@@ -177,11 +197,16 @@
             "word": "burnout",
             "arabicMeaning": "الإرهاق الشديد / الاحتراق النفسي",
             "example": "Working without adequate breaks can lead to severe mental burnout.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -201,11 +226,22 @@
             ],
             "correctAnswer": "Not perfectly shaped or steady; crooked",
             "reason": "In the text, 'wonky flowers' describes Mariam's imperfect, beginner piping attempt.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-2",
@@ -219,11 +255,22 @@
             ],
             "correctAnswer": "Burnout",
             "reason": "Burnout is defined in the media analysis section as exhaustion caused by prolonged stress.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vocab-q-3",
@@ -237,11 +284,22 @@
             ],
             "correctAnswer": "accumulation",
             "reason": "Accumulation refers to a gradual gathering or buildup of something over time.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -255,11 +313,16 @@
             "rule": "Used to vs. Would for Past Habits",
             "explanation": "We use 'used to' to talk about repeated past habits or past states that are no longer true. We use 'would' to describe repeated past actions, but NOT for past states.",
             "example": "She used to bake alone, and every Friday she would pipe flowers onto cupcakes.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -279,11 +342,22 @@
             ],
             "correctAnswer": "Every Friday, she would decorate cupcakes for fun.",
             "reason": "'Would' is used for repeated past actions, but cannot be used with state verbs like 'be', 'have', or 'like'.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar-q-2",
@@ -297,11 +371,22 @@
             ],
             "correctAnswer": "didn't use to",
             "reason": "The negative structure for past habit with 'used to' is 'didn't use to + base verb'.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "grammar-q-3",
@@ -315,11 +400,22 @@
             ],
             "correctAnswer": "'Would' cannot be used to express past state verbs like 'be'.",
             "reason": "Past states require 'used to' (e.g., 'He used to be very shy'), whereas 'would' is restricted to past action verbs.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -331,11 +427,14 @@
           "itemId": "reading-passage-1",
           "content": {
             "passage": "When Hassan taught his first free chess lesson in the corner of a youth center with a single borrowed board and six mismatched pieces, he was not thinking about legacy. He was nineteen, between university terms, and mostly hoping to fill a few empty afternoons doing something he loved instead of scrolling through his phone. Twelve children showed up that first week, mostly because a poster promised free snacks as well as the chess. Hassan later admitted that only two of them seemed genuinely interested in the game itself; the rest simply wanted somewhere to be. He kept showing up anyway, week after week, gradually learning to explain openings in language an eight-year-old could follow, and slowly the ratio shifted, until most weeks nearly the whole group asked to stay late for one more match. What Hassan noticed, almost by accident, was that teaching had begun to change the shape of his own passion. Explaining a strategy out loud, repeatedly, to children who asked blunt and occasionally brilliant questions, forced him to understand the game more deeply than years of playing alone ever had. Passion, it turned out, did not simply get passed on intact from one person to the next; it was reshaped by everyone who touched it, and Hassan’s own understanding of chess became, in a real sense, something the children had helped build. Three years later, Hassan moved to a different city for work, and the youth center asked one of his former students, by then sixteen and confident enough to run a session alone, to take over the lessons. The board is different now, and so are most of the faces around it, but the free Thursday sessions have not stopped since that first awkward afternoon with six mismatched sets. Hassan rarely mentions the club when people ask about his achievements. It never earned him any money, and his name is not officially attached to it anywhere. What he left behind, instead, is harder to put on a certificate: a room that still exists, still full most weeks, still teaching itself forward.",
-            "origin": "source",
-            "sourcePdfPage": 53
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "reading-q-1",
@@ -349,11 +448,22 @@
             ],
             "correctAnswer": "It forced him to understand the game more deeply through explaining strategies out loud.",
             "reason": "The text states that explaining strategies out loud to children forced Hassan to understand the game more deeply than playing alone.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -366,7 +476,10 @@
           "content": {
             "script": "Presenter: Welcome to today's report on balancing passion projects with daily responsibilities. Researchers recently studied young individuals who maintain hobbies alongside busy schedules. They discovered that setting aside a small, protected block of time—even just twenty minutes a day—is far more effective than waiting for long free weekends. Participants who scheduled their hobby like an essential appointment reported higher personal satisfaction and far less stress.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -384,7 +497,18 @@
             "correctAnswer": "Setting aside a small, protected block of time consistently each day",
             "reason": "The script emphasizes that a small, protected daily block of time (e.g. 20 minutes) is much more effective than sporadic large amounts of time.",
             "origin": "supplementary",
-            "sourcePdfPage": 61
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -411,7 +535,13 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 48
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -440,7 +570,20 @@
             "correctAnswer": "Crooked or not steady",
             "reason": "'Wonky' means crooked, off-center, or not perfectly shaped.",
             "origin": "supplementary",
-            "sourcePdfPage": 45
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -463,7 +606,20 @@
             "correctAnswer": "used to",
             "reason": "'Used to + base verb' is used for past habits that are no longer true.",
             "origin": "supplementary",
-            "sourcePdfPage": 47
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -486,11 +642,22 @@
             ],
             "correctAnswer": "Opportunities often grow naturally from doing something you love consistently.",
             "reason": "Mariam's story illustrates how continuous practice led to unexpected opportunities without an initial formal business plan.",
-            "origin": "source",
-            "sourcePdfPage": 44
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-2",
@@ -504,11 +671,22 @@
             ],
             "correctAnswer": "Accumulation",
             "reason": "Accumulation is defined as a gradual buildup of something over time.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-3",
@@ -523,7 +701,18 @@
             "correctAnswer": "used to",
             "reason": "'Live' is a state verb; therefore, 'used to' must be used instead of 'would'.",
             "origin": "supplementary",
-            "sourcePdfPage": 47
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -540,11 +729,22 @@
             ],
             "correctAnswer": "Small, repeated acts of generosity and mutual support",
             "reason": "The text emphasizes that generosity and mutual help, rather than just shared interest, sustain a community.",
-            "origin": "source",
-            "sourcePdfPage": 50
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-5",
@@ -558,11 +758,22 @@
             ],
             "correctAnswer": "One of his former students took over running the sessions.",
             "reason": "A 16-year-old former student was confident enough to take over running the sessions.",
-            "origin": "source",
-            "sourcePdfPage": 54
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-6",
@@ -576,11 +787,22 @@
             ],
             "correctAnswer": "Small, regular daily effort is more sustainable than occasional intense effort.",
             "reason": "Lesson 7.4 emphasizes that consistency (e.g. 15-20 minutes daily) beats short bursts of high intensity.",
-            "origin": "source",
-            "sourcePdfPage": 60
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-7",
@@ -594,11 +816,22 @@
             ],
             "correctAnswer": "Absolute language like 'literally anyone can' and urgency signals",
             "reason": "The media reliability analysis highlights absolute claims and emotional urgency as indicators of misleading content.",
-            "origin": "source",
-            "sourcePdfPage": 57
+            "origin": "supplementary",
+            "sourcePdfPage": 57,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-8",
@@ -612,11 +845,22 @@
             ],
             "correctAnswer": "didn't use to",
             "reason": "The standard negative form is 'didn't use to' followed by the base verb.",
-            "origin": "source",
-            "sourcePdfPage": 47
+            "origin": "supplementary",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-9",
@@ -630,11 +874,22 @@
             ],
             "correctAnswer": "To identify a problem and recommend a clear, realistic course of action",
             "reason": "Lesson 7.2 defines a proposal as a formal document identifying a problem and suggesting actionable recommendations.",
-            "origin": "source",
-            "sourcePdfPage": 51
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-q-10",
@@ -648,13 +903,35 @@
             ],
             "correctAnswer": "To gradually remove the happiness or enjoyment from an activity",
             "reason": "In the vocabulary section, 'drain the joy' means taking away the happiness or enjoyment derived from something.",
-            "origin": "source",
-            "sourcePdfPage": 45
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.448Z",
+    "itemsAudited": 29,
+    "sourceClaims": 23,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 23,
+    "citationWarnings": 17,
+    "itemsWithSourceSubfields": 12,
+    "reclassifiedToSupplementary": 23
+  }
 }

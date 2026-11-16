@@ -50,8 +50,8 @@
     },
     "itemTotals": {
       "totalItems": 27,
-      "sourceItems": 13,
-      "supplementaryItems": 14,
+      "sourceItems": 1,
+      "supplementaryItems": 26,
       "vocabularyCount": 3,
       "questionsCount": 16
     },
@@ -118,11 +118,16 @@
             "word": "sense",
             "arabicMeaning": "حاسة",
             "example": "I have five senses to learn about the world.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -130,11 +135,16 @@
             "word": "sight",
             "arabicMeaning": "بصر",
             "example": "I use my eyes for the sense of sight.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -142,11 +152,16 @@
             "word": "hearing",
             "arabicMeaning": "سمع",
             "example": "I use my ears for the sense of hearing.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -166,7 +181,17 @@
             "correctAnswer": "smell",
             "reason": "The nose is used for the sense of smell.",
             "origin": "supplementary",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -183,7 +208,17 @@
             "correctAnswer": "sight",
             "reason": "Sight is the sense used to see colors and shapes.",
             "origin": "supplementary",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -200,7 +235,17 @@
             "correctAnswer": "hearing",
             "reason": "Hearing is the sense used to listen to sounds like birds.",
             "origin": "supplementary",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -217,11 +262,16 @@
             "rule": "Present Simple for daily habits",
             "explanation": "Use the base verb for I, you, we, they. Add -s or -es to the verb for he, she, it.",
             "example": "She brushes her teeth every day.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -241,7 +291,17 @@
             "correctAnswer": "eats",
             "reason": "With 'Sarah' (she), we add -s to the verb.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -258,7 +318,17 @@
             "correctAnswer": "play",
             "reason": "With 'They', we use the base form of the verb.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -275,7 +345,17 @@
             "correctAnswer": "brushes",
             "reason": "With 'He', we add -es to verbs ending in -sh.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -290,11 +370,14 @@
           "itemId": "r1",
           "content": {
             "passage": "Sarah is a healthy 10-year-old girl. She follows good habits every day to stay strong and healthy. In the morning, Sarah wakes up early at 6:00 a.m. She brushes her teeth and washes her face. Next, she does some simple exercises in the garden.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -308,7 +391,17 @@
             "correctAnswer": "6:00 a.m.",
             "reason": "The text states Sarah wakes up early at 6:00 a.m.",
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -323,11 +416,14 @@
           "itemId": "l1",
           "content": {
             "script": "Ms. Mona: Good morning, children! What a beautiful day in the school garden. Student: Good morning, Ms. Mona! What will we learn today? Ms. Mona: Today, we'll learn about our amazing senses.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "l2",
@@ -341,7 +437,17 @@
             "correctAnswer": "In the garden",
             "reason": "Ms. Mona mentions they are in the school garden.",
             "origin": "supplementary",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -368,7 +474,13 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 9
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -396,7 +508,19 @@
             "correctAnswer": "taste",
             "reason": "The tongue is used for the sense of taste.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -418,7 +542,19 @@
             "correctAnswer": "studies",
             "reason": "With 'My sister' (she), we change -y to -ies.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -441,7 +577,17 @@
             "correctAnswer": "touch",
             "reason": "We use our hands for the sense of touch.",
             "origin": "supplementary",
-            "sourcePdfPage": 10
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -458,7 +604,17 @@
             "correctAnswer": "brushes",
             "reason": "Sarah is singular, so we use the -es form.",
             "origin": "supplementary",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -474,11 +630,21 @@
             ],
             "correctAnswer": "eggs and bread",
             "reason": "The text mentions she eats eggs and brown bread.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -491,11 +657,21 @@
             ],
             "correctAnswer": "smell",
             "reason": "Smelling smoke warns us of a fire.",
-            "origin": "source",
-            "sourcePdfPage": 9
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -509,7 +685,17 @@
             "correctAnswer": "walk",
             "reason": "With 'They', we use the base verb.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -525,11 +711,21 @@
             ],
             "correctAnswer": "9 hours",
             "reason": "The text says she sleeps for 9 hours.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -542,11 +738,21 @@
             ],
             "correctAnswer": "hearing",
             "reason": "Hearing is the sense for music and voices.",
-            "origin": "source",
-            "sourcePdfPage": 10
+            "origin": "supplementary",
+            "sourcePdfPage": 10,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct8",
@@ -560,7 +766,17 @@
             "correctAnswer": "watches",
             "reason": "With 'My brother' (he), we add -es.",
             "origin": "supplementary",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -576,11 +792,21 @@
             ],
             "correctAnswer": "the smell of soup",
             "reason": "Goha enjoys the smell of the restaurant's soup.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -593,13 +819,34 @@
             ],
             "correctAnswer": "sleeping early",
             "reason": "Sleeping early helps the body stay healthy.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.681Z",
+    "itemsAudited": 27,
+    "sourceClaims": 13,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 12,
+    "citationWarnings": 8,
+    "itemsWithSourceSubfields": 21,
+    "reclassifiedToSupplementary": 12
+  }
 }

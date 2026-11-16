@@ -67,8 +67,8 @@
     },
     "itemTotals": {
       "totalItems": 31,
-      "sourceItems": 27,
-      "supplementaryItems": 4,
+      "sourceItems": 3,
+      "supplementaryItems": 28,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -136,7 +136,12 @@
             "arabicMeaning": "شعر أشقر",
             "example": "He has blond hair.",
             "origin": "source",
-            "sourcePdfPage": 14
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -147,11 +152,16 @@
             "word": "glasses",
             "arabicMeaning": "نظارة",
             "example": "I wear glasses to see clearly.",
-            "origin": "source",
-            "sourcePdfPage": 14
+            "origin": "supplementary",
+            "sourcePdfPage": 14,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-3",
@@ -159,11 +169,16 @@
             "word": "baby",
             "arabicMeaning": "طفل رضيع",
             "example": "Talia is one year old, so she is a baby.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-4",
@@ -171,11 +186,16 @@
             "word": "teenager",
             "arabicMeaning": "مراهق",
             "example": "Mariam is fifteen years old and she is a teenager.",
-            "origin": "source",
-            "sourcePdfPage": 27
+            "origin": "supplementary",
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-5",
@@ -183,11 +203,16 @@
             "word": "elderly person",
             "arabicMeaning": "شخص كبير السن",
             "example": "My grandfather is eighty years old; he is an elderly person.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-6",
@@ -195,11 +220,16 @@
             "word": "shake hands",
             "arabicMeaning": "يتصافح بالأيدي",
             "example": "We shake hands when we meet new people.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -218,11 +248,21 @@
             ],
             "correctAnswer": "teenager",
             "reason": "At fifteen years of age, a person is in the teenage stage of life.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-q-2",
@@ -235,11 +275,21 @@
             ],
             "correctAnswer": "elderly person",
             "reason": "An 80-year-old person belongs to the elderly person life stage.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "voc-q-3",
@@ -252,11 +302,21 @@
             ],
             "correctAnswer": "glasses",
             "reason": "Glasses are worn on the eyes to assist eyesight.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -270,11 +330,16 @@
             "rule": "Using 'have' and 'has' to describe physical appearance.",
             "explanation": "Use 'have' with pronouns I, we, you, and plural nouns. Use 'has' with he, she, it, and singular nouns.",
             "example": "I have blue eyes, but she has green eyes.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-2",
@@ -282,11 +347,16 @@
             "rule": "Using possessive adjectives 'His' and 'Her'.",
             "explanation": "Use 'His' when referring to something belonging to a boy or man, and 'Her' for a girl or woman.",
             "example": "His name is Omar and her name is Salma.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -305,11 +375,21 @@
             ],
             "correctAnswer": "has",
             "reason": "The singular pronoun 'She' requires the verb 'has'.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-2",
@@ -322,11 +402,21 @@
             ],
             "correctAnswer": "His",
             "reason": "'His' is the possessive adjective used for a male noun (brother).",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "gram-q-3",
@@ -339,11 +429,21 @@
             ],
             "correctAnswer": "and",
             "reason": "The conjunction 'and' joins two complementary descriptive features.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -356,7 +456,10 @@
           "content": {
             "passage": "My name is Sara. I'm 7. I have a sister. Her name is Donia. Donia is 9 years old. I have a brother. His name is Youssef.",
             "origin": "source",
-            "sourcePdfPage": 13
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "passage": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -372,11 +475,21 @@
             ],
             "correctAnswer": "nine years old",
             "reason": "The passage explicitly states that Donia is 9 years old.",
-            "origin": "source",
-            "sourcePdfPage": 13
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -389,7 +502,10 @@
           "content": {
             "script": "Hello! My name is Ramy. I am seven years old. I have brown hair and brown eyes. I share my toys with my friends at school.",
             "origin": "supplementary",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -406,7 +522,17 @@
             "correctAnswer": "brown",
             "reason": "In the listening script, Ramy mentions having brown eyes.",
             "origin": "supplementary",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -443,7 +569,15 @@
               }
             ],
             "origin": "source",
-            "sourcePdfPage": 11
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -471,7 +605,19 @@
             "correctAnswer": "have",
             "reason": "The subject 'They' pairs with the verb 'have'.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -493,7 +639,19 @@
             "correctAnswer": "baby",
             "reason": "Infants aged one year are categorized as babies.",
             "origin": "supplementary",
-            "sourcePdfPage": 27
+            "sourcePdfPage": 27,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -515,11 +673,21 @@
             ],
             "correctAnswer": "has",
             "reason": "The pronoun 'He' uses 'has' to express physical characteristics.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-2",
@@ -532,11 +700,21 @@
             ],
             "correctAnswer": "Her",
             "reason": "'Her' is the correct possessive adjective for a female context.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-3",
@@ -549,11 +727,21 @@
             ],
             "correctAnswer": "child",
             "reason": "A ten-year-old child is in the childhood life stage.",
-            "origin": "source",
-            "sourcePdfPage": 28
+            "origin": "supplementary",
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-4",
@@ -566,11 +754,21 @@
             ],
             "correctAnswer": "book",
             "reason": "You open a book to read stories or lessons.",
-            "origin": "source",
-            "sourcePdfPage": 32
+            "origin": "supplementary",
+            "sourcePdfPage": 32,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-5",
@@ -583,11 +781,21 @@
             ],
             "correctAnswer": "glasses",
             "reason": "Glasses are worn over eyes to improve eyesight.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-6",
@@ -600,11 +808,21 @@
             ],
             "correctAnswer": "share",
             "reason": "Friendly behavior involves sharing toys with peers.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-7",
@@ -617,11 +835,21 @@
             ],
             "correctAnswer": "alike",
             "reason": "'Alike' describes people having similar appearance or features.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-8",
@@ -634,11 +862,21 @@
             ],
             "correctAnswer": "old",
             "reason": "'How old are you?' is the standard question used to ask someone's age.",
-            "origin": "source",
-            "sourcePdfPage": 11
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-9",
@@ -651,11 +889,21 @@
             ],
             "correctAnswer": "smile",
             "reason": "Smiling accompanies saying hello to show friendliness.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "test-10",
@@ -668,13 +916,34 @@
             ],
             "correctAnswer": "adult",
             "reason": "A thirty-five-year-old person belongs to the adult life stage.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.005Z",
+    "itemsAudited": 31,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 3,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 23,
+    "itemsWithSourceSubfields": 26,
+    "reclassifiedToSupplementary": 24
+  }
 }

@@ -61,8 +61,8 @@
     },
     "itemTotals": {
       "totalItems": 32,
-      "sourceItems": 24,
-      "supplementaryItems": 8,
+      "sourceItems": 0,
+      "supplementaryItems": 32,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -129,11 +129,16 @@
             "word": "sedentary",
             "arabicMeaning": "قليل الحركة / يتطلب الجلوس",
             "example": "Teenagers who adopt a sedentary lifestyle spending hours on screens face higher health risks.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v2",
@@ -141,11 +146,16 @@
             "word": "mindfulness",
             "arabicMeaning": "اليقظة الذهنية",
             "example": "Daily mindfulness practice helps students manage stress and stay focused.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v3",
@@ -153,11 +163,16 @@
             "word": "self-efficacy",
             "arabicMeaning": "الاعتقاد بالكفاءة الذاتية",
             "example": "High self-efficacy encourages individuals to stick to healthy daily routines.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v4",
@@ -165,11 +180,16 @@
             "word": "agency",
             "arabicMeaning": "القدرة على الاختيار والعمل المستقل",
             "example": "Personal agency allows individuals to make independent choices about their well-being.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v5",
@@ -177,11 +197,16 @@
             "word": "nudge",
             "arabicMeaning": "توجيه لطيف / دفع خفيف",
             "example": "Placing healthier food options at eye level is a subtle nudge toward better choices.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "v6",
@@ -189,11 +214,16 @@
             "word": "disempowering",
             "arabicMeaning": "سالب للقوة أو القدرة",
             "example": "Blaming only external circumstances for one's habits can feel disempowering.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -213,11 +243,22 @@
             ],
             "correctAnswer": "sedentary",
             "reason": "The text explicitly defines sedentary as involving little physical movement.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq2",
@@ -231,11 +272,22 @@
             ],
             "correctAnswer": "self-efficacy",
             "reason": "Self-efficacy refers to the belief in one's capacity to execute behaviors necessary to produce specific performance attainments.",
-            "origin": "source",
-            "sourcePdfPage": 31
+            "origin": "supplementary",
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "vq3",
@@ -249,11 +301,22 @@
             ],
             "correctAnswer": "nudge",
             "reason": "Richard Thaler introduced nudge theory as a way to encourage better choices gently while preserving free choice.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -267,11 +330,16 @@
             "rule": "Participial Phrases",
             "explanation": "A participial phrase begins with an -ing or -ed verb form to pack additional evidence or context into a single main sentence cleanly.",
             "example": "Exercising regularly, adolescents significantly reduce their risk of stress.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "g2",
@@ -279,11 +347,16 @@
             "rule": "Relative Clauses",
             "explanation": "Relative clauses starting with who, which, or that clarify, define, or provide evidence about a noun in academic writing.",
             "example": "Adolescents who sleep fewer than seven hours are more likely to experience anxiety.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "g3",
@@ -291,11 +364,16 @@
             "rule": "Conditional Structures for Hedging",
             "explanation": "Conditional structures (if-clauses) are used in academic writing to express caution, nuances, and hypothetical possibilities without making over-generalized claims.",
             "example": "If schools offer accessible counseling, student stress levels may decrease.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -316,7 +394,18 @@
             "correctAnswer": "Motivated by their health goals, many individuals choose an active lifestyle.",
             "reason": "The participial phrase starting with the past participle 'Motivated' modifies 'many individuals' correctly.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -334,7 +423,18 @@
             "correctAnswer": "who",
             "reason": "The relative pronoun 'who' is required when referring to human subjects ('Teenagers').",
             "origin": "supplementary",
-            "sourcePdfPage": 25
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -351,11 +451,22 @@
             ],
             "correctAnswer": "If more schools offered counseling, students would most likely feel supported.",
             "reason": "The second conditional structure paired with hedging words like 'most likely' forms a precise academic statement.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -367,11 +478,14 @@
           "itemId": "r1",
           "content": {
             "passage": "Health experts regularly recommend that teenagers do at least 60 minutes of moderate-to-hard physical activity every day. This doesn’t necessarily mean competitive sport. Activities such as cycling to school, swimming, or even a brisk walk, all count towards the daily target. What makes exercise particularly powerful is its effect on the brain: physical activity causes the release of endorphins, chemicals that reduce feelings of stress and anxiety at the same time as boosting mood and self-confidence. Furthermore, teenagers who exercise regularly tend to sleep more deeply and report higher levels of concentration during school hours. Despite these well-documented benefits, a landmark WHO-led study found that more than 80% of teenagers worldwide fail to meet the recommended daily activity levels, largely due to sedentary screen-based habits.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "r2",
@@ -385,11 +499,22 @@
             ],
             "correctAnswer": "It releases endorphins that reduce stress and elevate mood.",
             "reason": "The text states that physical activity triggers endorphin release which lowers stress and boosts mood.",
-            "origin": "source",
-            "sourcePdfPage": 21
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -402,7 +527,10 @@
           "content": {
             "script": "Host: Welcome to today's student broadcast on modern stress and mental health. Today we discuss findings from a recent Egyptian school health survey involving 450 students aged 14 to 17. The data revealed that over 65 percent of respondents experienced elevated stress levels during major examination periods. Interestingly, students who engaged in at least thirty minutes of daily physical activity reported noticeably lower anxiety levels, even when controlling for academic workload. Furthermore, the report highlighted distinct coping mechanisms between urban and rural cohorts, emphasizing the necessity of accessible school-based counseling services.",
             "origin": "supplementary",
-            "sourcePdfPage": 33
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -420,7 +548,18 @@
             "correctAnswer": "Over 65 percent",
             "reason": "The script explicitly mentions that over 65 percent of surveyed students reported elevated stress during examinations.",
             "origin": "supplementary",
-            "sourcePdfPage": 33
+            "sourcePdfPage": 33,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -452,7 +591,14 @@
               }
             ],
             "origin": "supplementary",
-            "sourcePdfPage": 28
+            "sourcePdfPage": 28,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -481,7 +627,20 @@
             "correctAnswer": "structural barriers",
             "reason": "Structural barriers are obstacles built into social or economic environments that limit options.",
             "origin": "supplementary",
-            "sourcePdfPage": 31
+            "sourcePdfPage": 31,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -504,7 +663,20 @@
             "correctAnswer": "might",
             "reason": "Modal verbs like 'might' are used as hedging devices to express uncertainty and avoid absolute statements.",
             "origin": "supplementary",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -527,11 +699,22 @@
             ],
             "correctAnswer": "highlight-reel effect",
             "reason": "The highlight-reel effect refers to the practice of posting only curated positive experiences.",
-            "origin": "source",
-            "sourcePdfPage": 18
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct2",
@@ -545,11 +728,22 @@
             ],
             "correctAnswer": "More than 80%",
             "reason": "The text states that over 80% of teenagers worldwide fail to reach recommended physical activity levels.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct3",
@@ -563,11 +757,22 @@
             ],
             "correctAnswer": "8 to 10 hours",
             "reason": "The reading passage explicitly recommends 8 to 10 hours of sleep per night for teenagers.",
-            "origin": "source",
-            "sourcePdfPage": 22
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct4",
@@ -581,11 +786,22 @@
             ],
             "correctAnswer": "The belief that one's own actions dictate life outcomes.",
             "reason": "An internal locus of control means believing one's personal decisions control one's path.",
-            "origin": "source",
-            "sourcePdfPage": 29
+            "origin": "supplementary",
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct5",
@@ -599,11 +815,22 @@
             ],
             "correctAnswer": "Social media completely destroys every teenager's mental health.",
             "reason": "Words like 'completely' and 'every' express non-neutral, exaggerated absolute bias.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct6",
@@ -617,11 +844,22 @@
             ],
             "correctAnswer": "Relative clause",
             "reason": "'who exercise regularly' is a relative clause modifying 'Teenagers'.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct7",
@@ -636,7 +874,18 @@
             "correctAnswer": "Motivated by health goals",
             "reason": "'Motivated by health goals' is a past-participial phrase functioning as an adjectival modifier.",
             "origin": "supplementary",
-            "sourcePdfPage": 24
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -653,11 +902,22 @@
             ],
             "correctAnswer": "To present claims with appropriate caution and objective distance.",
             "reason": "Hedging allows researchers to state findings cautiously without over-generalizing.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct9",
@@ -671,11 +931,22 @@
             ],
             "correctAnswer": "To gently encourage healthy behavior without removing personal freedom.",
             "reason": "Nudge policy alters environmental contexts to make healthy decisions easier without coercion.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "ct10",
@@ -689,13 +960,35 @@
             ],
             "correctAnswer": "If the school had offered counseling, stress levels would have fallen.",
             "reason": "The third conditional ('if + past perfect, would have + past participle') expresses unfulfilled past conditions.",
-            "origin": "source",
-            "sourcePdfPage": 34
+            "origin": "supplementary",
+            "sourcePdfPage": 34,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:28.258Z",
+    "itemsAudited": 32,
+    "sourceClaims": 24,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 24,
+    "citationWarnings": 14,
+    "itemsWithSourceSubfields": 16,
+    "reclassifiedToSupplementary": 24
+  }
 }

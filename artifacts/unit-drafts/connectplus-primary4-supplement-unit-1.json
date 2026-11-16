@@ -68,8 +68,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 27,
-      "supplementaryItems": 3,
+      "sourceItems": 2,
+      "supplementaryItems": 28,
       "vocabularyCount": 6,
       "questionsCount": 16
     },
@@ -136,11 +136,16 @@
             "word": "lounge",
             "arabicMeaning": "صالة - غرفة الجلوس",
             "example": "We have to tidy the lounge before going out.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_v2",
@@ -148,11 +153,16 @@
             "word": "champion",
             "arabicMeaning": "بطل رياضي",
             "example": "Aya Ayman Abbas is a swimming champion.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_v3",
@@ -160,11 +170,16 @@
             "word": "cerebrum",
             "arabicMeaning": "منطقة المخ",
             "example": "The cerebrum controls our senses and thoughts.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_v4",
@@ -173,7 +188,12 @@
             "arabicMeaning": "منطقة المخيخ",
             "example": "The cerebellum controls movement and balance.",
             "origin": "source",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -185,7 +205,12 @@
             "arabicMeaning": "جذع الدماغ",
             "example": "The brain stem joins the two parts of the brain.",
             "origin": "source",
-            "sourcePdfPage": 17
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "Transcribed from the source book; teacher verification required."
@@ -196,11 +221,16 @@
             "word": "respiratory system",
             "arabicMeaning": "الجهاز التنفسي",
             "example": "We use our respiratory system when we breathe.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -220,11 +250,22 @@
             ],
             "correctAnswer": "cerebellum",
             "reason": "The cerebellum is responsible for controlling physical movement and balance in the human body.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_vq2",
@@ -238,11 +279,22 @@
             ],
             "correctAnswer": "Joins the two parts of the brain",
             "reason": "According to the textbook description, the brain stem connects the two main halves of the brain together.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_vq3",
@@ -256,11 +308,22 @@
             ],
             "correctAnswer": "swimmer",
             "reason": "Aya Ayman Abbas won many medals as the first female Egyptian Paralympic swimmer.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -274,11 +337,16 @@
             "rule": "Present Simple Tense for Habits and Facts",
             "explanation": "We use the Present Simple tense to express habits, routines, or general facts. For singular subjects (he, she, it), we add -s, -es, or -ies to the verb. For plural subjects (I, we, you, they), we use the base form of the verb.",
             "example": "She usually plays tennis on Fridays.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -298,11 +366,22 @@
             ],
             "correctAnswer": "watches",
             "reason": "With a singular subject like 'My brother' in the Present Simple tense, we add -es to verbs ending in -ch.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_gq2",
@@ -316,11 +395,22 @@
             ],
             "correctAnswer": "don't",
             "reason": "We use 'don't' to form negative Present Simple statements with plural subjects like 'They'.",
-            "origin": "source",
-            "sourcePdfPage": 23
+            "origin": "supplementary",
+            "sourcePdfPage": 23,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_gq3",
@@ -334,11 +424,22 @@
             ],
             "correctAnswer": "Does",
             "reason": "We use 'Does' to start Yes/No questions in the Present Simple tense for singular subjects like 'she'.",
-            "origin": "source",
-            "sourcePdfPage": 24
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -350,11 +451,14 @@
           "itemId": "u1_r1",
           "content": {
             "passage": "It is Saturday, so there's no school. 'What are we doing today, Mom?' asks Kareema. 'We have to tidy the lounge. Then you can choose what you want to do,' says Mom. Kareema's brother Adam smiles. 'I know what I want to do!' he says. 'Let's go to the park. We can run and play. I want to practice football.' Kareema looks disappointed. 'What's the matter?' asks Mom. 'I like the park,' Kareema answers. 'But I want to do something creative this afternoon. I would like to draw or paint a picture. Adam goes to the park every week.' 'Kareema always does drawing!' says Adam. Mom smiles. 'I think we can all be happy today. Let's go to the park. We can play there and we can take pencils and paper with us. You can draw in the park, too. But first, let's tidy the lounge.'",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_r2",
@@ -368,11 +472,22 @@
             ],
             "correctAnswer": "She wants to do something creative like drawing.",
             "reason": "Kareema was disappointed because she wanted to draw or paint a picture rather than only playing sports at the park.",
-            "origin": "source",
-            "sourcePdfPage": 19
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -385,7 +500,10 @@
           "content": {
             "script": "Listen to the dialogue between Mustafa and Mounir: Mustafa asks Mounir what he thinks of today's lesson. Mounir explains that it is an easy and interesting lesson about the human body. Mounir notes that humans have five senses and each sense has an important job. For instance, we use our skin to feel and our nose to smell.",
             "origin": "supplementary",
-            "sourcePdfPage": 15
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -402,11 +520,22 @@
             ],
             "correctAnswer": "five",
             "reason": "In the listening dialogue, Mounir explicitly mentions that humans have five senses.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -449,11 +578,21 @@
                 "speakerGender": "unknown"
               }
             ],
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     },
@@ -479,7 +618,20 @@
             "correctAnswer": "Brain",
             "reason": "The brain is the body's main control center for memory, physical movement, and decision making.",
             "origin": "supplementary",
-            "sourcePdfPage": 20
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -502,7 +654,20 @@
             "correctAnswer": "includes",
             "reason": "With singular noun subjects like 'A good diet', the Present Simple verb requires the singular ending -s.",
             "origin": "supplementary",
-            "sourcePdfPage": 29
+            "sourcePdfPage": 29,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
@@ -525,11 +690,22 @@
             ],
             "correctAnswer": "digestive system",
             "reason": "The digestive system breaks down food into energy and nutrients needed by our bodies.",
-            "origin": "source",
-            "sourcePdfPage": 36
+            "origin": "supplementary",
+            "sourcePdfPage": 36,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct2",
@@ -543,11 +719,22 @@
             ],
             "correctAnswer": "blood",
             "reason": "The primary function of the heart is to pump blood throughout the body.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct3",
@@ -561,11 +748,22 @@
             ],
             "correctAnswer": "nose",
             "reason": "Air enters our respiratory system primarily through the nose.",
-            "origin": "source",
-            "sourcePdfPage": 16
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct4",
@@ -579,11 +777,22 @@
             ],
             "correctAnswer": "disabilities",
             "reason": "The Paralympic Games is specifically held for international athletes with disabilities.",
-            "origin": "source",
-            "sourcePdfPage": 17
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct5",
@@ -597,11 +806,22 @@
             ],
             "correctAnswer": "memories",
             "reason": "The cerebrum is the region of the brain that manages senses, thoughts, speech, and memories.",
-            "origin": "source",
-            "sourcePdfPage": 20
+            "origin": "supplementary",
+            "sourcePdfPage": 20,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct6",
@@ -615,11 +835,22 @@
             ],
             "correctAnswer": "1400",
             "reason": "The textbook explicitly states that an adult human brain weighs approximately 1400 grams.",
-            "origin": "source",
-            "sourcePdfPage": 26
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct7",
@@ -633,11 +864,22 @@
             ],
             "correctAnswer": "has",
             "reason": "With third-person singular subjects like 'Tarek', we use 'has' for possession.",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct8",
@@ -651,11 +893,22 @@
             ],
             "correctAnswer": "do",
             "reason": "In short affirmative answers to 'Do you...?' questions, we reply with 'Yes, I do.'",
-            "origin": "source",
-            "sourcePdfPage": 25
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct9",
@@ -669,11 +922,22 @@
             ],
             "correctAnswer": "isn't",
             "reason": "The unit text points out that staying motionless for long periods is not good for health.",
-            "origin": "source",
-            "sourcePdfPage": 30
+            "origin": "supplementary",
+            "sourcePdfPage": 30,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         },
         {
           "itemId": "u1_ct10",
@@ -687,13 +951,35 @@
             ],
             "correctAnswer": "Braille",
             "reason": "Braille is a tactile reading code made of raised dot combinations designed for blind people.",
-            "origin": "source",
-            "sourcePdfPage": 15
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
           },
           "reviewStatus": "needs_review",
-          "notes": "Transcribed from the source book; teacher verification required."
+          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
         }
       ]
     }
-  ]
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-16T06:32:25.789Z",
+    "itemsAudited": 30,
+    "sourceClaims": 27,
+    "verifiedSourceClaims": 2,
+    "unverifiableSourceClaims": 25,
+    "citationWarnings": 19,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 25
+  }
 }
