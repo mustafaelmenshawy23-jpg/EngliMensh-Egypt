@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-17T06:45:03.183Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.6-flash",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "connectplus-primary5-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_5_ابتدائي_ترم_1_ذاكرولي.pdf",
+  "grade": "Primary 5",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: Look around you",
+  "sourcePdfRange": {
+    "start": 46,
+    "end": 88
+  },
+  "sourceCoverage": [
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+  ],
+  "sourceFingerprint": "1d31aa0d08dcf707cc1f1b0b48c21a9b728f7b3c978c5d08d842a0229eb074f0",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 2: Look around you",
+    "expectedRange": {
+      "start": 46,
+      "end": 88,
+      "totalPages": 43
+    },
+    "recordedCoverage": {
+      "totalPages": 43,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 0,
+      "supplementaryItems": 29,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T06:45:03.183Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "voc_1",
+          "content": {
+            "word": "erupt",
+            "arabicMeaning": "يثور",
+            "example": "When volcanoes erupt, ash and fire come out of the top.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_2",
+          "content": {
+            "word": "crater",
+            "arabicMeaning": "فوهة بركان",
+            "example": "The volcanic crater was formed millions of years ago.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_3",
+          "content": {
+            "word": "canyon",
+            "arabicMeaning": "أخدود",
+            "example": "The river runs through a deep narrow canyon.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_4",
+          "content": {
+            "word": "dune",
+            "arabicMeaning": "كثيب رملي",
+            "example": "Wind shapes the sand to form a high dune in the desert.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "voc_q1",
+          "content": {
+            "question": "What is the large round hole in the middle of a volcano called?",
+            "options": [
+              "dune",
+              "crater",
+              "canyon",
+              "wetland"
+            ],
+            "correctAnswer": "crater",
+            "reason": "A crater is defined as the large round opening at the top or center of a volcano.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q2",
+          "content": {
+            "question": "Which word describes rock or land being gradually worn away by water or wind?",
+            "options": [
+              "erode",
+              "erupt",
+              "cover",
+              "fill"
+            ],
+            "correctAnswer": "erode",
+            "reason": "Erode means to be changed or destroyed slowly by natural elements like rain and wind.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q3",
+          "content": {
+            "question": "A hill made of sand shaped by the wind in the desert is a ________.",
+            "options": [
+              "canyon",
+              "valley",
+              "dune",
+              "island"
+            ],
+            "correctAnswer": "dune",
+            "reason": "A sand dune is a mound or hill of sand built by wind action.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar Focus",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Present Perfect Tense with 'ever' and 'never'",
+            "explanation": "We use the Present Perfect tense (have/has + past participle) to talk about past experiences. 'Ever' is used in questions to ask about experiences in someone's life, while 'never' is used in negative statements to show zero experience.",
+            "example": "Have you ever seen an elephant? No, I have never seen an elephant.",
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_2",
+          "content": {
+            "rule": "Past Simple Tense vs. Present Perfect Tense",
+            "explanation": "The Past Simple expresses completed actions at a specified time in the past (e.g., yesterday, last year). The Present Perfect connects past events to the present without naming a specific past time.",
+            "example": "She visited Luxor last year. She has visited Luxor twice.",
+            "origin": "supplementary",
+            "sourcePdfPage": 51,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q1",
+          "content": {
+            "question": "Have you ________ ridden a horse?",
+            "options": [
+              "ever",
+              "never",
+              "since",
+              "for"
+            ],
+            "correctAnswer": "ever",
+            "reason": "'Ever' is used in Present Perfect questions to inquire about life experiences.",
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q2",
+          "content": {
+            "question": "Noha ________ dinner for her family yesterday.",
+            "options": [
+              "makes",
+              "made",
+              "making",
+              "make"
+            ],
+            "correctAnswer": "made",
+            "reason": "The keyword 'yesterday' requires the simple past tense form 'made'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q3",
+          "content": {
+            "question": "They haven't finished their homework ________.",
+            "options": [
+              "already",
+              "yet",
+              "ever",
+              "never"
+            ],
+            "correctAnswer": "yet",
+            "reason": "'Yet' is placed at the end of negative sentences in the Present Perfect tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Section",
+      "items": [
+        {
+          "itemId": "read_p1",
+          "content": {
+            "passage": "The Ngorongoro Crater in Tanzania is the largest volcanic crater in the world. It formed when a volcano erupted millions of years ago. It is about 260 square kilometers. The sides of the crater are over 600 meters tall, and inside there are wetlands and forests. You can see lots of different animals, birds, and plants there. Many big animals live there, including lions, elephants, buffalos, and leopards.",
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read_q1",
+          "content": {
+            "question": "How did the Ngorongoro Crater form?",
+            "options": [
+              "When a river eroded the rocks",
+              "When a volcano erupted millions of years ago",
+              "When heavy rain filled a valley",
+              "When wind created giant sand dunes"
+            ],
+            "correctAnswer": "When a volcano erupted millions of years ago",
+            "reason": "The passage states that the Ngorongoro Crater formed when a volcano erupted millions of years ago.",
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Section",
+      "items": [
+        {
+          "itemId": "list_s1",
+          "content": {
+            "script": "Mariam went on a hot air balloon ride over Luxor with her parents. As the balloon climbed into the clear blue sky, she looked down. She saw green fields, sandy deserts, ancient statues, and temples. From above, the River Nile looked like a silver ribbon.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list_q1",
+          "content": {
+            "question": "What did the River Nile look like from the hot air balloon?",
+            "options": [
+              "A narrow canyon",
+              "A silver ribbon",
+              "A tall limestone column",
+              "A dark shadow"
+            ],
+            "correctAnswer": "A silver ribbon",
+            "reason": "In the listening script, Mariam describes the River Nile as looking like a silver ribbon from high up in the sky.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "spk_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Kamal",
+                "text": "How can I help you when you work?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Dad",
+                "text": "You can take some photos for us.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Kamal",
+                "text": "Are you frightened of the storm?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Dad",
+                "text": "No, because I will keep you safe.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Challenges",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Wonder Finder",
+            "description": "Identify the geographical term that matches the natural formation definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which natural feature is a low area of land lying between two mountains?",
+            "options": [
+              "valley",
+              "crater",
+              "pinnacle",
+              "dune"
+            ],
+            "correctAnswer": "valley",
+            "reason": "A valley is defined as a low region of land situated between hills or mountains.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Explorer",
+            "description": "Pick the correct verb form to complete the travel journal sentence.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Select the correct sentence using the Present Perfect tense:",
+            "options": [
+              "I visit Aswan last week.",
+              "I have never seen a active volcano before.",
+              "I didn't saw the waterfall.",
+              "I am climbing the mountain now."
+            ],
+            "correctAnswer": "I have never seen a active volcano before.",
+            "reason": "'Have never seen' uses have + past participle to state a life experience.",
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Unit Test",
+      "items": [
+        {
+          "itemId": "comp_1",
+          "content": {
+            "question": "What is the hot liquid rock that erupts from a volcano called?",
+            "options": [
+              "ash",
+              "lava",
+              "limestone",
+              "sandstone"
+            ],
+            "correctAnswer": "lava",
+            "reason": "Lava is the molten rock expelled by a volcano during an eruption.",
+            "origin": "supplementary",
+            "sourcePdfPage": 67,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_2",
+          "content": {
+            "question": "The Pinnacles in Western Australia are tall rock formations made of ________.",
+            "options": [
+              "limestone",
+              "sandstone",
+              "lava",
+              "mud"
+            ],
+            "correctAnswer": "limestone",
+            "reason": "The text explains that the Pinnacles are made of white limestone eroded by wind and rain.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_3",
+          "content": {
+            "question": "People who travel to places where extreme weather is forecast to study it are called ________.",
+            "options": [
+              "archaeologists",
+              "pilots",
+              "storm-chasers",
+              "geologists"
+            ],
+            "correctAnswer": "storm-chasers",
+            "reason": "Storm-chasers track extreme weather events like severe storms and hurricanes to study them.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_4",
+          "content": {
+            "question": "My uncle ________ to Luxor three times in his life.",
+            "options": [
+              "has been",
+              "was",
+              "is going",
+              "went yesterday"
+            ],
+            "correctAnswer": "has been",
+            "reason": "Present perfect 'has been' is used to refer to life experience without stating a specific past time.",
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_5",
+          "content": {
+            "question": "Did Fares ________ to France by plane last year?",
+            "options": [
+              "traveled",
+              "travel",
+              "travels",
+              "traveling"
+            ],
+            "correctAnswer": "travel",
+            "reason": "In Past Simple questions starting with 'Did', the main verb remains in the base infinitive form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 52,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_6",
+          "content": {
+            "question": "She hasn't completed her project about volcanoes ________.",
+            "options": [
+              "already",
+              "yet",
+              "ever",
+              "never"
+            ],
+            "correctAnswer": "yet",
+            "reason": "'Yet' is used at the end of negative sentences in the Present Perfect tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_7",
+          "content": {
+            "question": "________ you ever seen a severe dust storm in the desert?",
+            "options": [
+              "Have",
+              "Did",
+              "Are",
+              "Do"
+            ],
+            "correctAnswer": "Have",
+            "reason": "We form Present Perfect experience questions using Have + subject + ever + past participle.",
+            "origin": "supplementary",
+            "sourcePdfPage": 54,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_8",
+          "content": {
+            "question": "On which continent are the Ngorongoro Crater and Victoria Falls located?",
+            "options": [
+              "Asia",
+              "Europe",
+              "Africa",
+              "Australia"
+            ],
+            "correctAnswer": "Africa",
+            "reason": "Both natural wonders are situated on the African continent.",
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_9",
+          "content": {
+            "question": "Why is volcanic soil good for farming?",
+            "options": [
+              "Lava turns into ice",
+              "Volcanic ash and lava mix with mud to create rich soil",
+              "Volcanoes prevent rainfall",
+              "Plants cannot grow near volcanoes"
+            ],
+            "correctAnswer": "Volcanic ash and lava mix with mud to create rich soil",
+            "reason": "The poem notes that lava, ash, and mud mix to form rich soil where crops grow well.",
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "comp_10",
+          "content": {
+            "question": "A deep narrow place where a river runs between tall rocks is called a ________.",
+            "options": [
+              "canyon",
+              "crater",
+              "wetland",
+              "dune"
+            ],
+            "correctAnswer": "canyon",
+            "reason": "A canyon is defined as a deep, narrow steep-sided valley cut by a river.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-17T06:45:03.205Z",
+    "itemsAudited": 29,
+    "sourceClaims": 0,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 22,
+    "reclassifiedToSupplementary": 0
+  }
+}

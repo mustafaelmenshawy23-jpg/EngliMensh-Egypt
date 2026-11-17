@@ -1,0 +1,82 @@
+{
+  "status": "failed_validation",
+  "bookId": "connectplus-primary5-supplement",
+  "unitNumber": 4,
+  "score": 50,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"What is the force that pulls things to t\"",
+    "Duplicate question prompt detected: \"You're from Canada, ......... you?\"",
+    "Duplicate question prompt detected: \"They went to the park, ......... they?\""
+  ],
+  "warnings": [
+    "Speaking item s1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 4: We're on the move",
+    "expectedRange": {
+      "start": 130,
+      "end": 282,
+      "totalPages": 153
+    },
+    "recordedCoverage": {
+      "totalPages": 153,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 1,
+      "supplementaryItems": 26,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T06:47:12.276Z"
+  }
+}

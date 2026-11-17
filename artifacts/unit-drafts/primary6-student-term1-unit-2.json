@@ -1,0 +1,912 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-17T06:55:09.921Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "primary6-student-term1",
+  "sourceFilename": "English_Primary6_T1 (1).pdf",
+  "grade": "Primary 6",
+  "unitNumber": 2,
+  "unitTitle": "Unit 2: How’s the Weather in Your City?",
+  "sourcePdfRange": {
+    "start": 24,
+    "end": 36
+  },
+  "sourceCoverage": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "sourceFingerprint": "6d3eca5205f6395f759a354d36141f3e1f899338937c5811a3d7c1d5effb6f01",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Unit 2: How’s the Weather in Your City?",
+    "expectedRange": {
+      "start": 24,
+      "end": 36,
+      "totalPages": 13
+    },
+    "recordedCoverage": {
+      "totalPages": 13,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 28,
+      "sourceItems": 0,
+      "supplementaryItems": 28,
+      "vocabularyCount": 4,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T06:55:09.921Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "shade",
+            "arabicMeaning": "ظل",
+            "example": "People sit in the shade to protect themselves from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "wet",
+            "arabicMeaning": "مبتل",
+            "example": "The streets are wet because it is raining heavily.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "protect",
+            "arabicMeaning": "يحمي",
+            "example": "We wear hats to protect ourselves from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v4",
+          "content": {
+            "word": "weather",
+            "arabicMeaning": "الطقس",
+            "example": "In Cairo, the weather is warm and sunny.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "When it is very hot, where do people like to sit to avoid direct sunlight?",
+            "options": [
+              "shade",
+              "street",
+              "heat",
+              "dust"
+            ],
+            "correctAnswer": "shade",
+            "reason": "People sit in the shade to protect themselves from the strong sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "What are the streets like when it is raining heavily?",
+            "options": [
+              "dry",
+              "wet",
+              "dusty",
+              "hot"
+            ],
+            "correctAnswer": "wet",
+            "reason": "Rain makes the streets wet and slippery.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "Why do we wear hats and sunglasses?",
+            "options": [
+              "to clean ourselves",
+              "to protect ourselves from the sun",
+              "to grow plants",
+              "to make heat"
+            ],
+            "correctAnswer": "to protect ourselves from the sun",
+            "reason": "Hats and sunglasses protect us from strong sunshine.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Present Continuous",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Present Continuous Tense",
+            "explanation": "We use the present continuous (am/is/are + verb-ing) to talk about actions happening now.",
+            "example": "Ahmed is playing football now.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Magdy ......... (play) tennis in the club now.",
+            "options": [
+              "is playing",
+              "play",
+              "plays",
+              "played"
+            ],
+            "correctAnswer": "is playing",
+            "reason": "The time marker 'now' indicates present continuous, and Magdy takes 'is playing'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "......... you eating your lunch at the moment?",
+            "options": [
+              "Do",
+              "Are",
+              "Is",
+              "Does"
+            ],
+            "correctAnswer": "Are",
+            "reason": "With the subject 'you' in present continuous questions, we use 'Are'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "I ......... my jacket because it is hot.",
+            "options": [
+              "am not wearing",
+              "is not wearing",
+              "do not wear",
+              "not wearing"
+            ],
+            "correctAnswer": "am not wearing",
+            "reason": "The subject 'I' takes 'am not' followed by the verb with '-ing' in the negative present continuous.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Hi John, How are you? I want to tell you about the weather in Egypt today. It is very different from one place to another. In Alexandria, it’s windy and rainy. The sky is full of dark clouds and the waves are high. People are staying indoors because it’s cold and the streets are wet. Some shops are closing early. In Cairo, the weather is warm and sunny. People are walking in the streets. Children are playing in the parks. Some students are doing their homework outdoors. I can see birds flying in the clear sky. In Aswan, it is hot. The sun is very strong, and the sky is clear. Farmers water their plants early in the morning. People drink lots of water, wear hats and sunglasses, and sit in the shade to protect themselves from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "What is the weather like in Alexandria?",
+            "options": [
+              "Warm and sunny",
+              "Windy and rainy",
+              "Hot and clear",
+              "Dry and dusty"
+            ],
+            "correctAnswer": "Windy and rainy",
+            "reason": "The text states that in Alexandria, it's windy and rainy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Teacher: Good morning, class. Today we are talking about cities and weather. In Alexandria, it is windy and rainy. In Cairo, it is warm and sunny. And in Aswan, it is very hot with a clear sky.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "According to the listening script, what is the weather like in Cairo?",
+            "options": [
+              "Windy and rainy",
+              "Warm and sunny",
+              "Cold and snowy",
+              "Hot and stormy"
+            ],
+            "correctAnswer": "Warm and sunny",
+            "reason": "The listening script states that in Cairo, it is warm and sunny.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Practice",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Youssef",
+                "text": "Hi John, how is the weather in your city today?",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "John",
+                "text": "It is cloudy and cold here in London.",
+                "speakerGender": "male"
+              },
+              {
+                "speaker": "Youssef",
+                "text": "Here in Cairo, the weather is warm and sunny.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Weather Word Match",
+            "description": "Choose the correct vocabulary word for the given definition.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What do we call the state of the atmosphere at a place and time, such as sunny, rainy, or hot?",
+            "options": [
+              "Weather",
+              "Shade",
+              "River",
+              "Desert"
+            ],
+            "correctAnswer": "Weather",
+            "reason": "Weather describes atmospheric conditions like sunny or rainy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Grammar Challenge",
+            "description": "Select the correct present continuous form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "They ......... not playing in the garden right now.",
+            "options": [
+              "is",
+              "are",
+              "am",
+              "do"
+            ],
+            "correctAnswer": "are",
+            "reason": "The plural subject 'they' takes 'are' in the present continuous tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "What is the weather like in Cairo according to the text?",
+            "options": [
+              "Warm and sunny",
+              "Windy and rainy",
+              "Cold and snowy",
+              "Cloudy and wet"
+            ],
+            "correctAnswer": "Warm and sunny",
+            "reason": "The text explicitly states that in Cairo, the weather is warm and sunny.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "Why do people stay indoors in Alexandria?",
+            "options": [
+              "Because it is hot and sunny",
+              "Because it is cold, wet, windy, and rainy",
+              "Because they want to play football",
+              "Because farmers are watering plants"
+            ],
+            "correctAnswer": "Because it is cold, wet, windy, and rainy",
+            "reason": "The text notes people stay indoors because it's cold and the streets are wet.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "When it's hot in Aswan, what do people do to protect themselves?",
+            "options": [
+              "Wear heavy jackets",
+              "Sit in the shade and drink water",
+              "Close shops early",
+              "Stay in bed all day"
+            ],
+            "correctAnswer": "Sit in the shade and drink water",
+            "reason": "People drink lots of water and sit in the shade to protect themselves from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "Choose the correct sentence in the present continuous tense:",
+            "options": [
+              "She plays tennis now.",
+              "She is playing tennis now.",
+              "She played tennis now.",
+              "She play tennis now."
+            ],
+            "correctAnswer": "She is playing tennis now.",
+            "reason": "The present continuous uses 'is' + verb-ing with the time marker 'now'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "What are the streets like in Alexandria?",
+            "options": [
+              "Dry",
+              "Wet",
+              "Hot",
+              "Dusty"
+            ],
+            "correctAnswer": "Wet",
+            "reason": "The text mentions that the streets are wet because of rain.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "Complete: Look! The children ......... in the park.",
+            "options": [
+              "is playing",
+              "are playing",
+              "plays",
+              "played"
+            ],
+            "correctAnswer": "are playing",
+            "reason": "The plural subject 'children' takes 'are playing' for ongoing actions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "What do farmers in Aswan do early in the morning?",
+            "options": [
+              "Sleep",
+              "Water their plants",
+              "Close shops",
+              "Play football"
+            ],
+            "correctAnswer": "Water their plants",
+            "reason": "The text states that farmers water their plants early in the morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "Which word means an area shielded from direct sunlight?",
+            "options": [
+              "Shade",
+              "Sky",
+              "Park",
+              "Street"
+            ],
+            "correctAnswer": "Shade",
+            "reason": "Shade is the area sheltered from the sun.",
+            "origin": "supplementary",
+            "sourcePdfPage": 25,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "Form a question in the present continuous: ......... you watching TV now?",
+            "options": [
+              "Do",
+              "Are",
+              "Is",
+              "Did"
+            ],
+            "correctAnswer": "Are",
+            "reason": "Questions with 'you' in present continuous start with 'Are'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "Why do Egyptians check the weather today according to the text?",
+            "options": [
+              "To take care of their homes and plants",
+              "To go swimming",
+              "To buy new clothes",
+              "To travel abroad"
+            ],
+            "correctAnswer": "To take care of their homes and plants",
+            "reason": "The text concludes that checking the weather helps people take care of their homes and plants.",
+            "origin": "supplementary",
+            "sourcePdfPage": 24,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-17T06:55:09.932Z",
+    "itemsAudited": 28,
+    "sourceClaims": 0,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 16,
+    "reclassifiedToSupplementary": 0
+  }
+}

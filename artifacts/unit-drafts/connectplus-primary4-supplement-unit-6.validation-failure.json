@@ -1,0 +1,81 @@
+{
+  "status": "failed_validation",
+  "bookId": "connectplus-primary4-supplement",
+  "unitNumber": 6,
+  "score": 75,
+  "criticalFailures": [
+    "Duplicate question prompt detected: \"People ........ drive cars that use petr\""
+  ],
+  "warnings": [
+    "Speaking item u6_spk_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item u6_spk_1 turn 3 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
+  "report": {
+    "unitTitle": "Unit 6: Let’s work",
+    "expectedRange": {
+      "start": 190,
+      "end": 359,
+      "totalPages": 170
+    },
+    "recordedCoverage": {
+      "totalPages": 170,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 35,
+      "sourceItems": 0,
+      "supplementaryItems": 35,
+      "vocabularyCount": 6,
+      "questionsCount": 18
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 6,
+        "validItems": 6,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T06:43:16.741Z"
+  }
+}

@@ -1,0 +1,890 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-17T07:05:55.377Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "ready_for_teacher_review"
+  },
+  "bookId": "prep1-student-term1",
+  "sourceFilename": "English_Prep1_T1 (1).pdf",
+  "grade": "Preparatory 1",
+  "unitNumber": 1,
+  "unitTitle": "Life in a Digital World",
+  "sourcePdfRange": {
+    "start": 13,
+    "end": 26
+  },
+  "sourceCoverage": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "sourceFingerprint": "4fc720ea30fd06ae682d0e5f3d6ccf6459556d9291e22778f116e710e0378ee4",
+  "qualityScore": 100,
+  "qualityReport": {
+    "unitTitle": "Life in a Digital World",
+    "expectedRange": {
+      "start": 13,
+      "end": 26,
+      "totalPages": 14
+    },
+    "recordedCoverage": {
+      "totalPages": 14,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 0,
+      "supplementaryItems": 27,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T07:05:55.377Z"
+  },
+  "reviewStatus": "ready_for_teacher_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "voc_001",
+          "content": {
+            "word": "laptop",
+            "arabicMeaning": "حاسوب محمول",
+            "example": "I use my laptop to search for information for my school projects.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_002",
+          "content": {
+            "word": "smartboard",
+            "arabicMeaning": "سبورة ذكية",
+            "example": "Our teacher uses the smartboard to show us interesting videos in class.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_003",
+          "content": {
+            "word": "headphones",
+            "arabicMeaning": "سماعات رأس",
+            "example": "I wear my headphones when I listen to music so I do not disturb others.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "voc_q_001",
+          "content": {
+            "question": "Which device is used to type letters and numbers into a computer?",
+            "options": [
+              "printer",
+              "keyboard",
+              "mouse",
+              "webcam"
+            ],
+            "correctAnswer": "keyboard",
+            "reason": "The keyboard is the primary device for typing text and commands.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q_002",
+          "content": {
+            "question": "What do you call a portable computer?",
+            "options": [
+              "laptop",
+              "smartboard",
+              "microphone",
+              "printer"
+            ],
+            "correctAnswer": "laptop",
+            "reason": "A laptop is a portable computer that you can carry easily.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q_003",
+          "content": {
+            "question": "Which device produces sound from a computer or phone?",
+            "options": [
+              "keyboard",
+              "speaker",
+              "webcam",
+              "mouse"
+            ],
+            "correctAnswer": "speaker",
+            "reason": "A speaker is a device used to output audio.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar: Adverbs of Frequency",
+      "items": [
+        {
+          "itemId": "gram_001",
+          "content": {
+            "rule": "Adverbs of Frequency",
+            "explanation": "Adverbs of frequency (always, usually, often, sometimes, rarely, never) describe how often an action happens. They are placed before the main verb but after the verb 'to be'.",
+            "example": "I always check my phone in the morning.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q_001",
+          "content": {
+            "question": "Choose the correct sentence:",
+            "options": [
+              "I always am late for school.",
+              "I am always late for school.",
+              "I am late always for school.",
+              "Always I am late for school."
+            ],
+            "correctAnswer": "I am always late for school.",
+            "reason": "Adverbs of frequency come after the verb 'to be'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q_002",
+          "content": {
+            "question": "How often do you use the computer?",
+            "options": [
+              "I use sometimes the computer.",
+              "I sometimes use the computer.",
+              "I use the computer sometimes.",
+              "Sometimes I the computer use."
+            ],
+            "correctAnswer": "I sometimes use the computer.",
+            "reason": "Adverbs of frequency are placed before the main verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q_003",
+          "content": {
+            "question": "Which sentence is grammatically correct?",
+            "options": [
+              "He usually plays games.",
+              "He plays usually games.",
+              "He plays games usually.",
+              "Usually he plays games."
+            ],
+            "correctAnswer": "He usually plays games.",
+            "reason": "The adverb 'usually' is placed before the main verb 'plays'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "read_001",
+          "content": {
+            "passage": "Hi everyone! My name is Tarek, and I want to share my digital day with you. I always start my morning by checking my phone. I usually have three or four messages from my school friends. Sometimes, my cousin from Alexandria sends me funny pictures. At breakfast, I often use my tablet to search for news. My favorite app shows me interesting facts about animals and space. I never eat without looking at something on my screen — I know it’s not a good habit!",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "passage": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read_q_001",
+          "content": {
+            "question": "Why does Tarek use the night mode?",
+            "options": [
+              "To play games.",
+              "To protect his eyes.",
+              "To search for news.",
+              "To send messages."
+            ],
+            "correctAnswer": "To protect his eyes.",
+            "reason": "Tarek mentions he uses night mode so the screen does not hurt his eyes.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Practice",
+      "items": [
+        {
+          "itemId": "list_001",
+          "content": {
+            "script": "Ayman: Hi, I'm Ayman. I am 13 years old. I use my tablet for homework and social media. My mom says I spend too much time on my phone, which affects my sleep. I try to balance my screen time with outdoor activities.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list_q_001",
+          "content": {
+            "question": "How old is Ayman?",
+            "options": [
+              "12",
+              "13",
+              "14",
+              "15"
+            ],
+            "correctAnswer": "13",
+            "reason": "Ayman states in the script that he is 13 years old.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "speak_001",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Sara",
+                "text": "How do you start your morning?",
+                "speakerGender": "female"
+              },
+              {
+                "speaker": "Omar",
+                "text": "I always check my phone for messages.",
+                "speakerGender": "male"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_001",
+          "content": {
+            "gameName": "Digital Word Match",
+            "description": "Match the device to its function.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What is a printer used for?",
+            "options": [
+              "Typing",
+              "Printing text on paper",
+              "Recording sound",
+              "Playing games"
+            ],
+            "correctAnswer": "Printing text on paper",
+            "reason": "A printer is specifically designed to produce physical copies of digital documents.",
+            "origin": "supplementary",
+            "sourcePdfPage": 26,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_002",
+          "content": {
+            "gameName": "Frequency Quiz",
+            "description": "Identify the correct adverb placement.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Where does 'often' go in: 'I ___ go to the park'?",
+            "options": [
+              "I often go",
+              "I go often",
+              "Often I go",
+              "I go to often"
+            ],
+            "correctAnswer": "I often go",
+            "reason": "Adverbs of frequency are placed before the main verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_001",
+          "content": {
+            "question": "Which device is used to record a presentation?",
+            "options": [
+              "microphone",
+              "printer",
+              "keyboard",
+              "speaker"
+            ],
+            "correctAnswer": "microphone",
+            "reason": "A microphone is used to record audio.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_002",
+          "content": {
+            "question": "Adverbs of frequency are placed ___ the main verb.",
+            "options": [
+              "before",
+              "after",
+              "at the end of",
+              "in the middle of"
+            ],
+            "correctAnswer": "before",
+            "reason": "The rule states adverbs of frequency go before the main verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_003",
+          "content": {
+            "question": "What is a 'website'?",
+            "options": [
+              "A portable computer",
+              "A page on the internet",
+              "A type of screen",
+              "A digital book"
+            ],
+            "correctAnswer": "A page on the internet",
+            "reason": "A website is a collection of web pages on the internet.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_004",
+          "content": {
+            "question": "Which sentence is correct?",
+            "options": [
+              "She always is happy.",
+              "She is always happy.",
+              "Always she is happy.",
+              "She is happy always."
+            ],
+            "correctAnswer": "She is always happy.",
+            "reason": "Adverbs of frequency go after the verb 'to be'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 18,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_005",
+          "content": {
+            "question": "What does 'night mode' do?",
+            "options": [
+              "Makes the screen brighter",
+              "Protects eyes in low light",
+              "Helps you type faster",
+              "Connects to the internet"
+            ],
+            "correctAnswer": "Protects eyes in low light",
+            "reason": "Night mode is designed to reduce eye strain.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_006",
+          "content": {
+            "question": "What is a 'laptop'?",
+            "options": [
+              "A stationary computer",
+              "A portable computer",
+              "A type of phone",
+              "A digital camera"
+            ],
+            "correctAnswer": "A portable computer",
+            "reason": "A laptop is designed to be portable.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_007",
+          "content": {
+            "question": "Which device is used to move around the screen?",
+            "options": [
+              "mouse",
+              "printer",
+              "microphone",
+              "webcam"
+            ],
+            "correctAnswer": "mouse",
+            "reason": "A mouse is used to navigate the screen.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_008",
+          "content": {
+            "question": "How often does Tarek check his phone?",
+            "options": [
+              "Never",
+              "Sometimes",
+              "Always",
+              "Rarely"
+            ],
+            "correctAnswer": "Always",
+            "reason": "Tarek says he always starts his morning by checking his phone.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_009",
+          "content": {
+            "question": "What is a 'smartboard'?",
+            "options": [
+              "A small tablet",
+              "An interactive board for teaching",
+              "A type of printer",
+              "A mobile phone"
+            ],
+            "correctAnswer": "An interactive board for teaching",
+            "reason": "Smartboards are used in classrooms for interactive lessons.",
+            "origin": "supplementary",
+            "sourcePdfPage": 16,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_010",
+          "content": {
+            "question": "Which word describes a person who is happy and positive?",
+            "options": [
+              "curious",
+              "cheerful",
+              "shy",
+              "nervous"
+            ],
+            "correctAnswer": "cheerful",
+            "reason": "Cheerful means happy and positive.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-17T07:05:55.389Z",
+    "itemsAudited": 27,
+    "sourceClaims": 0,
+    "verifiedSourceClaims": 0,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 18,
+    "reclassifiedToSupplementary": 0
+  }
+}

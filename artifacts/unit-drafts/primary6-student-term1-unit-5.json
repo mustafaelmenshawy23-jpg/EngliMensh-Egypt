@@ -1,0 +1,925 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-17T06:58:57.289Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary6-student-term1",
+  "sourceFilename": "English_Primary6_T1 (1).pdf",
+  "grade": "Primary 6",
+  "unitNumber": 5,
+  "unitTitle": "Unit 5: Made in Egypt",
+  "sourcePdfRange": {
+    "start": 70,
+    "end": 84
+  },
+  "sourceCoverage": [
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "sourceFingerprint": "e5f1431874ecfdf02e774bb10765ad23556346caa1b9e215df92ba7daf4a754f",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 5: Made in Egypt",
+    "expectedRange": {
+      "start": 70,
+      "end": 84,
+      "totalPages": 15
+    },
+    "recordedCoverage": {
+      "totalPages": 15,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 29,
+      "sourceItems": 1,
+      "supplementaryItems": 28,
+      "vocabularyCount": 5,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 5,
+        "validItems": 5,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-17T06:58:57.289Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Key Vocabulary",
+      "items": [
+        {
+          "itemId": "v1",
+          "content": {
+            "word": "brochure",
+            "arabicMeaning": "كتيب",
+            "example": "I read the brochure to learn about the museum.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v2",
+          "content": {
+            "word": "exhibition",
+            "arabicMeaning": "معرض",
+            "example": "We saw a mummy in the new exhibition.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v3",
+          "content": {
+            "word": "souvenir",
+            "arabicMeaning": "تذكار",
+            "example": "I bought a small pyramid as a souvenir.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v4",
+          "content": {
+            "word": "plateau",
+            "arabicMeaning": "هضبة",
+            "example": "Al Galala City is built on a plateau.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "v5",
+          "content": {
+            "word": "sustainable",
+            "arabicMeaning": "مستدام",
+            "example": "Benban uses sustainable energy.",
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "vq1",
+          "content": {
+            "question": "What do you call a book that tells you about a museum?",
+            "options": [
+              "brochure",
+              "exhibition",
+              "souvenir",
+              "plateau"
+            ],
+            "correctAnswer": "brochure",
+            "reason": "A brochure provides information about a place or event.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq2",
+          "content": {
+            "question": "Where can you see old and special items?",
+            "options": [
+              "exhibition",
+              "information desk",
+              "hotel",
+              "mountain"
+            ],
+            "correctAnswer": "exhibition",
+            "reason": "An exhibition is a place where special items are displayed.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq3",
+          "content": {
+            "question": "What do you buy to remember your trip?",
+            "options": [
+              "souvenir",
+              "travel plan",
+              "ticket",
+              "suitcase"
+            ],
+            "correctAnswer": "souvenir",
+            "reason": "A souvenir is an object kept as a reminder of a place visited.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Past Simple",
+      "items": [
+        {
+          "itemId": "g1",
+          "content": {
+            "rule": "Past Simple",
+            "explanation": "We use the past simple for actions that started and finished in the past. For regular verbs, add -ed, -d, or -ied.",
+            "example": "She baked a delicious cake yesterday.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gq1",
+          "content": {
+            "question": "Yesterday, I ____ my friend.",
+            "options": [
+              "visit",
+              "visited",
+              "visits",
+              "visiting"
+            ],
+            "correctAnswer": "visited",
+            "reason": "The word 'yesterday' indicates the past tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq2",
+          "content": {
+            "question": "Noha ____ clean the house last night.",
+            "options": [
+              "did",
+              "didn't",
+              "does",
+              "doesn't"
+            ],
+            "correctAnswer": "didn't",
+            "reason": "We use 'didn't' + infinitive for negative past simple.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq3",
+          "content": {
+            "question": "____ you travel last summer?",
+            "options": [
+              "Do",
+              "Does",
+              "Did",
+              "Was"
+            ],
+            "correctAnswer": "Did",
+            "reason": "We use 'Did' to start a past simple question.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Comprehension",
+      "items": [
+        {
+          "itemId": "r1",
+          "content": {
+            "passage": "Al Galala City is a modern city in Egypt, built on the Al Galala Plateau near Ain Sokhna. It was part of a national plan devised in 2015 to reduce crowding in older cities. Today, it is one of Egypt’s leading smart cities with clean air and sea views.",
+            "origin": "source",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "passage": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "r2",
+          "content": {
+            "question": "Where is Al Galala City built?",
+            "options": [
+              "On a mountain",
+              "On the Al Galala Plateau",
+              "Near the Nile",
+              "In Cairo"
+            ],
+            "correctAnswer": "On the Al Galala Plateau",
+            "reason": "The text explicitly states the city is built on the Al Galala Plateau.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "l1",
+          "content": {
+            "script": "Guide: Welcome to the museum. This is the information desk. Tourist: Thank you. Can I have a brochure? Guide: Yes, here you go. Enjoy the exhibition.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "l2",
+          "content": {
+            "question": "What does the tourist ask for?",
+            "options": [
+              "A ticket",
+              "A brochure",
+              "A map",
+              "A souvenir"
+            ],
+            "correctAnswer": "A brochure",
+            "reason": "The tourist asks for a brochure at the information desk.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "s1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Tourist",
+                "text": "Hello! I'd like to visit the museum.",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Guide",
+                "text": "Welcome! Here is a brochure with our exhibition times.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "dialogue": [
+                "supplementary",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "gm1",
+          "content": {
+            "gameName": "Word Match",
+            "description": "Match the word to its meaning.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "What is a souvenir?",
+            "options": [
+              "A gift to remember a trip",
+              "A type of food",
+              "A place to sleep",
+              "A travel plan"
+            ],
+            "correctAnswer": "A gift to remember a trip",
+            "reason": "A souvenir is an item bought to remember a visit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gm2",
+          "content": {
+            "gameName": "Verb Tense",
+            "description": "Choose the correct past form.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "What is the past of 'go'?",
+            "options": [
+              "goed",
+              "went",
+              "gone",
+              "goes"
+            ],
+            "correctAnswer": "went",
+            "reason": "Went is the irregular past form of go.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Unit Comprehensive Test",
+      "items": [
+        {
+          "itemId": "ct1",
+          "content": {
+            "question": "A ____ tells you about the museum.",
+            "options": [
+              "brochure",
+              "exhibition",
+              "souvenir",
+              "plateau"
+            ],
+            "correctAnswer": "brochure",
+            "reason": "A brochure provides information.",
+            "origin": "supplementary",
+            "sourcePdfPage": 71,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct2",
+          "content": {
+            "question": "We saw a mummy in the new ____.",
+            "options": [
+              "exhibition",
+              "class",
+              "playground",
+              "hospital"
+            ],
+            "correctAnswer": "exhibition",
+            "reason": "Mummies are displayed in museum exhibitions.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct3",
+          "content": {
+            "question": "I bought a ____ from the gift shop.",
+            "options": [
+              "souvenir",
+              "painting",
+              "color",
+              "sport"
+            ],
+            "correctAnswer": "souvenir",
+            "reason": "Gift shops sell souvenirs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct4",
+          "content": {
+            "question": "She ____ a cake yesterday.",
+            "options": [
+              "bake",
+              "baked",
+              "bakes",
+              "baking"
+            ],
+            "correctAnswer": "baked",
+            "reason": "Past simple requires -ed for regular verbs.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct5",
+          "content": {
+            "question": "They ____ play outside after school.",
+            "options": [
+              "did",
+              "didn't",
+              "do",
+              "does"
+            ],
+            "correctAnswer": "didn't",
+            "reason": "Negative past simple uses didn't.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct6",
+          "content": {
+            "question": "____ you enjoy the trip?",
+            "options": [
+              "Did",
+              "Do",
+              "Does",
+              "Was"
+            ],
+            "correctAnswer": "Did",
+            "reason": "Questions in past simple start with Did.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct7",
+          "content": {
+            "question": "Al Galala City is built on the ____.",
+            "options": [
+              "Plateau",
+              "Sea",
+              "Mountain",
+              "River"
+            ],
+            "correctAnswer": "Plateau",
+            "reason": "The city is built on the Al Galala Plateau.",
+            "origin": "supplementary",
+            "sourcePdfPage": 73,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct8",
+          "content": {
+            "question": "Benban Solar Park is near ____.",
+            "options": [
+              "Aswan",
+              "Cairo",
+              "Luxor",
+              "Alexandria"
+            ],
+            "correctAnswer": "Aswan",
+            "reason": "Benban Solar Park is located near Aswan.",
+            "origin": "supplementary",
+            "sourcePdfPage": 79,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct9",
+          "content": {
+            "question": "The Lotus Chalice is made of ____.",
+            "options": [
+              "alabaster",
+              "gold",
+              "wood",
+              "plastic"
+            ],
+            "correctAnswer": "alabaster",
+            "reason": "The text states the chalice is made of alabaster.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "ct10",
+          "content": {
+            "question": "The tourist asked for a ____.",
+            "options": [
+              "brochure",
+              "ticket",
+              "map",
+              "guide"
+            ],
+            "correctAnswer": "brochure",
+            "reason": "The tourist requested a brochure.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-17T06:58:57.300Z",
+    "itemsAudited": 29,
+    "sourceClaims": 1,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 0
+  }
+}
