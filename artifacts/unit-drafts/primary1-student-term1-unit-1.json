@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-15T07:04:50.835Z",
+  "generatedAt": "2026-11-17T06:41:32.633Z",
   "generator": {
     "provider": "Google Gemini API",
     "model": "gemini-3.5-flash",
@@ -51,16 +51,16 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 34,
+      "totalItems": 52,
       "sourceItems": 0,
-      "supplementaryItems": 34,
-      "vocabularyCount": 9,
+      "supplementaryItems": 52,
+      "vocabularyCount": 27,
       "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 9,
-        "validItems": 9,
+        "itemCount": 27,
+        "validItems": 27,
         "issues": []
       },
       "vocabulary_questions": {
@@ -117,11 +117,11 @@
         {
           "itemId": "vocab_1",
           "content": {
-            "word": "shake hands",
-            "arabicMeaning": "يتصافح بالأيدي",
-            "example": "We shake hands when we meet friends.",
+            "word": "welcome",
+            "arabicMeaning": "مرحبًا / أهلًا",
+            "example": "Welcome to my school.",
             "origin": "supplementary",
-            "sourcePdfPage": 9,
+            "sourcePdfPage": 7,
             "fieldOrigins": {
               "word": "source",
               "arabicMeaning": "supplementary",
@@ -129,14 +129,65 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_2",
           "content": {
-            "word": "friends",
-            "arabicMeaning": "أصدقاء",
-            "example": "Hana and Maya are friends.",
+            "word": "school",
+            "arabicMeaning": "مدرسة",
+            "example": "I go to school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_3",
+          "content": {
+            "word": "hello",
+            "arabicMeaning": "مرحبًا",
+            "example": "Hello, Maya!",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_4",
+          "content": {
+            "word": "name",
+            "arabicMeaning": "اسم",
+            "example": "What's your name?",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "I am",
+            "arabicMeaning": "أنا...",
+            "example": "Hello, I am Sara.",
             "origin": "supplementary",
             "sourcePdfPage": 9,
             "fieldOrigins": {
@@ -146,14 +197,150 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "goodbye",
+            "arabicMeaning": "إلى اللقاء",
+            "example": "Goodbye, Hana!",
+            "origin": "supplementary",
+            "sourcePdfPage": 11,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_7",
+          "content": {
+            "word": "wave",
+            "arabicMeaning": "يلوّح بيده",
+            "example": "Wave to your friend.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "shake hands",
+            "arabicMeaning": "يتصافح",
+            "example": "We shake hands when we meet.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "friend",
+            "arabicMeaning": "صديق",
+            "example": "A friend says hello.",
+            "origin": "supplementary",
+            "sourcePdfPage": 13,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_10",
+          "content": {
+            "word": "tiger",
+            "arabicMeaning": "نمر",
+            "example": "A tiger is an animal.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_11",
+          "content": {
+            "word": "tomato",
+            "arabicMeaning": "طماطم",
+            "example": "The tomato is red.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_12",
+          "content": {
+            "word": "table",
+            "arabicMeaning": "طاولة",
+            "example": "The book is on the table.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_13",
+          "content": {
+            "word": "tree",
+            "arabicMeaning": "شجرة",
+            "example": "A bird is in the tree.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_3",
           "content": {
             "word": "teacher",
-            "arabicMeaning": "معلم",
-            "example": "The teacher is in the classroom.",
+            "arabicMeaning": "معلّم / معلّمة",
+            "example": "My teacher is kind.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -163,14 +350,14 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_4",
           "content": {
             "word": "chair",
             "arabicMeaning": "كرسي",
-            "example": "I sit on my chair in class.",
+            "example": "I sit on a chair.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -180,48 +367,14 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
-        },
-        {
-          "itemId": "vocab_5",
-          "content": {
-            "word": "pencil",
-            "arabicMeaning": "قلم رصاص",
-            "example": "I draw with my pencil.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
-        },
-        {
-          "itemId": "vocab_6",
-          "content": {
-            "word": "desk",
-            "arabicMeaning": "مكتب",
-            "example": "My book is on the desk.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_7",
           "content": {
             "word": "bag",
             "arabicMeaning": "حقيبة",
-            "example": "I put my book in my bag.",
+            "example": "My book is in my bag.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -231,14 +384,82 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_6",
+          "content": {
+            "word": "desk",
+            "arabicMeaning": "مقعد / مكتب الدراسة",
+            "example": "My pencil is on the desk.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_5",
+          "content": {
+            "word": "pencil",
+            "arabicMeaning": "قلم رصاص",
+            "example": "I write with a pencil.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_19",
+          "content": {
+            "word": "board",
+            "arabicMeaning": "سبورة",
+            "example": "Look at the board.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_20",
+          "content": {
+            "word": "book",
+            "arabicMeaning": "كتاب",
+            "example": "Open your book.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_8",
           "content": {
             "word": "stand up",
-            "arabicMeaning": "يقف",
-            "example": "Please stand up when called.",
+            "arabicMeaning": "قف",
+            "example": "Please stand up.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
@@ -248,14 +469,14 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         },
         {
           "itemId": "vocab_9",
           "content": {
             "word": "sit down",
-            "arabicMeaning": "يجلس",
-            "example": "Sit down on your chair.",
+            "arabicMeaning": "اجلس",
+            "example": "Please sit down.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
@@ -265,7 +486,92 @@
             }
           },
           "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_23",
+          "content": {
+            "word": "open",
+            "arabicMeaning": "افتح",
+            "example": "Open your bag.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_24",
+          "content": {
+            "word": "close",
+            "arabicMeaning": "أغلق",
+            "example": "Close your book.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_25",
+          "content": {
+            "word": "in",
+            "arabicMeaning": "في / داخل",
+            "example": "The pencil is in the bag.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_26",
+          "content": {
+            "word": "ink",
+            "arabicMeaning": "حبر",
+            "example": "The ink is blue.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+        },
+        {
+          "itemId": "vocab_27",
+          "content": {
+            "word": "insect",
+            "arabicMeaning": "حشرة",
+            "example": "An insect is small.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
         }
       ]
     },
@@ -997,12 +1303,12 @@
   "provenanceAudit": {
     "policyVersion": 1,
     "auditedAt": "2026-11-16T06:32:51.860Z",
-    "itemsAudited": 34,
+    "itemsAudited": 52,
     "sourceClaims": 0,
     "verifiedSourceClaims": 0,
     "unverifiableSourceClaims": 0,
     "citationWarnings": 0,
-    "itemsWithSourceSubfields": 26,
+    "itemsWithSourceSubfields": 44,
     "reclassifiedToSupplementary": 0
   }
 }
