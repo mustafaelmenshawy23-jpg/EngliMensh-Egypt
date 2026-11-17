@@ -1,4 +1,6 @@
 export function detectSpeakerGender(voice = {}) {
+  const explicitGender = String(voice.gender || voice.genderType || '').trim().toLowerCase();
+  if (explicitGender === 'female' || explicitGender === 'male') return explicitGender;
   const label = `${voice.name || ''} ${voice.voiceURI || ''}`.toLowerCase();
   if (/(^|[^a-z])female([^a-z]|$)/.test(label)) return 'female';
   if (/(^|[^a-z])male([^a-z]|$)/.test(label)) return 'male';
