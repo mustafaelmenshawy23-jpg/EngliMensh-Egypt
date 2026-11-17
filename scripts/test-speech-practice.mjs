@@ -28,6 +28,9 @@ const speakStart = main.indexOf('async function speakText');
 const ttsLock = main.indexOf('if (state.speechRecognitionActive)', speakStart);
 assert.ok(speakStart >= 0 && ttsLock > speakStart && ttsLock < main.indexOf('const phrase', speakStart),
   'TTS must refuse to start while microphone recognition is active.');
+const genderFallback = main.indexOf('This gendered line is not played rather than using a potentially mismatched default voice.');
+assert.ok(genderFallback >= 0 && main.indexOf('return;', genderFallback) > genderFallback,
+  'Gendered dialogue must not silently fall back to an unverified platform voice.');
 const practiceStart = main.indexOf('async function runSpeechPractice');
 const lockStart = main.indexOf('state.speechRecognitionActive = true;', practiceStart);
 const recognitionStart = main.indexOf('await recognizeSpeechText()', practiceStart);
