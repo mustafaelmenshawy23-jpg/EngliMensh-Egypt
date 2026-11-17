@@ -54,6 +54,9 @@ const mainJs = fs.readFileSync('./src/main.js', 'utf8');
 
   const stopPropInUnitLink = /\[data-unit-book\]'\)\.forEach\([^)]*\)\s*=>\s*button\.addEventListener\('click',\s*\((e|\w+)\)\s*=>\s*\{\s*\1\.stopPropagation\(\)/.test(mainJs);
   assert(stopPropInUnitLink, 'Unit link click listener includes stopPropagation()');
+  assert(!/parsed\\.vocabIndex\\s*<\\s*24/.test(mainJs), 'Vocabulary progress accepts variable-length word lists');
+  assert(mainJs.includes("p1u1Draft?.sections?.find(section => section.type === 'vocabulary')?.items?.length || 0"), 'Vocabulary navigation uses the active vocabulary list length');
+  assert(!/Math\\.min\\(23,\\s*\\(state\\.vocabIndex/.test(mainJs), 'Vocabulary next button has no fixed 24-item cap');
 }
 
 // Test 2: State simulation for Stage, Grade, Pathway navigation
