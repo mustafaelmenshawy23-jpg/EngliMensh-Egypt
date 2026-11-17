@@ -47,6 +47,9 @@ const applyStudentTheme = () => { document.documentElement.dataset.theme = activ
 applyStudentTheme();
 
 const vocabVisualMap = {
+  welcome: { icon: '🎉', tag: 'Greeting', phonetic: '/ˈwɛlkəm/' },
+  school: { icon: '🏫', tag: 'Place', phonetic: '/skuːl/' },
+  'I am': { icon: '🗣️', tag: 'Self-introduction', phonetic: '/aɪ æm/' },
   hello: { icon: '👋', tag: 'Greeting', phonetic: '/həˈləʊ/' },
   goodbye: { icon: '🙋‍♂️', tag: 'Farewell', phonetic: '/ɡʊdˈbaɪ/' },
   name: { icon: '🏷️', tag: 'Identity', phonetic: '/neɪm/' },
@@ -1390,24 +1393,26 @@ function renderUnitWorkspace() {
             ${dialogues.length ? renderSpeakerVoiceSettings() : ''}
             ${dialogues.map((item) => {
               const data = item.content || {};
+              const dialogueCanPlay = (data.dialogue || []).every(line => !['male', 'female'].includes(line.speakerGender) || Boolean(getSpeakerVoice(line.speakerGender)));
               return `<article class="speaking-dialogue-block">
                 <span class="speaking-line-speaker">${data.origin === 'supplementary' ? 'SUPPLEMENTARY ROLE-PLAY' : 'SOURCE DIALOGUE'} · PDF PAGE ${data.sourcePdfPage || '—'}</span>
                 <div class="speaking-dialogue-list">
                   ${(data.dialogue || []).map((line, index) => {
                     const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                    const canPlay = gender === 'unknown' || Boolean(getSpeakerVoice(gender));
                     return `<article class="speaking-line-card">
                       <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
                       <p dir="ltr">${escapeHtml(line.text || '')}</p>
-                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}" ${canPlay ? '' : 'disabled'} title="${canPlay ? 'Play dialogue line' : 'No verified matching voice is available'}">🔊 Listen</button>
                       <button type="button" class="speaking-practice-check" data-speech-target="${escapeHtml(line.text || '')}">🎙 Practise this line</button>
                       <p class="speaking-practice-result" data-speech-result aria-live="polite"></p>
                     </article>`;
                   }).join('')}
                 </div>
-                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}">🔊 Play full dialogue</button>
+                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}" ${dialogueCanPlay ? '' : 'disabled'}>🔊 Play full dialogue</button>
               </article>`;
             }).join('')}
-            ${dialogues.length ? '<p class="speaking-practice-note">Each line uses the selected male/female voice when the platform exposes or the user assigns one. Unmatched roles fall back to the system default.</p>' : '<div class="empty-state">No source dialogue or supplementary role-play is available yet.</div>'}
+            ${dialogues.length ? '<p class="speaking-practice-note">Gendered roles without a verified matching voice are disabled; unassigned roles may use the platform default.</p>' : '<div class="empty-state">No source dialogue or supplementary role-play is available yet.</div>'}
           </div>
         `;
       } else if (state.activeModule === 'comprehensive_test') {
@@ -1812,6 +1817,7 @@ function renderUnitWorkspace() {
       } else if (state.activeModule === 'speaking') {
         const speakingSection = p1u1Draft.sections.find((section) => section.type === 'speaking');
         const rolePlay = speakingSection?.items?.[0]?.content?.dialogue || [];
+        const rolePlayCanPlay = rolePlay.every(line => !['male', 'female'].includes(line.speakerGender) || Boolean(getSpeakerVoice(line.speakerGender)));
         bodyHtml = rolePlay.length ? `
           <div class="speaking-practice-card">
             <p class="speaking-instruction">Take turns with a partner. Listen to each line, then say it aloud.</p>
@@ -1819,17 +1825,18 @@ function renderUnitWorkspace() {
             <div class="speaking-dialogue-list">
               ${rolePlay.map((line, index) => {
                 const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                    const canPlay = gender === 'unknown' || Boolean(getSpeakerVoice(gender));
                 return `
                   <article class="speaking-line-card">
                     <span class="speaking-line-speaker">${escapeHtml(line.speaker || `Speaker ${index + 1}`)} · ${gender === 'unknown' ? 'Voice not verified' : gender + ' role'}</span>
                     <p>${escapeHtml(line.text || '')}</p>
-                    <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
+                    <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}" ${canPlay ? '' : 'disabled'} title="${canPlay ? 'Play dialogue line' : 'No verified matching voice is available'}">🔊 Listen</button>
                   </article>
                 `;
               }).join('')}
             </div>
             <p class="speaking-practice-note">Now practise the full dialogue with a classmate.</p>
-            <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(rolePlay))}">🔊 Listen to Full Dialogue</button>
+            <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(rolePlay))}" ${rolePlayCanPlay ? '' : 'disabled'}>🔊 Listen to Full Dialogue</button>
           </div>
         ` : '<div class="empty-state"><strong>Speaking practice is being prepared.</strong></div>';
       } else if (state.activeModule === 'games') {
@@ -1988,24 +1995,26 @@ function renderUnitWorkspace() {
             ${rolePlays.length ? renderSpeakerVoiceSettings() : ''}
             ${rolePlays.map((item) => {
               const data = item.content || {};
+              const dialogueCanPlay = (data.dialogue || []).every(line => !['male', 'female'].includes(line.speakerGender) || Boolean(getSpeakerVoice(line.speakerGender)));
               return `<article class="speaking-dialogue-block">
                 <p class="speaking-instruction">${escapeHtml(data.instruction || 'Practise the dialogue with a partner.')}</p>
                 <span class="speaking-line-speaker">${escapeHtml(sourceLabel(item))} · ${escapeHtml(pageLabel(item))}</span>
                 <div class="speaking-dialogue-list">
                   ${(data.dialogue || []).map((line, index) => {
                     const gender = ['male', 'female'].includes(line.speakerGender) ? line.speakerGender : 'unknown';
+                    const canPlay = gender === 'unknown' || Boolean(getSpeakerVoice(gender));
                     const roleLabel = gender === 'unknown' ? 'Voice not verified' : gender + ' role';
                     return `<article class="speaking-line-card">
                       <span class="speaking-line-speaker">${escapeHtml(line.speaker || 'Speaker ' + (index + 1))} · ${escapeHtml(roleLabel)}</span>
                       <p dir="ltr">${escapeHtml(line.text || '')}</p>
-                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}">🔊 Listen</button>
+                      <button type="button" class="speaking-line-audio" data-tts-text="${escapeHtml(line.text || '')}" data-tts-gender="${gender}" ${canPlay ? '' : 'disabled'} title="${canPlay ? 'Play dialogue line' : 'No verified matching voice is available'}">🔊 Listen</button>
                     </article>`;
                   }).join('')}
                 </div>
-                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}">🔊 Play full dialogue</button>
+                <button type="button" class="big-audio-btn secondary" data-play-dialogue="${escapeHtml(JSON.stringify(data.dialogue || []))}" ${dialogueCanPlay ? '' : 'disabled'}>🔊 Play full dialogue</button>
               </article>`;
             }).join('')}
-            ${rolePlays.length ? '<p class="speaking-practice-note">Each line uses the selected male/female voice when the platform exposes or the user assigns one. Unmatched roles fall back to the system default.</p>' : '<div class="empty-state">No source dialogue or reviewed supplementary role-play is available yet.</div>'}
+            ${rolePlays.length ? '<p class="speaking-practice-note">Gendered roles without a verified matching voice are disabled; unassigned roles may use the platform default.</p>' : '<div class="empty-state">No source dialogue or reviewed supplementary role-play is available yet.</div>'}
           </div>
         `;
       } else if (state.activeModule === 'games') {
