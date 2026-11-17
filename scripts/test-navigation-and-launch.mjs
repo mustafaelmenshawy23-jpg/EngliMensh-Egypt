@@ -34,6 +34,7 @@ console.log('--- TEST SUITE: Phase 2.1 Navigation & Unit Launch Verification ---
 const sourceIndex = JSON.parse(fs.readFileSync('./data/curriculum/source-book-index.draft.json', 'utf8'));
 const curriculum = JSON.parse(fs.readFileSync('./src/data/curriculum/structure.json', 'utf8'));
 const p1u1Draft = JSON.parse(fs.readFileSync('./artifacts/unit-drafts/primary1-student-term1-unit-1.json', 'utf8'));
+const p1u1SourceManifest = JSON.parse(fs.readFileSync('./artifacts/ocr-review/p1u1-pages-manifest.json', 'utf8'));
 const mainJs = fs.readFileSync('./src/main.js', 'utf8');
 
 // Test 1: DOM selector isolation in main.js
@@ -149,7 +150,12 @@ const mainJs = fs.readFileSync('./src/main.js', 'utf8');
   assert(sectionTypes.includes('comprehensive_test'), 'Comprehensive test present in P1U1 draft');
 
   const vocabWords = p1u1Draft.sections.find(s => s.type === 'vocabulary')?.items || [];
-  assert(vocabWords.length === 24, `24 vocabulary items found (actual: ${vocabWords.length})`);
+  const expectedVocabulary = [...new Set((p1u1SourceManifest.pages || []).flatMap(page => page.vocabList || []).map(word => String(word).trim().toLowerCase()).filter(Boolean))];
+  const actualVocabulary = new Set(vocabWords.map(item => String(item.content?.word || '').trim().toLowerCase()));
+  const missingVocabulary = expectedVocabulary.filter(word => !actualVocabulary.has(word));
+  assert(vocabWords.length === expectedVocabulary.length, `${expectedVocabulary.length} unique source vocabulary items represented (actual: ${vocabWords.length})`);
+  assert(actualVocabulary.size === vocabWords.length, 'P1U1 vocabulary contains no duplicate entries');
+  assert(missingVocabulary.length === 0, `All source-manifest vocabulary items are represented (missing: ${missingVocabulary.join(', ') || 'none'})`);
 
   const testQuestions = p1u1Draft.sections.find(s => s.type === 'comprehensive_test')?.items || [];
   assert(testQuestions.length === 10, `10 final test questions found (actual: ${testQuestions.length})`);
