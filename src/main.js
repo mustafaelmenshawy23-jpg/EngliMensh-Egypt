@@ -89,7 +89,7 @@ const state = {
   activeVocabSubtab: 'words', // 'words' or 'practice'
   activeGrammarSubtab: 'rules', // 'rules' or 'practice'
   activeGameTab: 1, // 1, 2, 3, 4
-  vocabIndex: 0, // 0 to 23 for focused card view
+  vocabIndex: 0, // Current word index; bounds come from the active vocabulary list
   vocabViewMode: 'card', // 'card' or 'grid'
   testQuestionIndex: 0, // 0 to 9 for 1-question-at-a-time test
   listeningSpeed: 1.0, // 0.75, 1.0, 1.25
@@ -248,7 +248,7 @@ function loadProgressFromStorage() {
       if (parsed.activeVocabSubtab) state.activeVocabSubtab = parsed.activeVocabSubtab;
       if (parsed.activeGrammarSubtab) state.activeGrammarSubtab = parsed.activeGrammarSubtab;
       if (parsed.activeGameTab) state.activeGameTab = parsed.activeGameTab;
-      if (typeof parsed.vocabIndex === 'number' && parsed.vocabIndex >= 0 && parsed.vocabIndex < 24) state.vocabIndex = parsed.vocabIndex;
+      if (Number.isInteger(parsed.vocabIndex) && parsed.vocabIndex >= 0) state.vocabIndex = parsed.vocabIndex;
       if (parsed.vocabViewMode === 'card' || parsed.vocabViewMode === 'grid') state.vocabViewMode = parsed.vocabViewMode;
       if (typeof parsed.testQuestionIndex === 'number' && parsed.testQuestionIndex >= 0 && parsed.testQuestionIndex < 10) state.testQuestionIndex = parsed.testQuestionIndex;
       if (typeof parsed.listeningSpeed === 'number') state.listeningSpeed = parsed.listeningSpeed;
@@ -2588,15 +2588,18 @@ function render() {
   app.querySelectorAll('[data-vocab-step]').forEach((btn) => btn.addEventListener('click', (e) => {
     e.stopPropagation();
     const dir = btn.dataset.vocabStep;
+    const vocabularyLength = p1u1Draft?.sections?.find(section => section.type === 'vocabulary')?.items?.length || 0;
+    const lastVocabularyIndex = Math.max(0, vocabularyLength - 1);
     if (dir === 'prev') state.vocabIndex = Math.max(0, (state.vocabIndex || 0) - 1);
-    else if (dir === 'next') state.vocabIndex = Math.min(23, (state.vocabIndex || 0) + 1);
+    else if (dir === 'next') state.vocabIndex = Math.min(lastVocabularyIndex, (state.vocabIndex || 0) + 1);
     saveProgressToStorage();
     render();
   }));
 
   app.querySelectorAll('[data-vocab-jump]').forEach((btn) => btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    state.vocabIndex = Number(btn.dataset.vocabJump);
+    const vocabularyLength = p1u1Draft?.sections?.find(section => section.type === 'vocabulary')?.items?.length || 0;
+    state.vocabIndex = Math.min(Math.max(0, Number(btn.dataset.vocabJump) || 0), Math.max(0, vocabularyLength - 1));
     saveProgressToStorage();
     render();
   }));
@@ -2610,7 +2613,8 @@ function render() {
 
   app.querySelectorAll('[data-vocab-select]').forEach((btn) => btn.addEventListener('click', (e) => {
     e.stopPropagation();
-    state.vocabIndex = Number(btn.dataset.vocabSelect);
+    const vocabularyLength = p1u1Draft?.sections?.find(section => section.type === 'vocabulary')?.items?.length || 0;
+    state.vocabIndex = Math.min(Math.max(0, Number(btn.dataset.vocabSelect) || 0), Math.max(0, vocabularyLength - 1));
     state.vocabViewMode = 'card';
     saveProgressToStorage();
     render();
