@@ -31,6 +31,8 @@ assert.ok(speakStart >= 0 && ttsLock > speakStart && ttsLock < main.indexOf('con
 const genderFallback = main.indexOf('This gendered line is not played rather than using a potentially mismatched default voice.');
 assert.ok(genderFallback >= 0 && main.indexOf('return;', genderFallback) > genderFallback,
   'Gendered dialogue must not silently fall back to an unverified platform voice.');
+assert.ok(main.includes('No verified matching voice is available'), 'Unavailable gendered dialogue lines must be visibly disabled.');
+assert.ok(main.includes('Gendered roles without a verified matching voice are disabled'), 'The dialogue note must disclose the voice-matching limitation.');
 const practiceStart = main.indexOf('async function runSpeechPractice');
 const lockStart = main.indexOf('state.speechRecognitionActive = true;', practiceStart);
 const recognitionStart = main.indexOf('await recognizeSpeechText()', practiceStart);
