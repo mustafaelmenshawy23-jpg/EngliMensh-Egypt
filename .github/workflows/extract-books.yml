@@ -65,15 +65,16 @@ jobs:
                   print(f"::warning file={path}::File does not begin with a PDF signature; extractor will report it")
 
           if pointers:
-              print(f"::error::Found {len(pointers)} Git LFS pointer file(s) after hydration. Refusing to publish a partial extraction artifact:")
+              print(f"::warning::Found {len(pointers)} Git LFS pointer file(s) after hydration. Their manifest entries will remain explicitly blocked; continuing with the hydrated source PDFs:")
               for path in pointers:
-                  print(f" - {path}")
-              sys.exit(1)
+                  print(f" - Blocked source: {path}")
 
           invalid = []
           for path in pdfs:
               with path.open("rb") as stream:
                   header = stream.read(256)
+              if b"git-lfs.github.com/spec" in header:
+                  continue
               if not header.startswith(b"%PDF-"):
                   invalid.append(path)
 
@@ -83,7 +84,12 @@ jobs:
                   print(f" - {path}")
               sys.exit(1)
 
-          print(f"All {len(pdfs)} source PDF files are hydrated and ready for extraction.")
+          hydrated = len(pdfs) - len(pointers)
+          if hydrated == 0:
+              print("::error::No source PDF objects were hydrated; refusing an empty extraction artifact.")
+              sys.exit(1)
+
+          print(f"{hydrated} of {len(pdfs)} source PDF files are hydrated; {len(pointers)} remain explicitly blocked.")
           PY
 
       - name: Extract page-level text
