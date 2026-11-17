@@ -1,6 +1,10 @@
 name: Extract source books
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - artifacts/extraction-trigger.json
   workflow_dispatch:
     inputs:
       publish_artifact:
@@ -108,7 +112,7 @@ jobs:
         run: npm run validate:manual-recoveries
 
       - name: Upload extraction results
-        if: ${{ inputs.publish_artifact }}
+        if: ${{ github.event_name == 'push' || inputs.publish_artifact }}
         uses: actions/upload-artifact@v4
         with:
           name: englimensh-extracted-books
