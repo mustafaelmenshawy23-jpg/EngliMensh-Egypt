@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { detectSpeakerGender, chooseSpeakerVoice } from '../src/lib/tts-voice-selection.mjs';
 
 assert.equal(detectSpeakerGender({ name: 'en-US female voice' }), 'female');
+assert.equal(detectSpeakerGender({ gender: 'female', name: 'Voice 2' }), 'female');
+assert.equal(detectSpeakerGender({ gender: 'male', name: 'Voice 1' }), 'male');
 assert.equal(detectSpeakerGender({ voiceURI: 'en-us-x-sfb#male_1-local' }), 'male');
 assert.equal(detectSpeakerGender({ name: 'Google US English' }), 'unknown');
 
