@@ -4538,7 +4538,7 @@
       "status": "failed_validation",
       "sourceSignature": "f7ccdf6db278c7d5bb760b4559449f5c83399825578e594639a3b65efb586602",
       "lastAttemptAt": "2026-11-18T07:08:52.620Z",
-      "retryAfter": "2026-11-19T07:08:52.620Z",
+      "retryAfter": "2026-11-18T07:00:00.000Z",
       "attemptCount": 4,
       "error": "Generator exited with code 1: Conservatively relabelled 23 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"Where do you buy food?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
     },
