@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-18T07:42:51.393Z",
+  "generatedAt": "2026-11-18T07:44:36.783Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
-  "selected": 0,
+  "selected": 1,
   "cursorIndex": 73,
   "nextCursorIndex": 73,
   "batchSize": 10,
@@ -27,7 +27,13 @@
   "currentBatchBlocked": 15,
   "excludedUnits": 0,
   "pendingCandidates": 0,
-  "results": [],
+  "results": [
+    {
+      "unitId": "primary3-student-term1-unit-3",
+      "status": "failed_validation",
+      "error": "Generator exited with code 1: Replaced 3 repeated Primary 3 Unit 3 source question prompt(s) with distinct supplementary questions.\nConservatively relabelled 10 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1061\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"I ____ to school yesterday.\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1061:9\n\nNode.js v22.23.4\n"
+    }
+  ],
   "blocked": [
     {
       "unitId": "primary2-student-term1-unit-3",

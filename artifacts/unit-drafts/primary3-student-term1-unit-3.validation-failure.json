@@ -2,13 +2,14 @@
   "status": "failed_validation",
   "bookId": "primary3-student-term1",
   "unitNumber": 3,
-  "score": 55,
+  "score": 75,
   "criticalFailures": [
-    "Duplicate question prompt detected: \"Where do you buy food?\"",
-    "Duplicate question prompt detected: \"Where do you read books?\"",
-    "Duplicate question prompt detected: \"Where do you play with friends?\""
+    "Duplicate question prompt detected: \"I ____ to school yesterday.\""
   ],
-  "warnings": [],
+  "warnings": [
+    "Speaking item s1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item s1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+  ],
   "report": {
     "unitTitle": "Unit 3: New Adventures",
     "expectedRange": {
@@ -23,8 +24,8 @@
     },
     "itemTotals": {
       "totalItems": 30,
-      "sourceItems": 1,
-      "supplementaryItems": 29,
+      "sourceItems": 3,
+      "supplementaryItems": 27,
       "vocabularyCount": 5,
       "questionsCount": 16
     },
@@ -75,6 +76,6 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-18T07:38:45.812Z"
+    "validationTimestamp": "2026-11-18T07:44:48.234Z"
   }
 }
