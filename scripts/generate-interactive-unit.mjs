@@ -128,7 +128,7 @@ SECTION CONTENT:
 ANSWER QUALITY:
 - Each correctAnswer must exactly match one option.
 - Every question needs a concise reason that explains the answer, not just repeats it.
-- Do not repeat the same question across question banks or the final test.
+- Global question uniqueness is mandatory: compare every question prompt after trimming whitespace and converting to lowercase across vocabulary_questions, grammar_questions, reading/listening questions, and comprehensive_test. Never reuse the same prompt in another section. If the PDF contains a source question, include it once; write a different supplementary question for any other section that tests the same topic.
 - Use age-appropriate English and accurate Arabic meanings. Avoid malformed OCR strings, mixed scripts in English word fields, duplicate vocabulary, and implausible examples.
 - Do not fabricate a listening transcript, source dialogue, reading passage, page number, or textbook rule.
 - Keep all nine sections populated: vocabulary >=1 item; vocabulary_questions >=3; grammar >=1; grammar_questions >=3; reading >=1 passage plus >=1 question; listening >=1 script plus >=1 question; speaking >=1 dialogue; games >=2 across >=2 skills; comprehensive_test exactly 10 questions.
