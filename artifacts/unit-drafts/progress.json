@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-18T07:38:07.172Z",
+  "generatedAt": "2026-11-18T07:42:51.393Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
   "safeGenerationCandidates": 125,
-  "selected": 1,
+  "selected": 0,
   "cursorIndex": 73,
   "nextCursorIndex": 73,
   "batchSize": 10,
@@ -27,13 +27,7 @@
   "currentBatchBlocked": 15,
   "excludedUnits": 0,
   "pendingCandidates": 0,
-  "results": [
-    {
-      "unitId": "primary3-student-term1-unit-3",
-      "status": "failed_validation",
-      "error": "Generator exited with code 1: Conservatively relabelled 10 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 55/100):\nDuplicate question prompt detected: \"Where do you buy food?\"\nDuplicate question prompt detected: \"Where do you read books?\"\nDuplicate question prompt detected: \"Where do you play with friends?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
-    }
-  ],
+  "results": [],
   "blocked": [
     {
       "unitId": "primary2-student-term1-unit-3",
