@@ -5,6 +5,6 @@
   "pendingCandidates": 7,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
-  "generatedAt": "2026-11-18T06:56:00.000Z",
-  "reason": "Manual resume requested; continue from saved cursor without changing source PDFs or approval status."
+  "generatedAt": "2026-11-18T07:23:21.000Z",
+  "reason": "Resume the saved all-books queue and retry only candidates whose retryAfter has elapsed; keep source-review and approval gates unchanged."
 }
