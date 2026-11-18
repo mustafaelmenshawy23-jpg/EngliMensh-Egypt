@@ -283,7 +283,7 @@
       }
     },
     "connectplus-primary4-supplement-unit-6": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "2ebe7c366cbe1f956bc823b2204808e40d6576087a9390fcca3e5c32353c0f87",
       "lastAttemptAt": "2026-11-18T07:10:09.513Z",
       "qualityScore": 100,
@@ -801,12 +801,58 @@
       }
     },
     "helloplus-prep1-supplement-unit-3": {
-      "status": "failed",
+      "status": "generated_needs_review",
       "sourceSignature": "0fd39df163eb866bff466de3454420b30a6a6aaf0c61f1b392f547ff4cb0cd1b",
-      "lastAttemptAt": "2026-11-17T07:12:13.821Z",
-      "retryAfter": "2026-11-18T07:12:13.821Z",
-      "attemptCount": 2,
-      "error": "Generator exited with code 1: GEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.6-flash; trying another configured key.\nGemini gemini-3.6-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.6-flash did not return usable content; trying next supported fallback model...\nGemini model gemini-3.8-flash did not return usable content; trying next supported fallback model...\nGEMINI_API_KEY_BACKUP_2 reached quota for gemini-3.5-flash; trying another configured key.\nGemini gemini-3.5-flash with GEMINI_API_KEY_BACKUP_3 attempt 1/3 failed: The operation was aborted due to timeout. Retrying in 4s...\nGemini model gemini-3.5-flash did not return usable content; trying next supported fallback model...\nConservatively relabelled 20 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 85/100):\nDuplicate question prompt detected: \"We ___ a party for our little sister nex\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
+      "lastAttemptAt": "2026-11-18T07:29:51.362Z",
+      "qualityScore": 90,
+      "itemCount": 31,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 6,
+          "validItems": 6,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "prep2-student-term1-unit-4": {
       "status": "complete_draft_needs_review",
@@ -971,7 +1017,7 @@
       }
     },
     "helloplus-prep3-supplement-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "72c543925dea2d046eb131e998f0246f0bf2b94e40043ddd75827da44cc29e15",
       "lastAttemptAt": "2026-11-18T07:04:15.145Z",
       "qualityScore": 100,
@@ -2154,7 +2200,7 @@
       "missingPages": []
     },
     "primary1-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "5e6f61e73e0c188800e80fe8f1f2d477dc99552231947fc59e2c3087eaa55b8c",
       "lastAttemptAt": "2026-11-18T07:08:31.366Z",
       "qualityScore": 85,
@@ -2586,7 +2632,7 @@
       }
     },
     "connectplus-primary1-supplement-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "df2c11ba8abadd13e5901eb28e1a63e6ae47a7b2f294e4395c4dc439ac19886b",
       "lastAttemptAt": "2026-11-18T07:08:43.237Z",
       "qualityScore": 90,
@@ -3409,7 +3455,7 @@
       }
     },
     "connectplus-primary3-supplement-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "6c63bc29e5ce24c856fab9a86e6260b9ba193aa48fbbbcfa9350abea2e7e7c90",
       "lastAttemptAt": "2026-11-18T07:09:26.200Z",
       "qualityScore": 85,
@@ -3571,7 +3617,7 @@
       }
     },
     "connectplus-primary5-supplement-unit-4": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "6f0acf7dd11bd889cc4fa1388861b66878b18fac21fe37e2de2cd2b02e6da056",
       "lastAttemptAt": "2026-11-18T07:11:02.575Z",
       "qualityScore": 85,
@@ -3625,7 +3671,7 @@
       }
     },
     "primary6-student-term1-unit-1": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "dfa2946b05afd55918af243e26635e094d618d7fbf3270e6fa5aea88e17529ca",
       "lastAttemptAt": "2026-11-18T07:13:51.843Z",
       "qualityScore": 85,
@@ -4165,7 +4211,7 @@
       }
     },
     "helloplus-prep3-supplement-unit-5": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "6c552f18738b04734476c55f6c9fa6562f3ac0f90c3f2914e76428713d43c8be",
       "lastAttemptAt": "2026-11-18T07:07:50.954Z",
       "qualityScore": 85,
