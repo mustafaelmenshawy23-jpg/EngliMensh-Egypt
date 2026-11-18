@@ -1,10 +1,22 @@
 name: Render OCR review pages
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/render-ocr-review-pages.yml'
   workflow_dispatch:
+    inputs:
+      dpi:
+        description: Render resolution for the review bundle
+        required: true
+        type: choice
+        options: ["120", "150", "180", "240", "300"]
+        default: "150"
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: render-ocr-review-pages
@@ -13,15 +25,20 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
-      - name: Check out repository and hydrate source PDFs
+      - name: Check out only EngliMensh-Egypt
         uses: actions/checkout@v4
         with:
-          lfs: true
+          ref: main
+          lfs: false
 
-      - name: Pull Git LFS objects
-        run: git lfs pull
+      - name: Hydrate available original source PDFs
+        shell: bash
+        run: |
+          if ! git lfs pull; then
+            echo "::warning::One or more LFS objects could not be hydrated. The renderer will record unavailable source files and continue with available PDFs."
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,7 +48,51 @@ jobs:
       - name: Install PDF renderer
         run: python -m pip install --no-cache-dir pymupdf
 
-      - name: Render flagged pages from the review queue
+      - name: Find the latest successful curriculum batch artifact
+        id: batch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data } = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'generate-interactive-unit.yml',
+              per_page: 20
+            });
+            const run = data.workflow_runs.find((item) =>
+              item.head_branch === 'main' && item.conclusion === 'success'
+            );
+            if (!run) {
+              throw new Error('No successful curriculum-generation run was found on main.');
+            }
+            const { data: artifacts } = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: run.id,
+              per_page: 100
+            });
+            const artifact = artifacts.artifacts.find((item) =>
+              item.name.startsWith('interactive-curriculum-batch-') && !item.expired
+            );
+            if (!artifact) {
+              throw new Error('The latest successful curriculum batch has no unexpired review artifact.');
+            }
+            core.setOutput('run_id', String(run.id));
+            core.setOutput('artifact_name', artifact.name);
+            core.notice('Using curriculum review data from run ' + run.id + ': ' + artifact.name);
+
+      - name: Download latest batch source-review data
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.batch.outputs.artifact_name }}
+          path: batch-artifact
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.batch.outputs.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Render OCR-review and unit-blocking pages
+        env:
+          REVIEW_DPI: ${{ inputs.dpi || '150' }}
         run: python scripts/render-ocr-review-pages.py
 
       - name: Upload visual review bundle
