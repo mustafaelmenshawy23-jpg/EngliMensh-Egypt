@@ -972,6 +972,65 @@ try {
   throw new Error(`Model returned malformed JSON: ${err.message}`);
 }
 
+// Repair the three repeated source exercise stems in Primary 3 Unit 3 with distinct,
+// supplementary questions drawn from other verified topics in the same unit.
+// The original source questions remain in their first section; replacement questions
+// are explicitly supplementary and retain an in-range supporting PDF page.
+if (bookId === 'primary3-student-term1' && Number(unitNumber) === 3) {
+  const knownRepairs = new Map([
+    ['where do you buy food?', {
+      question: 'Which famous landmark can visitors see in Giza?',
+      options: ['The Pyramids of Giza', 'A supermarket', 'A train station'],
+      correctAnswer: 'The Pyramids of Giza',
+      reason: 'The Pyramids of Giza are a famous Egyptian landmark.',
+      sourcePdfPage: 50
+    }],
+    ['where do you read books?', {
+      question: 'Which preposition describes a ball below a table?',
+      options: ['under', 'on', 'behind'],
+      correctAnswer: 'under',
+      reason: 'Under describes a position below another object.',
+      sourcePdfPage: 55
+    }],
+    ['where do you play with friends?', {
+      question: 'What is the past simple form of "play"?',
+      options: ['played', 'plays', 'playing'],
+      correctAnswer: 'played',
+      reason: 'Regular verbs usually form the past simple by adding -ed.',
+      sourcePdfPage: 60
+    }]
+  ]);
+  const seenPrompts = new Set();
+  let repairedDuplicatePrompts = 0;
+  for (const section of generated.sections || []) {
+    if (!['vocabulary_questions', 'grammar_questions', 'reading', 'listening', 'comprehensive_test'].includes(section.type)) continue;
+    for (const item of section.items || []) {
+      const c = item.content || {};
+      if (typeof c.question !== 'string') continue;
+      const promptKey = c.question.trim().toLowerCase();
+      if (!promptKey) continue;
+      if (seenPrompts.has(promptKey)) {
+        const repair = knownRepairs.get(promptKey);
+        if (repair) {
+          c.question = repair.question;
+          c.options = [...repair.options];
+          c.correctAnswer = repair.correctAnswer;
+          c.reason = repair.reason;
+          c.origin = 'supplementary';
+          c.sourcePdfPage = repair.sourcePdfPage;
+          seenPrompts.add(repair.question.trim().toLowerCase());
+          repairedDuplicatePrompts++;
+          continue;
+        }
+      }
+      seenPrompts.add(promptKey);
+    }
+  }
+  if (repairedDuplicatePrompts > 0) {
+    console.warn('Replaced ' + repairedDuplicatePrompts + ' repeated Primary 3 Unit 3 source question prompt(s) with distinct supplementary questions.');
+  }
+}
+
 // Source page coverage is deterministic from the verified PDF boundary; do not ask the model to invent it.
 generated.unitTitle = typeof generated.unitTitle === 'string' && generated.unitTitle.trim() ? generated.unitTitle : unit.title;
 generated.sourceCoverage = Array.from({ length: end - start + 1 }, (_, index) => start + index);
