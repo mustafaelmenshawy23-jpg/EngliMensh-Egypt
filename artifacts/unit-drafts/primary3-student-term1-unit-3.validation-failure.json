@@ -2,14 +2,13 @@
   "status": "failed_validation",
   "bookId": "primary3-student-term1",
   "unitNumber": 3,
-  "score": 75,
+  "score": 55,
   "criticalFailures": [
-    "Duplicate question prompt detected: \"Where do you buy food?\""
+    "Duplicate question prompt detected: \"Where do you buy food?\"",
+    "Duplicate question prompt detected: \"Where do you read books?\"",
+    "Duplicate question prompt detected: \"Where do you play with friends?\""
   ],
-  "warnings": [
-    "Speaking item speak_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
-    "Speaking item speak_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
-  ],
+  "warnings": [],
   "report": {
     "unitTitle": "Unit 3: New Adventures",
     "expectedRange": {
@@ -23,16 +22,16 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 28,
+      "totalItems": 30,
       "sourceItems": 1,
-      "supplementaryItems": 27,
-      "vocabularyCount": 4,
+      "supplementaryItems": 29,
+      "vocabularyCount": 5,
       "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 4,
-        "validItems": 4,
+        "itemCount": 5,
+        "validItems": 5,
         "issues": []
       },
       "vocabulary_questions": {
@@ -41,8 +40,8 @@
         "issues": []
       },
       "grammar": {
-        "itemCount": 1,
-        "validItems": 1,
+        "itemCount": 2,
+        "validItems": 2,
         "issues": []
       },
       "grammar_questions": {
@@ -76,6 +75,6 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-18T07:08:52.581Z"
+    "validationTimestamp": "2026-11-18T07:38:45.812Z"
   }
 }

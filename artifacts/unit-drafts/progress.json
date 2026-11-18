@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T07:28:41.276Z",
+  "generatedAt": "2026-11-18T07:38:07.172Z",
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "indexedBooks": 34,
   "indexedUnits": 125,
@@ -29,57 +29,9 @@
   "pendingCandidates": 0,
   "results": [
     {
-      "unitId": "helloplus-prep1-supplement-unit-3",
-      "status": "generated_needs_review",
-      "qualityScore": 90,
-      "itemCount": 31,
-      "sections": {
-        "vocabulary": {
-          "itemCount": 6,
-          "validItems": 6,
-          "issues": []
-        },
-        "vocabulary_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "grammar": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "grammar_questions": {
-          "itemCount": 3,
-          "validItems": 3,
-          "issues": []
-        },
-        "reading": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "listening": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "speaking": {
-          "itemCount": 1,
-          "validItems": 1,
-          "issues": []
-        },
-        "games": {
-          "itemCount": 2,
-          "validItems": 2,
-          "issues": []
-        },
-        "comprehensive_test": {
-          "itemCount": 10,
-          "validItems": 10,
-          "issues": []
-        }
-      }
+      "unitId": "primary3-student-term1-unit-3",
+      "status": "failed_validation",
+      "error": "Generator exited with code 1: Conservatively relabelled 10 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 55/100):\nDuplicate question prompt detected: \"Where do you buy food?\"\nDuplicate question prompt detected: \"Where do you read books?\"\nDuplicate question prompt detected: \"Where do you play with friends?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
     }
   ],
   "blocked": [
@@ -3565,7 +3517,7 @@
     "unverifiableSourceClaims": 0,
     "reclassifiedToSupplementary": 0,
     "citationWarnings": 7,
-    "itemsAudited": 3361,
+    "itemsAudited": 3379,
     "sourceBlockedUnits": 15
   },
   "stateTotals": {
@@ -3647,8 +3599,7 @@
       "bookId": "helloplus-prep1-supplement",
       "totalUnits": 6,
       "statuses": {
-        "complete_draft_needs_review": 5,
-        "generated_needs_review": 1
+        "complete_draft_needs_review": 6
       }
     },
     {
@@ -3751,8 +3702,8 @@
   "sectionCoverage": {
     "vocabulary": {
       "unitsWithItems": 109,
-      "totalItems": 605,
-      "validItems": 605
+      "totalItems": 623,
+      "validItems": 623
     },
     "vocabulary_questions": {
       "unitsWithItems": 109,

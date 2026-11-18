@@ -801,7 +801,7 @@
       }
     },
     "helloplus-prep1-supplement-unit-3": {
-      "status": "generated_needs_review",
+      "status": "complete_draft_needs_review",
       "sourceSignature": "0fd39df163eb866bff466de3454420b30a6a6aaf0c61f1b392f547ff4cb0cd1b",
       "lastAttemptAt": "2026-11-18T07:29:51.362Z",
       "qualityScore": 90,
@@ -2204,11 +2204,11 @@
       "sourceSignature": "5e6f61e73e0c188800e80fe8f1f2d477dc99552231947fc59e2c3087eaa55b8c",
       "lastAttemptAt": "2026-11-18T07:08:31.366Z",
       "qualityScore": 85,
-      "itemCount": 39,
+      "itemCount": 57,
       "sections": {
         "vocabulary": {
-          "itemCount": 9,
-          "validItems": 9,
+          "itemCount": 27,
+          "validItems": 27,
           "issues": []
         },
         "vocabulary_questions": {
@@ -4537,10 +4537,10 @@
     "primary3-student-term1-unit-3": {
       "status": "failed_validation",
       "sourceSignature": "f7ccdf6db278c7d5bb760b4559449f5c83399825578e594639a3b65efb586602",
-      "lastAttemptAt": "2026-11-18T07:08:52.620Z",
-      "retryAfter": "2026-11-18T07:00:00.000Z",
-      "attemptCount": 4,
-      "error": "Generator exited with code 1: Conservatively relabelled 23 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"Where do you buy food?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
+      "lastAttemptAt": "2026-11-18T07:38:45.837Z",
+      "retryAfter": "2026-11-19T07:38:45.837Z",
+      "attemptCount": 5,
+      "error": "Generator exited with code 1: Conservatively relabelled 10 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 55/100):\nDuplicate question prompt detected: \"Where do you buy food?\"\nDuplicate question prompt detected: \"Where do you read books?\"\nDuplicate question prompt detected: \"Where do you play with friends?\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1002:9\n\nNode.js v22.23.4\n"
     },
     "primary4-student-term1-unit-1": {
       "status": "complete_draft_needs_review",
