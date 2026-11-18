@@ -998,6 +998,13 @@ if (bookId === 'primary3-student-term1' && Number(unitNumber) === 3) {
       correctAnswer: 'played',
       reason: 'Regular verbs usually form the past simple by adding -ed.',
       sourcePdfPage: 60
+    }],
+    ['i ____ to school yesterday.', {
+      question: 'Which sentence tells about a completed past action?',
+      options: ['We played after school yesterday.', 'We play after school every day.', 'We are playing now.'],
+      correctAnswer: 'We played after school yesterday.',
+      reason: 'The past simple describes a completed action at a past time such as yesterday.',
+      sourcePdfPage: 60
     }]
   ]);
   const seenPrompts = new Set();
