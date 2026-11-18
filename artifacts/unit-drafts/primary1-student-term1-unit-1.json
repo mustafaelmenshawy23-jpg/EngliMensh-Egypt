@@ -51,16 +51,16 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 39,
+      "totalItems": 57,
       "sourceItems": 0,
-      "supplementaryItems": 39,
-      "vocabularyCount": 9,
+      "supplementaryItems": 57,
+      "vocabularyCount": 27,
       "questionsCount": 18
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 9,
-        "validItems": 9,
+        "itemCount": 27,
+        "validItems": 27,
         "issues": []
       },
       "vocabulary_questions": {
@@ -104,7 +104,7 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-18T07:08:31.326Z"
+    "validationTimestamp": "2026-11-18T07:36:00.000Z"
   },
   "reviewStatus": "needs_review",
   "reviewedBy": null,
@@ -114,6 +114,36 @@
       "type": "vocabulary",
       "title": "Unit Vocabulary",
       "items": [
+        {
+          "itemId": "p1u1-v-added-welcome",
+          "content": {
+            "word": "welcome",
+            "arabicMeaning": "مرحبًا / أهلًا",
+            "example": "Welcome to my school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-school",
+          "content": {
+            "word": "school",
+            "arabicMeaning": "مدرسة",
+            "example": "This is my school.",
+            "origin": "supplementary",
+            "sourcePdfPage": 7,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
         {
           "itemId": "voc-1",
           "content": {
@@ -132,6 +162,36 @@
           "reviewStatus": "needs_review"
         },
         {
+          "itemId": "p1u1-v-added-name",
+          "content": {
+            "word": "name",
+            "arabicMeaning": "اسم",
+            "example": "What is your name?",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-i-am",
+          "content": {
+            "word": "I am",
+            "arabicMeaning": "أنا ...",
+            "example": "I am Maya.",
+            "origin": "supplementary",
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
           "itemId": "voc-2",
           "content": {
             "word": "goodbye",
@@ -147,6 +207,21 @@
           },
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
           "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "p1u1-v-added-wave",
+          "content": {
+            "word": "wave",
+            "arabicMeaning": "يلوّح",
+            "example": "Wave to your friend.",
+            "origin": "supplementary",
+            "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
         },
         {
           "itemId": "voc-3",
@@ -168,19 +243,79 @@
         {
           "itemId": "voc-4",
           "content": {
-            "word": "friends",
-            "arabicMeaning": "أصدقاء",
-            "example": "We are friends now!",
+            "word": "friend",
+            "arabicMeaning": "صديق / صديقة",
+            "example": "My friend is in my class.",
             "origin": "supplementary",
-            "sourcePdfPage": 9,
+            "sourcePdfPage": 13,
             "fieldOrigins": {
               "word": "source",
               "arabicMeaning": "supplementary",
-              "example": "source"
+              "example": "supplementary"
             }
           },
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
           "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "p1u1-v-added-tiger",
+          "content": {
+            "word": "tiger",
+            "arabicMeaning": "نمر",
+            "example": "A tiger is a wild animal.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-tomato",
+          "content": {
+            "word": "tomato",
+            "arabicMeaning": "طماطم",
+            "example": "I see a red tomato.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-table",
+          "content": {
+            "word": "table",
+            "arabicMeaning": "طاولة",
+            "example": "The book is on the table.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-tree",
+          "content": {
+            "word": "tree",
+            "arabicMeaning": "شجرة",
+            "example": "The tree is green.",
+            "origin": "supplementary",
+            "sourcePdfPage": 15,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
         },
         {
           "itemId": "voc-5",
@@ -200,11 +335,11 @@
           "reviewStatus": "needs_review"
         },
         {
-          "itemId": "voc-6",
+          "itemId": "p1u1-v-added-chair",
           "content": {
-            "word": "pencil",
-            "arabicMeaning": "قلم رصاص",
-            "example": "I write with my yellow pencil.",
+            "word": "chair",
+            "arabicMeaning": "كرسي",
+            "example": "Sit on the chair.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -212,9 +347,7 @@
               "arabicMeaning": "supplementary",
               "example": "supplementary"
             }
-          },
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
-          "reviewStatus": "needs_review"
+          }
         },
         {
           "itemId": "voc-7",
@@ -232,6 +365,68 @@
           },
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
           "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "p1u1-v-added-desk",
+          "content": {
+            "word": "desk",
+            "arabicMeaning": "مكتب / تختة",
+            "example": "My book is on the desk.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "voc-6",
+          "content": {
+            "word": "pencil",
+            "arabicMeaning": "قلم رصاص",
+            "example": "I write with my yellow pencil.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "p1u1-v-added-board",
+          "content": {
+            "word": "board",
+            "arabicMeaning": "سبورة",
+            "example": "Look at the board.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-book",
+          "content": {
+            "word": "book",
+            "arabicMeaning": "كتاب",
+            "example": "Open your book.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
         },
         {
           "itemId": "voc-8",
@@ -266,6 +461,81 @@
           },
           "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
           "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "p1u1-v-added-open",
+          "content": {
+            "word": "open",
+            "arabicMeaning": "يفتح / افتح",
+            "example": "Open your book, please.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-close",
+          "content": {
+            "word": "close",
+            "arabicMeaning": "يغلق / أغلق",
+            "example": "Close your book, please.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-in",
+          "content": {
+            "word": "in",
+            "arabicMeaning": "في / داخل",
+            "example": "I am in class.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-ink",
+          "content": {
+            "word": "ink",
+            "arabicMeaning": "حبر",
+            "example": "I use ink to write.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
+        },
+        {
+          "itemId": "p1u1-v-added-insect",
+          "content": {
+            "word": "insect",
+            "arabicMeaning": "حشرة",
+            "example": "An insect is small.",
+            "origin": "supplementary",
+            "sourcePdfPage": 22,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          }
         }
       ]
     },
@@ -1115,13 +1385,13 @@
   ],
   "provenanceAudit": {
     "policyVersion": 1,
-    "auditedAt": "2026-11-18T07:28:37.945Z",
-    "itemsAudited": 39,
+    "auditedAt": "2026-11-18T07:36:00.000Z",
+    "itemsAudited": 57,
     "sourceClaims": 0,
     "verifiedSourceClaims": 0,
     "unverifiableSourceClaims": 0,
     "citationWarnings": 0,
-    "itemsWithSourceSubfields": 28,
+    "itemsWithSourceSubfields": 46,
     "reclassifiedToSupplementary": 0
   }
 }
