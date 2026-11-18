@@ -2,9 +2,9 @@
   "repository": "mustafaelmenshawy23-jpg/EngliMensh-Egypt",
   "nextCursorIndex": 73,
   "chainDepth": 0,
-  "pendingCandidates": 7,
+  "pendingCandidates": 1,
   "batchSize": 10,
   "model": "gemini-3.8-flash",
-  "generatedAt": "2026-11-18T07:23:21.000Z",
-  "reason": "Resume the saved all-books queue and retry only candidates whose retryAfter has elapsed; keep source-review and approval gates unchanged."
+  "generatedAt": "2026-11-18T07:44:00.000Z",
+  "reason": "Retry the only remaining failed unit after targeted duplicate-question repair; preserve source-review blockers and draft approval gates."
 }
