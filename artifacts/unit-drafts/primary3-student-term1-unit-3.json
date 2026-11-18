@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-18T07:47:33.383Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.1-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "primary3-student-term1",
+  "sourceFilename": "English_language_prim3_t1 (1).pdf",
+  "grade": "Primary 3",
+  "unitNumber": 3,
+  "unitTitle": "Unit 3: New Adventures",
+  "sourcePdfRange": {
+    "start": 43,
+    "end": 70
+  },
+  "sourceCoverage": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70
+  ],
+  "sourceFingerprint": "f7ccdf6db278c7d5bb760b4559449f5c83399825578e594639a3b65efb586602",
+  "qualityScore": 85,
+  "qualityReport": {
+    "unitTitle": "Unit 3: New Adventures",
+    "expectedRange": {
+      "start": 43,
+      "end": 70,
+      "totalPages": 28
+    },
+    "recordedCoverage": {
+      "totalPages": 28,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 27,
+      "sourceItems": 1,
+      "supplementaryItems": 26,
+      "vocabularyCount": 3,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-18T07:47:33.382Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Unit Vocabulary",
+      "items": [
+        {
+          "itemId": "voc_001",
+          "content": {
+            "word": "supermarket",
+            "arabicMeaning": "سوبر ماركت",
+            "example": "I buy food at the supermarket.",
+            "origin": "supplementary",
+            "sourcePdfPage": 44,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_002",
+          "content": {
+            "word": "library",
+            "arabicMeaning": "مكتبة",
+            "example": "I read books at the library.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_003",
+          "content": {
+            "word": "museum",
+            "arabicMeaning": "متحف",
+            "example": "We visited the museum yesterday.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Practice",
+      "items": [
+        {
+          "itemId": "voc_q001",
+          "content": {
+            "question": "Where do you go to read books?",
+            "options": [
+              "library",
+              "park",
+              "museum"
+            ],
+            "correctAnswer": "library",
+            "reason": "The library is the place where people go to read and borrow books.",
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q002",
+          "content": {
+            "question": "Where do you buy food?",
+            "options": [
+              "supermarket",
+              "library",
+              "train station"
+            ],
+            "correctAnswer": "supermarket",
+            "reason": "A supermarket is a store where you buy groceries and food.",
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc_q003",
+          "content": {
+            "question": "Where do you see old things and statues?",
+            "options": [
+              "museum",
+              "park",
+              "library"
+            ],
+            "correctAnswer": "museum",
+            "reason": "A museum is a place where historical objects and art are kept.",
+            "origin": "supplementary",
+            "sourcePdfPage": 45,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Past Simple Tense",
+      "items": [
+        {
+          "itemId": "gram_001",
+          "content": {
+            "rule": "Past Simple Tense",
+            "explanation": "For most verbs, we add -ed to the end of the verb to show it happened in the past. For verbs ending in -e, we add -d.",
+            "example": "I played in the park yesterday.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "rule": "source",
+              "explanation": "supplementary",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Practice",
+      "items": [
+        {
+          "itemId": "gram_q001",
+          "content": {
+            "question": "Yesterday, I ____ to school.",
+            "options": [
+              "walk",
+              "walked",
+              "walking"
+            ],
+            "correctAnswer": "walked",
+            "reason": "We use the past tense form 'walked' for actions that happened yesterday.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q002",
+          "content": {
+            "question": "My grandma ____ a cake yesterday.",
+            "options": [
+              "bakes",
+              "baked",
+              "baking"
+            ],
+            "correctAnswer": "baked",
+            "reason": "The verb must be in the past tense because of the word 'yesterday'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram_q003",
+          "content": {
+            "question": "We ____ our hands before eating.",
+            "options": [
+              "cleaned",
+              "clean",
+              "cleaning"
+            ],
+            "correctAnswer": "cleaned",
+            "reason": "The past tense of clean is cleaned.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading Passage",
+      "items": [
+        {
+          "itemId": "read_001",
+          "content": {
+            "passage": "Youssef left his house early in the morning. First, he went to the library to read a book. Then, he and his mom went shopping at the supermarket. They passed the train station and saw a big train. After lunch, they visited the museum. In the afternoon, they played at the park. What a fun and busy day!",
+            "origin": "source",
+            "sourcePdfPage": 47,
+            "fieldOrigins": {
+              "passage": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_q001",
+          "content": {
+            "question": "Where did Youssef go first?",
+            "options": [
+              "park",
+              "library",
+              "museum"
+            ],
+            "correctAnswer": "library",
+            "reason": "The text states that first, he went to the library.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening Activity",
+      "items": [
+        {
+          "itemId": "list_001",
+          "content": {
+            "script": "Teacher: Hello class. Today we are going to talk about our trip. Student: Where did we go? Teacher: We went to the zoo by bus. Student: Did we see lions? Teacher: Yes, we saw lions, monkeys, and elephants.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list_q001",
+          "content": {
+            "question": "How did the students go to the zoo?",
+            "options": [
+              "by car",
+              "by train",
+              "by bus"
+            ],
+            "correctAnswer": "by bus",
+            "reason": "The script mentions they went to the zoo by bus.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking Dialogue",
+      "items": [
+        {
+          "itemId": "speak_001",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Person A",
+                "text": "How do you feel?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Person B",
+                "text": "I feel so happy!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Person A",
+                "text": "How do you feel when you play with your friends?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Person B",
+                "text": "I feel happy.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "supplementary",
+            "sourcePdfPage": 69,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "supplementary",
+                "source",
+                "supplementary"
+              ]
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Interactive Games",
+      "items": [
+        {
+          "itemId": "game_001",
+          "content": {
+            "gameName": "Preposition Match",
+            "description": "Choose the correct preposition to describe where the ball is.",
+            "skill": "grammar",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Where is the ball if it is under the table?",
+            "options": [
+              "on the table",
+              "under the table",
+              "behind the table"
+            ],
+            "correctAnswer": "under the table",
+            "reason": "The question asks for the position under.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_002",
+          "content": {
+            "gameName": "Phonics Fun",
+            "description": "Identify the word with a double consonant.",
+            "skill": "vocabulary",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "Which word ends with a double consonant?",
+            "options": [
+              "duck",
+              "bell",
+              "cat"
+            ],
+            "correctAnswer": "bell",
+            "reason": "Bell ends with 'll' which is a double consonant.",
+            "origin": "supplementary",
+            "sourcePdfPage": 49,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_001",
+          "content": {
+            "question": "Which famous landmark can visitors see in Giza?",
+            "options": [
+              "The Pyramids of Giza",
+              "A supermarket",
+              "A train station"
+            ],
+            "correctAnswer": "The Pyramids of Giza",
+            "reason": "The Pyramids of Giza are a famous Egyptian landmark.",
+            "origin": "supplementary",
+            "sourcePdfPage": 50,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_002",
+          "content": {
+            "question": "Yesterday, I ____ to the park.",
+            "options": [
+              "go",
+              "went",
+              "going"
+            ],
+            "correctAnswer": "went",
+            "reason": "Went is the past tense of go.",
+            "origin": "supplementary",
+            "sourcePdfPage": 60,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_003",
+          "content": {
+            "question": "The cat is ____ the box.",
+            "options": [
+              "on",
+              "in",
+              "under"
+            ],
+            "correctAnswer": "in",
+            "reason": "In is a preposition of place.",
+            "origin": "supplementary",
+            "sourcePdfPage": 55,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_004",
+          "content": {
+            "question": "Where did Youssef go first?",
+            "options": [
+              "library",
+              "park",
+              "museum"
+            ],
+            "correctAnswer": "library",
+            "reason": "The text confirms he went to the library first.",
+            "origin": "supplementary",
+            "sourcePdfPage": 48,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_005",
+          "content": {
+            "question": "How did the students go to the zoo?",
+            "options": [
+              "bus",
+              "car",
+              "train"
+            ],
+            "correctAnswer": "bus",
+            "reason": "The text states they went by bus.",
+            "origin": "supplementary",
+            "sourcePdfPage": 58,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_006",
+          "content": {
+            "question": "My mom ____ a cake yesterday.",
+            "options": [
+              "baked",
+              "bake",
+              "baking"
+            ],
+            "correctAnswer": "baked",
+            "reason": "Baked is the past tense form.",
+            "origin": "supplementary",
+            "sourcePdfPage": 61,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_007",
+          "content": {
+            "question": "Which word has the /k/ sound?",
+            "options": [
+              "duck",
+              "pen",
+              "dog"
+            ],
+            "correctAnswer": "duck",
+            "reason": "Duck contains the /k/ sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 53,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_008",
+          "content": {
+            "question": "Where do you read books?",
+            "options": [
+              "library",
+              "museum",
+              "park"
+            ],
+            "correctAnswer": "library",
+            "reason": "Libraries are for reading books.",
+            "origin": "supplementary",
+            "sourcePdfPage": 46,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_009",
+          "content": {
+            "question": "We ____ football after school yesterday.",
+            "options": [
+              "played",
+              "play",
+              "playing"
+            ],
+            "correctAnswer": "played",
+            "reason": "Played is the past tense.",
+            "origin": "supplementary",
+            "sourcePdfPage": 63,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_010",
+          "content": {
+            "question": "The book is ____ the table.",
+            "options": [
+              "on",
+              "in",
+              "under"
+            ],
+            "correctAnswer": "on",
+            "reason": "On is a preposition of place.",
+            "origin": "supplementary",
+            "sourcePdfPage": 65,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-18T07:47:33.400Z",
+    "itemsAudited": 27,
+    "sourceClaims": 1,
+    "verifiedSourceClaims": 1,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 24,
+    "reclassifiedToSupplementary": 0
+  }
+}

@@ -4535,12 +4535,58 @@
       }
     },
     "primary3-student-term1-unit-3": {
-      "status": "failed_validation",
+      "status": "generated_needs_review",
       "sourceSignature": "f7ccdf6db278c7d5bb760b4559449f5c83399825578e594639a3b65efb586602",
-      "lastAttemptAt": "2026-11-18T07:44:48.269Z",
-      "retryAfter": "2026-11-18T07:00:00.000Z",
-      "attemptCount": 6,
-      "error": "Generator exited with code 1: Replaced 3 repeated Primary 3 Unit 3 source question prompt(s) with distinct supplementary questions.\nConservatively relabelled 10 unverifiable source-origin item(s) as supplementary.\nfile:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1061\n  throw new Error(`Generated draft failed quality validation (score: ${qualityAudit.score}/100):\\n` + qualityAudit.criticalFailures.join('\\n'));\n        ^\n\nError: Generated draft failed quality validation (score: 75/100):\nDuplicate question prompt detected: \"I ____ to school yesterday.\"\n    at file:///home/runner/work/EngliMensh-Egypt/EngliMensh-Egypt/scripts/generate-interactive-unit.mjs:1061:9\n\nNode.js v22.23.4\n"
+      "lastAttemptAt": "2026-11-18T07:47:33.402Z",
+      "qualityScore": 85,
+      "itemCount": 27,
+      "sections": {
+        "vocabulary": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "vocabulary_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "grammar": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "grammar_questions": {
+          "itemCount": 3,
+          "validItems": 3,
+          "issues": []
+        },
+        "reading": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "listening": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "speaking": {
+          "itemCount": 1,
+          "validItems": 1,
+          "issues": []
+        },
+        "games": {
+          "itemCount": 2,
+          "validItems": 2,
+          "issues": []
+        },
+        "comprehensive_test": {
+          "itemCount": 10,
+          "validItems": 10,
+          "issues": []
+        }
+      }
     },
     "primary4-student-term1-unit-1": {
       "status": "complete_draft_needs_review",
