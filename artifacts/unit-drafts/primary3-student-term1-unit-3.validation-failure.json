@@ -4,11 +4,11 @@
   "unitNumber": 3,
   "score": 75,
   "criticalFailures": [
-    "Duplicate question prompt detected: \"Where do you go to read books?\""
+    "Duplicate question prompt detected: \"Where do you buy food?\""
   ],
   "warnings": [
-    "Speaking item u3_spk_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
-    "Speaking item u3_spk_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
+    "Speaking item speak_1 turn 1 gender is unknown; no gender-matched TTS voice can be assumed",
+    "Speaking item speak_1 turn 2 gender is unknown; no gender-matched TTS voice can be assumed"
   ],
   "report": {
     "unitTitle": "Unit 3: New Adventures",
@@ -23,16 +23,16 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 32,
-      "sourceItems": 2,
-      "supplementaryItems": 30,
-      "vocabularyCount": 5,
+      "totalItems": 28,
+      "sourceItems": 1,
+      "supplementaryItems": 27,
+      "vocabularyCount": 4,
       "questionsCount": 16
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 5,
-        "validItems": 5,
+        "itemCount": 4,
+        "validItems": 4,
         "issues": []
       },
       "vocabulary_questions": {
@@ -41,8 +41,8 @@
         "issues": []
       },
       "grammar": {
-        "itemCount": 2,
-        "validItems": 2,
+        "itemCount": 1,
+        "validItems": 1,
         "issues": []
       },
       "grammar_questions": {
@@ -51,13 +51,13 @@
         "issues": []
       },
       "reading": {
-        "itemCount": 3,
-        "validItems": 3,
+        "itemCount": 2,
+        "validItems": 2,
         "issues": []
       },
       "listening": {
-        "itemCount": 3,
-        "validItems": 3,
+        "itemCount": 2,
+        "validItems": 2,
         "issues": []
       },
       "speaking": {
@@ -76,6 +76,6 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-16T06:34:09.210Z"
+    "validationTimestamp": "2026-11-18T07:08:52.581Z"
   }
 }

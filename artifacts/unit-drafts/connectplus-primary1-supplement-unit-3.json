@@ -1,0 +1,898 @@
+{
+  "schemaVersion": 1,
+  "datasetStatus": "draft",
+  "generatedAt": "2026-11-18T07:08:43.196Z",
+  "generator": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "reviewStatus": "needs_review"
+  },
+  "bookId": "connectplus-primary1-supplement",
+  "sourceFilename": "المعاصر_كونكت_بلس_1_ابتدائي_ترم_1_ذاكرولي1.pdf",
+  "grade": "Primary 1",
+  "unitNumber": 3,
+  "unitTitle": "Unit 3: In my community",
+  "sourcePdfRange": {
+    "start": 70,
+    "end": 108
+  },
+  "sourceCoverage": [
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ],
+  "sourceFingerprint": "df2c11ba8abadd13e5901eb28e1a63e6ae47a7b2f294e4395c4dc439ac19886b",
+  "qualityScore": 90,
+  "qualityReport": {
+    "unitTitle": "Unit 3: In my community",
+    "expectedRange": {
+      "start": 70,
+      "end": 108,
+      "totalPages": 39
+    },
+    "recordedCoverage": {
+      "totalPages": 39,
+      "isComplete": true,
+      "missingPages": []
+    },
+    "itemTotals": {
+      "totalItems": 26,
+      "sourceItems": 3,
+      "supplementaryItems": 23,
+      "vocabularyCount": 2,
+      "questionsCount": 16
+    },
+    "sections": {
+      "vocabulary": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "vocabulary_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "grammar": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "grammar_questions": {
+        "itemCount": 3,
+        "validItems": 3,
+        "issues": []
+      },
+      "reading": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "listening": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "speaking": {
+        "itemCount": 1,
+        "validItems": 1,
+        "issues": []
+      },
+      "games": {
+        "itemCount": 2,
+        "validItems": 2,
+        "issues": []
+      },
+      "comprehensive_test": {
+        "itemCount": 10,
+        "validItems": 10,
+        "issues": []
+      }
+    },
+    "validationTimestamp": "2026-11-18T07:08:43.196Z"
+  },
+  "reviewStatus": "needs_review",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "title": "Vocabulary",
+      "items": [
+        {
+          "itemId": "vocab_1",
+          "content": {
+            "word": "lunch",
+            "arabicMeaning": "وجبة الغداء",
+            "example": "I eat my lunch with my friends.",
+            "origin": "supplementary",
+            "sourcePdfPage": 72,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vocab_2",
+          "content": {
+            "word": "bakery",
+            "arabicMeaning": "مخبز",
+            "example": "We buy bread at the bakery.",
+            "origin": "source",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "word": "source",
+              "arabicMeaning": "source",
+              "example": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "vocabulary_questions",
+      "title": "Vocabulary Questions",
+      "items": [
+        {
+          "itemId": "vq_1",
+          "content": {
+            "question": "Where do we buy bread?",
+            "options": [
+              "bakery",
+              "butcher's",
+              "market",
+              "school"
+            ],
+            "correctAnswer": "bakery",
+            "reason": "We buy bread at the bakery.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq_2",
+          "content": {
+            "question": "Where do we play games at school?",
+            "options": [
+              "classroom",
+              "playground",
+              "bakery",
+              "market"
+            ],
+            "correctAnswer": "playground",
+            "reason": "We play games in the playground.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "vq_3",
+          "content": {
+            "question": "What do we buy at the butcher's?",
+            "options": [
+              "fruit",
+              "meat",
+              "bread",
+              "milk"
+            ],
+            "correctAnswer": "meat",
+            "reason": "We buy meat at the butcher's.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar",
+      "items": [
+        {
+          "itemId": "gram_1",
+          "content": {
+            "rule": "Imperative sentences and prepositions of place",
+            "explanation": "Use the base form of the verb for affirmative imperatives, and 'Don't + infinitive' for negative imperatives. Use 'at' before names of places.",
+            "example": "Listen to your teacher.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "grammar_questions",
+      "title": "Grammar Questions",
+      "items": [
+        {
+          "itemId": "gq_1",
+          "content": {
+            "question": "Don't _____ trash in the classroom.",
+            "options": [
+              "throw",
+              "throwing",
+              "throws",
+              "threw"
+            ],
+            "correctAnswer": "throw",
+            "reason": "Negative imperatives use Don't + base verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq_2",
+          "content": {
+            "question": "We use the preposition _____ before names of places.",
+            "options": [
+              "in",
+              "at",
+              "on",
+              "to"
+            ],
+            "correctAnswer": "at",
+            "reason": "We use 'at' before places like the market.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gq_3",
+          "content": {
+            "question": "_____ the school rules.",
+            "options": [
+              "Follow",
+              "Follows",
+              "Following",
+              "Followed"
+            ],
+            "correctAnswer": "Follow",
+            "reason": "Affirmative imperatives start with the base form of the verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "title": "Reading",
+      "items": [
+        {
+          "itemId": "read_1",
+          "content": {
+            "passage": "My town is big. I love my town. I go to the market to buy fruit. I buy bread at the bakery. I buy meat at the butcher's.",
+            "origin": "source",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "passage": "source"
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        },
+        {
+          "itemId": "read_2",
+          "content": {
+            "question": "Where do we go to buy fruit?",
+            "options": [
+              "market",
+              "bakery",
+              "butcher's",
+              "school"
+            ],
+            "correctAnswer": "market",
+            "reason": "The text states we go to the market to buy fruit.",
+            "origin": "supplementary",
+            "sourcePdfPage": 81,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "listening",
+      "title": "Listening",
+      "items": [
+        {
+          "itemId": "list_1",
+          "content": {
+            "script": "What do you do at the park? We play on the swings. Then we play on the slide.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "script": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list_2",
+          "content": {
+            "question": "Where do they play on the swings?",
+            "options": [
+              "at the park",
+              "at school",
+              "at home",
+              "at the bakery"
+            ],
+            "correctAnswer": "at the park",
+            "reason": "They play on the swings at the park.",
+            "origin": "supplementary",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "speaking",
+      "title": "Speaking",
+      "items": [
+        {
+          "itemId": "speak_1",
+          "content": {
+            "dialogue": [
+              {
+                "speaker": "Child 1",
+                "text": "What do you do at the park?",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Child 2",
+                "text": "We play on the swings.",
+                "speakerGender": "unknown"
+              }
+            ],
+            "origin": "source",
+            "sourcePdfPage": 83,
+            "fieldOrigins": {
+              "dialogue": [
+                "source",
+                "source"
+              ]
+            }
+          },
+          "reviewStatus": "needs_review",
+          "notes": "Transcribed from the source book; teacher verification required."
+        }
+      ]
+    },
+    {
+      "type": "games",
+      "title": "Games",
+      "items": [
+        {
+          "itemId": "game_1",
+          "content": {
+            "gameName": "Vocab Match",
+            "description": "Choose the correct place for buying items.",
+            "skill": "vocabulary",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Where do we buy meat?",
+            "options": [
+              "butcher's",
+              "bakery",
+              "market",
+              "school"
+            ],
+            "correctAnswer": "butcher's",
+            "reason": "We buy meat at the butcher's.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game_2",
+          "content": {
+            "gameName": "Grammar Star",
+            "description": "Choose the correct imperative verb.",
+            "skill": "grammar",
+            "difficulty": "medium",
+            "gameMode": "multiple_choice",
+            "question": "_____ to your teacher.",
+            "options": [
+              "Listen",
+              "Listens",
+              "Listening",
+              "Listened"
+            ],
+            "correctAnswer": "Listen",
+            "reason": "Affirmative imperative uses the base verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    },
+    {
+      "type": "comprehensive_test",
+      "title": "Comprehensive Test",
+      "items": [
+        {
+          "itemId": "test_1",
+          "content": {
+            "question": "It's a _____.",
+            "options": [
+              "ruler",
+              "meat",
+              "bread",
+              "fruit"
+            ],
+            "correctAnswer": "ruler",
+            "reason": "A ruler is a classroom object.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_2",
+          "content": {
+            "question": "We buy bread at the _____.",
+            "options": [
+              "bakery",
+              "butcher's",
+              "market",
+              "park"
+            ],
+            "correctAnswer": "bakery",
+            "reason": "Bread is bought at the bakery.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_3",
+          "content": {
+            "question": "Don't _____ in the classroom.",
+            "options": [
+              "sleep",
+              "sleeping",
+              "sleeps",
+              "slept"
+            ],
+            "correctAnswer": "sleep",
+            "reason": "Negative imperative uses Don't + base verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 75,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_4",
+          "content": {
+            "question": "I play on the _____ with my friends.",
+            "options": [
+              "swing",
+              "meat",
+              "bread",
+              "teacher"
+            ],
+            "correctAnswer": "swing",
+            "reason": "We play on the swing at the park.",
+            "origin": "supplementary",
+            "sourcePdfPage": 82,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_5",
+          "content": {
+            "question": "What's this? - It's a _____.",
+            "options": [
+              "pencil",
+              "bakery",
+              "market",
+              "park"
+            ],
+            "correctAnswer": "pencil",
+            "reason": "A pencil is a school item.",
+            "origin": "supplementary",
+            "sourcePdfPage": 70,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_6",
+          "content": {
+            "question": "We play games in the _____.",
+            "options": [
+              "playground",
+              "bakery",
+              "butcher's",
+              "market"
+            ],
+            "correctAnswer": "playground",
+            "reason": "We play games in the playground.",
+            "origin": "supplementary",
+            "sourcePdfPage": 76,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_7",
+          "content": {
+            "question": "_____ at the whiteboard.",
+            "options": [
+              "Look",
+              "Looks",
+              "Looking",
+              "Looked"
+            ],
+            "correctAnswer": "Look",
+            "reason": "Imperative starts with the base verb.",
+            "origin": "supplementary",
+            "sourcePdfPage": 74,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_8",
+          "content": {
+            "question": "I buy fruit at the _____.",
+            "options": [
+              "market",
+              "butcher's",
+              "bakery",
+              "school"
+            ],
+            "correctAnswer": "market",
+            "reason": "We buy fruit at the market.",
+            "origin": "supplementary",
+            "sourcePdfPage": 78,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_9",
+          "content": {
+            "question": "We listen to our _____.",
+            "options": [
+              "coach",
+              "meat",
+              "bread",
+              "fruit"
+            ],
+            "correctAnswer": "coach",
+            "reason": "We listen to our coach during team games.",
+            "origin": "supplementary",
+            "sourcePdfPage": 89,
+            "fieldOrigins": {
+              "question": "source",
+              "options": [
+                "source",
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test_10",
+          "content": {
+            "question": "Some children have lessons on _____ in Bangladesh.",
+            "options": [
+              "boats",
+              "forests",
+              "homes",
+              "schools"
+            ],
+            "correctAnswer": "boats",
+            "reason": "In Bangladesh, children have lessons on boats.",
+            "origin": "supplementary",
+            "sourcePdfPage": 93,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        }
+      ]
+    }
+  ],
+  "provenanceAudit": {
+    "policyVersion": 1,
+    "auditedAt": "2026-11-18T07:08:43.232Z",
+    "itemsAudited": 26,
+    "sourceClaims": 3,
+    "verifiedSourceClaims": 3,
+    "unverifiableSourceClaims": 0,
+    "citationWarnings": 0,
+    "itemsWithSourceSubfields": 23,
+    "reclassifiedToSupplementary": 0
+  }
+}

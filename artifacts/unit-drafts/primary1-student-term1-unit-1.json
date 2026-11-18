@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "datasetStatus": "draft",
-  "generatedAt": "2026-11-17T06:41:32.633Z",
+  "generatedAt": "2026-11-18T07:08:31.327Z",
   "generator": {
     "provider": "Google Gemini API",
-    "model": "gemini-3.5-flash",
+    "model": "gemini-3.8-flash",
     "reviewStatus": "needs_review"
   },
   "bookId": "primary1-student-term1",
@@ -51,41 +51,41 @@
       "missingPages": []
     },
     "itemTotals": {
-      "totalItems": 52,
+      "totalItems": 39,
       "sourceItems": 0,
-      "supplementaryItems": 52,
-      "vocabularyCount": 27,
-      "questionsCount": 16
+      "supplementaryItems": 39,
+      "vocabularyCount": 9,
+      "questionsCount": 18
     },
     "sections": {
       "vocabulary": {
-        "itemCount": 27,
-        "validItems": 27,
+        "itemCount": 9,
+        "validItems": 9,
         "issues": []
       },
       "vocabulary_questions": {
-        "itemCount": 3,
-        "validItems": 3,
+        "itemCount": 4,
+        "validItems": 4,
         "issues": []
       },
       "grammar": {
-        "itemCount": 1,
-        "validItems": 1,
+        "itemCount": 2,
+        "validItems": 2,
         "issues": []
       },
       "grammar_questions": {
+        "itemCount": 4,
+        "validItems": 4,
+        "issues": []
+      },
+      "reading": {
         "itemCount": 3,
         "validItems": 3,
         "issues": []
       },
-      "reading": {
-        "itemCount": 2,
-        "validItems": 2,
-        "issues": []
-      },
       "listening": {
-        "itemCount": 2,
-        "validItems": 2,
+        "itemCount": 3,
+        "validItems": 3,
         "issues": []
       },
       "speaking": {
@@ -104,7 +104,7 @@
         "issues": []
       }
     },
-    "validationTimestamp": "2026-11-15T07:04:50.834Z"
+    "validationTimestamp": "2026-11-18T07:08:31.326Z"
   },
   "reviewStatus": "needs_review",
   "reviewedBy": null,
@@ -112,48 +112,14 @@
   "sections": [
     {
       "type": "vocabulary",
-      "title": "Vocabulary List",
+      "title": "Unit Vocabulary",
       "items": [
         {
-          "itemId": "vocab_1",
-          "content": {
-            "word": "welcome",
-            "arabicMeaning": "مرحبًا / أهلًا",
-            "example": "Welcome to my school.",
-            "origin": "supplementary",
-            "sourcePdfPage": 7,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_2",
-          "content": {
-            "word": "school",
-            "arabicMeaning": "مدرسة",
-            "example": "I go to school.",
-            "origin": "supplementary",
-            "sourcePdfPage": 7,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_3",
+          "itemId": "voc-1",
           "content": {
             "word": "hello",
-            "arabicMeaning": "مرحبًا",
-            "example": "Hello, Maya!",
+            "arabicMeaning": "مرحباً",
+            "example": "Hello! My name is Maya.",
             "origin": "supplementary",
             "sourcePdfPage": 8,
             "fieldOrigins": {
@@ -162,185 +128,66 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_4",
+          "itemId": "voc-2",
           "content": {
-            "word": "name",
-            "arabicMeaning": "اسم",
-            "example": "What's your name?",
+            "word": "goodbye",
+            "arabicMeaning": "مع السلامة",
+            "example": "Goodbye, see you tomorrow!",
             "origin": "supplementary",
             "sourcePdfPage": 8,
             "fieldOrigins": {
               "word": "source",
               "arabicMeaning": "supplementary",
-              "example": "source"
+              "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_5",
+          "itemId": "voc-3",
           "content": {
-            "word": "I am",
-            "arabicMeaning": "أنا...",
-            "example": "Hello, I am Sara.",
+            "word": "shake hands",
+            "arabicMeaning": "يصافح باليد",
+            "example": "We shake hands when we meet friends.",
             "origin": "supplementary",
             "sourcePdfPage": 9,
             "fieldOrigins": {
-              "word": "supplementary",
+              "word": "source",
               "arabicMeaning": "supplementary",
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_6",
+          "itemId": "voc-4",
           "content": {
-            "word": "goodbye",
-            "arabicMeaning": "إلى اللقاء",
-            "example": "Goodbye, Hana!",
+            "word": "friends",
+            "arabicMeaning": "أصدقاء",
+            "example": "We are friends now!",
             "origin": "supplementary",
-            "sourcePdfPage": 11,
+            "sourcePdfPage": 9,
             "fieldOrigins": {
               "word": "source",
               "arabicMeaning": "supplementary",
               "example": "source"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_7",
-          "content": {
-            "word": "wave",
-            "arabicMeaning": "يلوّح بيده",
-            "example": "Wave to your friend.",
-            "origin": "supplementary",
-            "sourcePdfPage": 12,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_1",
-          "content": {
-            "word": "shake hands",
-            "arabicMeaning": "يتصافح",
-            "example": "We shake hands when we meet.",
-            "origin": "supplementary",
-            "sourcePdfPage": 12,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_2",
-          "content": {
-            "word": "friend",
-            "arabicMeaning": "صديق",
-            "example": "A friend says hello.",
-            "origin": "supplementary",
-            "sourcePdfPage": 13,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_10",
-          "content": {
-            "word": "tiger",
-            "arabicMeaning": "نمر",
-            "example": "A tiger is an animal.",
-            "origin": "supplementary",
-            "sourcePdfPage": 15,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_11",
-          "content": {
-            "word": "tomato",
-            "arabicMeaning": "طماطم",
-            "example": "The tomato is red.",
-            "origin": "supplementary",
-            "sourcePdfPage": 15,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_12",
-          "content": {
-            "word": "table",
-            "arabicMeaning": "طاولة",
-            "example": "The book is on the table.",
-            "origin": "supplementary",
-            "sourcePdfPage": 15,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_13",
-          "content": {
-            "word": "tree",
-            "arabicMeaning": "شجرة",
-            "example": "A bird is in the tree.",
-            "origin": "supplementary",
-            "sourcePdfPage": 15,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_3",
+          "itemId": "voc-5",
           "content": {
             "word": "teacher",
-            "arabicMeaning": "معلّم / معلّمة",
-            "example": "My teacher is kind.",
+            "arabicMeaning": "معلم / معلمة",
+            "example": "The teacher is in the classroom.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -349,66 +196,15 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_4",
-          "content": {
-            "word": "chair",
-            "arabicMeaning": "كرسي",
-            "example": "I sit on a chair.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_7",
-          "content": {
-            "word": "bag",
-            "arabicMeaning": "حقيبة",
-            "example": "My book is in my bag.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_6",
-          "content": {
-            "word": "desk",
-            "arabicMeaning": "مقعد / مكتب الدراسة",
-            "example": "My pencil is on the desk.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_5",
+          "itemId": "voc-6",
           "content": {
             "word": "pencil",
             "arabicMeaning": "قلم رصاص",
-            "example": "I write with a pencil.",
+            "example": "I write with my yellow pencil.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -417,15 +213,15 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_19",
+          "itemId": "voc-7",
           "content": {
-            "word": "board",
-            "arabicMeaning": "سبورة",
-            "example": "Look at the board.",
+            "word": "bag",
+            "arabicMeaning": "حقيبة",
+            "example": "Put your book inside the bag.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -434,32 +230,15 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_20",
-          "content": {
-            "word": "book",
-            "arabicMeaning": "كتاب",
-            "example": "Open your book.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_8",
+          "itemId": "voc-8",
           "content": {
             "word": "stand up",
-            "arabicMeaning": "قف",
-            "example": "Please stand up.",
+            "arabicMeaning": "يقف",
+            "example": "Stand up and greet your teacher.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
@@ -468,15 +247,15 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_9",
+          "itemId": "voc-9",
           "content": {
             "word": "sit down",
-            "arabicMeaning": "اجلس",
-            "example": "Please sit down.",
+            "arabicMeaning": "يجلس",
+            "example": "Please sit down on your chair.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
@@ -485,93 +264,8 @@
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_23",
-          "content": {
-            "word": "open",
-            "arabicMeaning": "افتح",
-            "example": "Open your bag.",
-            "origin": "supplementary",
-            "sourcePdfPage": 19,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_24",
-          "content": {
-            "word": "close",
-            "arabicMeaning": "أغلق",
-            "example": "Close your book.",
-            "origin": "supplementary",
-            "sourcePdfPage": 19,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_25",
-          "content": {
-            "word": "in",
-            "arabicMeaning": "في / داخل",
-            "example": "The pencil is in the bag.",
-            "origin": "supplementary",
-            "sourcePdfPage": 22,
-            "fieldOrigins": {
-              "word": "source",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_26",
-          "content": {
-            "word": "ink",
-            "arabicMeaning": "حبر",
-            "example": "The ink is blue.",
-            "origin": "supplementary",
-            "sourcePdfPage": 22,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
-        },
-        {
-          "itemId": "vocab_27",
-          "content": {
-            "word": "insect",
-            "arabicMeaning": "حشرة",
-            "example": "An insect is small.",
-            "origin": "supplementary",
-            "sourcePdfPage": 22,
-            "fieldOrigins": {
-              "word": "supplementary",
-              "arabicMeaning": "supplementary",
-              "example": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "The word is recorded in the source-page vocabulary manifest. The Arabic meaning and example are supplementary; visual source review is still required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
@@ -580,16 +274,43 @@
       "title": "Vocabulary Practice",
       "items": [
         {
-          "itemId": "vocab_q1",
+          "itemId": "voc-q1",
           "content": {
-            "question": "What object do you use to write in your notebook?",
+            "question": "What do we say when we leave school?",
+            "options": [
+              "Hello",
+              "Goodbye",
+              "Stand up"
+            ],
+            "correctAnswer": "Goodbye",
+            "reason": "We say 'Goodbye' when leaving or parting from friends and teachers.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc-q2",
+          "content": {
+            "question": "Which object do you use to write in your notebook?",
             "options": [
               "pencil",
-              "chair",
-              "desk"
+              "desk",
+              "chair"
             ],
             "correctAnswer": "pencil",
-            "reason": "A pencil is a tool used for writing and drawing.",
+            "reason": "A pencil is a classroom tool used for writing and drawing.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -603,22 +324,49 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "vocab_q2",
+          "itemId": "voc-q3",
           "content": {
-            "question": "Where do you put your books to study in the classroom?",
+            "question": "When the teacher says 'sit down', what should you do?",
             "options": [
-              "desk",
+              "Take a seat on the chair",
+              "Stand up on your feet",
+              "Shake hands"
+            ],
+            "correctAnswer": "Take a seat on the chair",
+            "reason": "'Sit down' is a classroom instruction meaning to be seated.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "source"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "voc-q4",
+          "content": {
+            "question": "What word begins with the letter 't' in the unit?",
+            "options": [
+              "bag",
               "pencil",
-              "stand up"
+              "tomato"
             ],
-            "correctAnswer": "desk",
-            "reason": "A desk is the table surface where classroom work is placed.",
+            "correctAnswer": "tomato",
+            "reason": "Tomato starts with the letter 't', as taught in the phonics lesson.",
             "origin": "supplementary",
-            "sourcePdfPage": 17,
+            "sourcePdfPage": 12,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
@@ -630,58 +378,48 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "vocab_q3",
-          "content": {
-            "question": "What action do you perform to greet a new friend with your hand?",
-            "options": [
-              "shake hands",
-              "sit down",
-              "stand up"
-            ],
-            "correctAnswer": "shake hands",
-            "reason": "Shaking hands is a greeting action demonstrated in the lesson.",
-            "origin": "supplementary",
-            "sourcePdfPage": 9,
-            "fieldOrigins": {
-              "question": "supplementary",
-              "options": [
-                "source",
-                "source",
-                "source"
-              ],
-              "correctAnswer": "source",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
     {
       "type": "grammar",
-      "title": "Grammar & Functional Language",
+      "title": "Grammar and Functional Language",
       "items": [
         {
-          "itemId": "gram_1",
+          "itemId": "gram-1",
           "content": {
-            "rule": "Greetings and Introductions",
-            "explanation": "Use 'Hello!' to greet someone, 'What's your name?' to ask their name, and 'My name is...' to state your name.",
-            "example": "Hello! What's your name? My name is Hana.",
+            "rule": "Introducing Yourself with 'I am' and 'My name is'",
+            "explanation": "Use 'My name is...' or 'I'm...' followed by your name to introduce yourself to others.",
+            "example": "My name is Hana.",
             "origin": "supplementary",
             "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "rule": "supplementary",
+              "explanation": "supplementary",
+              "example": "source"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram-2",
+          "content": {
+            "rule": "Classroom Imperatives (Instructions)",
+            "explanation": "Use the base form of the verb to give polite classroom directions such as 'Stand up' or 'Sit down'.",
+            "example": "Stand up, please.",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
             "fieldOrigins": {
               "rule": "supplementary",
               "explanation": "supplementary",
               "example": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
@@ -690,16 +428,70 @@
       "title": "Grammar Practice",
       "items": [
         {
-          "itemId": "gram_q1",
+          "itemId": "gram-q1",
           "content": {
-            "question": "Choose the correct answer: Hello! My name ___ Maya.",
+            "question": "Choose the correct greeting response: 'Hello!' - '______!'",
+            "options": [
+              "Hello",
+              "Stand up",
+              "Sit down"
+            ],
+            "correctAnswer": "Hello",
+            "reason": "The natural friendly response to 'Hello' is 'Hello'.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram-q2",
+          "content": {
+            "question": "Complete the sentence: 'What's ______ name?'",
+            "options": [
+              "you",
+              "your",
+              "we"
+            ],
+            "correctAnswer": "your",
+            "reason": "'Your' is the possessive adjective used to ask about someone's name.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "source"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "gram-q3",
+          "content": {
+            "question": "Complete the introduction: 'My name ______ Maya.'",
             "options": [
               "is",
               "are",
               "am"
             ],
             "correctAnswer": "is",
-            "reason": "'My name' is a third-person singular subject, so it takes 'is'.",
+            "reason": "The singular subject 'My name' takes the singular verb 'is'.",
             "origin": "supplementary",
             "sourcePdfPage": 8,
             "fieldOrigins": {
@@ -713,49 +505,22 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "gram_q2",
+          "itemId": "gram-q4",
           "content": {
-            "question": "How do you ask a peer for their name?",
+            "question": "Which instruction tells pupils to rise from their seats?",
             "options": [
-              "What's your name?",
-              "Where is your bag?",
-              "How are you?"
+              "Sit down",
+              "Stand up",
+              "Shake hands"
             ],
-            "correctAnswer": "What's your name?",
-            "reason": "'What's your name?' is the exact question structure learned for asking names.",
+            "correctAnswer": "Stand up",
+            "reason": "'Stand up' directs someone to get up on their feet.",
             "origin": "supplementary",
-            "sourcePdfPage": 8,
-            "fieldOrigins": {
-              "question": "supplementary",
-              "options": [
-                "source",
-                "supplementary",
-                "supplementary"
-              ],
-              "correctAnswer": "source",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "gram_q3",
-          "content": {
-            "question": "Complete the phrase: Nice to meet ___!",
-            "options": [
-              "you",
-              "your",
-              "my"
-            ],
-            "correctAnswer": "you",
-            "reason": "The standard polite response after introducing oneself is 'Nice to meet you!'.",
-            "origin": "supplementary",
-            "sourcePdfPage": 8,
+            "sourcePdfPage": 19,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
@@ -767,8 +532,8 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
@@ -777,114 +542,158 @@
       "title": "Reading Comprehension",
       "items": [
         {
-          "itemId": "read_p1",
+          "itemId": "read-p1",
           "content": {
-            "passage": "Hello! My name is Maya. I am in the classroom. Look at my classroom! There is a teacher, a desk, and a chair. I have a bag, a pencil, and a book.",
+            "passage": "Hello! Welcome to our classroom. My name is Hana. I have a blue bag and a yellow pencil. Our teacher is in the room. We sit down at our desks and listen. We are good friends!",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
               "passage": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "read_q1",
+          "itemId": "read-q1",
           "content": {
-            "question": "What object does Maya carry her pencil and book in?",
+            "question": "What does Hana have?",
             "options": [
-              "bag",
-              "desk",
-              "chair"
+              "A blue bag and a yellow pencil",
+              "A red apple and a book",
+              "A green chair and a desk"
             ],
-            "correctAnswer": "bag",
-            "reason": "The passage indicates that Maya has a bag containing her school supplies.",
+            "correctAnswer": "A blue bag and a yellow pencil",
+            "reason": "The passage states that Hana has a blue bag and a yellow pencil.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
-                "source",
-                "source",
-                "source"
+                "supplementary",
+                "supplementary",
+                "supplementary"
               ],
-              "correctAnswer": "source",
+              "correctAnswer": "supplementary",
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "read-q2",
+          "content": {
+            "question": "Where do the pupils sit down?",
+            "options": [
+              "At their desks",
+              "On the board",
+              "Under the table"
+            ],
+            "correctAnswer": "At their desks",
+            "reason": "The passage mentions that the pupils sit down at their desks.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
     {
       "type": "listening",
-      "title": "Listening Activity",
+      "title": "Listening Comprehension",
       "items": [
         {
-          "itemId": "list_s1",
+          "itemId": "list-s1",
           "content": {
-            "script": "Teacher: Hello, class! Please sit down at your desks. Take out your pencils and open your books.",
+            "script": "Teacher: Good morning, class! Please stand up and say hello to your friends. Now, sit down and open your bags. Take out your pencils.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
               "script": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "list_q1",
+          "itemId": "list-q1",
           "content": {
-            "question": "What does the teacher ask the students to do first?",
+            "question": "What does the teacher ask the pupils to do first?",
             "options": [
-              "Sit down at your desks",
-              "Shake hands",
-              "Stand up"
+              "Stand up and say hello",
+              "Open their bags",
+              "Take out their pencils"
             ],
-            "correctAnswer": "Sit down at your desks",
-            "reason": "The teacher's spoken script begins with 'Please sit down at your desks.'",
+            "correctAnswer": "Stand up and say hello",
+            "reason": "The teacher begins by saying, 'Please stand up and say hello to your friends.'",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
                 "supplementary",
-                "source",
-                "source"
+                "supplementary",
+                "supplementary"
               ],
               "correctAnswer": "supplementary",
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "list-q2",
+          "content": {
+            "question": "What object do the pupils take out of their bags?",
+            "options": [
+              "Pencils",
+              "Tomatoes",
+              "Chairs"
+            ],
+            "correctAnswer": "Pencils",
+            "reason": "The script finishes with the instruction: 'Take out your pencils.'",
+            "origin": "supplementary",
+            "sourcePdfPage": 19,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
     {
       "type": "speaking",
-      "title": "Speaking Practice",
+      "title": "Speaking and Dialogue",
       "items": [
         {
-          "itemId": "spk_1",
+          "itemId": "spk-1",
           "content": {
             "dialogue": [
               {
                 "speaker": "Maya",
-                "text": "Hello!",
-                "speakerGender": "unknown"
-              },
-              {
-                "speaker": "Hana",
-                "text": "Hello!",
-                "speakerGender": "unknown"
-              },
-              {
-                "speaker": "Maya",
-                "text": "What's your name?",
+                "text": "Hello! What's your name?",
                 "speakerGender": "unknown"
               },
               {
@@ -894,7 +703,12 @@
               },
               {
                 "speaker": "Maya",
-                "text": "Nice to meet you, too!",
+                "text": "Nice to meet you, too, Hana!",
+                "speakerGender": "unknown"
+              },
+              {
+                "speaker": "Hana",
+                "text": "Do you want to shake hands?",
                 "speakerGender": "unknown"
               }
             ],
@@ -903,38 +717,37 @@
             "fieldOrigins": {
               "dialogue": [
                 "source",
-                "source",
-                "source",
                 "supplementary",
+                "source",
                 "source"
               ]
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "Conservatively labelled supplementary because one or more fields could not be verified verbatim in the extracted source. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
     {
       "type": "games",
-      "title": "Interactive Learning Games",
+      "title": "Learning Games",
       "items": [
         {
-          "itemId": "game_1",
+          "itemId": "game-1",
           "content": {
-            "gameName": "Classroom Quiz",
-            "description": "Choose the correct item you sit on during lesson time.",
+            "gameName": "School Bag Word Match",
+            "description": "Identify the classroom object shown in the clue.",
             "skill": "vocabulary",
             "difficulty": "easy",
             "gameMode": "multiple_choice",
-            "question": "Which classroom item do you sit on?",
+            "question": "I carry my books and pencil case in my school ______ .",
             "options": [
-              "chair",
-              "pencil",
-              "bag"
+              "bag",
+              "desk",
+              "teacher"
             ],
-            "correctAnswer": "chair",
-            "reason": "A chair is the designated piece of classroom furniture for sitting.",
+            "correctAnswer": "bag",
+            "reason": "A bag is used to carry school supplies.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -950,61 +763,27 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "game_2",
+          "itemId": "game-2",
           "content": {
-            "gameName": "Greeting Choice",
-            "description": "Pick the right response when meeting a school friend.",
-            "skill": "speaking",
-            "difficulty": "easy",
-            "gameMode": "multiple_choice",
-            "question": "When a friend says 'Hello!', what is the proper greeting to say back?",
-            "options": [
-              "Hello!",
-              "Sit down!",
-              "Stand up!"
-            ],
-            "correctAnswer": "Hello!",
-            "reason": "Saying 'Hello!' in return is the appropriate standard greeting response.",
-            "origin": "supplementary",
-            "sourcePdfPage": 8,
-            "fieldOrigins": {
-              "gameName": "supplementary",
-              "description": "supplementary",
-              "question": "supplementary",
-              "options": [
-                "supplementary",
-                "supplementary",
-                "supplementary"
-              ],
-              "correctAnswer": "supplementary",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "game_3",
-          "content": {
-            "gameName": "Grammar Challenge",
-            "description": "Find the correct missing word in the self-introduction sentence.",
+            "gameName": "Grammar Action Master",
+            "description": "Pick the correct classroom command to complete the instruction.",
             "skill": "grammar",
             "difficulty": "medium",
             "gameMode": "multiple_choice",
-            "question": "Fill in the blank: ___ name is Maya.",
+            "question": "Please ______ down on your chair quietly.",
             "options": [
-              "My",
-              "I",
-              "Me"
+              "sit",
+              "stand",
+              "play"
             ],
-            "correctAnswer": "My",
-            "reason": "'My' is the possessive adjective used to indicate ownership of one's name.",
+            "correctAnswer": "sit",
+            "reason": "The phrase 'sit down' means to take a seat on a chair.",
             "origin": "supplementary",
-            "sourcePdfPage": 8,
+            "sourcePdfPage": 19,
             "fieldOrigins": {
               "gameName": "supplementary",
               "description": "supplementary",
@@ -1018,28 +797,89 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "game-3",
+          "content": {
+            "gameName": "Sound Detective",
+            "description": "Identify which item begins with the target letter sound.",
+            "skill": "listening",
+            "difficulty": "easy",
+            "gameMode": "multiple_choice",
+            "question": "Which word begins with the short 'i' sound?",
+            "options": [
+              "insect",
+              "table",
+              "pencil"
+            ],
+            "correctAnswer": "insect",
+            "reason": "'Insect' begins with the letter 'i' and its short vowel sound.",
+            "origin": "supplementary",
+            "sourcePdfPage": 21,
+            "fieldOrigins": {
+              "gameName": "supplementary",
+              "description": "supplementary",
+              "question": "supplementary",
+              "options": [
+                "supplementary",
+                "supplementary",
+                "supplementary"
+              ],
+              "correctAnswer": "supplementary",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     },
     {
       "type": "comprehensive_test",
-      "title": "End-of-Unit Comprehensive Test",
+      "title": "Comprehensive Unit Test",
       "items": [
         {
-          "itemId": "ct_1",
+          "itemId": "test-q1",
           "content": {
-            "question": "What object is used to hold your school books and pencil?",
+            "question": "What do pupils do to show friendship when they meet?",
             "options": [
-              "bag",
-              "chair",
-              "board"
+              "Shake hands",
+              "Stand up",
+              "Close the book"
             ],
-            "correctAnswer": "bag",
-            "reason": "A bag is designed for holding personal school supplies.",
+            "correctAnswer": "Shake hands",
+            "reason": "Shaking hands is a polite greeting gesture shown in the unit.",
             "origin": "supplementary",
-            "sourcePdfPage": 17,
+            "sourcePdfPage": 9,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test-q2",
+          "content": {
+            "question": "Which greeting is used when you first meet someone?",
+            "options": [
+              "Hello",
+              "Goodbye",
+              "Sit down"
+            ],
+            "correctAnswer": "Hello",
+            "reason": "'Hello' is the standard greeting used upon meeting someone.",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
@@ -1051,22 +891,76 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_2",
+          "itemId": "test-q3",
           "content": {
-            "question": "Which letter does the word 'teacher' start with?",
+            "question": "Complete the sentence: 'Nice to meet ______!'",
             "options": [
-              "T",
-              "I",
-              "S"
+              "you",
+              "your",
+              "I"
             ],
-            "correctAnswer": "T",
-            "reason": "The word 'teacher' begins with the letter Tt.",
+            "correctAnswer": "you",
+            "reason": "The polite social expression is 'Nice to meet you!'",
+            "origin": "supplementary",
+            "sourcePdfPage": 8,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test-q4",
+          "content": {
+            "question": "Which word begins with the letter 'T'?",
+            "options": [
+              "table",
+              "bag",
+              "insect"
+            ],
+            "correctAnswer": "table",
+            "reason": "'Table' begins with the letter 't'.",
             "origin": "supplementary",
             "sourcePdfPage": 12,
+            "fieldOrigins": {
+              "question": "supplementary",
+              "options": [
+                "source",
+                "source",
+                "supplementary"
+              ],
+              "correctAnswer": "source",
+              "reason": "supplementary"
+            }
+          },
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
+        },
+        {
+          "itemId": "test-q5",
+          "content": {
+            "question": "Where does the teacher write lessons for pupils to see?",
+            "options": [
+              "On the board",
+              "In the pencil",
+              "On the chair"
+            ],
+            "correctAnswer": "On the board",
+            "reason": "Teachers write lesson notes and instructions on the classroom board.",
+            "origin": "supplementary",
+            "sourcePdfPage": 17,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
@@ -1078,74 +972,47 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_3",
+          "itemId": "test-q6",
           "content": {
-            "question": "Which letter does the word 'ink' start with?",
+            "question": "Which word begins with the letter 'I'?",
             "options": [
-              "I",
-              "T",
-              "P"
+              "ink",
+              "tomato",
+              "desk"
             ],
-            "correctAnswer": "I",
-            "reason": "The word 'ink' begins with the letter Ii.",
+            "correctAnswer": "ink",
+            "reason": "'Ink' starts with the letter 'i'.",
             "origin": "supplementary",
             "sourcePdfPage": 21,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
                 "supplementary",
-                "supplementary",
-                "supplementary"
+                "source",
+                "source"
               ],
               "correctAnswer": "supplementary",
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_4",
+          "itemId": "test-q7",
           "content": {
-            "question": "What polite phrase do you say when meeting a classmate for the first time?",
+            "question": "What is the opposite instruction of 'Sit down'?",
             "options": [
-              "Nice to meet you!",
-              "Stand up!",
-              "Sit down!"
+              "Stand up",
+              "Shake hands",
+              "Play"
             ],
-            "correctAnswer": "Nice to meet you!",
-            "reason": "'Nice to meet you!' is the polite sentence used after introductions.",
-            "origin": "supplementary",
-            "sourcePdfPage": 8,
-            "fieldOrigins": {
-              "question": "supplementary",
-              "options": [
-                "source",
-                "source",
-                "source"
-              ],
-              "correctAnswer": "source",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "ct_5",
-          "content": {
-            "question": "What is the opposite action of 'sit down'?",
-            "options": [
-              "stand up",
-              "shake hands",
-              "play"
-            ],
-            "correctAnswer": "stand up",
-            "reason": "'Stand up' means rising to your feet, which is the exact opposite of sitting down.",
+            "correctAnswer": "Stand up",
+            "reason": "'Stand up' is the direct physical opposite of 'Sit down'.",
             "origin": "supplementary",
             "sourcePdfPage": 19,
             "fieldOrigins": {
@@ -1159,101 +1026,47 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_6",
+          "itemId": "test-q8",
           "content": {
-            "question": "Complete the question: What's ___ name?",
+            "question": "Choose the correct question: '______ is your name?'",
             "options": [
-              "your",
-              "you",
-              "yours"
+              "What",
+              "Where",
+              "How"
             ],
-            "correctAnswer": "your",
-            "reason": "The possessive determiner 'your' correctly modifies 'name'.",
+            "correctAnswer": "What",
+            "reason": "'What is your name?' is the question used to ask for a person's name.",
             "origin": "supplementary",
             "sourcePdfPage": 8,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
                 "source",
-                "source",
+                "supplementary",
                 "supplementary"
               ],
               "correctAnswer": "source",
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_7",
+          "itemId": "test-q9",
           "content": {
-            "question": "Which classroom item is mounted on the wall for writing shared lessons?",
+            "question": "Pupils sit on a ______ in the classroom.",
             "options": [
-              "board",
-              "desk",
-              "pencil"
-            ],
-            "correctAnswer": "board",
-            "reason": "A board is the wall-mounted surface used by teachers to write lessons.",
-            "origin": "supplementary",
-            "sourcePdfPage": 17,
-            "fieldOrigins": {
-              "question": "supplementary",
-              "options": [
-                "source",
-                "source",
-                "source"
-              ],
-              "correctAnswer": "source",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "ct_8",
-          "content": {
-            "question": "What friendly action do Maya and Hana do with their hands in Lesson 1?",
-            "options": [
-              "shake hands",
-              "sit down",
-              "stand up"
-            ],
-            "correctAnswer": "shake hands",
-            "reason": "The dialogue notes state that they shake hands to show friendship.",
-            "origin": "supplementary",
-            "sourcePdfPage": 8,
-            "fieldOrigins": {
-              "question": "supplementary",
-              "options": [
-                "source",
-                "source",
-                "source"
-              ],
-              "correctAnswer": "source",
-              "reason": "supplementary"
-            }
-          },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
-        },
-        {
-          "itemId": "ct_9",
-          "content": {
-            "question": "Which school supply item is specifically used for writing or drawing?",
-            "options": [
-              "pencil",
               "chair",
-              "desk"
+              "pencil",
+              "bag"
             ],
-            "correctAnswer": "pencil",
-            "reason": "A pencil is a hand-held tool used specifically to write or draw.",
+            "correctAnswer": "chair",
+            "reason": "A chair is the piece of classroom furniture designed for sitting.",
             "origin": "supplementary",
             "sourcePdfPage": 17,
             "fieldOrigins": {
@@ -1267,48 +1080,48 @@
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         },
         {
-          "itemId": "ct_10",
+          "itemId": "test-q10",
           "content": {
-            "question": "What do you say to a classmate when leaving at the end of the day?",
+            "question": "When Maya and Hana play together at school, they are ______ .",
             "options": [
-              "Goodbye!",
-              "Hello!",
-              "Sit down!"
+              "friends",
+              "teachers",
+              "books"
             ],
-            "correctAnswer": "Goodbye!",
-            "reason": "'Goodbye!' is the standard farewell expression.",
+            "correctAnswer": "friends",
+            "reason": "Children who meet, greet, and play together become friends.",
             "origin": "supplementary",
-            "sourcePdfPage": 8,
+            "sourcePdfPage": 9,
             "fieldOrigins": {
               "question": "supplementary",
               "options": [
                 "source",
-                "source",
-                "source"
+                "supplementary",
+                "supplementary"
               ],
               "correctAnswer": "source",
               "reason": "supplementary"
             }
           },
-          "reviewStatus": "needs_review",
-          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required."
+          "notes": "AI-generated supplementary practice; not printed in source book. Teacher review required.",
+          "reviewStatus": "needs_review"
         }
       ]
     }
   ],
   "provenanceAudit": {
     "policyVersion": 1,
-    "auditedAt": "2026-11-17T06:42:10.632Z",
-    "itemsAudited": 52,
+    "auditedAt": "2026-11-18T07:08:31.364Z",
+    "itemsAudited": 39,
     "sourceClaims": 0,
     "verifiedSourceClaims": 0,
     "unverifiableSourceClaims": 0,
     "citationWarnings": 0,
-    "itemsWithSourceSubfields": 35,
+    "itemsWithSourceSubfields": 28,
     "reclassifiedToSupplementary": 0
   }
 }
